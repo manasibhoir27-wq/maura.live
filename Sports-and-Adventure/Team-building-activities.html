@@ -1,0 +1,773 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Team-Building Activities | Sports & Adventure Camps for Kids - Maura Wonderlab</title>
+    <meta name="description" content="Maura Wonderlab offers exciting team-building activities through sports & adventure camps for kids in Virar, Nallasopara & Vasai. Build teamwork, leadership & confidence!">
+    <meta name="keywords" content="team building activities for kids, sports adventure camp, team building games, leadership activities for children, group adventure activities, kids teamwork games, adventure sports for children, Maura Wonderlab team building">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Iconify (Lucide Icons) -->
+    <script src="https://cdn.jsdelivr.net/npm/iconify-icon@1.0.8/dist/iconify-icon.min.js"></script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=Nunito:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        /* Custom Font Settings for Childish/Playful Vibe */
+        body {
+            font-family: 'Nunito', sans-serif;
+        }
+        h1, h2, h3, h4, h5, h6, .brand-font {
+            font-family: 'Fredoka', sans-serif;
+        }
+        
+        /* Playful Blob Pattern */
+        .bg-pattern {
+            background-color: #FFFDF5;
+            background-image: radial-gradient(#FDE68A 1px, transparent 1px), radial-gradient(#BAE6FD 1px, transparent 1px);
+            background-size: 40px 40px;
+            background-position: 0 0, 20px 20px;
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #FFF7ED; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #FDBA74; 
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #EA580C; 
+        }
+
+        /* Mobile Menu Animation */
+        .mobile-menu {
+            transform: translateX(100%);
+            transition: transform 0.3s ease-in-out;
+        }
+        
+        .mobile-menu.open {
+            transform: translateX(0);
+        }
+        
+        .menu-overlay {
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease-in-out, visibility 0.3s;
+        }
+        
+        .menu-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        /* Custom styles for team-building page */
+        .team-gradient {
+            background: linear-gradient(135deg, #FBBF24 0%, #F59E0B 25%, #DC2626 100%);
+        }
+        
+        .sports-card {
+            transition: all 0.3s ease;
+            border: 3px solid transparent;
+        }
+        
+        .sports-card:hover {
+            border-color: #F59E0B;
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(245, 158, 11, 0.2);
+        }
+        
+        .activity-badge {
+            background: linear-gradient(90deg, #3B82F6, #8B5CF6);
+            color: white;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: bold;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body class="bg-pattern text-slate-600 antialiased selection:bg-orange-200 selection:text-orange-900">
+
+    <!-- Navbar -->
+    <nav class="fixed w-full z-50 top-0 transition-all duration-300 backdrop-blur-md bg-white/80 border-b-2 border-slate-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center gap-2 cursor-pointer" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+                    <img src="maura wonderlab logo.png" alt="Maura Wonderlab" width="50px">
+                    <span class="brand-font text-2xl font-semibold tracking-tight text-slate-800">
+                        Maura <span class="text-orange-500">Wonderlab</span>
+                    </span>
+                </div>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="#activities" class="text-sm font-semibold text-slate-600 hover:text-orange-500 transition-colors">Activities</a>
+                    <a href="#reviews" class="text-sm font-semibold text-slate-600 hover:text-orange-500 transition-colors">Happy Campers</a>
+                    <a href="#locations" class="text-sm font-semibold text-slate-600 hover:text-orange-500 transition-colors">Locations</a>
+                    <a href="#pricing" class="text-sm font-semibold text-slate-600 hover:text-orange-500 transition-colors">Pricing</a>
+                    <button class="bg-indigo-500 hover:bg-indigo-600 text-white px-5 py-2.5 rounded-full text-sm font-semibold transition-all shadow-[0px_4px_0px_0px_rgba(67,56,202,1)] hover:shadow-[0px_2px_0px_0px_rgba(67,56,202,1)] hover:translate-y-[2px]">
+                        Book an Adventure
+                    </button>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobileMenuButton" class="text-slate-600 hover:text-orange-500 p-2">
+                        <iconify-icon icon="lucide:menu" width="28" stroke-width="1.5"></iconify-icon>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu Overlay -->
+    <div id="menuOverlay" class="menu-overlay fixed inset-0 bg-black/50 z-40 md:hidden"></div>
+
+    <!-- Mobile Menu -->
+    <div id="mobileMenu" class="mobile-menu fixed top-0 right-0 h-full w-64 bg-white z-50 shadow-2xl md:hidden p-6">
+        <div class="flex justify-between items-center mb-8">
+            <div class="flex items-center gap-2">
+                <div class="h-8 w-8 bg-orange-400 rounded-lg flex items-center justify-center text-white">
+                    <iconify-icon icon="lucide:tent" width="18"></iconify-icon>
+                </div>
+                <span class="brand-font text-xl font-semibold text-slate-800">Maura <span class="text-orange-500">Wonderlab</span></span>
+            </div>
+            <button id="closeMenuButton" class="text-slate-600 hover:text-orange-500 p-2">
+                <iconify-icon icon="lucide:x" width="24" stroke-width="1.5"></iconify-icon>
+            </button>
+        </div>
+        
+        <div class="space-y-6">
+            <a href="#activities" class="block py-3 text-slate-700 font-semibold border-b border-slate-100" onclick="closeMobileMenu()">Activities</a>
+            <a href="#reviews" class="block py-3 text-slate-700 font-semibold border-b border-slate-100" onclick="closeMobileMenu()">Happy Campers</a>
+            <a href="#locations" class="block py-3 text-slate-700 font-semibold border-b border-slate-100" onclick="closeMobileMenu()">Locations</a>
+            <a href="#pricing" class="block py-3 text-slate-700 font-semibold border-b border-slate-100" onclick="closeMobileMenu()">Pricing</a>
+            <div class="pt-4">
+                <button class="w-full bg-indigo-500 hover:bg-indigo-600 text-white px-5 py-3 rounded-full text-sm font-semibold transition-all">
+                    Book an Adventure
+                </button>
+            </div>
+        </div>
+        
+        <div class="absolute bottom-8 left-6 right-6">
+            <p class="text-sm text-slate-500 mb-4">Contact us:</p>
+            <div class="flex items-center gap-2 text-slate-700 mb-2">
+                <iconify-icon icon="lucide:phone" width="16"></iconify-icon>
+                <span class="text-sm">+91 77680 31411</span>
+            </div>
+            <div class="flex items-center gap-2 text-slate-700">
+                <iconify-icon icon="lucide:mail" width="16"></iconify-icon>
+                <span class="text-sm">maurawonderlab@gmail.com</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="pt-32 pb-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+        <div class="text-center mb-16">
+            <div class="inline-flex items-center gap-2 mb-6">
+                <span class="activity-badge">Team-Building Focus</span>
+                <span class="activity-badge" style="background: linear-gradient(90deg, #10B981, #3B82F6);">Sports & Adventure</span>
+                <span class="activity-badge" style="background: linear-gradient(90deg, #EF4444, #F59E0B);">Ages 6-14</span>
+            </div>
+            
+            <h1 class="text-5xl md:text-6xl font-bold mb-6 text-slate-800">
+                Team-Building Activities through 
+                <span class="team-gradient bg-clip-text text-transparent">Sports & Adventure</span>
+            </h1>
+            
+            <p class="text-xl text-slate-600 max-w-3xl mx-auto mb-10">
+                Transform your group of kids into a <strong>cohesive team</strong> with our specially designed sports and adventure activities that build <strong>leadership, communication, and teamwork skills</strong> while having the time of their lives!
+            </p>
+            
+            <div class="flex flex-wrap justify-center gap-4">
+                <button class="bg-orange-500 hover:bg-orange-600 text-white px-8 py-3.5 rounded-full text-lg font-semibold transition-all shadow-[0px_6px_0px_0px_rgba(234,88,12,0.8)] hover:shadow-[0px_3px_0px_0px_rgba(234,88,12,0.8)] hover:translate-y-[3px]">
+                    <iconify-icon icon="lucide:calendar-plus" class="mr-2" width="20"></iconify-icon>
+                    Book Team Session
+                </button>
+                <button class="bg-white hover:bg-slate-50 text-slate-700 border-2 border-orange-300 px-8 py-3.5 rounded-full text-lg font-semibold transition-all">
+                    <iconify-icon icon="lucide:phone" class="mr-2" width="20"></iconify-icon>
+                    Call for Inquiry
+                </button>
+            </div>
+        </div>
+        
+        <div class="grid md:grid-cols-3 gap-8 mb-20">
+            <div class="bg-white rounded-2xl p-8 shadow-lg border-2 border-blue-100">
+                <div class="h-14 w-14 rounded-xl bg-blue-100 flex items-center justify-center text-blue-600 mb-6">
+                    <iconify-icon icon="lucide:users" width="28"></iconify-icon>
+                </div>
+                <h3 class="text-xl font-bold text-slate-800 mb-3">Teamwork & Collaboration</h3>
+                <p class="text-slate-600">Activities designed to require cooperation, teaching kids to work together towards common goals and appreciate diverse strengths.</p>
+            </div>
+            
+            <div class="bg-white rounded-2xl p-8 shadow-lg border-2 border-green-100">
+                <div class="h-14 w-14 rounded-xl bg-green-100 flex items-center justify-center text-green-600 mb-6">
+                    <iconify-icon icon="lucide:trophy" width="28"></iconify-icon>
+                </div>
+                <h3 class="text-xl font-bold text-slate-800 mb-3">Leadership Development</h3>
+                <p class="text-slate-600">Opportunities for every child to take charge in safe, supportive environments, building confidence and decision-making skills.</p>
+            </div>
+            
+            <div class="bg-white rounded-2xl p-8 shadow-lg border-2 border-purple-100">
+                <div class="h-14 w-14 rounded-xl bg-purple-100 flex items-center justify-center text-purple-600 mb-6">
+                    <iconify-icon icon="lucide:heart-handshake" width="28"></iconify-icon>
+                </div>
+                <h3 class="text-xl font-bold text-slate-800 mb-3">Communication Skills</h3>
+                <p class="text-slate-600">Exercises that enhance verbal and non-verbal communication, teaching kids to express ideas clearly and listen actively.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sports & Adventure Activities -->
+    <section id="activities" class="py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+        <div class="text-center mb-14">
+            <h2 class="text-4xl font-bold text-slate-800 mb-4">Our <span class="text-orange-500">Team-Building Activities</span></h2>
+            <p class="text-lg text-slate-600 max-w-3xl mx-auto">Each activity is specifically designed to develop teamwork, problem-solving, and leadership skills in a fun, adventurous setting.</p>
+        </div>
+        
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20">
+            <!-- Activity 1 -->
+            <div class="group sports-card bg-white rounded-2xl p-6 shadow-lg overflow-hidden">
+                <div class="h-48 rounded-xl mb-6 overflow-hidden">
+                    <div class="w-full h-full bg-gradient-to-r from-orange-400 to-red-500 flex items-center justify-center">
+                        <iconify-icon icon="lucide:flag" width="64" class="text-white"></iconify-icon>
+                    </div>
+                </div>
+                <div class="flex justify-between items-start mb-4">
+                    <h3 class="text-xl font-bold text-slate-800">Capture the Flag Championship</h3>
+                    <span class="text-xs font-bold bg-orange-100 text-orange-800 px-3 py-1 rounded-full">Most Popular</span>
+                </div>
+                <p class="text-slate-600 mb-6">Strategic team game that requires planning, coordination, and communication to capture the opponent's flag while defending your own.</p>
+                <div class="flex flex-wrap gap-2 mb-6">
+                    <span class="text-xs font-semibold bg-blue-100 text-blue-800 px-3 py-1 rounded-full">Strategy</span>
+                    <span class="text-xs font-semibold bg-green-100 text-green-800 px-3 py-1 rounded-full">Communication</span>
+                    <span class="text-xs font-semibold bg-purple-100 text-purple-800 px-3 py-1 rounded-full">Leadership</span>
+                </div>
+                <div class="flex items-center justify-between">
+                    <div class="flex items-center text-sm text-slate-500">
+                        <iconify-icon icon="lucide:clock" width="16" class="mr-1"></iconify-icon>
+                        <span>90 mins session</span>
+                    </div>
+                    <div class="flex items-center text-sm text-slate-500">
+                        <iconify-icon icon="lucide:users" width="16" class="mr-1"></iconify-icon>
+                        <span>8-20 kids</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Activity 2 -->
+            <div class="group sports-card bg-white rounded-2xl p-6 shadow-lg overflow-hidden">
+                <div class="h-48 rounded-xl mb-6 overflow-hidden">
+                    <div class="w-full h-full bg-gradient-to-r from-green-400 to-emerald-600 flex items-center justify-center">
+                        <iconify-icon icon="lucide:compass" width="64" class="text-white"></iconify-icon>
+                    </div>
+                </div>
+                <div class="flex justify-between items-start mb-4">
+                    <h3 class="text-xl font-bold text-slate-800">Adventure Obstacle Course</h3>
+                    <span class="text-xs font-bold bg-red-100 text-red-800 px-3 py-1 rounded-full">High Energy</span>
+                </div>
+                <p class="text-slate-600 mb-6">Team-based obstacle challenges that require collaboration to overcome physical barriers, fostering trust and mutual support.</p>
+                <div class="flex flex-wrap gap-2 mb-6">
+                    <span class="text-xs font-semibold bg-red-100 text-red-800 px-3 py-1 rounded-full">Physical</span>
+                    <span class="text-xs font-semibold bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full">Trust Building</span>
+                    <span class="text-xs font-semibold bg-green-100 text-green-800 px-3 py-1 rounded-full">Problem Solving</span>
+                </div>
+                <div class="flex items-center justify-between">
+                    <div class="flex items-center text-sm text-slate-500">
+                        <iconify-icon icon="lucide:clock" width="16" class="mr-1"></iconify-icon>
+                        <span>120 mins session</span>
+                    </div>
+                    <div class="flex items-center text-sm text-slate-500">
+                        <iconify-icon icon="lucide:users" width="16" class="mr-1"></iconify-icon>
+                        <span>6-15 kids</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Activity 3 -->
+            <div class="group sports-card bg-white rounded-2xl p-6 shadow-lg overflow-hidden">
+                <div class="h-48 rounded-xl mb-6 overflow-hidden">
+                    <div class="w-full h-full bg-gradient-to-r from-purple-400 to-pink-500 flex items-center justify-center">
+                        <iconify-icon icon="lucide:puzzle" width="64" class="text-white"></iconify-icon>
+                    </div>
+                </div>
+                <div class="flex justify-between items-start mb-4">
+                    <h3 class="text-xl font-bold text-slate-800">Sports Puzzle Relay</h3>
+                    <span class="text-xs font-bold bg-purple-100 text-purple-800 px-3 py-1 rounded-full">Cognitive</span>
+                </div>
+                <p class="text-slate-600 mb-6">Combine physical activity with mental challenges in this relay race where teams must solve puzzles to advance to the next station.</p>
+                <div class="flex flex-wrap gap-2 mb-6">
+                    <span class="text-xs font-semibold bg-purple-100 text-purple-800 px-3 py-1 rounded-full">Brain & Brawn</span>
+                    <span class="text-xs font-semibold bg-pink-100 text-pink-800 px-3 py-1 rounded-full">Quick Thinking</span>
+                    <span class="text-xs font-semibold bg-indigo-100 text-indigo-800 px-3 py-1 rounded-full">Coordination</span>
+                </div>
+                <div class="flex items-center justify-between">
+                    <div class="flex items-center text-sm text-slate-500">
+                        <iconify-icon icon="lucide:clock" width="16" class="mr-1"></iconify-icon>
+                        <span>75 mins session</span>
+                    </div>
+                    <div class="flex items-center text-sm text-slate-500">
+                        <iconify-icon icon="lucide:users" width="16" class="mr-1"></iconify-icon>
+                        <span>10-24 kids</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Activity 4 -->
+            <div class="group sports-card bg-white rounded-2xl p-6 shadow-lg overflow-hidden">
+                <div class="h-48 rounded-xl mb-6 overflow-hidden">
+                    <div class="w-full h-full bg-gradient-to-r from-blue-400 to-cyan-500 flex items-center justify-center">
+                        <iconify-icon icon="lucide:shield" width="64" class="text-white"></iconify-icon>
+                    </div>
+                </div>
+                <h3 class="text-xl font-bold text-slate-800 mb-4">Team Archery Challenge</h3>
+                <p class="text-slate-600 mb-6">Safe, supervised archery with team scoring system. Kids learn focus, precision, and how to support teammates under pressure.</p>
+                <div class="flex flex-wrap gap-2 mb-6">
+                    <span class="text-xs font-semibold bg-blue-100 text-blue-800 px-3 py-1 rounded-full">Focus</span>
+                    <span class="text-xs font-semibold bg-cyan-100 text-cyan-800 px-3 py-1 rounded-full">Precision</span>
+                    <span class="text-xs font-semibold bg-sky-100 text-sky-800 px-3 py-1 rounded-full">Support</span>
+                </div>
+                <div class="flex items-center justify-between">
+                    <div class="flex items-center text-sm text-slate-500">
+                        <iconify-icon icon="lucide:clock" width="16" class="mr-1"></iconify-icon>
+                        <span>60 mins session</span>
+                    </div>
+                    <div class="flex items-center text-sm text-slate-500">
+                        <iconify-icon icon="lucide:users" width="16" class="mr-1"></iconify-icon>
+                        <span>4-12 kids</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Activity 5 -->
+            <div class="group sports-card bg-white rounded-2xl p-6 shadow-lg overflow-hidden">
+                <div class="h-48 rounded-xl mb-6 overflow-hidden">
+                    <div class="w-full h-full bg-gradient-to-r from-yellow-400 to-amber-500 flex items-center justify-center">
+                        <iconify-icon icon="lucide:map" width="64" class="text-white"></iconify-icon>
+                    </div>
+                </div>
+                <h3 class="text-xl font-bold text-slate-800 mb-4">Survival Scavenger Hunt</h3>
+                <p class="text-slate-600 mb-6">Teams navigate through our adventure course finding clues and completing survival tasks that require collective decision-making.</p>
+                <div class="flex flex-wrap gap-2 mb-6">
+                    <span class="text-xs font-semibold bg-amber-100 text-amber-800 px-3 py-1 rounded-full">Navigation</span>
+                    <span class="text-xs font-semibold bg-lime-100 text-lime-800 px-3 py-1 rounded-full">Survival Skills</span>
+                    <span class="text-xs font-semibold bg-rose-100 text-rose-800 px-3 py-1 rounded-full">Decision Making</span>
+                </div>
+                <div class="flex items-center justify-between">
+                    <div class="flex items-center text-sm text-slate-500">
+                        <iconify-icon icon="lucide:clock" width="16" class="mr-1"></iconify-icon>
+                        <span>150 mins session</span>
+                    </div>
+                    <div class="flex items-center text-sm text-slate-500">
+                        <iconify-icon icon="lucide:users" width="16" class="mr-1"></iconify-icon>
+                        <span>8-16 kids</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Activity 6 -->
+            <div class="group sports-card bg-white rounded-2xl p-6 shadow-lg overflow-hidden">
+                <div class="h-48 rounded-xl mb-6 overflow-hidden">
+                    <div class="w-full h-full bg-gradient-to-r from-red-400 to-orange-500 flex items-center justify-center">
+                        <iconify-icon icon="lucide:rocket" width="64" class="text-white"></iconify-icon>
+                    </div>
+                </div>
+                <div class="flex justify-between items-start mb-4">
+                    <h3 class="text-xl font-bold text-slate-800">Raft Building Challenge</h3>
+                    <span class="text-xs font-bold bg-orange-100 text-orange-800 px-3 py-1 rounded-full">Creative</span>
+                </div>
+                <p class="text-slate-600 mb-6">Teams work together to build a functional raft using provided materials, then test their creation in our safe water zone.</p>
+                <div class="flex flex-wrap gap-2 mb-6">
+                    <span class="text-xs font-semibold bg-orange-100 text-orange-800 px-3 py-1 rounded-full">Engineering</span>
+                    <span class="text-xs font-semibold bg-red-100 text-red-800 px-3 py-1 rounded-full">Creativity</span>
+                    <span class="text-xs font-semibold bg-rose-100 text-rose-800 px-3 py-1 rounded-full">Practical Skills</span>
+                </div>
+                <div class="flex items-center justify-between">
+                    <div class="flex items-center text-sm text-slate-500">
+                        <iconify-icon icon="lucide:clock" width="16" class="mr-1"></iconify-icon>
+                        <span>120 mins session</span>
+                    </div>
+                    <div class="flex items-center text-sm text-slate-500">
+                        <iconify-icon icon="lucide:users" width="16" class="mr-1"></iconify-icon>
+                        <span>6-18 kids</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+        <div class="bg-gradient-to-r from-orange-50 to-amber-50 rounded-3xl p-8 md:p-12">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold text-slate-800 mb-4">Benefits of <span class="text-orange-600">Team-Building</span> through Sports & Adventure</h2>
+                <p class="text-lg text-slate-600 max-w-3xl mx-auto">Our activities are designed to develop essential life skills while children have fun in a safe, outdoor environment.</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="bg-white rounded-xl p-6 shadow-md">
+                    <div class="h-12 w-12 rounded-lg bg-blue-100 flex items-center justify-center text-blue-600 mb-4">
+                        <iconify-icon icon="lucide:brain" width="24"></iconify-icon>
+                    </div>
+                    <h4 class="font-bold text-slate-800 mb-2">Problem-Solving Skills</h4>
+                    <p class="text-sm text-slate-600">Activities require teams to think critically and develop creative solutions to challenges.</p>
+                </div>
+                
+                <div class="bg-white rounded-xl p-6 shadow-md">
+                    <div class="h-12 w-12 rounded-lg bg-green-100 flex items-center justify-center text-green-600 mb-4">
+                        <iconify-icon icon="lucide:mic" width="24"></iconify-icon>
+                    </div>
+                    <h4 class="font-bold text-slate-800 mb-2">Effective Communication</h4>
+                    <p class="text-sm text-slate-600">Kids learn to express ideas clearly and listen to teammates, improving interpersonal skills.</p>
+                </div>
+                
+                <div class="bg-white rounded-xl p-6 shadow-md">
+                    <div class="h-12 w-12 rounded-lg bg-purple-100 flex items-center justify-center text-purple-600 mb-4">
+                        <iconify-icon icon="lucide:heart" width="24"></iconify-icon>
+                    </div>
+                    <h4 class="font-bold text-slate-800 mb-2">Emotional Resilience</h4>
+                    <p class="text-sm text-slate-600">Facing challenges together builds emotional strength and coping mechanisms.</p>
+                </div>
+                
+                <div class="bg-white rounded-xl p-6 shadow-md">
+                    <div class="h-12 w-12 rounded-lg bg-red-100 flex items-center justify-center text-red-600 mb-4">
+                        <iconify-icon icon="lucide:target" width="24"></iconify-icon>
+                    </div>
+                    <h4 class="font-bold text-slate-800 mb-2">Goal Setting & Achievement</h4>
+                    <p class="text-sm text-slate-600">Teams set and work toward objectives, experiencing the satisfaction of accomplishment.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section id="reviews" class="py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+        <div class="text-center mb-14">
+            <h2 class="text-4xl font-bold text-slate-800 mb-4">What <span class="text-orange-500">Parents & Schools</span> Say</h2>
+            <p class="text-lg text-slate-600 max-w-3xl mx-auto">See how our team-building activities have made a difference for groups and families.</p>
+        </div>
+        
+        <div class="grid md:grid-cols-3 gap-8">
+            <div class="bg-white rounded-2xl p-8 shadow-lg">
+                <div class="flex items-center mb-6">
+                    <div class="h-14 w-14 rounded-full bg-gradient-to-r from-orange-400 to-pink-500 flex items-center justify-center text-white font-bold text-xl mr-4">
+                        RS
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-slate-800">Rahul Sharma</h4>
+                        <p class="text-sm text-slate-500">Parent, Virar</p>
+                    </div>
+                </div>
+                <p class="text-slate-600 italic mb-6">"My son's school group attended the adventure obstacle course. I've never seen him work so well with others! The communication skills he developed are noticeable even at home."</p>
+                <div class="flex text-amber-400">
+                    <iconify-icon icon="lucide:star" width="20"></iconify-icon>
+                    <iconify-icon icon="lucide:star" width="20"></iconify-icon>
+                    <iconify-icon icon="lucide:star" width="20"></iconify-icon>
+                    <iconify-icon icon="lucide:star" width="20"></iconify-icon>
+                    <iconify-icon icon="lucide:star" width="20"></iconify-icon>
+                </div>
+            </div>
+            
+            <div class="bg-white rounded-2xl p-8 shadow-lg">
+                <div class="flex items-center mb-6">
+                    <div class="h-14 w-14 rounded-full bg-gradient-to-r from-blue-400 to-cyan-500 flex items-center justify-center text-white font-bold text-xl mr-4">
+                        PK
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-slate-800">Priya Kapoor</h4>
+                        <p class="text-sm text-slate-500">School Coordinator, Nallasopara</p>
+                    </div>
+                </div>
+                <p class="text-slate-600 italic mb-6">"We've brought three groups to Maura Wonderlab for team-building. The activities are perfectly scaled for different age groups and the focus on cooperation over competition is exactly what we wanted."</p>
+                <div class="flex text-amber-400">
+                    <iconify-icon icon="lucide:star" width="20"></iconify-icon>
+                    <iconify-icon icon="lucide:star" width="20"></iconify-icon>
+                    <iconify-icon icon="lucide:star" width="20"></iconify-icon>
+                    <iconify-icon icon="lucide:star" width="20"></iconify-icon>
+                    <iconify-icon icon="lucide:star" width="20"></iconify-icon>
+                </div>
+            </div>
+            
+            <div class="bg-white rounded-2xl p-8 shadow-lg">
+                <div class="flex items-center mb-6">
+                    <div class="h-14 w-14 rounded-full bg-gradient-to-r from-green-400 to-emerald-600 flex items-center justify-center text-white font-bold text-xl mr-4">
+                        AS
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-slate-800">Anjali Singh</h4>
+                        <p class="text-sm text-slate-500">Parent, Vasai</p>
+                    </div>
+                </div>
+                <p class="text-slate-600 italic mb-6">"The raft building challenge was incredible! My daughter learned about engineering, teamwork, and perseverance. She hasn't stopped talking about it for weeks!"</p>
+                <div class="flex text-amber-400">
+                    <iconify-icon icon="lucide:star" width="20"></iconify-icon>
+                    <iconify-icon icon="lucide:star" width="20"></iconify-icon>
+                    <iconify-icon icon="lucide:star" width="20"></iconify-icon>
+                    <iconify-icon icon="lucide:star" width="20"></iconify-icon>
+                    <iconify-icon icon="lucide:star" width="20"></iconify-icon>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Locations -->
+    <section id="locations" class="py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+        <div class="text-center mb-14">
+            <h2 class="text-4xl font-bold text-slate-800 mb-4">Team-Building <span class="text-orange-500">Locations</span></h2>
+            <p class="text-lg text-slate-600 max-w-3xl mx-auto">We offer our sports and adventure team-building activities at multiple locations across the region.</p>
+        </div>
+        
+        <div class="grid md:grid-cols-3 gap-8">
+            <div class="bg-gradient-to-br from-white to-orange-50 rounded-2xl p-8 shadow-lg border-2 border-orange-100">
+                <div class="h-12 w-12 rounded-xl bg-orange-100 flex items-center justify-center text-orange-600 mb-6">
+                    <iconify-icon icon="lucide:map-pin" width="24"></iconify-icon>
+                </div>
+                <h3 class="text-2xl font-bold text-slate-800 mb-3">Virar Adventure Base</h3>
+                <p class="text-slate-600 mb-6">Our flagship location with full obstacle courses, archery range, and team challenge zones. Perfect for larger groups.</p>
+                <ul class="space-y-2 text-slate-600 mb-8">
+                    <li class="flex items-center">
+                        <iconify-icon icon="lucide:check-circle" class="text-green-500 mr-2"></iconify-icon>
+                        <span>Full adventure obstacle course</span>
+                    </li>
+                    <li class="flex items-center">
+                        <iconify-icon icon="lucide:check-circle" class="text-green-500 mr-2"></iconify-icon>
+                        <span>Archery & sports facilities</span>
+                    </li>
+                    <li class="flex items-center">
+                        <iconify-icon icon="lucide:check-circle" class="text-green-500 mr-2"></iconify-icon>
+                        <span>Capacity: 30 kids per session</span>
+                    </li>
+                </ul>
+                <button class="w-full bg-orange-500 hover:bg-orange-600 text-white py-3 rounded-lg font-semibold transition-all">
+                    Book Virar Session
+                </button>
+            </div>
+            
+            <div class="bg-gradient-to-br from-white to-blue-50 rounded-2xl p-8 shadow-lg border-2 border-blue-100">
+                <div class="h-12 w-12 rounded-xl bg-blue-100 flex items-center justify-center text-blue-600 mb-6">
+                    <iconify-icon icon="lucide:map-pin" width="24"></iconify-icon>
+                </div>
+                <h3 class="text-2xl font-bold text-slate-800 mb-3">Vasai Sports Ground</h3>
+                <p class="text-slate-600 mb-6">Spacious outdoor facility with dedicated team sports areas and specialized team-building challenge courses.</p>
+                <ul class="space-y-2 text-slate-600 mb-8">
+                    <li class="flex items-center">
+                        <iconify-icon icon="lucide:check-circle" class="text-green-500 mr-2"></iconify-icon>
+                        <span>Large sports field for group games</span>
+                    </li>
+                    <li class="flex items-center">
+                        <iconify-icon icon="lucide:check-circle" class="text-green-500 mr-2"></iconify-icon>
+                        <span>Indoor backup for rainy days</span>
+                    </li>
+                    <li class="flex items-center">
+                        <iconify-icon icon="lucide:check-circle" class="text-green-500 mr-2"></iconify-icon>
+                        <span>Capacity: 25 kids per session</span>
+                    </li>
+                </ul>
+                <button class="w-full bg-blue-500 hover:bg-blue-600 text-white py-3 rounded-lg font-semibold transition-all">
+                    Book Vasai Session
+                </button>
+            </div>
+            
+            <div class="bg-gradient-to-br from-white to-green-50 rounded-2xl p-8 shadow-lg border-2 border-green-100">
+                <div class="h-12 w-12 rounded-xl bg-green-100 flex items-center justify-center text-green-600 mb-6">
+                    <iconify-icon icon="lucide:map-pin" width="24"></iconify-icon>
+                </div>
+                <h3 class="text-2xl font-bold text-slate-800 mb-3">Nallasopara Nature Camp</h3>
+                <p class="text-slate-600 mb-6">Forest-edge location perfect for survival challenges, scavenger hunts, and nature-based team activities.</p>
+                <ul class="space-y-2 text-slate-600 mb-8">
+                    <li class="flex items-center">
+                        <iconify-icon icon="lucide:check-circle" class="text-green-500 mr-2"></iconify-icon>
+                        <span>Nature trails & survival challenges</span>
+                    </li>
+                    <li class="flex items-center">
+                        <iconify-icon icon="lucide:check-circle" class="text-green-500 mr-2"></iconify-icon>
+                        <span>Campfire & reflection areas</span>
+                    </li>
+                    <li class="flex items-center">
+                        <iconify-icon icon="lucide:check-circle" class="text-green-500 mr-2"></iconify-icon>
+                        <span>Capacity: 20 kids per session</span>
+                    </li>
+                </ul>
+                <button class="w-full bg-green-500 hover:bg-green-600 text-white py-3 rounded-lg font-semibold transition-all">
+                    Book Nallasopara Session
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+        <div class="bg-gradient-to-r from-orange-500 to-red-500 rounded-3xl p-12 text-center text-white">
+            <h2 class="text-4xl font-bold mb-6">Ready to Build <span class="text-yellow-300">Team Spirit</span>?</h2>
+            <p class="text-xl mb-10 max-w-2xl mx-auto">Book a team-building session for your group, school, or community. We customize activities based on age, group size, and specific goals.</p>
+            
+            <div class="flex flex-wrap justify-center gap-6">
+                <button class="bg-white text-orange-600 hover:bg-slate-100 px-10 py-4 rounded-full text-lg font-bold transition-all shadow-[0px_6px_0px_0px_rgba(255,255,255,0.3)] hover:shadow-[0px_3px_0px_0px_rgba(255,255,255,0.3)] hover:translate-y-[3px]">
+                    <iconify-icon icon="lucide:calendar" class="mr-2" width="22"></iconify-icon>
+                    Schedule Your Session
+                </button>
+                <button class="bg-transparent border-2 border-white hover:bg-white/20 px-10 py-4 rounded-full text-lg font-bold transition-all">
+                    <iconify-icon icon="lucide:download" class="mr-2" width="22"></iconify-icon>
+                    Download Brochure
+                </button>
+            </div>
+            
+            <p class="mt-10 text-orange-100">
+                <iconify-icon icon="lucide:phone" class="mr-2" width="18"></iconify-icon>
+                Call us for group discounts: <strong class="text-white">+91 77680 31411</strong>
+            </p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-white pt-20 pb-10 rounded-t-[3rem] mt-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
+                <div class="col-span-1 md:col-span-2">
+                    <div class="flex items-center gap-2 mb-6">
+                         <div class="h-8 w-8 bg-orange-500 rounded-lg flex items-center justify-center text-white">
+                            <iconify-icon icon="lucide:tent" width="18"></iconify-icon>
+                        </div>
+                        <span class="brand-font text-2xl font-bold">Maura <span class="text-orange-400">Wonderlab</span></span>
+                    </div>
+                    <p class="text-slate-400 max-w-sm mb-6">Creating unforgettable childhood memories through nature, science, and adventure. The #1 Choice for Kids Camping.</p>
+                    <div class="flex gap-4">
+                        <a href="#" class="h-10 w-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-orange-500 transition-colors"><iconify-icon icon="lucide:instagram" width="20"></iconify-icon></a>
+                        <a href="#" class="h-10 w-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-blue-500 transition-colors"><iconify-icon icon="lucide:facebook" width="20"></iconify-icon></a>
+                        <a href="#" class="h-10 w-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-green-500 transition-colors"><iconify-icon icon="lucide:phone" width="20"></iconify-icon></a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="font-bold text-lg mb-6">Explore</h4>
+                    <ul class="space-y-4 text-slate-400 text-sm">
+                        <li><a href="#" class="hover:text-white transition-colors">Our Story</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Safety Protocols</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Gallery</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Become a Counselor</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-bold text-lg mb-6">Camp Locations</h4>
+                    <ul class="space-y-4 text-slate-400 text-sm">
+                        <li><a href="#" class="hover:text-white transition-colors">Camping in Virar</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Camping in Vasai</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Camping in Nallasopara</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Day Camps Mumbai</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-slate-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="text-slate-500 text-sm">© 2024 Maura Wonderlab. All rights reserved.</p>
+                <div class="flex gap-6 text-sm text-slate-500">
+                    <a href="#" class="hover:text-white">Privacy</a>
+                    <a href="#" class="hover:text-white">Terms</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Functionality
+        const mobileMenuButton = document.getElementById('mobileMenuButton');
+        const closeMenuButton = document.getElementById('closeMenuButton');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const menuOverlay = document.getElementById('menuOverlay');
+        
+        function openMobileMenu() {
+            mobileMenu.classList.add('open');
+            menuOverlay.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+        
+        function closeMobileMenu() {
+            mobileMenu.classList.remove('open');
+            menuOverlay.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+        
+        mobileMenuButton.addEventListener('click', openMobileMenu);
+        closeMenuButton.addEventListener('click', closeMobileMenu);
+        menuOverlay.addEventListener('click', closeMobileMenu);
+        
+        document.querySelectorAll('#mobileMenu a').forEach(link => {
+            link.addEventListener('click', closeMobileMenu);
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                const href = this.getAttribute('href');
+                
+                if (href === '#' || href.startsWith('#') && href.length > 1) {
+                    e.preventDefault();
+                    
+                    const targetId = href.substring(1);
+                    const targetElement = document.getElementById(targetId);
+                    
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                    }
+                }
+            });
+        });
+        
+        // Close menu on ESC key press
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && mobileMenu.classList.contains('open')) {
+                closeMobileMenu();
+            }
+        });
+        
+        // Add animation to cards on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+        
+        // Observe all cards for animation
+        document.querySelectorAll('.group').forEach(card => {
+            card.style.opacity = '0.9';
+            card.style.transform = 'translateY(10px)';
+            card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+            observer.observe(card);
+        });
+        
+        // Book button functionality
+        document.querySelectorAll('button:contains("Book")').forEach(button => {
+            button.addEventListener('click', function() {
+                // In a real implementation, this would open a booking modal
+                alert("Thank you for your interest! Our team will contact you shortly to schedule your team-building session.");
+            });
+        });
+    </script>
+</body>
+</html>

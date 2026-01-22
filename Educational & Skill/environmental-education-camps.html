@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Environmental Education Camps | Maura Wonderlab | Kids Nature Learning Programs</title>
+    <meta name="description" content="Maura Wonderlab offers immersive environmental education camps for kids in Virar, Nallasopara, and Vasai. Join our nature learning programs, ecology workshops, and sustainability camps today!">
+    <meta name="keywords" content="environmental education camps for kids, nature learning programs, ecology workshops for children, sustainability camps, outdoor environmental education, kids conservation activities, environmental science camps, green learning programs, eco-education for kids, climate awareness camps">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Iconify (Lucide Icons) -->
+    <script src="https://cdn.jsdelivr.net/npm/iconify-icon@1.0.8/dist/iconify-icon.min.js"></script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=Nunito:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        /* Custom Font Settings for Childish/Playful Vibe */
+        body {
+            font-family: 'Nunito', sans-serif;
+        }
+        h1, h2, h3, h4, h5, h6, .brand-font {
+            font-family: 'Fredoka', sans-serif;
+        }
+        
+        /* Playful Blob Pattern */
+        .bg-pattern {
+            background-color: #FFFDF5;
+            background-image: radial-gradient(#D1FAE5 1px, transparent 1px), radial-gradient(#FEF3C7 1px, transparent 1px);
+            background-size: 40px 40px;
+            background-position: 0 0, 20px 20px;
+        }
+
+        /* Eco-themed gradient */
+        .eco-gradient {
+            background: linear-gradient(135deg, #10B981 0%, #059669 50%, #047857 100%);
+        }
+        
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #F0FDF4; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #10B981; 
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #059669; 
+        }
+
+        /* Mobile Menu Animation */
+        .mobile-menu {
+            transform: translateX(100%);
+            transition: transform 0.3s ease-in-out;
+        }
+        
+        .mobile-menu.open {
+            transform: translateX(0);
+        }
+        
+        .menu-overlay {
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease-in-out, visibility 0.3s;
+        }
+        
+        .menu-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        /* Activity Card Hover Effects */
+        .activity-card {
+            transition: all 0.3s ease;
+        }
+        
+        .activity-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px -10px rgba(16, 185, 129, 0.2);
+        }
+    </style>
+</head>
+<body class="bg-pattern text-slate-600 antialiased selection:bg-emerald-200 selection:text-emerald-900">
+
+    <!-- Navbar -->
+    <nav class="fixed w-full z-50 top-0 transition-all duration-300 backdrop-blur-md bg-white/80 border-b-2 border-slate-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center gap-2 cursor-pointer" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+                    <img src="maura wonderlab logo.png" alt="Maura Wonderlab" width="50px">
+                    <span class="brand-font text-2xl font-semibold tracking-tight text-slate-800">
+                        Maura <span class="text-emerald-600">Wonderlab</span>
+                    </span>
+                </div>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="#activities" class="text-sm font-semibold text-slate-600 hover:text-emerald-500 transition-colors">Activities</a>
+                    <a href="#benefits" class="text-sm font-semibold text-slate-600 hover:text-emerald-500 transition-colors">Benefits</a>
+                    <a href="#camp-types" class="text-sm font-semibold text-slate-600 hover:text-emerald-500 transition-colors">Camp Types</a>
+                    <a href="#schedule" class="text-sm font-semibold text-slate-600 hover:text-emerald-500 transition-colors">Schedule</a>
+                    <button class="bg-emerald-500 hover:bg-emerald-600 text-white px-5 py-2.5 rounded-full text-sm font-semibold transition-all shadow-[0px_4px_0px_0px_rgba(5,150,105,1)] hover:shadow-[0px_2px_0px_0px_rgba(5,150,105,1)] hover:translate-y-[2px]">
+                        Book Eco-Camp
+                    </button>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobileMenuButton" class="text-slate-600 hover:text-emerald-500 p-2">
+                        <iconify-icon icon="lucide:menu" width="28" stroke-width="1.5"></iconify-icon>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu Overlay -->
+    <div id="menuOverlay" class="menu-overlay fixed inset-0 bg-black/50 z-40 md:hidden"></div>
+
+    <!-- Mobile Menu -->
+    <div id="mobileMenu" class="mobile-menu fixed top-0 right-0 h-full w-64 bg-white z-50 shadow-2xl md:hidden p-6">
+        <div class="flex justify-between items-center mb-8">
+            <div class="flex items-center gap-2">
+                <div class="h-8 w-8 bg-emerald-500 rounded-lg flex items-center justify-center text-white">
+                    <iconify-icon icon="lucide:leaf" width="18"></iconify-icon>
+                </div>
+                <span class="brand-font text-xl font-semibold text-slate-800">Maura <span class="text-emerald-600">Wonderlab</span></span>
+            </div>
+            <button id="closeMenuButton" class="text-slate-600 hover:text-emerald-500 p-2">
+                <iconify-icon icon="lucide:x" width="24" stroke-width="1.5"></iconify-icon>
+            </button>
+        </div>
+        
+        <div class="space-y-6">
+            <a href="#activities" class="block py-3 text-slate-700 font-semibold border-b border-slate-100" onclick="closeMobileMenu()">Activities</a>
+            <a href="#benefits" class="block py-3 text-slate-700 font-semibold border-b border-slate-100" onclick="closeMobileMenu()">Benefits</a>
+            <a href="#camp-types" class="block py-3 text-slate-700 font-semibold border-b border-slate-100" onclick="closeMobileMenu()">Camp Types</a>
+            <a href="#schedule" class="block py-3 text-slate-700 font-semibold border-b border-slate-100" onclick="closeMobileMenu()">Schedule</a>
+            <div class="pt-4">
+                <button class="w-full bg-emerald-500 hover:bg-emerald-600 text-white px-5 py-3 rounded-full text-sm font-semibold transition-all">
+                    Book Eco-Camp
+                </button>
+            </div>
+        </div>
+        
+        <div class="absolute bottom-8 left-6 right-6">
+            <p class="text-sm text-slate-500 mb-4">Contact us:</p>
+            <div class="flex items-center gap-2 text-slate-700 mb-2">
+                <iconify-icon icon="lucide:phone" width="16"></iconify-icon>
+                <span class="text-sm">+91 77680 31411</span>
+            </div>
+            <div class="flex items-center gap-2 text-slate-700">
+                <iconify-icon icon="lucide:mail" width="16"></iconify-icon>
+                <span class="text-sm">maurawonderlab@gmail.com</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="pt-28 pb-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+        <div class="text-center mb-12">
+            <div class="inline-flex items-center gap-2 bg-emerald-100 text-emerald-800 px-4 py-2 rounded-full text-sm font-semibold mb-6">
+                <iconify-icon icon="lucide:leaf" width="16"></iconify-icon>
+                Eco-Education for Future Stewards
+            </div>
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-800 mb-6">
+                <span class="text-emerald-600">Environmental Education</span><br> Camps for Kids
+            </h1>
+            <p class="text-xl text-slate-600 max-w-3xl mx-auto mb-10">
+                Immersive nature learning programs where children explore ecosystems, practice sustainability, and become young environmental stewards through hands-on activities.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <button class="bg-emerald-500 hover:bg-emerald-600 text-white px-8 py-3.5 rounded-full text-lg font-semibold transition-all shadow-[0px_6px_0px_0px_rgba(5,150,105,1)] hover:shadow-[0px_3px_0px_0px_rgba(5,150,105,1)] hover:translate-y-[3px]">
+                    Explore Eco-Activities
+                </button>
+                <button class="bg-white border-2 border-emerald-300 text-emerald-700 hover:bg-emerald-50 px-8 py-3.5 rounded-full text-lg font-semibold transition-all">
+                    Download Brochure
+                </button>
+            </div>
+        </div>
+        
+        <!-- Stats Section -->
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mt-16">
+            <div class="bg-white rounded-2xl p-6 shadow-lg text-center">
+                <div class="text-3xl font-bold text-emerald-600 mb-2">500+</div>
+                <div class="text-slate-600 font-semibold">Young Environmentalists</div>
+            </div>
+            <div class="bg-white rounded-2xl p-6 shadow-lg text-center">
+                <div class="text-3xl font-bold text-emerald-600 mb-2">30+</div>
+                <div class="text-slate-600 font-semibold">Eco-Activities</div>
+            </div>
+            <div class="bg-white rounded-2xl p-6 shadow-lg text-center">
+                <div class="text-3xl font-bold text-emerald-600 mb-2">15+</div>
+                <div class="text-slate-600 font-semibold">Local Ecosystems</div>
+            </div>
+            <div class="bg-white rounded-2xl p-6 shadow-lg text-center">
+                <div class="text-3xl font-bold text-emerald-600 mb-2">100%</div>
+                <div class="text-slate-600 font-semibold">Hands-On Learning</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Environmental Activities Section -->
+    <section id="activities" class="py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+        <div class="text-center mb-12">
+            <h2 class="text-3xl md:text-4xl font-bold text-slate-800 mb-4">
+                Hands-On <span class="text-emerald-600">Environmental Activities</span>
+            </h2>
+            <p class="text-lg text-slate-600 max-w-3xl mx-auto">
+                Our environmental education camps feature immersive, interactive activities designed to teach children about ecology, conservation, and sustainable living.
+            </p>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+            <!-- Activity 1 -->
+            <div class="activity-card bg-white rounded-2xl p-6 shadow-lg border border-emerald-100">
+                <div class="h-12 w-12 eco-gradient rounded-xl flex items-center justify-center text-white mb-4">
+                    <iconify-icon icon="lucide:tree-pine" width="24"></iconify-icon>
+                </div>
+                <h3 class="text-xl font-bold text-slate-800 mb-3">Ecosystem Exploration</h3>
+                <p class="text-slate-600 mb-4">Children explore local forests, wetlands, and coastal ecosystems to understand biodiversity and interdependence.</p>
+                <ul class="space-y-2 text-sm text-slate-600">
+                    <li class="flex items-center gap-2"><iconify-icon icon="lucide:check-circle" class="text-emerald-500"></iconify-icon> Nature trail walks with field guides</li>
+                    <li class="flex items-center gap-2"><iconify-icon icon="lucide:check-circle" class="text-emerald-500"></iconify-icon> Plant and animal identification</li>
+                    <li class="flex items-center gap-2"><iconify-icon icon="lucide:check-circle" class="text-emerald-500"></iconify-icon> Soil and water quality testing</li>
+                </ul>
+            </div>
+            
+            <!-- Activity 2 -->
+            <div class="activity-card bg-white rounded-2xl p-6 shadow-lg border border-emerald-100">
+                <div class="h-12 w-12 eco-gradient rounded-xl flex items-center justify-center text-white mb-4">
+                    <iconify-icon icon="lucide:recycle" width="24"></iconify-icon>
+                </div>
+                <h3 class="text-xl font-bold text-slate-800 mb-3">Waste Management Workshop</h3>
+                <p class="text-slate-600 mb-4">Interactive sessions on recycling, composting, and waste reduction with hands-on sorting and upcycling projects.</p>
+                <ul class="space-y-2 text-sm text-slate-600">
+                    <li class="flex items-center gap-2"><iconify-icon icon="lucide:check-circle" class="text-emerald-500"></iconify-icon> DIY composting demonstration</li>
+                    <li class="flex items-center gap-2"><iconify-icon icon="lucide:check-circle" class="text-emerald-500"></iconify-icon> Plastic waste upcycling crafts</li>
+                    <li class="flex items-center gap-2"><iconify-icon icon="lucide:check-circle" class="text-emerald-500"></iconify-icon> Zero-waste lifestyle basics</li>
+                </ul>
+            </div>
+            
+            <!-- Activity 3 -->
+            <div class="activity-card bg-white rounded-2xl p-6 shadow-lg border border-emerald-100">
+                <div class="h-12 w-12 eco-gradient rounded-xl flex items-center justify-center text-white mb-4">
+                    <iconify-icon icon="lucide:seedling" width="24"></iconify-icon>
+                </div>
+                <h3 class="text-xl font-bold text-slate-800 mb-3">Organic Gardening</h3>
+                <p class="text-slate-600 mb-4">Children learn to grow vegetables and herbs using organic methods, understanding the farm-to-table journey.</p>
+                <ul class="space-y-2 text-sm text-slate-600">
+                    <li class="flex items-center gap-2"><iconify-icon icon="lucide:check-circle" class="text-emerald-500"></iconify-icon> Planting and maintaining garden beds</li>
+                    <li class="flex items-center gap-2"><iconify-icon icon="lucide:check-circle" class="text-emerald-500"></iconify-icon> Natural pest control methods</li>
+                    <li class="flex items-center gap-2"><iconify-icon icon="lucide:check-circle" class="text-emerald-500"></iconify-icon> Harvesting and tasting fresh produce</li>
+                </ul>
+            </div>
+            
+            <!-- Activity 4 -->
+            <div class="activity-card bg-white rounded-2xl p-6 shadow-lg border border-emerald-100">
+                <div class="h-12 w-12 eco-gradient rounded-xl flex items-center justify-center text-white mb-4">
+                    <iconify-icon icon="lucide:wind" width="24"></iconify-icon>
+                </div>
+                <h3 class="text-xl font-bold text-slate-800 mb-3">Renewable Energy Projects</h3>
+                <p class="text-slate-600 mb-4">Simple experiments and projects demonstrating solar, wind, and other renewable energy sources.</p>
+                <ul class="space-y-2 text-sm text-slate-600">
+                    <li class="flex items-center gap-2"><iconify-icon icon="lucide:check-circle" class="text-emerald-500"></iconify-icon> Building mini solar ovens</li>
+                    <li class="flex items-center gap-2"><iconify-icon icon="lucide:check-circle" class="text-emerald-500"></iconify-icon> Creating wind turbine models</li>
+                    <li class="flex items-center gap-2"><iconify-icon icon="lucide:check-circle" class="text-emerald-500"></iconify-icon> Energy conservation experiments</li>
+                </ul>
+            </div>
+            
+            <!-- Activity 5 -->
+            <div class="activity-card bg-white rounded-2xl p-6 shadow-lg border border-emerald-100">
+                <div class="h-12 w-12 eco-gradient rounded-xl flex items-center justify-center text-white mb-4">
+                    <iconify-icon icon="lucide:droplets" width="24"></iconify-icon>
+                </div>
+                <h3 class="text-xl font-bold text-slate-800 mb-3">Water Conservation</h3>
+                <p class="text-slate-600 mb-4">Understanding the water cycle, pollution sources, and practical water conservation techniques.</p>
+                <ul class="space-y-2 text-sm text-slate-600">
+                    <li class="flex items-center gap-2"><iconify-icon icon="lucide:check-circle" class="text-emerald-500"></iconify-icon> Rainwater harvesting models</li>
+                    <li class="flex items-center gap-2"><iconify-icon icon="lucide:check-circle" class="text-emerald-500"></iconify-icon> Water filtration experiments</li>
+                    <li class="flex items-center gap-2"><iconify-icon icon="lucide:check-circle" class="text-emerald-500"></iconify-icon> Watershed mapping activities</li>
+                </ul>
+            </div>
+            
+            <!-- Activity 6 -->
+            <div class="activity-card bg-white rounded-2xl p-6 shadow-lg border border-emerald-100">
+                <div class="h-12 w-12 eco-gradient rounded-xl flex items-center justify-center text-white mb-4">
+                    <iconify-icon icon="lucide:bug" width="24"></iconify-icon>
+                </div>
+                <h3 class="text-xl font-bold text-slate-800 mb-3">Wildlife Conservation</h3>
+                <p class="text-slate-600 mb-4">Learning about local wildlife, habitat protection, and citizen science projects.</p>
+                <ul class="space-y-2 text-sm text-slate-600">
+                    <li class="flex items-center gap-2"><iconify-icon icon="lucide:check-circle" class="text-emerald-500"></iconify-icon> Bird watching and identification</li>
+                    <li class="flex items-center gap-2"><iconify-icon icon="lucide:check-circle" class="text-emerald-500"></iconify-icon> Building insect hotels</li>
+                    <li class="flex items-center gap-2"><iconify-icon icon="lucide:check-circle" class="text-emerald-500"></iconify-icon> Creating wildlife-friendly spaces</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="text-center">
+            <button class="bg-emerald-500 hover:bg-emerald-600 text-white px-8 py-3.5 rounded-full text-lg font-semibold transition-all shadow-[0px_6px_0px_0px_rgba(5,150,105,1)] hover:shadow-[0px_3px_0px_0px_rgba(5,150,105,1)] hover:translate-y-[3px]">
+                View All 30+ Eco-Activities
+            </button>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section id="benefits" class="py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto bg-emerald-50 rounded-3xl mb-16">
+        <div class="text-center mb-12">
+            <h2 class="text-3xl md:text-4xl font-bold text-slate-800 mb-4">
+                Benefits of <span class="text-emerald-600">Environmental Education</span>
+            </h2>
+            <p class="text-lg text-slate-600 max-w-3xl mx-auto">
+                Our camps provide more than just fun activities - they foster lifelong environmental stewardship and essential life skills.
+            </p>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div class="bg-white rounded-2xl p-6 shadow-md">
+                <div class="h-12 w-12 bg-emerald-100 rounded-xl flex items-center justify-center text-emerald-600 mb-4">
+                    <iconify-icon icon="lucide:brain" width="24"></iconify-icon>
+                </div>
+                <h3 class="text-lg font-bold text-slate-800 mb-3">Critical Thinking</h3>
+                <p class="text-slate-600 text-sm">Children learn to analyze environmental problems and develop creative solutions through hands-on projects.</p>
+            </div>
+            
+            <div class="bg-white rounded-2xl p-6 shadow-md">
+                <div class="h-12 w-12 bg-emerald-100 rounded-xl flex items-center justify-center text-emerald-600 mb-4">
+                    <iconify-icon icon="lucide:heart-handshake" width="24"></iconify-icon>
+                </div>
+                <h3 class="text-lg font-bold text-slate-800 mb-3">Empathy & Responsibility</h3>
+                <p class="text-slate-600 text-sm">Developing care for living things and understanding our responsibility toward the planet.</p>
+            </div>
+            
+            <div class="bg-white rounded-2xl p-6 shadow-md">
+                <div class="h-12 w-12 bg-emerald-100 rounded-xl flex items-center justify-center text-emerald-600 mb-4">
+                    <iconify-icon icon="lucide:users" width="24"></iconify-icon>
+                </div>
+                <h3 class="text-lg font-bold text-slate-800 mb-3">Teamwork Skills</h3>
+                <p class="text-slate-600 text-sm">Collaborative projects teach children to work together toward common environmental goals.</p>
+            </div>
+            
+            <div class="bg-white rounded-2xl p-6 shadow-md">
+                <div class="h-12 w-12 bg-emerald-100 rounded-xl flex items-center justify-center text-emerald-600 mb-4">
+                    <iconify-icon icon="lucide:activity" width="24"></iconify-icon>
+                </div>
+                <h3 class="text-lg font-bold text-slate-800 mb-3">Physical Health</h3>
+                <p class="text-slate-600 text-sm">Outdoor activities promote physical fitness, reduce screen time, and improve overall wellbeing.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Camp Types Section -->
+    <section id="camp-types" class="py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+        <div class="text-center mb-12">
+            <h2 class="text-3xl md:text-4xl font-bold text-slate-800 mb-4">
+                Our <span class="text-emerald-600">Environmental Camp Programs</span>
+            </h2>
+            <p class="text-lg text-slate-600 max-w-3xl mx-auto">
+                We offer different types of environmental education camps to suit various age groups and interests.
+            </p>
+        </div>
+        
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            <!-- Day Camp -->
+            <div class="bg-white rounded-2xl shadow-xl overflow-hidden border border-emerald-100">
+                <div class="eco-gradient p-6">
+                    <h3 class="text-2xl font-bold text-white">Eco-Day Camps</h3>
+                    <p class="text-emerald-100">Ages 6-12 | 9 AM - 4 PM</p>
+                </div>
+                <div class="p-6">
+                    <div class="text-3xl font-bold text-slate-800 mb-2">₹1,499<span class="text-lg text-slate-500 font-normal">/day</span></div>
+                    <p class="text-slate-600 mb-6">Perfect introduction to environmental education with focused daily themes.</p>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-center gap-3"><iconify-icon icon="lucide:check-circle" class="text-emerald-500"></iconify-icon><span>Nature exploration activities</span></li>
+                        <li class="flex items-center gap-3"><iconify-icon icon="lucide:check-circle" class="text-emerald-500"></iconify-icon><span>Eco-crafts and upcycling projects</span></li>
+                        <li class="flex items-center gap-3"><iconify-icon icon="lucide:check-circle" class="text-emerald-500"></iconify-icon><span>Organic gardening basics</span></li>
+                        <li class="flex items-center gap-3"><iconify-icon icon="lucide:check-circle" class="text-emerald-500"></iconify-icon><span>Environmental games and storytelling</span></li>
+                    </ul>
+                    <button class="w-full bg-emerald-500 hover:bg-emerald-600 text-white py-3 rounded-full font-semibold transition-colors">
+                        Book Day Camp
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Weekend Camp -->
+            <div class="bg-white rounded-2xl shadow-xl overflow-hidden border border-emerald-100 transform scale-105">
+                <div class="relative">
+                    <div class="eco-gradient p-6">
+                        <div class="absolute top-4 right-4 bg-yellow-400 text-slate-800 px-3 py-1 rounded-full text-xs font-bold">MOST POPULAR</div>
+                        <h3 class="text-2xl font-bold text-white">Weekend Eco-Immersion</h3>
+                        <p class="text-emerald-100">Ages 8-14 | Friday PM - Sunday PM</p>
+                    </div>
+                </div>
+                <div class="p-6">
+                    <div class="text-3xl font-bold text-slate-800 mb-2">₹4,999<span class="text-lg text-slate-500 font-normal">/weekend</span></div>
+                    <p class="text-slate-600 mb-6">Comprehensive environmental education with overnight camping experience.</p>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-center gap-3"><iconify-icon icon="lucide:check-circle" class="text-emerald-500"></iconify-icon><span>All Day Camp activities included</span></li>
+                        <li class="flex items-center gap-3"><iconify-icon icon="lucide:check-circle" class="text-emerald-500"></iconify-icon><span>Night sky observation & astronomy</span></li>
+                        <li class="flex items-center gap-3"><iconify-icon icon="lucide:check-circle" class="text-emerald-500"></iconify-icon><span>Campfire ecology discussions</span></li>
+                        <li class="flex items-center gap-3"><iconify-icon icon="lucide:check-circle" class="text-emerald-500"></iconify-icon><span>Team-based conservation projects</span></li>
+                    </ul>
+                    <button class="w-full bg-emerald-500 hover:bg-emerald-600 text-white py-3 rounded-full font-semibold transition-colors">
+                        Book Weekend Camp
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Summer Camp -->
+            <div class="bg-white rounded-2xl shadow-xl overflow-hidden border border-emerald-100">
+                <div class="eco-gradient p-6">
+                    <h3 class="text-2xl font-bold text-white">Summer Eco-Leadership</h3>
+                    <p class="text-emerald-100">Ages 10-16 | 1-2 Week Programs</p>
+                </div>
+                <div class="p-6">
+                    <div class="text-3xl font-bold text-slate-800 mb-2">₹12,999<span class="text-lg text-slate-500 font-normal">/week</span></div>
+                    <p class="text-slate-600 mb-6">Advanced environmental education with leadership development focus.</p>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-center gap-3"><iconify-icon icon="lucide:check-circle" class="text-emerald-500"></iconify-icon><span>All Weekend Camp activities included</span></li>
+                        <li class="flex items-center gap-3"><iconify-icon icon="lucide:check-circle" class="text-emerald-500"></iconify-icon><span>Environmental project planning</span></li>
+                        <li class="flex items-center gap-3"><iconify-icon icon="lucide:check-circle" class="text-emerald-500"></iconify-icon><span>Community action planning</span></li>
+                        <li class="flex items-center gap-3"><iconify-icon icon="lucide:check-circle" class="text-emerald-500"></iconify-icon><span>Certificate of Environmental Leadership</span></li>
+                    </ul>
+                    <button class="w-full bg-emerald-500 hover:bg-emerald-600 text-white py-3 rounded-full font-semibold transition-colors">
+                        Book Summer Camp
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Camp Schedule Section -->
+    <section id="schedule" class="py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+        <div class="text-center mb-12">
+            <h2 class="text-3xl md:text-4xl font-bold text-slate-800 mb-4">
+                Environmental Camp <span class="text-emerald-600">Schedule</span>
+            </h2>
+            <p class="text-lg text-slate-600 max-w-3xl mx-auto">
+                A sample day at our environmental education camp shows the balance of learning, exploration, and fun.
+            </p>
+        </div>
+        
+        <div class="bg-white rounded-2xl shadow-lg p-6 max-w-4xl mx-auto">
+            <div class="space-y-4">
+                <div class="flex items-start gap-4 p-4 bg-emerald-50 rounded-xl">
+                    <div class="bg-emerald-500 text-white px-4 py-2 rounded-lg font-bold min-w-[100px] text-center">8:30 AM</div>
+                    <div>
+                        <h4 class="font-bold text-slate-800 mb-1">Morning Eco-Circle</h4>
+                        <p class="text-slate-600 text-sm">Daily theme introduction, weather observation, and setting environmental intentions for the day.</p>
+                    </div>
+                </div>
+                
+                <div class="flex items-start gap-4 p-4 bg-white rounded-xl">
+                    <div class="bg-emerald-500 text-white px-4 py-2 rounded-lg font-bold min-w-[100px] text-center">9:30 AM</div>
+                    <div>
+                        <h4 class="font-bold text-slate-800 mb-1">Ecosystem Exploration</h4>
+                        <p class="text-slate-600 text-sm">Guided nature walk focusing on local flora and fauna, with field journal documentation.</p>
+                    </div>
+                </div>
+                
+                <div class="flex items-start gap-4 p-4 bg-emerald-50 rounded-xl">
+                    <div class="bg-emerald-500 text-white px-4 py-2 rounded-lg font-bold min-w-[100px] text-center">11:00 AM</div>
+                    <div>
+                        <h4 class="font-bold text-slate-800 mb-1">Hands-On Workshop</h4>
+                        <p class="text-slate-600 text-sm">Daily environmental project: composting, seed planting, water testing, or upcycling crafts.</p>
+                    </div>
+                </div>
+                
+                <div class="flex items-start gap-4 p-4 bg-white rounded-xl">
+                    <div class="bg-emerald-500 text-white px-4 py-2 rounded-lg font-bold min-w-[100px] text-center">1:00 PM</div>
+                    <div>
+                        <h4 class="font-bold text-slate-800 mb-1">Eco-Lunch & Discussion</h4>
+                        <p class="text-slate-600 text-sm">Healthy meal with discussion about food sources, packaging, and sustainable eating.</p>
+                    </div>
+                </div>
+                
+                <div class="flex items-start gap-4 p-4 bg-emerald-50 rounded-xl">
+                    <div class="bg-emerald-500 text-white px-4 py-2 rounded-lg font-bold min-w-[100px] text-center">2:30 PM</div>
+                    <div>
+                        <h4 class="font-bold text-slate-800 mb-1">Conservation Games</h4>
+                        <p class="text-slate-600 text-sm">Interactive games teaching environmental concepts like biodiversity, resource management, and ecology.</p>
+                    </div>
+                </div>
+                
+                <div class="flex items-start gap-4 p-4 bg-white rounded-xl">
+                    <div class="bg-emerald-500 text-white px-4 py-2 rounded-lg font-bold min-w-[100px] text-center">4:00 PM</div>
+                    <div>
+                        <h4 class="font-bold text-slate-800 mb-1">Reflection & Project Share</h4>
+                        <p class="text-slate-600 text-sm">Children share what they learned and created, reinforcing environmental stewardship values.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-8 p-4 bg-emerald-100 rounded-xl">
+                <p class="text-emerald-800 font-semibold text-center">
+                    <iconify-icon icon="lucide:info" class="inline mr-2"></iconify-icon>
+                    Weekend and summer camps include additional evening activities: night hikes, astronomy, campfire ecology talks, and team conservation projects.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+        <div class="bg-gradient-to-r from-emerald-500 to-teal-600 rounded-3xl p-8 md:p-12 text-white text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-4">Ready to Nurture Young Environmentalists?</h2>
+            <p class="text-emerald-100 text-lg mb-8 max-w-2xl mx-auto">
+                Join our environmental education camps and give your child the gift of nature connection, ecological understanding, and environmental stewardship skills.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <button class="bg-white text-emerald-700 hover:bg-emerald-50 px-8 py-3.5 rounded-full text-lg font-semibold transition-colors">
+                    Book a Camp Today
+                </button>
+                <button class="bg-transparent border-2 border-white text-white hover:bg-white/10 px-8 py-3.5 rounded-full text-lg font-semibold transition-colors">
+                    Schedule a Visit
+                </button>
+            </div>
+            <p class="mt-6 text-emerald-100 text-sm">
+                Have questions? Call us at <span class="font-bold">+91 77680 31411</span> or email <span class="font-bold">maurawonderlab@gmail.com</span>
+            </p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-white pt-20 pb-10 rounded-t-[3rem] mt-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
+                <div class="col-span-1 md:col-span-2">
+                    <div class="flex items-center gap-2 mb-6">
+                         <div class="h-8 w-8 bg-emerald-500 rounded-lg flex items-center justify-center text-white">
+                            <iconify-icon icon="lucide:leaf" width="18"></iconify-icon>
+                        </div>
+                        <span class="brand-font text-2xl font-bold">Maura <span class="text-emerald-400">Wonderlab</span></span>
+                    </div>
+                    <p class="text-slate-400 max-w-sm mb-6">Creating the next generation of environmental stewards through immersive nature education, hands-on conservation activities, and sustainable living practices.</p>
+                    <div class="flex gap-4">
+                        <a href="#" class="h-10 w-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-emerald-500 transition-colors"><iconify-icon icon="lucide:instagram" width="20"></iconify-icon></a>
+                        <a href="#" class="h-10 w-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-blue-500 transition-colors"><iconify-icon icon="lucide:facebook" width="20"></iconify-icon></a>
+                        <a href="#" class="h-10 w-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-green-500 transition-colors"><iconify-icon icon="lucide:phone" width="20"></iconify-icon></a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="font-bold text-lg mb-6">Explore</h4>
+                    <ul class="space-y-4 text-slate-400 text-sm">
+                        <li><a href="#" class="hover:text-white transition-colors">Our Story</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Safety Protocols</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Gallery</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Become a Counselor</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-bold text-lg mb-6">Camp Locations</h4>
+                    <ul class="space-y-4 text-slate-400 text-sm">
+                        <li><a href="#" class="hover:text-white transition-colors">Camping in Virar</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Camping in Vasai</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Camping in Nallasopara</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Day Camps Mumbai</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-slate-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="text-slate-500 text-sm">© 2024 Maura Wonderlab. All rights reserved.</p>
+                <div class="flex gap-6 text-sm text-slate-500">
+                    <a href="#" class="hover:text-white">Privacy</a>
+                    <a href="#" class="hover:text-white">Terms</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Functionality
+        const mobileMenuButton = document.getElementById('mobileMenuButton');
+        const closeMenuButton = document.getElementById('closeMenuButton');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const menuOverlay = document.getElementById('menuOverlay');
+        
+        function openMobileMenu() {
+            mobileMenu.classList.add('open');
+            menuOverlay.classList.add('active');
+            document.body.style.overflow = 'hidden'; // Prevent scrolling when menu is open
+        }
+        
+        function closeMobileMenu() {
+            mobileMenu.classList.remove('open');
+            menuOverlay.classList.remove('active');
+            document.body.style.overflow = 'auto'; // Re-enable scrolling
+        }
+        
+        // Event Listeners
+        mobileMenuButton.addEventListener('click', openMobileMenu);
+        closeMenuButton.addEventListener('click', closeMobileMenu);
+        menuOverlay.addEventListener('click', closeMobileMenu);
+        
+        // Close menu when clicking on any menu link
+        document.querySelectorAll('#mobileMenu a').forEach(link => {
+            link.addEventListener('click', closeMobileMenu);
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                const href = this.getAttribute('href');
+                
+                // Only handle internal anchor links (not external links)
+                if (href === '#' || href.startsWith('#') && href.length > 1) {
+                    e.preventDefault();
+                    
+                    const targetId = href.substring(1);
+                    const targetElement = document.getElementById(targetId);
+                    
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80, // Adjust for navbar height
+                            behavior: 'smooth'
+                        });
+                    }
+                }
+            });
+        });
+        
+        // Close menu on ESC key press
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && mobileMenu.classList.contains('open')) {
+                closeMobileMenu();
+            }
+        });
+        
+        // Prevent scrolling on the overlay (touch devices)
+        menuOverlay.addEventListener('touchmove', (e) => {
+            e.preventDefault();
+        }, { passive: false });
+        
+        // Add animation to cards on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+        
+        // Observe all activity cards for animation
+        document.querySelectorAll('.activity-card').forEach(card => {
+            card.style.opacity = '0.9';
+            card.style.transform = 'translateY(10px)';
+            card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+            observer.observe(card);
+        });
+        
+        // Booking buttons functionality
+        document.querySelectorAll('button').forEach(button => {
+            if (button.textContent.includes('Book') || button.textContent.includes('View')) {
+                button.addEventListener('click', function() {
+                    const campType = this.textContent.replace('Book ', '').replace('View ', '');
+                    alert(`Thank you for your interest in ${campType}! Our team will contact you shortly to complete the booking process.`);
+                });
+            }
+        });
+    </script>
+</body>
+</html>

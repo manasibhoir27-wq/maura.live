@@ -1,0 +1,951 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>After-School Adventure Clubs | Maura Wonderlab - Virar, Vasai, Nallasopara</title>
+    <meta name="description" content="Join Maura Wonderlab's After-School Adventure Clubs in Virar, Vasai & Nallasopara. STEM activities, nature exploration, sports & creative workshops for kids aged 5-14.">
+    <meta name="keywords" content="after school activities Virar, after school club Vasai, kids adventure club Nallasopara, STEM club for kids, nature exploration activities, creative workshops children, science experiments kids, outdoor adventure club">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Iconify (Lucide Icons) -->
+    <script src="https://cdn.jsdelivr.net/npm/iconify-icon@1.0.8/dist/iconify-icon.min.js"></script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=Nunito:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        /* Custom Font Settings for Childish/Playful Vibe */
+        body {
+            font-family: 'Nunito', sans-serif;
+        }
+        h1, h2, h3, h4, h5, h6, .brand-font {
+            font-family: 'Fredoka', sans-serif;
+        }
+        
+        /* Playful Blob Pattern */
+        .bg-pattern {
+            background-color: #FFFDF5;
+            background-image: radial-gradient(#FDE68A 1px, transparent 1px), radial-gradient(#BAE6FD 1px, transparent 1px);
+            background-size: 40px 40px;
+            background-position: 0 0, 20px 20px;
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #FFF7ED; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #FDBA74; 
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #EA580C; 
+        }
+
+        /* Mobile Menu Animation */
+        .mobile-menu {
+            transform: translateX(100%);
+            transition: transform 0.3s ease-in-out;
+        }
+        
+        .mobile-menu.open {
+            transform: translateX(0);
+        }
+        
+        .menu-overlay {
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease-in-out, visibility 0.3s;
+        }
+        
+        .menu-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        /* Activity Card Hover Effects */
+        .activity-card {
+            transition: all 0.3s ease;
+        }
+        
+        .activity-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+        
+        /* Age Group Badge */
+        .age-badge {
+            background: linear-gradient(135deg, #f59e0b, #ec4899);
+        }
+        
+        /* Schedule Timeline */
+        .timeline-item {
+            border-left: 3px solid #f59e0b;
+            position: relative;
+            padding-left: 25px;
+            margin-bottom: 30px;
+        }
+        
+        .timeline-item:before {
+            content: '';
+            position: absolute;
+            left: -10px;
+            top: 0;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background-color: #f59e0b;
+        }
+    </style>
+</head>
+<body class="bg-pattern text-slate-600 antialiased selection:bg-orange-200 selection:text-orange-900">
+    <!-- Navbar -->
+    <nav class="fixed w-full z-50 top-0 transition-all duration-300 backdrop-blur-md bg-white/80 border-b-2 border-slate-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center gap-2 cursor-pointer" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+                    <img src="maura wonderlab logo.png" alt="Maura Wonderlab" width="50px">
+                    <span class="brand-font text-2xl font-semibold tracking-tight text-slate-800">
+                        Maura <span class="text-orange-500">Wonderlab</span>
+                    </span>
+                </div>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="#activities" class="text-sm font-semibold text-slate-600 hover:text-orange-500 transition-colors">Activities</a>
+                    <a href="#schedule" class="text-sm font-semibold text-slate-600 hover:text-orange-500 transition-colors">Daily Schedule</a>
+                    <a href="#benefits" class="text-sm font-semibold text-slate-600 hover:text-orange-500 transition-colors">Benefits</a>
+                    <a href="#pricing" class="text-sm font-semibold text-slate-600 hover:text-orange-500 transition-colors">Pricing</a>
+                    <button class="bg-indigo-500 hover:bg-indigo-600 text-white px-5 py-2.5 rounded-full text-sm font-semibold transition-all shadow-[0px_4px_0px_0px_rgba(67,56,202,1)] hover:shadow-[0px_2px_0px_0px_rgba(67,56,202,1)] hover:translate-y-[2px]" onclick="scrollToBooking()">
+                        Book a Trial Class
+                    </button>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobileMenuButton" class="text-slate-600 hover:text-orange-500 p-2">
+                        <iconify-icon icon="lucide:menu" width="28" stroke-width="1.5"></iconify-icon>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu Overlay -->
+    <div id="menuOverlay" class="menu-overlay fixed inset-0 bg-black/50 z-40 md:hidden"></div>
+
+    <!-- Mobile Menu -->
+    <div id="mobileMenu" class="mobile-menu fixed top-0 right-0 h-full w-64 bg-white z-50 shadow-2xl md:hidden p-6">
+        <div class="flex justify-between items-center mb-8">
+            <div class="flex items-center gap-2">
+                <div class="h-8 w-8 bg-orange-400 rounded-lg flex items-center justify-center text-white">
+                    <iconify-icon icon="lucide:tent" width="18"></iconify-icon>
+                </div>
+                <span class="brand-font text-xl font-semibold text-slate-800">Maura <span class="text-orange-500">Wonderlab</span></span>
+            </div>
+            <button id="closeMenuButton" class="text-slate-600 hover:text-orange-500 p-2">
+                <iconify-icon icon="lucide:x" width="24" stroke-width="1.5"></iconify-icon>
+            </button>
+        </div>
+        
+        <div class="space-y-6">
+            <a href="#activities" class="block py-3 text-slate-700 font-semibold border-b border-slate-100" onclick="closeMobileMenu()">Activities</a>
+            <a href="#schedule" class="block py-3 text-slate-700 font-semibold border-b border-slate-100" onclick="closeMobileMenu()">Daily Schedule</a>
+            <a href="#benefits" class="block py-3 text-slate-700 font-semibold border-b border-slate-100" onclick="closeMobileMenu()">Benefits</a>
+            <a href="#pricing" class="block py-3 text-slate-700 font-semibold border-b border-slate-100" onclick="closeMobileMenu()">Pricing</a>
+            <div class="pt-4">
+                <button class="w-full bg-indigo-500 hover:bg-indigo-600 text-white px-5 py-3 rounded-full text-sm font-semibold transition-all" onclick="closeMobileMenu(); scrollToBooking();">
+                    Book a Trial Class
+                </button>
+            </div>
+        </div>
+        
+        <div class="absolute bottom-8 left-6 right-6">
+            <p class="text-sm text-slate-500 mb-4">Contact us:</p>
+            <div class="flex items-center gap-2 text-slate-700 mb-2">
+                <iconify-icon icon="lucide:phone" width="16"></iconify-icon>
+                <span class="text-sm">+91 77680 31411</span>
+            </div>
+            <div class="flex items-center gap-2 text-slate-700">
+                <iconify-icon icon="lucide:mail" width="16"></iconify-icon>
+                <span class="text-sm">maurawonderlab@gmail.com</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="pt-32 pb-20 px-4">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-12">
+                <span class="inline-block px-4 py-1.5 bg-orange-100 text-orange-700 rounded-full text-sm font-semibold mb-4">After-School Adventure Clubs</span>
+                <h1 class="text-5xl md:text-6xl font-bold text-slate-800 mb-6 leading-tight">
+                    Where Every Day is an <span class="text-orange-500">Adventure</span> After School!
+                </h1>
+                <p class="text-xl text-slate-600 max-w-3xl mx-auto mb-10">
+                    Transform ordinary after-school hours into extraordinary learning adventures! Our clubs in <span class="font-semibold text-orange-600">Virar, Vasai, and Nallasopara</span> blend STEM, nature exploration, sports, and creativity for children aged 5-14.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <button class="bg-orange-500 hover:bg-orange-600 text-white px-8 py-4 rounded-full text-lg font-semibold transition-all shadow-[0px_6px_0px_0px_rgba(234,88,12,1)] hover:shadow-[0px_3px_0px_0px_rgba(234,88,12,1)] hover:translate-y-[3px]" onclick="scrollToBooking()">
+                        Book a Free Trial Class
+                        <iconify-icon icon="lucide:arrow-right" class="ml-2" width="20"></iconify-icon>
+                    </button>
+                    <button class="bg-white hover:bg-slate-50 text-slate-800 border-2 border-orange-200 px-8 py-4 rounded-full text-lg font-semibold transition-all" onclick="scrollToActivities()">
+                        Explore Activities
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Stats Section -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mb-20">
+                <div class="bg-white rounded-2xl p-6 shadow-lg text-center border border-slate-100">
+                    <div class="text-4xl font-bold text-orange-500 mb-2">500+</div>
+                    <div class="text-slate-600">Happy Campers</div>
+                </div>
+                <div class="bg-white rounded-2xl p-6 shadow-lg text-center border border-slate-100">
+                    <div class="text-4xl font-bold text-blue-500 mb-2">4.9★</div>
+                    <div class="text-slate-600">Parent Rating</div>
+                </div>
+                <div class="bg-white rounded-2xl p-6 shadow-lg text-center border border-slate-100">
+                    <div class="text-4xl font-bold text-green-500 mb-2">12+</div>
+                    <div class="text-slate-600">Activity Zones</div>
+                </div>
+                <div class="bg-white rounded-2xl p-6 shadow-lg text-center border border-slate-100">
+                    <div class="text-4xl font-bold text-purple-500 mb-2">3</div>
+                    <div class="text-slate-600">Convenient Locations</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Activities Section -->
+    <section id="activities" class="py-20 bg-gradient-to-b from-white to-orange-50/30 px-4">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold text-slate-800 mb-6">
+                    Adventure-Packed <span class="text-orange-500">Activities</span>
+                </h2>
+                <p class="text-lg text-slate-600 max-w-3xl mx-auto">
+                    Our after-school clubs offer a rotating curriculum of exciting activities designed to spark curiosity, build skills, and create unforgettable memories.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- STEM Adventures -->
+                <div class="activity-card bg-white rounded-2xl p-8 shadow-xl border border-slate-100 group hover:border-orange-200">
+                    <div class="h-16 w-16 bg-blue-100 rounded-2xl flex items-center justify-center text-blue-600 mb-6 group-hover:scale-110 transition-transform">
+                        <iconify-icon icon="lucide:flask-conical" width="30"></iconify-icon>
+                    </div>
+                    <h3 class="text-2xl font-bold text-slate-800 mb-4">STEM & Science Adventures</h3>
+                    <p class="text-slate-600 mb-6">Hands-on experiments, robotics basics, coding games, and scientific discovery that make learning fun!</p>
+                    <div class="space-y-3">
+                        <div class="flex items-center gap-2">
+                            <iconify-icon icon="lucide:check-circle" class="text-green-500" width="18"></iconify-icon>
+                            <span class="text-slate-700">Junior Chemistry Lab</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <iconify-icon icon="lucide:check-circle" class="text-green-500" width="18"></iconify-icon>
+                            <span class="text-slate-700">Simple Robotics & Coding</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <iconify-icon icon="lucide:check-circle" class="text-green-500" width="18"></iconify-icon>
+                            <span class="text-slate-700">Nature Science Experiments</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <iconify-icon icon="lucide:check-circle" class="text-green-500" width="18"></iconify-icon>
+                            <span class="text-slate-700">Engineering Challenges</span>
+                        </div>
+                    </div>
+                    <div class="mt-6">
+                        <span class="age-badge inline-block px-3 py-1 text-white text-sm font-semibold rounded-full">Ages 6-14</span>
+                    </div>
+                </div>
+                
+                <!-- Nature Explorers -->
+                <div class="activity-card bg-white rounded-2xl p-8 shadow-xl border border-slate-100 group hover:border-green-200">
+                    <div class="h-16 w-16 bg-green-100 rounded-2xl flex items-center justify-center text-green-600 mb-6 group-hover:scale-110 transition-transform">
+                        <iconify-icon icon="lucide:leaf" width="30"></iconify-icon>
+                    </div>
+                    <h3 class="text-2xl font-bold text-slate-800 mb-4">Nature & Outdoor Exploration</h3>
+                    <p class="text-slate-600 mb-6">Connect with nature through gardening, bug safaris, bird watching, and outdoor survival skills!</p>
+                    <div class="space-y-3">
+                        <div class="flex items-center gap-2">
+                            <iconify-icon icon="lucide:check-circle" class="text-green-500" width="18"></iconify-icon>
+                            <span class="text-slate-700">Mini Garden Creation</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <iconify-icon icon="lucide:check-circle" class="text-green-500" width="18"></iconify-icon>
+                            <span class="text-slate-700">Nature Scavenger Hunts</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <iconify-icon icon="lucide:check-circle" class="text-green-500" width="18"></iconify-icon>
+                            <span class="text-slate-700">Outdoor Survival Basics</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <iconify-icon icon="lucide:check-circle" class="text-green-500" width="18"></iconify-icon>
+                            <span class="text-slate-700">Eco-Art with Natural Materials</span>
+                        </div>
+                    </div>
+                    <div class="mt-6">
+                        <span class="age-badge inline-block px-3 py-1 text-white text-sm font-semibold rounded-full">Ages 5-12</span>
+                    </div>
+                </div>
+                
+                <!-- Creative Arts -->
+                <div class="activity-card bg-white rounded-2xl p-8 shadow-xl border border-slate-100 group hover:border-purple-200">
+                    <div class="h-16 w-16 bg-purple-100 rounded-2xl flex items-center justify-center text-purple-600 mb-6 group-hover:scale-110 transition-transform">
+                        <iconify-icon icon="lucide:palette" width="30"></iconify-icon>
+                    </div>
+                    <h3 class="text-2xl font-bold text-slate-800 mb-4">Creative Arts & Crafts</h3>
+                    <p class="text-slate-600 mb-6">Unleash creativity through painting, pottery, DIY crafts, storytelling, and drama activities!</p>
+                    <div class="space-y-3">
+                        <div class="flex items-center gap-2">
+                            <iconify-icon icon="lucide:check-circle" class="text-green-500" width="18"></iconify-icon>
+                            <span class="text-slate-700">Pottery & Clay Modeling</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <iconify-icon icon="lucide:check-circle" class="text-green-500" width="18"></iconify-icon>
+                            <span class="text-slate-700">DIY Science Crafts</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <iconify-icon icon="lucide:check-circle" class="text-green-500" width="18"></iconify-icon>
+                            <span class="text-slate-700">Storytelling & Puppet Shows</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <iconify-icon icon="lucide:check-circle" class="text-green-500" width="18"></iconify-icon>
+                            <span class="text-slate-700">Recycled Art Projects</span>
+                        </div>
+                    </div>
+                    <div class="mt-6">
+                        <span class="age-badge inline-block px-3 py-1 text-white text-sm font-semibold rounded-full">Ages 5-10</span>
+                    </div>
+                </div>
+                
+                <!-- Sports & Adventure -->
+                <div class="activity-card bg-white rounded-2xl p-8 shadow-xl border border-slate-100 group hover:border-red-200">
+                    <div class="h-16 w-16 bg-red-100 rounded-2xl flex items-center justify-center text-red-600 mb-6 group-hover:scale-110 transition-transform">
+                        <iconify-icon icon="lucide:target" width="30"></iconify-icon>
+                    </div>
+                    <h3 class="text-2xl font-bold text-slate-800 mb-4">Sports & Adventure Games</h3>
+                    <p class="text-slate-600 mb-6">Develop teamwork, coordination, and confidence through fun sports and adventure challenges!</p>
+                    <div class="space-y-3">
+                        <div class="flex items-center gap-2">
+                            <iconify-icon icon="lucide:check-circle" class="text-green-500" width="18"></iconify-icon>
+                            <span class="text-slate-700">Obstacle Course Challenges</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <iconify-icon icon="lucide:check-circle" class="text-green-500" width="18"></iconify-icon>
+                            <span class="text-slate-700">Team Sports & Games</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <iconify-icon icon="lucide:check-circle" class="text-green-500" width="18"></iconify-icon>
+                            <span class="text-slate-700">Treasure Hunt Adventures</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <iconify-icon icon="lucide:check-circle" class="text-green-500" width="18"></iconify-icon>
+                            <span class="text-slate-700">Yoga & Mindfulness Activities</span>
+                        </div>
+                    </div>
+                    <div class="mt-6">
+                        <span class="age-badge inline-block px-3 py-1 text-white text-sm font-semibold rounded-full">Ages 6-14</span>
+                    </div>
+                </div>
+                
+                <!-- Life Skills -->
+                <div class="activity-card bg-white rounded-2xl p-8 shadow-xl border border-slate-100 group hover:border-yellow-200">
+                    <div class="h-16 w-16 bg-yellow-100 rounded-2xl flex items-center justify-center text-yellow-600 mb-6 group-hover:scale-110 transition-transform">
+                        <iconify-icon icon="lucide:users" width="30"></iconify-icon>
+                    </div>
+                    <h3 class="text-2xl font-bold text-slate-800 mb-4">Life Skills & Team Building</h3>
+                    <p class="text-slate-600 mb-6">Develop essential life skills, communication, problem-solving, and leadership abilities!</p>
+                    <div class="space-y-3">
+                        <div class="flex items-center gap-2">
+                            <iconify-icon icon="lucide:check-circle" class="text-green-500" width="18"></iconify-icon>
+                            <span class="text-slate-700">Communication & Public Speaking</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <iconify-icon icon="lucide:check-circle" class="text-green-500" width="18"></iconify-icon>
+                            <span class="text-slate-700">Problem-Solving Challenges</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <iconify-icon icon="lucide:check-circle" class="text-green-500" width="18"></iconify-icon>
+                            <span class="text-slate-700">Basic First Aid Training</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <iconify-icon icon="lucide:check-circle" class="text-green-500" width="18"></iconify-icon>
+                            <span class="text-slate-700">Cooking & Nutrition Basics</span>
+                        </div>
+                    </div>
+                    <div class="mt-6">
+                        <span class="age-badge inline-block px-3 py-1 text-white text-sm font-semibold rounded-full">Ages 8-14</span>
+                    </div>
+                </div>
+                
+                <!-- Special Themes -->
+                <div class="activity-card bg-white rounded-2xl p-8 shadow-xl border border-slate-100 group hover:border-pink-200">
+                    <div class="h-16 w-16 bg-pink-100 rounded-2xl flex items-center justify-center text-pink-600 mb-6 group-hover:scale-110 transition-transform">
+                        <iconify-icon icon="lucide:sparkles" width="30"></iconify-icon>
+                    </div>
+                    <h3 class="text-2xl font-bold text-slate-800 mb-4">Special Theme Days</h3>
+                    <p class="text-slate-600 mb-6">Exciting themed adventures that change weekly to keep the experience fresh and engaging!</p>
+                    <div class="space-y-3">
+                        <div class="flex items-center gap-2">
+                            <iconify-icon icon="lucide:check-circle" class="text-green-500" width="18"></iconify-icon>
+                            <span class="text-slate-700">Space & Astronomy Week</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <iconify-icon icon="lucide:check-circle" class="text-green-500" width="18"></iconify-icon>
+                            <span class="text-slate-700">Dinosaur Exploration Day</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <iconify-icon icon="lucide:check-circle" class="text-green-500" width="18"></iconify-icon>
+                            <span class="text-slate-700">Ocean Adventure Week</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <iconify-icon icon="lucide:check-circle" class="text-green-500" width="18"></iconify-icon>
+                            <span class="text-slate-700">Superhero Training Camp</span>
+                        </div>
+                    </div>
+                    <div class="mt-6">
+                        <span class="age-badge inline-block px-3 py-1 text-white text-sm font-semibold rounded-full">All Ages</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Daily Schedule -->
+    <section id="schedule" class="py-20 px-4 bg-white">
+        <div class="max-w-4xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold text-slate-800 mb-6">
+                    A Typical <span class="text-orange-500">Adventure Day</span>
+                </h2>
+                <p class="text-lg text-slate-600 max-w-3xl mx-auto">
+                    Our after-school program runs from 3:30 PM to 6:30 PM, Monday through Friday, with flexible drop-in options available.
+                </p>
+            </div>
+            
+            <div class="space-y-8">
+                <div class="timeline-item">
+                    <h3 class="text-xl font-bold text-slate-800 mb-2">3:30 PM - Welcome & Snack Time</h3>
+                    <p class="text-slate-600">Children arrive from school, enjoy healthy snacks, and settle in with quiet activities or free play.</p>
+                </div>
+                
+                <div class="timeline-item">
+                    <h3 class="text-xl font-bold text-slate-800 mb-2">4:00 PM - Activity Session 1</h3>
+                    <p class="text-slate-600">First structured activity of the day - STEM experiments, creative arts, or nature exploration based on the weekly theme.</p>
+                </div>
+                
+                <div class="timeline-item">
+                    <h3 class="text-xl font-bold text-slate-800 mb-2">5:00 PM - Outdoor Adventure Time</h3>
+                    <p class="text-slate-600">Sports, team games, obstacle courses, or nature walks to burn energy and develop physical skills.</p>
+                </div>
+                
+                <div class="timeline-item">
+                    <h3 class="text-xl font-bold text-slate-800 mb-2">5:45 PM - Activity Session 2</h3>
+                    <p class="text-slate-600">Second structured activity focusing on different skills - life skills, special projects, or themed workshops.</p>
+                </div>
+                
+                <div class="timeline-item">
+                    <h3 class="text-xl font-bold text-slate-800 mb-2">6:15 PM - Wind Down & Reflection</h3>
+                    <p class="text-slate-600">Group sharing of the day's adventures, mindfulness activities, and preparation for parent pickup.</p>
+                </div>
+            </div>
+            
+            <div class="mt-12 bg-orange-50 rounded-2xl p-8 border border-orange-100">
+                <h3 class="text-2xl font-bold text-slate-800 mb-4">Flexible Scheduling Options</h3>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div class="bg-white rounded-xl p-6 text-center">
+                        <div class="text-3xl font-bold text-orange-500 mb-2">2 Days/Week</div>
+                        <p class="text-slate-600">Perfect for busy schedules</p>
+                    </div>
+                    <div class="bg-white rounded-xl p-6 text-center">
+                        <div class="text-3xl font-bold text-orange-500 mb-2">3 Days/Week</div>
+                        <p class="text-slate-600">Most popular option</p>
+                    </div>
+                    <div class="bg-white rounded-xl p-6 text-center">
+                        <div class="text-3xl font-bold text-orange-500 mb-2">5 Days/Week</div>
+                        <p class="text-slate-600">Full adventure immersion</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section id="benefits" class="py-20 px-4 bg-gradient-to-b from-white to-blue-50/30">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold text-slate-800 mb-6">
+                    Why Choose Our <span class="text-blue-500">Adventure Clubs</span>
+                </h2>
+                <p class="text-lg text-slate-600 max-w-3xl mx-auto">
+                    We go beyond childcare to provide meaningful experiences that contribute to your child's holistic development.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white rounded-2xl p-8 shadow-lg border border-slate-100">
+                    <div class="h-14 w-14 bg-blue-100 rounded-xl flex items-center justify-center text-blue-600 mb-6">
+                        <iconify-icon icon="lucide:brain" width="26"></iconify-icon>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-800 mb-4">Cognitive Development</h3>
+                    <p class="text-slate-600">STEM activities enhance problem-solving, critical thinking, and scientific curiosity beyond classroom learning.</p>
+                </div>
+                
+                <div class="bg-white rounded-2xl p-8 shadow-lg border border-slate-100">
+                    <div class="h-14 w-14 bg-green-100 rounded-xl flex items-center justify-center text-green-600 mb-6">
+                        <iconify-icon icon="lucide:heart" width="26"></iconify-icon>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-800 mb-4">Social & Emotional Growth</h3>
+                    <p class="text-slate-600">Team activities build communication, empathy, cooperation, and emotional intelligence in a supportive environment.</p>
+                </div>
+                
+                <div class="bg-white rounded-2xl p-8 shadow-lg border border-slate-100">
+                    <div class="h-14 w-14 bg-orange-100 rounded-xl flex items-center justify-center text-orange-600 mb-6">
+                        <iconify-icon icon="lucide:activity" width="26"></iconify-icon>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-800 mb-4">Physical Health</h3>
+                    <p class="text-slate-600">Outdoor adventures and sports promote physical fitness, coordination, and healthy lifestyle habits.</p>
+                </div>
+                
+                <div class="bg-white rounded-2xl p-8 shadow-lg border border-slate-100">
+                    <div class="h-14 w-14 bg-purple-100 rounded-xl flex items-center justify-center text-purple-600 mb-6">
+                        <iconify-icon icon="lucide:sparkles" width="26"></iconify-icon>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-800 mb-4">Creativity Boost</h3>
+                    <p class="text-slate-600">Arts, crafts, and imaginative play stimulate creative thinking and self-expression in various forms.</p>
+                </div>
+                
+                <div class="bg-white rounded-2xl p-8 shadow-lg border border-slate-100">
+                    <div class="h-14 w-14 bg-red-100 rounded-xl flex items-center justify-center text-red-600 mb-6">
+                        <iconify-icon icon="lucide:shield" width="26"></iconify-icon>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-800 mb-4">Safety First</h3>
+                    <p class="text-slate-600">Certified staff, secure facilities, small group ratios, and comprehensive safety protocols for peace of mind.</p>
+                </div>
+                
+                <div class="bg-white rounded-2xl p-8 shadow-lg border border-slate-100">
+                    <div class="h-14 w-14 bg-yellow-100 rounded-xl flex items-center justify-center text-yellow-600 mb-6">
+                        <iconify-icon icon="lucide:calendar" width="26"></iconify-icon>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-800 mb-4">Convenience</h3>
+                    <p class="text-slate-600">Flexible scheduling, school transport coordination, and multiple locations in Virar, Vasai, and Nallasopara.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="py-20 px-4 bg-white">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold text-slate-800 mb-6">
+                    Simple, <span class="text-orange-500">Flexible Pricing</span>
+                </h2>
+                <p class="text-lg text-slate-600 max-w-3xl mx-auto">
+                    Choose the plan that works best for your family. All plans include snacks, materials, and access to all activity zones.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-gradient-to-b from-slate-50 to-white rounded-2xl p-8 shadow-xl border-2 border-slate-200">
+                    <div class="text-center mb-8">
+                        <h3 class="text-2xl font-bold text-slate-800 mb-4">Explorer Plan</h3>
+                        <div class="flex justify-center items-baseline mb-4">
+                            <span class="text-5xl font-bold text-slate-800">₹2,499</span>
+                            <span class="text-slate-500 ml-2">/month</span>
+                        </div>
+                        <p class="text-slate-600">2 days per week</p>
+                    </div>
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-center gap-3">
+                            <iconify-icon icon="lucide:check" class="text-green-500" width="20"></iconify-icon>
+                            <span>8 Adventure Sessions Monthly</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <iconify-icon icon="lucide:check" class="text-green-500" width="20"></iconify-icon>
+                            <span>Healthy Snacks Included</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <iconify-icon icon="lucide:check" class="text-green-500" width="20"></iconify-icon>
+                            <span>All Activity Zones Access</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <iconify-icon icon="lucide:x" class="text-slate-300" width="20"></iconify-icon>
+                            <span class="text-slate-400">Special Theme Week Access</span>
+                        </li>
+                    </ul>
+                    <button class="w-full bg-slate-100 hover:bg-slate-200 text-slate-800 py-3 rounded-xl font-semibold transition-colors" onclick="scrollToBooking()">
+                        Start Exploring
+                    </button>
+                </div>
+                
+                <div class="bg-gradient-to-b from-orange-50 to-white rounded-2xl p-8 shadow-xl border-2 border-orange-300 relative">
+                    <div class="absolute top-0 right-6 -translate-y-1/2">
+                        <span class="bg-orange-500 text-white px-4 py-1.5 rounded-full text-sm font-semibold">MOST POPULAR</span>
+                    </div>
+                    <div class="text-center mb-8">
+                        <h3 class="text-2xl font-bold text-slate-800 mb-4">Adventurer Plan</h3>
+                        <div class="flex justify-center items-baseline mb-4">
+                            <span class="text-5xl font-bold text-slate-800">₹3,499</span>
+                            <span class="text-slate-500 ml-2">/month</span>
+                        </div>
+                        <p class="text-slate-600">3 days per week</p>
+                    </div>
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-center gap-3">
+                            <iconify-icon icon="lucide:check" class="text-green-500" width="20"></iconify-icon>
+                            <span>12 Adventure Sessions Monthly</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <iconify-icon icon="lucide:check" class="text-green-500" width="20"></iconify-icon>
+                            <span>Healthy Snacks Included</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <iconify-icon icon="lucide:check" class="text-green-500" width="20"></iconify-icon>
+                            <span>All Activity Zones Access</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <iconify-icon icon="lucide:check" class="text-green-500" width="20"></iconify-icon>
+                            <span>Special Theme Week Access</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <iconify-icon icon="lucide:check" class="text-green-500" width="20"></iconify-icon>
+                            <span>Monthly Progress Report</span>
+                        </li>
+                    </ul>
+                    <button class="w-full bg-orange-500 hover:bg-orange-600 text-white py-3 rounded-xl font-semibold transition-colors" onclick="scrollToBooking()">
+                        Start Adventuring
+                    </button>
+                </div>
+                
+                <div class="bg-gradient-to-b from-blue-50 to-white rounded-2xl p-8 shadow-xl border-2 border-blue-300">
+                    <div class="text-center mb-8">
+                        <h3 class="text-2xl font-bold text-slate-800 mb-4">Explorer Pro Plan</h3>
+                        <div class="flex justify-center items-baseline mb-4">
+                            <span class="text-5xl font-bold text-slate-800">₹4,999</span>
+                            <span class="text-slate-500 ml-2">/month</span>
+                        </div>
+                        <p class="text-slate-600">5 days per week</p>
+                    </div>
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-center gap-3">
+                            <iconify-icon icon="lucide:check" class="text-green-500" width="20"></iconify-icon>
+                            <span>20+ Adventure Sessions Monthly</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <iconify-icon icon="lucide:check" class="text-green-500" width="20"></iconify-icon>
+                            <span>Healthy Snacks & Light Dinner</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <iconify-icon icon="lucide:check" class="text-green-500" width="20"></iconify-icon>
+                            <span>All Activity Zones Access</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <iconify-icon icon="lucide:check" class="text-green-500" width="20"></iconify-icon>
+                            <span>Special Theme Week Access</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <iconify-icon icon="lucide:check" class="text-green-500" width="20"></iconify-icon>
+                            <span>Weekly Progress Reports</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <iconify-icon icon="lucide:check" class="text-green-500" width="20"></iconify-icon>
+                            <span>Priority Registration for Weekend Camps</span>
+                        </li>
+                    </ul>
+                    <button class="w-full bg-blue-500 hover:bg-blue-600 text-white py-3 rounded-xl font-semibold transition-colors" onclick="scrollToBooking()">
+                        Go Pro
+                    </button>
+                </div>
+            </div>
+            
+            <div class="mt-12 text-center">
+                <p class="text-slate-600 mb-6">All plans include a one-time registration fee of ₹500. Sibling discounts available!</p>
+                <button class="bg-indigo-500 hover:bg-indigo-600 text-white px-8 py-4 rounded-full text-lg font-semibold transition-all shadow-[0px_4px_0px_0px_rgba(67,56,202,1)] hover:shadow-[0px_2px_0px_0px_rgba(67,56,202,1)] hover:translate-y-[2px]" onclick="scrollToBooking()">
+                    Book a FREE Trial Class
+                    <iconify-icon icon="lucide:arrow-right" class="ml-2" width="20"></iconify-icon>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Booking CTA -->
+    <section id="booking" class="py-20 px-4 bg-gradient-to-r from-orange-500 to-orange-600">
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="text-4xl md:text-5xl font-bold text-white mb-6">
+                Ready for the Adventure?
+            </h2>
+            <p class="text-xl text-orange-100 mb-10 max-w-3xl mx-auto">
+                Give your child the gift of adventure, learning, and fun after school. Book a free trial class today and see why we're the #1 choice for after-school clubs in Virar, Vasai, and Nallasopara!
+            </p>
+            
+            <div class="bg-white rounded-2xl p-8 shadow-2xl max-w-2xl mx-auto">
+                <h3 class="text-2xl font-bold text-slate-800 mb-6">Book Your Free Trial Class</h3>
+                <form class="space-y-6">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-slate-700 text-sm font-semibold mb-2 text-left">Parent's Name *</label>
+                            <input type="text" class="w-full p-3 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500" placeholder="Your name" required>
+                        </div>
+                        <div>
+                            <label class="block text-slate-700 text-sm font-semibold mb-2 text-left">Child's Name *</label>
+                            <input type="text" class="w-full p-3 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500" placeholder="Child's name" required>
+                        </div>
+                        <div>
+                            <label class="block text-slate-700 text-sm font-semibold mb-2 text-left">Child's Age *</label>
+                            <select class="w-full p-3 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500" required>
+                                <option value="">Select age</option>
+                                <option value="5-6">5-6 years</option>
+                                <option value="7-8">7-8 years</option>
+                                <option value="9-10">9-10 years</option>
+                                <option value="11-12">11-12 years</option>
+                                <option value="13-14">13-14 years</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-slate-700 text-sm font-semibold mb-2 text-left">Phone Number *</label>
+                            <input type="tel" class="w-full p-3 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500" placeholder="+91 00000 00000" required>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <label class="block text-slate-700 text-sm font-semibold mb-2 text-left">Preferred Location *</label>
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                            <label class="flex items-center p-4 border border-slate-300 rounded-lg cursor-pointer hover:bg-slate-50">
+                                <input type="radio" name="location" value="virar" class="mr-3">
+                                <div>
+                                    <div class="font-semibold text-slate-800">Virar Camp</div>
+                                    <div class="text-sm text-slate-600">Near Virar Station</div>
+                                </div>
+                            </label>
+                            <label class="flex items-center p-4 border border-slate-300 rounded-lg cursor-pointer hover:bg-slate-50">
+                                <input type="radio" name="location" value="vasai" class="mr-3">
+                                <div>
+                                    <div class="font-semibold text-slate-800">Vasai Camp</div>
+                                    <div class="text-sm text-slate-600">Vasai West</div>
+                                </div>
+                            </label>
+                            <label class="flex items-center p-4 border border-slate-300 rounded-lg cursor-pointer hover:bg-slate-50">
+                                <input type="radio" name="location" value="nallasopara" class="mr-3">
+                                <div>
+                                    <div class="font-semibold text-slate-800">Nallasopara Camp</div>
+                                    <div class="text-sm text-slate-600">Near Nallasopara Station</div>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <label class="block text-slate-700 text-sm font-semibold mb-2 text-left">Preferred Days (Select up to 3)</label>
+                        <div class="flex flex-wrap gap-3">
+                            <label class="flex items-center">
+                                <input type="checkbox" name="days" value="monday" class="mr-2">
+                                <span class="text-slate-700">Monday</span>
+                            </label>
+                            <label class="flex items-center">
+                                <input type="checkbox" name="days" value="tuesday" class="mr-2">
+                                <span class="text-slate-700">Tuesday</span>
+                            </label>
+                            <label class="flex items-center">
+                                <input type="checkbox" name="days" value="wednesday" class="mr-2">
+                                <span class="text-slate-700">Wednesday</span>
+                            </label>
+                            <label class="flex items-center">
+                                <input type="checkbox" name="days" value="thursday" class="mr-2">
+                                <span class="text-slate-700">Thursday</span>
+                            </label>
+                            <label class="flex items-center">
+                                <input type="checkbox" name="days" value="friday" class="mr-2">
+                                <span class="text-slate-700">Friday</span>
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <button type="submit" class="w-full bg-orange-500 hover:bg-orange-600 text-white py-4 rounded-xl text-lg font-semibold transition-colors shadow-[0px_4px_0px_0px_rgba(234,88,12,1)] hover:shadow-[0px_2px_0px_0px_rgba(234,88,12,1)] hover:translate-y-[2px]">
+                        Book Free Trial Class
+                    </button>
+                    
+                    <p class="text-sm text-slate-500 mt-4">We'll contact you within 24 hours to confirm your trial class slot.</p>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-white pt-20 pb-10 rounded-t-[3rem] mt-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
+                <div class="col-span-1 md:col-span-2">
+                    <div class="flex items-center gap-2 mb-6">
+                         <div class="h-8 w-8 bg-orange-500 rounded-lg flex items-center justify-center text-white">
+                            <iconify-icon icon="lucide:tent" width="18"></iconify-icon>
+                        </div>
+                        <span class="brand-font text-2xl font-bold">Maura <span class="text-orange-400">Wonderlab</span></span>
+                    </div>
+                    <p class="text-slate-400 max-w-sm mb-6">Creating unforgettable childhood memories through nature, science, and adventure. The #1 Choice for Kids After-School Clubs in Virar, Vasai & Nallasopara.</p>
+                    <div class="flex gap-4">
+                        <a href="#" class="h-10 w-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-orange-500 transition-colors"><iconify-icon icon="lucide:instagram" width="20"></iconify-icon></a>
+                        <a href="#" class="h-10 w-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-blue-500 transition-colors"><iconify-icon icon="lucide:facebook" width="20"></iconify-icon></a>
+                        <a href="#" class="h-10 w-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-green-500 transition-colors"><iconify-icon icon="lucide:phone" width="20"></iconify-icon></a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="font-bold text-lg mb-6">After-School Clubs</h4>
+                    <ul class="space-y-4 text-slate-400 text-sm">
+                        <li><a href="#activities" class="hover:text-white transition-colors">All Activities</a></li>
+                        <li><a href="#schedule" class="hover:text-white transition-colors">Daily Schedule</a></li>
+                        <li><a href="#benefits" class="hover:text-white transition-colors">Benefits</a></li>
+                        <li><a href="#pricing" class="hover:text-white transition-colors">Pricing Plans</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-bold text-lg mb-6">Camp Locations</h4>
+                    <ul class="space-y-4 text-slate-400 text-sm">
+                        <li><a href="#" class="hover:text-white transition-colors">After-School Club in Virar</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">After-School Club in Vasai</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">After-School Club in Nallasopara</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Weekend Adventure Camps</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-slate-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="text-slate-500 text-sm">© 2024 Maura Wonderlab. All rights reserved.</p>
+                <div class="flex gap-6 text-sm text-slate-500">
+                    <a href="#" class="hover:text-white">Privacy</a>
+                    <a href="#" class="hover:text-white">Terms</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Functionality
+        const mobileMenuButton = document.getElementById('mobileMenuButton');
+        const closeMenuButton = document.getElementById('closeMenuButton');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const menuOverlay = document.getElementById('menuOverlay');
+        
+        function openMobileMenu() {
+            mobileMenu.classList.add('open');
+            menuOverlay.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+        
+        function closeMobileMenu() {
+            mobileMenu.classList.remove('open');
+            menuOverlay.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+        
+        // Event Listeners
+        mobileMenuButton.addEventListener('click', openMobileMenu);
+        closeMenuButton.addEventListener('click', closeMobileMenu);
+        menuOverlay.addEventListener('click', closeMobileMenu);
+        
+        // Close menu when clicking on any menu link
+        document.querySelectorAll('#mobileMenu a').forEach(link => {
+            link.addEventListener('click', closeMobileMenu);
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                const href = this.getAttribute('href');
+                
+                if (href === '#' || href.startsWith('#') && href.length > 1) {
+                    e.preventDefault();
+                    
+                    const targetId = href.substring(1);
+                    const targetElement = document.getElementById(targetId);
+                    
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                    }
+                }
+            });
+        });
+        
+        // Scroll functions for buttons
+        function scrollToBooking() {
+            document.getElementById('booking').scrollIntoView({ behavior: 'smooth' });
+        }
+        
+        function scrollToActivities() {
+            document.getElementById('activities').scrollIntoView({ behavior: 'smooth' });
+        }
+        
+        // Close menu on ESC key press
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && mobileMenu.classList.contains('open')) {
+                closeMobileMenu();
+            }
+        });
+        
+        // Prevent scrolling on the overlay (touch devices)
+        menuOverlay.addEventListener('touchmove', (e) => {
+            e.preventDefault();
+        }, { passive: false });
+        
+        // Form submission handling
+        const bookingForm = document.querySelector('form');
+        if (bookingForm) {
+            bookingForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // Here you would typically send the form data to a server
+                // For now, we'll just show an alert
+                alert('Thank you! We will contact you within 24 hours to confirm your free trial class.');
+                bookingForm.reset();
+            });
+        }
+        
+        // Add animation to cards on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+        
+        // Observe all activity cards for animation
+        document.querySelectorAll('.activity-card').forEach(card => {
+            card.style.opacity = '0.9';
+            card.style.transform = 'translateY(10px)';
+            card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+            observer.observe(card);
+        });
+        
+        // Observe timeline items
+        document.querySelectorAll('.timeline-item').forEach(item => {
+            item.style.opacity = '0.9';
+            item.style.transform = 'translateX(-10px)';
+            item.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+            observer.observe(item);
+        });
+    </script>
+</body>
+</html>

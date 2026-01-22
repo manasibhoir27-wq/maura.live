@@ -1,0 +1,791 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adventure Camps for Toddlers (3-5 Years) | Maura Wonderlab Virar, Vasai, Nallasopara</title>
+    <meta name="description" content="Maura Wonderlab offers safe, fun adventure camps for toddlers aged 3-5 years in Virar, Vasai, Nallasopara. Perfect first camping experience for little explorers!">
+    <meta name="keywords" content="adventure camps for toddlers, camping for 3 year olds, adventure camps for 4-5 year olds, preschool adventure camps, toddler outdoor activities, early childhood adventure, Virar toddler camps, Vasai kids camps, Nallasopara preschool activities">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Iconify (Lucide Icons) -->
+    <script src="https://cdn.jsdelivr.net/npm/iconify-icon@1.0.8/dist/iconify-icon.min.js"></script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=Nunito:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        /* Custom Font Settings for Childish/Playful Vibe */
+        body {
+            font-family: 'Nunito', sans-serif;
+        }
+        h1, h2, h3, h4, h5, h6, .brand-font {
+            font-family: 'Fredoka', sans-serif;
+        }
+        
+        /* Playful Blob Pattern */
+        .bg-pattern {
+            background-color: #FFFDF5;
+            background-image: radial-gradient(#FDE68A 1px, transparent 1px), radial-gradient(#BAE6FD 1px, transparent 1px);
+            background-size: 40px 40px;
+            background-position: 0 0, 20px 20px;
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #FFF7ED; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #FDBA74; 
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #EA580C; 
+        }
+
+        /* Mobile Menu Animation */
+        .mobile-menu {
+            transform: translateX(100%);
+            transition: transform 0.3s ease-in-out;
+        }
+        
+        .mobile-menu.open {
+            transform: translateX(0);
+        }
+        
+        .menu-overlay {
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease-in-out, visibility 0.3s;
+        }
+        
+        .menu-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        /* Age-specific styling */
+        .toddler-highlight {
+            background: linear-gradient(120deg, #FEF3C7 0%, #FDE68A 100%);
+            border-left: 4px solid #F59E0B;
+        }
+        
+        .age-badge {
+            background: linear-gradient(135deg, #EC4899 0%, #8B5CF6 100%);
+            color: white;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.875rem;
+            font-weight: bold;
+            display: inline-block;
+        }
+        
+        .safety-badge {
+            background: linear-gradient(135deg, #10B981 0%, #34D399 100%);
+            color: white;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.875rem;
+            font-weight: bold;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body class="bg-pattern text-slate-600 antialiased selection:bg-orange-200 selection:text-orange-900">
+
+    <!-- Navbar -->
+    <nav class="fixed w-full z-50 top-0 transition-all duration-300 backdrop-blur-md bg-white/80 border-b-2 border-slate-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center gap-2 cursor-pointer" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+                    <img src="maura wonderlab logo.png" alt="Maura Wonderlab" width="50px">
+                    <span class="brand-font text-2xl font-semibold tracking-tight text-slate-800">
+                        Maura <span class="text-orange-500">Wonderlab</span>
+                    </span>
+                </div>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="index.html" class="text-sm font-semibold text-slate-600 hover:text-orange-500 transition-colors">Home</a>
+                    <a href="#activities" class="text-sm font-semibold text-slate-600 hover:text-orange-500 transition-colors">Toddler Activities</a>
+                    <a href="#safety" class="text-sm font-semibold text-slate-600 hover:text-orange-500 transition-colors">Safety First</a>
+                    <a href="#schedule" class="text-sm font-semibold text-slate-600 hover:text-orange-500 transition-colors">Daily Schedule</a>
+                    <a href="#locations" class="text-sm font-semibold text-slate-600 hover:text-orange-500 transition-colors">Locations</a>
+                    <button class="bg-indigo-500 hover:bg-indigo-600 text-white px-5 py-2.5 rounded-full text-sm font-semibold transition-all shadow-[0px_4px_0px_0px_rgba(67,56,202,1)] hover:shadow-[0px_2px_0px_0px_rgba(67,56,202,1)] hover:translate-y-[2px]">
+                        Enroll Your Toddler
+                    </button>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobileMenuButton" class="text-slate-600 hover:text-orange-500 p-2">
+                        <iconify-icon icon="lucide:menu" width="28" stroke-width="1.5"></iconify-icon>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu Overlay -->
+    <div id="menuOverlay" class="menu-overlay fixed inset-0 bg-black/50 z-40 md:hidden"></div>
+
+    <!-- Mobile Menu -->
+    <div id="mobileMenu" class="mobile-menu fixed top-0 right-0 h-full w-64 bg-white z-50 shadow-2xl md:hidden p-6">
+        <div class="flex justify-between items-center mb-8">
+            <div class="flex items-center gap-2">
+                <div class="h-8 w-8 bg-orange-400 rounded-lg flex items-center justify-center text-white">
+                    <iconify-icon icon="lucide:tent" width="18"></iconify-icon>
+                </div>
+                <span class="brand-font text-xl font-semibold text-slate-800">Maura <span class="text-orange-500">Wonderlab</span></span>
+            </div>
+            <button id="closeMenuButton" class="text-slate-600 hover:text-orange-500 p-2">
+                <iconify-icon icon="lucide:x" width="24" stroke-width="1.5"></iconify-icon>
+            </button>
+        </div>
+        
+        <div class="space-y-6">
+            <a href="index.html" class="block py-3 text-slate-700 font-semibold border-b border-slate-100" onclick="closeMobileMenu()">Home</a>
+            <a href="#activities" class="block py-3 text-slate-700 font-semibold border-b border-slate-100" onclick="closeMobileMenu()">Toddler Activities</a>
+            <a href="#safety" class="block py-3 text-slate-700 font-semibold border-b border-slate-100" onclick="closeMobileMenu()">Safety First</a>
+            <a href="#schedule" class="block py-3 text-slate-700 font-semibold border-b border-slate-100" onclick="closeMobileMenu()">Daily Schedule</a>
+            <a href="#locations" class="block py-3 text-slate-700 font-semibold border-b border-slate-100" onclick="closeMobileMenu()">Locations</a>
+            <div class="pt-4">
+                <button class="w-full bg-indigo-500 hover:bg-indigo-600 text-white px-5 py-3 rounded-full text-sm font-semibold transition-all">
+                    Enroll Your Toddler
+                </button>
+            </div>
+        </div>
+        
+        <div class="absolute bottom-8 left-6 right-6">
+            <p class="text-sm text-slate-500 mb-4">Contact us:</p>
+            <div class="flex items-center gap-2 text-slate-700 mb-2">
+                <iconify-icon icon="lucide:phone" width="16"></iconify-icon>
+                <span class="text-sm">+91 77680 31411</span>
+            </div>
+            <div class="flex items-center gap-2 text-slate-700">
+                <iconify-icon icon="lucide:mail" width="16"></iconify-icon>
+                <span class="text-sm">maurawonderlab@gmail.com</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hero Section for Toddler Camps -->
+    <section class="relative pt-32 pb-20 lg:pt-40 lg:pb-28 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+            <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-pink-100 text-pink-700 text-xs font-bold mb-8 uppercase tracking-wide border border-pink-200">
+                <iconify-icon icon="lucide:heart" width="16"></iconify-icon>
+                Designed Specifically for Toddlers
+            </div>
+            
+            <h1 class="text-4xl md:text-6xl lg:text-7xl font-semibold tracking-tight text-slate-900 mb-6 leading-[0.9]">
+                Adventure Camps for <br>
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-pink-400 via-purple-500 to-indigo-500">
+                    Toddlers (3-5 Years)
+                </span>
+            </h1>
+            
+            <p class="mt-4 max-w-2xl mx-auto text-lg md:text-xl text-slate-500 leading-relaxed">
+                Your little explorer's first camping adventure! Specially designed <span class="font-bold text-pink-600">adventure camps for toddlers</span> in 
+                <span class="font-bold text-slate-700 underline decoration-orange-300 decoration-2 underline-offset-2">Virar</span>, 
+                <span class="font-bold text-slate-700 underline decoration-blue-300 decoration-2 underline-offset-2">Vasai</span>, and 
+                <span class="font-bold text-slate-700 underline decoration-lime-300 decoration-2 underline-offset-2">Nallasopara</span>.
+                Safe, engaging, and perfectly paced for 3-5 year olds.
+            </p>
+
+            <div class="mt-10 flex flex-col sm:flex-row gap-4 justify-center items-center">
+                <button class="w-full sm:w-auto px-8 py-4 bg-pink-500 hover:bg-pink-600 text-white rounded-2xl text-base font-semibold transition-all shadow-[0px_6px_0px_0px_#DB2777] hover:shadow-[0px_3px_0px_0px_#DB2777] hover:translate-y-[3px] flex items-center justify-center gap-2">
+                    <iconify-icon icon="lucide:calendar-plus" width="20"></iconify-icon>
+                    Book Toddler Camp Session
+                </button>
+                <button class="w-full sm:w-auto px-8 py-4 bg-white hover:bg-slate-50 text-slate-700 border-2 border-slate-200 rounded-2xl text-base font-semibold transition-all hover:border-slate-300 flex items-center justify-center gap-2">
+                    <iconify-icon icon="lucide:video" width="20"></iconify-icon>
+                    See Toddlers in Action
+                </button>
+            </div>
+            
+            <!-- Age Badge -->
+            <div class="mt-8 flex flex-wrap gap-3 justify-center">
+                <span class="age-badge flex items-center gap-2">
+                    <iconify-icon icon="lucide:baby" width="14"></iconify-icon>
+                    Perfect for 3 Year Olds
+                </span>
+                <span class="age-badge flex items-center gap-2">
+                    <iconify-icon icon="lucide:child" width="14"></iconify-icon>
+                    Ideal for 4 Year Olds
+                </span>
+                <span class="age-badge flex items-center gap-2">
+                    <iconify-icon icon="lucide:users" width="14"></iconify-icon>
+                    Great for 5 Year Olds
+                </span>
+            </div>
+        </div>
+
+        <!-- Decorative Blobs -->
+        <div class="absolute top-1/4 left-0 -translate-x-1/2 w-64 h-64 bg-pink-300/30 rounded-full blur-3xl -z-10"></div>
+        <div class="absolute bottom-0 right-0 translate-x-1/4 w-96 h-96 bg-purple-300/20 rounded-full blur-3xl -z-10"></div>
+    </section>
+
+    <!-- Why Toddler Camps Section -->
+    <section class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="toddler-highlight p-8 rounded-3xl mb-12">
+                <div class="flex flex-col md:flex-row items-center gap-8">
+                    <div class="md:w-2/3">
+                        <h2 class="text-3xl md:text-4xl font-semibold text-slate-900 mb-4">Why Choose <span class="text-pink-600">Toddler Adventure Camps</span>?</h2>
+                        <p class="text-slate-700 mb-6">
+                            Our <strong>adventure camps for toddlers (3-5 years)</strong> are specially designed to match the developmental needs of preschoolers. 
+                            We focus on sensory exploration, social skills development, and gentle introduction to nature through age-appropriate activities.
+                        </p>
+                        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                            <div class="text-center p-4 bg-white/50 rounded-xl">
+                                <div class="text-2xl font-bold text-pink-600 mb-2">1:4</div>
+                                <div class="text-sm font-medium text-slate-700">Child-Staff Ratio</div>
+                            </div>
+                            <div class="text-center p-4 bg-white/50 rounded-xl">
+                                <div class="text-2xl font-bold text-pink-600 mb-2">2-3 hrs</div>
+                                <div class="text-sm font-medium text-slate-700">Session Duration</div>
+                            </div>
+                            <div class="text-center p-4 bg-white/50 rounded-xl">
+                                <div class="text-2xl font-bold text-pink-600 mb-2">5-8</div>
+                                <div class="text-sm font-medium text-slate-700">Kids per Group</div>
+                            </div>
+                            <div class="text-center p-4 bg-white/50 rounded-xl">
+                                <div class="text-2xl font-bold text-pink-600 mb-2">100%</div>
+                                <div class="text-sm font-medium text-slate-700">Parent Feedback</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="md:w-1/3">
+                        <div class="bg-gradient-to-br from-pink-100 to-purple-100 rounded-2xl p-6 text-center">
+                            <iconify-icon icon="lucide:shield-check" class="text-green-500" width="48"></iconify-icon>
+                            <h3 class="font-bold text-xl mt-4 mb-2">Certified Staff</h3>
+                            <p class="text-sm text-slate-600">All our toddler camp leaders are trained in early childhood development and first aid</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Activities Section for Toddlers -->
+    <section id="activities" class="py-24 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-semibold text-slate-900 mb-4 tracking-tight">Toddler-Friendly Activities</h2>
+                <p class="text-slate-500 max-w-xl mx-auto">Age-appropriate adventures designed specifically for 3-5 year old explorers</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Activity 1 -->
+                <div class="bg-white p-2 rounded-[2rem] border-2 border-slate-100 shadow-sm hover:shadow-lg transition-shadow duration-300 group">
+                    <div class="bg-pink-50 rounded-[1.5rem] h-48 flex items-center justify-center mb-4 overflow-hidden relative group-hover:bg-pink-100 transition-colors">
+                        <iconify-icon icon="lucide:footprints" width="64" class="text-pink-400 group-hover:scale-110 transition-transform duration-300"></iconify-icon>
+                    </div>
+                    <div class="px-4 pb-6">
+                        <div class="flex justify-between items-start mb-3">
+                            <h3 class="text-xl font-bold text-slate-800">Nature Walk Discovery</h3>
+                            <span class="text-xs font-bold bg-pink-100 text-pink-700 px-2 py-1 rounded-full">Ages 3-5</span>
+                        </div>
+                        <p class="text-sm text-slate-500 leading-relaxed mb-4">Gentle nature trails with sensory stops. Perfect for <strong>adventure camps for toddlers</strong> to explore textures, colors, and sounds of nature.</p>
+                        <div class="flex items-center text-xs text-slate-400">
+                            <iconify-icon icon="lucide:clock" width="14" class="mr-1"></iconify-icon>
+                            <span>20-30 minutes • Parent-accompanied option</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Activity 2 -->
+                <div class="bg-white p-2 rounded-[2rem] border-2 border-slate-100 shadow-sm hover:shadow-lg transition-shadow duration-300 group">
+                    <div class="bg-purple-50 rounded-[1.5rem] h-48 flex items-center justify-center mb-4 overflow-hidden relative group-hover:bg-purple-100 transition-colors">
+                        <iconify-icon icon="lucide:paint-bucket" width="64" class="text-purple-400 group-hover:scale-110 transition-transform duration-300"></iconify-icon>
+                    </div>
+                    <div class="px-4 pb-6">
+                        <div class="flex justify-between items-start mb-3">
+                            <h3 class="text-xl font-bold text-slate-800">Outdoor Art Studio</h3>
+                            <span class="text-xs font-bold bg-purple-100 text-purple-700 px-2 py-1 rounded-full">Ages 3-5</span>
+                        </div>
+                        <p class="text-sm text-slate-500 leading-relaxed mb-4">Leaf printing, mud painting, and nature collage. Creative activities designed for <strong>camping for 3 year olds</strong> and up.</p>
+                        <div class="flex items-center text-xs text-slate-400">
+                            <iconify-icon icon="lucide:clock" width="14" class="mr-1"></iconify-icon>
+                            <span>30-45 minutes • Washable materials only</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Activity 3 -->
+                <div class="bg-white p-2 rounded-[2rem] border-2 border-slate-100 shadow-sm hover:shadow-lg transition-shadow duration-300 group">
+                    <div class="bg-indigo-50 rounded-[1.5rem] h-48 flex items-center justify-center mb-4 overflow-hidden relative group-hover:bg-indigo-100 transition-colors">
+                        <iconify-icon icon="lucide:music" width="64" class="text-indigo-400 group-hover:scale-110 transition-transform duration-300"></iconify-icon>
+                    </div>
+                    <div class="px-4 pb-6">
+                        <div class="flex justify-between items-start mb-3">
+                            <h3 class="text-xl font-bold text-slate-800">Music & Movement</h3>
+                            <span class="text-xs font-bold bg-indigo-100 text-indigo-700 px-2 py-1 rounded-full">Ages 3-5</span>
+                        </div>
+                        <p class="text-sm text-slate-500 leading-relaxed mb-4">Nature-themed songs, dance, and rhythm games. Perfect for <strong>preschool adventure camps</strong> to develop coordination.</p>
+                        <div class="flex items-center text-xs text-slate-400">
+                            <iconify-icon icon="lucide:clock" width="14" class="mr-1"></iconify-icon>
+                            <span>15-20 minutes • Energy-burning fun</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Activity 4 -->
+                <div class="bg-white p-2 rounded-[2rem] border-2 border-slate-100 shadow-sm hover:shadow-lg transition-shadow duration-300 group">
+                    <div class="bg-green-50 rounded-[1.5rem] h-48 flex items-center justify-center mb-4 overflow-hidden relative group-hover:bg-green-100 transition-colors">
+                        <iconify-icon icon="lucide:bug" width="64" class="text-green-400 group-hover:scale-110 transition-transform duration-300"></iconify-icon>
+                    </div>
+                    <div class="px-4 pb-6">
+                        <div class="flex justify-between items-start mb-3">
+                            <h3 class="text-xl font-bold text-slate-800">Mini Bug Safari</h3>
+                            <span class="text-xs font-bold bg-green-100 text-green-700 px-2 py-1 rounded-full">Ages 4-5</span>
+                        </div>
+                        <p class="text-sm text-slate-500 leading-relaxed mb-4">Safe insect observation with magnifying glasses. A gentle introduction to science for <strong>adventure camps for 4-5 year olds</strong>.</p>
+                        <div class="flex items-center text-xs text-slate-400">
+                            <iconify-icon icon="lucide:clock" width="14" class="mr-1"></iconify-icon>
+                            <span>20-30 minutes • No-touch observation</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Activity 5 -->
+                <div class="bg-white p-2 rounded-[2rem] border-2 border-slate-100 shadow-sm hover:shadow-lg transition-shadow duration-300 group">
+                    <div class="bg-yellow-50 rounded-[1.5rem] h-48 flex items-center justify-center mb-4 overflow-hidden relative group-hover:bg-yellow-100 transition-colors">
+                        <iconify-icon icon="lucide:tent" width="64" class="text-yellow-400 group-hover:scale-110 transition-transform duration-300"></iconify-icon>
+                    </div>
+                    <div class="px-4 pb-6">
+                        <div class="flex justify-between items-start mb-3">
+                            <h3 class="text-xl font-bold text-slate-800">Tiny Camper Setup</h3>
+                            <span class="text-xs font-bold bg-yellow-100 text-yellow-700 px-2 py-1 rounded-full">Ages 3-5</span>
+                        </div>
+                        <p class="text-sm text-slate-500 leading-relaxed mb-4">Child-sized tents and camping gear. Perfect first camping experience for <strong>toddler outdoor activities</strong> in safe environments.</p>
+                        <div class="flex items-center text-xs text-slate-400">
+                            <iconify-icon icon="lucide:clock" width="14" class="mr-1"></iconify-icon>
+                            <span>30-40 minutes • Play-based learning</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Activity 6 -->
+                <div class="bg-white p-2 rounded-[2rem] border-2 border-slate-100 shadow-sm hover:shadow-lg transition-shadow duration-300 group">
+                    <div class="bg-blue-50 rounded-[1.5rem] h-48 flex items-center justify-center mb-4 overflow-hidden relative group-hover:bg-blue-100 transition-colors">
+                        <iconify-icon icon="lucide:water" width="64" class="text-blue-400 group-hover:scale-110 transition-transform duration-300"></iconify-icon>
+                    </div>
+                    <div class="px-4 pb-6">
+                        <div class="flex justify-between items-start mb-3">
+                            <h3 class="text-xl font-bold text-slate-800">Water Play Station</h3>
+                            <span class="text-xs font-bold bg-blue-100 text-blue-700 px-2 py-1 rounded-full">Ages 3-5</span>
+                        </div>
+                        <p class="text-sm text-slate-500 leading-relaxed mb-4">Supervised splash play with buckets, cups, and water toys. Great for <strong>early childhood adventure</strong> on hot days.</p>
+                        <div class="flex items-center text-xs text-slate-400">
+                            <iconify-icon icon="lucide:clock" width="14" class="mr-1"></iconify-icon>
+                            <span>15-25 minutes • Constant supervision</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Safety Section -->
+    <section id="safety" class="py-24 bg-gradient-to-b from-white to-pink-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-semibold text-slate-900 mb-4 tracking-tight">Safety First for Our Little Explorers</h2>
+                <p class="text-slate-500 max-w-xl mx-auto">Your toddler's safety is our top priority at Maura Wonderlab</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="bg-white p-6 rounded-2xl border border-slate-100 shadow-sm">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="h-12 w-12 rounded-full bg-green-100 flex items-center justify-center">
+                            <iconify-icon icon="lucide:shield" class="text-green-600" width="24"></iconify-icon>
+                        </div>
+                        <h3 class="font-bold text-lg text-slate-900">1:4 Staff Ratio</h3>
+                    </div>
+                    <p class="text-slate-600 text-sm">One trained adult for every four toddlers ensures constant supervision and individual attention.</p>
+                </div>
+                
+                <div class="bg-white p-6 rounded-2xl border border-slate-100 shadow-sm">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="h-12 w-12 rounded-full bg-blue-100 flex items-center justify-center">
+                            <iconify-icon icon="lucide:first-aid" class="text-blue-600" width="24"></iconify-icon>
+                        </div>
+                        <h3 class="font-bold text-lg text-slate-900">First Aid Certified</h3>
+                    </div>
+                    <p class="text-slate-600 text-sm">All staff members are certified in pediatric first aid and CPR for emergencies.</p>
+                </div>
+                
+                <div class="bg-white p-6 rounded-2xl border border-slate-100 shadow-sm">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="h-12 w-12 rounded-full bg-purple-100 flex items-center justify-center">
+                            <iconify-icon icon="lucide:thermometer" class="text-purple-600" width="24"></iconify-icon>
+                        </div>
+                        <h3 class="font-bold text-lg text-slate-900">Temperature Checks</h3>
+                    </div>
+                    <p class="text-slate-600 text-sm">Daily health screening and temperature checks for all toddlers and staff members.</p>
+                </div>
+                
+                <div class="bg-white p-6 rounded-2xl border border-slate-100 shadow-sm">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="h-12 w-12 rounded-full bg-pink-100 flex items-center justify-center">
+                            <iconify-icon icon="lucide:lock" class="text-pink-600" width="24"></iconify-icon>
+                        </div>
+                        <h3 class="font-bold text-lg text-slate-900">Secure Locations</h3>
+                    </div>
+                    <p class="text-slate-600 text-sm">Fenced, child-proofed areas with controlled access points at all our locations.</p>
+                </div>
+            </div>
+            
+            <div class="mt-12 text-center">
+                <span class="safety-badge inline-flex items-center gap-2 mb-4">
+                    <iconify-icon icon="lucide:shield-check" width="16"></iconify-icon>
+                    Rated "Excellent" for Safety by 200+ Parents
+                </span>
+                <p class="text-slate-600 max-w-2xl mx-auto">
+                    Our <strong>adventure camps for toddlers in Virar, Vasai, and Nallasopara</strong> maintain the highest safety standards. 
+                    We conduct regular safety audits and follow all recommended protocols for early childhood programs.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Daily Schedule -->
+    <section id="schedule" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-semibold text-slate-900 mb-4 tracking-tight">Perfectly Paced for Toddlers</h2>
+                <p class="text-slate-500 max-w-xl mx-auto">A sample day at our adventure camps for 3-5 year olds</p>
+            </div>
+
+            <div class="max-w-3xl mx-auto">
+                <div class="space-y-6">
+                    <div class="flex items-start gap-4 p-6 rounded-2xl bg-gradient-to-r from-pink-50 to-white border border-pink-100">
+                        <div class="h-12 w-12 rounded-full bg-pink-100 flex items-center justify-center flex-shrink-0">
+                            <span class="font-bold text-pink-700">9:30</span>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-lg text-slate-900 mb-2">Welcome & Settle In</h3>
+                            <p class="text-slate-600">Gentle separation support, free play with soft toys, and circle time introduction.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-start gap-4 p-6 rounded-2xl bg-gradient-to-r from-purple-50 to-white border border-purple-100">
+                        <div class="h-12 w-12 rounded-full bg-purple-100 flex items-center justify-center flex-shrink-0">
+                            <span class="font-bold text-purple-700">10:00</span>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-lg text-slate-900 mb-2">Nature Adventure Time</h3>
+                            <p class="text-slate-600">Guided sensory exploration activity (choose from our toddler-friendly options above).</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-start gap-4 p-6 rounded-2xl bg-gradient-to-r from-blue-50 to-white border border-blue-100">
+                        <div class="h-12 w-12 rounded-full bg-blue-100 flex items-center justify-center flex-shrink-0">
+                            <span class="font-bold text-blue-700">10:45</span>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-lg text-slate-900 mb-2">Snack & Story Time</h3>
+                            <p class="text-slate-600">Healthy snack provided, followed by nature-themed story session under our toddler tents.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-start gap-4 p-6 rounded-2xl bg-gradient-to-r from-green-50 to-white border border-green-100">
+                        <div class="h-12 w-12 rounded-full bg-green-100 flex items-center justify-center flex-shrink-0">
+                            <span class="font-bold text-green-700">11:15</span>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-lg text-slate-900 mb-2">Creative Expression</h3>
+                            <p class="text-slate-600">Art activity using natural materials, music, or movement games.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-start gap-4 p-6 rounded-2xl bg-gradient-to-r from-yellow-50 to-white border border-yellow-100">
+                        <div class="h-12 w-12 rounded-full bg-yellow-100 flex items-center justify-center flex-shrink-0">
+                            <span class="font-bold text-yellow-700">12:00</span>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-lg text-slate-900 mb-2">Goodbye Circle & Pickup</h3>
+                            <p class="text-slate-600">Closing song, sticker rewards, and parent handover with daily activity summary.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="mt-12 text-center">
+                    <p class="text-slate-600">
+                        <strong>Flexible Options Available:</strong> Half-day sessions (2.5 hours) • Parent-accompanied sessions • 
+                        3-day or 5-day weekly packages for <strong>adventure camps for toddlers</strong>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Locations for Toddler Camps -->
+    <section id="locations" class="py-24 bg-gradient-to-b from-white to-pink-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-semibold text-slate-900 mb-4 tracking-tight">Toddler Camps Near You</h2>
+                <p class="text-slate-500 max-w-xl mx-auto">Specially designed toddler-friendly locations across the region</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white p-8 rounded-3xl border-2 border-slate-100 shadow-sm hover:shadow-lg transition-shadow">
+                    <div class="h-12 w-12 rounded-full bg-orange-100 flex items-center justify-center mb-6">
+                        <iconify-icon icon="lucide:map-pin" class="text-orange-600" width="24"></iconify-icon>
+                    </div>
+                    <h3 class="text-2xl font-bold text-slate-900 mb-3">Virar Toddler Camp</h3>
+                    <p class="text-slate-600 mb-4">Our flagship location with shaded play areas, toddler-sized equipment, and indoor-outdoor facilities perfect for <strong>camping for 3 year olds</strong>.</p>
+                    <div class="space-y-2">
+                        <div class="flex items-center text-sm text-slate-500">
+                            <iconify-icon icon="lucide:clock" width="16" class="mr-2"></iconify-icon>
+                            <span>Mon-Fri: 9:30 AM - 12:00 PM</span>
+                        </div>
+                        <div class="flex items-center text-sm text-slate-500">
+                            <iconify-icon icon="lucide:calendar" width="16" class="mr-2"></iconify-icon>
+                            <span>Summer, Winter & Weekend Sessions</span>
+                        </div>
+                    </div>
+                    <button class="mt-6 w-full py-3 bg-orange-100 text-orange-700 rounded-xl font-semibold hover:bg-orange-200 transition-colors">
+                        View Virar Schedule
+                    </button>
+                </div>
+                
+                <div class="bg-white p-8 rounded-3xl border-2 border-slate-100 shadow-sm hover:shadow-lg transition-shadow">
+                    <div class="h-12 w-12 rounded-full bg-blue-100 flex items-center justify-center mb-6">
+                        <iconify-icon icon="lucide:map-pin" class="text-blue-600" width="24"></iconify-icon>
+                    </div>
+                    <h3 class="text-2xl font-bold text-slate-900 mb-3">Vasai Toddler Camp</h3>
+                    <p class="text-slate-600 mb-4">Secure gated facility with sensory garden, water play area, and climate-controlled spaces ideal for <strong>adventure camps for 4-5 year olds</strong>.</p>
+                    <div class="space-y-2">
+                        <div class="flex items-center text-sm text-slate-500">
+                            <iconify-icon icon="lucide:clock" width="16" class="mr-2"></iconify-icon>
+                            <span>Tue-Thu: 9:30 AM - 12:00 PM</span>
+                        </div>
+                        <div class="flex items-center text-sm text-slate-500">
+                            <iconify-icon icon="lucide:calendar" width="16" class="mr-2"></iconify-icon>
+                            <span>Year-round programs available</span>
+                        </div>
+                    </div>
+                    <button class="mt-6 w-full py-3 bg-blue-100 text-blue-700 rounded-xl font-semibold hover:bg-blue-200 transition-colors">
+                        View Vasai Schedule
+                    </button>
+                </div>
+                
+                <div class="bg-white p-8 rounded-3xl border-2 border-slate-100 shadow-sm hover:shadow-lg transition-shadow">
+                    <div class="h-12 w-12 rounded-full bg-green-100 flex items-center justify-center mb-6">
+                        <iconify-icon icon="lucide:map-pin" class="text-green-600" width="24"></iconify-icon>
+                    </div>
+                    <h3 class="text-2xl font-bold text-slate-900 mb-3">Nallasopara Toddler Camp</h3>
+                    <p class="text-slate-600 mb-4">Newly renovated facility with soft play surfaces, age-appropriate climbing structures, and shaded outdoor areas for <strong>preschool adventure camps</strong>.</p>
+                    <div class="space-y-2">
+                        <div class="flex items-center text-sm text-slate-500">
+                            <iconify-icon icon="lucide:clock" width="16" class="mr-2"></iconify-icon>
+                            <span>Mon-Wed-Fri: 9:30 AM - 12:00 PM</span>
+                        </div>
+                        <div class="flex items-center text-sm text-slate-500">
+                            <iconify-icon icon="lucide:calendar" width="16" class="mr-2"></iconify-icon>
+                            <span>Seasonal & holiday camps</span>
+                        </div>
+                    </div>
+                    <button class="mt-6 w-full py-3 bg-green-100 text-green-700 rounded-xl font-semibold hover:bg-green-200 transition-colors">
+                        View Nallasopara Schedule
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-24 bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-500 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-4xl md:text-5xl font-semibold mb-6 tracking-tight">Ready for Your Toddler's First Adventure?</h2>
+            <p class="text-xl mb-10 max-w-2xl mx-auto opacity-90">
+                Join 500+ happy toddlers who've discovered the joy of nature at Maura Wonderlab's <strong>adventure camps for toddlers (3-5 years)</strong>
+            </p>
+            
+            <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                <button class="w-full sm:w-auto px-8 py-4 bg-white text-pink-600 rounded-2xl text-base font-semibold transition-all shadow-[0px_6px_0px_0px_rgba(255,255,255,0.3)] hover:shadow-[0px_3px_0px_0px_rgba(255,255,255,0.3)] hover:translate-y-[3px] flex items-center justify-center gap-2">
+                    <iconify-icon icon="lucide:calendar-plus" width="20"></iconify-icon>
+                    Book a Trial Session
+                </button>
+                <button class="w-full sm:w-auto px-8 py-4 bg-transparent border-2 border-white text-white rounded-2xl text-base font-semibold transition-all hover:bg-white/10 flex items-center justify-center gap-2">
+                    <iconify-icon icon="lucide:phone" width="20"></iconify-icon>
+                    Call +91 77680 31411
+                </button>
+            </div>
+            
+            <p class="mt-8 text-sm opacity-75">
+                Limited spots available for our <strong>adventure camps for toddlers in Virar, Vasai, and Nallasopara</strong>. 
+                Book now to secure your child's place!
+            </p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-white pt-20 pb-10 rounded-t-[3rem]">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
+                <div class="col-span-1 md:col-span-2">
+                    <div class="flex items-center gap-2 mb-6">
+                         <div class="h-8 w-8 bg-orange-500 rounded-lg flex items-center justify-center text-white">
+                            <iconify-icon icon="lucide:tent" width="18"></iconify-icon>
+                        </div>
+                        <span class="brand-font text-2xl font-bold">Maura <span class="text-orange-400">Wonderlab</span></span>
+                    </div>
+                    <p class="text-slate-400 max-w-sm mb-6">Creating unforgettable childhood memories through nature, science, and adventure. Specializing in <strong>adventure camps for toddlers (3-5 years)</strong>.</p>
+                    <div class="flex gap-4">
+                        <a href="#" class="h-10 w-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-orange-500 transition-colors"><iconify-icon icon="lucide:instagram" width="20"></iconify-icon></a>
+                        <a href="#" class="h-10 w-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-blue-500 transition-colors"><iconify-icon icon="lucide:facebook" width="20"></iconify-icon></a>
+                        <a href="#" class="h-10 w-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-green-500 transition-colors"><iconify-icon icon="lucide:phone" width="20"></iconify-icon></a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="font-bold text-lg mb-6">Toddler Programs</h4>
+                    <ul class="space-y-4 text-slate-400 text-sm">
+                        <li><a href="#" class="hover:text-white transition-colors">Adventure Camps for 3 Year Olds</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Camping for 4-5 Year Olds</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Parent & Toddler Sessions</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Weekend Toddler Adventures</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-bold text-lg mb-6">Camp Locations</h4>
+                    <ul class="space-y-4 text-slate-400 text-sm">
+                        <li><a href="#" class="hover:text-white transition-colors">Toddler Camps in Virar</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Toddler Camps in Vasai</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Toddler Camps in Nallasopara</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Preschool Adventure Mumbai</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-slate-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="text-slate-500 text-sm">© 2024 Maura Wonderlab. All rights reserved.</p>
+                <div class="flex gap-6 text-sm text-slate-500">
+                    <a href="#" class="hover:text-white">Privacy</a>
+                    <a href="#" class="hover:text-white">Terms</a>
+                    <a href="#" class="hover:text-white">Safety Policy</a>
+                </div>
+            </div>
+            
+            <div class="mt-8 pt-8 border-t border-slate-800">
+                <p class="text-slate-500 text-xs text-center">
+                    <strong>SEO Keywords:</strong> adventure camps for toddlers, camping for 3 year olds, adventure camps for 4-5 year olds, 
+                    preschool adventure camps, toddler outdoor activities, early childhood adventure, Virar toddler camps, 
+                    Vasai kids camps, Nallasopara preschool activities, Maura Wonderlab toddler programs
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Functionality
+        const mobileMenuButton = document.getElementById('mobileMenuButton');
+        const closeMenuButton = document.getElementById('closeMenuButton');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const menuOverlay = document.getElementById('menuOverlay');
+        
+        function openMobileMenu() {
+            mobileMenu.classList.add('open');
+            menuOverlay.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+        
+        function closeMobileMenu() {
+            mobileMenu.classList.remove('open');
+            menuOverlay.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+        
+        mobileMenuButton.addEventListener('click', openMobileMenu);
+        closeMenuButton.addEventListener('click', closeMobileMenu);
+        menuOverlay.addEventListener('click', closeMobileMenu);
+        
+        document.querySelectorAll('#mobileMenu a').forEach(link => {
+            link.addEventListener('click', closeMobileMenu);
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                const href = this.getAttribute('href');
+                
+                if (href === '#' || href.startsWith('#') && href.length > 1) {
+                    e.preventDefault();
+                    
+                    const targetId = href.substring(1);
+                    const targetElement = document.getElementById(targetId);
+                    
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                    }
+                }
+            });
+        });
+        
+        // Close menu on ESC key press
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && mobileMenu.classList.contains('open')) {
+                closeMobileMenu();
+            }
+        });
+        
+        // Prevent scrolling on the overlay
+        menuOverlay.addEventListener('touchmove', (e) => {
+            e.preventDefault();
+        }, { passive: false });
+        
+        // Animation for cards
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+        
+        document.querySelectorAll('.group').forEach(card => {
+            card.style.opacity = '0.9';
+            card.style.transform = 'translateY(10px)';
+            card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+            observer.observe(card);
+        });
+        
+        // Highlight age-specific keywords
+        const ageKeywords = ['toddlers', '3-5 years', '3 year olds', '4-5 year olds', 'preschool', 'early childhood'];
+        const contentElement = document.body;
+        
+        function highlightKeywords() {
+            let html = contentElement.innerHTML;
+            ageKeywords.forEach(keyword => {
+                const regex = new RegExp(`\\b(${keyword})\\b`, 'gi');
+                html = html.replace(regex, '<strong class="text-pink-600">$1</strong>');
+            });
+            contentElement.innerHTML = html;
+        }
+        
+        // Call on page load
+        window.addEventListener('load', highlightKeywords);
+    </script>
+</body>
+</html>

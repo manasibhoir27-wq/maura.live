@@ -1,0 +1,852 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Social Skills Development Camp for Kids | Maura Wonderlab</title>
+    <meta name="description" content="Build confidence, communication & teamwork through adventure camping! Social skills development camps for kids in Virar, Nallasopara & Vasai.">
+    <meta name="keywords" content="social skills development for kids, kids social skills camp, teamwork activities for children, communication skills camp, confidence building for kids, children's social development activities, group activities for kids, peer interaction camp, emotional intelligence for children, leadership skills for kids">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Iconify (Lucide Icons) -->
+    <script src="https://cdn.jsdelivr.net/npm/iconify-icon@1.0.8/dist/iconify-icon.min.js"></script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=Nunito:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        /* Custom Font Settings for Childish/Playful Vibe */
+        body {
+            font-family: 'Nunito', sans-serif;
+        }
+        h1, h2, h3, h4, h5, h6, .brand-font {
+            font-family: 'Fredoka', sans-serif;
+        }
+        
+        /* Playful Blob Pattern */
+        .bg-pattern {
+            background-color: #FFFDF5;
+            background-image: radial-gradient(#FDE68A 1px, transparent 1px), radial-gradient(#BAE6FD 1px, transparent 1px);
+            background-size: 40px 40px;
+            background-position: 0 0, 20px 20px;
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #FFF7ED; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #FDBA74; 
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #EA580C; 
+        }
+
+        /* Mobile Menu Animation */
+        .mobile-menu {
+            transform: translateX(100%);
+            transition: transform 0.3s ease-in-out;
+        }
+        
+        .mobile-menu.open {
+            transform: translateX(0);
+        }
+        
+        .menu-overlay {
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease-in-out, visibility 0.3s;
+        }
+        
+        .menu-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        /* Skill Progress Bars */
+        .skill-bar {
+            height: 8px;
+            border-radius: 4px;
+            background: #E5E7EB;
+            overflow: hidden;
+        }
+        
+        .skill-progress {
+            height: 100%;
+            background: linear-gradient(90deg, #F59E0B, #EF4444);
+            border-radius: 4px;
+            transition: width 1s ease-in-out;
+        }
+
+        /* Highlight Animation */
+        @keyframes highlight {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        
+        .highlight-card {
+            animation: highlight 2s ease-in-out 1s 3;
+        }
+    </style>
+</head>
+<body class="bg-pattern text-slate-600 antialiased selection:bg-orange-200 selection:text-orange-900">
+
+    <!-- Navbar -->
+    <nav class="fixed w-full z-50 top-0 transition-all duration-300 backdrop-blur-md bg-white/80 border-b-2 border-slate-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center gap-2 cursor-pointer" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+                    <img src="maura wonderlab logo.png" alt="Maura Wonderlab" width="50px">
+                    <span class="brand-font text-2xl font-semibold tracking-tight text-slate-800">
+                        Maura <span class="text-orange-500">Wonderlab</span>
+                    </span>
+                </div>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="#activities" class="text-sm font-semibold text-slate-600 hover:text-orange-500 transition-colors">Activities</a>
+                    <a href="#benefits" class="text-sm font-semibold text-slate-600 hover:text-orange-500 transition-colors">Benefits</a>
+                    <a href="#programs" class="text-sm font-semibold text-slate-600 hover:text-orange-500 transition-colors">Programs</a>
+                    <a href="#testimonials" class="text-sm font-semibold text-slate-600 hover:text-orange-500 transition-colors">Success Stories</a>
+                    <button class="bg-indigo-500 hover:bg-indigo-600 text-white px-5 py-2.5 rounded-full text-sm font-semibold transition-all shadow-[0px_4px_0px_0px_rgba(67,56,202,1)] hover:shadow-[0px_2px_0px_0px_rgba(67,56,202,1)] hover:translate-y-[2px]">
+                        Book an Adventure
+                    </button>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobileMenuButton" class="text-slate-600 hover:text-orange-500 p-2">
+                        <iconify-icon icon="lucide:menu" width="28" stroke-width="1.5"></iconify-icon>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu Overlay -->
+    <div id="menuOverlay" class="menu-overlay fixed inset-0 bg-black/50 z-40 md:hidden"></div>
+
+    <!-- Mobile Menu -->
+    <div id="mobileMenu" class="mobile-menu fixed top-0 right-0 h-full w-64 bg-white z-50 shadow-2xl md:hidden p-6">
+        <div class="flex justify-between items-center mb-8">
+            <div class="flex items-center gap-2">
+                <div class="h-8 w-8 bg-orange-400 rounded-lg flex items-center justify-center text-white">
+                    <iconify-icon icon="lucide:tent" width="18"></iconify-icon>
+                </div>
+                <span class="brand-font text-xl font-semibold text-slate-800">Maura <span class="text-orange-500">Wonderlab</span></span>
+            </div>
+            <button id="closeMenuButton" class="text-slate-600 hover:text-orange-500 p-2">
+                <iconify-icon icon="lucide:x" width="24" stroke-width="1.5"></iconify-icon>
+            </button>
+        </div>
+        
+        <div class="space-y-6">
+            <a href="#activities" class="block py-3 text-slate-700 font-semibold border-b border-slate-100" onclick="closeMobileMenu()">Activities</a>
+            <a href="#benefits" class="block py-3 text-slate-700 font-semibold border-b border-slate-100" onclick="closeMobileMenu()">Benefits</a>
+            <a href="#programs" class="block py-3 text-slate-700 font-semibold border-b border-slate-100" onclick="closeMobileMenu()">Programs</a>
+            <a href="#testimonials" class="block py-3 text-slate-700 font-semibold border-b border-slate-100" onclick="closeMobileMenu()">Success Stories</a>
+            <div class="pt-4">
+                <button class="w-full bg-indigo-500 hover:bg-indigo-600 text-white px-5 py-3 rounded-full text-sm font-semibold transition-all">
+                    Book an Adventure
+                </button>
+            </div>
+        </div>
+        
+        <div class="absolute bottom-8 left-6 right-6">
+            <p class="text-sm text-slate-500 mb-4">Contact us:</p>
+            <div class="flex items-center gap-2 text-slate-700 mb-2">
+                <iconify-icon icon="lucide:phone" width="16"></iconify-icon>
+                <span class="text-sm">+91 77680 31411</span>
+            </div>
+            <div class="flex items-center gap-2 text-slate-700">
+                <iconify-icon icon="lucide:mail" width="16"></iconify-icon>
+                <span class="text-sm">maurawonderlab@gmail.com</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="pt-32 pb-20 px-4">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <div class="inline-flex items-center gap-2 bg-amber-100 text-amber-800 px-4 py-2 rounded-full text-sm font-semibold mb-6">
+                        <iconify-icon icon="lucide:users" width="18"></iconify-icon>
+                        <span>Social Skills Development Program</span>
+                    </div>
+                    <h1 class="text-5xl md:text-6xl font-bold text-slate-800 mb-6 leading-tight">
+                        Build <span class="text-orange-500">Confidence</span> & 
+                        <span class="text-indigo-500">Friendships</span> Through Adventure
+                    </h1>
+                    <p class="text-xl text-slate-600 mb-8">
+                        At Maura Wonderlab, we transform social development into exciting adventures! Our specially designed activities help children aged 6-14 develop essential social skills in a fun, supportive environment.
+                    </p>
+                    <div class="flex flex-wrap gap-4">
+                        <button class="bg-indigo-500 hover:bg-indigo-600 text-white px-8 py-4 rounded-full text-lg font-semibold transition-all shadow-[0px_6px_0px_0px_rgba(67,56,202,1)] hover:shadow-[0px_3px_0px_0px_rgba(67,56,202,1)] hover:translate-y-[3px]">
+                            Join Social Skills Camp
+                        </button>
+                        <button class="border-2 border-orange-400 text-orange-600 hover:bg-orange-50 px-8 py-4 rounded-full text-lg font-semibold transition-all">
+                            Download Activity Calendar
+                        </button>
+                    </div>
+                </div>
+                <div class="relative">
+                    <div class="bg-gradient-to-br from-orange-400 to-pink-500 rounded-[2rem] p-1 shadow-2xl">
+                        <div class="bg-white rounded-[1.75rem] p-8">
+                            <div class="grid grid-cols-2 gap-4">
+                                <div class="bg-amber-50 p-4 rounded-2xl border-2 border-amber-200">
+                                    <div class="h-12 w-12 bg-amber-100 rounded-xl flex items-center justify-center mb-3">
+                                        <iconify-icon icon="lucide:message-circle" class="text-amber-600" width="24"></iconify-icon>
+                                    </div>
+                                    <h3 class="font-bold text-slate-800 mb-1">Communication</h3>
+                                    <p class="text-sm text-slate-600">Active listening & expression</p>
+                                </div>
+                                <div class="bg-indigo-50 p-4 rounded-2xl border-2 border-indigo-200">
+                                    <div class="h-12 w-12 bg-indigo-100 rounded-xl flex items-center justify-center mb-3">
+                                        <iconify-icon icon="lucide:handshake" class="text-indigo-600" width="24"></iconify-icon>
+                                    </div>
+                                    <h3 class="font-bold text-slate-800 mb-1">Teamwork</h3>
+                                    <p class="text-sm text-slate-600">Collaborative problem solving</p>
+                                </div>
+                                <div class="bg-emerald-50 p-4 rounded-2xl border-2 border-emerald-200">
+                                    <div class="h-12 w-12 bg-emerald-100 rounded-xl flex items-center justify-center mb-3">
+                                        <iconify-icon icon="lucide:brain" class="text-emerald-600" width="24"></iconify-icon>
+                                    </div>
+                                    <h3 class="font-bold text-slate-800 mb-1">Emotional IQ</h3>
+                                    <p class="text-sm text-slate-600">Understanding feelings</p>
+                                </div>
+                                <div class="bg-purple-50 p-4 rounded-2xl border-2 border-purple-200">
+                                    <div class="h-12 w-12 bg-purple-100 rounded-xl flex items-center justify-center mb-3">
+                                        <iconify-icon icon="lucide:sparkles" class="text-purple-600" width="24"></iconify-icon>
+                                    </div>
+                                    <h3 class="font-bold text-slate-800 mb-1">Confidence</h3>
+                                    <p class="text-sm text-slate-600">Self-expression & leadership</p>
+                                </div>
+                            </div>
+                            <div class="mt-6 bg-gradient-to-r from-orange-100 to-pink-100 p-6 rounded-xl border-2 border-orange-200">
+                                <p class="font-bold text-slate-800 text-center">
+                                    "94% of parents report noticeable improvement in their child's social confidence after just one camp!"
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Activities Section -->
+    <section id="activities" class="py-20 px-4 bg-gradient-to-b from-white to-amber-50">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold text-slate-800 mb-6">
+                    Social Skills <span class="text-orange-500">Development Activities</span>
+                </h2>
+                <p class="text-xl text-slate-600 max-w-3xl mx-auto">
+                    Our adventure-based activities are specifically designed to nurture social skills in a natural, engaging environment.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+                <!-- Activity 1 -->
+                <div class="group bg-white rounded-3xl p-8 shadow-lg border-2 border-transparent hover:border-orange-300 transition-all duration-300 hover:shadow-2xl transform hover:-translate-y-2 highlight-card">
+                    <div class="h-16 w-16 bg-gradient-to-br from-amber-400 to-orange-500 rounded-2xl flex items-center justify-center mb-6">
+                        <iconify-icon icon="lucide:megaphone" class="text-white" width="28"></iconify-icon>
+                    </div>
+                    <h3 class="text-2xl font-bold text-slate-800 mb-4">Communication Circle</h3>
+                    <p class="text-slate-600 mb-6">
+                        Structured sharing sessions where children practice active listening, taking turns, and expressing thoughts clearly in a safe circle format.
+                    </p>
+                    <div class="flex items-center justify-between">
+                        <span class="inline-flex items-center gap-2 text-sm font-semibold text-amber-700">
+                            <iconify-icon icon="lucide:users" width="16"></iconify-icon>
+                            Group Activity
+                        </span>
+                        <span class="text-sm font-semibold bg-amber-100 text-amber-800 px-3 py-1 rounded-full">
+                            Ages 6-14
+                        </span>
+                    </div>
+                </div>
+
+                <!-- Activity 2 -->
+                <div class="group bg-white rounded-3xl p-8 shadow-lg border-2 border-transparent hover:border-indigo-300 transition-all duration-300 hover:shadow-2xl transform hover:-translate-y-2">
+                    <div class="h-16 w-16 bg-gradient-to-br from-indigo-400 to-purple-500 rounded-2xl flex items-center justify-center mb-6">
+                        <iconify-icon icon="lucide:puzzle" class="text-white" width="28"></iconify-icon>
+                    </div>
+                    <h3 class="text-2xl font-bold text-slate-800 mb-4">Team Treasure Hunt</h3>
+                    <p class="text-slate-600 mb-6">
+                        Adventure-based challenges requiring teamwork, decision-making, and collaborative problem-solving to find hidden treasures.
+                    </p>
+                    <div class="flex items-center justify-between">
+                        <span class="inline-flex items-center gap-2 text-sm font-semibold text-indigo-700">
+                            <iconify-icon icon="lucide:target" width="16"></iconify-icon>
+                            Problem Solving
+                        </span>
+                        <span class="text-sm font-semibold bg-indigo-100 text-indigo-800 px-3 py-1 rounded-full">
+                            8-12 Participants
+                        </span>
+                    </div>
+                </div>
+
+                <!-- Activity 3 -->
+                <div class="group bg-white rounded-3xl p-8 shadow-lg border-2 border-transparent hover:border-emerald-300 transition-all duration-300 hover:shadow-2xl transform hover:-translate-y-2">
+                    <div class="h-16 w-16 bg-gradient-to-br from-emerald-400 to-green-500 rounded-2xl flex items-center justify-center mb-6">
+                        <iconify-icon icon="lucide:heart" class="text-white" width="28"></iconify-icon>
+                    </div>
+                    <h3 class="text-2xl font-bold text-slate-800 mb-4">Emotion Charades</h3>
+                    <p class="text-slate-600 mb-6">
+                        Fun drama games that help children recognize, express, and understand different emotions through facial expressions and body language.
+                    </p>
+                    <div class="flex items-center justify-between">
+                        <span class="inline-flex items-center gap-2 text-sm font-semibold text-emerald-700">
+                            <iconify-icon icon="lucide:smile" width="16"></iconify-icon>
+                            Emotional Intelligence
+                        </span>
+                        <span class="text-sm font-semibold bg-emerald-100 text-emerald-800 px-3 py-1 rounded-full">
+                            All Ages
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Additional Activities Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-3xl p-8 border-2 border-blue-200">
+                    <h3 class="text-2xl font-bold text-slate-800 mb-6">More Social Development Activities:</h3>
+                    <div class="space-y-4">
+                        <div class="flex items-start gap-4">
+                            <iconify-icon icon="lucide:check-circle" class="text-green-500 mt-1" width="20"></iconify-icon>
+                            <div>
+                                <h4 class="font-bold text-slate-800">Conflict Resolution Role-Play</h4>
+                                <p class="text-slate-600 text-sm">Simulated scenarios teaching peaceful conflict resolution</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <iconify-icon icon="lucide:check-circle" class="text-green-500 mt-1" width="20"></iconify-icon>
+                            <div>
+                                <h4 class="font-bold text-slate-800">Leadership Challenges</h4>
+                                <p class="text-slate-600 text-sm">Rotating leadership roles in group activities</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <iconify-icon icon="lucide:check-circle" class="text-green-500 mt-1" width="20"></iconify-icon>
+                            <div>
+                                <h4 class="font-bold text-slate-800">Collaborative Art Projects</h4>
+                                <p class="text-slate-600 text-sm">Group mural painting and creative teamwork</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <iconify-icon icon="lucide:check-circle" class="text-green-500 mt-1" width="20"></iconify-icon>
+                            <div>
+                                <h4 class="font-bold text-slate-800">Social Storytelling</h4>
+                                <p class="text-slate-600 text-sm">Building narratives together, taking turns adding to stories</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-gradient-to-r from-orange-50 to-amber-50 rounded-3xl p-8 border-2 border-orange-200">
+                    <h3 class="text-2xl font-bold text-slate-800 mb-6">Skill Development Progress:</h3>
+                    <div class="space-y-6">
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span class="font-semibold text-slate-700">Communication Skills</span>
+                                <span class="font-bold text-orange-600">95%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 95%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span class="font-semibold text-slate-700">Teamwork Ability</span>
+                                <span class="font-bold text-orange-600">92%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 92%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span class="font-semibold text-slate-700">Confidence Building</span>
+                                <span class="font-bold text-orange-600">96%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 96%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span class="font-semibold text-slate-700">Emotional Awareness</span>
+                                <span class="font-bold text-orange-600">88%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 88%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section id="benefits" class="py-20 px-4">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold text-slate-800 mb-6">
+                    Benefits of <span class="text-indigo-500">Social Skills Development</span>
+                </h2>
+                <p class="text-xl text-slate-600 max-w-3xl mx-auto">
+                    Our adventure-based approach creates lasting positive changes in children's social development
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-gradient-to-b from-white to-blue-50 rounded-3xl p-8 border-2 border-blue-200">
+                    <div class="h-14 w-14 bg-blue-100 rounded-2xl flex items-center justify-center mb-6">
+                        <iconify-icon icon="lucide:message-square" class="text-blue-600" width="28"></iconify-icon>
+                    </div>
+                    <h3 class="text-2xl font-bold text-slate-800 mb-4">Improved Communication</h3>
+                    <ul class="space-y-3 text-slate-600">
+                        <li class="flex items-start gap-2">
+                            <iconify-icon icon="lucide:chevron-right" class="text-blue-500 mt-1"></iconify-icon>
+                            Express thoughts and feelings clearly
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <iconify-icon icon="lucide:chevron-right" class="text-blue-500 mt-1"></iconify-icon>
+                            Active listening skills development
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <iconify-icon icon="lucide:chevron-right" class="text-blue-500 mt-1"></iconify-icon>
+                            Non-verbal communication understanding
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="bg-gradient-to-b from-white to-emerald-50 rounded-3xl p-8 border-2 border-emerald-200">
+                    <div class="h-14 w-14 bg-emerald-100 rounded-2xl flex items-center justify-center mb-6">
+                        <iconify-icon icon="lucide:users" class="text-emerald-600" width="28"></iconify-icon>
+                    </div>
+                    <h3 class="text-2xl font-bold text-slate-800 mb-4">Stronger Relationships</h3>
+                    <ul class="space-y-3 text-slate-600">
+                        <li class="flex items-start gap-2">
+                            <iconify-icon icon="lucide:chevron-right" class="text-emerald-500 mt-1"></iconify-icon>
+                            Building lasting friendships
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <iconify-icon icon="lucide:chevron-right" class="text-emerald-500 mt-1"></iconify-icon>
+                            Understanding social boundaries
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <iconify-icon icon="lucide:chevron-right" class="text-emerald-500 mt-1"></iconify-icon>
+                            Developing empathy and compassion
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="bg-gradient-to-b from-white to-purple-50 rounded-3xl p-8 border-2 border-purple-200">
+                    <div class="h-14 w-14 bg-purple-100 rounded-2xl flex items-center justify-center mb-6">
+                        <iconify-icon icon="lucide:sparkles" class="text-purple-600" width="28"></iconify-icon>
+                    </div>
+                    <h3 class="text-2xl font-bold text-slate-800 mb-4">Increased Confidence</h3>
+                    <ul class="space-y-3 text-slate-600">
+                        <li class="flex items-start gap-2">
+                            <iconify-icon icon="lucide:chevron-right" class="text-purple-500 mt-1"></iconify-icon>
+                            Speaking up in group settings
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <iconify-icon icon="lucide:chevron-right" class="text-purple-500 mt-1"></iconify-icon>
+                            Leadership skill development
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <iconify-icon icon="lucide:chevron-right" class="text-purple-500 mt-1"></iconify-icon>
+                            Positive self-expression
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Programs Section -->
+    <section id="programs" class="py-20 px-4 bg-gradient-to-b from-white to-amber-50">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold text-slate-800 mb-6">
+                    Social Skills <span class="text-orange-500">Development Programs</span>
+                </h2>
+                <p class="text-xl text-slate-600 max-w-3xl mx-auto">
+                    Choose from our specially designed programs for different age groups and skill levels
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Program 1 -->
+                <div class="bg-white rounded-3xl overflow-hidden shadow-xl border-2 border-amber-200 transform hover:-translate-y-4 transition-all duration-300">
+                    <div class="bg-gradient-to-r from-amber-400 to-orange-500 p-6 text-white text-center">
+                        <h3 class="text-2xl font-bold">Little Explorers</h3>
+                        <p class="text-amber-100">Ages 6-8</p>
+                    </div>
+                    <div class="p-8">
+                        <div class="text-5xl font-bold text-slate-800 mb-4">₹1,999<span class="text-lg text-slate-500">/session</span></div>
+                        <ul class="space-y-4 mb-8">
+                            <li class="flex items-start gap-3">
+                                <iconify-icon icon="lucide:check" class="text-green-500 mt-1"></iconify-icon>
+                                <span>Basic social interaction games</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <iconify-icon icon="lucide:check" class="text-green-500 mt-1"></iconify-icon>
+                                <span>Emotion recognition activities</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <iconify-icon icon="lucide:check" class="text-green-500 mt-1"></iconify-icon>
+                                <span>Simple team challenges</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <iconify-icon icon="lucide:check" class="text-green-500 mt-1"></iconify-icon>
+                                <span>Sharing and taking turns practice</span>
+                            </li>
+                        </ul>
+                        <button class="w-full bg-amber-500 hover:bg-amber-600 text-white py-3 rounded-full font-semibold transition-all">
+                            Enroll Now
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Program 2 -->
+                <div class="bg-white rounded-3xl overflow-hidden shadow-2xl border-2 border-orange-300 transform hover:-translate-y-4 transition-all duration-300 scale-105">
+                    <div class="bg-gradient-to-r from-orange-500 to-red-500 p-6 text-white text-center relative">
+                        <div class="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-red-500 text-white px-4 py-1 rounded-full text-sm font-bold">
+                            MOST POPULAR
+                        </div>
+                        <h3 class="text-2xl font-bold">Social Adventurers</h3>
+                        <p class="text-orange-100">Ages 9-12</p>
+                    </div>
+                    <div class="p-8">
+                        <div class="text-5xl font-bold text-slate-800 mb-4">₹2,499<span class="text-lg text-slate-500">/session</span></div>
+                        <ul class="space-y-4 mb-8">
+                            <li class="flex items-start gap-3">
+                                <iconify-icon icon="lucide:check" class="text-green-500 mt-1"></iconify-icon>
+                                <span>Advanced communication exercises</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <iconify-icon icon="lucide:check" class="text-green-500 mt-1"></iconify-icon>
+                                <span>Complex team problem-solving</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <iconify-icon icon="lucide:check" class="text-green-500 mt-1"></iconify-icon>
+                                <span>Leadership role activities</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <iconify-icon icon="lucide:check" class="text-green-500 mt-1"></iconify-icon>
+                                <span>Conflict resolution practice</span>
+                            </li>
+                        </ul>
+                        <button class="w-full bg-orange-500 hover:bg-orange-600 text-white py-3 rounded-full font-semibold transition-all">
+                            Enroll Now
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Program 3 -->
+                <div class="bg-white rounded-3xl overflow-hidden shadow-xl border-2 border-indigo-200 transform hover:-translate-y-4 transition-all duration-300">
+                    <div class="bg-gradient-to-r from-indigo-500 to-purple-500 p-6 text-white text-center">
+                        <h3 class="text-2xl font-bold">Young Leaders</h3>
+                        <p class="text-indigo-100">Ages 13-14</p>
+                    </div>
+                    <div class="p-8">
+                        <div class="text-5xl font-bold text-slate-800 mb-4">₹2,999<span class="text-lg text-slate-500">/session</span></div>
+                        <ul class="space-y-4 mb-8">
+                            <li class="flex items-start gap-3">
+                                <iconify-icon icon="lucide:check" class="text-green-500 mt-1"></iconify-icon>
+                                <span>Advanced leadership training</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <iconify-icon icon="lucide:check" class="text-green-500 mt-1"></iconify-icon>
+                                <span>Public speaking workshops</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <iconify-icon icon="lucide:check" class="text-green-500 mt-1"></iconify-icon>
+                                <span>Peer mentoring activities</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <iconify-icon icon="lucide:check" class="text-green-500 mt-1"></iconify-icon>
+                                <span>Community project planning</span>
+                            </li>
+                        </ul>
+                        <button class="w-full bg-indigo-500 hover:bg-indigo-600 text-white py-3 rounded-full font-semibold transition-all">
+                            Enroll Now
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="py-20 px-4">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold text-slate-800 mb-6">
+                    Success <span class="text-emerald-500">Stories</span>
+                </h2>
+                <p class="text-xl text-slate-600 max-w-3xl mx-auto">
+                    Hear from parents about the transformative impact of our social skills development programs
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white rounded-3xl p-8 shadow-lg border-2 border-emerald-100">
+                    <div class="flex items-center gap-4 mb-6">
+                        <div class="h-16 w-16 bg-emerald-100 rounded-full flex items-center justify-center">
+                            <span class="text-2xl font-bold text-emerald-600">AP</span>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-slate-800">Anjali Patel</h4>
+                            <p class="text-slate-500 text-sm">Mother of Aarav (8 years)</p>
+                        </div>
+                    </div>
+                    <p class="text-slate-600 italic mb-6">
+                        "My shy Aarav has transformed! After just two sessions, he's making friends, speaking up in class, and even volunteered to lead a school project. The Communication Circle activities worked wonders!"
+                    </p>
+                    <div class="flex text-amber-400">
+                        <iconify-icon icon="lucide:star" width="20" fill="currentColor"></iconify-icon>
+                        <iconify-icon icon="lucide:star" width="20" fill="currentColor"></iconify-icon>
+                        <iconify-icon icon="lucide:star" width="20" fill="currentColor"></iconify-icon>
+                        <iconify-icon icon="lucide:star" width="20" fill="currentColor"></iconify-icon>
+                        <iconify-icon icon="lucide:star" width="20" fill="currentColor"></iconify-icon>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-3xl p-8 shadow-lg border-2 border-blue-100">
+                    <div class="flex items-center gap-4 mb-6">
+                        <div class="h-16 w-16 bg-blue-100 rounded-full flex items-center justify-center">
+                            <span class="text-2xl font-bold text-blue-600">RS</span>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-slate-800">Rajesh Sharma</h4>
+                            <p class="text-slate-500 text-sm">Father of twins (10 years)</p>
+                        </div>
+                    </div>
+                    <p class="text-slate-600 italic mb-6">
+                        "The Team Treasure Hunt taught my competitive twins the value of cooperation. They now solve problems together instead of fighting. Their teachers have noticed improved classroom behavior too!"
+                    </p>
+                    <div class="flex text-amber-400">
+                        <iconify-icon icon="lucide:star" width="20" fill="currentColor"></iconify-icon>
+                        <iconify-icon icon="lucide:star" width="20" fill="currentColor"></iconify-icon>
+                        <iconify-icon icon="lucide:star" width="20" fill="currentColor"></iconify-icon>
+                        <iconify-icon icon="lucide:star" width="20" fill="currentColor"></iconify-icon>
+                        <iconify-icon icon="lucide:star" width="20" fill="currentColor"></iconify-icon>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-3xl p-8 shadow-lg border-2 border-purple-100">
+                    <div class="flex items-center gap-4 mb-6">
+                        <div class="h-16 w-16 bg-purple-100 rounded-full flex items-center justify-center">
+                            <span class="text-2xl font-bold text-purple-600">PM</span>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-slate-800">Priya Mehta</h4>
+                            <p class="text-slate-500 text-sm">Mother of Diya (12 years)</p>
+                        </div>
+                    </div>
+                    <p class="text-slate-600 italic mb-6">
+                        "Emotion Charades helped Diya understand her feelings better. She's more empathetic and handles disappointments maturely. The social confidence she gained is priceless!"
+                    </p>
+                    <div class="flex text-amber-400">
+                        <iconify-icon icon="lucide:star" width="20" fill="currentColor"></iconify-icon>
+                        <iconify-icon icon="lucide:star" width="20" fill="currentColor"></iconify-icon>
+                        <iconify-icon icon="lucide:star" width="20" fill="currentColor"></iconify-icon>
+                        <iconify-icon icon="lucide:star" width="20" fill="currentColor"></iconify-icon>
+                        <iconify-icon icon="lucide:star" width="20" fill="currentColor"></iconify-icon>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 px-4 bg-gradient-to-r from-indigo-500 to-purple-600 rounded-[3rem] mx-4 mb-20">
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="text-4xl md:text-5xl font-bold text-white mb-6">
+                Ready to Boost Your Child's Social Confidence?
+            </h2>
+            <p class="text-xl text-indigo-100 mb-10 max-w-2xl mx-auto">
+                Join our next social skills development camp and watch your child blossom with new friendships and confidence!
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <button class="bg-white hover:bg-gray-100 text-indigo-600 px-8 py-4 rounded-full text-lg font-semibold transition-all shadow-lg hover:shadow-xl">
+                    Book a Free Trial Session
+                </button>
+                <button class="border-2 border-white text-white hover:bg-white/10 px-8 py-4 rounded-full text-lg font-semibold transition-all">
+                    Call +91 77680 31411
+                </button>
+            </div>
+            <p class="text-indigo-200 mt-8 text-sm">
+                Limited spots available! Camps in Virar, Vasai, and Nallasopara starting next week.
+            </p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-white pt-20 pb-10 rounded-t-[3rem]">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
+                <div class="col-span-1 md:col-span-2">
+                    <div class="flex items-center gap-2 mb-6">
+                         <div class="h-8 w-8 bg-orange-500 rounded-lg flex items-center justify-center text-white">
+                            <iconify-icon icon="lucide:tent" width="18"></iconify-icon>
+                        </div>
+                        <span class="brand-font text-2xl font-bold">Maura <span class="text-orange-400">Wonderlab</span></span>
+                    </div>
+                    <p class="text-slate-400 max-w-sm mb-6">Creating unforgettable childhood memories through nature, science, and adventure. The #1 Choice for Kids Camping.</p>
+                    <div class="flex gap-4">
+                        <a href="#" class="h-10 w-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-orange-500 transition-colors"><iconify-icon icon="lucide:instagram" width="20"></iconify-icon></a>
+                        <a href="#" class="h-10 w-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-blue-500 transition-colors"><iconify-icon icon="lucide:facebook" width="20"></iconify-icon></a>
+                        <a href="#" class="h-10 w-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-green-500 transition-colors"><iconify-icon icon="lucide:phone" width="20"></iconify-icon></a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="font-bold text-lg mb-6">Explore</h4>
+                    <ul class="space-y-4 text-slate-400 text-sm">
+                        <li><a href="#" class="hover:text-white transition-colors">Our Story</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Safety Protocols</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Gallery</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Become a Counselor</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-bold text-lg mb-6">Camp Locations</h4>
+                    <ul class="space-y-4 text-slate-400 text-sm">
+                        <li><a href="#" class="hover:text-white transition-colors">Camping in Virar</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Camping in Vasai</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Camping in Nallasopara</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Day Camps Mumbai</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-slate-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="text-slate-500 text-sm">© 2024 Maura Wonderlab. All rights reserved.</p>
+                <div class="flex gap-6 text-sm text-slate-500">
+                    <a href="#" class="hover:text-white">Privacy</a>
+                    <a href="#" class="hover:text-white">Terms</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Functionality
+        const mobileMenuButton = document.getElementById('mobileMenuButton');
+        const closeMenuButton = document.getElementById('closeMenuButton');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const menuOverlay = document.getElementById('menuOverlay');
+        
+        function openMobileMenu() {
+            mobileMenu.classList.add('open');
+            menuOverlay.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+        
+        function closeMobileMenu() {
+            mobileMenu.classList.remove('open');
+            menuOverlay.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+        
+        mobileMenuButton.addEventListener('click', openMobileMenu);
+        closeMenuButton.addEventListener('click', closeMobileMenu);
+        menuOverlay.addEventListener('click', closeMobileMenu);
+        
+        document.querySelectorAll('#mobileMenu a').forEach(link => {
+            link.addEventListener('click', closeMobileMenu);
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                const href = this.getAttribute('href');
+                
+                if (href === '#' || href.startsWith('#') && href.length > 1) {
+                    e.preventDefault();
+                    
+                    const targetId = href.substring(1);
+                    const targetElement = document.getElementById(targetId);
+                    
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                    }
+                }
+            });
+        });
+        
+        // Close menu on ESC key press
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && mobileMenu.classList.contains('open')) {
+                closeMobileMenu();
+            }
+        });
+        
+        // Animation for skill progress bars
+        const observerOptions = {
+            threshold: 0.5,
+            rootMargin: '0px 0px -100px 0px'
+        };
+        
+        const skillObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const skillBars = entry.target.querySelectorAll('.skill-progress');
+                    skillBars.forEach(bar => {
+                        const width = bar.style.width;
+                        bar.style.width = '0%';
+                        setTimeout(() => {
+                            bar.style.width = width;
+                        }, 300);
+                    });
+                }
+            });
+        }, observerOptions);
+        
+        // Observe skill progress section
+        const skillSection = document.querySelector('#activities');
+        if (skillSection) {
+            skillObserver.observe(skillSection);
+        }
+        
+        // Animate cards on scroll
+        const cardObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, { threshold: 0.1 });
+        
+        document.querySelectorAll('.group').forEach(card => {
+            card.style.opacity = '0.9';
+            card.style.transform = 'translateY(10px)';
+            card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+            cardObserver.observe(card);
+        });
+    </script>
+</body>
+</html>

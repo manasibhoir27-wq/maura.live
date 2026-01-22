@@ -1,0 +1,780 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Camping Skills for Youth | Survival Training for Kids in Virar, Vasai, Nallasopara</title>
+    <meta name="description" content="Maura Wonderlab teaches essential camping skills for youth in Virar, Vasai & Nallasopara. Expert-led survival training, fire safety, navigation & outdoor skills for kids aged 8-16.">
+    <meta name="keywords" content="camping skills for youth, survival skills training, outdoor survival camps, wilderness adventure programs, kids survival skills, adventure camping for kids, outdoor education camps, Maura Wonderlab camping skills">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Iconify (Lucide Icons) -->
+    <script src="https://cdn.jsdelivr.net/npm/iconify-icon@1.0.8/dist/iconify-icon.min.js"></script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=Nunito:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        /* Custom Font Settings for Childish/Playful Vibe */
+        body {
+            font-family: 'Nunito', sans-serif;
+        }
+        h1, h2, h3, h4, h5, h6, .brand-font {
+            font-family: 'Fredoka', sans-serif;
+        }
+        
+        /* Playful Blob Pattern */
+        .bg-pattern {
+            background-color: #FFFDF5;
+            background-image: radial-gradient(#FDE68A 1px, transparent 1px), radial-gradient(#BAE6FD 1px, transparent 1px);
+            background-size: 40px 40px;
+            background-position: 0 0, 20px 20px;
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #FFF7ED; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #FDBA74; 
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #EA580C; 
+        }
+
+        /* Mobile Menu Animation */
+        .mobile-menu {
+            transform: translateX(100%);
+            transition: transform 0.3s ease-in-out;
+        }
+        
+        .mobile-menu.open {
+            transform: translateX(0);
+        }
+        
+        .menu-overlay {
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease-in-out, visibility 0.3s;
+        }
+        
+        .menu-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        /* Activity Card Hover Effects */
+        .activity-card {
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+        
+        .activity-card:hover {
+            transform: translateY(-5px);
+            border-color: #F59E0B;
+            box-shadow: 0 10px 25px rgba(245, 158, 11, 0.1);
+        }
+
+        /* Skill Level Badges */
+        .skill-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        /* Gradient Backgrounds */
+        .gradient-primary {
+            background: linear-gradient(135deg, #F59E0B 0%, #EA580C 100%);
+        }
+        
+        .gradient-secondary {
+            background: linear-gradient(135deg, #3B82F6 0%, #8B5CF6 100%);
+        }
+        
+        .gradient-success {
+            background: linear-gradient(135deg, #10B981 0%, #059669 100%);
+        }
+    </style>
+</head>
+<body class="bg-pattern text-slate-600 antialiased selection:bg-orange-200 selection:text-orange-900">
+
+    <!-- Navbar -->
+    <nav class="fixed w-full z-50 top-0 transition-all duration-300 backdrop-blur-md bg-white/80 border-b-2 border-slate-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center gap-2 cursor-pointer" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+                   <img src="maura wonderlab logo.png" alt="Maura Wonderlab" width="50px">
+                    <span class="brand-font text-2xl font-semibold tracking-tight text-slate-800">
+                        Maura <span class="text-orange-500">Wonderlab</span>
+                    </span>
+                </div>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="/" class="text-sm font-semibold text-slate-600 hover:text-orange-500 transition-colors">Home</a>
+                    <a href="#skills-overview" class="text-sm font-semibold text-slate-600 hover:text-orange-500 transition-colors">Camping Skills</a>
+                    <a href="#curriculum" class="text-sm font-semibold text-slate-600 hover:text-orange-500 transition-colors">Curriculum</a>
+                    <a href="#benefits" class="text-sm font-semibold text-slate-600 hover:text-orange-500 transition-colors">Benefits</a>
+                    <a href="#locations" class="text-sm font-semibold text-slate-600 hover:text-orange-500 transition-colors">Locations</a>
+                    <button class="bg-indigo-500 hover:bg-indigo-600 text-white px-5 py-2.5 rounded-full text-sm font-semibold transition-all shadow-[0px_4px_0px_0px_rgba(67,56,202,1)] hover:shadow-[0px_2px_0px_0px_rgba(67,56,202,1)] hover:translate-y-[2px]">
+                        Book Camping Skills Session
+                    </button>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobileMenuButton" class="text-slate-600 hover:text-orange-500 p-2">
+                        <iconify-icon icon="lucide:menu" width="28" stroke-width="1.5"></iconify-icon>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu Overlay -->
+    <div id="menuOverlay" class="menu-overlay fixed inset-0 bg-black/50 z-40 md:hidden"></div>
+
+    <!-- Mobile Menu -->
+    <div id="mobileMenu" class="mobile-menu fixed top-0 right-0 h-full w-64 bg-white z-50 shadow-2xl md:hidden p-6">
+        <div class="flex justify-between items-center mb-8">
+            <div class="flex items-center gap-2">
+                <div class="h-8 w-8 bg-orange-400 rounded-lg flex items-center justify-center text-white">
+                    <iconify-icon icon="lucide:tent" width="18"></iconify-icon>
+                </div>
+                <span class="brand-font text-xl font-semibold text-slate-800">Maura <span class="text-orange-500">Wonderlab</span></span>
+            </div>
+            <button id="closeMenuButton" class="text-slate-600 hover:text-orange-500 p-2">
+                <iconify-icon icon="lucide:x" width="24" stroke-width="1.5"></iconify-icon>
+            </button>
+        </div>
+        
+        <div class="space-y-6">
+            <a href="/" class="block py-3 text-slate-700 font-semibold border-b border-slate-100" onclick="closeMobileMenu()">Home</a>
+            <a href="#skills-overview" class="block py-3 text-slate-700 font-semibold border-b border-slate-100" onclick="closeMobileMenu()">Camping Skills</a>
+            <a href="#curriculum" class="block py-3 text-slate-700 font-semibold border-b border-slate-100" onclick="closeMobileMenu()">Curriculum</a>
+            <a href="#benefits" class="block py-3 text-slate-700 font-semibold border-b border-slate-100" onclick="closeMobileMenu()">Benefits</a>
+            <a href="#locations" class="block py-3 text-slate-700 font-semibold border-b border-slate-100" onclick="closeMobileMenu()">Locations</a>
+            <div class="pt-4">
+                <button class="w-full bg-indigo-500 hover:bg-indigo-600 text-white px-5 py-3 rounded-full text-sm font-semibold transition-all">
+                    Book Camping Skills Session
+                </button>
+            </div>
+        </div>
+        
+        <div class="absolute bottom-8 left-6 right-6">
+            <p class="text-sm text-slate-500 mb-4">Contact us:</p>
+            <div class="flex items-center gap-2 text-slate-700 mb-2">
+                <iconify-icon icon="lucide:phone" width="16"></iconify-icon>
+                <span class="text-sm">+91 77680 31411</span>
+            </div>
+            <div class="flex items-center gap-2 text-slate-700">
+                <iconify-icon icon="lucide:mail" width="16"></iconify-icon>
+                <span class="text-sm">maurawonderlab@gmail.com</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="relative pt-32 pb-20 lg:pt-40 lg:pb-28 overflow-hidden bg-gradient-to-br from-amber-50 to-orange-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-amber-100 text-amber-700 text-xs font-bold mb-8 uppercase tracking-wide border border-amber-200">
+                        <iconify-icon icon="lucide:compass" width="16"></iconify-icon>
+                        Essential Life Skills Program
+                    </div>
+                    
+                    <h1 class="text-5xl md:text-6xl lg:text-7xl font-semibold tracking-tight text-slate-900 mb-6 leading-[0.9]">
+                        <span class="text-transparent bg-clip-text gradient-primary">Camping Skills</span><br>
+                        for Youth
+                    </h1>
+                    
+                    <p class="mt-4 text-lg md:text-xl text-slate-600 leading-relaxed mb-8">
+                        Master <strong>survival skills training</strong> and <strong>wilderness adventure programs</strong> with Maura Wonderlab. 
+                        Our expert-led <strong>outdoor survival camps</strong> teach practical <strong>camping skills for youth</strong> in 
+                        <span class="font-bold text-amber-700">Virar</span>, 
+                        <span class="font-bold text-amber-700">Vasai</span>, and 
+                        <span class="font-bold text-amber-700">Nallasopara</span>.
+                    </p>
+
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <button class="w-full sm:w-auto px-8 py-4 gradient-primary text-white rounded-2xl text-base font-semibold transition-all shadow-[0px_6px_0px_0px_#C2410C] hover:shadow-[0px_3px_0px_0px_#C2410C] hover:translate-y-[3px] flex items-center justify-center gap-2">
+                            <iconify-icon icon="lucide:calendar" width="20"></iconify-icon>
+                            Enroll Now for Summer 2024
+                        </button>
+                        <button class="w-full sm:w-auto px-8 py-4 bg-white hover:bg-slate-50 text-slate-700 border-2 border-slate-200 rounded-2xl text-base font-semibold transition-all hover:border-slate-300 flex items-center justify-center gap-2">
+                            <iconify-icon icon="lucide:download" width="20"></iconify-icon>
+                            Download Curriculum
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Hero Image/Illustration -->
+                <div class="relative">
+                    <div class="bg-gradient-to-br from-orange-400 to-amber-500 rounded-[2rem] h-80 lg:h-96 w-full flex items-center justify-center relative overflow-hidden shadow-2xl">
+                        <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80')] bg-cover bg-center opacity-30"></div>
+                        <div class="relative z-10 text-center p-8">
+                            <iconify-icon icon="lucide:campfire" width="80" class="text-white mb-6"></iconify-icon>
+                            <p class="text-white text-2xl font-bold">Build Confidence<br>Through Adventure</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Floating Stats -->
+                    <div class="absolute -bottom-6 -left-6 bg-white rounded-2xl p-4 shadow-xl border border-slate-200">
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-amber-600">500+</div>
+                            <div class="text-sm text-slate-600">Youth Trained</div>
+                        </div>
+                    </div>
+                    
+                    <div class="absolute -top-6 -right-6 bg-white rounded-2xl p-4 shadow-xl border border-slate-200">
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-emerald-600">100%</div>
+                            <div class="text-sm text-slate-600">Safety Record</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Overview -->
+    <section id="skills-overview" class="py-24">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-semibold text-slate-900 mb-4 tracking-tight">Essential Camping Skills for Youth</h2>
+                <p class="text-slate-500 max-w-3xl mx-auto">Our comprehensive <strong>survival skills training</strong> program covers everything from basic camping to advanced wilderness survival techniques. Perfect for kids aged 8-16 in the Vasai-Virar region.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Skill 1: Fire Making -->
+                <div class="activity-card bg-white p-8 rounded-3xl relative shadow-lg">
+                    <div class="skill-badge bg-amber-100 text-amber-700">Basic</div>
+                    <div class="bg-amber-50 rounded-2xl h-48 flex items-center justify-center mb-6">
+                        <iconify-icon icon="lucide:flame" width="64" class="text-amber-500"></iconify-icon>
+                    </div>
+                    <h3 class="text-2xl font-bold text-slate-800 mb-3">Fire Making & Safety</h3>
+                    <p class="text-slate-600 mb-4">Learn proper fire-building techniques, fire safety protocols, and how to responsibly manage campfires.</p>
+                    <ul class="space-y-2 text-sm text-slate-500">
+                        <li class="flex items-center gap-2"><iconify-icon icon="lucide:check" class="text-emerald-500"></iconify-icon> Fire starting methods</li>
+                        <li class="flex items-center gap-2"><iconify-icon icon="lucide:check" class="text-emerald-500"></iconify-icon> Fire safety rules</li>
+                        <li class="flex items-center gap-2"><iconify-icon icon="lucide:check" class="text-emerald-500"></iconify-icon> Extinguishing techniques</li>
+                    </ul>
+                </div>
+
+                <!-- Skill 2: Shelter Building -->
+                <div class="activity-card bg-white p-8 rounded-3xl relative shadow-lg">
+                    <div class="skill-badge bg-emerald-100 text-emerald-700">Intermediate</div>
+                    <div class="bg-emerald-50 rounded-2xl h-48 flex items-center justify-center mb-6">
+                        <iconify-icon icon="lucide:home" width="64" class="text-emerald-500"></iconify-icon>
+                    </div>
+                    <h3 class="text-2xl font-bold text-slate-800 mb-3">Shelter Construction</h3>
+                    <p class="text-slate-600 mb-4">Build emergency shelters using natural materials and learn about insulation, waterproofing, and site selection.</p>
+                    <ul class="space-y-2 text-sm text-slate-500">
+                        <li class="flex items-center gap-2"><iconify-icon icon="lucide:check" class="text-emerald-500"></iconify-icon> Natural material shelters</li>
+                        <li class="flex items-center gap-2"><iconify-icon icon="lucide:check" class="text-emerald-500"></iconify-icon> Tarp setups</li>
+                        <li class="flex items-center gap-2"><iconify-icon icon="lucide:check" class="text-emerald-500"></iconify-icon> Site selection principles</li>
+                    </ul>
+                </div>
+
+                <!-- Skill 3: Navigation -->
+                <div class="activity-card bg-white p-8 rounded-3xl relative shadow-lg">
+                    <div class="skill-badge bg-blue-100 text-blue-700">Advanced</div>
+                    <div class="bg-blue-50 rounded-2xl h-48 flex items-center justify-center mb-6">
+                        <iconify-icon icon="lucide:compass" width="64" class="text-blue-500"></iconify-icon>
+                    </div>
+                    <h3 class="text-2xl font-bold text-slate-800 mb-3">Wilderness Navigation</h3>
+                    <p class="text-slate-600 mb-4">Master map reading, compass use, GPS basics, and natural navigation techniques for safe wilderness travel.</p>
+                    <ul class="space-y-2 text-sm text-slate-500">
+                        <li class="flex items-center gap-2"><iconify-icon icon="lucide:check" class="text-emerald-500"></iconify-icon> Map & compass skills</li>
+                        <li class="flex items-center gap-2"><iconify-icon icon="lucide:check" class="text-emerald-500"></iconify-icon> GPS basics</li>
+                        <li class="flex items-center gap-2"><iconify-icon icon="lucide:check" class="text-emerald-500"></iconify-icon> Natural navigation</li>
+                    </ul>
+                </div>
+
+                <!-- Skill 4: First Aid -->
+                <div class="activity-card bg-white p-8 rounded-3xl relative shadow-lg">
+                    <div class="skill-badge bg-red-100 text-red-700">Essential</div>
+                    <div class="bg-red-50 rounded-2xl h-48 flex items-center justify-center mb-6">
+                        <iconify-icon icon="lucide:heart-pulse" width="64" class="text-red-500"></iconify-icon>
+                    </div>
+                    <h3 class="text-2xl font-bold text-slate-800 mb-3">Wilderness First Aid</h3>
+                    <p class="text-slate-600 mb-4">Learn essential first aid skills for outdoor emergencies, including wound care, splinting, and emergency response.</p>
+                    <ul class="space-y-2 text-sm text-slate-500">
+                        <li class="flex items-center gap-2"><iconify-icon icon="lucide:check" class="text-emerald-500"></iconify-icon> Basic wound care</li>
+                        <li class="flex items-center gap-2"><iconify-icon icon="lucide:check" class="text-emerald-500"></iconify-icon> Emergency response</li>
+                        <li class="flex items-center gap-2"><iconify-icon icon="lucide:check" class="text-emerald-500"></iconify-icon> First aid kit use</li>
+                    </ul>
+                </div>
+
+                <!-- Skill 5: Water Purification -->
+                <div class="activity-card bg-white p-8 rounded-3xl relative shadow-lg">
+                    <div class="skill-badge bg-cyan-100 text-cyan-700">Intermediate</div>
+                    <div class="bg-cyan-50 rounded-2xl h-48 flex items-center justify-center mb-6">
+                        <iconify-icon icon="lucide:droplets" width="64" class="text-cyan-500"></iconify-icon>
+                    </div>
+                    <h3 class="text-2xl font-bold text-slate-800 mb-3">Water Procurement</h3>
+                    <p class="text-slate-600 mb-4">Learn to find, collect, and purify water in wilderness settings using various filtration and purification methods.</p>
+                    <ul class="space-y-2 text-sm text-slate-500">
+                        <li class="flex items-center gap-2"><iconify-icon icon="lucide:check" class="text-emerald-500"></iconify-icon> Water source identification</li>
+                        <li class="flex items-center gap-2"><iconify-icon icon="lucide:check" class="text-emerald-500"></iconify-icon> Purification techniques</li>
+                        <li class="flex items-center gap-2"><iconify-icon icon="lucide:check" class="text-emerald-500"></iconify-icon> Safe storage methods</li>
+                    </ul>
+                </div>
+
+                <!-- Skill 6: Knot Tying -->
+                <div class="activity-card bg-white p-8 rounded-3xl relative shadow-lg">
+                    <div class="skill-badge bg-purple-100 text-purple-700">Basic</div>
+                    <div class="bg-purple-50 rounded-2xl h-48 flex items-center justify-center mb-6">
+                        <iconify-icon icon="lucide:rope" width="64" class="text-purple-500"></iconify-icon>
+                    </div>
+                    <h3 class="text-2xl font-bold text-slate-800 mb-3">Essential Knots & Lashings</h3>
+                    <p class="text-slate-600 mb-4">Master essential camping knots for shelter building, gear securing, and emergency situations.</p>
+                    <ul class="space-y-2 text-sm text-slate-500">
+                        <li class="flex items-center gap-2"><iconify-icon icon="lucide:check" class="text-emerald-500"></iconify-icon> 10 essential knots</li>
+                        <li class="flex items-center gap-2"><iconify-icon icon="lucide:check" class="text-emerald-500"></iconify-icon> Lashing techniques</li>
+                        <li class="flex items-center gap-2"><iconify-icon icon="lucide:check" class="text-emerald-500"></iconify-icon> Practical applications</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Curriculum Section -->
+    <section id="curriculum" class="py-24 bg-gradient-to-b from-white to-amber-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-semibold text-slate-900 mb-4 tracking-tight">Structured Learning Curriculum</h2>
+                <p class="text-slate-500 max-w-3xl mx-auto">Our progressive <strong>camping skills for youth</strong> program is designed to build confidence and competence through hands-on learning.</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <!-- Curriculum Timeline -->
+                <div class="relative">
+                    <div class="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-amber-400 to-orange-500 rounded-full ml-6"></div>
+                    
+                    <div class="space-y-12 pl-12">
+                        <!-- Week 1 -->
+                        <div class="relative">
+                            <div class="absolute -left-16 top-0 h-12 w-12 rounded-full gradient-primary flex items-center justify-center text-white font-bold shadow-lg">1</div>
+                            <div class="bg-white p-6 rounded-2xl shadow-md border border-slate-100">
+                                <h3 class="text-xl font-bold text-slate-800 mb-2">Foundation Week</h3>
+                                <p class="text-slate-600 mb-3">Introduction to camping basics, safety protocols, and essential gear knowledge.</p>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="px-3 py-1 bg-amber-100 text-amber-700 rounded-full text-xs font-semibold">Gear Setup</span>
+                                    <span class="px-3 py-1 bg-amber-100 text-amber-700 rounded-full text-xs font-semibold">Safety Rules</span>
+                                    <span class="px-3 py-1 bg-amber-100 text-amber-700 rounded-full text-xs font-semibold">Basic Navigation</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Week 2 -->
+                        <div class="relative">
+                            <div class="absolute -left-16 top-0 h-12 w-12 rounded-full gradient-secondary flex items-center justify-center text-white font-bold shadow-lg">2</div>
+                            <div class="bg-white p-6 rounded-2xl shadow-md border border-slate-100">
+                                <h3 class="text-xl font-bold text-slate-800 mb-2">Shelter & Fire Skills</h3>
+                                <p class="text-slate-600 mb-3">Master shelter construction and safe fire-building techniques in controlled environments.</p>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-xs font-semibold">Shelter Building</span>
+                                    <span class="px-3 py-1 bg-orange-100 text-orange-700 rounded-full text-xs font-semibold">Fire Making</span>
+                                    <span class="px-3 py-1 bg-red-100 text-red-700 rounded-full text-xs font-semibold">Fire Safety</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Week 3 -->
+                        <div class="relative">
+                            <div class="absolute -left-16 top-0 h-12 w-12 rounded-full gradient-success flex items-center justify-center text-white font-bold shadow-lg">3</div>
+                            <div class="bg-white p-6 rounded-2xl shadow-md border border-slate-100">
+                                <h3 class="text-xl font-bold text-slate-800 mb-2">Advanced Survival Techniques</h3>
+                                <p class="text-slate-600 mb-3">Water procurement, advanced navigation, and wilderness first aid essentials.</p>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="px-3 py-1 bg-cyan-100 text-cyan-700 rounded-full text-xs font-semibold">Water Skills</span>
+                                    <span class="px-3 py-1 bg-emerald-100 text-emerald-700 rounded-full text-xs font-semibold">Navigation</span>
+                                    <span class="px-3 py-1 bg-red-100 text-red-700 rounded-full text-xs font-semibold">First Aid</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Week 4 -->
+                        <div class="relative">
+                            <div class="absolute -left-16 top-0 h-12 w-12 rounded-full bg-gradient-to-br from-purple-500 to-pink-500 flex items-center justify-center text-white font-bold shadow-lg">4</div>
+                            <div class="bg-white p-6 rounded-2xl shadow-md border border-slate-100">
+                                <h3 class="text-xl font-bold text-slate-800 mb-2">Expedition & Application</h3>
+                                <p class="text-slate-600 mb-3">Overnight camping expedition to apply all learned skills in a real-world scenario.</p>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-xs font-semibold">Overnight Camp</span>
+                                    <span class="px-3 py-1 bg-amber-100 text-amber-700 rounded-full text-xs font-semibold">Skill Integration</span>
+                                    <span class="px-3 py-1 bg-slate-100 text-slate-700 rounded-full text-xs font-semibold">Team Challenge</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Age Groups -->
+                <div>
+                    <h3 class="text-3xl font-bold text-slate-800 mb-8">Age-Appropriate Programs</h3>
+                    
+                    <div class="space-y-6">
+                        <!-- Junior Group -->
+                        <div class="bg-white p-6 rounded-2xl shadow-md border border-slate-100">
+                            <div class="flex items-center justify-between mb-4">
+                                <h4 class="text-xl font-bold text-slate-800">Junior Explorers (8-11 years)</h4>
+                                <span class="px-3 py-1 bg-amber-100 text-amber-700 rounded-full text-sm font-semibold">Beginner</span>
+                            </div>
+                            <p class="text-slate-600 mb-4">Focus on basic camping skills, nature appreciation, and introductory survival techniques in a highly supervised environment.</p>
+                            <ul class="space-y-2 text-sm text-slate-500">
+                                <li class="flex items-center gap-2"><iconify-icon icon="lucide:check-circle" class="text-emerald-500"></iconify-icon> Basic tent setup and gear organization</li>
+                                <li class="flex items-center gap-2"><iconify-icon icon="lucide:check-circle" class="text-emerald-500"></iconify-icon> Simple knot tying and rope skills</li>
+                                <li class="flex items-center gap-2"><iconify-icon icon="lucide:check-circle" class="text-emerald-500"></iconify-icon> Nature observation and journaling</li>
+                            </ul>
+                        </div>
+
+                        <!-- Senior Group -->
+                        <div class="bg-white p-6 rounded-2xl shadow-md border border-slate-100">
+                            <div class="flex items-center justify-between mb-4">
+                                <h4 class="text-xl font-bold text-slate-800">Senior Adventurers (12-16 years)</h4>
+                                <span class="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-sm font-semibold">Advanced</span>
+                            </div>
+                            <p class="text-slate-600 mb-4">Comprehensive survival training with emphasis on leadership, problem-solving, and advanced wilderness skills.</p>
+                            <ul class="space-y-2 text-sm text-slate-500">
+                                <li class="flex items-center gap-2"><iconify-icon icon="lucide:check-circle" class="text-emerald-500"></iconify-icon> Advanced navigation and orienteering</li>
+                                <li class="flex items-center gap-2"><iconify-icon icon="lucide:check-circle" class="text-emerald-500"></iconify-icon> Emergency shelter construction</li>
+                                <li class="flex items-center gap-2"><iconify-icon icon="lucide:check-circle" class="text-emerald-500"></iconify-icon> Wilderness first aid certification</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Certification -->
+                    <div class="mt-8 bg-gradient-to-r from-amber-500 to-orange-500 p-6 rounded-2xl text-white">
+                        <div class="flex items-center gap-4 mb-4">
+                            <iconify-icon icon="lucide:award" width="32"></iconify-icon>
+                            <div>
+                                <h4 class="text-xl font-bold">Maura Wonderlab Certification</h4>
+                                <p class="text-amber-100">All participants receive a certified completion certificate</p>
+                            </div>
+                        </div>
+                        <p class="text-amber-100">Our certification is recognized by outdoor education programs and adds value to college applications.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section id="benefits" class="py-24">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-semibold text-slate-900 mb-4 tracking-tight">Why Choose Our Camping Skills Program?</h2>
+                <p class="text-slate-500 max-w-3xl mx-auto">Beyond survival skills, our <strong>outdoor survival camps</strong> build character, confidence, and lifelong competencies.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Benefit 1 -->
+                <div class="bg-white p-8 rounded-3xl shadow-lg border border-slate-100">
+                    <div class="bg-amber-50 w-16 h-16 rounded-2xl flex items-center justify-center mb-6">
+                        <iconify-icon icon="lucide:brain" width="32" class="text-amber-500"></iconify-icon>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-800 mb-4">Problem-Solving Skills</h3>
+                    <p class="text-slate-600">Wilderness challenges teach critical thinking, decision-making, and creative problem-solving in real-world scenarios.</p>
+                </div>
+
+                <!-- Benefit 2 -->
+                <div class="bg-white p-8 rounded-3xl shadow-lg border border-slate-100">
+                    <div class="bg-emerald-50 w-16 h-16 rounded-2xl flex items-center justify-center mb-6">
+                        <iconify-icon icon="lucide:users" width="32" class="text-emerald-500"></iconify-icon>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-800 mb-4">Teamwork & Leadership</h3>
+                    <p class="text-slate-600">Group activities foster collaboration, communication skills, and natural leadership development in outdoor settings.</p>
+                </div>
+
+                <!-- Benefit 3 -->
+                <div class="bg-white p-8 rounded-3xl shadow-lg border border-slate-100">
+                    <div class="bg-blue-50 w-16 h-16 rounded-2xl flex items-center justify-center mb-6">
+                        <iconify-icon icon="lucide:shield" width="32" class="text-blue-500"></iconify-icon>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-800 mb-4">Confidence Building</h3>
+                    <p class="text-slate-600">Mastering practical skills in a supportive environment builds self-reliance and confidence that transfers to all life areas.</p>
+                </div>
+            </div>
+
+            <!-- Safety Section -->
+            <div class="mt-20 bg-gradient-to-r from-slate-900 to-slate-800 rounded-[2rem] p-8 md:p-12 text-white">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <h3 class="text-3xl font-bold mb-6">Safety First: Our Priority</h3>
+                        <p class="text-slate-300 mb-6">All <strong>survival skills training</strong> at Maura Wonderlab follows strict safety protocols with certified instructors and comprehensive risk management.</p>
+                        <ul class="space-y-4">
+                            <li class="flex items-center gap-3"><iconify-icon icon="lucide:check-circle" class="text-emerald-400"></iconify-icon> <span>Certified Wilderness First Responder instructors</span></li>
+                            <li class="flex items-center gap-3"><iconify-icon icon="lucide:check-circle" class="text-emerald-400"></iconify-icon> <span>1:8 instructor-to-student ratio maximum</span></li>
+                            <li class="flex items-center gap-3"><iconify-icon icon="lucide:check-circle" class="text-emerald-400"></iconify-icon> <span>Comprehensive safety equipment and protocols</span></li>
+                            <li class="flex items-center gap-3"><iconify-icon icon="lucide:check-circle" class="text-emerald-400"></iconify-icon> <span>Emergency communication systems at all locations</span></li>
+                        </ul>
+                    </div>
+                    <div class="bg-slate-700/50 rounded-2xl p-8">
+                        <div class="text-center">
+                            <iconify-icon icon="lucide:shield-check" width="64" class="text-emerald-400 mb-6"></iconify-icon>
+                            <h4 class="text-xl font-bold mb-4">Perfect Safety Record</h4>
+                            <p class="text-slate-300">Zero serious incidents across 500+ camping skills training sessions since 2019.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Locations Section -->
+    <section id="locations" class="py-24 bg-gradient-to-b from-white to-amber-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-semibold text-slate-900 mb-4 tracking-tight">Camping Skills Training Locations</h2>
+                <p class="text-slate-500 max-w-3xl mx-auto">Access our <strong>wilderness adventure programs</strong> at multiple locations across the Vasai-Virar region.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Virar Location -->
+                <div class="bg-white rounded-3xl overflow-hidden shadow-xl border border-slate-100">
+                    <div class="h-48 bg-gradient-to-r from-amber-400 to-orange-500 relative">
+                        <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1504851149312-7a075b496cc7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80')] bg-cover bg-center opacity-30"></div>
+                        <div class="relative z-10 p-6 text-white">
+                            <h3 class="text-2xl font-bold mb-2">Virar Base Camp</h3>
+                            <p class="text-amber-100">Primary training facility</p>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <p class="text-slate-600 mb-4">Our flagship location with dedicated camping zones, fire pits, obstacle courses, and full training facilities.</p>
+                        <ul class="space-y-2 text-sm text-slate-500 mb-6">
+                            <li class="flex items-center gap-2"><iconify-icon icon="lucide:check" class="text-emerald-500"></iconify-icon> 5-acre dedicated training area</li>
+                            <li class="flex items-center gap-2"><iconify-icon icon="lucide:check" class="text-emerald-500"></iconify-icon> Indoor/outdoor classrooms</li>
+                            <li class="flex items-center gap-2"><iconify-icon icon="lucide:check" class="text-emerald-500"></iconify-icon> Advanced obstacle course</li>
+                        </ul>
+                        <button class="w-full py-3 rounded-xl gradient-primary text-white font-semibold shadow-md hover:shadow-lg transition-all">Enroll at Virar</button>
+                    </div>
+                </div>
+
+                <!-- Vasai Location -->
+                <div class="bg-white rounded-3xl overflow-hidden shadow-xl border border-slate-100">
+                    <div class="h-48 bg-gradient-to-r from-blue-400 to-cyan-500 relative">
+                        <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1523987355523-c7b5b0dd90a7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80')] bg-cover bg-center opacity-30"></div>
+                        <div class="relative z-10 p-6 text-white">
+                            <h3 class="text-2xl font-bold mb-2">Vasai Adventure Zone</h3>
+                            <p class="text-blue-100">Forest training ground</p>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <p class="text-slate-600 mb-4">Natural forest setting perfect for wilderness immersion, navigation training, and survival scenario practice.</p>
+                        <ul class="space-y-2 text-sm text-slate-500 mb-6">
+                            <li class="flex items-center gap-2"><iconify-icon icon="lucide:check" class="text-emerald-500"></iconify-icon> Dense forest training area</li>
+                            <li class="flex items-center gap-2"><iconify-icon icon="lucide:check" class="text-emerald-500"></iconify-icon> Natural water sources</li>
+                            <li class="flex items-center gap-2"><iconify-icon icon="lucide:check" class="text-emerald-500"></iconify-icon> Wilderness navigation trails</li>
+                        </ul>
+                        <button class="w-full py-3 rounded-xl gradient-secondary text-white font-semibold shadow-md hover:shadow-lg transition-all">Enroll at Vasai</button>
+                    </div>
+                </div>
+
+                <!-- Nallasopara Location -->
+                <div class="bg-white rounded-3xl overflow-hidden shadow-xl border border-slate-100">
+                    <div class="h-48 bg-gradient-to-r from-emerald-400 to-green-500 relative">
+                        <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1537905569824-f89f14cceb68?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80')] bg-cover bg-center opacity-30"></div>
+                        <div class="relative z-10 p-6 text-white">
+                            <h3 class="text-2xl font-bold mb-2">Nallasopara Skills Center</h3>
+                            <p class="text-emerald-100">Beginner-friendly facility</p>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <p class="text-slate-600 mb-4">Perfect for younger campers and beginners, with controlled environments and gradual skill progression.</p>
+                        <ul class="space-y-2 text-sm text-slate-500 mb-6">
+                            <li class="flex items-center gap-2"><iconify-icon icon="lucide:check" class="text-emerald-500"></iconify-icon> Controlled training environments</li>
+                            <li class="flex items-center gap-2"><iconify-icon icon="lucide:check" class="text-emerald-500"></iconify-icon> Beginner-focused curriculum</li>
+                            <li class="flex items-center gap-2"><iconify-icon icon="lucide:check" class="text-emerald-500"></iconify-icon> Parent observation areas</li>
+                        </ul>
+                        <button class="w-full py-3 rounded-xl gradient-success text-white font-semibold shadow-md hover:shadow-lg transition-all">Enroll at Nallasopara</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-gradient-to-r from-orange-500 to-amber-500 rounded-[2rem] p-8 md:p-12 text-white text-center">
+                <h2 class="text-3xl md:text-4xl font-bold mb-6">Ready to Master Essential Camping Skills?</h2>
+                <p class="text-amber-100 text-lg mb-8 max-w-2xl mx-auto">Join our <strong>survival skills training</strong> program and give your child the confidence to thrive in the outdoors.</p>
+                
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <button class="px-8 py-4 bg-white text-orange-600 rounded-2xl text-base font-bold transition-all hover:bg-amber-50 shadow-lg hover:shadow-xl">
+                        <iconify-icon icon="lucide:calendar-check" width="20"></iconify-icon>
+                        Schedule Free Demo Session
+                    </button>
+                    <button class="px-8 py-4 bg-slate-900 text-white rounded-2xl text-base font-bold transition-all hover:bg-slate-800 border-2 border-white/20">
+                        <iconify-icon icon="lucide:phone" width="20"></iconify-icon>
+                        Call +91 77680 31411
+                    </button>
+                </div>
+                
+                <p class="text-amber-100 text-sm mt-8">Limited spots available for Summer 2024 • Early bird discounts until May 30</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-white pt-20 pb-10 rounded-t-[3rem] mt-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
+                <div class="col-span-1 md:col-span-2">
+                    <div class="flex items-center gap-2 mb-6">
+                         <div class="h-8 w-8 bg-orange-500 rounded-lg flex items-center justify-center text-white">
+                            <iconify-icon icon="lucide:tent" width="18"></iconify-icon>
+                        </div>
+                        <span class="brand-font text-2xl font-bold">Maura <span class="text-orange-400">Wonderlab</span></span>
+                    </div>
+                    <p class="text-slate-400 max-w-sm mb-6">Creating unforgettable childhood memories through nature, science, and adventure. The #1 Choice for Kids Camping.</p>
+                    <div class="flex gap-4">
+                        <a href="#" class="h-10 w-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-orange-500 transition-colors"><iconify-icon icon="lucide:instagram" width="20"></iconify-icon></a>
+                        <a href="#" class="h-10 w-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-blue-500 transition-colors"><iconify-icon icon="lucide:facebook" width="20"></iconify-icon></a>
+                        <a href="#" class="h-10 w-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-green-500 transition-colors"><iconify-icon icon="lucide:phone" width="20"></iconify-icon></a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="font-bold text-lg mb-6">Explore</h4>
+                    <ul class="space-y-4 text-slate-400 text-sm">
+                        <li><a href="/" class="hover:text-white transition-colors">Home</a></li>
+                        <li><a href="#skills-overview" class="hover:text-white transition-colors">Camping Skills Program</a></li>
+                        <li><a href="#curriculum" class="hover:text-white transition-colors">Curriculum Details</a></li>
+                        <li><a href="#benefits" class="hover:text-white transition-colors">Benefits & Outcomes</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-bold text-lg mb-6">Camp Locations</h4>
+                    <ul class="space-y-4 text-slate-400 text-sm">
+                        <li><a href="#locations" class="hover:text-white transition-colors">Camping Skills in Virar</a></li>
+                        <li><a href="#locations" class="hover:text-white transition-colors">Survival Training in Vasai</a></li>
+                        <li><a href="#locations" class="hover:text-white transition-colors">Outdoor Skills in Nallasopara</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Weekend Workshops</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-slate-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="text-slate-500 text-sm">© 2024 Maura Wonderlab. All rights reserved.</p>
+                <div class="flex gap-6 text-sm text-slate-500">
+                    <a href="#" class="hover:text-white">Privacy</a>
+                    <a href="#" class="hover:text-white">Terms</a>
+                    <a href="#" class="hover:text-white">Safety Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Functionality
+        const mobileMenuButton = document.getElementById('mobileMenuButton');
+        const closeMenuButton = document.getElementById('closeMenuButton');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const menuOverlay = document.getElementById('menuOverlay');
+        
+        function openMobileMenu() {
+            mobileMenu.classList.add('open');
+            menuOverlay.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+        
+        function closeMobileMenu() {
+            mobileMenu.classList.remove('open');
+            menuOverlay.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+        
+        // Event Listeners
+        mobileMenuButton.addEventListener('click', openMobileMenu);
+        closeMenuButton.addEventListener('click', closeMobileMenu);
+        menuOverlay.addEventListener('click', closeMobileMenu);
+        
+        // Close menu when clicking on any menu link
+        document.querySelectorAll('#mobileMenu a').forEach(link => {
+            link.addEventListener('click', closeMobileMenu);
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                const href = this.getAttribute('href');
+                
+                if (href === '#' || href.startsWith('#') && href.length > 1) {
+                    e.preventDefault();
+                    
+                    const targetId = href.substring(1);
+                    const targetElement = document.getElementById(targetId);
+                    
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 100,
+                            behavior: 'smooth'
+                        });
+                    }
+                }
+            });
+        });
+        
+        // Close menu on ESC key press
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && mobileMenu.classList.contains('open')) {
+                closeMobileMenu();
+            }
+        });
+        
+        // Add hover effects to activity cards
+        document.querySelectorAll('.activity-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-8px)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0)';
+            });
+        });
+        
+        // Animate skill badges on scroll
+        const observerOptions = {
+            threshold: 0.2,
+            rootMargin: '0px 0px -50px 0px'
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+        
+        // Observe elements for animation
+        document.querySelectorAll('.activity-card, .bg-white.p-6.rounded-2xl').forEach(element => {
+            element.style.opacity = '0.9';
+            element.style.transform = 'translateY(20px)';
+            element.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+            observer.observe(element);
+        });
+    </script>
+</body>
+</html>

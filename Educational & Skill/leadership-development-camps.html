@@ -1,0 +1,1023 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leadership Development Camps for Kids | Maura Wonderlab - Virar, Vasai, Nallasopara</title>
+    <meta name="description" content="Transform your child into a confident leader with Maura Wonderlab's leadership development camps in Virar, Nallasopara, and Vasai. Activities designed to build teamwork, communication & problem-solving skills.">
+    <meta name="keywords" content="leadership camps for kids, leadership development for children, kids leadership programs, team building activities for kids, youth leadership camps, communication skills for kids, problem solving activities for children, confidence building camps, decision making skills for kids, group leadership activities">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Iconify (Lucide Icons) -->
+    <script src="https://cdn.jsdelivr.net/npm/iconify-icon@1.0.8/dist/iconify-icon.min.js"></script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=Nunito:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        /* Custom Font Settings for Childish/Playful Vibe */
+        body {
+            font-family: 'Nunito', sans-serif;
+        }
+        h1, h2, h3, h4, h5, h6, .brand-font {
+            font-family: 'Fredoka', sans-serif;
+        }
+        
+        /* Playful Blob Pattern */
+        .bg-pattern {
+            background-color: #FFFDF5;
+            background-image: radial-gradient(#FDE68A 1px, transparent 1px), radial-gradient(#BAE6FD 1px, transparent 1px);
+            background-size: 40px 40px;
+            background-position: 0 0, 20px 20px;
+        }
+
+        /* Leadership-specific accent colors */
+        .leadership-accent {
+            background: linear-gradient(135deg, #4F46E5, #7C3AED, #EC4899);
+        }
+        
+        .leadership-gradient-text {
+            background: linear-gradient(135deg, #4F46E5, #7C3AED);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #FFF7ED; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #4F46E5; 
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #3730A3; 
+        }
+
+        /* Activity card hover effects */
+        .activity-card {
+            transition: all 0.3s ease;
+        }
+        
+        .activity-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(79, 70, 229, 0.15);
+        }
+        
+        /* Mobile Menu Animation */
+        .mobile-menu {
+            transform: translateX(100%);
+            transition: transform 0.3s ease-in-out;
+        }
+        
+        .mobile-menu.open {
+            transform: translateX(0);
+        }
+        
+        .menu-overlay {
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease-in-out, visibility 0.3s;
+        }
+        
+        .menu-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+    </style>
+</head>
+<body class="bg-pattern text-slate-600 antialiased selection:bg-indigo-200 selection:text-indigo-900">
+
+    <!-- Navbar -->
+    <nav class="fixed w-full z-50 top-0 transition-all duration-300 backdrop-blur-md bg-white/80 border-b-2 border-slate-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center gap-2 cursor-pointer" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+                   <img src="maura wonderlab logo.png" alt="Maura Wonderlab" width="50px">
+                    <span class="brand-font text-2xl font-semibold tracking-tight text-slate-800">
+                        Maura <span class="leadership-gradient-text">Wonderlab</span>
+                    </span>
+                </div>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="#program" class="text-sm font-semibold text-slate-600 hover:text-indigo-500 transition-colors">Program</a>
+                    <a href="#activities" class="text-sm font-semibold text-slate-600 hover:text-indigo-500 transition-colors">Activities</a>
+                    <a href="#benefits" class="text-sm font-semibold text-slate-600 hover:text-indigo-500 transition-colors">Benefits</a>
+                    <a href="#schedule" class="text-sm font-semibold text-slate-600 hover:text-indigo-500 transition-colors">Schedule</a>
+                    <a href="#pricing" class="text-sm font-semibold text-slate-600 hover:text-indigo-500 transition-colors">Pricing</a>
+                    <button class="leadership-accent hover:opacity-90 text-white px-5 py-2.5 rounded-full text-sm font-semibold transition-all shadow-[0px_4px_0px_0px_rgba(67,56,202,1)] hover:shadow-[0px_2px_0px_0px_rgba(67,56,202,1)] hover:translate-y-[2px]">
+                        Enroll Now
+                    </button>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobileMenuButton" class="text-slate-600 hover:text-indigo-500 p-2">
+                        <iconify-icon icon="lucide:menu" width="28" stroke-width="1.5"></iconify-icon>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu Overlay -->
+    <div id="menuOverlay" class="menu-overlay fixed inset-0 bg-black/50 z-40 md:hidden"></div>
+
+    <!-- Mobile Menu -->
+    <div id="mobileMenu" class="mobile-menu fixed top-0 right-0 h-full w-64 bg-white z-50 shadow-2xl md:hidden p-6">
+        <div class="flex justify-between items-center mb-8">
+            <div class="flex items-center gap-2">
+                <div class="h-8 w-8 leadership-accent rounded-lg flex items-center justify-center text-white">
+                    <iconify-icon icon="lucide:sparkles" width="18"></iconify-icon>
+                </div>
+                <span class="brand-font text-xl font-semibold text-slate-800">Maura <span class="leadership-gradient-text">Wonderlab</span></span>
+            </div>
+            <button id="closeMenuButton" class="text-slate-600 hover:text-indigo-500 p-2">
+                <iconify-icon icon="lucide:x" width="24" stroke-width="1.5"></iconify-icon>
+            </button>
+        </div>
+        
+        <div class="space-y-6">
+            <a href="#program" class="block py-3 text-slate-700 font-semibold border-b border-slate-100" onclick="closeMobileMenu()">Program</a>
+            <a href="#activities" class="block py-3 text-slate-700 font-semibold border-b border-slate-100" onclick="closeMobileMenu()">Activities</a>
+            <a href="#benefits" class="block py-3 text-slate-700 font-semibold border-b border-slate-100" onclick="closeMobileMenu()">Benefits</a>
+            <a href="#schedule" class="block py-3 text-slate-700 font-semibold border-b border-slate-100" onclick="closeMobileMenu()">Schedule</a>
+            <a href="#pricing" class="block py-3 text-slate-700 font-semibold border-b border-slate-100" onclick="closeMobileMenu()">Pricing</a>
+            <div class="pt-4">
+                <button class="w-full leadership-accent hover:opacity-90 text-white px-5 py-3 rounded-full text-sm font-semibold transition-all">
+                    Enroll Now
+                </button>
+            </div>
+        </div>
+        
+        <div class="absolute bottom-8 left-6 right-6">
+            <p class="text-sm text-slate-500 mb-4">Contact us:</p>
+            <div class="flex items-center gap-2 text-slate-700 mb-2">
+                <iconify-icon icon="lucide:phone" width="16"></iconify-icon>
+                <span class="text-sm">+91 77680 31411</span>
+            </div>
+            <div class="flex items-center gap-2 text-slate-700">
+                <iconify-icon icon="lucide:mail" width="16"></iconify-icon>
+                <span class="text-sm">maurawonderlab@gmail.com</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="pt-32 pb-20 px-4 relative overflow-hidden">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <div class="inline-flex items-center gap-2 bg-indigo-100 text-indigo-700 px-4 py-1.5 rounded-full text-sm font-semibold mb-6">
+                        <iconify-icon icon="lucide:sparkles"></iconify-icon>
+                        <span>Leadership Development Program</span>
+                    </div>
+                    <h1 class="text-5xl md:text-6xl font-bold text-slate-800 mb-6 leading-tight">
+                        Build <span class="leadership-gradient-text">Confident Leaders</span> of Tomorrow
+                    </h1>
+                    <p class="text-xl text-slate-600 mb-8 max-w-2xl">
+                        Our specialized leadership camps transform children into confident, empathetic, and effective leaders through experiential learning, team challenges, and real-world problem solving.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <button class="leadership-accent hover:opacity-90 text-white px-8 py-4 rounded-full text-lg font-semibold transition-all shadow-[0px_6px_0px_0px_rgba(67,56,202,1)] hover:shadow-[0px_3px_0px_0px_rgba(67,56,202,1)] hover:translate-y-[3px]">
+                            Book a Free Trial Session
+                        </button>
+                        <button class="border-2 border-indigo-500 text-indigo-600 hover:bg-indigo-50 px-8 py-4 rounded-full text-lg font-semibold transition-all">
+                            Download Brochure
+                        </button>
+                    </div>
+                    <div class="mt-12 grid grid-cols-3 gap-6">
+                        <div>
+                            <div class="text-3xl font-bold text-indigo-600 mb-1">8-14</div>
+                            <div class="text-slate-600 text-sm">Age Group</div>
+                        </div>
+                        <div>
+                            <div class="text-3xl font-bold text-indigo-600 mb-1">5:1</div>
+                            <div class="text-slate-600 text-sm">Student to Mentor Ratio</div>
+                        </div>
+                        <div>
+                            <div class="text-3xl font-bold text-indigo-600 mb-1">100%</div>
+                            <div class="text-slate-600 text-sm">Activity Based Learning</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="relative">
+                    <div class="bg-white rounded-3xl shadow-2xl p-2 border-2 border-indigo-100 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1519681393784-d120267933ba?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Kids leadership team building activity" class="w-full h-[400px] object-cover rounded-2xl">
+                    </div>
+                    <div class="absolute -bottom-6 -left-6 bg-white p-6 rounded-2xl shadow-xl border-2 border-indigo-100 max-w-xs">
+                        <div class="flex items-center gap-3 mb-3">
+                            <div class="h-12 w-12 leadership-accent rounded-xl flex items-center justify-center text-white">
+                                <iconify-icon icon="lucide:target" width="24"></iconify-icon>
+                            </div>
+                            <div>
+                                <div class="font-bold text-slate-800">Certified Program</div>
+                                <div class="text-sm text-slate-600">Leadership Excellence Certification</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Program Overview -->
+    <section id="program" class="py-20 px-4 bg-white">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-4xl font-bold text-slate-800 mb-6">Our <span class="leadership-gradient-text">Leadership Development</span> Philosophy</h2>
+                <p class="text-lg text-slate-600">
+                    We believe leadership is a skill that can be nurtured from a young age. Our program focuses on developing 5 core leadership pillars through hands-on activities and guided mentorship.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
+                <div class="bg-white p-6 rounded-2xl border-2 border-indigo-100 shadow-sm hover:shadow-lg transition-shadow text-center">
+                    <div class="h-16 w-16 leadership-accent rounded-full flex items-center justify-center text-white mx-auto mb-5">
+                        <iconify-icon icon="lucide:users" width="28"></iconify-icon>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-800 mb-3">Team Building</h3>
+                    <p class="text-slate-600">Learning to collaborate, delegate, and motivate team members toward common goals.</p>
+                </div>
+                
+                <div class="bg-white p-6 rounded-2xl border-2 border-indigo-100 shadow-sm hover:shadow-lg transition-shadow text-center">
+                    <div class="h-16 w-16 leadership-accent rounded-full flex items-center justify-center text-white mx-auto mb-5">
+                        <iconify-icon icon="lucide:message-square" width="28"></iconify-icon>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-800 mb-3">Communication</h3>
+                    <p class="text-slate-600">Developing clear, confident communication and active listening skills.</p>
+                </div>
+                
+                <div class="bg-white p-6 rounded-2xl border-2 border-indigo-100 shadow-sm hover:shadow-lg transition-shadow text-center">
+                    <div class="h-16 w-16 leadership-accent rounded-full flex items-center justify-center text-white mx-auto mb-5">
+                        <iconify-icon icon="lucide:brain" width="28"></iconify-icon>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-800 mb-3">Problem Solving</h3>
+                    <p class="text-slate-600">Creative thinking, decision-making, and analytical skills for real-world challenges.</p>
+                </div>
+                
+                <div class="bg-white p-6 rounded-2xl border-2 border-indigo-100 shadow-sm hover:shadow-lg transition-shadow text-center">
+                    <div class="h-16 w-16 leadership-accent rounded-full flex items-center justify-center text-white mx-auto mb-5">
+                        <iconify-icon icon="lucide:heart" width="28"></iconify-icon>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-800 mb-3">Empathy & Emotional Intelligence</h3>
+                    <p class="text-slate-600">Understanding emotions, showing empathy, and building positive relationships.</p>
+                </div>
+                
+                <div class="bg-white p-6 rounded-2xl border-2 border-indigo-100 shadow-sm hover:shadow-lg transition-shadow text-center">
+                    <div class="h-16 w-16 leadership-accent rounded-full flex items-center justify-center text-white mx-auto mb-5">
+                        <iconify-icon icon="lucide:shield-check" width="28"></iconify-icon>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-800 mb-3">Responsibility & Integrity</h3>
+                    <p class="text-slate-600">Taking ownership, making ethical decisions, and leading by example.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Activities Section -->
+    <section id="activities" class="py-20 px-4 bg-gradient-to-b from-white to-indigo-50">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-4xl font-bold text-slate-800 mb-6"><span class="leadership-gradient-text">Leadership Activities</span> & Challenges</h2>
+                <p class="text-lg text-slate-600">
+                    Our carefully designed activities make leadership learning fun, engaging, and memorable. Each activity targets specific leadership skills.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Activity 1 -->
+                <div class="activity-card bg-white rounded-2xl overflow-hidden border-2 border-indigo-100">
+                    <div class="p-6">
+                        <div class="flex items-center gap-4 mb-5">
+                            <div class="h-14 w-14 leadership-accent rounded-xl flex items-center justify-center text-white">
+                                <iconify-icon icon="lucide:flag" width="26"></iconify-icon>
+                            </div>
+                            <div>
+                                <div class="inline-flex items-center gap-1 bg-indigo-100 text-indigo-700 px-3 py-1 rounded-full text-xs font-semibold mb-1">
+                                    <span>Team Building</span>
+                                </div>
+                                <h3 class="text-xl font-bold text-slate-800">Mission Impossible Challenge</h3>
+                            </div>
+                        </div>
+                        <p class="text-slate-600 mb-6">
+                            Teams work together to complete a series of complex tasks with limited resources. Develops strategic planning, delegation, and collaboration.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="bg-indigo-50 text-indigo-700 px-3 py-1 rounded-full text-xs font-medium">Strategic Thinking</span>
+                            <span class="bg-indigo-50 text-indigo-700 px-3 py-1 rounded-full text-xs font-medium">Delegation</span>
+                            <span class="bg-indigo-50 text-indigo-700 px-3 py-1 rounded-full text-xs font-medium">Time Management</span>
+                        </div>
+                        <div class="text-sm text-slate-500 flex items-center">
+                            <iconify-icon icon="lucide:clock" class="mr-1"></iconify-icon>
+                            <span class="mr-4">90 minutes</span>
+                            <iconify-icon icon="lucide:users" class="mr-1"></iconify-icon>
+                            <span>5-8 children per team</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Activity 2 -->
+                <div class="activity-card bg-white rounded-2xl overflow-hidden border-2 border-indigo-100">
+                    <div class="p-6">
+                        <div class="flex items-center gap-4 mb-5">
+                            <div class="h-14 w-14 leadership-accent rounded-xl flex items-center justify-center text-white">
+                                <iconify-icon icon="lucide:mic" width="26"></iconify-icon>
+                            </div>
+                            <div>
+                                <div class="inline-flex items-center gap-1 bg-pink-100 text-pink-700 px-3 py-1 rounded-full text-xs font-semibold mb-1">
+                                    <span>Communication</span>
+                                </div>
+                                <h3 class="text-xl font-bold text-slate-800">Mini-TED Talks & Debate Club</h3>
+                            </div>
+                        </div>
+                        <p class="text-slate-600 mb-6">
+                            Children prepare and deliver short presentations on topics they're passionate about, followed by structured debates. Builds confidence in public speaking.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="bg-pink-50 text-pink-700 px-3 py-1 rounded-full text-xs font-medium">Public Speaking</span>
+                            <span class="bg-pink-50 text-pink-700 px-3 py-1 rounded-full text-xs font-medium">Persuasion</span>
+                            <span class="bg-pink-50 text-pink-700 px-3 py-1 rounded-full text-xs font-medium">Active Listening</span>
+                        </div>
+                        <div class="text-sm text-slate-500 flex items-center">
+                            <iconify-icon icon="lucide:clock" class="mr-1"></iconify-icon>
+                            <span class="mr-4">60 minutes</span>
+                            <iconify-icon icon="lucide:users" class="mr-1"></iconify-icon>
+                            <span>Individual & Group</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Activity 3 -->
+                <div class="activity-card bg-white rounded-2xl overflow-hidden border-2 border-indigo-100">
+                    <div class="p-6">
+                        <div class="flex items-center gap-4 mb-5">
+                            <div class="h-14 w-14 leadership-accent rounded-xl flex items-center justify-center text-white">
+                                <iconify-icon icon="lucide:puzzle" width="26"></iconify-icon>
+                            </div>
+                            <div>
+                                <div class="inline-flex items-center gap-1 bg-emerald-100 text-emerald-700 px-3 py-1 rounded-full text-xs font-semibold mb-1">
+                                    <span>Problem Solving</span>
+                                </div>
+                                <h3 class="text-xl font-bold text-slate-800">Escape Room Leadership</h3>
+                            </div>
+                        </div>
+                        <p class="text-slate-600 mb-6">
+                            Themed escape rooms where teams must solve puzzles under time pressure. Encourages creative thinking, pattern recognition, and collective decision-making.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="bg-emerald-50 text-emerald-700 px-3 py-1 rounded-full text-xs font-medium">Critical Thinking</span>
+                            <span class="bg-emerald-50 text-emerald-700 px-3 py-1 rounded-full text-xs font-medium">Decision Making</span>
+                            <span class="bg-emerald-50 text-emerald-700 px-3 py-1 rounded-full text-xs font-medium">Pattern Recognition</span>
+                        </div>
+                        <div class="text-sm text-slate-500 flex items-center">
+                            <iconify-icon icon="lucide:clock" class="mr-1"></iconify-icon>
+                            <span class="mr-4">75 minutes</span>
+                            <iconify-icon icon="lucide:users" class="mr-1"></iconify-icon>
+                            <span>4-6 children per team</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Activity 4 -->
+                <div class="activity-card bg-white rounded-2xl overflow-hidden border-2 border-indigo-100">
+                    <div class="p-6">
+                        <div class="flex items-center gap-4 mb-5">
+                            <div class="h-14 w-14 leadership-accent rounded-xl flex items-center justify-center text-white">
+                                <iconify-icon icon="lucide:heart-handshake" width="26"></iconify-icon>
+                            </div>
+                            <div>
+                                <div class="inline-flex items-center gap-1 bg-amber-100 text-amber-700 px-3 py-1 rounded-full text-xs font-semibold mb-1">
+                                    <span>Empathy Building</span>
+                                </div>
+                                <h3 class="text-xl font-bold text-slate-800">Role Reversal Games</h3>
+                            </div>
+                        </div>
+                        <p class="text-slate-600 mb-6">
+                            Children take on different roles (leader, follower, mediator) in simulated scenarios to understand different perspectives and develop empathy.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="bg-amber-50 text-amber-700 px-3 py-1 rounded-full text-xs font-medium">Perspective Taking</span>
+                            <span class="bg-amber-50 text-amber-700 px-3 py-1 rounded-full text-xs font-medium">Conflict Resolution</span>
+                            <span class="bg-amber-50 text-amber-700 px-3 py-1 rounded-full text-xs font-medium">Emotional Awareness</span>
+                        </div>
+                        <div class="text-sm text-slate-500 flex items-center">
+                            <iconify-icon icon="lucide:clock" class="mr-1"></iconify-icon>
+                            <span class="mr-4">45 minutes</span>
+                            <iconify-icon icon="lucide:users" class="mr-1"></iconify-icon>
+                            <span>Pairs & Small Groups</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Activity 5 -->
+                <div class="activity-card bg-white rounded-2xl overflow-hidden border-2 border-indigo-100">
+                    <div class="p-6">
+                        <div class="flex items-center gap-4 mb-5">
+                            <div class="h-14 w-14 leadership-accent rounded-xl flex items-center justify-center text-white">
+                                <iconify-icon icon="lucide:trello" width="26"></iconify-icon>
+                            </div>
+                            <div>
+                                <div class="inline-flex items-center gap-1 bg-purple-100 text-purple-700 px-3 py-1 rounded-full text-xs font-semibold mb-1">
+                                    <span>Project Management</span>
+                                </div>
+                                <h3 class="text-xl font-bold text-slate-800">Community Project Planning</h3>
+                            </div>
+                        </div>
+                        <p class="text-slate-600 mb-6">
+                            Teams plan and execute a small community project from start to finish. Teaches goal-setting, resource allocation, and project coordination.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="bg-purple-50 text-purple-700 px-3 py-1 rounded-full text-xs font-medium">Planning</span>
+                            <span class="bg-purple-50 text-purple-700 px-3 py-1 rounded-full text-xs font-medium">Resource Management</span>
+                            <span class="bg-purple-50 text-purple-700 px-3 py-1 rounded-full text-xs font-medium">Goal Setting</span>
+                        </div>
+                        <div class="text-sm text-slate-500 flex items-center">
+                            <iconify-icon icon="lucide:clock" class="mr-1"></iconify-icon>
+                            <span class="mr-4">Multi-session</span>
+                            <iconify-icon icon="lucide:users" class="mr-1"></iconify-icon>
+                            <span>Team Project</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Activity 6 -->
+                <div class="activity-card bg-white rounded-2xl overflow-hidden border-2 border-indigo-100">
+                    <div class="p-6">
+                        <div class="flex items-center gap-4 mb-5">
+                            <div class="h-14 w-14 leadership-accent rounded-xl flex items-center justify-center text-white">
+                                <iconify-icon icon="lucide:shield" width="26"></iconify-icon>
+                            </div>
+                            <div>
+                                <div class="inline-flex items-center gap-1 bg-rose-100 text-rose-700 px-3 py-1 rounded-full text-xs font-semibold mb-1">
+                                    <span>Ethical Leadership</span>
+                                </div>
+                                <h3 class="text-xl font-bold text-slate-800">Dilemma Decision Games</h3>
+                            </div>
+                        </div>
+                        <p class="text-slate-600 mb-6">
+                            Real-world ethical scenarios where children must make difficult decisions and defend their choices. Develops moral reasoning and integrity.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="bg-rose-50 text-rose-700 px-3 py-1 rounded-full text-xs font-medium">Ethical Reasoning</span>
+                            <span class="bg-rose-50 text-rose-700 px-3 py-1 rounded-full text-xs font-medium">Values Clarification</span>
+                            <span class="bg-rose-50 text-rose-700 px-3 py-1 rounded-full text-xs font-medium">Integrity</span>
+                        </div>
+                        <div class="text-sm text-slate-500 flex items-center">
+                            <iconify-icon icon="lucide:clock" class="mr-1"></iconify-icon>
+                            <span class="mr-4">60 minutes</span>
+                            <iconify-icon icon="lucide:users" class="mr-1"></iconify-icon>
+                            <span>Group Discussion</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-12 text-center">
+                <button class="leadership-accent hover:opacity-90 text-white px-8 py-4 rounded-full text-lg font-semibold transition-all shadow-[0px_6px_0px_0px_rgba(67,56,202,1)] hover:shadow-[0px_3px_0px_0px_rgba(67,56,202,1)] hover:translate-y-[3px]">
+                    View All 20+ Leadership Activities
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section id="benefits" class="py-20 px-4 bg-white">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-4xl font-bold text-slate-800 mb-6">How <span class="leadership-gradient-text">Leadership Development</span> Benefits Your Child</h2>
+                <p class="text-lg text-slate-600">
+                    Beyond just leadership skills, our program develops essential life skills that will benefit your child in school, relationships, and future careers.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-gradient-to-br from-indigo-50 to-white p-8 rounded-2xl border-2 border-indigo-100">
+                    <div class="h-12 w-12 bg-indigo-100 rounded-xl flex items-center justify-center text-indigo-600 mb-6">
+                        <iconify-icon icon="lucide:graduation-cap" width="24"></iconify-icon>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-800 mb-4">Academic Improvement</h3>
+                    <p class="text-slate-600 mb-6">Leadership skills translate to better classroom participation, project leadership, and study habits.</p>
+                    <div class="flex items-center">
+                        <div class="h-2 flex-1 bg-indigo-200 rounded-full overflow-hidden">
+                            <div class="h-full bg-indigo-500 rounded-full" style="width: 85%"></div>
+                        </div>
+                        <span class="ml-3 font-semibold text-indigo-600">85%</span>
+                    </div>
+                    <p class="text-sm text-slate-500 mt-2">Report improved academic confidence</p>
+                </div>
+                
+                <div class="bg-gradient-to-br from-indigo-50 to-white p-8 rounded-2xl border-2 border-indigo-100">
+                    <div class="h-12 w-12 bg-indigo-100 rounded-xl flex items-center justify-center text-indigo-600 mb-6">
+                        <iconify-icon icon="lucide:smile" width="24"></iconify-icon>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-800 mb-4">Social Confidence</h3>
+                    <p class="text-slate-600 mb-6">Children become more comfortable in social situations, making friends, and expressing themselves.</p>
+                    <div class="flex items-center">
+                        <div class="h-2 flex-1 bg-indigo-200 rounded-full overflow-hidden">
+                            <div class="h-full bg-indigo-500 rounded-full" style="width: 92%"></div>
+                        </div>
+                        <span class="ml-3 font-semibold text-indigo-600">92%</span>
+                    </div>
+                    <p class="text-sm text-slate-500 mt-2">Show increased social confidence</p>
+                </div>
+                
+                <div class="bg-gradient-to-br from-indigo-50 to-white p-8 rounded-2xl border-2 border-indigo-100">
+                    <div class="h-12 w-12 bg-indigo-100 rounded-xl flex items-center justify-center text-indigo-600 mb-6">
+                        <iconify-icon icon="lucide:target" width="24"></iconify-icon>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-800 mb-4">Problem-Solving Skills</h3>
+                    <p class="text-slate-600 mb-6">Enhanced ability to analyze situations, think creatively, and find effective solutions to challenges.</p>
+                    <div class="flex items-center">
+                        <div class="h-2 flex-1 bg-indigo-200 rounded-full overflow-hidden">
+                            <div class="h-full bg-indigo-500 rounded-full" style="width: 88%"></div>
+                        </div>
+                        <span class="ml-3 font-semibold text-indigo-600">88%</span>
+                    </div>
+                    <p class="text-sm text-slate-500 mt-2">Demonstrate improved problem-solving</p>
+                </div>
+            </div>
+            
+            <div class="mt-12 bg-gradient-to-r from-indigo-500 to-purple-600 rounded-2xl p-8 md:p-12 text-white">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+                    <div>
+                        <h3 class="text-3xl font-bold mb-6">Certified Leadership Excellence Program</h3>
+                        <p class="text-indigo-100 mb-8">
+                            Upon completion, each child receives a personalized Leadership Excellence Certificate detailing their specific strengths and growth areas, plus a comprehensive progress report for parents.
+                        </p>
+                        <ul class="space-y-4">
+                            <li class="flex items-center">
+                                <iconify-icon icon="lucide:check-circle" class="mr-3 text-green-300"></iconify-icon>
+                                <span>Personalized skill assessment</span>
+                            </li>
+                            <li class="flex items-center">
+                                <iconify-icon icon="lucide:check-circle" class="mr-3 text-green-300"></iconify-icon>
+                                <span>Strength-based feedback report</span>
+                            </li>
+                            <li class="flex items-center">
+                                <iconify-icon icon="lucide:check-circle" class="mr-3 text-green-300"></iconify-icon>
+                                <span>Recommendations for continued growth</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="flex justify-center">
+                        <div class="bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-6 max-w-xs">
+                            <div class="text-center mb-6">
+                                <div class="h-20 w-20 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                                    <iconify-icon icon="lucide:award" width="40"></iconify-icon>
+                                </div>
+                                <h4 class="text-xl font-bold">Leadership Excellence</h4>
+                                <p class="text-indigo-200 text-sm">Completion Certificate</p>
+                            </div>
+                            <div class="text-center">
+                                <div class="text-sm text-indigo-200 mb-2">Issued by</div>
+                                <div class="font-bold text-lg">Maura Wonderlab Leadership Institute</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Schedule & Pricing -->
+    <section id="schedule" class="py-20 px-4 bg-gradient-to-b from-indigo-50 to-white">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-4xl font-bold text-slate-800 mb-6">Program <span class="leadership-gradient-text">Schedule & Pricing</span></h2>
+                <p class="text-lg text-slate-600">
+                    Flexible options to fit your schedule. Choose from weekend intensives or after-school programs.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <div>
+                    <h3 class="text-2xl font-bold text-slate-800 mb-8">Weekly Schedule</h3>
+                    <div class="space-y-6">
+                        <div class="bg-white p-6 rounded-2xl border-2 border-indigo-100 shadow-sm">
+                            <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+                                <div>
+                                    <div class="inline-flex items-center gap-2 bg-indigo-100 text-indigo-700 px-3 py-1 rounded-full text-sm font-semibold mb-2">
+                                        <iconify-icon icon="lucide:calendar"></iconify-icon>
+                                        <span>Weekend Intensive</span>
+                                    </div>
+                                    <h4 class="text-xl font-bold text-slate-800 mb-2">Saturday Leadership Camp</h4>
+                                    <p class="text-slate-600">9:00 AM - 3:00 PM every Saturday</p>
+                                </div>
+                                <div class="text-right">
+                                    <div class="text-2xl font-bold text-indigo-600">₹2,499<span class="text-lg font-normal text-slate-500">/week</span></div>
+                                    <div class="text-sm text-slate-500">4-week program</div>
+                                </div>
+                            </div>
+                            <div class="mt-6 pt-6 border-t border-slate-100">
+                                <div class="grid grid-cols-2 gap-4">
+                                    <div>
+                                        <div class="text-sm text-slate-500 mb-1">Age Group</div>
+                                        <div class="font-medium">8-12 years</div>
+                                    </div>
+                                    <div>
+                                        <div class="text-sm text-slate-500 mb-1">Duration</div>
+                                        <div class="font-medium">6 hours weekly</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-white p-6 rounded-2xl border-2 border-indigo-100 shadow-sm">
+                            <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+                                <div>
+                                    <div class="inline-flex items-center gap-2 bg-purple-100 text-purple-700 px-3 py-1 rounded-full text-sm font-semibold mb-2">
+                                        <iconify-icon icon="lucide:clock"></iconify-icon>
+                                        <span>After-School Program</span>
+                                    </div>
+                                    <h4 class="text-xl font-bold text-slate-800 mb-2">Weekday Leadership Club</h4>
+                                    <p class="text-slate-600">4:00 PM - 6:30 PM, Tue & Thu</p>
+                                </div>
+                                <div class="text-right">
+                                    <div class="text-2xl font-bold text-indigo-600">₹1,999<span class="text-lg font-normal text-slate-500">/week</span></div>
+                                    <div class="text-sm text-slate-500">8-week program</div>
+                                </div>
+                            </div>
+                            <div class="mt-6 pt-6 border-t border-slate-100">
+                                <div class="grid grid-cols-2 gap-4">
+                                    <div>
+                                        <div class="text-sm text-slate-500 mb-1">Age Group</div>
+                                        <div class="font-medium">10-14 years</div>
+                                    </div>
+                                    <div>
+                                        <div class="text-sm text-slate-500 mb-1">Duration</div>
+                                        <div class="font-medium">5 hours weekly</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-white p-6 rounded-2xl border-2 border-indigo-100 shadow-sm">
+                            <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+                                <div>
+                                    <div class="inline-flex items-center gap-2 bg-emerald-100 text-emerald-700 px-3 py-1 rounded-full text-sm font-semibold mb-2">
+                                        <iconify-icon icon="lucide:school"></iconify-icon>
+                                        <span>School Holiday Special</span>
+                                    </div>
+                                    <h4 class="text-xl font-bold text-slate-800 mb-2">Leadership Bootcamp</h4>
+                                    <p class="text-slate-600">10:00 AM - 4:00 PM, Mon-Fri</p>
+                                </div>
+                                <div class="text-right">
+                                    <div class="text-2xl font-bold text-indigo-600">₹8,999<span class="text-lg font-normal text-slate-500">/week</span></div>
+                                    <div class="text-sm text-slate-500">1-week intensive</div>
+                                </div>
+                            </div>
+                            <div class="mt-6 pt-6 border-t border-slate-100">
+                                <div class="grid grid-cols-2 gap-4">
+                                    <div>
+                                        <div class="text-sm text-slate-500 mb-1">Age Group</div>
+                                        <div class="font-medium">9-13 years</div>
+                                    </div>
+                                    <div>
+                                        <div class="text-sm text-slate-500 mb-1">Duration</div>
+                                        <div class="font-medium">30 hours total</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-2xl font-bold text-slate-800 mb-8">Locations in Virar, Vasai & Nallasopara</h3>
+                    <div class="space-y-6 mb-10">
+                        <div class="bg-white p-6 rounded-2xl border-2 border-indigo-100 shadow-sm">
+                            <div class="flex items-start gap-4">
+                                <div class="h-12 w-12 leadership-accent rounded-xl flex items-center justify-center text-white flex-shrink-0">
+                                    <iconify-icon icon="lucide:map-pin" width="24"></iconify-icon>
+                                </div>
+                                <div>
+                                    <h4 class="text-xl font-bold text-slate-800 mb-2">Virar Leadership Center</h4>
+                                    <p class="text-slate-600 mb-3">Near Virar Station, fully-equipped indoor-outdoor facility with dedicated leadership activity zones.</p>
+                                    <div class="flex items-center text-sm text-slate-500">
+                                        <iconify-icon icon="lucide:clock" class="mr-1"></iconify-icon>
+                                        <span class="mr-4">Sat: 9AM-3PM</span>
+                                        <iconify-icon icon="lucide:users" class="mr-1"></iconify-icon>
+                                        <span>Max 15 per batch</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-white p-6 rounded-2xl border-2 border-indigo-100 shadow-sm">
+                            <div class="flex items-start gap-4">
+                                <div class="h-12 w-12 leadership-accent rounded-xl flex items-center justify-center text-white flex-shrink-0">
+                                    <iconify-icon icon="lucide:map-pin" width="24"></iconify-icon>
+                                </div>
+                                <div>
+                                    <h4 class="text-xl font-bold text-slate-800 mb-2">Vasai Adventure Base</h4>
+                                    <p class="text-slate-600 mb-3">Nature-inspired campus with outdoor challenge courses perfect for team leadership activities.</p>
+                                    <div class="flex items-center text-sm text-slate-500">
+                                        <iconify-icon icon="lucide:clock" class="mr-1"></iconify-icon>
+                                        <span class="mr-4">Tue/Thu: 4PM-6:30PM</span>
+                                        <iconify-icon icon="lucide:users" class="mr-1"></iconify-icon>
+                                        <span>Max 12 per batch</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-white p-6 rounded-2xl border-2 border-indigo-100 shadow-sm">
+                            <div class="flex items-start gap-4">
+                                <div class="h-12 w-12 leadership-accent rounded-xl flex items-center justify-center text-white flex-shrink-0">
+                                    <iconify-icon icon="lucide:map-pin" width="24"></iconify-icon>
+                                </div>
+                                <div>
+                                    <h4 class="text-xl font-bold text-slate-800 mb-2">Nallasopara Creative Hub</h4>
+                                    <p class="text-slate-600 mb-3">Modern facility with technology-integrated leadership simulations and communication labs.</p>
+                                    <div class="flex items-center text-sm text-slate-500">
+                                        <iconify-icon icon="lucide:clock" class="mr-1"></iconify-icon>
+                                        <span class="mr-4">Sat: 9AM-3PM</span>
+                                        <iconify-icon icon="lucide:users" class="mr-1"></iconify-icon>
+                                        <span>Max 18 per batch</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-gradient-to-r from-indigo-500 to-indigo-600 rounded-2xl p-8 text-white">
+                        <h4 class="text-2xl font-bold mb-4">Special Limited-Time Offer</h4>
+                        <p class="text-indigo-100 mb-6">Enroll in any leadership program before month-end and get:</p>
+                        <ul class="space-y-3 mb-8">
+                            <li class="flex items-center">
+                                <iconify-icon icon="lucide:gift" class="mr-3"></iconify-icon>
+                                <span>Free Leadership Assessment (worth ₹999)</span>
+                            </li>
+                            <li class="flex items-center">
+                                <iconify-icon icon="lucide:gift" class="mr-3"></iconify-icon>
+                                <span>Complimentary Maura Wonderlab T-shirt</span>
+                            </li>
+                            <li class="flex items-center">
+                                <iconify-icon icon="lucide:gift" class="mr-3"></iconify-icon>
+                                <span>10% sibling discount</span>
+                            </li>
+                        </ul>
+                        <button class="w-full bg-white text-indigo-600 hover:bg-indigo-50 px-6 py-4 rounded-full text-lg font-bold transition-all shadow-[0px_4px_0px_0px_rgba(255,255,255,0.3)] hover:shadow-[0px_2px_0px_0px_rgba(255,255,255,0.3)] hover:translate-y-[2px]">
+                            Book Free Trial Session
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-20 px-4 bg-white">
+        <div class="max-w-4xl mx-auto">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-4xl font-bold text-slate-800 mb-6">Frequently Asked <span class="leadership-gradient-text">Questions</span></h2>
+                <p class="text-lg text-slate-600">Everything you need to know about our leadership development camps.</p>
+            </div>
+            
+            <div class="space-y-6">
+                <div class="border-2 border-indigo-100 rounded-2xl p-6">
+                    <div class="flex justify-between items-center cursor-pointer" onclick="toggleFAQ(this)">
+                        <h3 class="text-xl font-bold text-slate-800">What age group is best for leadership development camps?</h3>
+                        <iconify-icon icon="lucide:chevron-down" class="text-indigo-500 text-2xl transition-transform"></iconify-icon>
+                    </div>
+                    <div class="faq-content hidden mt-6">
+                        <p class="text-slate-600">Our leadership camps are designed for children aged 8-14 years, divided into age-appropriate groups (8-10, 11-12, 13-14). Activities are tailored to each age group's cognitive and social development stage.</p>
+                    </div>
+                </div>
+                
+                <div class="border-2 border-indigo-100 rounded-2xl p-6">
+                    <div class="flex justify-between items-center cursor-pointer" onclick="toggleFAQ(this)">
+                        <h3 class="text-xl font-bold text-slate-800">What makes Maura Wonderlab's leadership program different?</h3>
+                        <iconify-icon icon="lucide:chevron-down" class="text-indigo-500 text-2xl transition-transform"></iconify-icon>
+                    </div>
+                    <div class="faq-content hidden mt-6">
+                        <p class="text-slate-600">Unlike traditional leadership programs, we use 100% activity-based learning with real-world challenges. Our 5:1 student-mentor ratio ensures personalized attention, and we focus on both hard skills (decision-making, planning) and soft skills (empathy, communication).</p>
+                    </div>
+                </div>
+                
+                <div class="border-2 border-indigo-100 rounded-2xl p-6">
+                    <div class="flex justify-between items-center cursor-pointer" onclick="toggleFAQ(this)">
+                        <h3 class="text-xl font-bold text-slate-800">How do you ensure safety during team activities?</h3>
+                        <iconify-icon icon="lucide:chevron-down" class="text-indigo-500 text-2xl transition-transform"></iconify-icon>
+                    </div>
+                    <div class="faq-content hidden mt-6">
+                        <p class="text-slate-600">All activities are supervised by trained counselors with first-aid certification. We maintain strict safety protocols, conduct risk assessments for each activity, and have a nurse on call at all our locations. Parental consent and medical information are collected for each child.</p>
+                    </div>
+                </div>
+                
+                <div class="border-2 border-indigo-100 rounded-2xl p-6">
+                    <div class="flex justify-between items-center cursor-pointer" onclick="toggleFAQ(this)">
+                        <h3 class="text-xl font-bold text-slate-800">Can shy or introverted children benefit from leadership camps?</h3>
+                        <iconify-icon icon="lucide:chevron-down" class="text-indigo-500 text-2xl transition-transform"></iconify-icon>
+                    </div>
+                    <div class="faq-content hidden mt-6">
+                        <p class="text-slate-600">Absolutely! We've specifically designed activities that help shy children build confidence gradually. Our mentors are trained to encourage participation without pressure, and many of our most successful "graduates" started as shy participants.</p>
+                    </div>
+                </div>
+                
+                <div class="border-2 border-indigo-100 rounded-2xl p-6">
+                    <div class="flex justify-between items-center cursor-pointer" onclick="toggleFAQ(this)">
+                        <h3 class="text-xl font-bold text-slate-800">What is the cancellation and refund policy?</h3>
+                        <iconify-icon icon="lucide:chevron-down" class="text-indigo-500 text-2xl transition-transform"></iconify-icon>
+                    </div>
+                    <div class="faq-content hidden mt-6">
+                        <p class="text-slate-600">We offer a 100% refund if cancelled 7 days before program start. 50% refund if cancelled 3-6 days before. No refund within 48 hours of start. We also offer program transfers or credits for future camps in case of illness or emergencies.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 px-4">
+        <div class="max-w-4xl mx-auto bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 rounded-3xl p-8 md:p-12 text-white text-center">
+            <h2 class="text-4xl font-bold mb-6">Ready to Unleash Your Child's Leadership Potential?</h2>
+            <p class="text-xl text-indigo-100 mb-10 max-w-2xl mx-auto">Join 500+ children who have transformed into confident leaders through our program.</p>
+            
+            <div class="flex flex-col sm:flex-row gap-6 justify-center">
+                <button class="bg-white text-indigo-600 hover:bg-indigo-50 px-8 py-4 rounded-full text-lg font-bold transition-all shadow-[0px_6px_0px_0px_rgba(255,255,255,0.3)] hover:shadow-[0px_3px_0px_0px_rgba(255,255,255,0.3)] hover:translate-y-[3px]">
+                    Book Free Trial Session
+                </button>
+                <button class="bg-white/20 hover:bg-white/30 backdrop-blur-sm border border-white/30 text-white px-8 py-4 rounded-full text-lg font-bold transition-all">
+                    <iconify-icon icon="lucide:phone" class="mr-2"></iconify-icon>
+                    Call +91 77680 31411
+                </button>
+            </div>
+            
+            <p class="text-indigo-200 mt-8 text-sm">Limited spots available in each batch. Early booking recommended.</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-white pt-20 pb-10 rounded-t-[3rem] mt-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
+                <div class="col-span-1 md:col-span-2">
+                    <div class="flex items-center gap-2 mb-6">
+                         <div class="h-8 w-8 leadership-accent rounded-lg flex items-center justify-center text-white">
+                            <iconify-icon icon="lucide:sparkles" width="18"></iconify-icon>
+                        </div>
+                        <span class="brand-font text-2xl font-bold">Maura <span class="text-indigo-400">Wonderlab</span></span>
+                    </div>
+                    <p class="text-slate-400 max-w-sm mb-6">Creating tomorrow's leaders through nature, science, and adventure. The #1 Choice for Leadership Development Camps.</p>
+                    <div class="flex gap-4">
+                        <a href="#" class="h-10 w-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-indigo-500 transition-colors"><iconify-icon icon="lucide:instagram" width="20"></iconify-icon></a>
+                        <a href="#" class="h-10 w-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-blue-500 transition-colors"><iconify-icon icon="lucide:facebook" width="20"></iconify-icon></a>
+                        <a href="#" class="h-10 w-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-green-500 transition-colors"><iconify-icon icon="lucide:phone" width="20"></iconify-icon></a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="font-bold text-lg mb-6">Leadership Programs</h4>
+                    <ul class="space-y-4 text-slate-400 text-sm">
+                        <li><a href="#" class="hover:text-white transition-colors">Weekend Leadership Camp</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">After-School Leadership Club</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Holiday Bootcamps</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">School Partnership Programs</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-bold text-lg mb-6">Camp Locations</h4>
+                    <ul class="space-y-4 text-slate-400 text-sm">
+                        <li><a href="#" class="hover:text-white transition-colors">Leadership Camp in Virar</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Leadership Camp in Vasai</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Leadership Camp in Nallasopara</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Corporate Leadership Workshops</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-slate-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="text-slate-500 text-sm">© 2024 Maura Wonderlab. All rights reserved.</p>
+                <div class="flex gap-6 text-sm text-slate-500">
+                    <a href="#" class="hover:text-white">Privacy</a>
+                    <a href="#" class="hover:text-white">Terms</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Functionality
+        const mobileMenuButton = document.getElementById('mobileMenuButton');
+        const closeMenuButton = document.getElementById('closeMenuButton');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const menuOverlay = document.getElementById('menuOverlay');
+        
+        function openMobileMenu() {
+            mobileMenu.classList.add('open');
+            menuOverlay.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+        
+        function closeMobileMenu() {
+            mobileMenu.classList.remove('open');
+            menuOverlay.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+        
+        mobileMenuButton.addEventListener('click', openMobileMenu);
+        closeMenuButton.addEventListener('click', closeMobileMenu);
+        menuOverlay.addEventListener('click', closeMobileMenu);
+        
+        document.querySelectorAll('#mobileMenu a').forEach(link => {
+            link.addEventListener('click', closeMobileMenu);
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                const href = this.getAttribute('href');
+                
+                if (href === '#' || href.startsWith('#') && href.length > 1) {
+                    e.preventDefault();
+                    
+                    const targetId = href.substring(1);
+                    const targetElement = document.getElementById(targetId);
+                    
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                    }
+                }
+            });
+        });
+        
+        // Close menu on ESC key press
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && mobileMenu.classList.contains('open')) {
+                closeMobileMenu();
+            }
+        });
+        
+        // FAQ Toggle Functionality
+        function toggleFAQ(element) {
+            const content = element.parentElement.querySelector('.faq-content');
+            const icon = element.querySelector('iconify-icon');
+            
+            content.classList.toggle('hidden');
+            icon.style.transform = content.classList.contains('hidden') ? 'rotate(0deg)' : 'rotate(180deg)';
+        }
+        
+        // Add animation to activity cards on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+        
+        // Observe all activity cards for animation
+        document.querySelectorAll('.activity-card').forEach(card => {
+            card.style.opacity = '0.9';
+            card.style.transform = 'translateY(10px)';
+            card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+            observer.observe(card);
+        });
+        
+        // Animate progress bars on scroll
+        const progressObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const progressBars = entry.target.querySelectorAll('.bg-indigo-500');
+                    progressBars.forEach(bar => {
+                        const width = bar.style.width;
+                        bar.style.width = '0%';
+                        setTimeout(() => {
+                            bar.style.width = width;
+                            bar.style.transition = 'width 1.5s ease-in-out';
+                        }, 300);
+                    });
+                }
+            });
+        }, { threshold: 0.5 });
+        
+        // Observe benefits section for progress bar animation
+        const benefitsSection = document.getElementById('benefits');
+        if (benefitsSection) {
+            progressObserver.observe(benefitsSection);
+        }
+    </script>
+</body>
+</html>

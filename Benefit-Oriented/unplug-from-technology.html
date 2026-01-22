@@ -1,0 +1,916 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unplug from Technology | Digital Detox Camp for Kids - Maura Wonderlab</title>
+    <meta name="description" content="Help your kids unplug from technology with Maura Wonderlab's digital detox camps in Virar, Vasai & Nallasopara. Screen-free adventure activities for children.">
+    <meta name="keywords" content="unplug from technology, digital detox camp for kids, screen-free activities for children, technology detox camp, outdoor adventures without screens, reduce screen time kids, nature-based learning, Maura Wonderlab unplug programs">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Iconify (Lucide Icons) -->
+    <script src="https://cdn.jsdelivr.net/npm/iconify-icon@1.0.8/dist/iconify-icon.min.js"></script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=Nunito:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        /* Custom Font Settings for Childish/Playful Vibe */
+        body {
+            font-family: 'Nunito', sans-serif;
+        }
+        h1, h2, h3, h4, h5, h6, .brand-font {
+            font-family: 'Fredoka', sans-serif;
+        }
+        
+        /* Playful Blob Pattern */
+        .bg-pattern {
+            background-color: #FFFDF5;
+            background-image: radial-gradient(#FDE68A 1px, transparent 1px), radial-gradient(#BAE6FD 1px, transparent 1px);
+            background-size: 40px 40px;
+            background-position: 0 0, 20px 20px;
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #FFF7ED; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #FDBA74; 
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #EA580C; 
+        }
+
+        /* Mobile Menu Animation */
+        .mobile-menu {
+            transform: translateX(100%);
+            transition: transform 0.3s ease-in-out;
+        }
+        
+        .mobile-menu.open {
+            transform: translateX(0);
+        }
+        
+        .menu-overlay {
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease-in-out, visibility 0.3s;
+        }
+        
+        .menu-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        /* Custom Styles for this page */
+        .benefit-card {
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+        
+        .benefit-card:hover {
+            transform: translateY(-5px);
+            border-color: #3B82F6;
+            box-shadow: 0 10px 25px rgba(59, 130, 246, 0.1);
+        }
+        
+        .stat-number {
+            font-size: 3.5rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #3B82F6, #8B5CF6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .highlight-text {
+            background: linear-gradient(120deg, #FEF3C7 0%, #FEF3C7 100%);
+            background-repeat: no-repeat;
+            background-size: 100% 40%;
+            background-position: 0 90%;
+        }
+        
+        .activity-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .testimonial-quote {
+            position: relative;
+        }
+        
+        .testimonial-quote::before {
+            content: '"';
+            position: absolute;
+            top: -20px;
+            left: -10px;
+            font-size: 5rem;
+            color: #DBEAFE;
+            font-family: serif;
+            z-index: -1;
+        }
+    </style>
+</head>
+<body class="bg-pattern text-slate-600 antialiased selection:bg-orange-200 selection:text-orange-900">
+
+    <!-- Navbar -->
+    <nav class="fixed w-full z-50 top-0 transition-all duration-300 backdrop-blur-md bg-white/80 border-b-2 border-slate-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center gap-2 cursor-pointer" onclick="window.location.href='/'">
+                    <img src="maura wonderlab logo.png" alt="Maura Wonderlab" width="50px">
+                    <span class="brand-font text-2xl font-semibold tracking-tight text-slate-800">
+                        Maura <span class="text-orange-500">Wonderlab</span>
+                    </span>
+                </div>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="/" class="text-sm font-semibold text-slate-600 hover:text-orange-500 transition-colors">Home</a>
+                    <a href="#why-unplug" class="text-sm font-semibold text-slate-600 hover:text-orange-500 transition-colors">Why Unplug?</a>
+                    <a href="#activities" class="text-sm font-semibold text-slate-600 hover:text-orange-500 transition-colors">Activities</a>
+                    <a href="#benefits" class="text-sm font-semibold text-slate-600 hover:text-orange-500 transition-colors">Benefits</a>
+                    <a href="#programs" class="text-sm font-semibold text-slate-600 hover:text-orange-500 transition-colors">Programs</a>
+                    <button onclick="window.location.href='#booking'" class="bg-indigo-500 hover:bg-indigo-600 text-white px-5 py-2.5 rounded-full text-sm font-semibold transition-all shadow-[0px_4px_0px_0px_rgba(67,56,202,1)] hover:shadow-[0px_2px_0px_0px_rgba(67,56,202,1)] hover:translate-y-[2px]">
+                        Book Digital Detox Camp
+                    </button>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobileMenuButton" class="text-slate-600 hover:text-orange-500 p-2">
+                        <iconify-icon icon="lucide:menu" width="28" stroke-width="1.5"></iconify-icon>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu Overlay -->
+    <div id="menuOverlay" class="menu-overlay fixed inset-0 bg-black/50 z-40 md:hidden"></div>
+
+    <!-- Mobile Menu -->
+    <div id="mobileMenu" class="mobile-menu fixed top-0 right-0 h-full w-64 bg-white z-50 shadow-2xl md:hidden p-6">
+        <div class="flex justify-between items-center mb-8">
+            <div class="flex items-center gap-2">
+                <div class="h-8 w-8 bg-orange-400 rounded-lg flex items-center justify-center text-white">
+                    <iconify-icon icon="lucide:tent" width="18"></iconify-icon>
+                </div>
+                <span class="brand-font text-xl font-semibold text-slate-800">Maura <span class="text-orange-500">Wonderlab</span></span>
+            </div>
+            <button id="closeMenuButton" class="text-slate-600 hover:text-orange-500 p-2">
+                <iconify-icon icon="lucide:x" width="24" stroke-width="1.5"></iconify-icon>
+            </button>
+        </div>
+        
+        <div class="space-y-6">
+            <a href="/" class="block py-3 text-slate-700 font-semibold border-b border-slate-100" onclick="closeMobileMenu()">Home</a>
+            <a href="#why-unplug" class="block py-3 text-slate-700 font-semibold border-b border-slate-100" onclick="closeMobileMenu()">Why Unplug?</a>
+            <a href="#activities" class="block py-3 text-slate-700 font-semibold border-b border-slate-100" onclick="closeMobileMenu()">Activities</a>
+            <a href="#benefits" class="block py-3 text-slate-700 font-semibold border-b border-slate-100" onclick="closeMobileMenu()">Benefits</a>
+            <a href="#programs" class="block py-3 text-slate-700 font-semibold border-b border-slate-100" onclick="closeMobileMenu()">Programs</a>
+            <div class="pt-4">
+                <button onclick="window.location.href='#booking'" class="w-full bg-indigo-500 hover:bg-indigo-600 text-white px-5 py-3 rounded-full text-sm font-semibold transition-all">
+                    Book Digital Detox Camp
+                </button>
+            </div>
+        </div>
+        
+        <div class="absolute bottom-8 left-6 right-6">
+            <p class="text-sm text-slate-500 mb-4">Contact us:</p>
+            <div class="flex items-center gap-2 text-slate-700 mb-2">
+                <iconify-icon icon="lucide:phone" width="16"></iconify-icon>
+                <span class="text-sm">+91 77680 31411</span>
+            </div>
+            <div class="flex items-center gap-2 text-slate-700">
+                <iconify-icon icon="lucide:mail" width="16"></iconify-icon>
+                <span class="text-sm">maurawonderlab@gmail.com</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="pt-32 pb-20 lg:pt-40 lg:pb-28 bg-gradient-to-br from-blue-50 to-emerald-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-red-100 text-red-700 text-xs font-bold mb-6 uppercase tracking-wide border border-red-200">
+                <iconify-icon icon="lucide:power-off" width="16"></iconify-icon>
+                Digital Detox Program
+            </div>
+            
+            <h1 class="text-4xl md:text-6xl lg:text-7xl font-semibold tracking-tight text-slate-900 mb-6 leading-tight">
+                Help Your Kids <br>
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 via-purple-500 to-emerald-500">Unplug from Technology</span>
+            </h1>
+            
+            <p class="mt-6 max-w-3xl mx-auto text-lg md:text-xl text-slate-600 leading-relaxed">
+                At <span class="font-bold text-blue-600">Maura Wonderlab</span>, we help children disconnect from screens and reconnect with nature, friends, and themselves through our specially designed <span class="highlight-text">digital detox adventure camps</span> in <span class="font-bold">Virar, Vasai, and Nallasopara</span>.
+            </p>
+
+            <div class="mt-10 flex flex-col sm:flex-row gap-4 justify-center items-center">
+                <button onclick="window.location.href='#booking'" class="w-full sm:w-auto px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white rounded-2xl text-base font-semibold transition-all shadow-[0px_6px_0px_0px_#1E40AF] hover:shadow-[0px_3px_0px_0px_#1E40AF] hover:translate-y-[3px] flex items-center justify-center gap-2">
+                    <iconify-icon icon="lucide:calendar-plus" width="20"></iconify-icon>
+                    Enroll in Digital Detox Camp
+                </button>
+                <button onclick="window.location.href='#benefits'" class="w-full sm:w-auto px-8 py-4 bg-white hover:bg-slate-50 text-slate-700 border-2 border-slate-200 rounded-2xl text-base font-semibold transition-all hover:border-blue-300 flex items-center justify-center gap-2">
+                    <iconify-icon icon="lucide:brain" width="20"></iconify-icon>
+                    See Benefits
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="py-12 bg-white border-y border-slate-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
+                <div class="text-center">
+                    <div class="stat-number">6+</div>
+                    <p class="text-sm font-semibold text-slate-600 uppercase tracking-wide">Hours Screen-Free Daily</p>
+                </div>
+                <div class="text-center">
+                    <div class="stat-number">94%</div>
+                    <p class="text-sm font-semibold text-slate-600 uppercase tracking-wide">Of Parents Report Positive Changes</p>
+                </div>
+                <div class="text-center">
+                    <div class="stat-number">2000+</div>
+                    <p class="text-sm font-semibold text-slate-600 uppercase tracking-wide">Kids Successfully Unplugged</p>
+                </div>
+                <div class="text-center">
+                    <div class="stat-number">100%</div>
+                    <p class="text-sm font-semibold text-slate-600 uppercase tracking-wide">Device-Free Environment</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Unplug Section -->
+    <section id="why-unplug" class="py-24 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-semibold text-slate-900 mb-4 tracking-tight">Why Kids Need to Unplug from Technology</h2>
+                <p class="text-slate-600 max-w-3xl mx-auto">In today's digital age, children spend an average of 4-6 hours daily on screens. Our digital detox camps provide the perfect solution to help them rediscover the real world.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h3 class="text-3xl font-bold text-slate-800 mb-6">The Screen Time Challenge</h3>
+                    <p class="text-slate-600 mb-6 leading-relaxed">
+                        Excessive screen time has been linked to <span class="font-bold text-blue-600">sleep problems, reduced attention spans, social skill deficits, and decreased physical activity</span> in children. Our camps in Virar, Vasai, and Nallasopara offer a safe, structured environment where kids can break free from digital dependency.
+                    </p>
+                    
+                    <div class="space-y-4">
+                        <div class="flex items-start gap-3">
+                            <div class="h-6 w-6 bg-red-100 rounded-full flex items-center justify-center mt-1 flex-shrink-0">
+                                <iconify-icon icon="lucide:alert-circle" class="text-red-500" width="14"></iconify-icon>
+                            </div>
+                            <p class="text-slate-700"><span class="font-bold">Problem:</span> Average child spends more time with screens than in school or with family</p>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <div class="h-6 w-6 bg-green-100 rounded-full flex items-center justify-center mt-1 flex-shrink-0">
+                                <iconify-icon icon="lucide:check-circle" class="text-green-500" width="14"></iconify-icon>
+                            </div>
+                            <p class="text-slate-700"><span class="font-bold">Solution:</span> Our digital detox camps replace screen time with adventure, creativity, and social interaction</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-white p-8 rounded-3xl shadow-lg border border-slate-100">
+                    <div class="flex items-center gap-3 mb-6">
+                        <div class="h-12 w-12 bg-blue-100 rounded-xl flex items-center justify-center">
+                            <iconify-icon icon="lucide:shield" class="text-blue-600" width="24"></iconify-icon>
+                        </div>
+                        <h4 class="text-xl font-bold text-slate-800">Our Device-Free Promise</h4>
+                    </div>
+                    <p class="text-slate-600 mb-6">
+                        At Maura Wonderlab camps, we maintain a <span class="font-bold text-blue-600">100% device-free environment</span>. All electronic devices are safely stored upon arrival and returned at the end of the camp. Our engaging activities ensure children don't miss their screens!
+                    </p>
+                    <div class="bg-blue-50 p-4 rounded-xl">
+                        <p class="text-sm text-blue-800 font-semibold flex items-center gap-2">
+                            <iconify-icon icon="lucide:info" width="16"></iconify-icon>
+                            We provide emergency contact access for parents through camp staff only
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Activities Section -->
+    <section id="activities" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-semibold text-slate-900 mb-4 tracking-tight">Screen-Free Activities That Kids Love</h2>
+                <p class="text-slate-600 max-w-3xl mx-auto">We replace screen time with hands-on adventures that stimulate creativity, physical activity, and social connection.</p>
+            </div>
+
+            <div class="activity-grid">
+                <!-- Activity 1 -->
+                <div class="bg-gradient-to-br from-blue-50 to-white p-6 rounded-2xl border-2 border-blue-100">
+                    <div class="h-16 w-16 bg-blue-100 rounded-xl flex items-center justify-center mb-4">
+                        <iconify-icon icon="lucide:tree-pine" class="text-blue-600" width="28"></iconify-icon>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-800 mb-3">Nature Exploration & Forest Bathing</h3>
+                    <p class="text-slate-600 text-sm mb-4">Guided nature walks, plant identification, and sensory activities in our camps in Virar and Nallasopara.</p>
+                    <div class="flex items-center gap-2 text-blue-600 text-sm font-semibold">
+                        <iconify-icon icon="lucide:map-pin" width="14"></iconify-icon>
+                        Available in all locations
+                    </div>
+                </div>
+
+                <!-- Activity 2 -->
+                <div class="bg-gradient-to-br from-green-50 to-white p-6 rounded-2xl border-2 border-green-100">
+                    <div class="h-16 w-16 bg-green-100 rounded-xl flex items-center justify-center mb-4">
+                        <iconify-icon icon="lucide:campfire" class="text-green-600" width="28"></iconify-icon>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-800 mb-3">Survival Skills & Bushcraft</h3>
+                    <p class="text-slate-600 text-sm mb-4">Shelter building, fire-making (supervised), knot tying, and basic navigation skills.</p>
+                    <div class="flex items-center gap-2 text-green-600 text-sm font-semibold">
+                        <iconify-icon icon="lucide:users" width="14"></iconify-icon>
+                        Team building focus
+                    </div>
+                </div>
+
+                <!-- Activity 3 -->
+                <div class="bg-gradient-to-br from-purple-50 to-white p-6 rounded-2xl border-2 border-purple-100">
+                    <div class="h-16 w-16 bg-purple-100 rounded-xl flex items-center justify-center mb-4">
+                        <iconify-icon icon="lucide:palette" class="text-purple-600" width="28"></iconify-icon>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-800 mb-3">Creative Arts & Crafts from Nature</h3>
+                    <p class="text-slate-600 text-sm mb-4">Using natural materials for art projects, leaf printing, rock painting, and DIY crafts.</p>
+                    <div class="flex items-center gap-2 text-purple-600 text-sm font-semibold">
+                        <iconify-icon icon="lucide:sparkles" width="14"></iconify-icon>
+                        Creativity unleashed
+                    </div>
+                </div>
+
+                <!-- Activity 4 -->
+                <div class="bg-gradient-to-br from-yellow-50 to-white p-6 rounded-2xl border-2 border-yellow-100">
+                    <div class="h-16 w-16 bg-yellow-100 rounded-xl flex items-center justify-center mb-4">
+                        <iconify-icon icon="lucide:gamepad-2" class="text-yellow-600" width="28"></iconify-icon>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-800 mb-3">Analog Games & Team Sports</h3>
+                    <p class="text-slate-600 text-sm mb-4">Traditional outdoor games, team sports, scavenger hunts, and capture the flag.</p>
+                    <div class="flex items-center gap-2 text-yellow-600 text-sm font-semibold">
+                        <iconify-icon icon="lucide:trophy" width="14"></iconify-icon>
+                        Physical fitness focus
+                    </div>
+                </div>
+
+                <!-- Activity 5 -->
+                <div class="bg-gradient-to-br from-pink-50 to-white p-6 rounded-2xl border-2 border-pink-100">
+                    <div class="h-16 w-16 bg-pink-100 rounded-xl flex items-center justify-center mb-4">
+                        <iconify-icon icon="lucide:music" class="text-pink-600" width="28"></iconify-icon>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-800 mb-3">Music, Drama & Storytelling</h3>
+                    <p class="text-slate-600 text-sm mb-4">Campfire songs, skits, improvisation games, and oral storytelling sessions.</p>
+                    <div class="flex items-center gap-2 text-pink-600 text-sm font-semibold">
+                        <iconify-icon icon="lucide:mic" width="14"></iconify-icon>
+                        Confidence building
+                    </div>
+                </div>
+
+                <!-- Activity 6 -->
+                <div class="bg-gradient-to-br from-emerald-50 to-white p-6 rounded-2xl border-2 border-emerald-100">
+                    <div class="h-16 w-16 bg-emerald-100 rounded-xl flex items-center justify-center mb-4">
+                        <iconify-icon icon="lucide:star" class="text-emerald-600" width="28"></iconify-icon>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-800 mb-3">Stargazing & Astronomy Nights</h3>
+                    <p class="text-slate-600 text-sm mb-4">Telescope viewing, constellation identification, and space exploration talks.</p>
+                    <div class="flex items-center gap-2 text-emerald-600 text-sm font-semibold">
+                        <iconify-icon icon="lucide:moon" width="14"></iconify-icon>
+                        Overnight camps only
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section id="benefits" class="py-24 bg-gradient-to-b from-blue-50 to-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-semibold text-slate-900 mb-4 tracking-tight">Benefits of Unplugging from Technology</h2>
+                <p class="text-slate-600 max-w-3xl mx-auto">Our digital detox camps deliver measurable improvements in children's physical, mental, and social well-being.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Benefit 1 -->
+                <div class="benefit-card bg-white p-8 rounded-3xl shadow-md">
+                    <div class="h-14 w-14 bg-blue-100 rounded-xl flex items-center justify-center mb-6">
+                        <iconify-icon icon="lucide:brain" class="text-blue-600" width="28"></iconify-icon>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-800 mb-4">Improved Focus & Attention Span</h3>
+                    <p class="text-slate-600">Without constant digital interruptions, children develop better concentration and sustained attention.</p>
+                    <div class="mt-6 pt-6 border-t border-slate-100">
+                        <p class="text-sm text-blue-600 font-semibold">Reported by 87% of parents</p>
+                    </div>
+                </div>
+
+                <!-- Benefit 2 -->
+                <div class="benefit-card bg-white p-8 rounded-3xl shadow-md">
+                    <div class="h-14 w-14 bg-green-100 rounded-xl flex items-center justify-center mb-6">
+                        <iconify-icon icon="lucide:heart" class="text-green-600" width="28"></iconify-icon>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-800 mb-4">Better Sleep Quality</h3>
+                    <p class="text-slate-600">Reduced blue light exposure before bedtime leads to deeper, more restorative sleep patterns.</p>
+                    <div class="mt-6 pt-6 border-t border-slate-100">
+                        <p class="text-sm text-green-600 font-semibold">Average of 1.5 extra hours of sleep</p>
+                    </div>
+                </div>
+
+                <!-- Benefit 3 -->
+                <div class="benefit-card bg-white p-8 rounded-3xl shadow-md">
+                    <div class="h-14 w-14 bg-purple-100 rounded-xl flex items-center justify-center mb-6">
+                        <iconify-icon icon="lucide:users" class="text-purple-600" width="28"></iconify-icon>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-800 mb-4">Enhanced Social Skills</h3>
+                    <p class="text-slate-600">Face-to-face interaction builds empathy, communication skills, and conflict resolution abilities.</p>
+                    <div class="mt-6 pt-6 border-t border-slate-100">
+                        <p class="text-sm text-purple-600 font-semibold">Improved peer relationships</p>
+                    </div>
+                </div>
+
+                <!-- Benefit 4 -->
+                <div class="benefit-card bg-white p-8 rounded-3xl shadow-md">
+                    <div class="h-14 w-14 bg-yellow-100 rounded-xl flex items-center justify-center mb-6">
+                        <iconify-icon icon="lucide:sparkles" class="text-yellow-600" width="28"></iconify-icon>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-800 mb-4">Boosted Creativity & Imagination</h3>
+                    <p class="text-slate-600">Without pre-programmed entertainment, children learn to create their own games and stories.</p>
+                    <div class="mt-6 pt-6 border-t border-slate-100">
+                        <p class="text-sm text-yellow-600 font-semibold">More imaginative play reported</p>
+                    </div>
+                </div>
+
+                <!-- Benefit 5 -->
+                <div class="benefit-card bg-white p-8 rounded-3xl shadow-md">
+                    <div class="h-14 w-14 bg-red-100 rounded-xl flex items-center justify-center mb-6">
+                        <iconify-icon icon="lucide:activity" class="text-red-600" width="28"></iconify-icon>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-800 mb-4">Increased Physical Activity</h3>
+                    <p class="text-slate-600">Active play replaces sedentary screen time, improving fitness, coordination, and overall health.</p>
+                    <div class="mt-6 pt-6 border-t border-slate-100">
+                        <p class="text-sm text-red-600 font-semibold">3x more daily movement</p>
+                    </div>
+                </div>
+
+                <!-- Benefit 6 -->
+                <div class="benefit-card bg-white p-8 rounded-3xl shadow-md">
+                    <div class="h-14 w-14 bg-indigo-100 rounded-xl flex items-center justify-center mb-6">
+                        <iconify-icon icon="lucide:smile" class="text-indigo-600" width="28"></iconify-icon>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-800 mb-4">Reduced Anxiety & Stress</h3>
+                    <p class="text-slate-600">Nature immersion and reduced social media pressure significantly lower stress hormones in children.</p>
+                    <div class="mt-6 pt-6 border-t border-slate-100">
+                        <p class="text-sm text-indigo-600 font-semibold">Calmer, happier children</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-semibold text-slate-900 mb-4 tracking-tight">Parents Share Their Success Stories</h2>
+                <p class="text-slate-600 max-w-3xl mx-auto">See how our digital detox camps have transformed screen habits for families in Virar, Vasai, and Nallasopara.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="bg-gradient-to-br from-blue-50 to-white p-8 rounded-3xl">
+                    <div class="flex items-center gap-3 mb-6">
+                        <div class="h-12 w-12 bg-blue-100 rounded-full flex items-center justify-center">
+                            <span class="text-blue-700 font-bold">PM</span>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-slate-800">Priya Mehta</h4>
+                            <p class="text-sm text-slate-500">Virar West</p>
+                        </div>
+                    </div>
+                    <p class="testimonial-quote text-slate-700 italic mb-6">
+                        "My 10-year-old was addicted to video games. After just one week at Maura Wonderlab's digital detox camp in Virar, he's playing outside with friends again. The change is incredible!"
+                    </p>
+                    <div class="flex gap-1 text-yellow-400">
+                        <iconify-icon icon="lucide:star" width="16" fill="currentColor"></iconify-icon>
+                        <iconify-icon icon="lucide:star" width="16" fill="currentColor"></iconify-icon>
+                        <iconify-icon icon="lucide:star" width="16" fill="currentColor"></iconify-icon>
+                        <iconify-icon icon="lucide:star" width="16" fill="currentColor"></iconify-icon>
+                        <iconify-icon icon="lucide:star" width="16" fill="currentColor"></iconify-icon>
+                    </div>
+                </div>
+
+                <!-- Testimonial 2 -->
+                <div class="bg-gradient-to-br from-green-50 to-white p-8 rounded-3xl">
+                    <div class="flex items-center gap-3 mb-6">
+                        <div class="h-12 w-12 bg-green-100 rounded-full flex items-center justify-center">
+                            <span class="text-green-700 font-bold">RS</span>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-slate-800">Rohit Sharma</h4>
+                            <p class="text-sm text-slate-500">Vasai East</p>
+                        </div>
+                    </div>
+                    <p class="testimonial-quote text-slate-700 italic mb-6">
+                        "Both my kids (8 & 12) attended the unplug camp in Vasai. They came home exhausted but happy every day. Screen time arguments have reduced by 90% in our house!"
+                    </p>
+                    <div class="flex gap-1 text-yellow-400">
+                        <iconify-icon icon="lucide:star" width="16" fill="currentColor"></iconify-icon>
+                        <iconify-icon icon="lucide:star" width="16" fill="currentColor"></iconify-icon>
+                        <iconify-icon icon="lucide:star" width="16" fill="currentColor"></iconify-icon>
+                        <iconify-icon icon="lucide:star" width="16" fill="currentColor"></iconify-icon>
+                        <iconify-icon icon="lucide:star" width="16" fill="currentColor"></iconify-icon>
+                    </div>
+                </div>
+
+                <!-- Testimonial 3 -->
+                <div class="bg-gradient-to-br from-purple-50 to-white p-8 rounded-3xl">
+                    <div class="flex items-center gap-3 mb-6">
+                        <div class="h-12 w-12 bg-purple-100 rounded-full flex items-center justify-center">
+                            <span class="text-purple-700 font-bold">AD</span>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-slate-800">Anita Desai</h4>
+                            <p class="text-sm text-slate-500">Nallasopara</p>
+                        </div>
+                    </div>
+                    <p class="testimonial-quote text-slate-700 italic mb-6">
+                        "The Nallasopara camp was a lifesaver during summer break. My daughter discovered she loves hiking and painting - hobbies she'd never try when glued to her tablet."
+                    </p>
+                    <div class="flex gap-1 text-yellow-400">
+                        <iconify-icon icon="lucide:star" width="16" fill="currentColor"></iconify-icon>
+                        <iconify-icon icon="lucide:star" width="16" fill="currentColor"></iconify-icon>
+                        <iconify-icon icon="lucide:star" width="16" fill="currentColor"></iconify-icon>
+                        <iconify-icon icon="lucide:star" width="16" fill="currentColor"></iconify-icon>
+                        <iconify-icon icon="lucide:star" width="16" fill="currentColor"></iconify-icon>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Programs Section -->
+    <section id="programs" class="py-24 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-semibold text-slate-900 mb-4 tracking-tight">Choose Your Digital Detox Program</h2>
+                <p class="text-slate-600 max-w-3xl mx-auto">We offer flexible options to help your child unplug from technology at our camps in Virar, Vasai, and Nallasopara.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Program 1 -->
+                <div class="bg-white rounded-3xl p-8 border-2 border-slate-100 hover:border-blue-300 transition-colors">
+                    <div class="text-center mb-6">
+                        <div class="inline-flex items-center justify-center h-16 w-16 bg-blue-100 rounded-full mb-4">
+                            <iconify-icon icon="lucide:sun" class="text-blue-600" width="28"></iconify-icon>
+                        </div>
+                        <h3 class="text-2xl font-bold text-slate-800">Weekend Detox</h3>
+                        <p class="text-blue-600 font-semibold">Perfect Introduction</p>
+                    </div>
+                    <div class="text-center mb-8">
+                        <span class="text-4xl font-bold text-slate-900">₹1,499</span>
+                        <span class="text-slate-500">/weekend</span>
+                    </div>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-start gap-2">
+                            <iconify-icon icon="lucide:check-circle" class="text-green-500 mt-1" width="18"></iconify-icon>
+                            <span>Saturday-Sunday program</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <iconify-icon icon="lucide:check-circle" class="text-green-500 mt-1" width="18"></iconify-icon>
+                            <span>8 AM - 6 PM daily</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <iconify-icon icon="lucide:check-circle" class="text-green-500 mt-1" width="18"></iconify-icon>
+                            <span>All meals included</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <iconify-icon icon="lucide:check-circle" class="text-green-500 mt-1" width="18"></iconify-icon>
+                            <span>Basic nature activities</span>
+                        </li>
+                    </ul>
+                    <button onclick="window.location.href='#booking'" class="w-full py-3 rounded-xl border-2 border-blue-500 text-blue-600 font-semibold hover:bg-blue-50 transition-colors">Book Weekend Detox</button>
+                </div>
+
+                <!-- Program 2 (Popular) -->
+                <div class="bg-white rounded-3xl p-8 border-2 border-blue-500 relative shadow-xl">
+                    <div class="absolute top-0 right-0 bg-blue-500 text-white text-xs font-bold px-4 py-2 rounded-bl-xl rounded-tr-[1.8rem]">MOST POPULAR</div>
+                    <div class="text-center mb-6">
+                        <div class="inline-flex items-center justify-center h-16 w-16 bg-blue-500 rounded-full mb-4">
+                            <iconify-icon icon="lucide:moon" class="text-white" width="28"></iconify-icon>
+                        </div>
+                        <h3 class="text-2xl font-bold text-slate-800">5-Day Digital Detox</h3>
+                        <p class="text-blue-600 font-semibold">Complete Transformation</p>
+                    </div>
+                    <div class="text-center mb-8">
+                        <span class="text-4xl font-bold text-slate-900">₹6,999</span>
+                        <span class="text-slate-500">/week</span>
+                    </div>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-start gap-2">
+                            <iconify-icon icon="lucide:check-circle" class="text-green-500 mt-1" width="18"></iconify-icon>
+                            <span>Monday-Friday immersion</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <iconify-icon icon="lucide:check-circle" class="text-green-500 mt-1" width="18"></iconify-icon>
+                            <span>Overnight option available</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <iconify-icon icon="lucide:check-circle" class="text-green-500 mt-1" width="18"></iconify-icon>
+                            <span>All adventure activities included</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <iconify-icon icon="lucide:check-circle" class="text-green-500 mt-1" width="18"></iconify-icon>
+                            <span>Parent workshop on maintaining results</span>
+                        </li>
+                    </ul>
+                    <button onclick="window.location.href='#booking'" class="w-full py-3 rounded-xl bg-blue-600 text-white font-semibold hover:bg-blue-700 transition-colors">Book 5-Day Detox</button>
+                </div>
+
+                <!-- Program 3 -->
+                <div class="bg-white rounded-3xl p-8 border-2 border-slate-100 hover:border-purple-300 transition-colors">
+                    <div class="text-center mb-6">
+                        <div class="inline-flex items-center justify-center h-16 w-16 bg-purple-100 rounded-full mb-4">
+                            <iconify-icon icon="lucide:users" class="text-purple-600" width="28"></iconify-icon>
+                        </div>
+                        <h3 class="text-2xl font-bold text-slate-800">Family Unplug Weekend</h3>
+                        <p class="text-purple-600 font-semibold">Bond Together</p>
+                    </div>
+                    <div class="text-center mb-8">
+                        <span class="text-4xl font-bold text-slate-900">₹3,999</span>
+                        <span class="text-slate-500">/family of 3</span>
+                    </div>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-start gap-2">
+                            <iconify-icon icon="lucide:check-circle" class="text-green-500 mt-1" width="18"></iconify-icon>
+                            <span>Parents + Kids together</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <iconify-icon icon="lucide:check-circle" class="text-green-500 mt-1" width="18"></iconify-icon>
+                            <span>Family bonding activities</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <iconify-icon icon="lucide:check-circle" class="text-green-500 mt-1" width="18"></iconify-icon>
+                            <span>Digital detox strategies for home</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <iconify-icon icon="lucide:check-circle" class="text-green-500 mt-1" width="18"></iconify-icon>
+                            <span>Separate & joint activities</span>
+                        </li>
+                    </ul>
+                    <button onclick="window.location.href='#booking'" class="w-full py-3 rounded-xl border-2 border-purple-500 text-purple-600 font-semibold hover:bg-purple-50 transition-colors">Book Family Weekend</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Booking CTA -->
+    <section id="booking" class="py-24 bg-gradient-to-r from-blue-600 to-indigo-600 text-white">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-4xl md:text-5xl font-semibold mb-6 tracking-tight">Ready to Help Your Child Unplug?</h2>
+            <p class="text-blue-100 text-lg mb-10 max-w-2xl mx-auto">
+                Give your child the gift of a screen-free adventure. Spaces are limited in our digital detox camps across Virar, Vasai, and Nallasopara.
+            </p>
+            
+            <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                <button onclick="openBookingModal()" class="w-full sm:w-auto px-8 py-4 bg-white text-blue-600 hover:bg-blue-50 rounded-2xl text-lg font-semibold transition-all shadow-lg hover:shadow-xl flex items-center justify-center gap-2">
+                    <iconify-icon icon="lucide:calendar-check" width="22"></iconify-icon>
+                    Book Your Spot Today
+                </button>
+                <button onclick="window.location.href='tel:+917768031411'" class="w-full sm:w-auto px-8 py-4 bg-transparent border-2 border-white text-white hover:bg-white/10 rounded-2xl text-lg font-semibold transition-all flex items-center justify-center gap-2">
+                    <iconify-icon icon="lucide:phone" width="22"></iconify-icon>
+                    Call +91 77680 31411
+                </button>
+            </div>
+            
+            <p class="mt-8 text-blue-200 text-sm">
+                <iconify-icon icon="lucide:shield-check" width="16" class="inline mr-2"></iconify-icon>
+                All camps are 100% device-free with certified counselors and safety-first protocols
+            </p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-white pt-20 pb-10 rounded-t-[3rem]">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
+                <div class="col-span-1 md:col-span-2">
+                    <div class="flex items-center gap-2 mb-6">
+                         <div class="h-8 w-8 bg-orange-500 rounded-lg flex items-center justify-center text-white">
+                            <iconify-icon icon="lucide:tent" width="18"></iconify-icon>
+                        </div>
+                        <span class="brand-font text-2xl font-bold">Maura <span class="text-orange-400">Wonderlab</span></span>
+                    </div>
+                    <p class="text-slate-400 max-w-sm mb-6">Helping children unplug from technology and reconnect with nature through adventure camps in Virar, Vasai, and Nallasopara.</p>
+                    <div class="flex gap-4">
+                        <a href="#" class="h-10 w-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-orange-500 transition-colors"><iconify-icon icon="lucide:instagram" width="20"></iconify-icon></a>
+                        <a href="#" class="h-10 w-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-blue-500 transition-colors"><iconify-icon icon="lucide:facebook" width="20"></iconify-icon></a>
+                        <a href="#" class="h-10 w-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-green-500 transition-colors"><iconify-icon icon="lucide:phone" width="20"></iconify-icon></a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="font-bold text-lg mb-6">More Digital Detox Info</h4>
+                    <ul class="space-y-4 text-slate-400 text-sm">
+                        <li><a href="/screen-time-guidelines.html" class="hover:text-white transition-colors">Screen Time Guidelines</a></li>
+                        <li><a href="/technology-effects-children.html" class="hover:text-white transition-colors">Technology Effects on Children</a></li>
+                        <li><a href="/outdoor-activities-kids.html" class="hover:text-white transition-colors">Outdoor Activities for Kids</a></li>
+                        <li><a href="/parent-workshops.html" class="hover:text-white transition-colors">Parent Workshops</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-bold text-lg mb-6">Camp Locations</h4>
+                    <ul class="space-y-4 text-slate-400 text-sm">
+                        <li><a href="/camping-for-kids-in-virar.html" class="hover:text-white transition-colors">Digital Detox Camp in Virar</a></li>
+                        <li><a href="/camping-for-kids-in-vasai.html" class="hover:text-white transition-colors">Digital Detox Camp in Vasai</a></li>
+                        <li><a href="/camping-for-kids-in-nallasopara.html" class="hover:text-white transition-colors">Digital Detox Camp in Nallasopara</a></li>
+                        <li><a href="/summer-adventure-camps.html" class="hover:text-white transition-colors">Summer Digital Detox Camps</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-slate-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="text-slate-500 text-sm">© 2024 Maura Wonderlab Digital Detox Camps. All rights reserved.</p>
+                <div class="flex gap-6 text-sm text-slate-500">
+                    <a href="/privacy-policy.html" class="hover:text-white">Privacy Policy</a>
+                    <a href="/terms-of-service.html" class="hover:text-white">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Booking Modal -->
+    <div id="bookingModal" class="fixed inset-0 bg-black/50 z-50 hidden items-center justify-center p-4">
+        <div class="bg-white rounded-3xl max-w-md w-full p-8 relative">
+            <button onclick="closeBookingModal()" class="absolute top-4 right-4 text-slate-400 hover:text-slate-700">
+                <iconify-icon icon="lucide:x" width="24"></iconify-icon>
+            </button>
+            
+            <h3 class="text-2xl font-bold text-slate-800 mb-2">Book Digital Detox Camp</h3>
+            <p class="text-slate-600 mb-6">Fill this form and we'll contact you within 24 hours.</p>
+            
+            <form class="space-y-4">
+                <div>
+                    <label class="block text-sm font-medium text-slate-700 mb-1">Parent's Name</label>
+                    <input type="text" class="w-full px-4 py-3 border border-slate-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none">
+                </div>
+                
+                <div>
+                    <label class="block text-sm font-medium text-slate-700 mb-1">Phone Number</label>
+                    <input type="tel" class="w-full px-4 py-3 border border-slate-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none">
+                </div>
+                
+                <div>
+                    <label class="block text-sm font-medium text-slate-700 mb-1">Preferred Location</label>
+                    <select class="w-full px-4 py-3 border border-slate-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none">
+                        <option>Select Location</option>
+                        <option>Virar Digital Detox Camp</option>
+                        <option>Vasai Digital Detox Camp</option>
+                        <option>Nallasopara Digital Detox Camp</option>
+                    </select>
+                </div>
+                
+                <button type="submit" class="w-full py-3 bg-blue-600 text-white font-semibold rounded-xl hover:bg-blue-700 transition-colors">
+                    Submit Booking Request
+                </button>
+            </form>
+            
+            <p class="mt-6 text-center text-sm text-slate-500">
+                Or call us directly: <a href="tel:+917768031411" class="text-blue-600 font-semibold">+91 77680 31411</a>
+            </p>
+        </div>
+    </div>
+
+    <script>
+        // Mobile Menu Functionality
+        const mobileMenuButton = document.getElementById('mobileMenuButton');
+        const closeMenuButton = document.getElementById('closeMenuButton');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const menuOverlay = document.getElementById('menuOverlay');
+        
+        function openMobileMenu() {
+            mobileMenu.classList.add('open');
+            menuOverlay.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+        
+        function closeMobileMenu() {
+            mobileMenu.classList.remove('open');
+            menuOverlay.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+        
+        mobileMenuButton.addEventListener('click', openMobileMenu);
+        closeMenuButton.addEventListener('click', closeMobileMenu);
+        menuOverlay.addEventListener('click', closeMobileMenu);
+        
+        document.querySelectorAll('#mobileMenu a').forEach(link => {
+            link.addEventListener('click', closeMobileMenu);
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                const href = this.getAttribute('href');
+                
+                if (href === '#' || href.startsWith('#') && href.length > 1) {
+                    e.preventDefault();
+                    
+                    const targetId = href.substring(1);
+                    const targetElement = document.getElementById(targetId);
+                    
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                    }
+                }
+            });
+        });
+        
+        // Booking Modal Functions
+        const bookingModal = document.getElementById('bookingModal');
+        
+        function openBookingModal() {
+            bookingModal.classList.remove('hidden');
+            bookingModal.classList.add('flex');
+            document.body.style.overflow = 'hidden';
+        }
+        
+        function closeBookingModal() {
+            bookingModal.classList.add('hidden');
+            bookingModal.classList.remove('flex');
+            document.body.style.overflow = 'auto';
+        }
+        
+        // Close modal when clicking outside
+        bookingModal.addEventListener('click', function(e) {
+            if (e.target === bookingModal) {
+                closeBookingModal();
+            }
+        });
+        
+        // Close modal on ESC key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && !bookingModal.classList.contains('hidden')) {
+                closeBookingModal();
+            }
+        });
+        
+        // Form submission
+        document.querySelector('#bookingModal form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you! We will contact you within 24 hours to confirm your booking.');
+            closeBookingModal();
+        });
+        
+        // Close menu on ESC key press
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && mobileMenu.classList.contains('open')) {
+                closeMobileMenu();
+            }
+        });
+        
+        // Prevent scrolling on the overlay
+        menuOverlay.addEventListener('touchmove', (e) => {
+            e.preventDefault();
+        }, { passive: false });
+        
+        // Scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+        
+        // Observe elements for animation
+        document.querySelectorAll('.benefit-card, .activity-grid > div').forEach(element => {
+            element.style.opacity = '0.9';
+            element.style.transform = 'translateY(10px)';
+            element.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+            observer.observe(element);
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Physical Fitness for Children | Kids Exercise & Fitness Programs at Maura Wonderlab</title>
+    <meta name="description" content="Maura Wonderlab offers comprehensive physical fitness programs for children in Virar, Vasai & Nallasopara. Build strength, endurance, and healthy habits through fun adventure activities.">
+    <meta name="keywords" content="physical fitness for children, kids fitness programs, children exercise activities, outdoor fitness for kids, kids strength training, childhood obesity prevention, healthy habits for kids, kids sports activities, Maura Wonderlab fitness">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Iconify (Lucide Icons) -->
+    <script src="https://cdn.jsdelivr.net/npm/iconify-icon@1.0.8/dist/iconify-icon.min.js"></script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=Nunito:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        /* Custom Font Settings for Childish/Playful Vibe */
+        body {
+            font-family: 'Nunito', sans-serif;
+        }
+        h1, h2, h3, h4, h5, h6, .brand-font {
+            font-family: 'Fredoka', sans-serif;
+        }
+        
+        /* Playful Blob Pattern */
+        .bg-pattern {
+            background-color: #FFFDF5;
+            background-image: radial-gradient(#FDE68A 1px, transparent 1px), radial-gradient(#BAE6FD 1px, transparent 1px);
+            background-size: 40px 40px;
+            background-position: 0 0, 20px 20px;
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #FFF7ED; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #FDBA74; 
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #EA580C; 
+        }
+
+        /* Mobile Menu Animation */
+        .mobile-menu {
+            transform: translateX(100%);
+            transition: transform 0.3s ease-in-out;
+        }
+        
+        .mobile-menu.open {
+            transform: translateX(0);
+        }
+        
+        .menu-overlay {
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease-in-out, visibility 0.3s;
+        }
+        
+        .menu-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        /* Fitness Specific Styles */
+        .fitness-gradient {
+            background: linear-gradient(135deg, #38BDF8 0%, #22D3EE 25%, #2DD4BF 50%, #34D399 75%, #10B981 100%);
+        }
+        
+        .benefit-card:hover {
+            transform: translateY(-5px);
+            transition: transform 0.3s ease;
+        }
+        
+        .pulse-animation {
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        
+        .activity-card {
+            transition: all 0.3s ease;
+        }
+        
+        .activity-card:hover {
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body class="bg-pattern text-slate-600 antialiased selection:bg-green-200 selection:text-green-900">
+
+    <!-- Navbar -->
+    <nav class="fixed w-full z-50 top-0 transition-all duration-300 backdrop-blur-md bg-white/80 border-b-2 border-slate-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center gap-2 cursor-pointer" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+                    <img src="maura wonderlab logo.png" alt="Maura Wonderlab" width="50px">
+                    <span class="brand-font text-2xl font-semibold tracking-tight text-slate-800">
+                        Maura <span class="text-green-500">Wonderlab</span>
+                    </span>
+                </div>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="index.html" class="text-sm font-semibold text-slate-600 hover:text-green-500 transition-colors">Home</a>
+                    <a href="#activities" class="text-sm font-semibold text-slate-600 hover:text-green-500 transition-colors">Fitness Activities</a>
+                    <a href="#benefits" class="text-sm font-semibold text-slate-600 hover:text-green-500 transition-colors">Benefits</a>
+                    <a href="#programs" class="text-sm font-semibold text-slate-600 hover:text-green-500 transition-colors">Programs</a>
+                    <button onclick="window.location.href='contact.html'" class="bg-green-500 hover:bg-green-600 text-white px-5 py-2.5 rounded-full text-sm font-semibold transition-all shadow-[0px_4px_0px_0px_rgba(5,150,105,1)] hover:shadow-[0px_2px_0px_0px_rgba(5,150,105,1)] hover:translate-y-[2px]">
+                        Join Fitness Program
+                    </button>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobileMenuButton" class="text-slate-600 hover:text-green-500 p-2">
+                        <iconify-icon icon="lucide:menu" width="28" stroke-width="1.5"></iconify-icon>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu Overlay -->
+    <div id="menuOverlay" class="menu-overlay fixed inset-0 bg-black/50 z-40 md:hidden"></div>
+
+    <!-- Mobile Menu -->
+    <div id="mobileMenu" class="mobile-menu fixed top-0 right-0 h-full w-64 bg-white z-50 shadow-2xl md:hidden p-6">
+        <div class="flex justify-between items-center mb-8">
+            <div class="flex items-center gap-2">
+                <div class="h-8 w-8 bg-green-500 rounded-lg flex items-center justify-center text-white">
+                    <iconify-icon icon="lucide:activity" width="18"></iconify-icon>
+                </div>
+                <span class="brand-font text-xl font-semibold text-slate-800">Maura <span class="text-green-500">Wonderlab</span></span>
+            </div>
+            <button id="closeMenuButton" class="text-slate-600 hover:text-green-500 p-2">
+                <iconify-icon icon="lucide:x" width="24" stroke-width="1.5"></iconify-icon>
+            </button>
+        </div>
+        
+        <div class="space-y-6">
+            <a href="index.html" class="block py-3 text-slate-700 font-semibold border-b border-slate-100" onclick="closeMobileMenu()">Home</a>
+            <a href="#activities" class="block py-3 text-slate-700 font-semibold border-b border-slate-100" onclick="closeMobileMenu()">Fitness Activities</a>
+            <a href="#benefits" class="block py-3 text-slate-700 font-semibold border-b border-slate-100" onclick="closeMobileMenu()">Benefits</a>
+            <a href="#programs" class="block py-3 text-slate-700 font-semibold border-b border-slate-100" onclick="closeMobileMenu()">Programs</a>
+            <div class="pt-4">
+                <button onclick="window.location.href='contact.html'" class="w-full bg-green-500 hover:bg-green-600 text-white px-5 py-3 rounded-full text-sm font-semibold transition-all">
+                    Join Fitness Program
+                </button>
+            </div>
+        </div>
+        
+        <div class="absolute bottom-8 left-6 right-6">
+            <p class="text-sm text-slate-500 mb-4">Contact us:</p>
+            <div class="flex items-center gap-2 text-slate-700 mb-2">
+                <iconify-icon icon="lucide:phone" width="16"></iconify-icon>
+                <span class="text-sm">+91 77680 31411</span>
+            </div>
+            <div class="flex items-center gap-2 text-slate-700">
+                <iconify-icon icon="lucide:mail" width="16"></iconify-icon>
+                <span class="text-sm">maurawonderlab@gmail.com</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="relative pt-32 pb-20 lg:pt-40 lg:pb-28 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+            <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-green-100 text-green-700 text-xs font-bold mb-8 uppercase tracking-wide border border-green-200 pulse-animation">
+                <iconify-icon icon="lucide:heart-pulse" width="16"></iconify-icon>
+                Build Healthy Habits for Life
+            </div>
+            
+            <h1 class="text-5xl md:text-7xl lg:text-8xl font-semibold tracking-tight text-slate-900 mb-6 leading-[0.9]">
+                Physical Fitness <br>
+                <span class="text-transparent bg-clip-text fitness-gradient">For Children</span>
+            </h1>
+            
+            <p class="mt-4 max-w-2xl mx-auto text-lg md:text-xl text-slate-500 leading-relaxed">
+                At <strong>Maura Wonderlab</strong>, we make physical fitness fun for kids! Our adventure programs in 
+                <span class="font-bold text-slate-700 underline decoration-green-300 decoration-2 underline-offset-2">Virar</span>, 
+                <span class="font-bold text-slate-700 underline decoration-blue-300 decoration-2 underline-offset-2">Vasai</span>, and 
+                <span class="font-bold text-slate-700 underline decoration-lime-300 decoration-2 underline-offset-2">Nallasopara</span> 
+                combine exercise with adventure to build strong, healthy, and happy children.
+            </p>
+
+            <div class="mt-10 flex flex-col sm:flex-row gap-4 justify-center items-center">
+                <button onclick="window.location.href='contact.html'" class="w-full sm:w-auto px-8 py-4 bg-green-500 hover:bg-green-600 text-white rounded-2xl text-base font-semibold transition-all shadow-[0px_6px_0px_0px_#059669] hover:shadow-[0px_3px_0px_0px_#059669] hover:translate-y-[3px] flex items-center justify-center gap-2">
+                    <iconify-icon icon="lucide:dumbbell" width="20"></iconify-icon>
+                    Start Your Child's Fitness Journey
+                </button>
+                <button onclick="document.getElementById('programs').scrollIntoView({behavior: 'smooth'})" class="w-full sm:w-auto px-8 py-4 bg-white hover:bg-slate-50 text-slate-700 border-2 border-slate-200 rounded-2xl text-base font-semibold transition-all hover:border-slate-300 flex items-center justify-center gap-2">
+                    <iconify-icon icon="lucide:calendar" width="20"></iconify-icon>
+                    View Fitness Programs
+                </button>
+            </div>
+        </div>
+
+        <!-- Decorative Blobs -->
+        <div class="absolute top-1/4 left-0 -translate-x-1/2 w-64 h-64 bg-green-300/30 rounded-full blur-3xl -z-10"></div>
+        <div class="absolute bottom-0 right-0 translate-x-1/4 w-96 h-96 bg-blue-300/20 rounded-full blur-3xl -z-10"></div>
+    </section>
+
+    <!-- Statistics Section -->
+    <section class="py-16 bg-white/50 border-y border-slate-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+                <div class="p-6">
+                    <div class="text-4xl md:text-5xl font-bold text-green-500 mb-2">60<span class="text-2xl">%</span></div>
+                    <p class="text-sm text-slate-600 font-semibold">More Active Than School PE</p>
+                </div>
+                <div class="p-6">
+                    <div class="text-4xl md:text-5xl font-bold text-blue-500 mb-2">12<span class="text-2xl">+</span></div>
+                    <p class="text-sm text-slate-600 font-semibold">Different Fitness Activities</p>
+                </div>
+                <div class="p-6">
+                    <div class="text-4xl md:text-5xl font-bold text-orange-500 mb-2">100<span class="text-2xl">%</span></div>
+                    <p class="text-sm text-slate-600 font-semibold">Fun & Engagement Focused</p>
+                </div>
+                <div class="p-6">
+                    <div class="text-4xl md:text-5xl font-bold text-purple-500 mb-2">500<span class="text-2xl">+</span></div>
+                    <p class="text-sm text-slate-600 font-semibold">Kids Transformed Since 2020</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Activities Section -->
+    <section id="activities" class="py-24 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-semibold text-slate-900 mb-4 tracking-tight">Fitness Activities for Kids</h2>
+                <p class="text-slate-500 max-w-xl mx-auto">We turn exercise into adventure! Our physical fitness programs make moving fun for children of all ages.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Card 1 -->
+                <div class="activity-card bg-white p-2 rounded-[2rem] border-2 border-slate-100 shadow-sm hover:shadow-lg transition-shadow duration-300 group">
+                    <div class="bg-green-50 rounded-[1.5rem] h-48 flex items-center justify-center mb-4 overflow-hidden relative group-hover:bg-green-100 transition-colors">
+                        <iconify-icon icon="lucide:trekking" width="64" class="text-green-500 group-hover:scale-110 transition-transform duration-300"></iconify-icon>
+                    </div>
+                    <div class="px-4 pb-6">
+                        <h3 class="text-xl font-bold text-slate-800 mb-2">Adventure Hiking & Trekking</h3>
+                        <p class="text-sm text-slate-500 leading-relaxed mb-4">Build cardiovascular endurance and leg strength through guided nature trails in Virar hills and Vasai fort areas.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 bg-green-100 text-green-700 text-xs font-semibold rounded-full">Cardio</span>
+                            <span class="px-3 py-1 bg-blue-100 text-blue-700 text-xs font-semibold rounded-full">Endurance</span>
+                            <span class="px-3 py-1 bg-orange-100 text-orange-700 text-xs font-semibold rounded-full">Leg Strength</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="activity-card bg-white p-2 rounded-[2rem] border-2 border-slate-100 shadow-sm hover:shadow-lg transition-shadow duration-300 group">
+                    <div class="bg-blue-50 rounded-[1.5rem] h-48 flex items-center justify-center mb-4 overflow-hidden relative group-hover:bg-blue-100 transition-colors">
+                        <iconify-icon icon="lucide:climbing" width="64" class="text-blue-500 group-hover:scale-110 transition-transform duration-300"></iconify-icon>
+                    </div>
+                    <div class="px-4 pb-6">
+                        <h3 class="text-xl font-bold text-slate-800 mb-2">Rock Climbing & Obstacle Courses</h3>
+                        <p class="text-sm text-slate-500 leading-relaxed mb-4">Develop upper body strength, grip power, and problem-solving skills with our safe climbing walls and adventure courses.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 bg-blue-100 text-blue-700 text-xs font-semibold rounded-full">Upper Body</span>
+                            <span class="px-3 py-1 bg-purple-100 text-purple-700 text-xs font-semibold rounded-full">Coordination</span>
+                            <span class="px-3 py-1 bg-red-100 text-red-700 text-xs font-semibold rounded-full">Grip Strength</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="activity-card bg-white p-2 rounded-[2rem] border-2 border-slate-100 shadow-sm hover:shadow-lg transition-shadow duration-300 group">
+                    <div class="bg-orange-50 rounded-[1.5rem] h-48 flex items-center justify-center mb-4 overflow-hidden relative group-hover:bg-orange-100 transition-colors">
+                        <iconify-icon icon="lucide:swimming" width="64" class="text-orange-500 group-hover:scale-110 transition-transform duration-300"></iconify-icon>
+                    </div>
+                    <div class="px-4 pb-6">
+                        <h3 class="text-xl font-bold text-slate-800 mb-2">Swimming & Water Sports</h3>
+                        <p class="text-sm text-slate-500 leading-relaxed mb-4">Full-body workout that improves lung capacity, muscle tone, and coordination in our supervised pools.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 bg-cyan-100 text-cyan-700 text-xs font-semibold rounded-full">Full Body</span>
+                            <span class="px-3 py-1 bg-teal-100 text-teal-700 text-xs font-semibold rounded-full">Lung Capacity</span>
+                            <span class="px-3 py-1 bg-indigo-100 text-indigo-700 text-xs font-semibold rounded-full">Coordination</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="activity-card bg-white p-2 rounded-[2rem] border-2 border-slate-100 shadow-sm hover:shadow-lg transition-shadow duration-300 group">
+                    <div class="bg-purple-50 rounded-[1.5rem] h-48 flex items-center justify-center mb-4 overflow-hidden relative group-hover:bg-purple-100 transition-colors">
+                        <iconify-icon icon="lucide:zap" width="64" class="text-purple-500 group-hover:scale-110 transition-transform duration-300"></iconify-icon>
+                    </div>
+                    <div class="px-4 pb-6">
+                        <h3 class="text-xl font-bold text-slate-800 mb-2">Agility & Speed Training</h3>
+                        <p class="text-sm text-slate-500 leading-relaxed mb-4">Fun games and drills that improve speed, agility, and quick reflexes through obstacle races and team challenges.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 bg-purple-100 text-purple-700 text-xs font-semibold rounded-full">Speed</span>
+                            <span class="px-3 py-1 bg-pink-100 text-pink-700 text-xs font-semibold rounded-full">Agility</span>
+                            <span class="px-3 py-1 bg-yellow-100 text-yellow-700 text-xs font-semibold rounded-full">Reflexes</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 5 -->
+                <div class="activity-card bg-white p-2 rounded-[2rem] border-2 border-slate-100 shadow-sm hover:shadow-lg transition-shadow duration-300 group">
+                    <div class="bg-red-50 rounded-[1.5rem] h-48 flex items-center justify-center mb-4 overflow-hidden relative group-hover:bg-red-100 transition-colors">
+                        <iconify-icon icon="lucide:users" width="64" class="text-red-500 group-hover:scale-110 transition-transform duration-300"></iconify-icon>
+                    </div>
+                    <div class="px-4 pb-6">
+                        <h3 class="text-xl font-bold text-slate-800 mb-2">Team Sports & Games</h3>
+                        <p class="text-sm text-slate-500 leading-relaxed mb-4">Soccer, basketball, and relay races that build stamina, teamwork, and strategic thinking while burning calories.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 bg-red-100 text-red-700 text-xs font-semibold rounded-full">Stamina</span>
+                            <span class="px-3 py-1 bg-green-100 text-green-700 text-xs font-semibold rounded-full">Teamwork</span>
+                            <span class="px-3 py-1 bg-blue-100 text-blue-700 text-xs font-semibold rounded-full">Calorie Burn</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 6 -->
+                <div class="activity-card bg-white p-2 rounded-[2rem] border-2 border-slate-100 shadow-sm hover:shadow-lg transition-shadow duration-300 group">
+                    <div class="bg-yellow-50 rounded-[1.5rem] h-48 flex items-center justify-center mb-4 overflow-hidden relative group-hover:bg-yellow-100 transition-colors">
+                        <iconify-icon icon="lucide:heart" width="64" class="text-yellow-500 group-hover:scale-110 transition-transform duration-300"></iconify-icon>
+                    </div>
+                    <div class="px-4 pb-6">
+                        <h3 class="text-xl font-bold text-slate-800 mb-2">Yoga & Flexibility Sessions</h3>
+                        <p class="text-sm text-slate-500 leading-relaxed mb-4">Age-appropriate yoga and stretching routines that improve flexibility, balance, and mind-body connection.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 bg-yellow-100 text-yellow-700 text-xs font-semibold rounded-full">Flexibility</span>
+                            <span class="px-3 py-1 bg-indigo-100 text-indigo-700 text-xs font-semibold rounded-full">Balance</span>
+                            <span class="px-3 py-1 bg-teal-100 text-teal-700 text-xs font-semibold rounded-full">Mind-Body</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section id="benefits" class="py-24 bg-green-50/30 border-y border-green-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-semibold text-slate-900 mb-4 tracking-tight">Benefits of Physical Fitness for Children</h2>
+                <p class="text-slate-500 max-w-xl mx-auto">Regular physical activity at Maura Wonderlab delivers lifelong advantages for your child's development.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Benefit 1 -->
+                <div class="benefit-card bg-white p-8 rounded-3xl shadow-sm border border-green-100">
+                    <div class="h-12 w-12 rounded-xl bg-green-100 flex items-center justify-center text-green-600 mb-6">
+                        <iconify-icon icon="lucide:brain" width="24"></iconify-icon>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-800 mb-4">Enhanced Brain Development</h3>
+                    <p class="text-slate-600">Physical activity increases blood flow to the brain, improving concentration, memory, and academic performance by up to 40%.</p>
+                </div>
+
+                <!-- Benefit 2 -->
+                <div class="benefit-card bg-white p-8 rounded-3xl shadow-sm border border-blue-100">
+                    <div class="h-12 w-12 rounded-xl bg-blue-100 flex items-center justify-center text-blue-600 mb-6">
+                        <iconify-icon icon="lucide:shield" width="24"></iconify-icon>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-800 mb-4">Stronger Immune System</h3>
+                    <p class="text-slate-600">Regular exercise boosts immunity, reducing sick days by 30-50% and helping children fight off common illnesses more effectively.</p>
+                </div>
+
+                <!-- Benefit 3 -->
+                <div class="benefit-card bg-white p-8 rounded-3xl shadow-sm border border-orange-100">
+                    <div class="h-12 w-12 rounded-xl bg-orange-100 flex items-center justify-center text-orange-600 mb-6">
+                        <iconify-icon icon="lucide:smile" width="24"></iconify-icon>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-800 mb-4">Improved Mental Health</h3>
+                    <p class="text-slate-600">Exercise releases endorphins, reducing stress, anxiety, and depression while boosting self-esteem and confidence in children.</p>
+                </div>
+
+                <!-- Benefit 4 -->
+                <div class="benefit-card bg-white p-8 rounded-3xl shadow-sm border border-purple-100">
+                    <div class="h-12 w-12 rounded-xl bg-purple-100 flex items-center justify-center text-purple-600 mb-6">
+                        <iconify-icon icon="lucide:bone" width="24"></iconify-icon>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-800 mb-4">Stronger Bones & Muscles</h3>
+                    <p class="text-slate-600">Weight-bearing activities increase bone density by 2-3% annually, preventing future osteoporosis and building lifelong skeletal health.</p>
+                </div>
+
+                <!-- Benefit 5 -->
+                <div class="benefit-card bg-white p-8 rounded-3xl shadow-sm border border-red-100">
+                    <div class="h-12 w-12 rounded-xl bg-red-100 flex items-center justify-center text-red-600 mb-6">
+                        <iconify-icon icon="lucide:scale" width="24"></iconify-icon>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-800 mb-4">Healthy Weight Management</h3>
+                    <p class="text-slate-600">Active children are 50% less likely to become overweight, establishing healthy habits that prevent childhood obesity.</p>
+                </div>
+
+                <!-- Benefit 6 -->
+                <div class="benefit-card bg-white p-8 rounded-3xl shadow-sm border border-cyan-100">
+                    <div class="h-12 w-12 rounded-xl bg-cyan-100 flex items-center justify-center text-cyan-600 mb-6">
+                        <iconify-icon icon="lucide:moon" width="24"></iconify-icon>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-800 mb-4">Better Sleep Quality</h3>
+                    <p class="text-slate-600">Physically active children fall asleep faster, sleep deeper, and wake up more refreshed, improving overall daily functioning.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Programs Section -->
+    <section id="programs" class="py-24">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-semibold text-slate-900 mb-4 tracking-tight">Fitness Programs for Every Age</h2>
+                <p class="text-slate-500 max-w-xl mx-auto">Tailored physical fitness programs designed for different age groups and skill levels.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Program 1 -->
+                <div class="bg-white rounded-3xl p-8 border-2 border-green-100 shadow-lg">
+                    <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-green-100 text-green-700 text-xs font-bold mb-6 uppercase tracking-wide">
+                        <iconify-icon icon="lucide:sparkles" width="12"></iconify-icon>
+                        Ages 3-5
+                    </div>
+                    <h3 class="text-2xl font-bold text-slate-800 mb-4">Little Explorers Fitness</h3>
+                    <p class="text-slate-600 mb-6">Basic movement skills, balance exercises, and fun games that develop fundamental motor skills.</p>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-center gap-2 text-sm text-slate-700"><iconify-icon icon="lucide:check" class="text-green-500"></iconify-icon> 30-minute active sessions</li>
+                        <li class="flex items-center gap-2 text-sm text-slate-700"><iconify-icon icon="lucide:check" class="text-green-500"></iconify-icon> Balance & coordination focus</li>
+                        <li class="flex items-center gap-2 text-sm text-slate-700"><iconify-icon icon="lucide:check" class="text-green-500"></iconify-icon> Parent-child activities available</li>
+                        <li class="flex items-center gap-2 text-sm text-slate-700"><iconify-icon icon="lucide:check" class="text-green-500"></iconify-icon> 2 sessions per week</li>
+                    </ul>
+                    <div class="text-center mb-6">
+                        <span class="text-3xl font-bold text-slate-900">₹1,299</span><span class="text-slate-500">/month</span>
+                    </div>
+                    <button onclick="window.location.href='contact.html'" class="w-full py-3 rounded-xl bg-green-500 text-white font-semibold shadow-[0px_4px_0px_0px_#059669] hover:shadow-[0px_2px_0px_0px_#059669] hover:translate-y-[2px] transition-all">Enroll Now</button>
+                </div>
+
+                <!-- Program 2 -->
+                <div class="bg-white rounded-3xl p-8 border-2 border-blue-500 shadow-xl relative">
+                    <div class="absolute top-0 right-0 bg-blue-500 text-white text-xs font-bold px-3 py-1 rounded-bl-xl rounded-tr-[1.8rem]">MOST POPULAR</div>
+                    <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-100 text-blue-700 text-xs font-bold mb-6 uppercase tracking-wide">
+                        <iconify-icon icon="lucide:zap" width="12"></iconify-icon>
+                        Ages 6-10
+                    </div>
+                    <h3 class="text-2xl font-bold text-slate-800 mb-4">Adventure Fitness Warriors</h3>
+                    <p class="text-slate-600 mb-6">Comprehensive fitness program with adventure sports, team games, and skill development.</p>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-center gap-2 text-sm text-slate-700"><iconify-icon icon="lucide:check" class="text-green-500"></iconify-icon> 60-minute intensive sessions</li>
+                        <li class="flex items-center gap-2 text-sm text-slate-700"><iconify-icon icon="lucide:check" class="text-green-500"></iconify-icon> Adventure sports included</li>
+                        <li class="flex items-center gap-2 text-sm text-slate-700"><iconify-icon icon="lucide:check" class="text-green-500"></iconify-icon> Strength & endurance training</li>
+                        <li class="flex items-center gap-2 text-sm text-slate-700"><iconify-icon icon="lucide:check" class="text-green-500"></iconify-icon> 3 sessions per week</li>
+                    </ul>
+                    <div class="text-center mb-6">
+                        <span class="text-3xl font-bold text-slate-900">₹2,499</span><span class="text-slate-500">/month</span>
+                    </div>
+                    <button onclick="window.location.href='contact.html'" class="w-full py-3 rounded-xl bg-blue-500 text-white font-semibold shadow-[0px_4px_0px_0px_#2563EB] hover:shadow-[0px_2px_0px_0px_#2563EB] hover:translate-y-[2px] transition-all">Enroll Now</button>
+                </div>
+
+                <!-- Program 3 -->
+                <div class="bg-white rounded-3xl p-8 border-2 border-purple-100 shadow-lg">
+                    <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-purple-100 text-purple-700 text-xs font-bold mb-6 uppercase tracking-wide">
+                        <iconify-icon icon="lucide:target" width="12"></iconify-icon>
+                        Ages 11-16
+                    </div>
+                    <h3 class="text-2xl font-bold text-slate-800 mb-4">Teen Fitness Champions</h3>
+                    <p class="text-slate-600 mb-6">Advanced training for teenagers focusing on sports performance, strength building, and healthy lifestyle habits.</p>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-center gap-2 text-sm text-slate-700"><iconify-icon icon="lucide:check" class="text-green-500"></iconify-icon> 90-minute advanced sessions</li>
+                        <li class="flex items-center gap-2 text-sm text-slate-700"><iconify-icon icon="lucide:check" class="text-green-500"></iconify-icon> Sports-specific training</li>
+                        <li class="flex items-center gap-2 text-sm text-slate-700"><iconify-icon icon="lucide:check" class="text-green-500"></iconify-icon> Nutrition guidance included</li>
+                        <li class="flex items-center gap-2 text-sm text-slate-700"><iconify-icon icon="lucide:check" class="text-green-500"></iconify-icon> 4 sessions per week</li>
+                    </ul>
+                    <div class="text-center mb-6">
+                        <span class="text-3xl font-bold text-slate-900">₹3,999</span><span class="text-slate-500">/month</span>
+                    </div>
+                    <button onclick="window.location.href='contact.html'" class="w-full py-3 rounded-xl bg-purple-500 text-white font-semibold shadow-[0px_4px_0px_0px_#7C3AED] hover:shadow-[0px_2px_0px_0px_#7C3AED] hover:translate-y-[2px] transition-all">Enroll Now</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 bg-gradient-to-r from-green-500 to-blue-500 rounded-[2.5rem] mx-4 md:mx-8 mb-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl md:text-4xl font-semibold text-white mb-6 tracking-tight">Ready to Transform Your Child's Health?</h2>
+            <p class="text-white/90 text-lg mb-10 max-w-2xl mx-auto">Join hundreds of parents in Virar, Vasai, and Nallasopara who have seen remarkable improvements in their children's fitness, confidence, and overall wellbeing.</p>
+            
+            <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                <button onclick="window.location.href='contact.html'" class="w-full sm:w-auto px-8 py-4 bg-white text-green-600 rounded-2xl text-base font-semibold transition-all shadow-[0px_6px_0px_0px_rgba(255,255,255,0.3)] hover:shadow-[0px_3px_0px_0px_rgba(255,255,255,0.3)] hover:translate-y-[3px] flex items-center justify-center gap-2">
+                    <iconify-icon icon="lucide:calendar-check" width="20"></iconify-icon>
+                    Book a Free Trial Session
+                </button>
+                <button onclick="window.location.href='tel:+917768031411'" class="w-full sm:w-auto px-8 py-4 bg-transparent border-2 border-white text-white rounded-2xl text-base font-semibold transition-all hover:bg-white/10 flex items-center justify-center gap-2">
+                    <iconify-icon icon="lucide:phone" width="20"></iconify-icon>
+                    Call Now: +91 77680 31411
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-white pt-20 pb-10 rounded-t-[3rem]">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
+                <div class="col-span-1 md:col-span-2">
+                    <div class="flex items-center gap-2 mb-6">
+                         <div class="h-8 w-8 bg-green-500 rounded-lg flex items-center justify-center text-white">
+                            <iconify-icon icon="lucide:activity" width="18"></iconify-icon>
+                        </div>
+                        <span class="brand-font text-2xl font-bold">Maura <span class="text-green-400">Wonderlab</span></span>
+                    </div>
+                    <p class="text-slate-400 max-w-sm mb-6">Building stronger, healthier, and happier children through adventure-based physical fitness programs in Virar, Vasai & Nallasopara.</p>
+                    <div class="flex gap-4">
+                        <a href="#" class="h-10 w-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-green-500 transition-colors"><iconify-icon icon="lucide:instagram" width="20"></iconify-icon></a>
+                        <a href="#" class="h-10 w-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-blue-500 transition-colors"><iconify-icon icon="lucide:facebook" width="20"></iconify-icon></a>
+                        <a href="#" class="h-10 w-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-green-500 transition-colors"><iconify-icon icon="lucide:phone" width="20"></iconify-icon></a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="font-bold text-lg mb-6">Fitness Programs</h4>
+                    <ul class="space-y-4 text-slate-400 text-sm">
+                        <li><a href="summer-adventure-camps.html" class="hover:text-white transition-colors">Summer Fitness Camps</a></li>
+                        <li><a href="weekend-adventure-camps.html" class="hover:text-white transition-colors">Weekend Workouts</a></li>
+                        <li><a href="after-school-adventure-clubs.html" class="hover:text-white transition-colors">After-School Fitness</a></li>
+                        <li><a href="team-building-camps.html" class="hover:text-white transition-colors">Sports Team Training</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-bold text-lg mb-6">Camp Locations</h4>
+                    <ul class="space-y-4 text-slate-400 text-sm">
+                        <li><a href="camping-for-kids-in-virar.html" class="hover:text-white transition-colors">Virar Fitness Camp</a></li>
+                        <li><a href="camping-for-kids-in-vasai.html" class="hover:text-white transition-colors">Vasai Adventure Center</a></li>
+                        <li><a href="camping-for-kids-in-nallasopara.html" class="hover:text-white transition-colors">Nallasopara Sports Ground</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">View All Locations</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-slate-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="text-slate-500 text-sm">© 2024 Maura Wonderlab. All rights reserved. | Specializing in Physical Fitness for Children</p>
+                <div class="flex gap-6 text-sm text-slate-500">
+                    <a href="privacy-policy.html" class="hover:text-white">Privacy</a>
+                    <a href="terms-of-service.html" class="hover:text-white">Terms</a>
+                </div>
+            </div>
+            
+            <div class="mt-6 text-center text-xs text-slate-600">
+                <p>Keywords: physical fitness for children, kids exercise programs, children fitness activities, outdoor fitness Virar, kids sports Vasai, childhood health Nallasopara, Maura Wonderlab fitness programs</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Functionality
+        const mobileMenuButton = document.getElementById('mobileMenuButton');
+        const closeMenuButton = document.getElementById('closeMenuButton');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const menuOverlay = document.getElementById('menuOverlay');
+        
+        function openMobileMenu() {
+            mobileMenu.classList.add('open');
+            menuOverlay.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+        
+        function closeMobileMenu() {
+            mobileMenu.classList.remove('open');
+            menuOverlay.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+        
+        // Event Listeners
+        mobileMenuButton.addEventListener('click', openMobileMenu);
+        closeMenuButton.addEventListener('click', closeMobileMenu);
+        menuOverlay.addEventListener('click', closeMobileMenu);
+        
+        // Close menu when clicking on any menu link
+        document.querySelectorAll('#mobileMenu a').forEach(link => {
+            link.addEventListener('click', closeMobileMenu);
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                const href = this.getAttribute('href');
+                
+                if (href === '#' || href.startsWith('#') && href.length > 1) {
+                    e.preventDefault();
+                    
+                    const targetId = href.substring(1);
+                    const targetElement = document.getElementById(targetId);
+                    
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                    }
+                }
+            });
+        });
+        
+        // Close menu on ESC key press
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && mobileMenu.classList.contains('open')) {
+                closeMobileMenu();
+            }
+        });
+        
+        // Prevent scrolling on the overlay
+        menuOverlay.addEventListener('touchmove', (e) => {
+            e.preventDefault();
+        }, { passive: false });
+        
+        // Animation for benefit cards on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+        
+        // Observe all activity and benefit cards for animation
+        document.querySelectorAll('.activity-card, .benefit-card').forEach(card => {
+            card.style.opacity = '0.9';
+            card.style.transform = 'translateY(20px)';
+            card.style.transition = 'opacity 0.5s ease, transform 0.5s ease, box-shadow 0.3s ease';
+            observer.observe(card);
+        });
+        
+        // Add hover effect for activity cards
+        document.querySelectorAll('.activity-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-10px)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0)';
+            });
+        });
+    </script>
+</body>
+</html>

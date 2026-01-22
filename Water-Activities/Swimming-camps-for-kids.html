@@ -1,0 +1,905 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Swimming Camps for Kids | Sports & Adventure | Maura Wonderlab</title>
+    <meta name="description" content="Maura Wonderlab offers exciting swimming camps for kids in Virar, Nallasopara, and Vasai. Professional coaching, water safety, and adventure swimming activities.">
+    <meta name="keywords" content="Swimming camps for kids, kids swimming lessons, children swimming classes, water sports for kids, swimming adventure camp, learn to swim for kids, Mumbai swimming camps">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Iconify (Lucide Icons) -->
+    <script src="https://cdn.jsdelivr.net/npm/iconify-icon@1.0.8/dist/iconify-icon.min.js"></script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=Nunito:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        /* Custom Font Settings for Childish/Playful Vibe */
+        body {
+            font-family: 'Nunito', sans-serif;
+        }
+        h1, h2, h3, h4, h5, h6, .brand-font {
+            font-family: 'Fredoka', sans-serif;
+        }
+        
+        /* Playful Blob Pattern */
+        .bg-pattern {
+            background-color: #FFFDF5;
+            background-image: radial-gradient(#FDE68A 1px, transparent 1px), radial-gradient(#BAE6FD 1px, transparent 1px);
+            background-size: 40px 40px;
+            background-position: 0 0, 20px 20px;
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #FFF7ED; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #FDBA74; 
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #EA580C; 
+        }
+
+        /* Mobile Menu Animation */
+        .mobile-menu {
+            transform: translateX(100%);
+            transition: transform 0.3s ease-in-out;
+        }
+        
+        .mobile-menu.open {
+            transform: translateX(0);
+        }
+        
+        .menu-overlay {
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease-in-out, visibility 0.3s;
+        }
+        
+        .menu-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        /* Water-themed gradient */
+        .water-gradient {
+            background: linear-gradient(135deg, #e0f7fa 0%, #80deea 50%, #00acc1 100%);
+        }
+        
+        /* Wave pattern */
+        .wave-pattern {
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%2300acc1' fill-opacity='0.1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+        
+        /* Swimming pool effect */
+        .pool-effect {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .pool-effect::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 100%;
+            background: linear-gradient(0deg, rgba(0, 172, 193, 0.1) 0%, rgba(0, 172, 193, 0) 50%);
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body class="bg-pattern text-slate-600 antialiased selection:bg-blue-200 selection:text-blue-900">
+
+    <!-- Navbar -->
+    <nav class="fixed w-full z-50 top-0 transition-all duration-300 backdrop-blur-md bg-white/80 border-b-2 border-slate-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center gap-2 cursor-pointer" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+                    <img src="maura wonderlab logo.png" alt="Maura Wonderlab" width="50px">
+                    <span class="brand-font text-2xl font-semibold tracking-tight text-slate-800">
+                        Maura <span class="text-blue-500">Wonderlab</span>
+                    </span>
+                </div>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="#activities" class="text-sm font-semibold text-slate-600 hover:text-blue-500 transition-colors">Activities</a>
+                    <a href="#programs" class="text-sm font-semibold text-slate-600 hover:text-blue-500 transition-colors">Programs</a>
+                    <a href="#coaches" class="text-sm font-semibold text-slate-600 hover:text-blue-500 transition-colors">Coaches</a>
+                    <a href="#locations" class="text-sm font-semibold text-slate-600 hover:text-blue-500 transition-colors">Locations</a>
+                    <a href="#pricing" class="text-sm font-semibold text-slate-600 hover:text-blue-500 transition-colors">Pricing</a>
+                    <button class="bg-blue-500 hover:bg-blue-600 text-white px-5 py-2.5 rounded-full text-sm font-semibold transition-all shadow-[0px_4px_0px_0px_rgba(37,99,235,1)] hover:shadow-[0px_2px_0px_0px_rgba(37,99,235,1)] hover:translate-y-[2px]">
+                        Book Swimming Camp
+                    </button>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobileMenuButton" class="text-slate-600 hover:text-blue-500 p-2">
+                        <iconify-icon icon="lucide:menu" width="28" stroke-width="1.5"></iconify-icon>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu Overlay -->
+    <div id="menuOverlay" class="menu-overlay fixed inset-0 bg-black/50 z-40 md:hidden"></div>
+
+    <!-- Mobile Menu -->
+    <div id="mobileMenu" class="mobile-menu fixed top-0 right-0 h-full w-64 bg-white z-50 shadow-2xl md:hidden p-6">
+        <div class="flex justify-between items-center mb-8">
+            <div class="flex items-center gap-2">
+                <div class="h-8 w-8 bg-blue-400 rounded-lg flex items-center justify-center text-white">
+                    <iconify-icon icon="lucide:swimming" width="18"></iconify-icon>
+                </div>
+                <span class="brand-font text-xl font-semibold text-slate-800">Maura <span class="text-blue-500">Wonderlab</span></span>
+            </div>
+            <button id="closeMenuButton" class="text-slate-600 hover:text-blue-500 p-2">
+                <iconify-icon icon="lucide:x" width="24" stroke-width="1.5"></iconify-icon>
+            </button>
+        </div>
+        
+        <div class="space-y-6">
+            <a href="#activities" class="block py-3 text-slate-700 font-semibold border-b border-slate-100" onclick="closeMobileMenu()">Activities</a>
+            <a href="#programs" class="block py-3 text-slate-700 font-semibold border-b border-slate-100" onclick="closeMobileMenu()">Programs</a>
+            <a href="#coaches" class="block py-3 text-slate-700 font-semibold border-b border-slate-100" onclick="closeMobileMenu()">Coaches</a>
+            <a href="#locations" class="block py-3 text-slate-700 font-semibold border-b border-slate-100" onclick="closeMobileMenu()">Locations</a>
+            <a href="#pricing" class="block py-3 text-slate-700 font-semibold border-b border-slate-100" onclick="closeMobileMenu()">Pricing</a>
+            <div class="pt-4">
+                <button class="w-full bg-blue-500 hover:bg-blue-600 text-white px-5 py-3 rounded-full text-sm font-semibold transition-all">
+                    Book Swimming Camp
+                </button>
+            </div>
+        </div>
+        
+        <div class="absolute bottom-8 left-6 right-6">
+            <p class="text-sm text-slate-500 mb-4">Contact us:</p>
+            <div class="flex items-center gap-2 text-slate-700 mb-2">
+                <iconify-icon icon="lucide:phone" width="16"></iconify-icon>
+                <span class="text-sm">+91 77680 31411</span>
+            </div>
+            <div class="flex items-center gap-2 text-slate-700">
+                <iconify-icon icon="lucide:mail" width="16"></iconify-icon>
+                <span class="text-sm">maurawonderlab@gmail.com</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="pt-32 pb-20 px-4 wave-pattern pool-effect">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div class="space-y-8">
+                    <div class="inline-flex items-center gap-2 bg-blue-100 text-blue-700 px-4 py-2 rounded-full text-sm font-semibold">
+                        <iconify-icon icon="lucide:water" width="18"></iconify-icon>
+                        <span>Sports & Adventure Camp</span>
+                    </div>
+                    <h1 class="text-5xl lg:text-6xl font-bold text-slate-800 leading-tight">
+                        Dive Into Fun with Our 
+                        <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-teal-500">Swimming Camps</span> for Kids
+                    </h1>
+                    <p class="text-lg text-slate-600">
+                        Maura Wonderlab offers professionally coached swimming camps for children aged 5-14. Our adventure-focused approach combines water safety, technique development, and pure aquatic fun in Virar, Vasai, and Nallasopara.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4 pt-4">
+                        <button class="bg-blue-500 hover:bg-blue-600 text-white px-8 py-4 rounded-full text-lg font-semibold transition-all shadow-[0px_6px_0px_0px_rgba(37,99,235,1)] hover:shadow-[0px_3px_0px_0px_rgba(37,99,235,1)] hover:translate-y-[3px]">
+                            <div class="flex items-center gap-2">
+                                <iconify-icon icon="lucide:calendar" width="20"></iconify-icon>
+                                Book a Free Trial
+                            </div>
+                        </button>
+                        <button class="border-2 border-blue-300 text-blue-600 hover:bg-blue-50 px-8 py-4 rounded-full text-lg font-semibold transition-all">
+                            <div class="flex items-center gap-2">
+                                <iconify-icon icon="lucide:play-circle" width="20"></iconify-icon>
+                                Watch Our Swimmers
+                            </div>
+                        </button>
+                    </div>
+                </div>
+                <div class="relative">
+                    <div class="relative rounded-3xl overflow-hidden shadow-2xl">
+                        <div class="water-gradient h-80 flex items-center justify-center">
+                            <div class="text-center p-8">
+                                <iconify-icon icon="lucide:swimming" width="80" class="text-white"></iconify-icon>
+                                <h3 class="text-2xl font-bold text-white mt-4">Safe & Supervised Swimming</h3>
+                                <p class="text-blue-100 mt-2">Certified lifeguards and coaches</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="absolute -bottom-6 -left-6 bg-white rounded-2xl p-6 shadow-xl w-64">
+                        <div class="flex items-center gap-3">
+                            <div class="h-12 w-12 bg-blue-100 rounded-xl flex items-center justify-center">
+                                <iconify-icon icon="lucide:shield-check" width="24" class="text-blue-600"></iconify-icon>
+                            </div>
+                            <div>
+                                <p class="font-bold text-slate-800">100% Safety Record</p>
+                                <p class="text-sm text-slate-500">8+ years of safe swimming</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Activities Section -->
+    <section id="activities" class="py-20 px-4 bg-white">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-slate-800 mb-4">Swimming Activities & Adventures</h2>
+                <p class="text-lg text-slate-600 max-w-3xl mx-auto">Our swimming camps are packed with exciting water-based activities that build confidence, skill, and love for aquatic sports.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Activity 1 -->
+                <div class="group bg-gradient-to-br from-blue-50 to-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
+                    <div class="h-16 w-16 bg-blue-500 rounded-xl flex items-center justify-center text-white mb-6">
+                        <iconify-icon icon="lucide:swimming" width="28"></iconify-icon>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-800 mb-3">Stroke Development</h3>
+                    <p class="text-slate-600 mb-4">Learn and perfect all four competitive strokes: Freestyle, Backstroke, Breaststroke, and Butterfly with certified coaches.</p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="bg-blue-100 text-blue-700 px-3 py-1 rounded-full text-xs font-semibold">Ages 6+</span>
+                        <span class="bg-teal-100 text-teal-700 px-3 py-1 rounded-full text-xs font-semibold">All Levels</span>
+                    </div>
+                </div>
+                
+                <!-- Activity 2 -->
+                <div class="group bg-gradient-to-br from-cyan-50 to-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
+                    <div class="h-16 w-16 bg-cyan-500 rounded-xl flex items-center justify-center text-white mb-6">
+                        <iconify-icon icon="lucide:life-buoy" width="28"></iconify-icon>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-800 mb-3">Water Safety & Rescue</h3>
+                    <p class="text-slate-600 mb-4">Essential water safety skills, basic rescue techniques, and emergency response training for confident young swimmers.</p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="bg-cyan-100 text-cyan-700 px-3 py-1 rounded-full text-xs font-semibold">Safety First</span>
+                        <span class="bg-amber-100 text-amber-700 px-3 py-1 rounded-full text-xs font-semibold">All Ages</span>
+                    </div>
+                </div>
+                
+                <!-- Activity 3 -->
+                <div class="group bg-gradient-to-br from-teal-50 to-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
+                    <div class="h-16 w-16 bg-teal-500 rounded-xl flex items-center justify-center text-white mb-6">
+                        <iconify-icon icon="lucide:gamepad-2" width="28"></iconify-icon>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-800 mb-3">Aquatic Games & Challenges</h3>
+                    <p class="text-slate-600 mb-4">Fun water games, relay races, treasure hunts, and obstacle courses that make swimming practice exciting.</p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="bg-teal-100 text-teal-700 px-3 py-1 rounded-full text-xs font-semibold">Games</span>
+                        <span class="bg-pink-100 text-pink-700 px-3 py-1 rounded-full text-xs font-semibold">Team Building</span>
+                    </div>
+                </div>
+                
+                <!-- Activity 4 -->
+                <div class="group bg-gradient-to-br from-sky-50 to-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
+                    <div class="h-16 w-16 bg-sky-500 rounded-xl flex items-center justify-center text-white mb-6">
+                        <iconify-icon icon="lucide:diving" width="28"></iconify-icon>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-800 mb-3">Diving & Underwater Skills</h3>
+                    <p class="text-slate-600 mb-4">Learn proper diving techniques, underwater swimming, breath control, and underwater games.</p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="bg-sky-100 text-sky-700 px-3 py-1 rounded-full text-xs font-semibold">Advanced</span>
+                        <span class="bg-purple-100 text-purple-700 px-3 py-1 rounded-full text-xs font-semibold">Skill Building</span>
+                    </div>
+                </div>
+                
+                <!-- Activity 5 -->
+                <div class="group bg-gradient-to-br from-indigo-50 to-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
+                    <div class="h-16 w-16 bg-indigo-500 rounded-xl flex items-center justify-center text-white mb-6">
+                        <iconify-icon icon="lucide:medal" width="28"></iconify-icon>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-800 mb-3">Mini Swimming Competitions</h3>
+                    <p class="text-slate-600 mb-4">Friendly races and competitions that teach sportsmanship and give kids a taste of competitive swimming.</p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="bg-indigo-100 text-indigo-700 px-3 py-1 rounded-full text-xs font-semibold">Competition</span>
+                        <span class="bg-yellow-100 text-yellow-700 px-3 py-1 rounded-full text-xs font-semibold">Ages 8+</span>
+                    </div>
+                </div>
+                
+                <!-- Activity 6 -->
+                <div class="group bg-gradient-to-br from-violet-50 to-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
+                    <div class="h-16 w-16 bg-violet-500 rounded-xl flex items-center justify-center text-white mb-6">
+                        <iconify-icon icon="lucide:wind" width="28"></iconify-icon>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-800 mb-3">Synchronized Swimming Basics</h3>
+                    <p class="text-slate-600 mb-4">Introduction to synchronized swimming moves, team coordination in water, and creating fun water routines.</p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="bg-violet-100 text-violet-700 px-3 py-1 rounded-full text-xs font-semibold">Creative</span>
+                        <span class="bg-rose-100 text-rose-700 px-3 py-1 rounded-full text-xs font-semibold">Team Activity</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Programs Section -->
+    <section id="programs" class="py-20 px-4 bg-gradient-to-b from-blue-50 to-white">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-slate-800 mb-4">Swimming Camp Programs</h2>
+                <p class="text-lg text-slate-600 max-w-3xl mx-auto">We offer structured programs for different age groups and skill levels, from beginners to advanced swimmers.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                <!-- Program 1 -->
+                <div class="bg-white rounded-2xl p-8 shadow-xl border-t-4 border-blue-500">
+                    <div class="text-center mb-6">
+                        <div class="inline-flex items-center justify-center h-20 w-20 bg-blue-100 rounded-full mb-4">
+                            <iconify-icon icon="lucide:fish" width="32" class="text-blue-600"></iconify-icon>
+                        </div>
+                        <h3 class="text-2xl font-bold text-slate-800">Little Tadpoles</h3>
+                        <p class="text-blue-500 font-semibold">Ages 5-7</p>
+                    </div>
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-start gap-3">
+                            <iconify-icon icon="lucide:check-circle" class="text-green-500 mt-1"></iconify-icon>
+                            <span>Water acclimatization & comfort building</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <iconify-icon icon="lucide:check-circle" class="text-green-500 mt-1"></iconify-icon>
+                            <span>Basic floating and kicking techniques</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <iconify-icon icon="lucide:check-circle" class="text-green-500 mt-1"></iconify-icon>
+                            <span>Intro to freestyle with floatation aids</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <iconify-icon icon="lucide:check-circle" class="text-green-500 mt-1"></iconify-icon>
+                            <span>Water safety basics and pool rules</span>
+                        </li>
+                    </ul>
+                    <div class="text-center">
+                        <span class="text-3xl font-bold text-slate-800">₹2,499</span>
+                        <span class="text-slate-500">/month</span>
+                    </div>
+                </div>
+                
+                <!-- Program 2 -->
+                <div class="bg-white rounded-2xl p-8 shadow-xl border-t-4 border-teal-500 relative">
+                    <div class="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+                        <span class="bg-teal-500 text-white px-4 py-1 rounded-full text-sm font-bold">MOST POPULAR</span>
+                    </div>
+                    <div class="text-center mb-6 pt-4">
+                        <div class="inline-flex items-center justify-center h-20 w-20 bg-teal-100 rounded-full mb-4">
+                            <iconify-icon icon="lucide:dolphin" width="32" class="text-teal-600"></iconify-icon>
+                        </div>
+                        <h3 class="text-2xl font-bold text-slate-800">Junior Dolphins</h3>
+                        <p class="text-teal-500 font-semibold">Ages 8-11</p>
+                    </div>
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-start gap-3">
+                            <iconify-icon icon="lucide:check-circle" class="text-green-500 mt-1"></iconify-icon>
+                            <span>All four competitive stroke development</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <iconify-icon icon="lucide:check-circle" class="text-green-500 mt-1"></iconify-icon>
+                            <span>Flip turns and racing starts</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <iconify-icon icon="lucide:check-circle" class="text-green-500 mt-1"></iconify-icon>
+                            <span>Intermediate water safety & rescue skills</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <iconify-icon icon="lucide:check-circle" class="text-green-500 mt-1"></iconify-icon>
+                            <span>Swimming endurance and stamina building</span>
+                        </li>
+                    </ul>
+                    <div class="text-center">
+                        <span class="text-3xl font-bold text-slate-800">₹3,299</span>
+                        <span class="text-slate-500">/month</span>
+                    </div>
+                </div>
+                
+                <!-- Program 3 -->
+                <div class="bg-white rounded-2xl p-8 shadow-xl border-t-4 border-indigo-500">
+                    <div class="text-center mb-6">
+                        <div class="inline-flex items-center justify-center h-20 w-20 bg-indigo-100 rounded-full mb-4">
+                            <iconify-icon icon="lucide:shark" width="32" class="text-indigo-600"></iconify-icon>
+                        </div>
+                        <h3 class="text-2xl font-bold text-slate-800">Advanced Sharks</h3>
+                        <p class="text-indigo-500 font-semibold">Ages 12-14</p>
+                    </div>
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-start gap-3">
+                            <iconify-icon icon="lucide:check-circle" class="text-green-500 mt-1"></iconify-icon>
+                            <span>Advanced stroke refinement and technique</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <iconify-icon icon="lucide:check-circle" class="text-green-500 mt-1"></iconify-icon>
+                            <span>Competition preparation and strategy</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <iconify-icon icon="lucide:check-circle" class="text-green-500 mt-1"></iconify-icon>
+                            <span>Lifesaving and advanced water rescue</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <iconify-icon icon="lucide:check-circle" class="text-green-500 mt-1"></iconify-icon>
+                            <span>Introduction to coaching & leadership</span>
+                        </li>
+                    </ul>
+                    <div class="text-center">
+                        <span class="text-3xl font-bold text-slate-800">₹3,999</span>
+                        <span class="text-slate-500">/month</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Coaches Section -->
+    <section id="coaches" class="py-20 px-4 bg-white">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-slate-800 mb-4">Meet Our Swimming Coaches</h2>
+                <p class="text-lg text-slate-600 max-w-3xl mx-auto">Our certified coaches are passionate about teaching children to swim safely while having fun in the water.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Coach 1 -->
+                <div class="text-center">
+                    <div class="relative inline-block mb-6">
+                        <div class="h-48 w-48 rounded-full overflow-hidden mx-auto border-4 border-blue-200">
+                            <div class="h-full w-full bg-gradient-to-br from-blue-400 to-cyan-400 flex items-center justify-center">
+                                <span class="text-white text-6xl font-bold">RK</span>
+                            </div>
+                        </div>
+                        <div class="absolute bottom-4 right-10 bg-blue-500 text-white rounded-full h-10 w-10 flex items-center justify-center">
+                            <iconify-icon icon="lucide:award" width="20"></iconify-icon>
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-800">Rohan Kumar</h3>
+                    <p class="text-blue-500 font-semibold mb-2">Head Swimming Coach</p>
+                    <p class="text-slate-600 max-w-xs mx-auto">Former state-level swimmer with 12+ years of coaching experience. Certified by the Swimming Federation of India.</p>
+                </div>
+                
+                <!-- Coach 2 -->
+                <div class="text-center">
+                    <div class="relative inline-block mb-6">
+                        <div class="h-48 w-48 rounded-full overflow-hidden mx-auto border-4 border-teal-200">
+                            <div class="h-full w-full bg-gradient-to-br from-teal-400 to-emerald-400 flex items-center justify-center">
+                                <span class="text-white text-6xl font-bold">PM</span>
+                            </div>
+                        </div>
+                        <div class="absolute bottom-4 right-10 bg-teal-500 text-white rounded-full h-10 w-10 flex items-center justify-center">
+                            <iconify-icon icon="lucide:heart" width="20"></iconify-icon>
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-800">Priya Mehta</h3>
+                    <p class="text-teal-500 font-semibold mb-2">Water Safety Specialist</p>
+                    <p class="text-slate-600 max-w-xs mx-auto">Certified lifeguard and Red Cross water safety instructor with special focus on children's swimming safety.</p>
+                </div>
+                
+                <!-- Coach 3 -->
+                <div class="text-center">
+                    <div class="relative inline-block mb-6">
+                        <div class="h-48 w-48 rounded-full overflow-hidden mx-auto border-4 border-indigo-200">
+                            <div class="h-full w-full bg-gradient-to-br from-indigo-400 to-purple-400 flex items-center justify-center">
+                                <span class="text-white text-6xl font-bold">AS</span>
+                            </div>
+                        </div>
+                        <div class="absolute bottom-4 right-10 bg-indigo-500 text-white rounded-full h-10 w-10 flex items-center justify-center">
+                            <iconify-icon icon="lucide:zap" width="20"></iconify-icon>
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-800">Arjun Sharma</h3>
+                    <p class="text-indigo-500 font-semibold mb-2">Adventure Swimming Coach</p>
+                    <p class="text-slate-600 max-w-xs mx-auto">Specializes in making swimming fun through games and adventures. Trained in synchronized swimming basics.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Locations Section -->
+    <section id="locations" class="py-20 px-4 bg-gradient-to-b from-cyan-50 to-blue-50">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-slate-800 mb-4">Swimming Camp Locations</h2>
+                <p class="text-lg text-slate-600 max-w-3xl mx-auto">We operate at safe, child-friendly swimming pools across Virar, Vasai, and Nallasopara with certified lifeguards on duty.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Location 1 -->
+                <div class="bg-white rounded-2xl p-8 shadow-lg">
+                    <div class="flex items-center gap-4 mb-6">
+                        <div class="h-12 w-12 bg-blue-500 rounded-xl flex items-center justify-center text-white">
+                            <iconify-icon icon="lucide:map-pin" width="24"></iconify-icon>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-slate-800">Virar West</h3>
+                            <p class="text-slate-500">Indoor Heated Pool</p>
+                        </div>
+                    </div>
+                    <div class="space-y-4 mb-6">
+                        <div class="flex items-center gap-3">
+                            <iconify-icon icon="lucide:clock" class="text-blue-500"></iconify-icon>
+                            <span>Mon-Sat: 8AM-11AM, 4PM-7PM</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <iconify-icon icon="lucide:users" class="text-blue-500"></iconify-icon>
+                            <span>Small groups (max 8 kids per coach)</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <iconify-icon icon="lucide:thermometer" class="text-blue-500"></iconify-icon>
+                            <span>Temperature-controlled pool</span>
+                        </div>
+                    </div>
+                    <button class="w-full bg-blue-50 hover:bg-blue-100 text-blue-600 py-3 rounded-xl font-semibold transition-colors">
+                        View Schedule
+                    </button>
+                </div>
+                
+                <!-- Location 2 -->
+                <div class="bg-white rounded-2xl p-8 shadow-lg">
+                    <div class="flex items-center gap-4 mb-6">
+                        <div class="h-12 w-12 bg-teal-500 rounded-xl flex items-center justify-center text-white">
+                            <iconify-icon icon="lucide:map-pin" width="24"></iconify-icon>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-slate-800">Vasai East</h3>
+                            <p class="text-slate-500">Olympic-size Outdoor Pool</p>
+                        </div>
+                    </div>
+                    <div class="space-y-4 mb-6">
+                        <div class="flex items-center gap-3">
+                            <iconify-icon icon="lucide:clock" class="text-teal-500"></iconify-icon>
+                            <span>Mon-Sat: 7AM-10AM, 3PM-6PM</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <iconify-icon icon="lucide:users" class="text-teal-500"></iconify-icon>
+                            <span>Small groups (max 6 kids per coach)</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <iconify-icon icon="lucide:sun" class="text-teal-500"></iconify-icon>
+                            <span>Sunlight exposure with shade options</span>
+                        </div>
+                    </div>
+                    <button class="w-full bg-teal-50 hover:bg-teal-100 text-teal-600 py-3 rounded-xl font-semibold transition-colors">
+                        View Schedule
+                    </button>
+                </div>
+                
+                <!-- Location 3 -->
+                <div class="bg-white rounded-2xl p-8 shadow-lg">
+                    <div class="flex items-center gap-4 mb-6">
+                        <div class="h-12 w-12 bg-indigo-500 rounded-xl flex items-center justify-center text-white">
+                            <iconify-icon icon="lucide:map-pin" width="24"></iconify-icon>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-slate-800">Nallasopara</h3>
+                            <p class="text-slate-500">Community Center Pool</p>
+                        </div>
+                    </div>
+                    <div class="space-y-4 mb-6">
+                        <div class="flex items-center gap-3">
+                            <iconify-icon icon="lucide:clock" class="text-indigo-500"></iconify-icon>
+                            <span>Mon-Sat: 9AM-12PM, 5PM-8PM</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <iconify-icon icon="lucide:users" class="text-indigo-500"></iconify-icon>
+                            <span>Small groups (max 7 kids per coach)</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <iconify-icon icon="lucide:shield" class="text-indigo-500"></iconify-icon>
+                            <span>Advanced filtration system</span>
+                        </div>
+                    </div>
+                    <button class="w-full bg-indigo-50 hover:bg-indigo-100 text-indigo-600 py-3 rounded-xl font-semibold transition-colors">
+                        View Schedule
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="py-20 px-4 bg-white">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-slate-800 mb-4">Swimming Camp Pricing</h2>
+                <p class="text-lg text-slate-600 max-w-3xl mx-auto">Flexible packages for every need. All packages include safety equipment, progress reports, and certificate of completion.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-4 gap-8">
+                <!-- Package 1 -->
+                <div class="bg-gradient-to-b from-blue-50 to-white rounded-2xl p-8 border-2 border-blue-200">
+                    <h3 class="text-xl font-bold text-slate-800 mb-2">Trial Package</h3>
+                    <p class="text-slate-500 text-sm mb-6">Perfect for beginners</p>
+                    <div class="mb-6">
+                        <span class="text-4xl font-bold text-slate-800">₹499</span>
+                        <span class="text-slate-500">/session</span>
+                    </div>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-start gap-3">
+                            <iconify-icon icon="lucide:check" class="text-green-500 mt-1"></iconify-icon>
+                            <span>2 trial swimming sessions</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <iconify-icon icon="lucide:check" class="text-green-500 mt-1"></iconify-icon>
+                            <span>Skill assessment by coach</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <iconify-icon icon="lucide:check" class="text-green-500 mt-1"></iconify-icon>
+                            <span>Safety orientation</span>
+                        </li>
+                    </ul>
+                    <button class="w-full bg-blue-500 hover:bg-blue-600 text-white py-3 rounded-xl font-semibold transition-colors">
+                        Book Trial
+                    </button>
+                </div>
+                
+                <!-- Package 2 -->
+                <div class="bg-gradient-to-b from-teal-50 to-white rounded-2xl p-8 border-2 border-teal-200">
+                    <h3 class="text-xl font-bold text-slate-800 mb-2">Monthly Package</h3>
+                    <p class="text-slate-500 text-sm mb-6">Most popular choice</p>
+                    <div class="mb-6">
+                        <span class="text-4xl font-bold text-slate-800">₹2,999</span>
+                        <span class="text-slate-500">/month</span>
+                    </div>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-start gap-3">
+                            <iconify-icon icon="lucide:check" class="text-green-500 mt-1"></iconify-icon>
+                            <span>12 sessions (3 per week)</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <iconify-icon icon="lucide:check" class="text-green-500 mt-1"></iconify-icon>
+                            <span>Progress tracking & reports</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <iconify-icon icon="lucide:check" class="text-green-500 mt-1"></iconify-icon>
+                            <span>Free swimming cap & goggles</span>
+                        </li>
+                    </ul>
+                    <button class="w-full bg-teal-500 hover:bg-teal-600 text-white py-3 rounded-xl font-semibold transition-colors">
+                        Enroll Now
+                    </button>
+                </div>
+                
+                <!-- Package 3 -->
+                <div class="bg-gradient-to-b from-indigo-50 to-white rounded-2xl p-8 border-2 border-indigo-200 relative">
+                    <div class="absolute top-0 right-6 transform -translate-y-1/2">
+                        <span class="bg-indigo-500 text-white px-3 py-1 rounded-full text-sm font-bold">BEST VALUE</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-800 mb-2">Quarterly Package</h3>
+                    <p class="text-slate-500 text-sm mb-6">Save 15% with 3-month plan</p>
+                    <div class="mb-6">
+                        <span class="text-4xl font-bold text-slate-800">₹7,499</span>
+                        <span class="text-slate-500">/3 months</span>
+                    </div>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-start gap-3">
+                            <iconify-icon icon="lucide:check" class="text-green-500 mt-1"></iconify-icon>
+                            <span>36 sessions (3 per week)</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <iconify-icon icon="lucide:check" class="text-green-500 mt-1"></iconify-icon>
+                            <span>Free swim gear kit</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <iconify-icon icon="lucide:check" class="text-green-500 mt-1"></iconify-icon>
+                            <span>2 extra adventure swimming sessions</span>
+                        </li>
+                    </ul>
+                    <button class="w-full bg-indigo-500 hover:bg-indigo-600 text-white py-3 rounded-xl font-semibold transition-colors">
+                        Enroll Now
+                    </button>
+                </div>
+                
+                <!-- Package 4 -->
+                <div class="bg-gradient-to-b from-purple-50 to-white rounded-2xl p-8 border-2 border-purple-200">
+                    <h3 class="text-xl font-bold text-slate-800 mb-2">Weekend Special</h3>
+                    <p class="text-slate-500 text-sm mb-6">For busy schedules</p>
+                    <div class="mb-6">
+                        <span class="text-4xl font-bold text-slate-800">₹1,799</span>
+                        <span class="text-slate-500">/month</span>
+                    </div>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-start gap-3">
+                            <iconify-icon icon="lucide:check" class="text-green-500 mt-1"></iconify-icon>
+                            <span>8 sessions (Saturdays & Sundays)</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <iconify-icon icon="lucide:check" class="text-green-500 mt-1"></iconify-icon>
+                            <span>Special weekend activities</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <iconify-icon icon="lucide:check" class="text-green-500 mt-1"></iconify-icon>
+                            <span>Family swim session once a month</span>
+                        </li>
+                    </ul>
+                    <button class="w-full bg-purple-500 hover:bg-purple-600 text-white py-3 rounded-xl font-semibold transition-colors">
+                        Enroll Now
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 px-4 water-gradient">
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="text-4xl font-bold text-white mb-6">Ready to Make a Splash?</h2>
+            <p class="text-xl text-blue-100 mb-10 max-w-2xl mx-auto">Join our swimming camps today and watch your child gain confidence, learn essential life skills, and have endless fun in the water!</p>
+            
+            <div class="flex flex-col sm:flex-row gap-6 justify-center">
+                <button class="bg-white hover:bg-blue-50 text-blue-600 px-10 py-4 rounded-full text-lg font-semibold transition-all shadow-[0px_6px_0px_0px_rgba(255,255,255,0.3)] hover:shadow-[0px_3px_0px_0px_rgba(255,255,255,0.3)] hover:translate-y-[3px]">
+                    <div class="flex items-center gap-2">
+                        <iconify-icon icon="lucide:phone" width="20"></iconify-icon>
+                        Call Now: +91 77680 31411
+                    </div>
+                </button>
+                <button class="border-2 border-white text-white hover:bg-white/10 px-10 py-4 rounded-full text-lg font-semibold transition-colors">
+                    <div class="flex items-center gap-2">
+                        <iconify-icon icon="lucide:calendar" width="20"></iconify-icon>
+                        Schedule a Free Trial
+                    </div>
+                </button>
+            </div>
+            
+            <p class="text-blue-100 mt-8 text-sm">
+                <iconify-icon icon="lucide:shield-check" class="inline mr-2"></iconify-icon>
+                All safety protocols followed • Certified lifeguards on duty • Small group sizes
+            </p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-white pt-20 pb-10 rounded-t-[3rem] mt-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
+                <div class="col-span-1 md:col-span-2">
+                    <div class="flex items-center gap-2 mb-6">
+                         <div class="h-8 w-8 bg-blue-500 rounded-lg flex items-center justify-center text-white">
+                            <iconify-icon icon="lucide:swimming" width="18"></iconify-icon>
+                        </div>
+                        <span class="brand-font text-2xl font-bold">Maura <span class="text-blue-400">Wonderlab</span></span>
+                    </div>
+                    <p class="text-slate-400 max-w-sm mb-6">Creating confident swimmers through safe, fun, and adventure-filled swimming camps. The #1 Choice for Kids Swimming in Virar, Vasai & Nallasopara.</p>
+                    <div class="flex gap-4">
+                        <a href="#" class="h-10 w-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-blue-500 transition-colors"><iconify-icon icon="lucide:instagram" width="20"></iconify-icon></a>
+                        <a href="#" class="h-10 w-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-blue-700 transition-colors"><iconify-icon icon="lucide:facebook" width="20"></iconify-icon></a>
+                        <a href="#" class="h-10 w-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-green-500 transition-colors"><iconify-icon icon="lucide:phone" width="20"></iconify-icon></a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="font-bold text-lg mb-6">Swimming Programs</h4>
+                    <ul class="space-y-4 text-slate-400 text-sm">
+                        <li><a href="#" class="hover:text-white transition-colors">Beginner Swimming</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Advanced Stroke Clinic</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Water Safety Certification</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Competitive Swimming Prep</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-bold text-lg mb-6">Swimming Locations</h4>
+                    <ul class="space-y-4 text-slate-400 text-sm">
+                        <li><a href="#" class="hover:text-white transition-colors">Swimming Camp in Virar</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Swimming Camp in Vasai</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Swimming Camp in Nallasopara</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Summer Swimming Intensive</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-slate-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="text-slate-500 text-sm">© 2024 Maura Wonderlab Swimming Camps. All rights reserved.</p>
+                <div class="flex gap-6 text-sm text-slate-500">
+                    <a href="#" class="hover:text-white">Safety Policy</a>
+                    <a href="#" class="hover:text-white">Terms</a>
+                    <a href="#" class="hover:text-white">Refund Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Functionality
+        const mobileMenuButton = document.getElementById('mobileMenuButton');
+        const closeMenuButton = document.getElementById('closeMenuButton');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const menuOverlay = document.getElementById('menuOverlay');
+        
+        function openMobileMenu() {
+            mobileMenu.classList.add('open');
+            menuOverlay.classList.add('active');
+            document.body.style.overflow = 'hidden'; // Prevent scrolling when menu is open
+        }
+        
+        function closeMobileMenu() {
+            mobileMenu.classList.remove('open');
+            menuOverlay.classList.remove('active');
+            document.body.style.overflow = 'auto'; // Re-enable scrolling
+        }
+        
+        // Event Listeners
+        mobileMenuButton.addEventListener('click', openMobileMenu);
+        closeMenuButton.addEventListener('click', closeMobileMenu);
+        menuOverlay.addEventListener('click', closeMobileMenu);
+        
+        // Close menu when clicking on any menu link
+        document.querySelectorAll('#mobileMenu a').forEach(link => {
+            link.addEventListener('click', closeMobileMenu);
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                const href = this.getAttribute('href');
+                
+                // Only handle internal anchor links (not external links)
+                if (href === '#' || href.startsWith('#') && href.length > 1) {
+                    e.preventDefault();
+                    
+                    const targetId = href.substring(1);
+                    const targetElement = document.getElementById(targetId);
+                    
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80, // Adjust for navbar height
+                            behavior: 'smooth'
+                        });
+                    }
+                }
+            });
+        });
+        
+        // Close menu on ESC key press
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && mobileMenu.classList.contains('open')) {
+                closeMobileMenu();
+            }
+        });
+        
+        // Prevent scrolling on the overlay (touch devices)
+        menuOverlay.addEventListener('touchmove', (e) => {
+            e.preventDefault();
+        }, { passive: false });
+        
+        // Add animation to cards on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+        
+        // Observe all cards for animation
+        document.querySelectorAll('.group').forEach(card => {
+            card.style.opacity = '0.9';
+            card.style.transform = 'translateY(10px)';
+            card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+            observer.observe(card);
+        });
+        
+        // Book buttons functionality
+        document.querySelectorAll('button').forEach(button => {
+            if (button.textContent.includes('Book') || button.textContent.includes('Enroll')) {
+                button.addEventListener('click', function() {
+                    alert('Thank you for your interest in Maura Wonderlab Swimming Camps! Our team will contact you shortly to complete the booking.');
+                });
+            }
+        });
+    </script>
+</body>
+</html>

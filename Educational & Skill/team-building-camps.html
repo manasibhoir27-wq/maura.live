@@ -1,0 +1,853 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Team Building Camps for Kids | Group Activities for Children | Maura Wonderlab</title>
+    <meta name="description" content="Maura Wonderlab offers premier team-building camps for kids in Virar, Vasai & Nallasopara. Develop leadership, cooperation & communication skills through adventure activities.">
+    <meta name="keywords" content="team building camps for kids, group activities for children, leadership camps for kids, cooperative games for children, team building activities Mumbai, kids group adventure camps, communication skills camp, teamwork activities for children">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Iconify (Lucide Icons) -->
+    <script src="https://cdn.jsdelivr.net/npm/iconify-icon@1.0.8/dist/iconify-icon.min.js"></script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=Nunito:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        /* Custom Font Settings for Childish/Playful Vibe */
+        body {
+            font-family: 'Nunito', sans-serif;
+        }
+        h1, h2, h3, h4, h5, h6, .brand-font {
+            font-family: 'Fredoka', sans-serif;
+        }
+        
+        /* Playful Blob Pattern */
+        .bg-pattern {
+            background-color: #FFFDF5;
+            background-image: radial-gradient(#FDE68A 1px, transparent 1px), radial-gradient(#BAE6FD 1px, transparent 1px);
+            background-size: 40px 40px;
+            background-position: 0 0, 20px 20px;
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #FFF7ED; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #FDBA74; 
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #EA580C; 
+        }
+
+        /* Mobile Menu Animation */
+        .mobile-menu {
+            transform: translateX(100%);
+            transition: transform 0.3s ease-in-out;
+        }
+        
+        .mobile-menu.open {
+            transform: translateX(0);
+        }
+        
+        .menu-overlay {
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease-in-out, visibility 0.3s;
+        }
+        
+        .menu-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        /* Team Building Specific Styles */
+        .activity-card {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .activity-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        
+        .team-building-badge {
+            background: linear-gradient(135deg, #3B82F6, #8B5CF6);
+        }
+        
+        .skill-progress {
+            height: 8px;
+            border-radius: 4px;
+            background: #E5E7EB;
+            overflow: hidden;
+        }
+        
+        .skill-progress-fill {
+            height: 100%;
+            border-radius: 4px;
+            background: linear-gradient(90deg, #10B981, #3B82F6);
+            transition: width 1s ease-in-out;
+        }
+    </style>
+</head>
+<body class="bg-pattern text-slate-600 antialiased selection:bg-orange-200 selection:text-orange-900">
+
+    <!-- Navbar -->
+    <nav class="fixed w-full z-50 top-0 transition-all duration-300 backdrop-blur-md bg-white/80 border-b-2 border-slate-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center gap-2 cursor-pointer" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+                   <img src="maura wonderlab logo.png" alt="Maura Wonderlab" width="50px">
+                    <span class="brand-font text-2xl font-semibold tracking-tight text-slate-800">
+                        Maura <span class="text-orange-500">Wonderlab</span>
+                    </span>
+                </div>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="#activities" class="text-sm font-semibold text-slate-600 hover:text-orange-500 transition-colors">Activities</a>
+                    <a href="#reviews" class="text-sm font-semibold text-slate-600 hover:text-orange-500 transition-colors">Happy Campers</a>
+                    <a href="#locations" class="text-sm font-semibold text-slate-600 hover:text-orange-500 transition-colors">Locations</a>
+                    <a href="#pricing" class="text-sm font-semibold text-slate-600 hover:text-orange-500 transition-colors">Pricing</a>
+                    <button class="bg-indigo-500 hover:bg-indigo-600 text-white px-5 py-2.5 rounded-full text-sm font-semibold transition-all shadow-[0px_4px_0px_0px_rgba(67,56,202,1)] hover:shadow-[0px_2px_0px_0px_rgba(67,56,202,1)] hover:translate-y-[2px]">
+                        Book an Adventure
+                    </button>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobileMenuButton" class="text-slate-600 hover:text-orange-500 p-2">
+                        <iconify-icon icon="lucide:menu" width="28" stroke-width="1.5"></iconify-icon>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu Overlay -->
+    <div id="menuOverlay" class="menu-overlay fixed inset-0 bg-black/50 z-40 md:hidden"></div>
+
+    <!-- Mobile Menu -->
+    <div id="mobileMenu" class="mobile-menu fixed top-0 right-0 h-full w-64 bg-white z-50 shadow-2xl md:hidden p-6">
+        <div class="flex justify-between items-center mb-8">
+            <div class="flex items-center gap-2">
+                <div class="h-8 w-8 bg-orange-400 rounded-lg flex items-center justify-center text-white">
+                    <iconify-icon icon="lucide:tent" width="18"></iconify-icon>
+                </div>
+                <span class="brand-font text-xl font-semibold text-slate-800">Maura <span class="text-orange-500">Wonderlab</span></span>
+            </div>
+            <button id="closeMenuButton" class="text-slate-600 hover:text-orange-500 p-2">
+                <iconify-icon icon="lucide:x" width="24" stroke-width="1.5"></iconify-icon>
+            </button>
+        </div>
+        
+        <div class="space-y-6">
+            <a href="#activities" class="block py-3 text-slate-700 font-semibold border-b border-slate-100" onclick="closeMobileMenu()">Activities</a>
+            <a href="#reviews" class="block py-3 text-slate-700 font-semibold border-b border-slate-100" onclick="closeMobileMenu()">Happy Campers</a>
+            <a href="#locations" class="block py-3 text-slate-700 font-semibold border-b border-slate-100" onclick="closeMobileMenu()">Locations</a>
+            <a href="#pricing" class="block py-3 text-slate-700 font-semibold border-b border-slate-100" onclick="closeMobileMenu()">Pricing</a>
+            <div class="pt-4">
+                <button class="w-full bg-indigo-500 hover:bg-indigo-600 text-white px-5 py-3 rounded-full text-sm font-semibold transition-all">
+                    Book an Adventure
+                </button>
+            </div>
+        </div>
+        
+        <div class="absolute bottom-8 left-6 right-6">
+            <p class="text-sm text-slate-500 mb-4">Contact us:</p>
+            <div class="flex items-center gap-2 text-slate-700 mb-2">
+                <iconify-icon icon="lucide:phone" width="16"></iconify-icon>
+                <span class="text-sm">+91 77680 31411</span>
+            </div>
+            <div class="flex items-center gap-2 text-slate-700">
+                <iconify-icon icon="lucide:mail" width="16"></iconify-icon>
+                <span class="text-sm">maurawonderlab@gmail.com</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main class="pt-20">
+        <!-- Hero Section -->
+        <section class="relative overflow-hidden">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <div class="inline-flex items-center gap-2 bg-blue-50 text-blue-700 px-4 py-2 rounded-full text-sm font-semibold mb-6">
+                            <iconify-icon icon="lucide:users" width="18"></iconify-icon>
+                            <span>Team Building Specialists</span>
+                        </div>
+                        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-800 mb-6">
+                            Team Building <span class="text-orange-500">Camps</span> for Kids
+                        </h1>
+                        <p class="text-xl text-slate-600 mb-8">
+                            Transform your child into a <span class="font-bold text-blue-600">team player, leader, and communicator</span> through our specially designed group adventure camps in Virar, Vasai, and Nallasopara.
+                        </p>
+                        <div class="flex flex-wrap gap-4">
+                            <button class="bg-indigo-500 hover:bg-indigo-600 text-white px-8 py-3 rounded-full text-base font-semibold transition-all shadow-[0px_6px_0px_0px_rgba(67,56,202,1)] hover:shadow-[0px_3px_0px_0px_rgba(67,56,202,1)] hover:translate-y-[3px]">
+                                Book Team Camp
+                            </button>
+                            <button class="border-2 border-orange-400 text-orange-600 hover:bg-orange-50 px-8 py-3 rounded-full text-base font-semibold transition-colors">
+                                Download Brochure
+                            </button>
+                        </div>
+                    </div>
+                    <div class="relative">
+                        <div class="bg-gradient-to-br from-blue-400 to-purple-500 rounded-3xl h-96 lg:h-[500px] overflow-hidden shadow-2xl">
+                            <div class="absolute inset-0 flex items-center justify-center">
+                                <div class="text-white text-center p-8">
+                                    <iconify-icon icon="lucide:users" width="80" stroke-width="1"></iconify-icon>
+                                    <h3 class="text-2xl font-bold mt-4">Building Tomorrow's Leaders Today</h3>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Floating elements -->
+                        <div class="absolute -top-4 -left-4 bg-yellow-300 text-slate-800 px-4 py-2 rounded-xl font-bold shadow-lg">
+                            Age 6-14 Years
+                        </div>
+                        <div class="absolute -bottom-4 -right-4 bg-green-400 text-white px-4 py-2 rounded-xl font-bold shadow-lg">
+                            50+ Activities
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Development Section -->
+        <section class="bg-gradient-to-r from-blue-50 to-indigo-50 py-16">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-slate-800 mb-4">
+                        Skills Your Child Will <span class="text-orange-500">Develop</span>
+                    </h2>
+                    <p class="text-lg text-slate-600 max-w-3xl mx-auto">
+                        Our team-building camps focus on holistic development through carefully structured group activities
+                    </p>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <!-- Skill 1 -->
+                    <div class="bg-white rounded-2xl p-6 shadow-lg">
+                        <div class="h-14 w-14 bg-blue-100 rounded-xl flex items-center justify-center text-blue-600 mb-4">
+                            <iconify-icon icon="lucide:message-circle" width="28"></iconify-icon>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-800 mb-3">Communication Skills</h3>
+                        <p class="text-slate-600 mb-4">Learn to express ideas clearly, listen actively, and give constructive feedback through guided activities.</p>
+                        <div class="skill-progress">
+                            <div class="skill-progress-fill" style="width: 95%"></div>
+                        </div>
+                    </div>
+                    
+                    <!-- Skill 2 -->
+                    <div class="bg-white rounded-2xl p-6 shadow-lg">
+                        <div class="h-14 w-14 bg-green-100 rounded-xl flex items-center justify-center text-green-600 mb-4">
+                            <iconify-icon icon="lucide:heart-handshake" width="28"></iconify-icon>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-800 mb-3">Cooperation & Teamwork</h3>
+                        <p class="text-slate-600 mb-4">Develop the ability to work effectively with others towards common goals through collaborative challenges.</p>
+                        <div class="skill-progress">
+                            <div class="skill-progress-fill" style="width: 90%"></div>
+                        </div>
+                    </div>
+                    
+                    <!-- Skill 3 -->
+                    <div class="bg-white rounded-2xl p-6 shadow-lg">
+                        <div class="h-14 w-14 bg-purple-100 rounded-xl flex items-center justify-center text-purple-600 mb-4">
+                            <iconify-icon icon="lucide:crown" width="28"></iconify-icon>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-800 mb-3">Leadership Abilities</h3>
+                        <p class="text-slate-600 mb-4">Build confidence in taking initiative, making decisions, and motivating peers in group settings.</p>
+                        <div class="skill-progress">
+                            <div class="skill-progress-fill" style="width: 88%"></div>
+                        </div>
+                    </div>
+                    
+                    <!-- Skill 4 -->
+                    <div class="bg-white rounded-2xl p-6 shadow-lg">
+                        <div class="h-14 w-14 bg-orange-100 rounded-xl flex items-center justify-center text-orange-600 mb-4">
+                            <iconify-icon icon="lucide:lightbulb" width="28"></iconify-icon>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-800 mb-3">Problem-Solving</h3>
+                        <p class="text-slate-600 mb-4">Enhance critical thinking and creative solution-finding skills through group puzzles and challenges.</p>
+                        <div class="skill-progress">
+                            <div class="skill-progress-fill" style="width: 92%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Team Building Activities Section -->
+        <section id="activities" class="py-16">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-slate-800 mb-4">
+                        Team Building <span class="text-orange-500">Activities</span> for Children
+                    </h2>
+                    <p class="text-lg text-slate-600 max-w-3xl mx-auto">
+                        Our curated selection of group activities designed specifically for developing teamwork and leadership in children
+                    </p>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Activity 1 -->
+                    <div class="activity-card bg-white rounded-2xl overflow-hidden shadow-xl border border-slate-100">
+                        <div class="h-48 bg-gradient-to-r from-blue-400 to-cyan-400 relative overflow-hidden">
+                            <div class="absolute top-4 left-4 team-building-badge text-white px-3 py-1 rounded-full text-sm font-bold">
+                                Communication Focus
+                            </div>
+                            <div class="absolute inset-0 flex items-center justify-center">
+                                <iconify-icon icon="lucide:message-square" width="60" class="text-white opacity-80"></iconify-icon>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-slate-800 mb-2">Blindfold Obstacle Course</h3>
+                            <p class="text-slate-600 mb-4">One team member is blindfolded while others guide them verbally through an obstacle course. Develops trust and clear communication.</p>
+                            <div class="flex items-center justify-between">
+                                <div class="flex items-center gap-2 text-sm text-slate-500">
+                                    <iconify-icon icon="lucide:clock" width="16"></iconify-icon>
+                                    <span>45-60 mins</span>
+                                </div>
+                                <div class="flex items-center gap-2 text-sm text-slate-500">
+                                    <iconify-icon icon="lucide:users" width="16"></iconify-icon>
+                                    <span>4-6 kids per team</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Activity 2 -->
+                    <div class="activity-card bg-white rounded-2xl overflow-hidden shadow-xl border border-slate-100">
+                        <div class="h-48 bg-gradient-to-r from-green-400 to-emerald-500 relative overflow-hidden">
+                            <div class="absolute top-4 left-4 team-building-badge text-white px-3 py-1 rounded-full text-sm font-bold">
+                                Problem Solving
+                            </div>
+                            <div class="absolute inset-0 flex items-center justify-center">
+                                <iconify-icon icon="lucide:puzzle" width="60" class="text-white opacity-80"></iconify-icon>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-slate-800 mb-2">Escape Room Challenge</h3>
+                            <p class="text-slate-600 mb-4">Teams work together to solve puzzles, find clues, and "escape" within a time limit. Enhances collaboration and critical thinking.</p>
+                            <div class="flex items-center justify-between">
+                                <div class="flex items-center gap-2 text-sm text-slate-500">
+                                    <iconify-icon icon="lucide:clock" width="16"></iconify-icon>
+                                    <span>60-75 mins</span>
+                                </div>
+                                <div class="flex items-center gap-2 text-sm text-slate-500">
+                                    <iconify-icon icon="lucide:users" width="16"></iconify-icon>
+                                    <span>5-7 kids per team</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Activity 3 -->
+                    <div class="activity-card bg-white rounded-2xl overflow-hidden shadow-xl border border-slate-100">
+                        <div class="h-48 bg-gradient-to-r from-purple-400 to-pink-500 relative overflow-hidden">
+                            <div class="absolute top-4 left-4 team-building-badge text-white px-3 py-1 rounded-full text-sm font-bold">
+                                Leadership
+                            </div>
+                            <div class="absolute inset-0 flex items-center justify-center">
+                                <iconify-icon icon="lucide:flag" width="60" class="text-white opacity-80"></iconify-icon>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-slate-800 mb-2">Team Treasure Hunt</h3>
+                            <p class="text-slate-600 mb-4">Navigate through clues spread across the campsite, requiring strategic planning and role delegation among team members.</p>
+                            <div class="flex items-center justify-between">
+                                <div class="flex items-center gap-2 text-sm text-slate-500">
+                                    <iconify-icon icon="lucide:clock" width="16"></iconify-icon>
+                                    <span>90-120 mins</span>
+                                </div>
+                                <div class="flex items-center gap-2 text-sm text-slate-500">
+                                    <iconify-icon icon="lucide:users" width="16"></iconify-icon>
+                                    <span>6-8 kids per team</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Activity 4 -->
+                    <div class="activity-card bg-white rounded-2xl overflow-hidden shadow-xl border border-slate-100">
+                        <div class="h-48 bg-gradient-to-r from-orange-400 to-red-400 relative overflow-hidden">
+                            <div class="absolute top-4 left-4 team-building-badge text-white px-3 py-1 rounded-full text-sm font-bold">
+                                Coordination
+                            </div>
+                            <div class="absolute inset-0 flex items-center justify-center">
+                                <iconify-icon icon="lucide:git-merge" width="60" class="text-white opacity-80"></iconify-icon>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-slate-800 mb-2">Human Knot Challenge</h3>
+                            <p class="text-slate-600 mb-4">Team members stand in a circle, grab random hands, and must untangle themselves without letting go. Builds patience and coordination.</p>
+                            <div class="flex items-center justify-between">
+                                <div class="flex items-center gap-2 text-sm text-slate-500">
+                                    <iconify-icon icon="lucide:clock" width="16"></iconify-icon>
+                                    <span>30-45 mins</span>
+                                </div>
+                                <div class="flex items-center gap-2 text-sm text-slate-500">
+                                    <iconify-icon icon="lucide:users" width="16"></iconify-icon>
+                                    <span>8-10 kids per team</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Activity 5 -->
+                    <div class="activity-card bg-white rounded-2xl overflow-hidden shadow-xl border border-slate-100">
+                        <div class="h-48 bg-gradient-to-r from-yellow-400 to-amber-500 relative overflow-hidden">
+                            <div class="absolute top-4 left-4 team-building-badge text-white px-3 py-1 rounded-full text-sm font-bold">
+                                Creativity
+                            </div>
+                            <div class="absolute inset-0 flex items-center justify-center">
+                                <iconify-icon icon="lucide:castle" width="60" class="text-white opacity-80"></iconify-icon>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-slate-800 mb-2">Fort Building Competition</h3>
+                            <p class="text-slate-600 mb-4">Teams use provided materials to build the most creative and sturdy fort. Encourages planning, resource management, and creative collaboration.</p>
+                            <div class="flex items-center justify-between">
+                                <div class="flex items-center gap-2 text-sm text-slate-500">
+                                    <iconify-icon icon="lucide:clock" width="16"></iconify-icon>
+                                    <span>60-90 mins</span>
+                                </div>
+                                <div class="flex items-center gap-2 text-sm text-slate-500">
+                                    <iconify-icon icon="lucide:users" width="16"></iconify-icon>
+                                    <span>5-7 kids per team</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Activity 6 -->
+                    <div class="activity-card bg-white rounded-2xl overflow-hidden shadow-xl border border-slate-100">
+                        <div class="h-48 bg-gradient-to-r from-cyan-400 to-blue-500 relative overflow-hidden">
+                            <div class="absolute top-4 left-4 team-building-badge text-white px-3 py-1 rounded-full text-sm font-bold">
+                                Trust Building
+                            </div>
+                            <div class="absolute inset-0 flex items-center justify-center">
+                                <iconify-icon icon="lucide:shield" width="60" class="text-white opacity-80"></iconify-icon>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-slate-800 mb-2">Trust Fall & Support Games</h3>
+                            <p class="text-slate-600 mb-4">A series of exercises where children learn to trust their teammates, including guided trust falls and balance challenges.</p>
+                            <div class="flex items-center justify-between">
+                                <div class="flex items-center gap-2 text-sm text-slate-500">
+                                    <iconify-icon icon="lucide:clock" width="16"></iconify-icon>
+                                    <span>45-60 mins</span>
+                                </div>
+                                <div class="flex items-center gap-2 text-sm text-slate-500">
+                                    <iconify-icon icon="lucide:users" width="16"></iconify-icon>
+                                    <span>6-8 kids per team</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Camp Locations -->
+        <section id="locations" class="py-16 bg-gradient-to-b from-white to-blue-50">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-slate-800 mb-4">
+                        Team Building Camp <span class="text-orange-500">Locations</span>
+                    </h2>
+                    <p class="text-lg text-slate-600 max-w-3xl mx-auto">
+                        We conduct specialized team-building camps at multiple convenient locations across Mumbai suburbs
+                    </p>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Location 1 -->
+                    <div class="bg-white rounded-2xl p-6 shadow-lg border border-slate-200">
+                        <div class="h-12 w-12 bg-blue-100 rounded-xl flex items-center justify-center text-blue-600 mb-4">
+                            <iconify-icon icon="lucide:map-pin" width="24"></iconify-icon>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-800 mb-2">Virar Team Building Camp</h3>
+                        <p class="text-slate-600 mb-4">Our flagship location with dedicated team challenge zones, obstacle courses, and indoor collaboration spaces.</p>
+                        <ul class="space-y-2 text-slate-600">
+                            <li class="flex items-center gap-2">
+                                <iconify-icon icon="lucide:check-circle" class="text-green-500"></iconify-icon>
+                                <span>5 specialized team challenge areas</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <iconify-icon icon="lucide:check-circle" class="text-green-500"></iconify-icon>
+                                <span>Indoor activity hall for all weather</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <iconify-icon icon="lucide:check-circle" class="text-green-500"></iconify-icon>
+                                <span>Maximum 40 kids per batch</span>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Location 2 -->
+                    <div class="bg-white rounded-2xl p-6 shadow-lg border border-slate-200">
+                        <div class="h-12 w-12 bg-green-100 rounded-xl flex items-center justify-center text-green-600 mb-4">
+                            <iconify-icon icon="lucide:map-pin" width="24"></iconify-icon>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-800 mb-2">Vasai Adventure Camp</h3>
+                        <p class="text-slate-600 mb-4">Nature-immersive team building with outdoor challenges set amidst greenery and natural obstacles.</p>
+                        <ul class="space-y-2 text-slate-600">
+                            <li class="flex items-center gap-2">
+                                <iconify-icon icon="lucide:check-circle" class="text-green-500"></iconify-icon>
+                                <span>Natural terrain team challenges</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <iconify-icon icon="lucide:check-circle" class="text-green-500"></iconify-icon>
+                                <span>Campfire collaboration sessions</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <iconify-icon icon="lucide:check-circle" class="text-green-500"></iconify-icon>
+                                <span>Maximum 35 kids per batch</span>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Location 3 -->
+                    <div class="bg-white rounded-2xl p-6 shadow-lg border border-slate-200">
+                        <div class="h-12 w-12 bg-orange-100 rounded-xl flex items-center justify-center text-orange-600 mb-4">
+                            <iconify-icon icon="lucide:map-pin" width="24"></iconify-icon>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-800 mb-2">Nallasopara Leadership Camp</h3>
+                        <p class="text-slate-600 mb-4">Focuses on leadership development through team simulations and role-playing scenarios.</p>
+                        <ul class="space-y-2 text-slate-600">
+                            <li class="flex items-center gap-2">
+                                <iconify-icon icon="lucide:check-circle" class="text-green-500"></iconify-icon>
+                                <span>Leadership simulation exercises</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <iconify-icon icon="lucide:check-circle" class="text-green-500"></iconify-icon>
+                                <span>Digital collaboration tools introduction</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <iconify-icon icon="lucide:check-circle" class="text-green-500"></iconify-icon>
+                                <span>Maximum 30 kids per batch</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pricing Section -->
+        <section id="pricing" class="py-16">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-slate-800 mb-4">
+                        Team Building Camp <span class="text-orange-500">Pricing</span>
+                    </h2>
+                    <p class="text-lg text-slate-600 max-w-3xl mx-auto">
+                        Flexible options designed for schools, groups, and individual participants
+                    </p>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Plan 1 -->
+                    <div class="bg-white rounded-2xl p-8 shadow-xl border-2 border-slate-200">
+                        <div class="text-center mb-6">
+                            <h3 class="text-2xl font-bold text-slate-800 mb-2">Weekend Warrior</h3>
+                            <p class="text-slate-600">Perfect for weekend team-building sessions</p>
+                        </div>
+                        <div class="text-center mb-6">
+                            <span class="text-4xl font-bold text-slate-800">₹1,499</span>
+                            <span class="text-slate-600">/child</span>
+                            <p class="text-sm text-slate-500 mt-2">Per Saturday/Sunday</p>
+                        </div>
+                        <ul class="space-y-4 mb-8">
+                            <li class="flex items-center gap-3">
+                                <iconify-icon icon="lucide:check" class="text-green-500"></iconify-icon>
+                                <span>4 hours of team activities</span>
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <iconify-icon icon="lucide:check" class="text-green-500"></iconify-icon>
+                                <span>2 specialized team challenges</span>
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <iconify-icon icon="lucide:check" class="text-green-500"></iconify-icon>
+                                <span>Snacks and refreshments</span>
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <iconify-icon icon="lucide:check" class="text-green-500"></iconify-icon>
+                                <span>Participation certificate</span>
+                            </li>
+                        </ul>
+                        <button class="w-full bg-slate-800 hover:bg-slate-900 text-white py-3 rounded-xl font-semibold transition-colors">
+                            Book Weekend Camp
+                        </button>
+                    </div>
+                    
+                    <!-- Plan 2 (Featured) -->
+                    <div class="bg-white rounded-2xl p-8 shadow-2xl border-2 border-orange-400 relative">
+                        <div class="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-orange-500 text-white px-4 py-1 rounded-full text-sm font-bold">
+                            MOST POPULAR
+                        </div>
+                        <div class="text-center mb-6">
+                            <h3 class="text-2xl font-bold text-slate-800 mb-2">Group Leader Program</h3>
+                            <p class="text-slate-600">5-day intensive team building camp</p>
+                        </div>
+                        <div class="text-center mb-6">
+                            <span class="text-4xl font-bold text-slate-800">₹6,999</span>
+                            <span class="text-slate-600">/child</span>
+                            <p class="text-sm text-slate-500 mt-2">5 consecutive days</p>
+                        </div>
+                        <ul class="space-y-4 mb-8">
+                            <li class="flex items-center gap-3">
+                                <iconify-icon icon="lucide:check" class="text-green-500"></iconify-icon>
+                                <span>All 12 team-building activities</span>
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <iconify-icon icon="lucide:check" class="text-green-500"></iconify-icon>
+                                <span>Leadership skill workshops</span>
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <iconify-icon icon="lucide:check" class="text-green-500"></iconify-icon>
+                                <span>Daily meals and snacks</span>
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <iconify-icon icon="lucide:check" class="text-green-500"></iconify-icon>
+                                <span>Progress report and certificate</span>
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <iconify-icon icon="lucide:check" class="text-green-500"></iconify-icon>
+                                <span>Take-home team project</span>
+                            </li>
+                        </ul>
+                        <button class="w-full bg-orange-500 hover:bg-orange-600 text-white py-3 rounded-xl font-semibold transition-colors">
+                            Book 5-Day Camp
+                        </button>
+                    </div>
+                    
+                    <!-- Plan 3 -->
+                    <div class="bg-white rounded-2xl p-8 shadow-xl border-2 border-slate-200">
+                        <div class="text-center mb-6">
+                            <h3 class="text-2xl font-bold text-slate-800 mb-2">School Group Package</h3>
+                            <p class="text-slate-600">Customized for school groups and institutions</p>
+                        </div>
+                        <div class="text-center mb-6">
+                            <span class="text-4xl font-bold text-slate-800">Custom</span>
+                            <span class="text-slate-600">Pricing</span>
+                            <p class="text-sm text-slate-500 mt-2">Based on group size and duration</p>
+                        </div>
+                        <ul class="space-y-4 mb-8">
+                            <li class="flex items-center gap-3">
+                                <iconify-icon icon="lucide:check" class="text-green-500"></iconify-icon>
+                                <span>Customized curriculum</span>
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <iconify-icon icon="lucide:check" class="text-green-500"></iconify-icon>
+                                <span>Teacher orientation session</span>
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <iconify-icon icon="lucide:check" class="text-green-500"></iconify-icon>
+                                <span>Transportation arrangements</span>
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <iconify-icon icon="lucide:check" class="text-green-500"></iconify-icon>
+                                <span>Detailed group assessment</span>
+                            </li>
+                        </ul>
+                        <button class="w-full bg-indigo-500 hover:bg-indigo-600 text-white py-3 rounded-xl font-semibold transition-colors">
+                            Request School Quote
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="py-16 bg-gradient-to-r from-blue-600 to-purple-600 rounded-3xl mx-4 lg:mx-8 mb-10">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">
+                    Ready to Build Team Players?
+                </h2>
+                <p class="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
+                    Book a team-building camp today and watch your child develop essential collaboration and leadership skills in a fun, engaging environment.
+                </p>
+                <div class="flex flex-wrap justify-center gap-4">
+                    <button class="bg-white text-blue-700 hover:bg-blue-50 px-8 py-3 rounded-full text-lg font-bold transition-colors shadow-lg">
+                        Call +91 77680 31411
+                    </button>
+                    <button class="bg-transparent border-2 border-white text-white hover:bg-white/10 px-8 py-3 rounded-full text-lg font-bold transition-colors">
+                        Email Inquiry
+                    </button>
+                </div>
+                <p class="text-blue-200 mt-8 text-sm">
+                    Limited spots available! Book early to secure your child's place in our next team-building camp batch.
+                </p>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-white pt-20 pb-10 rounded-t-[3rem]">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
+                <div class="col-span-1 md:col-span-2">
+                    <div class="flex items-center gap-2 mb-6">
+                         <div class="h-8 w-8 bg-orange-500 rounded-lg flex items-center justify-center text-white">
+                            <iconify-icon icon="lucide:tent" width="18"></iconify-icon>
+                        </div>
+                        <span class="brand-font text-2xl font-bold">Maura <span class="text-orange-400">Wonderlab</span></span>
+                    </div>
+                    <p class="text-slate-400 max-w-sm mb-6">Creating unforgettable childhood memories through nature, science, and adventure. The #1 Choice for Kids Camping and Team Building Activities.</p>
+                    <div class="flex gap-4">
+                        <a href="#" class="h-10 w-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-orange-500 transition-colors"><iconify-icon icon="lucide:instagram" width="20"></iconify-icon></a>
+                        <a href="#" class="h-10 w-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-blue-500 transition-colors"><iconify-icon icon="lucide:facebook" width="20"></iconify-icon></a>
+                        <a href="#" class="h-10 w-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-green-500 transition-colors"><iconify-icon icon="lucide:phone" width="20"></iconify-icon></a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="font-bold text-lg mb-6">Explore</h4>
+                    <ul class="space-y-4 text-slate-400 text-sm">
+                        <li><a href="#" class="hover:text-white transition-colors">Our Story</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Safety Protocols</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Gallery</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Become a Counselor</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-bold text-lg mb-6">Camp Locations</h4>
+                    <ul class="space-y-4 text-slate-400 text-sm">
+                        <li><a href="#" class="hover:text-white transition-colors">Camping in Virar</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Camping in Vasai</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Camping in Nallasopara</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Day Camps Mumbai</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-slate-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="text-slate-500 text-sm">© 2024 Maura Wonderlab. All rights reserved.</p>
+                <div class="flex gap-6 text-sm text-slate-500">
+                    <a href="#" class="hover:text-white">Privacy</a>
+                    <a href="#" class="hover:text-white">Terms</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Functionality
+        const mobileMenuButton = document.getElementById('mobileMenuButton');
+        const closeMenuButton = document.getElementById('closeMenuButton');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const menuOverlay = document.getElementById('menuOverlay');
+        
+        function openMobileMenu() {
+            mobileMenu.classList.add('open');
+            menuOverlay.classList.add('active');
+            document.body.style.overflow = 'hidden'; // Prevent scrolling when menu is open
+        }
+        
+        function closeMobileMenu() {
+            mobileMenu.classList.remove('open');
+            menuOverlay.classList.remove('active');
+            document.body.style.overflow = 'auto'; // Re-enable scrolling
+        }
+        
+        // Event Listeners
+        mobileMenuButton.addEventListener('click', openMobileMenu);
+        closeMenuButton.addEventListener('click', closeMobileMenu);
+        menuOverlay.addEventListener('click', closeMobileMenu);
+        
+        // Close menu when clicking on any menu link
+        document.querySelectorAll('#mobileMenu a').forEach(link => {
+            link.addEventListener('click', closeMobileMenu);
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                const href = this.getAttribute('href');
+                
+                // Only handle internal anchor links (not external links)
+                if (href === '#' || href.startsWith('#') && href.length > 1) {
+                    e.preventDefault();
+                    
+                    const targetId = href.substring(1);
+                    const targetElement = document.getElementById(targetId);
+                    
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80, // Adjust for navbar height
+                            behavior: 'smooth'
+                        });
+                    }
+                }
+            });
+        });
+        
+        // Close menu on ESC key press
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && mobileMenu.classList.contains('open')) {
+                closeMobileMenu();
+            }
+        });
+        
+        // Prevent scrolling on the overlay (touch devices)
+        menuOverlay.addEventListener('touchmove', (e) => {
+            e.preventDefault();
+        }, { passive: false });
+        
+        // Add animation to activity cards on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+        
+        // Observe all activity cards for animation
+        document.querySelectorAll('.activity-card').forEach(card => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(20px)';
+            card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(card);
+        });
+        
+        // Animate skill progress bars on scroll
+        const skillObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const progressFill = entry.target.querySelector('.skill-progress-fill');
+                    const width = progressFill.style.width;
+                    progressFill.style.width = '0';
+                    setTimeout(() => {
+                        progressFill.style.width = width;
+                    }, 300);
+                }
+            });
+        }, { threshold: 0.5 });
+        
+        // Observe all skill progress containers
+        document.querySelectorAll('.skill-progress').forEach(container => {
+            skillObserver.observe(container);
+        });
+    </script>
+</body>
+</html>

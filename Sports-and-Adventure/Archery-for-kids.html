@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Archery for Kids - Sports & Adventure | Maura Wonderlab Virar, Vasai, Nallasopara</title>
+    <meta name="description" content="Maura Wonderlab offers safe, fun archery programs for kids in Virar, Nallasopara, and Vasai. Professional coaching, age-appropriate equipment, and adventure-based learning.">
+    <meta name="keywords" content="archery for kids, kids archery classes, archery training for children, sports activities for kids, adventure sports for kids, archery camp Virar, archery classes Vasai, kids sports Nallasopara, archery lessons for beginners, outdoor activities for children">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Iconify (Lucide Icons) -->
+    <script src="https://cdn.jsdelivr.net/npm/iconify-icon@1.0.8/dist/iconify-icon.min.js"></script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=Nunito:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        /* Custom Font Settings for Childish/Playful Vibe */
+        body {
+            font-family: 'Nunito', sans-serif;
+        }
+        h1, h2, h3, h4, h5, h6, .brand-font {
+            font-family: 'Fredoka', sans-serif;
+        }
+        
+        /* Playful Blob Pattern */
+        .bg-pattern {
+            background-color: #FFFDF5;
+            background-image: radial-gradient(#FDE68A 1px, transparent 1px), radial-gradient(#BAE6FD 1px, transparent 1px);
+            background-size: 40px 40px;
+            background-position: 0 0, 20px 20px;
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #FFF7ED; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #FDBA74; 
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #EA580C; 
+        }
+
+        /* Mobile Menu Animation */
+        .mobile-menu {
+            transform: translateX(100%);
+            transition: transform 0.3s ease-in-out;
+        }
+        
+        .mobile-menu.open {
+            transform: translateX(0);
+        }
+        
+        .menu-overlay {
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease-in-out, visibility 0.3s;
+        }
+        
+        .menu-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        /* Archery-specific animations */
+        @keyframes arrowFly {
+            0% { transform: translateX(-50px) rotate(0deg); opacity: 0; }
+            50% { opacity: 1; }
+            100% { transform: translateX(50px) rotate(5deg); opacity: 0; }
+        }
+        
+        .arrow-animation {
+            animation: arrowFly 2s ease-in-out infinite;
+        }
+        
+        .archery-target {
+            background: radial-gradient(circle, #DC2626 10%, #F87171 10%, #F87171 20%, #FBBF24 20%, #FBBF24 30%, #FDE68A 30%, #FDE68A 40%, #FFFFFF 40%);
+            border-radius: 50%;
+        }
+    </style>
+</head>
+<body class="bg-pattern text-slate-600 antialiased selection:bg-orange-200 selection:text-orange-900">
+
+    <!-- Navbar -->
+    <nav class="fixed w-full z-50 top-0 transition-all duration-300 backdrop-blur-md bg-white/80 border-b-2 border-slate-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center gap-2 cursor-pointer" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+                    <img src="maura wonderlab logo.png" alt="Maura Wonderlab" width="50px">
+                    <span class="brand-font text-2xl font-semibold tracking-tight text-slate-800">
+                        Maura <span class="text-orange-500">Wonderlab</span>
+                    </span>
+                </div>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="#benefits" class="text-sm font-semibold text-slate-600 hover:text-orange-500 transition-colors">Benefits</a>
+                    <a href="#programs" class="text-sm font-semibold text-slate-600 hover:text-orange-500 transition-colors">Programs</a>
+                    <a href="#safety" class="text-sm font-semibold text-slate-600 hover:text-orange-500 transition-colors">Safety</a>
+                    <a href="#booking" class="text-sm font-semibold text-slate-600 hover:text-orange-500 transition-colors">Book Now</a>
+                    <button class="bg-indigo-500 hover:bg-indigo-600 text-white px-5 py-2.5 rounded-full text-sm font-semibold transition-all shadow-[0px_4px_0px_0px_rgba(67,56,202,1)] hover:shadow-[0px_2px_0px_0px_rgba(67,56,202,1)] hover:translate-y-[2px]">
+                        Book an Adventure
+                    </button>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobileMenuButton" class="text-slate-600 hover:text-orange-500 p-2">
+                        <iconify-icon icon="lucide:menu" width="28" stroke-width="1.5"></iconify-icon>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu Overlay -->
+    <div id="menuOverlay" class="menu-overlay fixed inset-0 bg-black/50 z-40 md:hidden"></div>
+
+    <!-- Mobile Menu -->
+    <div id="mobileMenu" class="mobile-menu fixed top-0 right-0 h-full w-64 bg-white z-50 shadow-2xl md:hidden p-6">
+        <div class="flex justify-between items-center mb-8">
+            <div class="flex items-center gap-2">
+                <div class="h-8 w-8 bg-orange-400 rounded-lg flex items-center justify-center text-white">
+                    <iconify-icon icon="lucide:tent" width="18"></iconify-icon>
+                </div>
+                <span class="brand-font text-xl font-semibold text-slate-800">Maura <span class="text-orange-500">Wonderlab</span></span>
+            </div>
+            <button id="closeMenuButton" class="text-slate-600 hover:text-orange-500 p-2">
+                <iconify-icon icon="lucide:x" width="24" stroke-width="1.5"></iconify-icon>
+            </button>
+        </div>
+        
+        <div class="space-y-6">
+            <a href="#benefits" class="block py-3 text-slate-700 font-semibold border-b border-slate-100" onclick="closeMobileMenu()">Benefits</a>
+            <a href="#programs" class="block py-3 text-slate-700 font-semibold border-b border-slate-100" onclick="closeMobileMenu()">Programs</a>
+            <a href="#safety" class="block py-3 text-slate-700 font-semibold border-b border-slate-100" onclick="closeMobileMenu()">Safety</a>
+            <a href="#booking" class="block py-3 text-slate-700 font-semibold border-b border-slate-100" onclick="closeMobileMenu()">Book Now</a>
+            <div class="pt-4">
+                <button class="w-full bg-indigo-500 hover:bg-indigo-600 text-white px-5 py-3 rounded-full text-sm font-semibold transition-all">
+                    Book an Adventure
+                </button>
+            </div>
+        </div>
+        
+        <div class="absolute bottom-8 left-6 right-6">
+            <p class="text-sm text-slate-500 mb-4">Contact us:</p>
+            <div class="flex items-center gap-2 text-slate-700 mb-2">
+                <iconify-icon icon="lucide:phone" width="16"></iconify-icon>
+                <span class="text-sm">+91 77680 31411</span>
+            </div>
+            <div class="flex items-center gap-2 text-slate-700">
+                <iconify-icon icon="lucide:mail" width="16"></iconify-icon>
+                <span class="text-sm">maurawonderlab@gmail.com</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="pt-32 pb-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div>
+                <div class="inline-flex items-center gap-2 bg-orange-100 text-orange-800 px-4 py-2 rounded-full text-sm font-semibold mb-6">
+                    <iconify-icon icon="lucide:target" width="18"></iconify-icon>
+                    <span>Sports & Adventure Activity</span>
+                </div>
+                <h1 class="text-5xl md:text-6xl font-bold text-slate-800 mb-6">
+                    Archery for <span class="text-orange-500">Kids</span>
+                </h1>
+                <p class="text-xl text-slate-600 mb-8">
+                    Discover the thrill of archery! Our safe, professional, and fun archery programs teach kids focus, discipline, and confidence through the ancient sport of bow and arrow.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <button class="bg-indigo-500 hover:bg-indigo-600 text-white px-8 py-4 rounded-full text-lg font-semibold transition-all shadow-[0px_6px_0px_0px_rgba(67,56,202,1)] hover:shadow-[0px_2px_0px_0px_rgba(67,56,202,1)] hover:translate-y-[4px]">
+                        Book Archery Session
+                    </button>
+                    <button class="border-2 border-orange-400 text-orange-600 hover:bg-orange-50 px-8 py-4 rounded-full text-lg font-semibold transition-colors">
+                        <div class="flex items-center gap-2">
+                            <iconify-icon icon="lucide:play-circle" width="20"></iconify-icon>
+                            Watch Video
+                        </div>
+                    </button>
+                </div>
+            </div>
+            
+            <div class="relative">
+                <div class="bg-white rounded-3xl p-8 shadow-2xl border-2 border-orange-100">
+                    <div class="archery-target w-64 h-64 mx-auto relative">
+                        <div class="absolute -left-4 top-1/2 transform -translate-y-1/2">
+                            <div class="relative">
+                                <iconify-icon icon="lucide:arrow-right" width="40" class="text-orange-600 arrow-animation"></iconify-icon>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="absolute -bottom-6 -right-6 bg-green-100 text-green-800 p-6 rounded-2xl shadow-xl border-2 border-green-200">
+                    <div class="flex items-center gap-3">
+                        <div class="bg-green-500 text-white p-3 rounded-full">
+                            <iconify-icon icon="lucide:award" width="24"></iconify-icon>
+                        </div>
+                        <div>
+                            <p class="font-bold">Certified Coaches</p>
+                            <p class="text-sm">Professional archery instructors</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section id="benefits" class="py-20 bg-gradient-to-b from-orange-50 to-white px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-slate-800 mb-4">Why Archery is Perfect for Kids</h2>
+                <p class="text-xl text-slate-600 max-w-3xl mx-auto">Archery develops essential life skills while having fun in the great outdoors</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="bg-white p-8 rounded-3xl shadow-lg border-2 border-blue-100 hover:border-blue-300 transition-all duration-300 group hover:-translate-y-2">
+                    <div class="bg-blue-100 text-blue-800 w-16 h-16 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                        <iconify-icon icon="lucide:brain" width="28"></iconify-icon>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-800 mb-3">Focus & Concentration</h3>
+                    <p class="text-slate-600">Improves attention span, patience, and mental discipline through precise aiming techniques.</p>
+                </div>
+                
+                <div class="bg-white p-8 rounded-3xl shadow-lg border-2 border-green-100 hover:border-green-300 transition-all duration-300 group hover:-translate-y-2">
+                    <div class="bg-green-100 text-green-800 w-16 h-16 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                        <iconify-icon icon="lucide:activity" width="28"></iconify-icon>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-800 mb-3">Physical Development</h3>
+                    <p class="text-slate-600">Builds upper body strength, coordination, balance, and fine motor skills.</p>
+                </div>
+                
+                <div class="bg-white p-8 rounded-3xl shadow-lg border-2 border-purple-100 hover:border-purple-300 transition-all duration-300 group hover:-translate-y-2">
+                    <div class="bg-purple-100 text-purple-800 w-16 h-16 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                        <iconify-icon icon="lucide:shield" width="28"></iconify-icon>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-800 mb-3">Confidence Building</h3>
+                    <p class="text-slate-600">Boosts self-esteem as children see their skills improve with each session.</p>
+                </div>
+                
+                <div class="bg-white p-8 rounded-3xl shadow-lg border-2 border-red-100 hover:border-red-300 transition-all duration-300 group hover:-translate-y-2">
+                    <div class="bg-red-100 text-red-800 w-16 h-16 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                        <iconify-icon icon="lucide:users" width="28"></iconify-icon>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-800 mb-3">Social Skills</h3>
+                    <p class="text-slate-600">Encourages teamwork, sportsmanship, and communication in group activities.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Programs Section -->
+    <section id="programs" class="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+        <div class="text-center mb-16">
+            <h2 class="text-4xl font-bold text-slate-800 mb-4">Our Archery Programs</h2>
+            <p class="text-xl text-slate-600 max-w-3xl mx-auto">Age-appropriate programs designed for beginners to advanced young archers</p>
+        </div>
+        
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-16">
+            <div class="bg-gradient-to-br from-blue-50 to-cyan-50 rounded-3xl p-8 shadow-xl border-2 border-blue-200">
+                <div class="inline-flex items-center gap-2 bg-blue-500 text-white px-4 py-2 rounded-full text-sm font-semibold mb-6">
+                    <iconify-icon icon="lucide:star" width="16"></iconify-icon>
+                    <span>Ages 5-8</span>
+                </div>
+                <h3 class="text-2xl font-bold text-slate-800 mb-4">Little Archers</h3>
+                <p class="text-slate-600 mb-6">Introduction to archery with lightweight bows, foam-tipped arrows, and fun target games.</p>
+                <ul class="space-y-3 mb-8">
+                    <li class="flex items-center gap-2"><iconify-icon icon="lucide:check-circle" class="text-green-500"></iconify-icon>Soft foam bows & arrows</li>
+                    <li class="flex items-center gap-2"><iconify-icon icon="lucide:check-circle" class="text-green-500"></iconify-icon>5-10 meter distances</li>
+                    <li class="flex items-center gap-2"><iconify-icon icon="lucide:check-circle" class="text-green-500"></iconify-icon>Fun animal-shaped targets</li>
+                    <li class="flex items-center gap-2"><iconify-icon icon="lucide:check-circle" class="text-green-500"></iconify-icon>Basic stance & safety</li>
+                </ul>
+                <div class="text-center">
+                    <span class="text-3xl font-bold text-slate-800">₹800</span>
+                    <span class="text-slate-500">/session</span>
+                </div>
+            </div>
+            
+            <div class="bg-gradient-to-br from-orange-50 to-amber-50 rounded-3xl p-8 shadow-xl border-2 border-orange-200 relative transform scale-105 z-10">
+                <div class="absolute -top-3 left-1/2 transform -translate-x-1/2">
+                    <div class="bg-orange-500 text-white px-6 py-2 rounded-full text-sm font-semibold">
+                        MOST POPULAR
+                    </div>
+                </div>
+                <div class="inline-flex items-center gap-2 bg-orange-500 text-white px-4 py-2 rounded-full text-sm font-semibold mb-6">
+                    <iconify-icon icon="lucide:target" width="16"></iconify-icon>
+                    <span>Ages 9-12</span>
+                </div>
+                <h3 class="text-2xl font-bold text-slate-800 mb-4">Junior Champions</h3>
+                <p class="text-slate-600 mb-6">Proper archery techniques with recurve bows, scoring systems, and friendly competitions.</p>
+                <ul class="space-y-3 mb-8">
+                    <li class="flex items-center gap-2"><iconify-icon icon="lucide:check-circle" class="text-green-500"></iconify-icon>Recurve bows & target arrows</li>
+                    <li class="flex items-center gap-2"><iconify-icon icon="lucide:check-circle" class="text-green-500"></iconify-icon>10-15 meter distances</li>
+                    <li class="flex items-center gap-2"><iconify-icon icon="lucide:check-circle" class="text-green-500"></iconify-icon>Official scoring targets</li>
+                    <li class="flex items-center gap-2"><iconify-icon icon="lucide:check-circle" class="text-green-500"></iconify-icon>Technique & form training</li>
+                </ul>
+                <div class="text-center">
+                    <span class="text-3xl font-bold text-slate-800">₹1,200</span>
+                    <span class="text-slate-500">/session</span>
+                </div>
+            </div>
+            
+            <div class="bg-gradient-to-br from-purple-50 to-pink-50 rounded-3xl p-8 shadow-xl border-2 border-purple-200">
+                <div class="inline-flex items-center gap-2 bg-purple-500 text-white px-4 py-2 rounded-full text-sm font-semibold mb-6">
+                    <iconify-icon icon="lucide:trophy" width="16"></iconify-icon>
+                    <span>Ages 13-16</span>
+                </div>
+                <h3 class="text-2xl font-bold text-slate-800 mb-4">Advanced Archers</h3>
+                <p class="text-slate-600 mb-6">Competitive training with compound bows, advanced techniques, and tournament preparation.</p>
+                <ul class="space-y-3 mb-8">
+                    <li class="flex items-center gap-2"><iconify-icon icon="lucide:check-circle" class="text-green-500"></iconify-icon>Compound bows available</li>
+                    <li class="flex items-center gap-2"><iconify-icon icon="lucide:check-circle" class="text-green-500"></iconify-icon>15-25 meter distances</li>
+                    <li class="flex items-center gap-2"><iconify-icon icon="lucide:check-circle" class="text-green-500"></iconify-icon>Tournament-style rounds</li>
+                    <li class="flex items-center gap-2"><iconify-icon icon="lucide:check-circle" class="text-green-500"></iconify-icon>Advanced coaching</li>
+                </ul>
+                <div class="text-center">
+                    <span class="text-3xl font-bold text-slate-800">₹1,500</span>
+                    <span class="text-slate-500">/session</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="text-center">
+            <p class="text-slate-600 mb-6">All programs include equipment, safety gear, and certified instructor guidance</p>
+            <button class="bg-indigo-500 hover:bg-indigo-600 text-white px-8 py-4 rounded-full text-lg font-semibold transition-all shadow-[0px_6px_0px_0px_rgba(67,56,202,1)] hover:shadow-[0px_2px_0px_0px_rgba(67,56,202,1)] hover:translate-y-[4px]">
+                View All Program Details
+            </button>
+        </div>
+    </section>
+
+    <!-- Safety Section -->
+    <section id="safety" class="py-20 bg-gradient-to-b from-white to-emerald-50 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h2 class="text-4xl font-bold text-slate-800 mb-6">Safety First: Our Commitment</h2>
+                    <p class="text-lg text-slate-600 mb-8">At Maura Wonderlab, safety is our top priority. Our archery programs are designed with multiple layers of protection for your child.</p>
+                    
+                    <div class="space-y-6">
+                        <div class="flex items-start gap-4">
+                            <div class="bg-emerald-100 text-emerald-800 p-3 rounded-xl flex-shrink-0">
+                                <iconify-icon icon="lucide:shield-check" width="24"></iconify-icon>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-bold text-slate-800 mb-2">Certified Instructors</h4>
+                                <p class="text-slate-600">All coaches are certified in archery instruction and pediatric first aid/CPR.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start gap-4">
+                            <div class="bg-emerald-100 text-emerald-800 p-3 rounded-xl flex-shrink-0">
+                                <iconify-icon icon="lucide:shield" width="24"></iconify-icon>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-bold text-slate-800 mb-2">Age-Appropriate Equipment</h4>
+                                <p class="text-slate-600">Specially designed bows with low draw weights and soft-tip arrows for beginners.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start gap-4">
+                            <div class="bg-emerald-100 text-emerald-800 p-3 rounded-xl flex-shrink-0">
+                                <iconify-icon icon="lucide:users" width="24"></iconify-icon>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-bold text-slate-800 mb-2">1:6 Instructor Ratio</h4>
+                                <p class="text-slate-600">Small group sizes ensure individual attention and immediate safety supervision.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start gap-4">
+                            <div class="bg-emerald-100 text-emerald-800 p-3 rounded-xl flex-shrink-0">
+                                <iconify-icon icon="lucide:alert-circle" width="24"></iconify-icon>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-bold text-slate-800 mb-2">Safety Protocols</h4>
+                                <p class="text-slate-600">Strict range rules, safety barriers, and emergency procedures are always in place.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-3xl p-8 shadow-2xl border-2 border-emerald-200">
+                    <div class="text-center mb-8">
+                        <div class="inline-flex items-center justify-center w-20 h-20 bg-emerald-100 text-emerald-800 rounded-2xl mb-6">
+                            <iconify-icon icon="lucide:file-check" width="32"></iconify-icon>
+                        </div>
+                        <h3 class="text-2xl font-bold text-slate-800 mb-4">Safety Checklist</h3>
+                    </div>
+                    
+                    <div class="space-y-4">
+                        <div class="flex items-center justify-between p-4 bg-emerald-50 rounded-xl">
+                            <span class="font-semibold text-slate-700">Arm Guards</span>
+                            <iconify-icon icon="lucide:check-circle" class="text-green-500" width="24"></iconify-icon>
+                        </div>
+                        <div class="flex items-center justify-between p-4 bg-emerald-50 rounded-xl">
+                            <span class="font-semibold text-slate-700">Finger Tabs</span>
+                            <iconify-icon icon="lucide:check-circle" class="text-green-500" width="24"></iconify-icon>
+                        </div>
+                        <div class="flex items-center justify-between p-4 bg-emerald-50 rounded-xl">
+                            <span class="font-semibold text-slate-700">Safety Barriers</span>
+                            <iconify-icon icon="lucide:check-circle" class="text-green-500" width="24"></iconify-icon>
+                        </div>
+                        <div class="flex items-center justify-between p-4 bg-emerald-50 rounded-xl">
+                            <span class="font-semibold text-slate-700">Emergency Kit</span>
+                            <iconify-icon icon="lucide:check-circle" class="text-green-500" width="24"></iconify-icon>
+                        </div>
+                        <div class="flex items-center justify-between p-4 bg-emerald-50 rounded-xl">
+                            <span class="font-semibold text-slate-700">First Aid Certified Staff</span>
+                            <iconify-icon icon="lucide:check-circle" class="text-green-500" width="24"></iconify-icon>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Locations Section -->
+    <section class="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+        <div class="text-center mb-16">
+            <h2 class="text-4xl font-bold text-slate-800 mb-4">Archery Locations</h2>
+            <p class="text-xl text-slate-600 max-w-3xl mx-auto">Experience archery at our safe, outdoor adventure centers across the region</p>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="bg-gradient-to-br from-orange-50 to-white rounded-3xl p-8 shadow-xl border-2 border-orange-200">
+                <div class="h-48 bg-gradient-to-r from-orange-400 to-amber-400 rounded-2xl mb-6 flex items-center justify-center">
+                    <iconify-icon icon="lucide:map-pin" width="48" class="text-white"></iconify-icon>
+                </div>
+                <h3 class="text-2xl font-bold text-slate-800 mb-4">Virar Adventure Center</h3>
+                <p class="text-slate-600 mb-6">Our flagship location with dedicated archery ranges, beginner zones, and advanced lanes.</p>
+                <div class="space-y-3">
+                    <div class="flex items-center gap-2 text-slate-700">
+                        <iconify-icon icon="lucide:calendar" width="18"></iconify-icon>
+                        <span>Mon-Sat: 9AM-6PM</span>
+                    </div>
+                    <div class="flex items-center gap-2 text-slate-700">
+                        <iconify-icon icon="lucide:users" width="18"></iconify-icon>
+                        <span>Max 12 kids per session</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="bg-gradient-to-br from-blue-50 to-white rounded-3xl p-8 shadow-xl border-2 border-blue-200">
+                <div class="h-48 bg-gradient-to-r from-blue-400 to-cyan-400 rounded-2xl mb-6 flex items-center justify-center">
+                    <iconify-icon icon="lucide:map-pin" width="48" class="text-white"></iconify-icon>
+                </div>
+                <h3 class="text-2xl font-bold text-slate-800 mb-4">Vasai Nature Camp</h3>
+                <p class="text-slate-600 mb-6">Forest setting with natural backdrop targets and wilderness archery experiences.</p>
+                <div class="space-y-3">
+                    <div class="flex items-center gap-2 text-slate-700">
+                        <iconify-icon icon="lucide:calendar" width="18"></iconify-icon>
+                        <span>Wed-Sun: 8AM-5PM</span>
+                    </div>
+                    <div class="flex items-center gap-2 text-slate-700">
+                        <iconify-icon icon="lucide:users" width="18"></iconify-icon>
+                        <span>Max 10 kids per session</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="bg-gradient-to-br from-green-50 to-white rounded-3xl p-8 shadow-xl border-2 border-green-200">
+                <div class="h-48 bg-gradient-to-r from-green-400 to-emerald-400 rounded-2xl mb-6 flex items-center justify-center">
+                    <iconify-icon icon="lucide:map-pin" width="48" class="text-white"></iconify-icon>
+                </div>
+                <h3 class="text-2xl font-bold text-slate-800 mb-4">Nallasopara Sports Hub</h3>
+                <p class="text-slate-600 mb-6">Modern facilities with electronic scoring and Olympic-style archery setups.</p>
+                <div class="space-y-3">
+                    <div class="flex items-center gap-2 text-slate-700">
+                        <iconify-icon icon="lucide:calendar" width="18"></iconify-icon>
+                        <span>Tue-Sat: 10AM-7PM</span>
+                    </div>
+                    <div class="flex items-center gap-2 text-slate-700">
+                        <iconify-icon icon="lucide:users" width="18"></iconify-icon>
+                        <span>Max 15 kids per session</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Booking CTA -->
+    <section id="booking" class="py-20 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-4xl mx-auto bg-gradient-to-r from-indigo-500 to-purple-600 rounded-3xl p-12 text-center text-white shadow-2xl">
+            <h2 class="text-4xl font-bold mb-6">Ready for the Archery Adventure?</h2>
+            <p class="text-xl mb-8 opacity-90">Book your child's first archery session today and watch them hit the bullseye!</p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
+                <div class="bg-white/20 p-6 rounded-2xl backdrop-blur-sm">
+                    <div class="text-3xl font-bold mb-2">500+</div>
+                    <div>Kids Trained</div>
+                </div>
+                <div class="bg-white/20 p-6 rounded-2xl backdrop-blur-sm">
+                    <div class="text-3xl font-bold mb-2">100%</div>
+                    <div>Safety Record</div>
+                </div>
+                <div class="bg-white/20 p-6 rounded-2xl backdrop-blur-sm">
+                    <div class="text-3xl font-bold mb-2">4.9★</div>
+                    <div>Parent Rating</div>
+                </div>
+            </div>
+            
+            <button class="bg-white text-indigo-600 hover:bg-gray-100 px-10 py-5 rounded-full text-xl font-bold transition-all shadow-[0px_8px_0px_0px_rgba(255,255,255,0.3)] hover:shadow-[0px_4px_0px_0px_rgba(255,255,255,0.3)] hover:translate-y-[4px]">
+                Book Your Archery Session Now
+            </button>
+            
+            <p class="mt-8 opacity-80">Or call us: +91 77680 31411</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-white pt-20 pb-10 rounded-t-[3rem] mt-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
+                <div class="col-span-1 md:col-span-2">
+                    <div class="flex items-center gap-2 mb-6">
+                         <div class="h-8 w-8 bg-orange-500 rounded-lg flex items-center justify-center text-white">
+                            <iconify-icon icon="lucide:tent" width="18"></iconify-icon>
+                        </div>
+                        <span class="brand-font text-2xl font-bold">Maura <span class="text-orange-400">Wonderlab</span></span>
+                    </div>
+                    <p class="text-slate-400 max-w-sm mb-6">Creating unforgettable childhood memories through nature, science, and adventure. The #1 Choice for Kids Camping.</p>
+                    <div class="flex gap-4">
+                        <a href="#" class="h-10 w-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-orange-500 transition-colors"><iconify-icon icon="lucide:instagram" width="20"></iconify-icon></a>
+                        <a href="#" class="h-10 w-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-blue-500 transition-colors"><iconify-icon icon="lucide:facebook" width="20"></iconify-icon></a>
+                        <a href="#" class="h-10 w-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-green-500 transition-colors"><iconify-icon icon="lucide:phone" width="20"></iconify-icon></a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="font-bold text-lg mb-6">Explore</h4>
+                    <ul class="space-y-4 text-slate-400 text-sm">
+                        <li><a href="#" class="hover:text-white transition-colors">Our Story</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Safety Protocols</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Gallery</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Become a Counselor</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-bold text-lg mb-6">Camp Locations</h4>
+                    <ul class="space-y-4 text-slate-400 text-sm">
+                        <li><a href="#" class="hover:text-white transition-colors">Camping in Virar</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Camping in Vasai</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Camping in Nallasopara</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Day Camps Mumbai</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-slate-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="text-slate-500 text-sm">© 2024 Maura Wonderlab. All rights reserved.</p>
+                <div class="flex gap-6 text-sm text-slate-500">
+                    <a href="#" class="hover:text-white">Privacy</a>
+                    <a href="#" class="hover:text-white">Terms</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Functionality
+        const mobileMenuButton = document.getElementById('mobileMenuButton');
+        const closeMenuButton = document.getElementById('closeMenuButton');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const menuOverlay = document.getElementById('menuOverlay');
+        
+        function openMobileMenu() {
+            mobileMenu.classList.add('open');
+            menuOverlay.classList.add('active');
+            document.body.style.overflow = 'hidden'; // Prevent scrolling when menu is open
+        }
+        
+        function closeMobileMenu() {
+            mobileMenu.classList.remove('open');
+            menuOverlay.classList.remove('active');
+            document.body.style.overflow = 'auto'; // Re-enable scrolling
+        }
+        
+        // Event Listeners
+        mobileMenuButton.addEventListener('click', openMobileMenu);
+        closeMenuButton.addEventListener('click', closeMobileMenu);
+        menuOverlay.addEventListener('click', closeMobileMenu);
+        
+        // Close menu when clicking on any menu link
+        document.querySelectorAll('#mobileMenu a').forEach(link => {
+            link.addEventListener('click', closeMobileMenu);
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                const href = this.getAttribute('href');
+                
+                // Only handle internal anchor links (not external links)
+                if (href === '#' || href.startsWith('#') && href.length > 1) {
+                    e.preventDefault();
+                    
+                    const targetId = href.substring(1);
+                    const targetElement = document.getElementById(targetId);
+                    
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80, // Adjust for navbar height
+                            behavior: 'smooth'
+                        });
+                    }
+                }
+            });
+        });
+        
+        // Close menu on ESC key press
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && mobileMenu.classList.contains('open')) {
+                closeMobileMenu();
+            }
+        });
+        
+        // Prevent scrolling on the overlay (touch devices)
+        menuOverlay.addEventListener('touchmove', (e) => {
+            e.preventDefault();
+        }, { passive: false });
+        
+        // Add animation to cards on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+        
+        // Observe all cards for animation
+        document.querySelectorAll('.group').forEach(card => {
+            card.style.opacity = '0.9';
+            card.style.transform = 'translateY(10px)';
+            card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+            observer.observe(card);
+        });
+        
+        // Booking button functionality
+        document.querySelectorAll('button').forEach(button => {
+            if (button.textContent.includes('Book') || button.textContent.includes('Session')) {
+                button.addEventListener('click', function() {
+                    alert('Thank you for your interest in Maura Wonderlab Archery! Our team will contact you shortly to confirm your booking.');
+                });
+            }
+        });
+    </script>
+</body>
+</html>

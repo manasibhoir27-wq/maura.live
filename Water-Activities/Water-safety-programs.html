@@ -1,0 +1,880 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Water Safety & Adventure Sports | Maura Wonderlab Kids Camping</title>
+    <meta name="description" content="Water safety programs and adventure sports for kids at Maura Wonderlab. Swimming, kayaking, rock climbing, zip-lining and survival skills in Virar, Vasai, Nallasopara.">
+    <meta name="keywords" content="water safety programs for kids, adventure sports for children, kids swimming lessons, kayaking for kids, rock climbing camp, survival skills training, outdoor adventure activities, kids water safety camp">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Iconify (Lucide Icons) -->
+    <script src="https://cdn.jsdelivr.net/npm/iconify-icon@1.0.8/dist/iconify-icon.min.js"></script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=Nunito:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        /* Custom Font Settings for Childish/Playful Vibe */
+        body {
+            font-family: 'Nunito', sans-serif;
+        }
+        h1, h2, h3, h4, h5, h6, .brand-font {
+            font-family: 'Fredoka', sans-serif;
+        }
+        
+        /* Playful Blob Pattern */
+        .bg-pattern {
+            background-color: #FFFDF5;
+            background-image: radial-gradient(#FDE68A 1px, transparent 1px), radial-gradient(#BAE6FD 1px, transparent 1px);
+            background-size: 40px 40px;
+            background-position: 0 0, 20px 20px;
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #FFF7ED; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #FDBA74; 
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #EA580C; 
+        }
+
+        /* Mobile Menu Animation */
+        .mobile-menu {
+            transform: translateX(100%);
+            transition: transform 0.3s ease-in-out;
+        }
+        
+        .mobile-menu.open {
+            transform: translateX(0);
+        }
+        
+        .menu-overlay {
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease-in-out, visibility 0.3s;
+        }
+        
+        .menu-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        /* Water-themed gradient */
+        .water-gradient {
+            background: linear-gradient(135deg, #1e40af 0%, #0ea5e9 50%, #22d3ee 100%);
+        }
+        
+        /* Adventure sports card hover effects */
+        .adventure-card {
+            transition: all 0.3s ease;
+        }
+        
+        .adventure-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* Water safety highlight */
+        .water-safety-highlight {
+            background: linear-gradient(120deg, #22d3ee 0%, #a5f3fc 100%);
+        }
+    </style>
+</head>
+<body class="bg-pattern text-slate-600 antialiased selection:bg-blue-200 selection:text-blue-900">
+
+    <!-- Navbar -->
+    <nav class="fixed w-full z-50 top-0 transition-all duration-300 backdrop-blur-md bg-white/80 border-b-2 border-slate-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center gap-2 cursor-pointer" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+                    <img src="maura wonderlab logo.png" alt="Maura Wonderlab" width="50px">
+                    <span class="brand-font text-2xl font-semibold tracking-tight text-slate-800">
+                        Maura <span class="text-blue-500">Wonderlab</span>
+                    </span>
+                </div>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="#water-safety" class="text-sm font-semibold text-slate-600 hover:text-blue-500 transition-colors">Water Safety</a>
+                    <a href="#adventure-sports" class="text-sm font-semibold text-slate-600 hover:text-blue-500 transition-colors">Adventure Sports</a>
+                    <a href="#activities" class="text-sm font-semibold text-slate-600 hover:text-blue-500 transition-colors">Activities</a>
+                    <a href="#locations" class="text-sm font-semibold text-slate-600 hover:text-blue-500 transition-colors">Locations</a>
+                    <button class="bg-blue-600 hover:bg-blue-700 text-white px-5 py-2.5 rounded-full text-sm font-semibold transition-all shadow-[0px_4px_0px_0px_rgba(37,99,235,1)] hover:shadow-[0px_2px_0px_0px_rgba(37,99,235,1)] hover:translate-y-[2px]">
+                        Book Water Safety Camp
+                    </button>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobileMenuButton" class="text-slate-600 hover:text-blue-500 p-2">
+                        <iconify-icon icon="lucide:menu" width="28" stroke-width="1.5"></iconify-icon>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu Overlay -->
+    <div id="menuOverlay" class="menu-overlay fixed inset-0 bg-black/50 z-40 md:hidden"></div>
+
+    <!-- Mobile Menu -->
+    <div id="mobileMenu" class="mobile-menu fixed top-0 right-0 h-full w-64 bg-white z-50 shadow-2xl md:hidden p-6">
+        <div class="flex justify-between items-center mb-8">
+            <div class="flex items-center gap-2">
+                <div class="h-8 w-8 bg-blue-500 rounded-lg flex items-center justify-center text-white">
+                    <iconify-icon icon="lucide:waves" width="18"></iconify-icon>
+                </div>
+                <span class="brand-font text-xl font-semibold text-slate-800">Maura <span class="text-blue-500">Wonderlab</span></span>
+            </div>
+            <button id="closeMenuButton" class="text-slate-600 hover:text-blue-500 p-2">
+                <iconify-icon icon="lucide:x" width="24" stroke-width="1.5"></iconify-icon>
+            </button>
+        </div>
+        
+        <div class="space-y-6">
+            <a href="#water-safety" class="block py-3 text-slate-700 font-semibold border-b border-slate-100" onclick="closeMobileMenu()">Water Safety</a>
+            <a href="#adventure-sports" class="block py-3 text-slate-700 font-semibold border-b border-slate-100" onclick="closeMobileMenu()">Adventure Sports</a>
+            <a href="#activities" class="block py-3 text-slate-700 font-semibold border-b border-slate-100" onclick="closeMobileMenu()">Activities</a>
+            <a href="#locations" class="block py-3 text-slate-700 font-semibold border-b border-slate-100" onclick="closeMobileMenu()">Locations</a>
+            <div class="pt-4">
+                <button class="w-full bg-blue-600 hover:bg-blue-700 text-white px-5 py-3 rounded-full text-sm font-semibold transition-all">
+                    Book Water Safety Camp
+                </button>
+            </div>
+        </div>
+        
+        <div class="absolute bottom-8 left-6 right-6">
+            <p class="text-sm text-slate-500 mb-4">Contact us:</p>
+            <div class="flex items-center gap-2 text-slate-700 mb-2">
+                <iconify-icon icon="lucide:phone" width="16"></iconify-icon>
+                <span class="text-sm">+91 77680 31411</span>
+            </div>
+            <div class="flex items-center gap-2 text-slate-700">
+                <iconify-icon icon="lucide:mail" width="16"></iconify-icon>
+                <span class="text-sm">maurawonderlab@gmail.com</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="pt-32 pb-20 px-4 water-gradient text-white overflow-hidden">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex flex-col lg:flex-row items-center gap-12">
+                <div class="lg:w-1/2">
+                    <div class="inline-flex items-center gap-2 bg-white/20 backdrop-blur-sm rounded-full px-4 py-2 mb-6">
+                        <iconify-icon icon="lucide:shield-check" width="18"></iconify-icon>
+                        <span class="text-sm font-medium">Certified Water Safety Programs</span>
+                    </div>
+                    <h1 class="text-5xl md:text-6xl font-bold mb-6 leading-tight">
+                        Water Safety &<br>
+                        <span class="text-yellow-300">Adventure Sports</span> for Kids
+                    </h1>
+                    <p class="text-xl text-blue-100 mb-8 max-w-2xl">
+                        Building confident swimmers and brave adventurers through certified water safety programs and thrilling outdoor sports activities. Safety first, adventure always!
+                    </p>
+                    <div class="flex flex-wrap gap-4">
+                        <button class="bg-white text-blue-700 hover:bg-blue-50 px-6 py-4 rounded-full text-lg font-semibold transition-all shadow-[0px_6px_0px_0px_rgba(255,255,255,0.3)] hover:shadow-[0px_3px_0px_0px_rgba(255,255,255,0.3)] hover:translate-y-[3px]">
+                            <iconify-icon icon="lucide:calendar" class="mr-2"></iconify-icon>
+                            Book Safety Camp
+                        </button>
+                        <button class="bg-transparent border-2 border-white hover:bg-white/20 text-white px-6 py-4 rounded-full text-lg font-semibold transition-all">
+                            <iconify-icon icon="lucide:play-circle" class="mr-2"></iconify-icon>
+                            Watch Safety Demo
+                        </button>
+                    </div>
+                </div>
+                <div class="lg:w-1/2 relative">
+                    <div class="relative">
+                        <div class="absolute -top-6 -right-6 h-64 w-64 bg-yellow-300/20 rounded-full blur-3xl"></div>
+                        <div class="absolute -bottom-6 -left-6 h-64 w-64 bg-blue-300/20 rounded-full blur-3xl"></div>
+                        <div class="relative bg-white/10 backdrop-blur-sm rounded-3xl p-2 border-2 border-white/30">
+                            <div class="bg-white rounded-2xl overflow-hidden shadow-2xl">
+                                <div class="p-6 bg-gradient-to-r from-blue-500 to-cyan-400">
+                                    <h3 class="text-xl font-bold text-white">Featured Water Safety Program</h3>
+                                    <p class="text-blue-100">Junior Lifeguard Certification</p>
+                                </div>
+                                <div class="p-6">
+                                    <div class="flex items-center gap-4 mb-6">
+                                        <div class="bg-blue-100 p-3 rounded-xl">
+                                            <iconify-icon icon="lucide:swimming" width="28" class="text-blue-600"></iconify-icon>
+                                        </div>
+                                        <div>
+                                            <h4 class="font-bold text-lg">Swim & Survive Program</h4>
+                                            <p class="text-slate-600">Ages 6-14 | 4-Week Certification</p>
+                                        </div>
+                                    </div>
+                                    <div class="grid grid-cols-2 gap-4">
+                                        <div class="bg-blue-50 p-3 rounded-lg">
+                                            <div class="text-blue-700 font-bold">✅ CPR Training</div>
+                                        </div>
+                                        <div class="bg-blue-50 p-3 rounded-lg">
+                                            <div class="text-blue-700 font-bold">🏊 Rescue Techniques</div>
+                                        </div>
+                                        <div class="bg-blue-50 p-3 rounded-lg">
+                                            <div class="text-blue-700 font-bold">🚤 Boat Safety</div>
+                                        </div>
+                                        <div class="bg-blue-50 p-3 rounded-lg">
+                                            <div class="text-blue-700 font-bold">🌊 Water Confidence</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Water Safety Programs -->
+    <section id="water-safety" class="py-20 px-4">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold mb-4 text-slate-800">
+                    <span class="text-blue-500">Water Safety</span> Programs
+                </h2>
+                <p class="text-xl text-slate-600 max-w-3xl mx-auto">
+                    Certified programs designed by aquatic safety experts to teach children essential water survival skills in a fun, engaging environment.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+                <!-- Program 1 -->
+                <div class="group adventure-card bg-white rounded-3xl p-8 shadow-lg border-2 border-blue-100 hover:border-blue-300">
+                    <div class="mb-6">
+                        <div class="h-16 w-16 bg-blue-100 rounded-2xl flex items-center justify-center mb-4">
+                            <iconify-icon icon="lucide:life-buoy" width="32" class="text-blue-600"></iconify-icon>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-3 text-slate-800">Junior Lifeguard Certification</h3>
+                        <p class="text-slate-600 mb-6">Comprehensive water safety training for children aged 8-14 with certification upon completion.</p>
+                        <div class="space-y-3">
+                            <div class="flex items-center gap-2">
+                                <iconify-icon icon="lucide:check-circle" class="text-green-500"></iconify-icon>
+                                <span>Basic Rescue Techniques</span>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <iconify-icon icon="lucide:check-circle" class="text-green-500"></iconify-icon>
+                                <span>CPR & First Aid Training</span>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <iconify-icon icon="lucide:check-circle" class="text-green-500"></iconify-icon>
+                                <span>Pool & Beach Safety Rules</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pt-6 border-t border-slate-100">
+                        <div class="flex justify-between items-center">
+                            <span class="text-2xl font-bold text-blue-600">₹3,499<span class="text-sm font-normal text-slate-500"> / 4 weeks</span></span>
+                            <button class="bg-blue-500 hover:bg-blue-600 text-white px-5 py-2.5 rounded-full text-sm font-semibold transition-all">
+                                Learn More
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Program 2 -->
+                <div class="group adventure-card bg-white rounded-3xl p-8 shadow-lg border-2 border-blue-100 hover:border-blue-300">
+                    <div class="mb-6">
+                        <div class="h-16 w-16 bg-cyan-100 rounded-2xl flex items-center justify-center mb-4">
+                            <iconify-icon icon="lucide:swimming" width="32" class="text-cyan-600"></iconify-icon>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-3 text-slate-800">Swim & Survive Program</h3>
+                        <p class="text-slate-600 mb-6">Progressive swimming lessons focusing on water confidence and survival skills for all ages.</p>
+                        <div class="space-y-3">
+                            <div class="flex items-center gap-2">
+                                <iconify-icon icon="lucide:check-circle" class="text-green-500"></iconify-icon>
+                                <span>Beginner to Advanced Levels</span>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <iconify-icon icon="lucide:check-circle" class="text-green-500"></iconify-icon>
+                                <span>Floating & Treading Techniques</span>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <iconify-icon icon="lucide:check-circle" class="text-green-500"></iconify-icon>
+                                <span>Emergency Floatation Device Use</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pt-6 border-t border-slate-100">
+                        <div class="flex justify-between items-center">
+                            <span class="text-2xl font-bold text-blue-600">₹2,999<span class="text-sm font-normal text-slate-500"> / month</span></span>
+                            <button class="bg-blue-500 hover:bg-blue-600 text-white px-5 py-2.5 rounded-full text-sm font-semibold transition-all">
+                                Learn More
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Program 3 -->
+                <div class="group adventure-card bg-white rounded-3xl p-8 shadow-lg border-2 border-blue-100 hover:border-blue-300">
+                    <div class="mb-6">
+                        <div class="h-16 w-16 bg-indigo-100 rounded-2xl flex items-center justify-center mb-4">
+                            <iconify-icon icon="lucide:sailboat" width="32" class="text-indigo-600"></iconify-icon>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-3 text-slate-800">Boat & Kayak Safety</h3>
+                        <p class="text-slate-600 mb-6">Essential safety training for watercraft activities including kayaking, canoeing, and small boat handling.</p>
+                        <div class="space-y-3">
+                            <div class="flex items-center gap-2">
+                                <iconify-icon icon="lucide:check-circle" class="text-green-500"></iconify-icon>
+                                <span>Life Jacket Safety & Usage</span>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <iconify-icon icon="lucide:check-circle" class="text-green-500"></iconify-icon>
+                                <span>Capsize Recovery Techniques</span>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <iconify-icon icon="lucide:check-circle" class="text-green-500"></iconify-icon>
+                                <span>Weather & Water Condition Awareness</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pt-6 border-t border-slate-100">
+                        <div class="flex justify-between items-center">
+                            <span class="text-2xl font-bold text-blue-600">₹4,199<span class="text-sm font-normal text-slate-500"> / course</span></span>
+                            <button class="bg-blue-500 hover:bg-blue-600 text-white px-5 py-2.5 rounded-full text-sm font-semibold transition-all">
+                                Learn More
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Safety Features -->
+            <div class="water-safety-highlight rounded-3xl p-8 md:p-12 mb-16">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <h3 class="text-3xl font-bold mb-6 text-slate-800">Our Safety Commitment</h3>
+                        <p class="text-slate-700 mb-6">Every water safety program follows strict protocols with certified instructors maintaining a 1:5 instructor-to-child ratio.</p>
+                        <ul class="space-y-4">
+                            <li class="flex items-start gap-3">
+                                <iconify-icon icon="lucide:shield-check" class="text-blue-600 mt-1"></iconify-icon>
+                                <span><strong>Certified Instructors:</strong> All trainers hold Red Cross or equivalent water safety certifications</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <iconify-icon icon="lucide:shield-check" class="text-blue-600 mt-1"></iconify-icon>
+                                <span><strong>Safety Equipment:</strong> Life jackets, rescue tubes, and first aid kits always on-site</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <iconify-icon icon="lucide:shield-check" class="text-blue-600 mt-1"></iconify-icon>
+                                <span><strong>Emergency Protocols:</strong> Detailed action plans for water emergencies</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="bg-white rounded-2xl p-6 shadow-lg">
+                        <div class="flex items-center gap-4 mb-6">
+                            <div class="h-12 w-12 bg-blue-100 rounded-xl flex items-center justify-center">
+                                <iconify-icon icon="lucide:award" width="24" class="text-blue-600"></iconify-icon>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-lg">Certification & Recognition</h4>
+                                <p class="text-slate-600">Nationally recognized completion certificates</p>
+                            </div>
+                        </div>
+                        <div class="grid grid-cols-2 gap-4">
+                            <div class="bg-blue-50 p-4 rounded-xl text-center">
+                                <div class="text-3xl font-bold text-blue-700 mb-1">500+</div>
+                                <div class="text-sm text-slate-700">Kids Trained</div>
+                            </div>
+                            <div class="bg-blue-50 p-4 rounded-xl text-center">
+                                <div class="text-3xl font-bold text-blue-700 mb-1">100%</div>
+                                <div class="text-sm text-slate-700">Safety Record</div>
+                            </div>
+                            <div class="bg-blue-50 p-4 rounded-xl text-center">
+                                <div class="text-3xl font-bold text-blue-700 mb-1">15</div>
+                                <div class="text-sm text-slate-700">Certified Coaches</div>
+                            </div>
+                            <div class="bg-blue-50 p-4 rounded-xl text-center">
+                                <div class="text-3xl font-bold text-blue-700 mb-1">24/7</div>
+                                <div class="text-sm text-slate-700">Safety Supervision</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Adventure Sports Section -->
+    <section id="adventure-sports" class="py-20 px-4 bg-gradient-to-b from-white to-blue-50">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold mb-4 text-slate-800">
+                    Thrilling <span class="text-green-600">Adventure Sports</span>
+                </h2>
+                <p class="text-xl text-slate-600 max-w-3xl mx-auto">
+                    From zip-lining through forests to rock climbing challenges, our adventure sports build confidence, teamwork, and physical fitness.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+                <!-- Adventure 1 -->
+                <div class="group adventure-card bg-white rounded-2xl p-6 shadow-lg border border-slate-200 hover:border-green-300">
+                    <div class="h-12 w-12 bg-green-100 rounded-xl flex items-center justify-center mb-4">
+                        <iconify-icon icon="lucide:mountain" width="24" class="text-green-600"></iconify-icon>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-slate-800">Rock Climbing</h3>
+                    <p class="text-slate-600 mb-4 text-sm">Indoor and outdoor climbing walls with varying difficulty levels for all ages.</p>
+                    <div class="flex items-center text-sm text-slate-500">
+                        <iconify-icon icon="lucide:clock" width="14" class="mr-1"></iconify-icon>
+                        <span>2-3 hour sessions</span>
+                    </div>
+                </div>
+
+                <!-- Adventure 2 -->
+                <div class="group adventure-card bg-white rounded-2xl p-6 shadow-lg border border-slate-200 hover:border-green-300">
+                    <div class="h-12 w-12 bg-blue-100 rounded-xl flex items-center justify-center mb-4">
+                        <iconify-icon icon="lucide:anchor" width="24" class="text-blue-600"></iconify-icon>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-slate-800">Kayaking Adventures</h3>
+                    <p class="text-slate-600 mb-4 text-sm">Guided kayaking trips in calm waters with safety boats accompanying all groups.</p>
+                    <div class="flex items-center text-sm text-slate-500">
+                        <iconify-icon icon="lucide:clock" width="14" class="mr-1"></iconify-icon>
+                        <span>Half-day expeditions</span>
+                    </div>
+                </div>
+
+                <!-- Adventure 3 -->
+                <div class="group adventure-card bg-white rounded-2xl p-6 shadow-lg border border-slate-200 hover:border-green-300">
+                    <div class="h-12 w-12 bg-purple-100 rounded-xl flex items-center justify-center mb-4">
+                        <iconify-icon icon="lucide:zipper" width="24" class="text-purple-600"></iconify-icon>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-slate-800">Zip-lining</h3>
+                    <p class="text-slate-600 mb-4 text-sm">Forest zip-line courses with multiple lines and safety harness systems.</p>
+                    <div class="flex items-center text-sm text-slate-500">
+                        <iconify-icon icon="lucide:clock" width="14" class="mr-1"></iconify-icon>
+                        <span>1-2 hour sessions</span>
+                    </div>
+                </div>
+
+                <!-- Adventure 4 -->
+                <div class="group adventure-card bg-white rounded-2xl p-6 shadow-lg border border-slate-200 hover:border-green-300">
+                    <div class="h-12 w-12 bg-orange-100 rounded-xl flex items-center justify-center mb-4">
+                        <iconify-icon icon="lucide:map" width="24" class="text-orange-600"></iconify-icon>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-slate-800">Orienteering & Navigation</h3>
+                    <p class="text-slate-600 mb-4 text-sm">Map reading, compass skills, and outdoor navigation challenges.</p>
+                    <div class="flex items-center text-sm text-slate-500">
+                        <iconify-icon icon="lucide:clock" width="14" class="mr-1"></iconify-icon>
+                        <span>3-4 hour adventures</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Adventure Packages -->
+            <div class="bg-gradient-to-r from-green-500 to-emerald-600 rounded-3xl p-8 md:p-12 text-white">
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-center">
+                    <div class="lg:col-span-2">
+                        <h3 class="text-3xl font-bold mb-4">Adventure Sports Package</h3>
+                        <p class="text-green-100 mb-6">Combine multiple adventure activities in our comprehensive 5-day adventure camp package.</p>
+                        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                            <div class="bg-white/20 backdrop-blur-sm p-4 rounded-xl text-center">
+                                <div class="text-2xl font-bold">5 Days</div>
+                                <div class="text-sm">Adventure Camp</div>
+                            </div>
+                            <div class="bg-white/20 backdrop-blur-sm p-4 rounded-xl text-center">
+                                <div class="text-2xl font-bold">8+</div>
+                                <div class="text-sm">Activities</div>
+                            </div>
+                            <div class="bg-white/20 backdrop-blur-sm p-4 rounded-xl text-center">
+                                <div class="text-2xl font-bold">Ages 7-16</div>
+                                <div class="text-sm">Suitable For</div>
+                            </div>
+                            <div class="bg-white/20 backdrop-blur-sm p-4 rounded-xl text-center">
+                                <div class="text-2xl font-bold">Meals</div>
+                                <div class="text-sm">Included</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-center lg:text-right">
+                        <div class="text-5xl font-bold mb-2">₹8,999</div>
+                        <p class="text-green-200 mb-6">Complete adventure package</p>
+                        <button class="bg-white text-green-700 hover:bg-green-50 px-8 py-4 rounded-full text-lg font-semibold transition-all shadow-[0px_6px_0px_0px_rgba(255,255,255,0.3)] hover:shadow-[0px_3px_0px_0px_rgba(255,255,255,0.3)] hover:translate-y-[3px]">
+                            Book Adventure Camp
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Activities Schedule -->
+    <section id="activities" class="py-20 px-4">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold mb-4 text-slate-800">
+                    Weekly <span class="text-orange-500">Activities Schedule</span>
+                </h2>
+                <p class="text-xl text-slate-600 max-w-3xl mx-auto">
+                    Structured programs that combine water safety training with adventure sports for a balanced experience.
+                </p>
+            </div>
+
+            <div class="overflow-x-auto rounded-3xl shadow-xl mb-16">
+                <table class="w-full bg-white">
+                    <thead class="bg-blue-500 text-white">
+                        <tr>
+                            <th class="py-6 px-8 text-left rounded-tl-3xl">Day</th>
+                            <th class="py-6 px-8 text-left">Morning Session<br><span class="text-sm font-normal">(9 AM - 12 PM)</span></th>
+                            <th class="py-6 px-8 text-left">Afternoon Session<br><span class="text-sm font-normal">(1 PM - 4 PM)</span></th>
+                            <th class="py-6 px-8 text-left rounded-tr-3xl">Focus Area</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="border-b border-slate-100 hover:bg-blue-50">
+                            <td class="py-6 px-8 font-bold text-blue-600">Monday</td>
+                            <td class="py-6 px-8">Water Confidence & Basic Swimming</td>
+                            <td class="py-6 px-8">Rock Climbing Basics</td>
+                            <td class="py-6 px-8">
+                                <span class="inline-flex items-center gap-1 bg-blue-100 text-blue-700 px-3 py-1 rounded-full text-sm">
+                                    <iconify-icon icon="lucide:droplets" width="14"></iconify-icon>
+                                    Water Safety
+                                </span>
+                            </td>
+                        </tr>
+                        <tr class="border-b border-slate-100 hover:bg-blue-50">
+                            <td class="py-6 px-8 font-bold text-blue-600">Tuesday</td>
+                            <td class="py-6 px-8">Rescue Techniques & CPR Basics</td>
+                            <td class="py-6 px-8">Kayaking Introduction</td>
+                            <td class="py-6 px-8">
+                                <span class="inline-flex items-center gap-1 bg-green-100 text-green-700 px-3 py-1 rounded-full text-sm">
+                                    <iconify-icon icon="lucide:anchor" width="14"></iconify-icon>
+                                    Adventure Sports
+                                </span>
+                            </td>
+                        </tr>
+                        <tr class="border-b border-slate-100 hover:bg-blue-50">
+                            <td class="py-6 px-8 font-bold text-blue-600">Wednesday</td>
+                            <td class="py-6 px-8">Life Jacket Safety & Boat Handling</td>
+                            <td class="py-6 px-8">Zip-lining Adventure</td>
+                            <td class="py-6 px-8">
+                                <span class="inline-flex items-center gap-1 bg-purple-100 text-purple-700 px-3 py-1 rounded-full text-sm">
+                                    <iconify-icon icon="lucide:shield" width="14"></iconify-icon>
+                                    Safety & Adventure
+                                </span>
+                            </td>
+                        </tr>
+                        <tr class="border-b border-slate-100 hover:bg-blue-50">
+                            <td class="py-6 px-8 font-bold text-blue-600">Thursday</td>
+                            <td class="py-6 px-8">Advanced Swimming Strokes</td>
+                            <td class="py-6 px-8">Orienteering & Navigation</td>
+                            <td class="py-6 px-8">
+                                <span class="inline-flex items-center gap-1 bg-orange-100 text-orange-700 px-3 py-1 rounded-full text-sm">
+                                    <iconify-icon icon="lucide:compass" width="14"></iconify-icon>
+                                    Navigation Skills
+                                </span>
+                            </td>
+                        </tr>
+                        <tr class="hover:bg-blue-50">
+                            <td class="py-6 px-8 font-bold text-blue-600">Friday</td>
+                            <td class="py-6 px-8">Water Safety Assessment</td>
+                            <td class="py-6 px-8">Adventure Challenge Course</td>
+                            <td class="py-6 px-8">
+                                <span class="inline-flex items-center gap-1 bg-red-100 text-red-700 px-3 py-1 rounded-full text-sm">
+                                    <iconify-icon icon="lucide:award" width="14"></iconify-icon>
+                                    Certification Day
+                                </span>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- CTA Section -->
+            <div class="text-center">
+                <div class="bg-gradient-to-r from-blue-500 to-purple-600 rounded-3xl p-12 text-white max-w-4xl mx-auto">
+                    <h3 class="text-3xl font-bold mb-6">Ready for Adventure?</h3>
+                    <p class="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
+                        Join our certified water safety programs and adventure sports camps. Limited spots available for each batch!
+                    </p>
+                    <div class="flex flex-wrap justify-center gap-6">
+                        <button class="bg-white text-blue-700 hover:bg-blue-50 px-8 py-4 rounded-full text-lg font-semibold transition-all shadow-[0px_6px_0px_0px_rgba(255,255,255,0.3)] hover:shadow-[0px_3px_0px_0px_rgba(255,255,255,0.3)] hover:translate-y-[3px]">
+                            <iconify-icon icon="lucide:phone" class="mr-2"></iconify-icon>
+                            Call to Enroll: +91 77680 31411
+                        </button>
+                        <button class="bg-transparent border-2 border-white hover:bg-white/20 px-8 py-4 rounded-full text-lg font-semibold transition-all">
+                            Download Brochure
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Locations -->
+    <section id="locations" class="py-20 px-4 bg-gradient-to-b from-white to-slate-50">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold mb-4 text-slate-800">
+                    Available <span class="text-blue-500">Locations</span>
+                </h2>
+                <p class="text-xl text-slate-600 max-w-3xl mx-auto">
+                    Our water safety and adventure programs are available at multiple locations across the region.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Location 1 -->
+                <div class="bg-white rounded-3xl overflow-hidden shadow-xl">
+                    <div class="h-48 bg-gradient-to-r from-blue-400 to-cyan-400 relative">
+                        <div class="absolute top-4 left-4">
+                            <span class="bg-white/90 backdrop-blur-sm text-blue-700 px-4 py-2 rounded-full text-sm font-bold">Most Popular</span>
+                        </div>
+                        <div class="absolute bottom-4 left-4 text-white">
+                            <h3 class="text-2xl font-bold">Virar Camp</h3>
+                            <p class="text-blue-100">Fully equipped aquatic center</p>
+                        </div>
+                    </div>
+                    <div class="p-8">
+                        <div class="flex items-center gap-2 mb-4">
+                            <iconify-icon icon="lucide:map-pin" class="text-blue-500"></iconify-icon>
+                            <span class="font-semibold">Virar East, Near Creek</span>
+                        </div>
+                        <ul class="space-y-3 mb-6">
+                            <li class="flex items-center gap-2">
+                                <iconify-icon icon="lucide:check" class="text-green-500"></iconify-icon>
+                                <span>Olympic-sized training pool</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <iconify-icon icon="lucide:check" class="text-green-500"></iconify-icon>
+                                <span>Rock climbing wall</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <iconify-icon icon="lucide:check" class="text-green-500"></iconify-icon>
+                                <span>Kayaking lagoon</span>
+                            </li>
+                        </ul>
+                        <button class="w-full bg-blue-500 hover:bg-blue-600 text-white py-3 rounded-xl font-semibold transition-all">
+                            Book Virar Camp
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Location 2 -->
+                <div class="bg-white rounded-3xl overflow-hidden shadow-xl">
+                    <div class="h-48 bg-gradient-to-r from-green-400 to-emerald-500 relative">
+                        <div class="absolute bottom-4 left-4 text-white">
+                            <h3 class="text-2xl font-bold">Vasai Camp</h3>
+                            <p class="text-green-100">Forest adventure location</p>
+                        </div>
+                    </div>
+                    <div class="p-8">
+                        <div class="flex items-center gap-2 mb-4">
+                            <iconify-icon icon="lucide:map-pin" class="text-green-500"></iconify-icon>
+                            <span class="font-semibold">Vasai West, Forest Area</span>
+                        </div>
+                        <ul class="space-y-3 mb-6">
+                            <li class="flex items-center gap-2">
+                                <iconify-icon icon="lucide:check" class="text-green-500"></iconify-icon>
+                                <span>Natural water body training</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <iconify-icon icon="lucide:check" class="text-green-500"></iconify-icon>
+                                <span>Zip-lining course</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <iconify-icon icon="lucide:check" class="text-green-500"></iconify-icon>
+                                <span>Orienteering trails</span>
+                            </li>
+                        </ul>
+                        <button class="w-full bg-green-500 hover:bg-green-600 text-white py-3 rounded-xl font-semibold transition-all">
+                            Book Vasai Camp
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Location 3 -->
+                <div class="bg-white rounded-3xl overflow-hidden shadow-xl">
+                    <div class="h-48 bg-gradient-to-r from-purple-400 to-pink-500 relative">
+                        <div class="absolute bottom-4 left-4 text-white">
+                            <h3 class="text-2xl font-bold">Nallasopara Camp</h3>
+                            <p class="text-purple-100">All-in-one adventure park</p>
+                        </div>
+                    </div>
+                    <div class="p-8">
+                        <div class="flex items-center gap-2 mb-4">
+                            <iconify-icon icon="lucide:map-pin" class="text-purple-500"></iconify-icon>
+                            <span class="font-semibold">Nallasopara East</span>
+                        </div>
+                        <ul class="space-y-3 mb-6">
+                            <li class="flex items-center gap-2">
+                                <iconify-icon icon="lucide:check" class="text-green-500"></iconify-icon>
+                                <span>Indoor swimming complex</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <iconify-icon icon="lucide:check" class="text-green-500"></iconify-icon>
+                                <span>Adventure obstacle course</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <iconify-icon icon="lucide:check" class="text-green-500"></iconify-icon>
+                                <span>Simulated rescue training</span>
+                            </li>
+                        </ul>
+                        <button class="w-full bg-purple-500 hover:bg-purple-600 text-white py-3 rounded-xl font-semibold transition-all">
+                            Book Nallasopara Camp
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-white pt-20 pb-10 rounded-t-[3rem] mt-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
+                <div class="col-span-1 md:col-span-2">
+                    <div class="flex items-center gap-2 mb-6">
+                         <div class="h-8 w-8 bg-blue-500 rounded-lg flex items-center justify-center text-white">
+                            <iconify-icon icon="lucide:waves" width="18"></iconify-icon>
+                        </div>
+                        <span class="brand-font text-2xl font-bold">Maura <span class="text-blue-400">Wonderlab</span></span>
+                    </div>
+                    <p class="text-slate-400 max-w-sm mb-6">Creating confident swimmers and brave adventurers through certified water safety programs and thrilling adventure sports. The #1 Choice for Kids Water Safety & Adventure Camps.</p>
+                    <div class="flex gap-4">
+                        <a href="#" class="h-10 w-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-blue-500 transition-colors"><iconify-icon icon="lucide:instagram" width="20"></iconify-icon></a>
+                        <a href="#" class="h-10 w-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-blue-600 transition-colors"><iconify-icon icon="lucide:facebook" width="20"></iconify-icon></a>
+                        <a href="#" class="h-10 w-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-green-500 transition-colors"><iconify-icon icon="lucide:phone" width="20"></iconify-icon></a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="font-bold text-lg mb-6">Water Safety Programs</h4>
+                    <ul class="space-y-4 text-slate-400 text-sm">
+                        <li><a href="#" class="hover:text-white transition-colors">Junior Lifeguard Certification</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Swim & Survive Program</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Boat & Kayak Safety</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">CPR & First Aid Training</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-bold text-lg mb-6">Adventure Sports</h4>
+                    <ul class="space-y-4 text-slate-400 text-sm">
+                        <li><a href="#" class="hover:text-white transition-colors">Rock Climbing Camps</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Kayaking Adventures</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Zip-lining Courses</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Orienteering & Navigation</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-slate-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="text-slate-500 text-sm">© 2024 Maura Wonderlab Water Safety & Adventure Programs. All rights reserved.</p>
+                <div class="flex gap-6 text-sm text-slate-500">
+                    <a href="#" class="hover:text-white">Safety Certifications</a>
+                    <a href="#" class="hover:text-white">Terms</a>
+                    <a href="#" class="hover:text-white">FAQ</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Functionality
+        const mobileMenuButton = document.getElementById('mobileMenuButton');
+        const closeMenuButton = document.getElementById('closeMenuButton');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const menuOverlay = document.getElementById('menuOverlay');
+        
+        function openMobileMenu() {
+            mobileMenu.classList.add('open');
+            menuOverlay.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+        
+        function closeMobileMenu() {
+            mobileMenu.classList.remove('open');
+            menuOverlay.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+        
+        mobileMenuButton.addEventListener('click', openMobileMenu);
+        closeMenuButton.addEventListener('click', closeMobileMenu);
+        menuOverlay.addEventListener('click', closeMobileMenu);
+        
+        document.querySelectorAll('#mobileMenu a').forEach(link => {
+            link.addEventListener('click', closeMobileMenu);
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                const href = this.getAttribute('href');
+                
+                if (href === '#' || href.startsWith('#') && href.length > 1) {
+                    e.preventDefault();
+                    
+                    const targetId = href.substring(1);
+                    const targetElement = document.getElementById(targetId);
+                    
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                    }
+                }
+            });
+        });
+        
+        // Close menu on ESC key press
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && mobileMenu.classList.contains('open')) {
+                closeMobileMenu();
+            }
+        });
+        
+        // Prevent scrolling on the overlay
+        menuOverlay.addEventListener('touchmove', (e) => {
+            e.preventDefault();
+        }, { passive: false });
+        
+        // Add animation to cards on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+        
+        // Observe all cards for animation
+        document.querySelectorAll('.group').forEach(card => {
+            card.style.opacity = '0.9';
+            card.style.transform = 'translateY(10px)';
+            card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+            observer.observe(card);
+        });
+        
+        // Booking button functionality
+        document.querySelectorAll('button:contains("Book")').forEach(button => {
+            button.addEventListener('click', function() {
+                const program = this.closest('.adventure-card') ? 
+                    this.closest('.adventure-card').querySelector('h3').textContent : 
+                    'Water Safety Program';
+                
+                alert(`Thank you for your interest in "${program}"! Our team will contact you shortly at +91 77680 31411 to complete your booking.`);
+            });
+        });
+    </script>
+</body>
+</html>

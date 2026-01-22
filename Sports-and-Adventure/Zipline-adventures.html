@@ -1,0 +1,876 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zipline Adventures | Kids Adventure Camping in Virar, Vasai, Nallasopara</title>
+    <meta name="description" content="Experience thrilling zipline adventures at Maura Wonderlab! Safe, exciting zipline courses designed for kids at our camps in Virar, Nallasopara, and Vasai.">
+    <meta name="keywords" content="zipline adventure for kids, kids zipline camping, adventure sports for children, zipline activities Virar, adventure camp Mumbai, outdoor adventure activities, kids adventure sports, safe zipline for kids">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Iconify (Lucide Icons) -->
+    <script src="https://cdn.jsdelivr.net/npm/iconify-icon@1.0.8/dist/iconify-icon.min.js"></script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=Nunito:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        /* Custom Font Settings for Childish/Playful Vibe */
+        body {
+            font-family: 'Nunito', sans-serif;
+        }
+        h1, h2, h3, h4, h5, h6, .brand-font {
+            font-family: 'Fredoka', sans-serif;
+        }
+        
+        /* Playful Blob Pattern */
+        .bg-pattern {
+            background-color: #FFFDF5;
+            background-image: radial-gradient(#FDE68A 1px, transparent 1px), radial-gradient(#BAE6FD 1px, transparent 1px);
+            background-size: 40px 40px;
+            background-position: 0 0, 20px 20px;
+        }
+        
+        /* Adventure-specific styling */
+        .adventure-gradient {
+            background: linear-gradient(135deg, #f59e0b 0%, #10b981 50%, #3b82f6 100%);
+        }
+        
+        .zipline-bg {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+                        url('https://images.unsplash.com/photo-1544551763-46a013bb70d5?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+        
+        /* Safety badge animation */
+        @keyframes pulse-safety {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+        .pulse-safety {
+            animation: pulse-safety 2s infinite;
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #FFF7ED; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #FDBA74; 
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #EA580C; 
+        }
+
+        /* Mobile Menu Animation */
+        .mobile-menu {
+            transform: translateX(100%);
+            transition: transform 0.3s ease-in-out;
+        }
+        
+        .mobile-menu.open {
+            transform: translateX(0);
+        }
+        
+        .menu-overlay {
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease-in-out, visibility 0.3s;
+        }
+        
+        .menu-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        /* Zipline animation for headings */
+        .zipline-text {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .zipline-text::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, #f59e0b, transparent);
+            animation: zipline 3s ease-in-out infinite;
+        }
+        
+        @keyframes zipline {
+            0% { left: -100%; }
+            100% { left: 100%; }
+        }
+    </style>
+</head>
+<body class="bg-pattern text-slate-600 antialiased selection:bg-orange-200 selection:text-orange-900">
+
+    <!-- Navbar -->
+    <nav class="fixed w-full z-50 top-0 transition-all duration-300 backdrop-blur-md bg-white/80 border-b-2 border-slate-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center gap-2 cursor-pointer" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+                   <img src="maura wonderlab logo.png" alt="Maura Wonderlab" width="50px">
+                    <span class="brand-font text-2xl font-semibold tracking-tight text-slate-800">
+                        Maura <span class="text-orange-500">Wonderlab</span>
+                    </span>
+                </div>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="#activities" class="text-sm font-semibold text-slate-600 hover:text-orange-500 transition-colors">Zipline Activities</a>
+                    <a href="#safety" class="text-sm font-semibold text-slate-600 hover:text-orange-500 transition-colors">Safety First</a>
+                    <a href="#locations" class="text-sm font-semibold text-slate-600 hover:text-orange-500 transition-colors">Our Locations</a>
+                    <a href="#booking" class="text-sm font-semibold text-slate-600 hover:text-orange-500 transition-colors">Book Now</a>
+                    <button class="bg-indigo-500 hover:bg-indigo-600 text-white px-5 py-2.5 rounded-full text-sm font-semibold transition-all shadow-[0px_4px_0px_0px_rgba(67,56,202,1)] hover:shadow-[0px_2px_0px_0px_rgba(67,56,202,1)] hover:translate-y-[2px]">
+                        Book an Adventure
+                    </button>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobileMenuButton" class="text-slate-600 hover:text-orange-500 p-2">
+                        <iconify-icon icon="lucide:menu" width="28" stroke-width="1.5"></iconify-icon>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu Overlay -->
+    <div id="menuOverlay" class="menu-overlay fixed inset-0 bg-black/50 z-40 md:hidden"></div>
+
+    <!-- Mobile Menu -->
+    <div id="mobileMenu" class="mobile-menu fixed top-0 right-0 h-full w-64 bg-white z-50 shadow-2xl md:hidden p-6">
+        <div class="flex justify-between items-center mb-8">
+            <div class="flex items-center gap-2">
+                <div class="h-8 w-8 bg-orange-400 rounded-lg flex items-center justify-center text-white">
+                    <iconify-icon icon="lucide:tent" width="18"></iconify-icon>
+                </div>
+                <span class="brand-font text-xl font-semibold text-slate-800">Maura <span class="text-orange-500">Wonderlab</span></span>
+            </div>
+            <button id="closeMenuButton" class="text-slate-600 hover:text-orange-500 p-2">
+                <iconify-icon icon="lucide:x" width="24" stroke-width="1.5"></iconify-icon>
+            </button>
+        </div>
+        
+        <div class="space-y-6">
+            <a href="#activities" class="block py-3 text-slate-700 font-semibold border-b border-slate-100" onclick="closeMobileMenu()">Zipline Activities</a>
+            <a href="#safety" class="block py-3 text-slate-700 font-semibold border-b border-slate-100" onclick="closeMobileMenu()">Safety First</a>
+            <a href="#locations" class="block py-3 text-slate-700 font-semibold border-b border-slate-100" onclick="closeMobileMenu()">Our Locations</a>
+            <a href="#booking" class="block py-3 text-slate-700 font-semibold border-b border-slate-100" onclick="closeMobileMenu()">Book Now</a>
+            <div class="pt-4">
+                <button class="w-full bg-indigo-500 hover:bg-indigo-600 text-white px-5 py-3 rounded-full text-sm font-semibold transition-all">
+                    Book an Adventure
+                </button>
+            </div>
+        </div>
+        
+        <div class="absolute bottom-8 left-6 right-6">
+            <p class="text-sm text-slate-500 mb-4">Contact us:</p>
+            <div class="flex items-center gap-2 text-slate-700 mb-2">
+                <iconify-icon icon="lucide:phone" width="16"></iconify-icon>
+                <span class="text-sm">+91 77680 31411</span>
+            </div>
+            <div class="flex items-center gap-2 text-slate-700">
+                <iconify-icon icon="lucide:mail" width="16"></iconify-icon>
+                <span class="text-sm">maurawonderlab@gmail.com</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="zipline-bg text-white pt-32 pb-20 px-4">
+        <div class="max-w-6xl mx-auto text-center">
+            <div class="inline-flex items-center gap-2 bg-white/20 backdrop-blur-sm rounded-full px-4 py-2 mb-6">
+                <iconify-icon icon="lucide:zap" width="20"></iconify-icon>
+                <span class="text-sm font-semibold">Thrilling Adventure Awaits!</span>
+            </div>
+            
+            <h1 class="brand-font text-5xl md:text-7xl font-bold mb-6 zipline-text">
+                <span class="bg-clip-text text-transparent adventure-gradient">Zipline Adventures</span>
+            </h1>
+            
+            <p class="text-xl md:text-2xl text-slate-200 max-w-3xl mx-auto mb-10">
+                Soar through the skies with our safe, exciting zipline courses designed specifically for kids! Experience the thrill of adventure sports at our camps.
+            </p>
+            
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <button class="bg-orange-500 hover:bg-orange-600 text-white px-8 py-4 rounded-full text-lg font-bold transition-all shadow-[0px_6px_0px_0px_rgba(194,65,12,1)] hover:shadow-[0px_3px_0px_0px_rgba(194,65,12,1)] hover:translate-y-[3px] group">
+                    <span class="flex items-center gap-2">
+                        Book Your Zipline Adventure
+                        <iconify-icon icon="lucide:arrow-right" class="group-hover:translate-x-1 transition-transform" width="20"></iconify-icon>
+                    </span>
+                </button>
+                <a href="#activities" class="bg-white/20 hover:bg-white/30 backdrop-blur-sm text-white px-8 py-4 rounded-full text-lg font-bold transition-all border-2 border-white/30">
+                    Explore Activities
+                </a>
+            </div>
+            
+            <div class="mt-16 grid grid-cols-2 md:grid-cols-4 gap-6">
+                <div class="text-center">
+                    <div class="text-4xl font-bold text-orange-400 mb-2">500+</div>
+                    <div class="text-slate-300">Happy Kids</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-4xl font-bold text-green-400 mb-2">100%</div>
+                    <div class="text-slate-300">Safety Record</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-4xl font-bold text-blue-400 mb-2">3</div>
+                    <div class="text-slate-300">Camp Locations</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-4xl font-bold text-purple-400 mb-2">5+</div>
+                    <div class="text-slate-300">Zipline Courses</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Zipline Activities Section -->
+    <section id="activities" class="py-20 px-4">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="brand-font text-4xl md:text-5xl font-bold text-slate-800 mb-6">
+                    Our <span class="text-orange-500">Zipline Adventure</span> Activities
+                </h2>
+                <p class="text-xl text-slate-600 max-w-3xl mx-auto">
+                    Discover our range of zipline courses designed for different age groups and adventure levels. Each activity is supervised by certified instructors.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+                <!-- Activity 1 -->
+                <div class="group bg-white rounded-3xl p-8 shadow-xl hover:shadow-2xl transition-all duration-500 border-2 border-transparent hover:border-orange-300">
+                    <div class="h-16 w-16 bg-gradient-to-br from-orange-400 to-yellow-400 rounded-2xl flex items-center justify-center mb-6 shadow-lg">
+                        <iconify-icon icon="lucide:bird" width="28" class="text-white"></iconify-icon>
+                    </div>
+                    <h3 class="text-2xl font-bold text-slate-800 mb-4">Sky Hawk Beginner Course</h3>
+                    <p class="text-slate-600 mb-6">
+                        Perfect for first-timers! Low-height zipline with gentle slopes. Kids learn balancing, harness safety, and gain confidence in a controlled environment.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mb-6">
+                        <span class="bg-orange-100 text-orange-800 text-xs font-semibold px-3 py-1 rounded-full">Ages 6-8</span>
+                        <span class="bg-blue-100 text-blue-800 text-xs font-semibold px-3 py-1 rounded-full">Low Height</span>
+                        <span class="bg-green-100 text-green-800 text-xs font-semibold px-3 py-1 rounded-full">Safety Training</span>
+                    </div>
+                    <div class="text-slate-700 mb-2"><strong>Duration:</strong> 45 minutes</div>
+                    <div class="text-slate-700"><strong>Includes:</strong> Safety gear, instructor guidance, certificate</div>
+                </div>
+                
+                <!-- Activity 2 -->
+                <div class="group bg-white rounded-3xl p-8 shadow-xl hover:shadow-2xl transition-all duration-500 border-2 border-transparent hover:border-green-300">
+                    <div class="h-16 w-16 bg-gradient-to-br from-green-400 to-emerald-500 rounded-2xl flex items-center justify-center mb-6 shadow-lg">
+                        <iconify-icon icon="lucide:wind" width="28" class="text-white"></iconify-icon>
+                    </div>
+                    <h3 class="text-2xl font-bold text-slate-800 mb-4">Forest Flyer Adventure</h3>
+                    <p class="text-slate-600 mb-6">
+                        Zip through our forest canopy! Medium-length course with natural obstacles. Kids experience nature from a bird's-eye view while building courage.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mb-6">
+                        <span class="bg-green-100 text-green-800 text-xs font-semibold px-3 py-1 rounded-full">Ages 9-12</span>
+                        <span class="bg-blue-100 text-blue-800 text-xs font-semibold px-3 py-1 rounded-full">Canopy View</span>
+                        <span class="bg-purple-100 text-purple-800 text-xs font-semibold px-3 py-1 rounded-full">Nature Learning</span>
+                    </div>
+                    <div class="text-slate-700 mb-2"><strong>Duration:</strong> 60 minutes</div>
+                    <div class="text-slate-700"><strong>Includes:</strong> Full safety gear, nature guide, adventure badge</div>
+                </div>
+                
+                <!-- Activity 3 -->
+                <div class="group bg-white rounded-3xl p-8 shadow-xl hover:shadow-2xl transition-all duration-500 border-2 border-transparent hover:border-blue-300">
+                    <div class="h-16 w-16 bg-gradient-to-br from-blue-400 to-purple-500 rounded-2xl flex items-center justify-center mb-6 shadow-lg">
+                        <iconify-icon icon="lucide:zap" width="28" class="text-white"></iconify-icon>
+                    </div>
+                    <h3 class="text-2xl font-bold text-slate-800 mb-4">Thunderbolt Challenge</h3>
+                    <p class="text-slate-600 mb-6">
+                        For the brave adventurers! High-speed zipline with dual cables. Kids conquer fears, build resilience, and experience the ultimate adrenaline rush.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mb-6">
+                        <span class="bg-red-100 text-red-800 text-xs font-semibold px-3 py-1 rounded-full">Ages 12-15</span>
+                        <span class="bg-blue-100 text-blue-800 text-xs font-semibold px-3 py-1 rounded-full">High Speed</span>
+                        <span class="bg-purple-100 text-purple-800 text-xs font-semibold px-3 py-1 rounded-full">Advanced Level</span>
+                    </div>
+                    <div class="text-slate-700 mb-2"><strong>Duration:</strong> 75 minutes</div>
+                    <div class="text-slate-700"><strong>Includes:</strong> Premium safety gear, challenge certificate, photo package</div>
+                </div>
+            </div>
+            
+            <!-- Additional Adventure Sports -->
+            <div class="mt-20">
+                <h3 class="brand-font text-3xl font-bold text-center text-slate-800 mb-10">
+                    Complementary <span class="text-orange-500">Adventure Sports</span>
+                </h3>
+                
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                    <div class="bg-white/80 backdrop-blur-sm rounded-2xl p-6 text-center shadow-lg">
+                        <div class="h-12 w-12 bg-amber-100 rounded-xl flex items-center justify-center mx-auto mb-4">
+                            <iconify-icon icon="lucide:climbing" class="text-amber-600" width="24"></iconify-icon>
+                        </div>
+                        <h4 class="font-bold text-slate-800">Rock Climbing</h4>
+                        <p class="text-sm text-slate-600 mt-2">Indoor & outdoor walls</p>
+                    </div>
+                    
+                    <div class="bg-white/80 backdrop-blur-sm rounded-2xl p-6 text-center shadow-lg">
+                        <div class="h-12 w-12 bg-emerald-100 rounded-xl flex items-center justify-center mx-auto mb-4">
+                            <iconify-icon icon="lucide:rope" class="text-emerald-600" width="24"></iconify-icon>
+                        </div>
+                        <h4 class="font-bold text-slate-800">Obstacle Courses</h4>
+                        <p class="text-sm text-slate-600 mt-2">Challenging fun circuits</p>
+                    </div>
+                    
+                    <div class="bg-white/80 backdrop-blur-sm rounded-2xl p-6 text-center shadow-lg">
+                        <div class="h-12 w-12 bg-blue-100 rounded-xl flex items-center justify-center mx-auto mb-4">
+                            <iconify-icon icon="lucide:target" class="text-blue-600" width="24"></iconify-icon>
+                        </div>
+                        <h4 class="font-bold text-slate-800">Archery Range</h4>
+                        <p class="text-sm text-slate-600 mt-2">Precision & focus training</p>
+                    </div>
+                    
+                    <div class="bg-white/80 backdrop-blur-sm rounded-2xl p-6 text-center shadow-lg">
+                        <div class="h-12 w-12 bg-purple-100 rounded-xl flex items-center justify-center mx-auto mb-4">
+                            <iconify-icon icon="lucide:compass" class="text-purple-600" width="24"></iconify-icon>
+                        </div>
+                        <h4 class="font-bold text-slate-800">Treasure Hunts</h4>
+                        <p class="text-sm text-slate-600 mt-2">Navigation & teamwork</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Safety Section -->
+    <section id="safety" class="py-20 px-4 bg-gradient-to-b from-blue-50 to-white">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="brand-font text-4xl md:text-5xl font-bold text-slate-800 mb-6">
+                    Your Child's <span class="text-green-600">Safety</span> is Our Priority
+                </h2>
+                <p class="text-xl text-slate-600 max-w-3xl mx-auto">
+                    We maintain the highest safety standards with certified equipment and trained instructors.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <div class="bg-white rounded-3xl p-8 shadow-xl border-l-8 border-green-500">
+                        <div class="flex items-center gap-4 mb-8">
+                            <div class="h-14 w-14 bg-green-100 rounded-2xl flex items-center justify-center pulse-safety">
+                                <iconify-icon icon="lucide:shield-check" class="text-green-600" width="28"></iconify-icon>
+                            </div>
+                            <h3 class="text-2xl font-bold text-slate-800">Certified Safety Standards</h3>
+                        </div>
+                        
+                        <ul class="space-y-4">
+                            <li class="flex items-start gap-3">
+                                <iconify-icon icon="lucide:check-circle" class="text-green-500 mt-1" width="20"></iconify-icon>
+                                <span><strong>ISO Certified Equipment:</strong> All harnesses, helmets, and cables meet international safety standards</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <iconify-icon icon="lucide:check-circle" class="text-green-500 mt-1" width="20"></iconify-icon>
+                                <span><strong>Certified Instructors:</strong> Every instructor is trained in first aid and emergency procedures</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <iconify-icon icon="lucide:check-circle" class="text-green-500 mt-1" width="20"></iconify-icon>
+                                <span><strong>Daily Equipment Checks:</strong> All gear inspected before each session</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <iconify-icon icon="lucide:check-circle" class="text-green-500 mt-1" width="20"></iconify-icon>
+                                <span><strong>Small Group Sizes:</strong> Maximum 1:6 instructor-to-child ratio for personalized attention</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <iconify-icon icon="lucide:check-circle" class="text-green-500 mt-1" width="20"></iconify-icon>
+                                <span><strong>Emergency Preparedness:</strong> Fully equipped first aid stations and emergency protocols</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div>
+                    <div class="grid grid-cols-2 gap-6">
+                        <div class="bg-white rounded-2xl p-6 shadow-lg text-center">
+                            <div class="text-5xl font-bold text-blue-600 mb-2">1:6</div>
+                            <div class="text-slate-700 font-semibold">Instructor Ratio</div>
+                        </div>
+                        <div class="bg-white rounded-2xl p-6 shadow-lg text-center">
+                            <div class="text-5xl font-bold text-green-600 mb-2">1000+</div>
+                            <div class="text-slate-700 font-semibold">Safe Adventures</div>
+                        </div>
+                        <div class="bg-white rounded-2xl p-6 shadow-lg text-center">
+                            <div class="text-5xl font-bold text-orange-600 mb-2">15</div>
+                            <div class="text-slate-700 font-semibold">Certified Staff</div>
+                        </div>
+                        <div class="bg-white rounded-2xl p-6 shadow-lg text-center">
+                            <div class="text-5xl font-bold text-purple-600 mb-2">5</div>
+                            <div class="text-slate-700 font-semibold">Safety Checks</div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-8 bg-amber-50 border border-amber-200 rounded-2xl p-6">
+                        <div class="flex items-center gap-3 mb-4">
+                            <iconify-icon icon="lucide:alert-circle" class="text-amber-600" width="24"></iconify-icon>
+                            <h4 class="font-bold text-slate-800 text-lg">Important Note for Parents</h4>
+                        </div>
+                        <p class="text-slate-700">
+                            All children must wear closed-toe shoes and comfortable clothing. Please inform us of any medical conditions or allergies during booking. Weight restrictions: 20kg minimum, 60kg maximum for zipline activities.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Locations Section -->
+    <section id="locations" class="py-20 px-4">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="brand-font text-4xl md:text-5xl font-bold text-slate-800 mb-6">
+                    Zipline Adventure <span class="text-orange-500">Locations</span>
+                </h2>
+                <p class="text-xl text-slate-600 max-w-3xl mx-auto">
+                    Experience thrilling zipline adventures at our conveniently located camps across the Mumbai region.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Virar Location -->
+                <div class="bg-white rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500 group">
+                    <div class="h-48 bg-gradient-to-r from-orange-400 to-yellow-400 relative overflow-hidden">
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <iconify-icon icon="lucide:map-pin" width="60" class="text-white/30"></iconify-icon>
+                        </div>
+                        <div class="absolute bottom-4 left-6">
+                            <span class="bg-white text-orange-700 font-bold px-4 py-1 rounded-full text-sm">Most Popular</span>
+                        </div>
+                    </div>
+                    <div class="p-8">
+                        <h3 class="text-2xl font-bold text-slate-800 mb-2">Virar Adventure Camp</h3>
+                        <div class="flex items-center gap-2 text-slate-600 mb-4">
+                            <iconify-icon icon="lucide:map-pin" width="16"></iconify-icon>
+                            <span>Near Virar East Station, Eco Zone</span>
+                        </div>
+                        <p class="text-slate-600 mb-6">
+                            Our flagship location with 3 zipline courses, rock climbing wall, and obstacle courses. Perfect for weekend adventures.
+                        </p>
+                        <div class="space-y-3 mb-6">
+                            <div class="flex items-center gap-2">
+                                <iconify-icon icon="lucide:check" class="text-green-500" width="18"></iconify-icon>
+                                <span class="text-slate-700">All 3 zipline courses available</span>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <iconify-icon icon="lucide:check" class="text-green-500" width="18"></iconify-icon>
+                                <span class="text-slate-700">Weekend & holiday specials</span>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <iconify-icon icon="lucide:check" class="text-green-500" width="18"></iconify-icon>
+                                <span class="text-slate-700">Birthday party packages</span>
+                            </div>
+                        </div>
+                        <button class="w-full bg-orange-500 hover:bg-orange-600 text-white py-3 rounded-full font-semibold transition-colors group-hover:shadow-lg">
+                            Book Virar Camp
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Vasai Location -->
+                <div class="bg-white rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500 group">
+                    <div class="h-48 bg-gradient-to-r from-green-400 to-emerald-500 relative overflow-hidden">
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <iconify-icon icon="lucide:trees" width="60" class="text-white/30"></iconify-icon>
+                        </div>
+                    </div>
+                    <div class="p-8">
+                        <h3 class="text-2xl font-bold text-slate-800 mb-2">Vasai Forest Camp</h3>
+                        <div class="flex items-center gap-2 text-slate-600 mb-4">
+                            <iconify-icon icon="lucide:map-pin" width="16"></iconify-icon>
+                            <span>Vasai West, Green Valley Area</span>
+                        </div>
+                        <p class="text-slate-600 mb-6">
+                            Nature-immersed zipline experience through forest canopy. Features the Forest Flyer course and nature trails.
+                        </p>
+                        <div class="space-y-3 mb-6">
+                            <div class="flex items-center gap-2">
+                                <iconify-icon icon="lucide:check" class="text-green-500" width="18"></iconify-icon>
+                                <span class="text-slate-700">Forest Flyer zipline course</span>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <iconify-icon icon="lucide:check" class="text-green-500" width="18"></iconify-icon>
+                                <span class="text-slate-700">Nature exploration activities</span>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <iconify-icon icon="lucide:check" class="text-green-500" width="18"></iconify-icon>
+                                <span class="text-slate-700">Campfire & storytelling sessions</span>
+                            </div>
+                        </div>
+                        <button class="w-full bg-green-500 hover:bg-green-600 text-white py-3 rounded-full font-semibold transition-colors group-hover:shadow-lg">
+                            Book Vasai Camp
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Nallasopara Location -->
+                <div class="bg-white rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500 group">
+                    <div class="h-48 bg-gradient-to-r from-blue-400 to-purple-500 relative overflow-hidden">
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <iconify-icon icon="lucide:zap" width="60" class="text-white/30"></iconify-icon>
+                        </div>
+                    </div>
+                    <div class="p-8">
+                        <h3 class="text-2xl font-bold text-slate-800 mb-2">Nallasopara Thrill Zone</h3>
+                        <div class="flex items-center gap-2 text-slate-600 mb-4">
+                            <iconify-icon icon="lucide:map-pin" width="16"></iconify-icon>
+                            <span>Nallasopara East, Adventure Park</span>
+                        </div>
+                        <p class="text-slate-600 mb-6">
+                            High-adrenaline zipline park featuring the Thunderbolt Challenge. Perfect for older kids seeking extreme adventure.
+                        </p>
+                        <div class="space-y-3 mb-6">
+                            <div class="flex items-center gap-2">
+                                <iconify-icon icon="lucide:check" class="text-green-500" width="18"></iconify-icon>
+                                <span class="text-slate-700">Thunderbolt Challenge course</span>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <iconify-icon icon="lucide:check" class="text-green-500" width="18"></iconify-icon>
+                                <span class="text-slate-700">Advanced obstacle courses</span>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <iconify-icon icon="lucide:check" class="text-green-500" width="18"></iconify-icon>
+                                <span class="text-slate-700">Team building activities</span>
+                            </div>
+                        </div>
+                        <button class="w-full bg-blue-500 hover:bg-blue-600 text-white py-3 rounded-full font-semibold transition-colors group-hover:shadow-lg">
+                            Book Nallasopara Camp
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Booking Section -->
+    <section id="booking" class="py-20 px-4 bg-gradient-to-r from-orange-50 to-amber-50">
+        <div class="max-w-4xl mx-auto">
+            <div class="bg-white rounded-3xl shadow-2xl overflow-hidden">
+                <div class="md:flex">
+                    <div class="md:w-1/2 bg-gradient-to-br from-orange-400 to-amber-500 p-10 text-white">
+                        <h3 class="brand-font text-3xl font-bold mb-6">Ready for Takeoff?</h3>
+                        <p class="text-xl mb-8">
+                            Book your child's zipline adventure today and give them an unforgettable experience!
+                        </p>
+                        
+                        <div class="space-y-6">
+                            <div class="flex items-center gap-4">
+                                <div class="h-12 w-12 bg-white/20 rounded-xl flex items-center justify-center">
+                                    <iconify-icon icon="lucide:calendar" width="24"></iconify-icon>
+                                </div>
+                                <div>
+                                    <div class="font-bold text-lg">Flexible Scheduling</div>
+                                    <div class="text-amber-100">Weekends & holidays available</div>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-center gap-4">
+                                <div class="h-12 w-12 bg-white/20 rounded-xl flex items-center justify-center">
+                                    <iconify-icon icon="lucide:gift" width="24"></iconify-icon>
+                                </div>
+                                <div>
+                                    <div class="font-bold text-lg">Special Packages</div>
+                                    <div class="text-amber-100">Birthday parties & group discounts</div>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-center gap-4">
+                                <div class="h-12 w-12 bg-white/20 rounded-xl flex items-center justify-center">
+                                    <iconify-icon icon="lucide:shield" width="24"></iconify-icon>
+                                </div>
+                                <div>
+                                    <div class="font-bold text-lg">Safety Assured</div>
+                                    <div class="text-amber-100">Certified equipment & instructors</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="md:w-1/2 p-10">
+                        <h4 class="brand-font text-2xl font-bold text-slate-800 mb-2">Book Your Adventure</h4>
+                        <p class="text-slate-600 mb-8">Fill out the form below and we'll contact you within 24 hours.</p>
+                        
+                        <form class="space-y-6">
+                            <div>
+                                <label class="block text-slate-700 font-semibold mb-2">Child's Name</label>
+                                <input type="text" class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent" placeholder="Enter child's full name">
+                            </div>
+                            
+                            <div>
+                                <label class="block text-slate-700 font-semibold mb-2">Child's Age</label>
+                                <input type="number" min="6" max="15" class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent" placeholder="Age between 6-15">
+                            </div>
+                            
+                            <div>
+                                <label class="block text-slate-700 font-semibold mb-2">Preferred Location</label>
+                                <select class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent">
+                                    <option>Select a camp location</option>
+                                    <option>Virar Adventure Camp</option>
+                                    <option>Vasai Forest Camp</option>
+                                    <option>Nallasopara Thrill Zone</option>
+                                </select>
+                            </div>
+                            
+                            <div>
+                                <label class="block text-slate-700 font-semibold mb-2">Parent's Contact</label>
+                                <input type="tel" class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent" placeholder="+91 phone number">
+                            </div>
+                            
+                            <button type="button" class="w-full bg-gradient-to-r from-orange-500 to-amber-500 hover:from-orange-600 hover:to-amber-600 text-white py-4 rounded-xl font-bold text-lg transition-all shadow-lg hover:shadow-xl">
+                                Book Now & Get 10% Off!
+                            </button>
+                            
+                            <p class="text-center text-sm text-slate-500">
+                                By booking, you agree to our <a href="#" class="text-orange-500 font-semibold">safety policies</a> and <a href="#" class="text-orange-500 font-semibold">terms of service</a>.
+                            </p>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-20 px-4">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="brand-font text-4xl font-bold text-center text-slate-800 mb-12">
+                Frequently Asked <span class="text-orange-500">Questions</span>
+            </h2>
+            
+            <div class="space-y-6">
+                <div class="bg-white rounded-2xl p-6 shadow-lg">
+                    <button class="flex justify-between items-center w-full text-left" onclick="toggleFAQ(this)">
+                        <span class="text-lg font-semibold text-slate-800">What age is appropriate for zipline adventures?</span>
+                        <iconify-icon icon="lucide:chevron-down" class="text-orange-500 transition-transform" width="24"></iconify-icon>
+                    </button>
+                    <div class="faq-content mt-4 hidden">
+                        <p class="text-slate-600">We offer zipline adventures for children aged 6-15 years. Our courses are divided by age groups: Sky Hawk (6-8 years), Forest Flyer (9-12 years), and Thunderbolt Challenge (12-15 years). Each course is designed with age-appropriate challenges and safety measures.</p>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-2xl p-6 shadow-lg">
+                    <button class="flex justify-between items-center w-full text-left" onclick="toggleFAQ(this)">
+                        <span class="text-lg font-semibold text-slate-800">What safety measures are in place?</span>
+                        <iconify-icon icon="lucide:chevron-down" class="text-orange-500 transition-transform" width="24"></iconify-icon>
+                    </button>
+                    <div class="faq-content mt-4 hidden">
+                        <p class="text-slate-600">Safety is our top priority. We use ISO-certified equipment, conduct daily safety checks, maintain a 1:6 instructor-to-child ratio, and all our staff are trained in first aid and emergency procedures. Every child receives proper safety training before their zipline adventure.</p>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-2xl p-6 shadow-lg">
+                    <button class="flex justify-between items-center w-full text-left" onclick="toggleFAQ(this)">
+                        <span class="text-lg font-semibold text-slate-800">What should my child wear for ziplining?</span>
+                        <iconify-icon icon="lucide:chevron-down" class="text-orange-500 transition-transform" width="24"></iconify-icon>
+                    </button>
+                    <div class="faq-content mt-4 hidden">
+                        <p class="text-slate-600">Comfortable, weather-appropriate clothing is recommended. Closed-toe shoes (sneakers or sports shoes) are mandatory. Loose jewelry should be removed. We provide all necessary safety gear including helmets and harnesses.</p>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-2xl p-6 shadow-lg">
+                    <button class="flex justify-between items-center w-full text-left" onclick="toggleFAQ(this)">
+                        <span class="text-lg font-semibold text-slate-800">Can parents watch their children during the activity?</span>
+                        <iconify-icon icon="lucide:chevron-down" class="text-orange-500 transition-transform" width="24"></iconify-icon>
+                    </button>
+                    <div class="faq-content mt-4 hidden">
+                        <p class="text-slate-600">Yes! We have designated viewing areas where parents can watch their children safely. For the beginner courses, parents can accompany younger children during the safety briefing. Photography is allowed in designated areas.</p>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-2xl p-6 shadow-lg">
+                    <button class="flex justify-between items-center w-full text-left" onclick="toggleFAQ(this)">
+                        <span class="text-lg font-semibold text-slate-800">What happens in case of bad weather?</span>
+                        <iconify-icon icon="lucide:chevron-down" class="text-orange-500 transition-transform" width="24"></iconify-icon>
+                    </button>
+                    <div class="faq-content mt-4 hidden">
+                        <p class="text-slate-600">Safety comes first. In case of rain, thunderstorms, or high winds, we postpone the activity. You can either reschedule for another date or receive a full refund. We monitor weather conditions closely and will inform you at least 2 hours in advance if we need to reschedule.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-white pt-20 pb-10 rounded-t-[3rem] mt-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
+                <div class="col-span-1 md:col-span-2">
+                    <div class="flex items-center gap-2 mb-6">
+                         <div class="h-8 w-8 bg-orange-500 rounded-lg flex items-center justify-center text-white">
+                            <iconify-icon icon="lucide:tent" width="18"></iconify-icon>
+                        </div>
+                        <span class="brand-font text-2xl font-bold">Maura <span class="text-orange-400">Wonderlab</span></span>
+                    </div>
+                    <p class="text-slate-400 max-w-sm mb-6">Creating unforgettable childhood memories through nature, science, and adventure. The #1 Choice for Kids Camping.</p>
+                    <div class="flex gap-4">
+                        <a href="#" class="h-10 w-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-orange-500 transition-colors"><iconify-icon icon="lucide:instagram" width="20"></iconify-icon></a>
+                        <a href="#" class="h-10 w-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-blue-500 transition-colors"><iconify-icon icon="lucide:facebook" width="20"></iconify-icon></a>
+                        <a href="#" class="h-10 w-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-green-500 transition-colors"><iconify-icon icon="lucide:phone" width="20"></iconify-icon></a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="font-bold text-lg mb-6">Explore</h4>
+                    <ul class="space-y-4 text-slate-400 text-sm">
+                        <li><a href="#" class="hover:text-white transition-colors">Our Story</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Safety Protocols</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Gallery</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Become a Counselor</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-bold text-lg mb-6">Camp Locations</h4>
+                    <ul class="space-y-4 text-slate-400 text-sm">
+                        <li><a href="#" class="hover:text-white transition-colors">Camping in Virar</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Camping in Vasai</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Camping in Nallasopara</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Day Camps Mumbai</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-slate-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="text-slate-500 text-sm">© 2024 Maura Wonderlab. All rights reserved.</p>
+                <div class="flex gap-6 text-sm text-slate-500">
+                    <a href="#" class="hover:text-white">Privacy</a>
+                    <a href="#" class="hover:text-white">Terms</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Functionality
+        const mobileMenuButton = document.getElementById('mobileMenuButton');
+        const closeMenuButton = document.getElementById('closeMenuButton');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const menuOverlay = document.getElementById('menuOverlay');
+        
+        function openMobileMenu() {
+            mobileMenu.classList.add('open');
+            menuOverlay.classList.add('active');
+            document.body.style.overflow = 'hidden'; // Prevent scrolling when menu is open
+        }
+        
+        function closeMobileMenu() {
+            mobileMenu.classList.remove('open');
+            menuOverlay.classList.remove('active');
+            document.body.style.overflow = 'auto'; // Re-enable scrolling
+        }
+        
+        // Event Listeners
+        mobileMenuButton.addEventListener('click', openMobileMenu);
+        closeMenuButton.addEventListener('click', closeMobileMenu);
+        menuOverlay.addEventListener('click', closeMobileMenu);
+        
+        // Close menu when clicking on any menu link
+        document.querySelectorAll('#mobileMenu a').forEach(link => {
+            link.addEventListener('click', closeMobileMenu);
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                const href = this.getAttribute('href');
+                
+                // Only handle internal anchor links (not external links)
+                if (href === '#' || href.startsWith('#') && href.length > 1) {
+                    e.preventDefault();
+                    
+                    const targetId = href.substring(1);
+                    const targetElement = document.getElementById(targetId);
+                    
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80, // Adjust for navbar height
+                            behavior: 'smooth'
+                        });
+                    }
+                }
+            });
+        });
+        
+        // Close menu on ESC key press
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && mobileMenu.classList.contains('open')) {
+                closeMobileMenu();
+            }
+        });
+        
+        // Prevent scrolling on the overlay (touch devices)
+        menuOverlay.addEventListener('touchmove', (e) => {
+            e.preventDefault();
+        }, { passive: false });
+        
+        // FAQ Toggle Functionality
+        function toggleFAQ(button) {
+            const content = button.parentElement.querySelector('.faq-content');
+            const icon = button.querySelector('iconify-icon');
+            
+            content.classList.toggle('hidden');
+            icon.classList.toggle('rotate-180');
+        }
+        
+        // Add animation to cards on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+        
+        // Observe all cards for animation
+        document.querySelectorAll('.group').forEach(card => {
+            card.style.opacity = '0.9';
+            card.style.transform = 'translateY(10px)';
+            card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+            observer.observe(card);
+        });
+        
+        // Booking form submission
+        document.querySelector('form button[type="button"]').addEventListener('click', function() {
+            const name = document.querySelector('input[placeholder="Enter child\'s full name"]').value;
+            const age = document.querySelector('input[placeholder="Age between 6-15"]').value;
+            const location = document.querySelector('select').value;
+            const phone = document.querySelector('input[placeholder="+91 phone number"]').value;
+            
+            if (name && age && location !== "Select a camp location" && phone) {
+                alert(`Thank you for booking!\n\nWe have received your booking for ${name} (Age: ${age}) at ${location}.\nWe will contact you at ${phone} within 24 hours to confirm your booking.\n\nHappy Adventuring!`);
+                
+                // Reset form
+                document.querySelector('form').reset();
+            } else {
+                alert('Please fill in all the required fields before submitting.');
+            }
+        });
+    </script>
+</body>
+</html>

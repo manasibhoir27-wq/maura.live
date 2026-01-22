@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nature Exploration Camps for Kids | Maura Wonderlab Virar, Vasai, Nallasopara</title>
+    <meta name="description" content="Maura Wonderlab offers exciting nature exploration camps for children in Virar, Vasai & Nallasopara. Outdoor adventures, wildlife discovery & environmental education.">
+    <meta name="keywords" content="Nature exploration camps for kids, outdoor adventure camps, children's nature camps, wildlife discovery camps, environmental education camps, kids adventure programs Virar, nature camps Vasai, outdoor activities Nallasopara">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Iconify (Lucide Icons) -->
+    <script src="https://cdn.jsdelivr.net/npm/iconify-icon@1.0.8/dist/iconify-icon.min.js"></script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=Nunito:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        /* Custom Font Settings for Childish/Playful Vibe */
+        body {
+            font-family: 'Nunito', sans-serif;
+        }
+        h1, h2, h3, h4, h5, h6, .brand-font {
+            font-family: 'Fredoka', sans-serif;
+        }
+        
+        /* Nature-inspired Gradient Background */
+        .nature-bg {
+            background: linear-gradient(135deg, #f0f9ff 0%, #fef7e6 25%, #f0fdf4 50%, #fff7ed 75%, #fefce8 100%);
+        }
+        
+        /* Leaf Pattern Overlay */
+        .leaf-pattern {
+            background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%2325a244' fill-opacity='0.05' fill-rule='evenodd'/%3E%3C/svg%3E");
+        }
+        
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #dcfce7; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #16a34a; 
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #15803d; 
+        }
+
+        /* Mobile Menu Animation */
+        .mobile-menu {
+            transform: translateX(100%);
+            transition: transform 0.3s ease-in-out;
+        }
+        
+        .mobile-menu.open {
+            transform: translateX(0);
+        }
+        
+        .menu-overlay {
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease-in-out, visibility 0.3s;
+        }
+        
+        .menu-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        /* Nature Card Hover Effects */
+        .nature-card {
+            transition: all 0.3s ease;
+        }
+        
+        .nature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(37, 162, 68, 0.15);
+        }
+        
+        /* Animated Leaf */
+        @keyframes float-leaf {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(5deg); }
+        }
+        
+        .float-leaf {
+            animation: float-leaf 3s ease-in-out infinite;
+        }
+    </style>
+</head>
+<body class="nature-bg text-slate-700 antialiased selection:bg-emerald-200 selection:text-emerald-900">
+
+    <!-- Navbar -->
+    <nav class="fixed w-full z-50 top-0 transition-all duration-300 backdrop-blur-md bg-white/90 border-b-2 border-emerald-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center gap-2 cursor-pointer" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+                    <img src="maura wonderlab logo.png" alt="Maura Wonderlab" width="50px">
+                    <span class="brand-font text-2xl font-semibold tracking-tight text-slate-800">
+                        Maura <span class="text-emerald-600">Wonderlab</span>
+                    </span>
+                </div>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="index.html" class="text-sm font-semibold text-slate-600 hover:text-emerald-600 transition-colors">Home</a>
+                    <a href="#programs" class="text-sm font-semibold text-slate-600 hover:text-emerald-600 transition-colors">Programs</a>
+                    <a href="#activities" class="text-sm font-semibold text-slate-600 hover:text-emerald-600 transition-colors">Activities</a>
+                    <a href="#locations" class="text-sm font-semibold text-slate-600 hover:text-emerald-600 transition-colors">Locations</a>
+                    <button class="bg-emerald-500 hover:bg-emerald-600 text-white px-5 py-2.5 rounded-full text-sm font-semibold transition-all shadow-[0px_4px_0px_0px_rgba(5,150,105,1)] hover:shadow-[0px_2px_0px_0px_rgba(5,150,105,1)] hover:translate-y-[2px]">
+                        Enroll Now
+                    </button>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobileMenuButton" class="text-slate-600 hover:text-emerald-600 p-2">
+                        <iconify-icon icon="lucide:menu" width="28" stroke-width="1.5"></iconify-icon>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu Overlay -->
+    <div id="menuOverlay" class="menu-overlay fixed inset-0 bg-black/50 z-40 md:hidden"></div>
+
+    <!-- Mobile Menu -->
+    <div id="mobileMenu" class="mobile-menu fixed top-0 right-0 h-full w-64 bg-white z-50 shadow-2xl md:hidden p-6">
+        <div class="flex justify-between items-center mb-8">
+            <div class="flex items-center gap-2">
+                <div class="h-8 w-8 bg-emerald-500 rounded-lg flex items-center justify-center text-white">
+                    <iconify-icon icon="lucide:leaf" width="18"></iconify-icon>
+                </div>
+                <span class="brand-font text-xl font-semibold text-slate-800">Maura <span class="text-emerald-600">Wonderlab</span></span>
+            </div>
+            <button id="closeMenuButton" class="text-slate-600 hover:text-emerald-600 p-2">
+                <iconify-icon icon="lucide:x" width="24" stroke-width="1.5"></iconify-icon>
+            </button>
+        </div>
+        
+        <div class="space-y-6">
+            <a href="index.html" class="block py-3 text-slate-700 font-semibold border-b border-slate-100" onclick="closeMobileMenu()">Home</a>
+            <a href="#programs" class="block py-3 text-slate-700 font-semibold border-b border-slate-100" onclick="closeMobileMenu()">Programs</a>
+            <a href="#activities" class="block py-3 text-slate-700 font-semibold border-b border-slate-100" onclick="closeMobileMenu()">Activities</a>
+            <a href="#locations" class="block py-3 text-slate-700 font-semibold border-b border-slate-100" onclick="closeMobileMenu()">Locations</a>
+            <div class="pt-4">
+                <button class="w-full bg-emerald-500 hover:bg-emerald-600 text-white px-5 py-3 rounded-full text-sm font-semibold transition-all">
+                    Enroll Now
+                </button>
+            </div>
+        </div>
+        
+        <div class="absolute bottom-8 left-6 right-6">
+            <p class="text-sm text-slate-500 mb-4">Contact us:</p>
+            <div class="flex items-center gap-2 text-slate-700 mb-2">
+                <iconify-icon icon="lucide:phone" width="16"></iconify-icon>
+                <span class="text-sm">+91 77680 31411</span>
+            </div>
+            <div class="flex items-center gap-2 text-slate-700">
+                <iconify-icon icon="lucide:mail" width="16"></iconify-icon>
+                <span class="text-sm">maurawonderlab@gmail.com</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="relative pt-32 pb-20 lg:pt-40 lg:pb-28 overflow-hidden leaf-pattern">
+        <div class="absolute inset-0 bg-gradient-to-b from-emerald-50/50 to-transparent"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+            
+            <h1 class="text-5xl md:text-7xl lg:text-8xl font-semibold tracking-tight text-slate-900 mb-6 leading-[0.9]">
+                Nature <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-500 via-green-500 to-lime-500">Exploration</span> <br>
+                <span class="text-4xl md:text-6xl lg:text-7xl">Camps for Kids</span>
+            </h1>
+            
+            <p class="mt-8 max-w-3xl mx-auto text-xl md:text-2xl text-slate-600 leading-relaxed font-medium">
+                Where young explorers discover the wonders of the wild! Maura Wonderlab offers unforgettable 
+                <span class="font-bold text-emerald-700">nature exploration camps for children</span> in 
+                <span class="font-bold underline decoration-emerald-300">Virar</span>, 
+                <span class="font-bold underline decoration-green-300">Vasai</span>, and 
+                <span class="font-bold underline decoration-lime-300">Nallasopara</span>.
+            </p>
+
+            <div class="mt-12 flex flex-col sm:flex-row gap-4 justify-center items-center">
+                <button class="w-full sm:w-auto px-8 py-4 bg-emerald-500 hover:bg-emerald-600 text-white rounded-2xl text-lg font-semibold transition-all shadow-[0px_6px_0px_0px_#059669] hover:shadow-[0px_3px_0px_0px_#059669] hover:translate-y-[3px] flex items-center justify-center gap-2">
+                    <iconify-icon icon="lucide:compass" width="22"></iconify-icon>
+                    Book Nature Camp Now
+                </button>
+                <button class="w-full sm:w-auto px-8 py-4 bg-white hover:bg-slate-50 text-slate-700 border-2 border-slate-200 rounded-2xl text-lg font-semibold transition-all hover:border-emerald-300 hover:text-emerald-700 flex items-center justify-center gap-2">
+                    <iconify-icon icon="lucide:calendar" width="22"></iconify-icon>
+                    View Camp Schedule
+                </button>
+            </div>
+        </div>
+
+        <!-- Floating Leaves -->
+        <div class="absolute top-1/4 left-10 w-16 h-16 text-emerald-400/30 float-leaf">
+            <iconify-icon icon="lucide:leaf" width="64"></iconify-icon>
+        </div>
+        <div class="absolute bottom-1/4 right-10 w-20 h-20 text-green-400/30 float-leaf" style="animation-delay: 0.5s">
+            <iconify-icon icon="lucide:leaf" width="80"></iconify-icon>
+        </div>
+    </section>
+
+    <!-- SEO Benefits Section -->
+    <section class="py-16 bg-emerald-50 border-y border-emerald-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="text-center">
+                    <div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-emerald-100 text-emerald-600 mb-4">
+                        <iconify-icon icon="lucide:brain" width="32"></iconify-icon>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-800 mb-2">Cognitive Development</h3>
+                    <p class="text-slate-600">Nature exploration camps enhance problem-solving skills and creativity in children.</p>
+                </div>
+                <div class="text-center">
+                    <div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-green-100 text-green-600 mb-4">
+                        <iconify-icon icon="lucide:heart" width="32"></iconify-icon>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-800 mb-2">Physical Health</h3>
+                    <p class="text-slate-600">Outdoor adventure camps promote physical fitness and healthy lifestyle habits.</p>
+                </div>
+                <div class="text-center">
+                    <div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-lime-100 text-lime-600 mb-4">
+                        <iconify-icon icon="lucide:users" width="32"></iconify-icon>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-800 mb-2">Social Skills</h3>
+                    <p class="text-slate-600">Environmental education camps build teamwork and communication abilities.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Nature Exploration Programs -->
+    <section id="programs" class="py-24 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-semibold text-slate-900 mb-4 tracking-tight">Nature Exploration Camp Programs</h2>
+                <p class="text-slate-600 max-w-2xl mx-auto">Our specialized nature exploration camps are designed for different age groups and skill levels, focusing on outdoor adventure and environmental education.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Program 1 -->
+                <div class="nature-card bg-white p-8 rounded-3xl border-2 border-emerald-100 shadow-sm hover:border-emerald-300">
+                    <div class="bg-emerald-50 rounded-2xl h-48 flex items-center justify-center mb-6 overflow-hidden relative">
+                        <iconify-icon icon="lucide:binoculars" width="80" class="text-emerald-500"></iconify-icon>
+                        <div class="absolute top-4 left-4 bg-emerald-500 text-white text-xs font-bold px-3 py-1 rounded-full">
+                            Ages 5-8
+                        </div>
+                    </div>
+                    <h3 class="text-2xl font-bold text-slate-800 mb-3">Little Explorers Camp</h3>
+                    <p class="text-slate-600 mb-6">Perfect introduction to nature for young children. Safe, guided exploration with fun discovery activities.</p>
+                    <ul class="space-y-2 mb-8">
+                        <li class="flex items-center gap-2 text-sm text-slate-700"><iconify-icon icon="lucide:check" class="text-emerald-500"></iconify-icon> Mini nature trails</li>
+                        <li class="flex items-center gap-2 text-sm text-slate-700"><iconify-icon icon="lucide:check" class="text-emerald-500"></iconify-icon> Bug discovery sessions</li>
+                        <li class="flex items-center gap-2 text-sm text-slate-700"><iconify-icon icon="lucide:check" class="text-emerald-500"></iconify-icon> Leaf art & crafts</li>
+                    </ul>
+                    <button class="w-full py-3 rounded-xl bg-emerald-500 text-white font-semibold hover:bg-emerald-600 transition-colors">Learn More</button>
+                </div>
+
+                <!-- Program 2 -->
+                <div class="nature-card bg-white p-8 rounded-3xl border-2 border-emerald-100 shadow-sm hover:border-emerald-300">
+                    <div class="bg-green-50 rounded-2xl h-48 flex items-center justify-center mb-6 overflow-hidden relative">
+                        <iconify-icon icon="lucide:mountain" width="80" class="text-green-500"></iconify-icon>
+                        <div class="absolute top-4 left-4 bg-green-500 text-white text-xs font-bold px-3 py-1 rounded-full">
+                            Ages 9-12
+                        </div>
+                    </div>
+                    <h3 class="text-2xl font-bold text-slate-800 mb-3">Adventure Naturalists</h3>
+                    <p class="text-slate-600 mb-6">Intermediate level nature exploration camps focusing on hiking, wildlife tracking, and survival basics.</p>
+                    <ul class="space-y-2 mb-8">
+                        <li class="flex items-center gap-2 text-sm text-slate-700"><iconify-icon icon="lucide:check" class="text-green-500"></iconify-icon> Forest hiking trails</li>
+                        <li class="flex items-center gap-2 text-sm text-slate-700"><iconify-icon icon="lucide:check" class="text-green-500"></iconify-icon> Animal tracking skills</li>
+                        <li class="flex items-center gap-2 text-sm text-slate-700"><iconify-icon icon="lucide:check" class="text-green-500"></iconify-icon> Map reading & navigation</li>
+                    </ul>
+                    <button class="w-full py-3 rounded-xl bg-green-500 text-white font-semibold hover:bg-green-600 transition-colors">Learn More</button>
+                </div>
+
+                <!-- Program 3 -->
+                <div class="nature-card bg-white p-8 rounded-3xl border-2 border-emerald-100 shadow-sm hover:border-emerald-300">
+                    <div class="bg-lime-50 rounded-2xl h-48 flex items-center justify-center mb-6 overflow-hidden relative">
+                        <iconify-icon icon="lucide:map" width="80" class="text-lime-500"></iconify-icon>
+                        <div class="absolute top-4 left-4 bg-lime-500 text-white text-xs font-bold px-3 py-1 rounded-full">
+                            Ages 13-16
+                        </div>
+                    </div>
+                    <h3 class="text-2xl font-bold text-slate-800 mb-3">Wilderness Explorers</h3>
+                    <p class="text-slate-600 mb-6">Advanced nature exploration camps with overnight camping, advanced survival skills, and environmental research.</p>
+                    <ul class="space-y-2 mb-8">
+                        <li class="flex items-center gap-2 text-sm text-slate-700"><iconify-icon icon="lucide:check" class="text-lime-500"></iconify-icon> Overnight camping expeditions</li>
+                        <li class="flex items-center gap-2 text-sm text-slate-700"><iconify-icon icon="lucide:check" class="text-lime-500"></iconify-icon> Environmental conservation projects</li>
+                        <li class="flex items-center gap-2 text-sm text-slate-700"><iconify-icon icon="lucide:check" class="text-lime-500"></iconify-icon> Advanced survival training</li>
+                    </ul>
+                    <button class="w-full py-3 rounded-xl bg-lime-500 text-white font-semibold hover:bg-lime-600 transition-colors">Learn More</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Nature Activities Section -->
+    <section id="activities" class="py-24 bg-emerald-50/50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-semibold text-slate-900 mb-4 tracking-tight">Nature Exploration Activities</h2>
+                <p class="text-slate-600 max-w-2xl mx-auto">Our nature exploration camps include a wide range of outdoor activities designed to connect children with the natural world.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Activity 1 -->
+                <div class="nature-card bg-white p-6 rounded-2xl border border-emerald-100">
+                    <div class="h-12 w-12 rounded-xl bg-emerald-100 flex items-center justify-center text-emerald-600 mb-4">
+                        <iconify-icon icon="lucide:tree-pine" width="28"></iconify-icon>
+                    </div>
+                    <h3 class="text-lg font-bold text-slate-800 mb-2">Forest Exploration</h3>
+                    <p class="text-sm text-slate-600">Guided nature walks through local forests identifying trees, plants, and ecosystems.</p>
+                </div>
+
+                <!-- Activity 2 -->
+                <div class="nature-card bg-white p-6 rounded-2xl border border-emerald-100">
+                    <div class="h-12 w-12 rounded-xl bg-green-100 flex items-center justify-center text-green-600 mb-4">
+                        <iconify-icon icon="lucide:bug" width="28"></iconify-icon>
+                    </div>
+                    <h3 class="text-lg font-bold text-slate-800 mb-2">Insect Discovery</h3>
+                    <p class="text-sm text-slate-600">Safe bug catching and observation sessions with magnifying glasses and bug viewers.</p>
+                </div>
+
+                <!-- Activity 3 -->
+                <div class="nature-card bg-white p-6 rounded-2xl border border-emerald-100">
+                    <div class="h-12 w-12 rounded-xl bg-lime-100 flex items-center justify-center text-lime-600 mb-4">
+                        <iconify-icon icon="lucide:bird" width="28"></iconify-icon>
+                    </div>
+                    <h3 class="text-lg font-bold text-slate-800 mb-2">Bird Watching</h3>
+                    <p class="text-sm text-slate-600">Learning to identify local bird species with binoculars and bird guides.</p>
+                </div>
+
+                <!-- Activity 4 -->
+                <div class="nature-card bg-white p-6 rounded-2xl border border-emerald-100">
+                    <div class="h-12 w-12 rounded-xl bg-teal-100 flex items-center justify-center text-teal-600 mb-4">
+                        <iconify-icon icon="lucide:compass" width="28"></iconify-icon>
+                    </div>
+                    <h3 class="text-lg font-bold text-slate-800 mb-2">Nature Navigation</h3>
+                    <p class="text-sm text-slate-600">Basic compass and map reading skills for outdoor exploration and adventure.</p>
+                </div>
+
+                <!-- Activity 5 -->
+                <div class="nature-card bg-white p-6 rounded-2xl border border-emerald-100">
+                    <div class="h-12 w-12 rounded-xl bg-cyan-100 flex items-center justify-center text-cyan-600 mb-4">
+                        <iconify-icon icon="lucide:microscope" width="28"></iconify-icon>
+                    </div>
+                    <h3 class="text-lg font-bold text-slate-800 mb-2">Micro World Discovery</h3>
+                    <p class="text-sm text-slate-600">Using microscopes to explore the tiny wonders of nature - leaves, soil, water samples.</p>
+                </div>
+
+                <!-- Activity 6 -->
+                <div class="nature-card bg-white p-6 rounded-2xl border border-emerald-100">
+                    <div class="h-12 w-12 rounded-xl bg-amber-100 flex items-center justify-center text-amber-600 mb-4">
+                        <iconify-icon icon="lucide:flower" width="28"></iconify-icon>
+                    </div>
+                    <h3 class="text-lg font-bold text-slate-800 mb-2">Plant Identification</h3>
+                    <p class="text-sm text-slate-600">Learning to identify local plants, flowers, and their medicinal or edible uses.</p>
+                </div>
+
+                <!-- Activity 7 -->
+                <div class="nature-card bg-white p-6 rounded-2xl border border-emerald-100">
+                    <div class="h-12 w-12 rounded-xl bg-blue-100 flex items-center justify-center text-blue-600 mb-4">
+                        <iconify-icon icon="lucide:cloud-rain" width="28"></iconify-icon>
+                    </div>
+                    <h3 class="text-lg font-bold text-slate-800 mb-2">Weather Tracking</h3>
+                    <p class="text-sm text-slate-600">Basic meteorology - understanding clouds, rain patterns, and weather prediction.</p>
+                </div>
+
+                <!-- Activity 8 -->
+                <div class="nature-card bg-white p-6 rounded-2xl border border-emerald-100">
+                    <div class="h-12 w-12 rounded-xl bg-purple-100 flex items-center justify-center text-purple-600 mb-4">
+                        <iconify-icon icon="lucide:star" width="28"></iconify-icon>
+                    </div>
+                    <h3 class="text-lg font-bold text-slate-800 mb-2">Night Sky Observation</h3>
+                    <p class="text-sm text-slate-600">Stargazing sessions identifying constellations, planets, and celestial events.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Locations Section -->
+    <section id="locations" class="py-24 relative leaf-pattern">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-semibold text-slate-900 mb-4 tracking-tight">Nature Camp Locations</h2>
+                <p class="text-slate-600 max-w-2xl mx-auto">Our nature exploration camps are strategically located in the most beautiful natural settings across the region.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Location 1 -->
+                <div class="nature-card bg-white rounded-3xl overflow-hidden border border-emerald-100">
+                    <div class="h-48 bg-gradient-to-r from-emerald-400 to-emerald-600 flex items-center justify-center">
+                        <iconify-icon icon="lucide:map-pin" width="64" class="text-white"></iconify-icon>
+                    </div>
+                    <div class="p-8">
+                        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-100 text-emerald-700 text-xs font-bold mb-4">
+                            <iconify-icon icon="lucide:map-pin" width="12"></iconify-icon>
+                            Virar Nature Reserve
+                        </div>
+                        <h3 class="text-2xl font-bold text-slate-800 mb-3">Virar Nature Exploration Camp</h3>
+                        <p class="text-slate-600 mb-6">Located near the lush Virar hills, this camp offers pristine forest trails, clean streams, and diverse wildlife perfect for nature exploration.</p>
+                        <ul class="space-y-2 mb-8">
+                            <li class="flex items-center gap-2 text-sm text-slate-700"><iconify-icon icon="lucide:check" class="text-emerald-500"></iconify-icon> 50-acre protected forest</li>
+                            <li class="flex items-center gap-2 text-sm text-slate-700"><iconify-icon icon="lucide:check" class="text-emerald-500"></iconify-icon> Bird watching tower</li>
+                            <li class="flex items-center gap-2 text-sm text-slate-700"><iconify-icon icon="lucide:check" class="text-emerald-500"></iconify-icon> Nature photography spots</li>
+                        </ul>
+                        <button class="w-full py-3 rounded-xl border-2 border-emerald-500 text-emerald-600 font-semibold hover:bg-emerald-50 transition-colors">Explore Virar Camp</button>
+                    </div>
+                </div>
+
+                <!-- Location 2 -->
+                <div class="nature-card bg-white rounded-3xl overflow-hidden border border-emerald-100">
+                    <div class="h-48 bg-gradient-to-r from-green-400 to-green-600 flex items-center justify-center">
+                        <iconify-icon icon="lucide:mountain" width="64" class="text-white"></iconify-icon>
+                    </div>
+                    <div class="p-8">
+                        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-green-100 text-green-700 text-xs font-bold mb-4">
+                            <iconify-icon icon="lucide:map-pin" width="12"></iconify-icon>
+                            Vasai Forest Area
+                        </div>
+                        <h3 class="text-2xl font-bold text-slate-800 mb-3">Vasai Forest Adventure Camp</h3>
+                        <p class="text-slate-600 mb-6">Set in the historic Vasai region, this camp combines nature exploration with historical learning in a beautiful forest setting.</p>
+                        <ul class="space-y-2 mb-8">
+                            <li class="flex items-center gap-2 text-sm text-slate-700"><iconify-icon icon="lucide:check" class="text-green-500"></iconify-icon> Ancient forest trails</li>
+                            <li class="flex items-center gap-2 text-sm text-slate-700"><iconify-icon icon="lucide:check" class="text-green-500"></iconify-icon> Butterfly garden</li>
+                            <li class="flex items-center gap-2 text-sm text-slate-700"><iconify-icon icon="lucide:check" class="text-green-500"></iconify-icon> Natural water streams</li>
+                        </ul>
+                        <button class="w-full py-3 rounded-xl border-2 border-green-500 text-green-600 font-semibold hover:bg-green-50 transition-colors">Explore Vasai Camp</button>
+                    </div>
+                </div>
+
+                <!-- Location 3 -->
+                <div class="nature-card bg-white rounded-3xl overflow-hidden border border-emerald-100">
+                    <div class="h-48 bg-gradient-to-r from-lime-400 to-lime-600 flex items-center justify-center">
+                        <iconify-icon icon="lucide:trees" width="64" class="text-white"></iconify-icon>
+                    </div>
+                    <div class="p-8">
+                        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-lime-100 text-lime-700 text-xs font-bold mb-4">
+                            <iconify-icon icon="lucide:map-pin" width="12"></iconify-icon>
+                            Nallasopara Greens
+                        </div>
+                        <h3 class="text-2xl font-bold text-slate-800 mb-3">Nallasopara Nature Discovery Camp</h3>
+                        <p class="text-slate-600 mb-6">Our beginner-friendly camp in Nallasopara features controlled natural environments perfect for first-time nature explorers.</p>
+                        <ul class="space-y-2 mb-8">
+                            <li class="flex items-center gap-2 text-sm text-slate-700"><iconify-icon icon="lucide:check" class="text-lime-500"></iconify-icon> Safe, enclosed nature area</li>
+                            <li class="flex items-center gap-2 text-sm text-slate-700"><iconify-icon icon="lucide:check" class="text-lime-500"></iconify-icon> Interactive learning stations</li>
+                            <li class="flex items-center gap-2 text-sm text-slate-700"><iconify-icon icon="lucide:check" class="text-lime-500"></iconify-icon> Mini botanical garden</li>
+                        </ul>
+                        <button class="w-full py-3 rounded-xl border-2 border-lime-500 text-lime-600 font-semibold hover:bg-lime-50 transition-colors">Explore Nallasopara Camp</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEO FAQ Section -->
+    <section class="py-24 bg-white border-y border-emerald-100">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-semibold text-slate-900 mb-4 tracking-tight">Frequently Asked Questions</h2>
+                <p class="text-slate-600 max-w-2xl mx-auto">Everything you need to know about our nature exploration camps for kids.</p>
+            </div>
+
+            <div class="space-y-6">
+                <!-- FAQ 1 -->
+                <div class="bg-emerald-50 rounded-2xl p-6">
+                    <h3 class="text-xl font-bold text-slate-800 mb-2 flex items-center gap-2">
+                        <iconify-icon icon="lucide:help-circle" class="text-emerald-600"></iconify-icon>
+                        What age groups are suitable for nature exploration camps?
+                    </h3>
+                    <p class="text-slate-600 pl-8">Our nature exploration camps are designed for children aged 5-16 years. We have specialized programs for different age groups: Little Explorers (5-8 years), Adventure Naturalists (9-12 years), and Wilderness Explorers (13-16 years). Each program is tailored to the developmental needs and interests of that specific age group.</p>
+                </div>
+
+                <!-- FAQ 2 -->
+                <div class="bg-green-50 rounded-2xl p-6">
+                    <h3 class="text-xl font-bold text-slate-800 mb-2 flex items-center gap-2">
+                        <iconify-icon icon="lucide:help-circle" class="text-green-600"></iconify-icon>
+                        What safety measures are in place during outdoor adventure activities?
+                    </h3>
+                    <p class="text-slate-600 pl-8">Safety is our top priority. All nature exploration activities are supervised by trained naturalists with first aid certification. We maintain a 1:6 staff-to-child ratio, use child-safe equipment, conduct thorough risk assessments of all natural sites, and have emergency protocols in place. Parents receive regular updates during camp sessions.</p>
+                </div>
+
+                <!-- FAQ 3 -->
+                <div class="bg-lime-50 rounded-2xl p-6">
+                    <h3 class="text-xl font-bold text-slate-800 mb-2 flex items-center gap-2">
+                        <iconify-icon icon="lucide:help-circle" class="text-lime-600"></iconify-icon>
+                        What should children bring to nature exploration camps?
+                    </h3>
+                    <p class="text-slate-600 pl-8">We provide all specialized equipment. Children should bring: comfortable outdoor clothing, sturdy shoes, hat, sunscreen, water bottle, small backpack, and any personal medication. We'll send a detailed packing list upon registration. All nature exploration tools (magnifying glasses, binoculars, collection jars) are provided by Maura Wonderlab.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="py-20 relative overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-r from-emerald-500 to-green-500"></div>
+        <div class="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="none" fill-rule="evenodd"%3E%3Cg fill="%23ffffff" fill-opacity="0.1"%3E%3Cpath d="M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')] opacity-20"></div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+            <h2 class="text-4xl md:text-5xl font-semibold text-white mb-6 tracking-tight">Ready for Adventure?</h2>
+            <p class="text-emerald-100 text-xl mb-10 max-w-2xl mx-auto">Give your child the gift of nature exploration. Limited spots available for our summer nature camps in Virar, Vasai, and Nallasopara.</p>
+            
+            <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                <button class="w-full sm:w-auto px-8 py-4 bg-white text-emerald-600 hover:bg-emerald-50 rounded-2xl text-lg font-semibold transition-all shadow-[0px_6px_0px_0px_#059669] hover:shadow-[0px_3px_0px_0px_#059669] hover:translate-y-[3px] flex items-center justify-center gap-2">
+                    <iconify-icon icon="lucide:calendar-days" width="22"></iconify-icon>
+                    Book Nature Camp Now
+                </button>
+                <button class="w-full sm:w-auto px-8 py-4 bg-transparent border-2 border-white text-white hover:bg-white/10 rounded-2xl text-lg font-semibold transition-all flex items-center justify-center gap-2">
+                    <iconify-icon icon="lucide:phone" width="22"></iconify-icon>
+                    Call +91 77680 31411
+                </button>
+            </div>
+            
+            <p class="text-emerald-200 mt-8 text-sm">*Early bird discounts available for nature exploration camps booked before June 15</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-white pt-20 pb-10 rounded-t-[3rem]">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
+                <div class="col-span-1 md:col-span-2">
+                    <div class="flex items-center gap-2 mb-6">
+                         <div class="h-8 w-8 bg-emerald-500 rounded-lg flex items-center justify-center text-white">
+                            <iconify-icon icon="lucide:leaf" width="18"></iconify-icon>
+                        </div>
+                        <span class="brand-font text-2xl font-bold">Maura <span class="text-emerald-400">Wonderlab</span></span>
+                    </div>
+                    <p class="text-slate-400 max-w-sm mb-6">Creating unforgettable childhood memories through nature exploration, environmental education, and outdoor adventures. The #1 Choice for Kids Nature Camps in Virar, Vasai, and Nallasopara.</p>
+                    <div class="flex gap-4">
+                        <a href="#" class="h-10 w-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-emerald-500 transition-colors"><iconify-icon icon="lucide:instagram" width="20"></iconify-icon></a>
+                        <a href="#" class="h-10 w-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-blue-500 transition-colors"><iconify-icon icon="lucide:facebook" width="20"></iconify-icon></a>
+                        <a href="#" class="h-10 w-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-green-500 transition-colors"><iconify-icon icon="lucide:phone" width="20"></iconify-icon></a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="font-bold text-lg mb-6">Explore</h4>
+                    <ul class="space-y-4 text-slate-400 text-sm">
+                        <li><a href="index.html" class="hover:text-white transition-colors">Home</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Nature Camp Programs</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Safety Protocols</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Gallery</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-bold text-lg mb-6">Nature Camp Locations</h4>
+                    <ul class="space-y-4 text-slate-400 text-sm">
+                        <li><a href="#" class="hover:text-white transition-colors">Nature Exploration in Virar</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Forest Adventure in Vasai</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Nature Discovery in Nallasopara</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Outdoor Activities Mumbai</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-slate-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="text-slate-500 text-sm">© 2024 Maura Wonderlab Nature Exploration Camps. All rights reserved.</p>
+                <div class="flex gap-6 text-sm text-slate-500">
+                    <a href="#" class="hover:text-white">Privacy</a>
+                    <a href="#" class="hover:text-white">Terms</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Functionality
+        const mobileMenuButton = document.getElementById('mobileMenuButton');
+        const closeMenuButton = document.getElementById('closeMenuButton');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const menuOverlay = document.getElementById('menuOverlay');
+        
+        function openMobileMenu() {
+            mobileMenu.classList.add('open');
+            menuOverlay.classList.add('active');
+            document.body.style.overflow = 'hidden'; // Prevent scrolling when menu is open
+        }
+        
+        function closeMobileMenu() {
+            mobileMenu.classList.remove('open');
+            menuOverlay.classList.remove('active');
+            document.body.style.overflow = 'auto'; // Re-enable scrolling
+        }
+        
+        // Event Listeners
+        mobileMenuButton.addEventListener('click', openMobileMenu);
+        closeMenuButton.addEventListener('click', closeMobileMenu);
+        menuOverlay.addEventListener('click', closeMobileMenu);
+        
+        // Close menu when clicking on any menu link
+        document.querySelectorAll('#mobileMenu a').forEach(link => {
+            link.addEventListener('click', closeMobileMenu);
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                const href = this.getAttribute('href');
+                
+                // Only handle internal anchor links (not external links)
+                if (href === '#' || href.startsWith('#') && href.length > 1) {
+                    e.preventDefault();
+                    
+                    const targetId = href.substring(1);
+                    const targetElement = document.getElementById(targetId);
+                    
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80, // Adjust for navbar height
+                            behavior: 'smooth'
+                        });
+                    }
+                }
+            });
+        });
+        
+        // Close menu on ESC key press
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && mobileMenu.classList.contains('open')) {
+                closeMobileMenu();
+            }
+        });
+        
+        // Prevent scrolling on the overlay (touch devices)
+        menuOverlay.addEventListener('touchmove', (e) => {
+            e.preventDefault();
+        }, { passive: false });
+        
+        // Add animation to nature cards on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+        
+        // Observe all nature cards for animation
+        document.querySelectorAll('.nature-card').forEach(card => {
+            card.style.opacity = '0.9';
+            card.style.transform = 'translateY(10px)';
+            card.style.transition = 'opacity 0.5s ease, transform 0.5s ease, box-shadow 0.3s ease';
+            observer.observe(card);
+        });
+        
+        // Animate leaves on page load
+        window.addEventListener('load', () => {
+            const leaves = document.querySelectorAll('.float-leaf');
+            leaves.forEach((leaf, index) => {
+                leaf.style.animationDelay = `${index * 0.5}s`;
+            });
+        });
+    </script>
+</body>
+</html>

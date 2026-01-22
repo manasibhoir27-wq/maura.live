@@ -1,0 +1,738 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teen Adventure Camps (13-16 Years) | Maura Wonderlab | Virar, Vasai, Nallasopara</title>
+    <meta name="description" content="Exciting adventure camps specially designed for teenagers aged 13-16 years in Virar, Nallasopara, and Vasai. Advanced activities, leadership training, and outdoor challenges.">
+    <meta name="keywords" content="adventure camps for teenagers 13-16, teen adventure camps Virar, youth camps Vasai, teenage adventure programs Nallasopara, leadership camps for teens, outdoor challenges for teenagers">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Iconify (Lucide Icons) -->
+    <script src="https://cdn.jsdelivr.net/npm/iconify-icon@1.0.8/dist/iconify-icon.min.js"></script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=Nunito:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        /* Custom Font Settings for Teen-Friendly Vibe */
+        body {
+            font-family: 'Nunito', sans-serif;
+        }
+        h1, h2, h3, h4, h5, h6, .brand-font {
+            font-family: 'Fredoka', sans-serif;
+        }
+        
+        /* Adventure Pattern for Teens */
+        .bg-pattern-teens {
+            background-color: #F0F9FF;
+            background-image: 
+                radial-gradient(#38BDF8 1px, transparent 1px),
+                radial-gradient(#F97316 1px, transparent 1px);
+            background-size: 50px 50px;
+            background-position: 0 0, 25px 25px;
+        }
+
+        /* Custom Scrollbar - Teen Theme */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #E0F2FE; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #0EA5E9; 
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #0284C7; 
+        }
+
+        /* Mobile Menu Animation */
+        .mobile-menu {
+            transform: translateX(100%);
+            transition: transform 0.3s ease-in-out;
+        }
+        
+        .mobile-menu.open {
+            transform: translateX(0);
+        }
+        
+        .menu-overlay {
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease-in-out, visibility 0.3s;
+        }
+        
+        .menu-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        /* Teen Highlight */
+        .teen-highlight {
+            background: linear-gradient(120deg, #FDE68A 0%, #FDE68A 100%);
+            background-repeat: no-repeat;
+            background-size: 100% 0.4em;
+            background-position: 0 88%;
+            padding: 0.1em 0;
+        }
+        
+        /* Adventure Card Hover Effects */
+        .adventure-card {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .adventure-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* Age Badge */
+        .age-badge {
+            background: linear-gradient(135deg, #0EA5E9, #8B5CF6);
+            color: white;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body class="bg-pattern-teens text-slate-700 antialiased selection:bg-sky-200 selection:text-slate-900">
+
+    <!-- Navbar -->
+    <nav class="fixed w-full z-50 top-0 transition-all duration-300 backdrop-blur-md bg-white/90 border-b-2 border-slate-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center gap-2 cursor-pointer" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+                    <img src="maura wonderlab logo.png" alt="Maura Wonderlab" width="50px">
+                    <span class="brand-font text-2xl font-semibold tracking-tight text-slate-800">
+                        Maura <span class="text-sky-600">Wonderlab</span>
+                    </span>
+                </div>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="#teen-programs" class="text-sm font-semibold text-slate-600 hover:text-sky-600 transition-colors">Teen Programs</a>
+                    <a href="#advanced-activities" class="text-sm font-semibold text-slate-600 hover:text-sky-600 transition-colors">Advanced Activities</a>
+                    <a href="#teen-leadership" class="text-sm font-semibold text-slate-600 hover:text-sky-600 transition-colors">Leadership</a>
+                    <a href="#teen-pricing" class="text-sm font-semibold text-slate-600 hover:text-sky-600 transition-colors">Pricing</a>
+                    <a href="../index.html" class="text-sm font-semibold text-slate-600 hover:text-sky-600 transition-colors">← Back to Home</a>
+                    <button class="bg-sky-600 hover:bg-sky-700 text-white px-5 py-2.5 rounded-full text-sm font-semibold transition-all shadow-[0px_4px_0px_0px_rgba(2,132,199,1)] hover:shadow-[0px_2px_0px_0px_rgba(2,132,199,1)] hover:translate-y-[2px]">
+                        Enroll Now
+                    </button>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobileMenuButton" class="text-slate-600 hover:text-sky-600 p-2">
+                        <iconify-icon icon="lucide:menu" width="28" stroke-width="1.5"></iconify-icon>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu Overlay -->
+    <div id="menuOverlay" class="menu-overlay fixed inset-0 bg-black/50 z-40 md:hidden"></div>
+
+    <!-- Mobile Menu -->
+    <div id="mobileMenu" class="mobile-menu fixed top-0 right-0 h-full w-64 bg-white z-50 shadow-2xl md:hidden p-6">
+        <div class="flex justify-between items-center mb-8">
+            <div class="flex items-center gap-2">
+                <div class="h-8 w-8 bg-sky-500 rounded-lg flex items-center justify-center text-white">
+                    <iconify-icon icon="lucide:mountain" width="18"></iconify-icon>
+                </div>
+                <span class="brand-font text-xl font-semibold text-slate-800">Maura <span class="text-sky-600">Wonderlab</span></span>
+            </div>
+            <button id="closeMenuButton" class="text-slate-600 hover:text-sky-600 p-2">
+                <iconify-icon icon="lucide:x" width="24" stroke-width="1.5"></iconify-icon>
+            </button>
+        </div>
+        
+        <div class="space-y-6">
+            <a href="#teen-programs" class="block py-3 text-slate-700 font-semibold border-b border-slate-100" onclick="closeMobileMenu()">Teen Programs</a>
+            <a href="#advanced-activities" class="block py-3 text-slate-700 font-semibold border-b border-slate-100" onclick="closeMobileMenu()">Advanced Activities</a>
+            <a href="#teen-leadership" class="block py-3 text-slate-700 font-semibold border-b border-slate-100" onclick="closeMobileMenu()">Leadership</a>
+            <a href="#teen-pricing" class="block py-3 text-slate-700 font-semibold border-b border-slate-100" onclick="closeMobileMenu()">Pricing</a>
+            <a href="../index.html" class="block py-3 text-slate-700 font-semibold border-b border-slate-100" onclick="closeMobileMenu()">← Back to Home</a>
+            <div class="pt-4">
+                <button class="w-full bg-sky-600 hover:bg-sky-700 text-white px-5 py-3 rounded-full text-sm font-semibold transition-all">
+                    Enroll Now
+                </button>
+            </div>
+        </div>
+        
+        <div class="absolute bottom-8 left-6 right-6">
+            <p class="text-sm text-slate-500 mb-4">Contact us:</p>
+            <div class="flex items-center gap-2 text-slate-700 mb-2">
+                <iconify-icon icon="lucide:phone" width="16"></iconify-icon>
+                <span class="text-sm">+91 77680 31411</span>
+            </div>
+            <div class="flex items-center gap-2 text-slate-700">
+                <iconify-icon icon="lucide:mail" width="16"></iconify-icon>
+                <span class="text-sm">maurawonderlab@gmail.com</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hero Section for Teen Adventure Camps -->
+    <section class="relative pt-32 pb-20 lg:pt-40 lg:pb-28 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+            <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-sky-100 text-sky-700 text-xs font-bold mb-8 uppercase tracking-wide border border-sky-200">
+                <iconify-icon icon="lucide:zap" width="16"></iconify-icon>
+                Exclusive for Teenagers
+            </div>
+            
+            <h1 class="text-5xl md:text-7xl lg:text-8xl font-semibold tracking-tight text-slate-900 mb-6 leading-[0.9]">
+                <span class="teen-highlight">Advanced Adventure Camps</span> <br>
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-sky-500 via-blue-600 to-purple-600">For 13-16 Years</span>
+            </h1>
+            
+            <p class="mt-6 max-w-3xl mx-auto text-xl md:text-2xl text-slate-600 leading-relaxed font-medium">
+                Challenge yourself with our <span class="font-bold text-sky-700">expert-designed adventure programs</span> specifically created for teenagers. 
+                Build confidence, develop leadership skills, and create lifelong friendships.
+            </p>
+
+            <!-- Age Group Highlight -->
+            <div class="mt-10 flex flex-col sm:flex-row gap-4 justify-center items-center">
+                <div class="flex items-center gap-4 px-6 py-3 bg-white rounded-2xl shadow-lg border border-slate-200">
+                    <div class="age-badge px-4 py-2 rounded-full text-sm">13-16 Years</div>
+                    <div class="text-slate-700 font-semibold">Designed Specifically for Teenagers</div>
+                </div>
+            </div>
+
+            <div class="mt-10 flex flex-col sm:flex-row gap-4 justify-center items-center">
+                <button class="w-full sm:w-auto px-8 py-4 bg-sky-600 hover:bg-sky-700 text-white rounded-2xl text-base font-semibold transition-all shadow-[0px_6px_0px_0px_#0369A1] hover:shadow-[0px_3px_0px_0px_#0369A1] hover:translate-y-[3px] flex items-center justify-center gap-2">
+                    <iconify-icon icon="lucide:calendar" width="20"></iconify-icon>
+                    Enroll for Summer 2024
+                </button>
+                <button class="w-full sm:w-auto px-8 py-4 bg-white hover:bg-slate-50 text-slate-700 border-2 border-slate-200 rounded-2xl text-base font-semibold transition-all hover:border-slate-300 flex items-center justify-center gap-2">
+                    <iconify-icon icon="lucide:download" width="20"></iconify-icon>
+                    Download Brochure
+                </button>
+            </div>
+        </div>
+
+        <!-- Decorative Blobs -->
+        <div class="absolute top-1/4 left-0 -translate-x-1/2 w-64 h-64 bg-sky-300/30 rounded-full blur-3xl -z-10"></div>
+        <div class="absolute bottom-0 right-0 translate-x-1/4 w-96 h-96 bg-purple-300/20 rounded-full blur-3xl -z-10"></div>
+    </section>
+
+    <!-- Teen Programs Overview -->
+    <section id="teen-programs" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-semibold text-slate-900 mb-4 tracking-tight">Tailored for <span class="text-sky-600">Teen Development</span></h2>
+                <p class="text-slate-600 max-w-2xl mx-auto text-lg">Our adventure camps for teenagers (13-16 years) focus on building critical life skills through exciting outdoor challenges.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Program 1 -->
+                <div class="bg-slate-50 p-8 rounded-3xl adventure-card border-2 border-slate-100">
+                    <div class="h-12 w-12 bg-sky-100 rounded-xl flex items-center justify-center mb-6">
+                        <iconify-icon icon="lucide:target" width="24" class="text-sky-600"></iconify-icon>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-800 mb-3">Leadership Development</h3>
+                    <p class="text-slate-600 mb-6">Advanced leadership camps designed specifically for teenagers aged 13-16 to build confidence and decision-making skills.</p>
+                    <div class="inline-flex items-center gap-1 text-sm font-semibold text-sky-600">
+                        <span>Explore Program</span>
+                        <iconify-icon icon="lucide:arrow-right" width="16"></iconify-icon>
+                    </div>
+                </div>
+
+                <!-- Program 2 -->
+                <div class="bg-slate-50 p-8 rounded-3xl adventure-card border-2 border-slate-100">
+                    <div class="h-12 w-12 bg-emerald-100 rounded-xl flex items-center justify-center mb-6">
+                        <iconify-icon icon="lucide:shield" width="24" class="text-emerald-600"></iconify-icon>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-800 mb-3">Outdoor Survival Skills</h3>
+                    <p class="text-slate-600 mb-6">Advanced survival training for teenagers in Virar, Vasai & Nallasopara - wilderness navigation, shelter building, and emergency response.</p>
+                    <div class="inline-flex items-center gap-1 text-sm font-semibold text-emerald-600">
+                        <span>Learn Survival Skills</span>
+                        <iconify-icon icon="lucide:arrow-right" width="16"></iconify-icon>
+                    </div>
+                </div>
+
+                <!-- Program 3 -->
+                <div class="bg-slate-50 p-8 rounded-3xl adventure-card border-2 border-slate-100">
+                    <div class="h-12 w-12 bg-purple-100 rounded-xl flex items-center justify-center mb-6">
+                        <iconify-icon icon="lucide:users" width="24" class="text-purple-600"></iconify-icon>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-800 mb-3">Team Building Challenges</h3>
+                    <p class="text-slate-600 mb-6">Complex team-building activities that enhance communication, collaboration, and problem-solving for teenagers.</p>
+                    <div class="inline-flex items-center gap-1 text-sm font-semibold text-purple-600">
+                        <span>Join Team Challenges</span>
+                        <iconify-icon icon="lucide:arrow-right" width="16"></iconify-icon>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Advanced Activities for Teenagers -->
+    <section id="advanced-activities" class="py-24 bg-gradient-to-b from-slate-50 to-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-semibold text-slate-900 mb-4 tracking-tight">Advanced Activities for <span class="teen-highlight">Teenagers 13-16</span></h2>
+                <p class="text-slate-600 max-w-2xl mx-auto text-lg">Challenging adventures designed to push boundaries and build resilience in teenagers.</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <!-- Activity List -->
+                <div>
+                    <div class="space-y-6">
+                        <!-- Activity 1 -->
+                        <div class="flex items-start gap-4 p-6 bg-white rounded-2xl shadow-sm border border-slate-100 adventure-card">
+                            <div class="h-14 w-14 bg-orange-100 rounded-xl flex items-center justify-center flex-shrink-0">
+                                <iconify-icon icon="lucide:mountain" width="28" class="text-orange-600"></iconify-icon>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold text-slate-800 mb-2">Advanced Rock Climbing</h3>
+                                <p class="text-slate-600 mb-3">Challenging rock climbing routes designed for teenagers aged 13-16 with proper safety gear and expert supervision.</p>
+                                <span class="inline-block px-3 py-1 bg-orange-100 text-orange-700 text-xs font-semibold rounded-full">Age 13-16</span>
+                            </div>
+                        </div>
+
+                        <!-- Activity 2 -->
+                        <div class="flex items-start gap-4 p-6 bg-white rounded-2xl shadow-sm border border-slate-100 adventure-card">
+                            <div class="h-14 w-14 bg-sky-100 rounded-xl flex items-center justify-center flex-shrink-0">
+                                <iconify-icon icon="lucide:compass" width="28" class="text-sky-600"></iconify-icon>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold text-slate-800 mb-2">Wilderness Navigation</h3>
+                                <p class="text-slate-600 mb-3">Map reading, compass skills, and GPS navigation for teenagers in the forests around Vasai and Nallasopara.</p>
+                                <span class="inline-block px-3 py-1 bg-sky-100 text-sky-700 text-xs font-semibold rounded-full">Age 13+</span>
+                            </div>
+                        </div>
+
+                        <!-- Activity 3 -->
+                        <div class="flex items-start gap-4 p-6 bg-white rounded-2xl shadow-sm border border-slate-100 adventure-card">
+                            <div class="h-14 w-14 bg-emerald-100 rounded-xl flex items-center justify-center flex-shrink-0">
+                                <iconify-icon icon="lucide:campfire" width="28" class="text-emerald-600"></iconify-icon>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold text-slate-800 mb-2">Survival Camping</h3>
+                                <p class="text-slate-600 mb-3">Overnight survival camping where teenagers learn fire-making, shelter building, and wilderness cooking.</p>
+                                <span class="inline-block px-3 py-1 bg-emerald-100 text-emerald-700 text-xs font-semibold rounded-full">Age 14-16</span>
+                            </div>
+                        </div>
+
+                        <!-- Activity 4 -->
+                        <div class="flex items-start gap-4 p-6 bg-white rounded-2xl shadow-sm border border-slate-100 adventure-card">
+                            <div class="h-14 w-14 bg-purple-100 rounded-xl flex items-center justify-center flex-shrink-0">
+                                <iconify-icon icon="lucide:zap" width="28" class="text-purple-600"></iconify-icon>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold text-slate-800 mb-2">High Ropes & Zipline</h3>
+                                <p class="text-slate-600 mb-3">Advanced high ropes courses and zipline adventures designed specifically for teenage thrill-seekers.</p>
+                                <span class="inline-block px-3 py-1 bg-purple-100 text-purple-700 text-xs font-semibold rounded-full">Age 13+</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Activity Image/Stats -->
+                <div class="bg-gradient-to-br from-sky-500 to-blue-600 rounded-3xl p-8 text-white">
+                    <div class="mb-8">
+                        <h3 class="text-2xl font-bold mb-4">Why Teen-Specific Adventures?</h3>
+                        <p class="text-sky-100">Our adventure camps for teenagers are specifically designed to address the unique developmental needs of 13-16 year olds, focusing on independence, responsibility, and personal growth.</p>
+                    </div>
+                    
+                    <div class="grid grid-cols-2 gap-6 mb-8">
+                        <div class="text-center p-4 bg-white/10 rounded-2xl backdrop-blur-sm">
+                            <div class="text-3xl font-bold mb-2">92%</div>
+                            <div class="text-sm text-sky-100">Confidence Improvement</div>
+                        </div>
+                        <div class="text-center p-4 bg-white/10 rounded-2xl backdrop-blur-sm">
+                            <div class="text-3xl font-bold mb-2">87%</div>
+                            <div class="text-sm text-sky-100">Leadership Skills Developed</div>
+                        </div>
+                        <div class="text-center p-4 bg-white/10 rounded-2xl backdrop-blur-sm">
+                            <div class="text-3xl font-bold mb-2">500+</div>
+                            <div class="text-sm text-sky-100">Teens Trained</div>
+                        </div>
+                        <div class="text-center p-4 bg-white/10 rounded-2xl backdrop-blur-sm">
+                            <div class="text-3xl font-bold mb-2">100%</div>
+                            <div class="text-sm text-sky-100">Safety Record</div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white/10 p-4 rounded-2xl">
+                        <div class="flex items-center gap-3 mb-3">
+                            <iconify-icon icon="lucide:shield-check" width="24" class="text-emerald-300"></iconify-icon>
+                            <span class="font-semibold">Safety Certified Instructors</span>
+                        </div>
+                        <p class="text-sm text-sky-100">All our adventure activities for teenagers are supervised by certified instructors with specialized training in adolescent development and safety protocols.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Teen Leadership Programs -->
+    <section id="teen-leadership" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-semibold text-slate-900 mb-4 tracking-tight">Leadership Development for <span class="teen-highlight">Teenagers</span></h2>
+                <p class="text-slate-600 max-w-2xl mx-auto text-lg">Specialized programs to develop leadership qualities in teenagers aged 13-16 years.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Leadership Program 1 -->
+                <div class="bg-gradient-to-b from-slate-50 to-white p-8 rounded-3xl border-2 border-slate-100 shadow-sm adventure-card">
+                    <div class="h-16 w-16 bg-sky-100 rounded-2xl flex items-center justify-center mb-6 mx-auto">
+                        <iconify-icon icon="lucide:award" width="32" class="text-sky-600"></iconify-icon>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-800 mb-3 text-center">Junior Leadership Camp</h3>
+                    <p class="text-slate-600 mb-6 text-center">Week-long intensive leadership camp for teenagers focusing on decision-making, communication, and team management.</p>
+                    <div class="text-center">
+                        <span class="inline-block px-4 py-2 bg-sky-600 text-white text-sm font-semibold rounded-full">Ages 13-15</span>
+                    </div>
+                </div>
+
+                <!-- Leadership Program 2 -->
+                <div class="bg-gradient-to-b from-slate-50 to-white p-8 rounded-3xl border-2 border-sky-200 shadow-lg adventure-card relative">
+                    <div class="absolute top-0 right-0 bg-sky-600 text-white text-xs font-bold px-4 py-2 rounded-bl-xl rounded-tr-3xl">MOST POPULAR</div>
+                    <div class="h-16 w-16 bg-emerald-100 rounded-2xl flex items-center justify-center mb-6 mx-auto">
+                        <iconify-icon icon="lucide:target" width="32" class="text-emerald-600"></iconify-icon>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-800 mb-3 text-center">Adventure Leadership Program</h3>
+                    <p class="text-slate-600 mb-6 text-center">Combine outdoor adventure with leadership training. Perfect for teenagers seeking challenge and growth.</p>
+                    <div class="text-center">
+                        <span class="inline-block px-4 py-2 bg-emerald-600 text-white text-sm font-semibold rounded-full">Ages 14-16</span>
+                    </div>
+                </div>
+
+                <!-- Leadership Program 3 -->
+                <div class="bg-gradient-to-b from-slate-50 to-white p-8 rounded-3xl border-2 border-slate-100 shadow-sm adventure-card">
+                    <div class="h-16 w-16 bg-purple-100 rounded-2xl flex items-center justify-center mb-6 mx-auto">
+                        <iconify-icon icon="lucide:users" width="32" class="text-purple-600"></iconify-icon>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-800 mb-3 text-center">Team Captain Training</h3>
+                    <p class="text-slate-600 mb-6 text-center">Develop skills to lead teams effectively through adventure challenges and group activities.</p>
+                    <div class="text-center">
+                        <span class="inline-block px-4 py-2 bg-purple-600 text-white text-sm font-semibold rounded-full">Ages 13-16</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Teen Testimonials -->
+    <section class="py-24 bg-gradient-to-b from-white to-slate-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-semibold text-slate-900 mb-4 tracking-tight">Teens Love Our <span class="text-sky-600">Adventure Camps</span></h2>
+                <p class="text-slate-600 max-w-2xl mx-auto text-lg">Hear from teenagers who have experienced our adventure programs.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="bg-white p-8 rounded-3xl shadow-sm border border-slate-100">
+                    <div class="flex items-center gap-4 mb-6">
+                        <div class="h-14 w-14 bg-sky-100 rounded-full flex items-center justify-center text-sky-600 font-bold text-xl">R</div>
+                        <div>
+                            <h4 class="font-bold text-slate-800">Rohan, 15</h4>
+                            <p class="text-sm text-slate-500">Virar West</p>
+                        </div>
+                    </div>
+                    <p class="text-slate-600 mb-6 italic">"The rock climbing and survival camping for teenagers was amazing! I learned so much about leadership and made friends from different schools in Vasai."</p>
+                    <div class="flex text-amber-400">
+                        <iconify-icon icon="lucide:star" width="20" fill="currentColor"></iconify-icon>
+                        <iconify-icon icon="lucide:star" width="20" fill="currentColor"></iconify-icon>
+                        <iconify-icon icon="lucide:star" width="20" fill="currentColor"></iconify-icon>
+                        <iconify-icon icon="lucide:star" width="20" fill="currentColor"></iconify-icon>
+                        <iconify-icon icon="lucide:star" width="20" fill="currentColor"></iconify-icon>
+                    </div>
+                </div>
+
+                <!-- Testimonial 2 -->
+                <div class="bg-white p-8 rounded-3xl shadow-sm border border-slate-100">
+                    <div class="flex items-center gap-4 mb-6">
+                        <div class="h-14 w-14 bg-emerald-100 rounded-full flex items-center justify-center text-emerald-600 font-bold text-xl">S</div>
+                        <div>
+                            <h4 class="font-bold text-slate-800">Sneha, 14</h4>
+                            <p class="text-sm text-slate-500">Nallasopara East</p>
+                        </div>
+                    </div>
+                    <p class="text-slate-600 mb-6 italic">"I was nervous at first, but the adventure camps for teenagers helped me build so much confidence. The wilderness navigation was my favorite!"</p>
+                    <div class="flex text-amber-400">
+                        <iconify-icon icon="lucide:star" width="20" fill="currentColor"></iconify-icon>
+                        <iconify-icon icon="lucide:star" width="20" fill="currentColor"></iconify-icon>
+                        <iconify-icon icon="lucide:star" width="20" fill="currentColor"></iconify-icon>
+                        <iconify-icon icon="lucide:star" width="20" fill="currentColor"></iconify-icon>
+                        <iconify-icon icon="lucide:star" width="20" fill="currentColor"></iconify-icon>
+                    </div>
+                </div>
+
+                <!-- Testimonial 3 -->
+                <div class="bg-white p-8 rounded-3xl shadow-sm border border-slate-100">
+                    <div class="flex items-center gap-4 mb-6">
+                        <div class="h-14 w-14 bg-purple-100 rounded-full flex items-center justify-center text-purple-600 font-bold text-xl">A</div>
+                        <div>
+                            <h4 class="font-bold text-slate-800">Arjun, 16</h4>
+                            <p class="text-sm text-slate-500">Vasai</p>
+                        </div>
+                    </div>
+                    <p class="text-slate-600 mb-6 italic">"The leadership development program for teenagers changed how I approach challenges. Best summer camp experience for teens in the Vasai-Virar area!"</p>
+                    <div class="flex text-amber-400">
+                        <iconify-icon icon="lucide:star" width="20" fill="currentColor"></iconify-icon>
+                        <iconify-icon icon="lucide:star" width="20" fill="currentColor"></iconify-icon>
+                        <iconify-icon icon="lucide:star" width="20" fill="currentColor"></iconify-icon>
+                        <iconify-icon icon="lucide:star" width="20" fill="currentColor"></iconify-icon>
+                        <iconify-icon icon="lucide:star" width="20" fill="currentColor"></iconify-icon>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing for Teen Programs -->
+    <section id="teen-pricing" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-semibold text-slate-900 mb-4 tracking-tight">Teen Adventure Camp <span class="text-sky-600">Pricing</span></h2>
+                <p class="text-slate-600 max-w-2xl mx-auto text-lg">Specialized programs for teenagers aged 13-16 with advanced activities and leadership training.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Basic Teen Camp -->
+                <div class="border-2 border-slate-100 rounded-3xl p-8 hover:border-sky-200 transition-colors adventure-card">
+                    <h3 class="text-xl font-bold text-slate-800 mb-2">Weekend Teen Adventure</h3>
+                    <p class="text-sm text-slate-500 mb-6">Perfect introduction to adventure for teenagers</p>
+                    <div class="mb-6">
+                        <span class="text-4xl font-bold text-slate-800">₹2,499</span>
+                        <span class="text-slate-500">/teenager</span>
+                    </div>
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-center gap-3 text-slate-700"><iconify-icon icon="lucide:check" class="text-emerald-500"></iconify-icon> 2-Day Adventure Program</li>
+                        <li class="flex items-center gap-3 text-slate-700"><iconify-icon icon="lucide:check" class="text-emerald-500"></iconify-icon> Basic Rock Climbing</li>
+                        <li class="flex items-center gap-3 text-slate-700"><iconify-icon icon="lucide:check" class="text-emerald-500"></iconify-icon> Team Building Activities</li>
+                        <li class="flex items-center gap-3 text-slate-700"><iconify-icon icon="lucide:check" class="text-emerald-500"></iconify-icon> Meals Included</li>
+                        <li class="flex items-center gap-3 text-slate-700"><iconify-icon icon="lucide:check" class="text-emerald-500"></iconify-icon> Certificate of Completion</li>
+                    </ul>
+                    <button class="w-full py-3 rounded-xl border-2 border-slate-200 text-slate-700 font-semibold hover:border-sky-500 hover:text-sky-600 transition-colors">
+                        Select for Teenager
+                    </button>
+                </div>
+
+                <!-- Popular Teen Camp -->
+                <div class="border-2 border-sky-500 rounded-3xl p-8 relative bg-sky-50/50 shadow-xl shadow-sky-100 adventure-card">
+                    <div class="absolute top-0 right-0 bg-sky-600 text-white text-xs font-bold px-4 py-2 rounded-bl-xl rounded-tr-3xl">TEEN FAVORITE</div>
+                    <h3 class="text-xl font-bold text-slate-800 mb-2">Advanced Teen Adventure</h3>
+                    <p class="text-sm text-slate-500 mb-6">Complete adventure experience for teenagers 13-16</p>
+                    <div class="mb-6">
+                        <span class="text-4xl font-bold text-slate-800">₹4,999</span>
+                        <span class="text-slate-500">/teenager</span>
+                    </div>
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-center gap-3 text-slate-700"><iconify-icon icon="lucide:check" class="text-emerald-500"></iconify-icon> 5-Day Residential Camp</li>
+                        <li class="flex items-center gap-3 text-slate-700"><iconify-icon icon="lucide:check" class="text-emerald-500"></iconify-icon> Advanced Rock Climbing</li>
+                        <li class="flex items-center gap-3 text-slate-700"><iconify-icon icon="lucide:check" class="text-emerald-500"></iconify-icon> Wilderness Survival Training</li>
+                        <li class="flex items-center gap-3 text-slate-700"><iconify-icon icon="lucide:check" class="text-emerald-500"></iconify-icon> Leadership Development Sessions</li>
+                        <li class="flex items-center gap-3 text-slate-700"><iconify-icon icon="lucide:check" class="text-emerald-500"></iconify-icon> Overnight Camping Experience</li>
+                        <li class="flex items-center gap-3 text-slate-700"><iconify-icon icon="lucide:check" class="text-emerald-500"></iconify-icon> All Meals & Accommodation</li>
+                    </ul>
+                    <button class="w-full py-3 rounded-xl bg-sky-600 text-white font-semibold shadow-[0px_4px_0px_0px_#0284C7] hover:shadow-[0px_2px_0px_0px_#0284C7] hover:translate-y-[2px] transition-all">
+                        Enroll Teenager
+                    </button>
+                </div>
+
+                <!-- Leadership Teen Camp -->
+                <div class="border-2 border-slate-100 rounded-3xl p-8 hover:border-purple-200 transition-colors adventure-card">
+                    <h3 class="text-xl font-bold text-slate-800 mb-2">Teen Leadership Intensive</h3>
+                    <p class="text-sm text-slate-500 mb-6">Premium leadership program for teenagers</p>
+                    <div class="mb-6">
+                        <span class="text-4xl font-bold text-slate-800">₹7,999</span>
+                        <span class="text-slate-500">/teenager</span>
+                    </div>
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-center gap-3 text-slate-700"><iconify-icon icon="lucide:check" class="text-emerald-500"></iconify-icon> 7-Day Leadership Camp</li>
+                        <li class="flex items-center gap-3 text-slate-700"><iconify-icon icon="lucide:check" class="text-emerald-500"></iconify-icon> Advanced Adventure Activities</li>
+                        <li class="flex items-center gap-3 text-slate-700"><iconify-icon icon="lucide:check" class="text-emerald-500"></iconify-icon> Personal Leadership Coaching</li>
+                        <li class="flex items-center gap-3 text-slate-700"><iconify-icon icon="lucide:check" class="text-emerald-500"></iconify-icon> Community Service Project</li>
+                        <li class="flex items-center gap-3 text-slate-700"><iconify-icon icon="lucide:check" class="text-emerald-500"></iconify-icon> Leadership Certificate</li>
+                        <li class="flex items-center gap-3 text-slate-700"><iconify-icon icon="lucide:check" class="text-emerald-500"></iconify-icon> Alumni Network Access</li>
+                    </ul>
+                    <button class="w-full py-3 rounded-xl border-2 border-slate-200 text-slate-700 font-semibold hover:border-purple-500 hover:text-purple-600 transition-colors">
+                        Contact for Details
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 bg-gradient-to-r from-sky-600 to-blue-700 text-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6">Ready for the Ultimate Teen Adventure?</h2>
+            <p class="text-sky-100 text-lg mb-8 max-w-2xl mx-auto">Join hundreds of teenagers from Virar, Vasai, and Nallasopara who have transformed through our adventure camps for 13-16 year olds.</p>
+            
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <button class="px-8 py-4 bg-white text-sky-700 rounded-2xl text-lg font-bold hover:bg-slate-100 transition-colors shadow-lg">
+                    <iconify-icon icon="lucide:calendar-days" width="20" class="mr-2"></iconify-icon>
+                    Book Teen Adventure Camp
+                </button>
+                <button class="px-8 py-4 bg-transparent border-2 border-white text-white rounded-2xl text-lg font-bold hover:bg-white/10 transition-colors">
+                    <iconify-icon icon="lucide:phone" width="20" class="mr-2"></iconify-icon>
+                    Call +91 77680 31411
+                </button>
+            </div>
+            
+            <p class="mt-8 text-sm text-sky-200">Limited spots available for Summer 2024 teen adventure camps. Early enrollment recommended.</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-white pt-20 pb-10 rounded-t-[3rem]">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
+                <div class="col-span-1 md:col-span-2">
+                    <div class="flex items-center gap-2 mb-6">
+                         <div class="h-8 w-8 bg-sky-500 rounded-lg flex items-center justify-center text-white">
+                            <iconify-icon icon="lucide:mountain" width="18"></iconify-icon>
+                        </div>
+                        <span class="brand-font text-2xl font-bold">Maura <span class="text-sky-400">Wonderlab</span></span>
+                    </div>
+                    <p class="text-slate-400 max-w-sm mb-6">Specializing in adventure camps for teenagers aged 13-16 years. Building confidence, leadership, and lifelong skills through outdoor challenges.</p>
+                    <div class="flex gap-4">
+                        <a href="#" class="h-10 w-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-sky-500 transition-colors"><iconify-icon icon="lucide:instagram" width="20"></iconify-icon></a>
+                        <a href="#" class="h-10 w-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-blue-500 transition-colors"><iconify-icon icon="lucide:facebook" width="20"></iconify-icon></a>
+                        <a href="#" class="h-10 w-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-emerald-500 transition-colors"><iconify-icon icon="lucide:phone" width="20"></iconify-icon></a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="font-bold text-lg mb-6">Teen Programs</h4>
+                    <ul class="space-y-4 text-slate-400 text-sm">
+                        <li><a href="#" class="hover:text-white transition-colors">Adventure Camps (13-16)</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Leadership Development</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Survival Skills Training</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Teen Team Building</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Summer Camps for Teens</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-bold text-lg mb-6">Teen Camp Locations</h4>
+                    <ul class="space-y-4 text-slate-400 text-sm">
+                        <li><a href="#" class="hover:text-white transition-colors">Teen Adventure Camp Virar</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Youth Camp Vasai</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Teen Program Nallasopara</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Residential Teen Camps</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-slate-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="text-slate-500 text-sm">© 2024 Maura Wonderlab Teen Adventure Camps. All rights reserved.</p>
+                <div class="flex gap-6 text-sm text-slate-500">
+                    <a href="#" class="hover:text-white">Privacy Policy</a>
+                    <a href="#" class="hover:text-white">Terms & Conditions</a>
+                    <a href="#" class="hover:text-white">Safety Guidelines</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Functionality
+        const mobileMenuButton = document.getElementById('mobileMenuButton');
+        const closeMenuButton = document.getElementById('closeMenuButton');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const menuOverlay = document.getElementById('menuOverlay');
+        
+        function openMobileMenu() {
+            mobileMenu.classList.add('open');
+            menuOverlay.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+        
+        function closeMobileMenu() {
+            mobileMenu.classList.remove('open');
+            menuOverlay.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+        
+        // Event Listeners
+        mobileMenuButton.addEventListener('click', openMobileMenu);
+        closeMenuButton.addEventListener('click', closeMobileMenu);
+        menuOverlay.addEventListener('click', closeMobileMenu);
+        
+        // Close menu when clicking on any menu link
+        document.querySelectorAll('#mobileMenu a').forEach(link => {
+            link.addEventListener('click', closeMobileMenu);
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                const href = this.getAttribute('href');
+                
+                if (href === '#' || href.startsWith('#') && href.length > 1) {
+                    e.preventDefault();
+                    
+                    const targetId = href.substring(1);
+                    const targetElement = document.getElementById(targetId);
+                    
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                    }
+                }
+            });
+        });
+        
+        // Close menu on ESC key press
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && mobileMenu.classList.contains('open')) {
+                closeMobileMenu();
+            }
+        });
+        
+        // Prevent scrolling on the overlay
+        menuOverlay.addEventListener('touchmove', (e) => {
+            e.preventDefault();
+        }, { passive: false });
+        
+        // Age-specific content highlighting
+        document.addEventListener('DOMContentLoaded', function() {
+            // Highlight all age references
+            const ageElements = document.querySelectorAll('p, h1, h2, h3, span');
+            ageElements.forEach(el => {
+                const text = el.textContent;
+                if (text.match(/13-16|teenager|teen|youth/i)) {
+                    el.innerHTML = el.innerHTML.replace(
+                        /(13-16|teenager|teen|youth)/gi, 
+                        '<span class="text-sky-600 font-bold">$1</span>'
+                    );
+                }
+            });
+            
+            // Add scroll animations for adventure cards
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('animate-fadeInUp');
+                    }
+                });
+            }, observerOptions);
+            
+            document.querySelectorAll('.adventure-card').forEach(card => {
+                observer.observe(card);
+            });
+        });
+    </script>
+</body>
+</html>

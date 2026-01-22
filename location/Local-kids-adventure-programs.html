@@ -1,0 +1,748 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Local Kids Adventure Programs | Maura Wonderlab - Best Adventure Camps in Virar, Vasai, Nallasopara</title>
+    <meta name="description" content="Explore local kids adventure programs with Maura Wonderlab in Virar, Vasai & Nallasopara. STEM camps, outdoor activities, survival skills, team building for children aged 3-16.">
+    <meta name="keywords" content="Local kids adventure programs, adventure camps for kids, summer camps, outdoor adventure camps, kids adventure programs, children's adventure activities, youth adventure camps, rock climbing for kids, hiking adventures for children, camping skills for youth, survival skills training, nature exploration camps, swimming camps for kids, archery for kids, STEM adventure camps, leadership development camps, team building activities, adventure programs in Virar, adventure camps in Vasai, kids activities in Nallasopara">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Iconify (Lucide Icons) -->
+    <script src="https://cdn.jsdelivr.net/npm/iconify-icon@1.0.8/dist/iconify-icon.min.js"></script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=Nunito:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        /* Custom Font Settings for Childish/Playful Vibe */
+        body {
+            font-family: 'Nunito', sans-serif;
+        }
+        h1, h2, h3, h4, h5, h6, .brand-font {
+            font-family: 'Fredoka', sans-serif;
+        }
+        
+        /* Playful Blob Pattern */
+        .bg-pattern {
+            background-color: #FFFDF5;
+            background-image: radial-gradient(#FDE68A 1px, transparent 1px), radial-gradient(#BAE6FD 1px, transparent 1px);
+            background-size: 40px 40px;
+            background-position: 0 0, 20px 20px;
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #FFF7ED; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #FDBA74; 
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #EA580C; 
+        }
+
+        /* Mobile Menu Animation */
+        .mobile-menu {
+            transform: translateX(100%);
+            transition: transform 0.3s ease-in-out;
+        }
+        
+        .mobile-menu.open {
+            transform: translateX(0);
+        }
+        
+        .menu-overlay {
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease-in-out, visibility 0.3s;
+        }
+        
+        .menu-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        /* Activity Card Animations */
+        .activity-card {
+            transition: all 0.3s ease;
+        }
+        
+        .activity-card:hover {
+            transform: translateY(-8px);
+        }
+        
+        /* SEO Keywords Highlight */
+        .keyword-highlight {
+            background: linear-gradient(120deg, #FDE68A 0%, #FDE68A 100%);
+            background-repeat: no-repeat;
+            background-size: 100% 40%;
+            background-position: 0 90%;
+            padding: 0 4px;
+        }
+        
+        /* Location Badges */
+        .location-badge {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            margin: 0 4px 4px 0;
+        }
+    </style>
+</head>
+<body class="bg-pattern text-slate-600 antialiased selection:bg-orange-200 selection:text-orange-900">
+
+    <!-- Navbar -->
+    <nav class="fixed w-full z-50 top-0 transition-all duration-300 backdrop-blur-md bg-white/80 border-b-2 border-slate-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center gap-2 cursor-pointer" onclick="window.location.href='/'">
+                    <img src="maura wonderlab logo.png" alt="Maura Wonderlab" width="50px">
+                    <span class="brand-font text-2xl font-semibold tracking-tight text-slate-800">
+                        Maura <span class="text-orange-500">Wonderlab</span>
+                    </span>
+                </div>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="/" class="text-sm font-semibold text-slate-600 hover:text-orange-500 transition-colors">Home</a>
+                    <a href="#activities" class="text-sm font-semibold text-slate-600 hover:text-orange-500 transition-colors">Activities</a>
+                    <a href="#age-groups" class="text-sm font-semibold text-slate-600 hover:text-orange-500 transition-colors">Age Groups</a>
+                    <a href="#locations" class="text-sm font-semibold text-slate-600 hover:text-orange-500 transition-colors">Locations</a>
+                    <a href="summer-adventure-camps.html" class="text-sm font-semibold text-slate-600 hover:text-orange-500 transition-colors">Summer Camps</a>
+                    <button class="bg-indigo-500 hover:bg-indigo-600 text-white px-5 py-2.5 rounded-full text-sm font-semibold transition-all shadow-[0px_4px_0px_0px_rgba(67,56,202,1)] hover:shadow-[0px_2px_0px_0px_rgba(67,56,202,1)] hover:translate-y-[2px]">
+                        Book Now
+                    </button>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobileMenuButton" class="text-slate-600 hover:text-orange-500 p-2">
+                        <iconify-icon icon="lucide:menu" width="28" stroke-width="1.5"></iconify-icon>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu Overlay -->
+    <div id="menuOverlay" class="menu-overlay fixed inset-0 bg-black/50 z-40 md:hidden"></div>
+
+    <!-- Mobile Menu -->
+    <div id="mobileMenu" class="mobile-menu fixed top-0 right-0 h-full w-64 bg-white z-50 shadow-2xl md:hidden p-6">
+        <div class="flex justify-between items-center mb-8">
+            <div class="flex items-center gap-2">
+                <div class="h-8 w-8 bg-orange-400 rounded-lg flex items-center justify-center text-white">
+                    <iconify-icon icon="lucide:tent" width="18"></iconify-icon>
+                </div>
+                <span class="brand-font text-xl font-semibold text-slate-800">Maura <span class="text-orange-500">Wonderlab</span></span>
+            </div>
+            <button id="closeMenuButton" class="text-slate-600 hover:text-orange-500 p-2">
+                <iconify-icon icon="lucide:x" width="24" stroke-width="1.5"></iconify-icon>
+            </button>
+        </div>
+        
+        <div class="space-y-6">
+            <a href="/" class="block py-3 text-slate-700 font-semibold border-b border-slate-100" onclick="closeMobileMenu()">Home</a>
+            <a href="#activities" class="block py-3 text-slate-700 font-semibold border-b border-slate-100" onclick="closeMobileMenu()">Activities</a>
+            <a href="#age-groups" class="block py-3 text-slate-700 font-semibold border-b border-slate-100" onclick="closeMobileMenu()">Age Groups</a>
+            <a href="#locations" class="block py-3 text-slate-700 font-semibold border-b border-slate-100" onclick="closeMobileMenu()">Locations</a>
+            <a href="summer-adventure-camps.html" class="block py-3 text-slate-700 font-semibold border-b border-slate-100" onclick="closeMobileMenu()">Summer Camps</a>
+            <div class="pt-4">
+                <button class="w-full bg-indigo-500 hover:bg-indigo-600 text-white px-5 py-3 rounded-full text-sm font-semibold transition-all">
+                    Book Now
+                </button>
+            </div>
+        </div>
+        
+        <div class="absolute bottom-8 left-6 right-6">
+            <p class="text-sm text-slate-500 mb-4">Contact us:</p>
+            <div class="flex items-center gap-2 text-slate-700 mb-2">
+                <iconify-icon icon="lucide:phone" width="16"></iconify-icon>
+                <span class="text-sm">+91 77680 31411</span>
+            </div>
+            <div class="flex items-center gap-2 text-slate-700">
+                <iconify-icon icon="lucide:mail" width="16"></iconify-icon>
+                <span class="text-sm">maurawonderlab@gmail.com</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="relative pt-32 pb-16 lg:pt-40 lg:pb-24 overflow-hidden bg-gradient-to-br from-orange-50 via-white to-blue-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+            <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-green-100 text-green-700 text-xs font-bold mb-8 uppercase tracking-wide border border-green-200">
+                <iconify-icon icon="lucide:map-pin" width="16"></iconify-icon>
+                Serving Virar, Vasai & Nallasopara
+            </div>
+            
+            <h1 class="text-4xl md:text-6xl lg:text-7xl font-semibold tracking-tight text-slate-900 mb-6 leading-tight">
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 via-pink-500 to-indigo-500">Local Kids Adventure Programs</span>
+                <br>in Your Neighborhood
+            </h1>
+            
+            <p class="mt-4 max-w-3xl mx-auto text-lg md:text-xl text-slate-600 leading-relaxed">
+                Discover the best <span class="keyword-highlight">adventure camps for kids</span> right here in <span class="font-bold text-slate-800">Virar, Vasai, and Nallasopara</span>. 
+                Maura Wonderlab offers exciting <span class="keyword-highlight">outdoor adventure camps</span>, <span class="keyword-highlight">STEM adventure camps</span>, 
+                and <span class="keyword-highlight">leadership development camps</span> designed specifically for local children.
+            </p>
+
+            <div class="mt-10 flex flex-col sm:flex-row gap-4 justify-center items-center">
+                <a href="#activities" class="w-full sm:w-auto px-8 py-4 bg-orange-500 hover:bg-orange-600 text-white rounded-2xl text-base font-semibold transition-all shadow-[0px_6px_0px_0px_#C2410C] hover:shadow-[0px_3px_0px_0px_#C2410C] hover:translate-y-[3px] flex items-center justify-center gap-2">
+                    <iconify-icon icon="lucide:compass" width="20"></iconify-icon>
+                    Explore All Activities
+                </a>
+                <a href="summer-adventure-camps.html" class="w-full sm:w-auto px-8 py-4 bg-white hover:bg-slate-50 text-slate-700 border-2 border-slate-200 rounded-2xl text-base font-semibold transition-all hover:border-orange-300 flex items-center justify-center gap-2">
+                    <iconify-icon icon="lucide:sun" width="20"></iconify-icon>
+                    Summer Camps 2024
+                </a>
+            </div>
+        </div>
+
+        <!-- Decorative Blobs -->
+        <div class="absolute top-1/4 left-0 -translate-x-1/2 w-64 h-64 bg-yellow-300/30 rounded-full blur-3xl -z-10"></div>
+        <div class="absolute bottom-0 right-0 translate-x-1/4 w-96 h-96 bg-blue-300/20 rounded-full blur-3xl -z-10"></div>
+    </section>
+
+    <!-- Why Choose Local Programs -->
+    <section class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-semibold text-slate-900 mb-4 tracking-tight">Why Choose <span class="keyword-highlight">Local Kids Adventure Programs</span>?</h2>
+                <p class="text-slate-600 max-w-2xl mx-auto">Convenient, safe, and community-focused adventure activities right in your neighborhood</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-orange-50 p-8 rounded-3xl text-center">
+                    <div class="h-16 w-16 bg-orange-100 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                        <iconify-icon icon="lucide:map-pin" width="32" class="text-orange-500"></iconify-icon>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3">Convenient Locations</h3>
+                    <p class="text-slate-600">Easy access to <span class="font-semibold">adventure camps in Virar</span>, <span class="font-semibold">Vasai kids activities</span>, and <span class="font-semibold">Nallasopara adventure programs</span> without long commutes.</p>
+                </div>
+                
+                <div class="bg-blue-50 p-8 rounded-3xl text-center">
+                    <div class="h-16 w-16 bg-blue-100 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                        <iconify-icon icon="lucide:shield-check" width="32" class="text-blue-500"></iconify-icon>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3">Safety First</h3>
+                    <p class="text-slate-600">All our <span class="keyword-highlight">outdoor adventure camps</span> follow strict safety protocols with certified instructors and proper equipment.</p>
+                </div>
+                
+                <div class="bg-green-50 p-8 rounded-3xl text-center">
+                    <div class="h-16 w-16 bg-green-100 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                        <iconify-icon icon="lucide:users" width="32" class="text-green-500"></iconify-icon>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3">Community Building</h3>
+                    <p class="text-slate-600">Your child builds friendships with local peers through <span class="keyword-highlight">team building activities</span> and group adventures.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Activities Section -->
+    <section id="activities" class="py-20 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-semibold text-slate-900 mb-4 tracking-tight">Our <span class="keyword-highlight">Adventure Activities</span> for Kids</h2>
+                <p class="text-slate-600 max-w-3xl mx-auto">From <span class="keyword-highlight">rock climbing for kids</span> to <span class="keyword-highlight">nature exploration camps</span>, we offer a wide range of exciting programs</p>
+            </div>
+
+            <!-- Outdoor Activities -->
+            <div class="mb-16">
+                <h3 class="text-2xl font-bold text-slate-800 mb-8 flex items-center gap-3">
+                    <iconify-icon icon="lucide:mountain" class="text-orange-500" width="28"></iconify-icon>
+                    <span class="keyword-highlight">Outdoor Adventure Activities</span>
+                </h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div class="activity-card bg-white p-6 rounded-2xl shadow-sm hover:shadow-lg border border-slate-100">
+                        <div class="h-12 w-12 bg-orange-100 rounded-xl flex items-center justify-center mb-4">
+                            <iconify-icon icon="lucide:mountain" width="24" class="text-orange-500"></iconify-icon>
+                        </div>
+                        <h4 class="text-lg font-bold text-slate-800 mb-2">Rock Climbing for Kids</h4>
+                        <p class="text-sm text-slate-600 mb-4">Safe, guided rock climbing adventures with proper equipment and supervision.</p>
+                        <div class="flex flex-wrap">
+                            <span class="location-badge bg-orange-100 text-orange-700">Virar</span>
+                            <span class="location-badge bg-blue-100 text-blue-700">Vasai</span>
+                        </div>
+                    </div>
+                    
+                    <div class="activity-card bg-white p-6 rounded-2xl shadow-sm hover:shadow-lg border border-slate-100">
+                        <div class="h-12 w-12 bg-green-100 rounded-xl flex items-center justify-center mb-4">
+                            <iconify-icon icon="lucide:hiking" width="24" class="text-green-500"></iconify-icon>
+                        </div>
+                        <h4 class="text-lg font-bold text-slate-800 mb-2">Hiking Adventures for Children</h4>
+                        <p class="text-sm text-slate-600 mb-4">Nature trails and exploration hikes designed for young adventurers.</p>
+                        <div class="flex flex-wrap">
+                            <span class="location-badge bg-orange-100 text-orange-700">Virar</span>
+                            <span class="location-badge bg-green-100 text-green-700">Nallasopara</span>
+                        </div>
+                    </div>
+                    
+                    <div class="activity-card bg-white p-6 rounded-2xl shadow-sm hover:shadow-lg border border-slate-100">
+                        <div class="h-12 w-12 bg-yellow-100 rounded-xl flex items-center justify-center mb-4">
+                            <iconify-icon icon="lucide:campfire" width="24" class="text-yellow-600"></iconify-icon>
+                        </div>
+                        <h4 class="text-lg font-bold text-slate-800 mb-2">Camping Skills for Youth</h4>
+                        <p class="text-sm text-slate-600 mb-4">Learn tent setup, camp cooking, and outdoor survival techniques.</p>
+                        <div class="flex flex-wrap">
+                            <span class="location-badge bg-orange-100 text-orange-700">Virar</span>
+                            <span class="location-badge bg-blue-100 text-blue-700">Vasai</span>
+                            <span class="location-badge bg-green-100 text-green-700">Nallasopara</span>
+                        </div>
+                    </div>
+                    
+                    <div class="activity-card bg-white p-6 rounded-2xl shadow-sm hover:shadow-lg border border-slate-100">
+                        <div class="h-12 w-12 bg-red-100 rounded-xl flex items-center justify-center mb-4">
+                            <iconify-icon icon="lucide:target" width="24" class="text-red-500"></iconify-icon>
+                        </div>
+                        <h4 class="text-lg font-bold text-slate-800 mb-2">Archery for Kids</h4>
+                        <p class="text-sm text-slate-600 mb-4">Safe archery lessons with child-friendly equipment and certified instructors.</p>
+                        <div class="flex flex-wrap">
+                            <span class="location-badge bg-blue-100 text-blue-700">Vasai</span>
+                            <span class="location-badge bg-green-100 text-green-700">Nallasopara</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Water Activities -->
+            <div class="mb-16">
+                <h3 class="text-2xl font-bold text-slate-800 mb-8 flex items-center gap-3">
+                    <iconify-icon icon="lucide:droplets" class="text-blue-500" width="28"></iconify-icon>
+                    <span class="keyword-highlight">Water Adventure Programs</span>
+                </h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div class="activity-card bg-white p-6 rounded-2xl shadow-sm hover:shadow-lg border border-slate-100">
+                        <div class="h-12 w-12 bg-blue-100 rounded-xl flex items-center justify-center mb-4">
+                            <iconify-icon icon="lucide:swimmer" width="24" class="text-blue-500"></iconify-icon>
+                        </div>
+                        <h4 class="text-lg font-bold text-slate-800 mb-2">Swimming Camps for Kids</h4>
+                        <p class="text-sm text-slate-600 mb-4">Beginner to advanced swimming lessons with certified lifeguards.</p>
+                        <div class="flex flex-wrap">
+                            <span class="location-badge bg-blue-100 text-blue-700">Vasai</span>
+                        </div>
+                    </div>
+                    
+                    <div class="activity-card bg-white p-6 rounded-2xl shadow-sm hover:shadow-lg border border-slate-100">
+                        <div class="h-12 w-12 bg-cyan-100 rounded-xl flex items-center justify-center mb-4">
+                            <iconify-icon icon="lucide:ship" width="24" class="text-cyan-500"></iconify-icon>
+                        </div>
+                        <h4 class="text-lg font-bold text-slate-800 mb-2">Kayaking Adventures</h4>
+                        <p class="text-sm text-slate-600 mb-4">Guided kayaking sessions in safe, controlled water environments.</p>
+                        <div class="flex flex-wrap">
+                            <span class="location-badge bg-orange-100 text-orange-700">Virar</span>
+                        </div>
+                    </div>
+                    
+                    <div class="activity-card bg-white p-6 rounded-2xl shadow-sm hover:shadow-lg border border-slate-100">
+                        <div class="h-12 w-12 bg-indigo-100 rounded-xl flex items-center justify-center mb-4">
+                            <iconify-icon icon="lucide:life-buoy" width="24" class="text-indigo-500"></iconify-icon>
+                        </div>
+                        <h4 class="text-lg font-bold text-slate-800 mb-2">Water Safety Programs</h4>
+                        <p class="text-sm text-slate-600 mb-4">Essential water safety skills and rescue techniques for children.</p>
+                        <div class="flex flex-wrap">
+                            <span class="location-badge bg-blue-100 text-blue-700">Vasai</span>
+                            <span class="location-badge bg-orange-100 text-orange-700">Virar</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Educational Activities -->
+            <div class="mb-16">
+                <h3 class="text-2xl font-bold text-slate-800 mb-8 flex items-center gap-3">
+                    <iconify-icon icon="lucide:graduation-cap" class="text-purple-500" width="28"></iconify-icon>
+                    <span class="keyword-highlight">Educational & Skill-Based Programs</span>
+                </h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div class="activity-card bg-white p-6 rounded-2xl shadow-sm hover:shadow-lg border border-slate-100">
+                        <div class="h-12 w-12 bg-purple-100 rounded-xl flex items-center justify-center mb-4">
+                            <iconify-icon icon="lucide:atom" width="24" class="text-purple-500"></iconify-icon>
+                        </div>
+                        <h4 class="text-lg font-bold text-slate-800 mb-2">STEM Adventure Camps</h4>
+                        <p class="text-sm text-slate-600 mb-4">Science, Technology, Engineering & Math through hands-on outdoor experiments.</p>
+                        <div class="flex flex-wrap">
+                            <span class="location-badge bg-blue-100 text-blue-700">Vasai</span>
+                            <span class="location-badge bg-green-100 text-green-700">Nallasopara</span>
+                        </div>
+                    </div>
+                    
+                    <div class="activity-card bg-white p-6 rounded-2xl shadow-sm hover:shadow-lg border border-slate-100">
+                        <div class="h-12 w-12 bg-pink-100 rounded-xl flex items-center justify-center mb-4">
+                            <iconify-icon icon="lucide:award" width="24" class="text-pink-500"></iconify-icon>
+                        </div>
+                        <h4 class="text-lg font-bold text-slate-800 mb-2">Leadership Development Camps</h4>
+                        <p class="text-sm text-slate-600 mb-4">Build confidence, decision-making skills, and team leadership abilities.</p>
+                        <div class="flex flex-wrap">
+                            <span class="location-badge bg-orange-100 text-orange-700">Virar</span>
+                            <span class="location-badge bg-blue-100 text-blue-700">Vasai</span>
+                        </div>
+                    </div>
+                    
+                    <div class="activity-card bg-white p-6 rounded-2xl shadow-sm hover:shadow-lg border border-slate-100">
+                        <div class="h-12 w-12 bg-emerald-100 rounded-xl flex items-center justify-center mb-4">
+                            <iconify-icon icon="lucide:leaf" width="24" class="text-emerald-500"></iconify-icon>
+                        </div>
+                        <h4 class="text-lg font-bold text-slate-800 mb-2">Environmental Education Camps</h4>
+                        <p class="text-sm text-slate-600 mb-4">Learn about nature conservation, ecosystems, and sustainable living.</p>
+                        <div class="flex flex-wrap">
+                            <span class="location-badge bg-green-100 text-green-700">Nallasopara</span>
+                            <span class="location-badge bg-orange-100 text-orange-700">Virar</span>
+                        </div>
+                    </div>
+                    
+                    <div class="activity-card bg-white p-6 rounded-2xl shadow-sm hover:shadow-lg border border-slate-100">
+                        <div class="h-12 w-12 bg-amber-100 rounded-xl flex items-center justify-center mb-4">
+                            <iconify-icon icon="lucide:users" width="24" class="text-amber-600"></iconify-icon>
+                        </div>
+                        <h4 class="text-lg font-bold text-slate-800 mb-2">Team Building Camps</h4>
+                        <p class="text-sm text-slate-600 mb-4">Group challenges and cooperative activities to build social skills.</p>
+                        <div class="flex flex-wrap">
+                            <span class="location-badge bg-orange-100 text-orange-700">Virar</span>
+                            <span class="location-badge bg-blue-100 text-blue-700">Vasai</span>
+                            <span class="location-badge bg-green-100 text-green-700">Nallasopara</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Age Groups Section -->
+    <section id="age-groups" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-semibold text-slate-900 mb-4 tracking-tight">Age-Appropriate <span class="keyword-highlight">Adventure Programs</span></h2>
+                <p class="text-slate-600 max-w-2xl mx-auto">We design programs specifically for different age groups to ensure safety and maximum engagement</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="bg-pink-50 p-8 rounded-3xl text-center">
+                    <div class="h-20 w-20 bg-pink-100 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                        <iconify-icon icon="lucide:baby" width="40" class="text-pink-500"></iconify-icon>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3">Ages 3-5</h3>
+                    <p class="text-slate-600 mb-6">Gentle introduction to nature with sensory play, simple hikes, and basic camping activities.</p>
+                    <a href="ages-3-5.html" class="text-pink-600 font-semibold text-sm hover:text-pink-700 transition-colors">View Programs →</a>
+                </div>
+                
+                <div class="bg-orange-50 p-8 rounded-3xl text-center">
+                    <div class="h-20 w-20 bg-orange-100 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                        <iconify-icon icon="lucide:child" width="40" class="text-orange-500"></iconify-icon>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3">Ages 6-8</h3>
+                    <p class="text-slate-600 mb-6">Beginner adventure skills, team games, nature crafts, and introductory STEM activities.</p>
+                    <a href="ages-6-8.html" class="text-orange-600 font-semibold text-sm hover:text-orange-700 transition-colors">View Programs →</a>
+                </div>
+                
+                <div class="bg-blue-50 p-8 rounded-3xl text-center">
+                    <div class="h-20 w-20 bg-blue-100 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                        <iconify-icon icon="lucide:user" width="40" class="text-blue-500"></iconify-icon>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3">Ages 9-12</h3>
+                    <p class="text-slate-600 mb-6">Advanced outdoor skills, leadership challenges, science experiments, and adventure sports.</p>
+                    <a href="ages-9-12.html" class="text-blue-600 font-semibold text-sm hover:text-blue-700 transition-colors">View Programs →</a>
+                </div>
+                
+                <div class="bg-green-50 p-8 rounded-3xl text-center">
+                    <div class="h-20 w-20 bg-green-100 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                        <iconify-icon icon="lucide:user-check" width="40" class="text-green-500"></iconify-icon>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3">Ages 13-16</h3>
+                    <p class="text-slate-600 mb-6">Advanced leadership training, survival skills, community projects, and adventure expeditions.</p>
+                    <a href="ages-13-16.html" class="text-green-600 font-semibold text-sm hover:text-green-700 transition-colors">View Programs →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Locations Section -->
+    <section id="locations" class="py-20 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-semibold text-slate-900 mb-4 tracking-tight"><span class="keyword-highlight">Local Kids Adventure Programs</span> Near You</h2>
+                <p class="text-slate-600 max-w-2xl mx-auto">Conveniently located adventure camps across Virar, Vasai, and Nallasopara</p>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                <div class="bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
+                    <div class="h-48 bg-gradient-to-r from-orange-400 to-orange-300 flex items-center justify-center">
+                        <iconify-icon icon="lucide:map-pin" width="64" class="text-white opacity-80"></iconify-icon>
+                    </div>
+                    <div class="p-8">
+                        <h3 class="text-2xl font-bold text-slate-800 mb-4">Adventure Camps in Virar</h3>
+                        <p class="text-slate-600 mb-6">Our Virar location offers comprehensive <span class="keyword-highlight">kids adventure programs</span> including rock climbing, hiking, and STEM activities at convenient local venues.</p>
+                        <ul class="space-y-3 mb-8">
+                            <li class="flex items-center gap-3 text-slate-700"><iconify-icon icon="lucide:check-circle" class="text-orange-500"></iconify-icon> Arnala Beach Adventure Zone</li>
+                            <li class="flex items-center gap-3 text-slate-700"><iconify-icon icon="lucide:check-circle" class="text-orange-500"></iconify-icon> Virar East Nature Park</li>
+                            <li class="flex items-center gap-3 text-slate-700"><iconify-icon icon="lucide:check-circle" class="text-orange-500"></iconify-icon> Westside Adventure Center</li>
+                        </ul>
+                        <a href="camping-for-kids-in-virar.html" class="w-full py-3 bg-orange-500 hover:bg-orange-600 text-white font-semibold rounded-xl flex items-center justify-center gap-2 transition-colors">
+                            <iconify-icon icon="lucide:map-pin"></iconify-icon>
+                            Explore Virar Programs
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
+                    <div class="h-48 bg-gradient-to-r from-blue-400 to-blue-300 flex items-center justify-center">
+                        <iconify-icon icon="lucide:castle" width="64" class="text-white opacity-80"></iconify-icon>
+                    </div>
+                    <div class="p-8">
+                        <h3 class="text-2xl font-bold text-slate-800 mb-4">Adventure Camps in Vasai</h3>
+                        <p class="text-slate-600 mb-6">Vasai locations feature historical fort explorations, water activities, and <span class="keyword-highlight">team building camps</span> in scenic natural settings.</p>
+                        <ul class="space-y-3 mb-8">
+                            <li class="flex items-center gap-3 text-slate-700"><iconify-icon icon="lucide:check-circle" class="text-blue-500"></iconify-icon> Vasai Fort Adventure Base</li>
+                            <li class="flex items-center gap-3 text-slate-700"><iconify-icon icon="lucide:check-circle" class="text-blue-500"></iconify-icon> Aqua Adventure Center</li>
+                            <li class="flex items-center gap-3 text-slate-700"><iconify-icon icon="lucide:check-circle" class="text-blue-500"></iconify-icon> Green Valley Campsite</li>
+                        </ul>
+                        <a href="camping-for-kids-in-vasai.html" class="w-full py-3 bg-blue-500 hover:bg-blue-600 text-white font-semibold rounded-xl flex items-center justify-center gap-2 transition-colors">
+                            <iconify-icon icon="lucide:castle"></iconify-icon>
+                            Explore Vasai Programs
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
+                    <div class="h-48 bg-gradient-to-r from-green-400 to-green-300 flex items-center justify-center">
+                        <iconify-icon icon="lucide:trees" width="64" class="text-white opacity-80"></iconify-icon>
+                    </div>
+                    <div class="p-8">
+                        <h3 class="text-2xl font-bold text-slate-800 mb-4">Adventure Camps in Nallasopara</h3>
+                        <p class="text-slate-600 mb-6">Nallasopara offers safe, enclosed spaces perfect for younger children with <span class="keyword-highlight">nature exploration camps</span> and environmental education.</p>
+                        <ul class="space-y-3 mb-8">
+                            <li class="flex items-center gap-3 text-slate-700"><iconify-icon icon="lucide:check-circle" class="text-green-500"></iconify-icon> Nature Discovery Park</li>
+                            <li class="flex items-center gap-3 text-slate-700"><iconify-icon icon="lucide:check-circle" class="text-green-500"></iconify-icon> Eastside Adventure Ground</li>
+                            <li class="flex items-center gap-3 text-slate-700"><iconify-icon icon="lucide:check-circle" class="text-green-500"></iconify-icon> Young Explorers Campus</li>
+                        </ul>
+                        <a href="camping-for-kids-in-nallasopara.html" class="w-full py-3 bg-green-500 hover:bg-green-600 text-white font-semibold rounded-xl flex items-center justify-center gap-2 transition-colors">
+                            <iconify-icon icon="lucide:trees"></iconify-icon>
+                            Explore Nallasopara Programs
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- SEO Keywords Section -->
+            <div class="mt-20 bg-gradient-to-r from-orange-50 via-white to-blue-50 p-8 rounded-3xl border-2 border-orange-100">
+                <h3 class="text-2xl font-bold text-slate-800 mb-6 text-center">Find Your Perfect <span class="keyword-highlight">Local Kids Adventure Program</span></h3>
+                <p class="text-slate-700 text-center mb-8 max-w-3xl mx-auto">
+                    Looking for <span class="font-semibold text-orange-600">"adventure camps for kids near me"</span> in Virar, Vasai, or Nallasopara? 
+                    Maura Wonderlab offers the best <span class="keyword-highlight">summer camps</span>, <span class="keyword-highlight">weekend adventure camps</span>, 
+                    <span class="keyword-highlight">leadership development camps</span>, and <span class="keyword-highlight">STEM adventure camps</span> 
+                    for children of all ages. Our local programs are designed to build confidence, teach survival skills, 
+                    and create unforgettable outdoor experiences right in your community.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="contact.html" class="px-6 py-3 bg-white border-2 border-orange-300 text-orange-600 font-semibold rounded-xl hover:bg-orange-50 transition-colors">
+                        Contact for Local Programs
+                    </a>
+                    <a href="summer-adventure-camps.html" class="px-6 py-3 bg-orange-500 hover:bg-orange-600 text-white font-semibold rounded-xl transition-colors">
+                        Summer Camp Registration
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 bg-gradient-to-r from-indigo-500 to-purple-600 text-white">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl md:text-4xl font-semibold mb-6 tracking-tight">Ready for Adventure?</h2>
+            <p class="text-xl opacity-90 mb-10 max-w-2xl mx-auto">
+                Join hundreds of local children who have discovered the joy of <span class="font-semibold">outdoor adventure camps</span> 
+                with Maura Wonderlab. Limited spots available for our <span class="font-semibold">summer adventure camps 2024</span>.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="tel:+917768031411" class="px-8 py-4 bg-white text-indigo-600 font-bold rounded-2xl hover:bg-slate-100 transition-all shadow-lg hover:shadow-xl flex items-center justify-center gap-3">
+                    <iconify-icon icon="lucide:phone" width="20"></iconify-icon>
+                    Call: +91 77680 31411
+                </a>
+                <a href="mailto:maurawonderlab@gmail.com" class="px-8 py-4 bg-transparent border-2 border-white text-white font-bold rounded-2xl hover:bg-white/10 transition-all flex items-center justify-center gap-3">
+                    <iconify-icon icon="lucide:mail" width="20"></iconify-icon>
+                    Email Us
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-white pt-20 pb-10 rounded-t-[3rem]">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
+                <div class="col-span-1 md:col-span-2">
+                    <div class="flex items-center gap-2 mb-6">
+                         <div class="h-8 w-8 bg-orange-500 rounded-lg flex items-center justify-center text-white">
+                            <iconify-icon icon="lucide:tent" width="18"></iconify-icon>
+                        </div>
+                        <span class="brand-font text-2xl font-bold">Maura <span class="text-orange-400">Wonderlab</span></span>
+                    </div>
+                    <p class="text-slate-400 max-w-sm mb-6">Creating unforgettable childhood memories through nature, science, and adventure. The #1 Choice for <span class="keyword-highlight">Local Kids Adventure Programs</span> in Virar, Vasai, and Nallasopara.</p>
+                    <div class="flex gap-4">
+                        <a href="#" class="h-10 w-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-orange-500 transition-colors"><iconify-icon icon="lucide:instagram" width="20"></iconify-icon></a>
+                        <a href="#" class="h-10 w-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-blue-500 transition-colors"><iconify-icon icon="lucide:facebook" width="20"></iconify-icon></a>
+                        <a href="tel:+917768031411" class="h-10 w-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-green-500 transition-colors"><iconify-icon icon="lucide:phone" width="20"></iconify-icon></a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="font-bold text-lg mb-6">Adventure Programs</h4>
+                    <ul class="space-y-4 text-slate-400 text-sm">
+                        <li><a href="stem-adventure-camps.html" class="hover:text-white transition-colors">STEM Adventure Camps</a></li>
+                        <li><a href="leadership-development-camps.html" class="hover:text-white transition-colors">Leadership Development</a></li>
+                        <li><a href="team-building-camps.html" class="hover:text-white transition-colors">Team Building Camps</a></li>
+                        <li><a href="outdoor-adventure-camps.html" class="hover:text-white transition-colors">Outdoor Adventure Camps</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-bold text-lg mb-6">Local Camp Locations</h4>
+                    <ul class="space-y-4 text-slate-400 text-sm">
+                        <li><a href="camping-for-kids-in-virar.html" class="hover:text-white transition-colors">Camping in Virar</a></li>
+                        <li><a href="camping-for-kids-in-vasai.html" class="hover:text-white transition-colors">Camping in Vasai</a></li>
+                        <li><a href="camping-for-kids-in-nallasopara.html" class="hover:text-white transition-colors">Camping in Nallasopara</a></li>
+                        <li><a href="summer-adventure-camps.html" class="hover:text-white transition-colors">Summer Camps 2024</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- SEO Keywords Footer Section -->
+            <div class="border-t border-slate-800 pt-8 pb-8">
+                <p class="text-slate-500 text-sm text-center mb-4">
+                    <strong>SEO Keywords:</strong> Local kids adventure programs, adventure camps for kids, summer camps, outdoor adventure camps, 
+                    kids adventure programs, children's adventure activities, youth adventure camps, rock climbing for kids, 
+                    hiking adventures for children, camping skills for youth, survival skills training, nature exploration camps, 
+                    swimming camps for kids, archery for kids, STEM adventure camps, leadership development camps, 
+                    environmental education camps, team building camps, confidence building programs, social skills development, 
+                    adventure camps in Virar, adventure camps in Vasai, adventure camps in Nallasopara
+                </p>
+            </div>
+
+            <div class="border-t border-slate-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="text-slate-500 text-sm">© 2024 Maura Wonderlab. All rights reserved.</p>
+                <div class="flex gap-6 text-sm text-slate-500">
+                    <a href="privacy-policy.html" class="hover:text-white">Privacy</a>
+                    <a href="terms-of-service.html" class="hover:text-white">Terms</a>
+                    <a href="sitemap.html" class="hover:text-white">Sitemap</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Functionality
+        const mobileMenuButton = document.getElementById('mobileMenuButton');
+        const closeMenuButton = document.getElementById('closeMenuButton');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const menuOverlay = document.getElementById('menuOverlay');
+        
+        function openMobileMenu() {
+            mobileMenu.classList.add('open');
+            menuOverlay.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+        
+        function closeMobileMenu() {
+            mobileMenu.classList.remove('open');
+            menuOverlay.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+        
+        mobileMenuButton.addEventListener('click', openMobileMenu);
+        closeMenuButton.addEventListener('click', closeMobileMenu);
+        menuOverlay.addEventListener('click', closeMobileMenu);
+        
+        document.querySelectorAll('#mobileMenu a').forEach(link => {
+            link.addEventListener('click', closeMobileMenu);
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                const href = this.getAttribute('href');
+                
+                if (href === '#' || href.startsWith('#') && href.length > 1) {
+                    e.preventDefault();
+                    
+                    const targetId = href.substring(1);
+                    const targetElement = document.getElementById(targetId);
+                    
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                    }
+                }
+            });
+        });
+        
+        // Close menu on ESC key press
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && mobileMenu.classList.contains('open')) {
+                closeMobileMenu();
+            }
+        });
+        
+        // Activity card animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+        
+        document.querySelectorAll('.activity-card').forEach(card => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(20px)';
+            card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+            observer.observe(card);
+        });
+        
+        // Highlight keywords on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            const keywords = [
+                'local kids adventure programs', 'adventure camps for kids', 'outdoor adventure camps',
+                'kids adventure programs', 'rock climbing for kids', 'hiking adventures for children',
+                'camping skills for youth', 'survival skills training', 'nature exploration camps',
+                'swimming camps for kids', 'archery for kids', 'STEM adventure camps',
+                'leadership development camps', 'team building activities', 'adventure camps in Virar',
+                'adventure camps in Vasai', 'adventure camps in Nallasopara'
+            ];
+            
+            // Function to highlight keywords in content
+            function highlightKeywords(element) {
+                keywords.forEach(keyword => {
+                    const regex = new RegExp(`\\b${keyword}\\b`, 'gi');
+                    element.innerHTML = element.innerHTML.replace(regex, `<span class="keyword-highlight">$&</span>`);
+                });
+            }
+            
+            // Apply to relevant content sections
+            const contentSections = document.querySelectorAll('p, li, h2, h3, h4');
+            contentSections.forEach(section => {
+                highlightKeywords(section);
+            });
+        });
+    </script>
+</body>
+</html>

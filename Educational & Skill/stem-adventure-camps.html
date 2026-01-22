@@ -1,0 +1,995 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>STEM Adventure Camps | Maura Wonderlab | Science & Nature Camps for Kids in Virar, Vasai, Nallasopara</title>
+    <meta name="description" content="Maura Wonderlab's STEM Adventure Camps combine science, technology, engineering & math with outdoor exploration. The ultimate educational adventure for kids in Virar, Vasai, Nallasopara.">
+    <meta name="keywords" content="STEM camps for kids, science adventure camps, nature science camps, kids STEM activities, educational camping, science experiments for kids, technology camps Mumbai, engineering activities for children">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Iconify (Lucide Icons) -->
+    <script src="https://cdn.jsdelivr.net/npm/iconify-icon@1.0.8/dist/iconify-icon.min.js"></script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=Nunito:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        /* Custom Font Settings for Childish/Playful Vibe */
+        body {
+            font-family: 'Nunito', sans-serif;
+        }
+        h1, h2, h3, h4, h5, h6, .brand-font {
+            font-family: 'Fredoka', sans-serif;
+        }
+        
+        /* Playful Blob Pattern */
+        .bg-pattern {
+            background-color: #FFFDF5;
+            background-image: radial-gradient(#FDE68A 1px, transparent 1px), radial-gradient(#BAE6FD 1px, transparent 1px);
+            background-size: 40px 40px;
+            background-position: 0 0, 20px 20px;
+        }
+        
+        /* STEM-specific gradient background */
+        .stem-gradient {
+            background: linear-gradient(135deg, #C7D2FE 0%, #FEF3C7 25%, #BBF7D0 50%, #FBCFE8 75%, #A5F3FC 100%);
+            background-size: 400% 400%;
+            animation: gradientMove 15s ease infinite;
+        }
+        
+        @keyframes gradientMove {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #FFF7ED; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #FDBA74; 
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #EA580C; 
+        }
+
+        /* Mobile Menu Animation */
+        .mobile-menu {
+            transform: translateX(100%);
+            transition: transform 0.3s ease-in-out;
+        }
+        
+        .mobile-menu.open {
+            transform: translateX(0);
+        }
+        
+        .menu-overlay {
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease-in-out, visibility 0.3s;
+        }
+        
+        .menu-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        /* STEM card hover effects */
+        .stem-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .stem-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        
+        /* Activity icon animation */
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+        
+        .float-animation {
+            animation: float 5s ease-in-out infinite;
+        }
+        
+        /* STEM badge styling */
+        .stem-badge {
+            background: linear-gradient(90deg, #3B82F6, #8B5CF6, #10B981);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body class="bg-pattern text-slate-600 antialiased selection:bg-orange-200 selection:text-orange-900">
+
+    <!-- Navbar -->
+    <nav class="fixed w-full z-50 top-0 transition-all duration-300 backdrop-blur-md bg-white/80 border-b-2 border-slate-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center gap-2 cursor-pointer" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+                    <img src="maura wonderlab logo.png" alt="Maura Wonderlab" width="50px">
+                    <span class="brand-font text-2xl font-semibold tracking-tight text-slate-800">
+                        Maura <span class="text-orange-500">Wonderlab</span>
+                    </span>
+                </div>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="#activities" class="text-sm font-semibold text-slate-600 hover:text-orange-500 transition-colors">STEM Activities</a>
+                    <a href="#curriculum" class="text-sm font-semibold text-slate-600 hover:text-orange-500 transition-colors">Curriculum</a>
+                    <a href="#schedule" class="text-sm font-semibold text-slate-600 hover:text-orange-500 transition-colors">Schedule</a>
+                    <a href="#pricing" class="text-sm font-semibold text-slate-600 hover:text-orange-500 transition-colors">Pricing</a>
+                    <button class="bg-indigo-500 hover:bg-indigo-600 text-white px-5 py-2.5 rounded-full text-sm font-semibold transition-all shadow-[0px_4px_0px_0px_rgba(67,56,202,1)] hover:shadow-[0px_2px_0px_0px_rgba(67,56,202,1)] hover:translate-y-[2px]">
+                        Book STEM Camp
+                    </button>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobileMenuButton" class="text-slate-600 hover:text-orange-500 p-2">
+                        <iconify-icon icon="lucide:menu" width="28" stroke-width="1.5"></iconify-icon>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu Overlay -->
+    <div id="menuOverlay" class="menu-overlay fixed inset-0 bg-black/50 z-40 md:hidden"></div>
+
+    <!-- Mobile Menu -->
+    <div id="mobileMenu" class="mobile-menu fixed top-0 right-0 h-full w-64 bg-white z-50 shadow-2xl md:hidden p-6">
+        <div class="flex justify-between items-center mb-8">
+            <div class="flex items-center gap-2">
+                <div class="h-8 w-8 bg-orange-400 rounded-lg flex items-center justify-center text-white">
+                    <iconify-icon icon="lucide:microscope" width="18"></iconify-icon>
+                </div>
+                <span class="brand-font text-xl font-semibold text-slate-800">Maura <span class="text-orange-500">Wonderlab</span></span>
+            </div>
+            <button id="closeMenuButton" class="text-slate-600 hover:text-orange-500 p-2">
+                <iconify-icon icon="lucide:x" width="24" stroke-width="1.5"></iconify-icon>
+            </button>
+        </div>
+        
+        <div class="space-y-6">
+            <a href="#activities" class="block py-3 text-slate-700 font-semibold border-b border-slate-100" onclick="closeMobileMenu()">STEM Activities</a>
+            <a href="#curriculum" class="block py-3 text-slate-700 font-semibold border-b border-slate-100" onclick="closeMobileMenu()">Curriculum</a>
+            <a href="#schedule" class="block py-3 text-slate-700 font-semibold border-b border-slate-100" onclick="closeMobileMenu()">Schedule</a>
+            <a href="#pricing" class="block py-3 text-slate-700 font-semibold border-b border-slate-100" onclick="closeMobileMenu()">Pricing</a>
+            <div class="pt-4">
+                <button class="w-full bg-indigo-500 hover:bg-indigo-600 text-white px-5 py-3 rounded-full text-sm font-semibold transition-all">
+                    Book STEM Camp
+                </button>
+            </div>
+        </div>
+        
+        <div class="absolute bottom-8 left-6 right-6">
+            <p class="text-sm text-slate-500 mb-4">Contact us:</p>
+            <div class="flex items-center gap-2 text-slate-700 mb-2">
+                <iconify-icon icon="lucide:phone" width="16"></iconify-icon>
+                <span class="text-sm">+91 77680 31411</span>
+            </div>
+            <div class="flex items-center gap-2 text-slate-700">
+                <iconify-icon icon="lucide:mail" width="16"></iconify-icon>
+                <span class="text-sm">maurawonderlab@gmail.com</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="pt-32 pb-20 px-4 relative overflow-hidden">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div class="relative z-10">
+                    <div class="inline-flex items-center gap-2 bg-white rounded-full px-4 py-2 mb-6 shadow-lg">
+                        <span class="h-2 w-2 rounded-full bg-green-500"></span>
+                        <span class="text-sm font-semibold text-slate-700">Enrollment Open for Summer 2024</span>
+                    </div>
+                    
+                    <h1 class="text-5xl md:text-6xl font-bold mb-6 text-slate-800 leading-tight">
+                        <span class="stem-badge">STEM Adventure</span> 
+                        <span class="block">Camps for Kids</span>
+                    </h1>
+                    
+                    <p class="text-xl text-slate-600 mb-8 max-w-2xl">
+                        Where <span class="font-bold text-indigo-600">Science</span> meets <span class="font-bold text-emerald-600">Nature</span> and <span class="font-bold text-amber-600">Adventure</span>! Our camps combine hands-on experiments, outdoor exploration, and creative problem-solving for ages 6-14.
+                    </p>
+                    
+                    <div class="flex flex-col sm:flex-row gap-4 mb-10">
+                        <button class="bg-indigo-500 hover:bg-indigo-600 text-white px-8 py-4 rounded-full text-lg font-semibold transition-all shadow-[0px_6px_0px_0px_rgba(67,56,202,1)] hover:shadow-[0px_2px_0px_0px_rgba(67,56,202,1)] hover:translate-y-[4px]">
+                            <iconify-icon icon="lucide:calendar-plus" class="mr-2"></iconify-icon>
+                            Book Your Spot
+                        </button>
+                        <button class="bg-white hover:bg-slate-50 text-slate-800 border-2 border-slate-200 px-8 py-4 rounded-full text-lg font-semibold transition-all">
+                            <iconify-icon icon="lucide:play-circle" class="mr-2"></iconify-icon>
+                            Watch Camp Video
+                        </button>
+                    </div>
+                    
+                    <div class="flex items-center gap-8">
+                        <div class="flex items-center gap-3">
+                            <div class="h-12 w-12 bg-emerald-100 rounded-full flex items-center justify-center">
+                                <iconify-icon icon="lucide:shield-check" class="text-emerald-600" width="24"></iconify-icon>
+                            </div>
+                            <div>
+                                <p class="font-bold text-slate-800">Certified Safety</p>
+                                <p class="text-sm text-slate-500">1:6 Counselor Ratio</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center gap-3">
+                            <div class="h-12 w-12 bg-amber-100 rounded-full flex items-center justify-center">
+                                <iconify-icon icon="lucide:award" class="text-amber-600" width="24"></iconify-icon>
+                            </div>
+                            <div>
+                                <p class="font-bold text-slate-800">STEM Certified</p>
+                                <p class="text-sm text-slate-500">Curriculum Aligned</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="relative">
+                    <div class="stem-gradient rounded-3xl p-2 shadow-2xl">
+                        <div class="bg-white rounded-2xl p-6">
+                            <div class="grid grid-cols-2 gap-4">
+                                <!-- STEM Activity Icons -->
+                                <div class="bg-blue-50 rounded-xl p-6 text-center stem-card">
+                                    <div class="h-16 w-16 bg-blue-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                                        <iconify-icon icon="lucide:flask-conical" class="text-white" width="28"></iconify-icon>
+                                    </div>
+                                    <p class="font-bold text-slate-800">Chemistry Lab</p>
+                                </div>
+                                
+                                <div class="bg-green-50 rounded-xl p-6 text-center stem-card">
+                                    <div class="h-16 w-16 bg-green-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                                        <iconify-icon icon="lucide:cpu" class="text-white" width="28"></iconify-icon>
+                                    </div>
+                                    <p class="font-bold text-slate-800">Robotics</p>
+                                </div>
+                                
+                                <div class="bg-purple-50 rounded-xl p-6 text-center stem-card">
+                                    <div class="h-16 w-16 bg-purple-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                                        <iconify-icon icon="lucide:wrench" class="text-white" width="28"></iconify-icon>
+                                    </div>
+                                    <p class="font-bold text-slate-800">Engineering</p>
+                                </div>
+                                
+                                <div class="bg-amber-50 rounded-xl p-6 text-center stem-card">
+                                    <div class="h-16 w-16 bg-amber-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                                        <iconify-icon icon="lucide:compass" class="text-white" width="28"></iconify-icon>
+                                    </div>
+                                    <p class="font-bold text-slate-800">Nature Math</p>
+                                </div>
+                            </div>
+                            
+                            <div class="mt-8 p-4 bg-slate-50 rounded-xl">
+                                <p class="text-center text-slate-700 font-semibold">
+                                    <iconify-icon icon="lucide:map-pin" class="mr-2 text-orange-500"></iconify-icon>
+                                    Available at all our locations: <span class="text-indigo-600">Virar</span>, <span class="text-emerald-600">Vasai</span>, <span class="text-amber-600">Nallasopara</span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Floating elements for visual interest -->
+                    <div class="absolute -top-6 -left-6 h-32 w-32 bg-blue-300 rounded-full opacity-20 blur-xl"></div>
+                    <div class="absolute -bottom-6 -right-6 h-40 w-40 bg-green-300 rounded-full opacity-20 blur-xl"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- STEM Activities Section -->
+    <section id="activities" class="py-20 px-4 bg-slate-50/50">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold text-slate-800 mb-6">Our <span class="stem-badge">STEM Activities</span></h2>
+                <p class="text-xl text-slate-600 max-w-3xl mx-auto">Hands-on, minds-on! We blend outdoor adventure with cutting-edge STEM education for unforgettable learning experiences.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+                <!-- Science Activities -->
+                <div class="bg-white rounded-2xl p-8 shadow-lg stem-card border-t-4 border-blue-500">
+                    <div class="h-16 w-16 bg-blue-100 rounded-xl flex items-center justify-center mb-6">
+                        <iconify-icon icon="lucide:flask-conical" class="text-blue-600" width="28"></iconify-icon>
+                    </div>
+                    <h3 class="text-2xl font-bold text-slate-800 mb-4">Science Explorers</h3>
+                    <p class="text-slate-600 mb-6">Interactive experiments that make science come alive in nature's laboratory.</p>
+                    <ul class="space-y-3 mb-6">
+                        <li class="flex items-center gap-2">
+                            <iconify-icon icon="lucide:check-circle" class="text-green-500"></iconify-icon>
+                            <span>Chemistry of Nature (pH testing, soil analysis)</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <iconify-icon icon="lucide:check-circle" class="text-green-500"></iconify-icon>
+                            <span>Physics Playground (simple machines, forces)</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <iconify-icon icon="lucide:check-circle" class="text-green-500"></iconify-icon>
+                            <span>Biology Discovery (microscopes, plant/insect study)</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <iconify-icon icon="lucide:check-circle" class="text-green-500"></iconify-icon>
+                            <span>Weather & Climate Science</span>
+                        </li>
+                    </ul>
+                    <div class="text-sm font-semibold text-blue-600">Ages 6-14 | All skill levels</div>
+                </div>
+                
+                <!-- Technology Activities -->
+                <div class="bg-white rounded-2xl p-8 shadow-lg stem-card border-t-4 border-purple-500">
+                    <div class="h-16 w-16 bg-purple-100 rounded-xl flex items-center justify-center mb-6">
+                        <iconify-icon icon="lucide:cpu" class="text-purple-600" width="28"></iconify-icon>
+                    </div>
+                    <h3 class="text-2xl font-bold text-slate-800 mb-4">Tech Wizards</h3>
+                    <p class="text-slate-600 mb-6">Coding, robotics, and digital creation in an outdoor setting.</p>
+                    <ul class="space-y-3 mb-6">
+                        <li class="flex items-center gap-2">
+                            <iconify-icon icon="lucide:check-circle" class="text-green-500"></iconify-icon>
+                            <span>Beginner Robotics & Coding (Scratch, block-based)</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <iconify-icon icon="lucide:check-circle" class="text-green-500"></iconify-icon>
+                            <span>Drone Piloting & Aerial Photography</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <iconify-icon icon="lucide:check-circle" class="text-green-500"></iconify-icon>
+                            <span>Nature Photography & Digital Storytelling</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <iconify-icon icon="lucide:check-circle" class="text-green-500"></iconify-icon>
+                            <span>Simple Circuit Building & Electronics</span>
+                        </li>
+                    </ul>
+                    <div class="text-sm font-semibold text-purple-600">Ages 8-14 | Beginner to Intermediate</div>
+                </div>
+                
+                <!-- Engineering Activities -->
+                <div class="bg-white rounded-2xl p-8 shadow-lg stem-card border-t-4 border-amber-500">
+                    <div class="h-16 w-16 bg-amber-100 rounded-xl flex items-center justify-center mb-6">
+                        <iconify-icon icon="lucide:wrench" class="text-amber-600" width="28"></iconify-icon>
+                    </div>
+                    <h3 class="text-2xl font-bold text-slate-800 mb-4">Engineering Builders</h3>
+                    <p class="text-slate-600 mb-6">Design, build, and test structures using natural and recycled materials.</p>
+                    <ul class="space-y-3 mb-6">
+                        <li class="flex items-center gap-2">
+                            <iconify-icon icon="lucide:check-circle" class="text-green-500"></iconify-icon>
+                            <span>Bridge Building Challenge (strength testing)</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <iconify-icon icon="lucide:check-circle" class="text-green-500"></iconify-icon>
+                            <span>Eco-Home Design & Sustainable Architecture</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <iconify-icon icon="lucide:check-circle" class="text-green-500"></iconify-icon>
+                            <span>Water Filtration Systems & Environmental Engineering</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <iconify-icon icon="lucide:check-circle" class="text-green-500"></iconify-icon>
+                            <span>Rube Goldberg Machines & Chain Reactions</span>
+                        </li>
+                    </ul>
+                    <div class="text-sm font-semibold text-amber-600">Ages 7-14 | Hands-on learning</div>
+                </div>
+                
+                <!-- Mathematics Activities -->
+                <div class="bg-white rounded-2xl p-8 shadow-lg stem-card border-t-4 border-emerald-500">
+                    <div class="h-16 w-16 bg-emerald-100 rounded-xl flex items-center justify-center mb-6">
+                        <iconify-icon icon="lucide:calculator" class="text-emerald-600" width="28"></iconify-icon>
+                    </div>
+                    <h3 class="text-2xl font-bold text-slate-800 mb-4">Math Adventurers</h3>
+                    <p class="text-slate-600 mb-6">Discover math in nature through games, puzzles, and real-world applications.</p>
+                    <ul class="space-y-3 mb-6">
+                        <li class="flex items-center gap-2">
+                            <iconify-icon icon="lucide:check-circle" class="text-green-500"></iconify-icon>
+                            <span>Geometry in Nature (symmetry, fractals, patterns)</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <iconify-icon icon="lucide:check-circle" class="text-green-500"></iconify-icon>
+                            <span>Orienteering & Navigation (coordinates, mapping)</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <iconify-icon icon="lucide:check-circle" class="text-green-500"></iconify-icon>
+                            <span>Measurement Olympics (distance, height, volume)</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <iconify-icon icon="lucide:check-circle" class="text-green-500"></iconify-icon>
+                            <span>Probability & Statistics Games</span>
+                        </li>
+                    </ul>
+                    <div class="text-sm font-semibold text-emerald-600">Ages 6-12 | Fun mathematical thinking</div>
+                </div>
+                
+                <!-- Outdoor Adventure STEM -->
+                <div class="bg-white rounded-2xl p-8 shadow-lg stem-card border-t-4 border-red-500">
+                    <div class="h-16 w-16 bg-red-100 rounded-xl flex items-center justify-center mb-6">
+                        <iconify-icon icon="lucide:compass" class="text-red-600" width="28"></iconify-icon>
+                    </div>
+                    <h3 class="text-2xl font-bold text-slate-800 mb-4">Adventure Science</h3>
+                    <p class="text-slate-600 mb-6">Combine outdoor adventure with scientific inquiry and discovery.</p>
+                    <ul class="space-y-3 mb-6">
+                        <li class="flex items-center gap-2">
+                            <iconify-icon icon="lucide:check-circle" class="text-green-500"></iconify-icon>
+                            <span>Survival Science (shelter building, water sourcing)</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <iconify-icon icon="lucide:check-circle" class="text-green-500"></iconify-icon>
+                            <span>Astronomy Nights & Star Mapping</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <iconify-icon icon="lucide:check-circle" class="text-green-500"></iconify-icon>
+                            <span>Ecosystem Exploration & Biodiversity Studies</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <iconify-icon icon="lucide:check-circle" class="text-green-500"></iconify-icon>
+                            <span>Geology Treks & Rock Identification</span>
+                        </li>
+                    </ul>
+                    <div class="text-sm font-semibold text-red-600">Ages 8-14 | Outdoor exploration focus</div>
+                </div>
+                
+                <!-- Creative STEM -->
+                <div class="bg-white rounded-2xl p-8 shadow-lg stem-card border-t-4 border-pink-500">
+                    <div class="h-16 w-16 bg-pink-100 rounded-xl flex items-center justify-center mb-6">
+                        <iconify-icon icon="lucide:palette" class="text-pink-600" width="28"></iconify-icon>
+                    </div>
+                    <h3 class="text-2xl font-bold text-slate-800 mb-4">Creative Innovators</h3>
+                    <p class="text-slate-600 mb-6">Art, design, and innovation meet science and technology.</p>
+                    <ul class="space-y-3 mb-6">
+                        <li class="flex items-center gap-2">
+                            <iconify-icon icon="lucide:check-circle" class="text-green-500"></iconify-icon>
+                            <span>3D Design & Printing with Natural Themes</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <iconify-icon icon="lucide:check-circle" class="text-green-500"></iconify-icon>
+                            <span>Bio-Art (natural dyes, leaf printing)</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <iconify-icon icon="lucide:check-circle" class="text-green-500"></iconify-icon>
+                            <span>Musical Instrument Engineering</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <iconify-icon icon="lucide:check-circle" class="text-green-500"></iconify-icon>
+                            <span>Science of Cooking & Edible Experiments</span>
+                        </li>
+                    </ul>
+                    <div class="text-sm font-semibold text-pink-600">Ages 6-12 | Creative problem-solving</div>
+                </div>
+            </div>
+            
+            <div class="text-center">
+                <button class="bg-indigo-500 hover:bg-indigo-600 text-white px-10 py-4 rounded-full text-lg font-semibold transition-all shadow-[0px_6px_0px_0px_rgba(67,56,202,1)] hover:shadow-[0px_2px_0px_0px_rgba(67,56,202,1)] hover:translate-y-[4px]">
+                    Download Full Activity Guide (PDF)
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Curriculum Highlights -->
+    <section id="curriculum" class="py-20 px-4">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold text-slate-800 mb-6">STEM <span class="stem-badge">Curriculum</span> Framework</h2>
+                <p class="text-xl text-slate-600 max-w-3xl mx-auto">Our curriculum is designed by educators and STEM professionals to align with educational standards while maintaining the fun of camp.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-20">
+                <div>
+                    <div class="bg-white rounded-2xl p-8 shadow-xl">
+                        <h3 class="text-2xl font-bold text-slate-800 mb-6">Age-Appropriate Learning Paths</h3>
+                        
+                        <div class="space-y-6">
+                            <div class="flex items-start gap-4 p-4 bg-blue-50 rounded-xl">
+                                <div class="h-12 w-12 bg-blue-500 rounded-lg flex items-center justify-center text-white font-bold shrink-0">6-8</div>
+                                <div>
+                                    <h4 class="font-bold text-slate-800 mb-2">Explorers (Ages 6-8)</h4>
+                                    <p class="text-slate-600">Introduction to STEM through play, simple experiments, and nature discovery. Focus on observation, asking questions, and basic problem-solving.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start gap-4 p-4 bg-emerald-50 rounded-xl">
+                                <div class="h-12 w-12 bg-emerald-500 rounded-lg flex items-center justify-center text-white font-bold shrink-0">9-11</div>
+                                <div>
+                                    <h4 class="font-bold text-slate-800 mb-2">Inventors (Ages 9-11)</h4>
+                                    <p class="text-slate-600">Hands-on projects, team challenges, and intermediate STEM concepts. Developing critical thinking and collaborative skills.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start gap-4 p-4 bg-purple-50 rounded-xl">
+                                <div class="h-12 w-12 bg-purple-500 rounded-lg flex items-center justify-center text-white font-bold shrink-0">12-14</div>
+                                <div>
+                                    <h4 class="font-bold text-slate-800 mb-2">Innovators (Ages 12-14)</h4>
+                                    <p class="text-slate-600">Advanced projects, real-world applications, and mentorship opportunities. Focus on design thinking and solution development.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div>
+                    <div class="bg-gradient-to-br from-blue-50 to-emerald-50 rounded-2xl p-8 shadow-xl">
+                        <h3 class="text-2xl font-bold text-slate-800 mb-6">Daily Camp Structure</h3>
+                        
+                        <div class="space-y-6">
+                            <div class="flex items-center gap-4">
+                                <div class="h-12 w-12 bg-orange-100 rounded-lg flex items-center justify-center">
+                                    <iconify-icon icon="lucide:sunrise" class="text-orange-600" width="20"></iconify-icon>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-slate-800">Morning Science Circle (9:00 AM)</h4>
+                                    <p class="text-slate-600">Theme introduction, safety briefing, and daily goals</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-center gap-4">
+                                <div class="h-12 w-12 bg-blue-100 rounded-lg flex items-center justify-center">
+                                    <iconify-icon icon="lucide:flask-conical" class="text-blue-600" width="20"></iconify-icon>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-slate-800">STEM Lab Session (9:30 AM - 12:00 PM)</h4>
+                                    <p class="text-slate-600">Hands-on experiments, project work, and guided discovery</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-center gap-4">
+                                <div class="h-12 w-12 bg-green-100 rounded-lg flex items-center justify-center">
+                                    <iconify-icon icon="lucide:utensils" class="text-green-600" width="20"></iconify-icon>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-slate-800">Lunch & Science Talk (12:00 - 1:00 PM)</h4>
+                                    <p class="text-slate-600">Nutrition break with guest speakers or science demonstrations</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-center gap-4">
+                                <div class="h-12 w-12 bg-purple-100 rounded-lg flex items-center justify-center">
+                                    <iconify-icon icon="lucide:compass" class="text-purple-600" width="20"></iconify-icon>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-slate-800">Adventure STEM (1:00 - 3:30 PM)</h4>
+                                    <p class="text-slate-600">Outdoor exploration, field studies, and applied learning</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-center gap-4">
+                                <div class="h-12 w-12 bg-red-100 rounded-lg flex items-center justify-center">
+                                    <iconify-icon icon="lucide:users" class="text-red-600" width="20"></iconify-icon>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-slate-800">Showcase & Reflection (3:30 - 4:00 PM)</h4>
+                                    <p class="text-slate-600">Present projects, share discoveries, and daily wrap-up</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Key Learning Outcomes -->
+            <div class="bg-slate-800 text-white rounded-2xl p-8 md:p-12">
+                <h3 class="text-3xl font-bold mb-8 text-center">Key Learning Outcomes</h3>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="text-center">
+                        <div class="h-16 w-16 bg-indigo-500 rounded-full flex items-center justify-center mx-auto mb-6">
+                            <iconify-icon icon="lucide:brain" width="28"></iconify-icon>
+                        </div>
+                        <h4 class="text-xl font-bold mb-4">Critical Thinking</h4>
+                        <p class="text-slate-300">Develop problem-solving skills through scientific inquiry and engineering design challenges.</p>
+                    </div>
+                    
+                    <div class="text-center">
+                        <div class="h-16 w-16 bg-emerald-500 rounded-full flex items-center justify-center mx-auto mb-6">
+                            <iconify-icon icon="lucide:users" width="28"></iconify-icon>
+                        </div>
+                        <h4 class="text-xl font-bold mb-4">Collaboration</h4>
+                        <p class="text-slate-300">Work in teams to tackle complex projects, building communication and leadership skills.</p>
+                    </div>
+                    
+                    <div class="text-center">
+                        <div class="h-16 w-16 bg-amber-500 rounded-full flex items-center justify-center mx-auto mb-6">
+                            <iconify-icon icon="lucide:lightbulb" width="28"></iconify-icon>
+                        </div>
+                        <h4 class="text-xl font-bold mb-4">Creativity</h4>
+                        <p class="text-slate-300">Apply innovative thinking to design unique solutions and create original projects.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Camp Schedule & Pricing -->
+    <section id="schedule" class="py-20 px-4 bg-slate-50/50">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold text-slate-800 mb-6">Camp <span class="stem-badge">Schedule</span> & Dates</h2>
+                <p class="text-xl text-slate-600 max-w-3xl mx-auto">Choose from multiple sessions throughout the year. All camps run Monday-Friday, 9:00 AM - 4:00 PM.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-20">
+                <!-- Summer Camps -->
+                <div class="bg-white rounded-2xl p-8 shadow-xl">
+                    <div class="flex items-center gap-3 mb-8">
+                        <div class="h-12 w-12 bg-amber-100 rounded-lg flex items-center justify-center">
+                            <iconify-icon icon="lucide:sun" class="text-amber-600" width="24"></iconify-icon>
+                        </div>
+                        <h3 class="text-2xl font-bold text-slate-800">Summer STEM Camps 2024</h3>
+                    </div>
+                    
+                    <div class="space-y-6">
+                        <div class="p-5 bg-amber-50 rounded-xl border-l-4 border-amber-500">
+                            <div class="flex justify-between items-center mb-2">
+                                <h4 class="font-bold text-slate-800">Session 1: Science Explorers</h4>
+                                <span class="bg-amber-500 text-white px-3 py-1 rounded-full text-sm font-semibold">Ages 6-9</span>
+                            </div>
+                            <p class="text-slate-600 mb-3">Focus on basic science principles through nature exploration</p>
+                            <div class="flex items-center text-sm text-slate-500">
+                                <iconify-icon icon="lucide:calendar" class="mr-2"></iconify-icon>
+                                <span class="mr-6">June 3-7, 2024</span>
+                                <iconify-icon icon="lucide:map-pin" class="mr-2"></iconify-icon>
+                                <span>All locations</span>
+                            </div>
+                        </div>
+                        
+                        <div class="p-5 bg-blue-50 rounded-xl border-l-4 border-blue-500">
+                            <div class="flex justify-between items-center mb-2">
+                                <h4 class="font-bold text-slate-800">Session 2: Robotics & Coding</h4>
+                                <span class="bg-blue-500 text-white px-3 py-1 rounded-full text-sm font-semibold">Ages 8-12</span>
+                            </div>
+                            <p class="text-slate-600 mb-3">Introduction to robotics, block coding, and simple circuits</p>
+                            <div class="flex items-center text-sm text-slate-500">
+                                <iconify-icon icon="lucide:calendar" class="mr-2"></iconify-icon>
+                                <span class="mr-6">June 10-14, 2024</span>
+                                <iconify-icon icon="lucide:map-pin" class="mr-2"></iconify-icon>
+                                <span>Virar & Vasai only</span>
+                            </div>
+                        </div>
+                        
+                        <div class="p-5 bg-emerald-50 rounded-xl border-l-4 border-emerald-500">
+                            <div class="flex justify-between items-center mb-2">
+                                <h4 class="font-bold text-slate-800">Session 3: Environmental Engineers</h4>
+                                <span class="bg-emerald-500 text-white px-3 py-1 rounded-full text-sm font-semibold">Ages 9-14</span>
+                            </div>
+                            <p class="text-slate-600 mb-3">Sustainable design, water systems, and eco-architecture</p>
+                            <div class="flex items-center text-sm text-slate-500">
+                                <iconify-icon icon="lucide:calendar" class="mr-2"></iconify-icon>
+                                <span class="mr-6">June 17-21, 2024</span>
+                                <iconify-icon icon="lucide:map-pin" class="mr-2"></iconify-icon>
+                                <span>All locations</span>
+                            </div>
+                        </div>
+                        
+                        <div class="p-5 bg-purple-50 rounded-xl border-l-4 border-purple-500">
+                            <div class="flex justify-between items-center mb-2">
+                                <h4 class="font-bold text-slate-800">Session 4: Advanced Innovators</h4>
+                                <span class="bg-purple-500 text-white px-3 py-1 rounded-full text-sm font-semibold">Ages 11-14</span>
+                            </div>
+                            <p class="text-slate-600 mb-3">Complex projects, 3D design, and mentorship program</p>
+                            <div class="flex items-center text-sm text-slate-500">
+                                <iconify-icon icon="lucide:calendar" class="mr-2"></iconify-icon>
+                                <span class="mr-6">June 24-28, 2024</span>
+                                <iconify-icon icon="lucide:map-pin" class="mr-2"></iconify-icon>
+                                <span>Vasai only</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Pricing & Registration -->
+                <div id="pricing" class="bg-white rounded-2xl p-8 shadow-xl">
+                    <div class="flex items-center gap-3 mb-8">
+                        <div class="h-12 w-12 bg-indigo-100 rounded-lg flex items-center justify-center">
+                            <iconify-icon icon="lucide:indian-rupee" class="text-indigo-600" width="24"></iconify-icon>
+                        </div>
+                        <h3 class="text-2xl font-bold text-slate-800">Pricing & Registration</h3>
+                    </div>
+                    
+                    <div class="mb-8">
+                        <div class="bg-gradient-to-r from-indigo-500 to-purple-500 text-white rounded-xl p-6 mb-6">
+                            <div class="flex justify-between items-center mb-4">
+                                <h4 class="text-2xl font-bold">5-Day STEM Adventure Camp</h4>
+                                <div class="text-right">
+                                    <div class="text-3xl font-bold">₹4,999</div>
+                                    <div class="text-indigo-200">per child</div>
+                                </div>
+                            </div>
+                            <p class="text-indigo-100">Includes all materials, equipment, lunch, snacks, and a STEM kit to take home.</p>
+                        </div>
+                        
+                        <div class="grid grid-cols-2 gap-4 mb-8">
+                            <div class="bg-slate-50 rounded-lg p-4 text-center">
+                                <div class="text-sm text-slate-500 mb-1">Early Bird Discount</div>
+                                <div class="text-xl font-bold text-emerald-600">₹4,499</div>
+                                <div class="text-xs text-slate-500">Register 30+ days in advance</div>
+                            </div>
+                            
+                            <div class="bg-slate-50 rounded-lg p-4 text-center">
+                                <div class="text-sm text-slate-500 mb-1">Sibling Discount</div>
+                                <div class="text-xl font-bold text-amber-600">₹4,699</div>
+                                <div class="text-xs text-slate-500">For second child & beyond</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="space-y-6">
+                        <h4 class="font-bold text-slate-800 text-lg">What's Included:</h4>
+                        
+                        <div class="space-y-4">
+                            <div class="flex items-start gap-3">
+                                <iconify-icon icon="lucide:check-circle" class="text-green-500 mt-1"></iconify-icon>
+                                <div>
+                                    <p class="font-medium text-slate-800">All STEM materials & equipment</p>
+                                    <p class="text-sm text-slate-500">Labs, robotics kits, safety gear, and consumables</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start gap-3">
+                                <iconify-icon icon="lucide:check-circle" class="text-green-500 mt-1"></iconify-icon>
+                                <div>
+                                    <p class="font-medium text-slate-800">Daily meals & snacks</p>
+                                    <p class="text-sm text-slate-500">Nutritionist-approved lunch and two healthy snacks daily</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start gap-3">
+                                <iconify-icon icon="lucide:check-circle" class="text-green-500 mt-1"></iconify-icon>
+                                <div>
+                                    <p class="font-medium text-slate-800">Take-home STEM kit</p>
+                                    <p class="text-sm text-slate-500">$50+ value with tools, materials, and project guides</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start gap-3">
+                                <iconify-icon icon="lucide:check-circle" class="text-green-500 mt-1"></iconify-icon>
+                                <div>
+                                    <p class="font-medium text-slate-800">Certified instructors</p>
+                                    <p class="text-sm text-slate-500">1:6 counselor-to-camper ratio with STEM background</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <button class="w-full bg-indigo-500 hover:bg-indigo-600 text-white px-8 py-4 rounded-full text-lg font-semibold transition-all shadow-[0px_6px_0px_0px_rgba(67,56,202,1)] hover:shadow-[0px_2px_0px_0px_rgba(67,56,202,1)] hover:translate-y-[4px] mt-6">
+                            <iconify-icon icon="lucide:calendar-plus" class="mr-2"></iconify-icon>
+                            Register Now for Summer Camp
+                        </button>
+                        
+                        <p class="text-center text-sm text-slate-500">Limited spots available! 12 campers per session maximum.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Locations -->
+            <div class="bg-gradient-to-r from-blue-50 to-emerald-50 rounded-2xl p-8 md:p-12">
+                <h3 class="text-3xl font-bold text-slate-800 mb-8 text-center">Our <span class="stem-badge">Camp Locations</span></h3>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="bg-white rounded-xl p-6 text-center stem-card">
+                        <div class="h-16 w-16 bg-blue-500 rounded-full flex items-center justify-center text-white mx-auto mb-6">
+                            <iconify-icon icon="lucide:map-pin" width="28"></iconify-icon>
+                        </div>
+                        <h4 class="text-xl font-bold text-slate-800 mb-3">Virar Camp</h4>
+                        <p class="text-slate-600 mb-4">Located at Green Valley Nature Park with dedicated STEM lab facilities.</p>
+                        <div class="text-sm font-semibold text-blue-600">Ages 6-14 | 20 spots per session</div>
+                    </div>
+                    
+                    <div class="bg-white rounded-xl p-6 text-center stem-card">
+                        <div class="h-16 w-16 bg-emerald-500 rounded-full flex items-center justify-center text-white mx-auto mb-6">
+                            <iconify-icon icon="lucide:map-pin" width="28"></iconify-icon>
+                        </div>
+                        <h4 class="text-xl font-bold text-slate-800 mb-3">Vasai Camp</h4>
+                        <p class="text-slate-600 mb-4">Our flagship location with advanced robotics lab and outdoor exploration area.</p>
+                        <div class="text-sm font-semibold text-emerald-600">Ages 6-14 | 25 spots per session</div>
+                    </div>
+                    
+                    <div class="bg-white rounded-xl p-6 text-center stem-card">
+                        <div class="h-16 w-16 bg-amber-500 rounded-full flex items-center justify-center text-white mx-auto mb-6">
+                            <iconify-icon icon="lucide:map-pin" width="28"></iconify-icon>
+                        </div>
+                        <h4 class="text-xl font-bold text-slate-800 mb-3">Nallasopara Camp</h4>
+                        <p class="text-slate-600 mb-4">Newly opened facility with indoor/outdoor learning spaces and adventure zone.</p>
+                        <div class="text-sm font-semibold text-amber-600">Ages 6-12 | 15 spots per session</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 px-4">
+        <div class="max-w-4xl mx-auto text-center">
+            <div class="bg-gradient-to-br from-indigo-500 to-purple-600 rounded-3xl p-12 text-white shadow-2xl">
+                <h2 class="text-4xl font-bold mb-6">Ready for a STEM Adventure?</h2>
+                <p class="text-xl mb-10 text-indigo-100 max-w-2xl mx-auto">Give your child the gift of discovery, creativity, and confidence this summer. Spaces fill quickly!</p>
+                
+                <div class="flex flex-col sm:flex-row gap-6 justify-center">
+                    <button class="bg-white hover:bg-slate-100 text-indigo-600 px-10 py-4 rounded-full text-lg font-semibold transition-all shadow-lg hover:shadow-xl">
+                        <iconify-icon icon="lucide:calendar" class="mr-2"></iconify-icon>
+                        Check Availability
+                    </button>
+                    
+                    <button class="bg-transparent hover:bg-white/20 border-2 border-white text-white px-10 py-4 rounded-full text-lg font-semibold transition-all">
+                        <iconify-icon icon="lucide:phone" class="mr-2"></iconify-icon>
+                        Call +91 77680 31411
+                    </button>
+                </div>
+                
+                <p class="mt-10 text-indigo-200">
+                    <iconify-icon icon="lucide:shield-check" class="mr-2"></iconify-icon>
+                    <span class="font-semibold">Safety Certified:</span> All staff background-checked, first-aid certified, and STEM-trained.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-white pt-20 pb-10 rounded-t-[3rem] mt-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
+                <div class="col-span-1 md:col-span-2">
+                    <div class="flex items-center gap-2 mb-6">
+                         <div class="h-8 w-8 bg-orange-500 rounded-lg flex items-center justify-center text-white">
+                            <iconify-icon icon="lucide:microscope" width="18"></iconify-icon>
+                        </div>
+                        <span class="brand-font text-2xl font-bold">Maura <span class="text-orange-400">Wonderlab</span></span>
+                    </div>
+                    <p class="text-slate-400 max-w-sm mb-6">Creating unforgettable childhood memories through nature, science, and adventure. The #1 Choice for Kids STEM Camping.</p>
+                    <div class="flex gap-4">
+                        <a href="#" class="h-10 w-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-orange-500 transition-colors"><iconify-icon icon="lucide:instagram" width="20"></iconify-icon></a>
+                        <a href="#" class="h-10 w-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-blue-500 transition-colors"><iconify-icon icon="lucide:facebook" width="20"></iconify-icon></a>
+                        <a href="#" class="h-10 w-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-green-500 transition-colors"><iconify-icon icon="lucide:phone" width="20"></iconify-icon></a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="font-bold text-lg mb-6">STEM Camp Resources</h4>
+                    <ul class="space-y-4 text-slate-400 text-sm">
+                        <li><a href="#" class="hover:text-white transition-colors">STEM Activity Sheets</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Parent Guide to STEM</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Science Project Ideas</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Become a STEM Counselor</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-bold text-lg mb-6">STEM Camp Locations</h4>
+                    <ul class="space-y-4 text-slate-400 text-sm">
+                        <li><a href="#" class="hover:text-white transition-colors">STEM Camp in Virar</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">STEM Camp in Vasai</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">STEM Camp in Nallasopara</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">STEM Day Camps Mumbai</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-slate-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="text-slate-500 text-sm">© 2024 Maura Wonderlab STEM Adventure Camps. All rights reserved.</p>
+                <div class="flex gap-6 text-sm text-slate-500">
+                    <a href="#" class="hover:text-white">Privacy Policy</a>
+                    <a href="#" class="hover:text-white">Terms & Conditions</a>
+                    <a href="#" class="hover:text-white">Refund Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Functionality
+        const mobileMenuButton = document.getElementById('mobileMenuButton');
+        const closeMenuButton = document.getElementById('closeMenuButton');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const menuOverlay = document.getElementById('menuOverlay');
+        
+        function openMobileMenu() {
+            mobileMenu.classList.add('open');
+            menuOverlay.classList.add('active');
+            document.body.style.overflow = 'hidden'; // Prevent scrolling when menu is open
+        }
+        
+        function closeMobileMenu() {
+            mobileMenu.classList.remove('open');
+            menuOverlay.classList.remove('active');
+            document.body.style.overflow = 'auto'; // Re-enable scrolling
+        }
+        
+        // Event Listeners
+        mobileMenuButton.addEventListener('click', openMobileMenu);
+        closeMenuButton.addEventListener('click', closeMobileMenu);
+        menuOverlay.addEventListener('click', closeMobileMenu);
+        
+        // Close menu when clicking on any menu link
+        document.querySelectorAll('#mobileMenu a').forEach(link => {
+            link.addEventListener('click', closeMobileMenu);
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                const href = this.getAttribute('href');
+                
+                // Only handle internal anchor links (not external links)
+                if (href === '#' || href.startsWith('#') && href.length > 1) {
+                    e.preventDefault();
+                    
+                    const targetId = href.substring(1);
+                    const targetElement = document.getElementById(targetId);
+                    
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80, // Adjust for navbar height
+                            behavior: 'smooth'
+                        });
+                    }
+                }
+            });
+        });
+        
+        // Close menu on ESC key press
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && mobileMenu.classList.contains('open')) {
+                closeMobileMenu();
+            }
+        });
+        
+        // Prevent scrolling on the overlay (touch devices)
+        menuOverlay.addEventListener('touchmove', (e) => {
+            e.preventDefault();
+        }, { passive: false });
+        
+        // Add animation to STEM cards on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+        
+        // Observe all STEM cards for animation
+        document.querySelectorAll('.stem-card').forEach(card => {
+            card.style.opacity = '0.9';
+            card.style.transform = 'translateY(10px)';
+            card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+            observer.observe(card);
+        });
+        
+        // Registration button functionality
+        document.querySelectorAll('button').forEach(button => {
+            if (button.textContent.includes('Register') || button.textContent.includes('Book')) {
+                button.addEventListener('click', function() {
+                    // In a real implementation, this would open a registration form
+                    alert('Thank you for your interest! Our registration system will open in a new window. For now, please call +91 77680 31411 to register.');
+                });
+            }
+        });
+        
+        // Add floating animation to some elements
+        const floatingElements = document.querySelectorAll('.float-animation');
+        floatingElements.forEach((el, index) => {
+            el.style.animationDelay = `${index * 0.5}s`;
+        });
+    </script>
+</body>
+</html>

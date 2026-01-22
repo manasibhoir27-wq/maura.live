@@ -1,0 +1,818 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kids Mountain Biking Camps | Adventure Sports in Virar, Vasai, Nallasopara | Maura Wonderlab</title>
+    <meta name="description" content="Maura Wonderlab offers thrilling mountain biking camps for kids in Virar, Nallasopara, and Vasai. Professional training, safe trails, and adventure sports for children.">
+    <meta name="keywords" content="Mountain Biking Camps for Kids, Kids Adventure Sports Virar, Mountain Biking Training Vasai, Kids Cycling Camps Nallasopara, Adventure Sports Mumbai, Kids Sports Camps">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Iconify (Lucide Icons) -->
+    <script src="https://cdn.jsdelivr.net/npm/iconify-icon@1.0.8/dist/iconify-icon.min.js"></script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=Nunito:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        /* Custom Font Settings for Childish/Playful Vibe */
+        body {
+            font-family: 'Nunito', sans-serif;
+        }
+        h1, h2, h3, h4, h5, h6, .brand-font {
+            font-family: 'Fredoka', sans-serif;
+        }
+        
+        /* Playful Blob Pattern */
+        .bg-pattern {
+            background-color: #FFFDF5;
+            background-image: radial-gradient(#FDE68A 1px, transparent 1px), radial-gradient(#BAE6FD 1px, transparent 1px);
+            background-size: 40px 40px;
+            background-position: 0 0, 20px 20px;
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #FFF7ED; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #FDBA74; 
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #EA580C; 
+        }
+
+        /* Mobile Menu Animation */
+        .mobile-menu {
+            transform: translateX(100%);
+            transition: transform 0.3s ease-in-out;
+        }
+        
+        .mobile-menu.open {
+            transform: translateX(0);
+        }
+        
+        .menu-overlay {
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease-in-out, visibility 0.3s;
+        }
+        
+        .menu-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        /* Mountain Biking Specific Styling */
+        .trail-card {
+            background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+            border-left: 4px solid #ea580c;
+        }
+        
+        .skill-level-beginner { background-color: #10b981; }
+        .skill-level-intermediate { background-color: #f59e0b; }
+        .skill-level-advanced { background-color: #ef4444; }
+        
+        .pulse-animation {
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+    </style>
+</head>
+<body class="bg-pattern text-slate-600 antialiased selection:bg-orange-200 selection:text-orange-900 pt-20">
+
+    <!-- Navbar -->
+    <nav class="fixed w-full z-50 top-0 transition-all duration-300 backdrop-blur-md bg-white/80 border-b-2 border-slate-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center gap-2 cursor-pointer" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+                    <img src="maura wonderlab logo.png" alt="Maura Wonderlab" width="50px">
+                    <span class="brand-font text-2xl font-semibold tracking-tight text-slate-800">
+                        Maura <span class="text-orange-500">Wonderlab</span>
+                    </span>
+                </div>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="#activities" class="text-sm font-semibold text-slate-600 hover:text-orange-500 transition-colors">Activities</a>
+                    <a href="#reviews" class="text-sm font-semibold text-slate-600 hover:text-orange-500 transition-colors">Happy Campers</a>
+                    <a href="#locations" class="text-sm font-semibold text-slate-600 hover:text-orange-500 transition-colors">Locations</a>
+                    <a href="#pricing" class="text-sm font-semibold text-slate-600 hover:text-orange-500 transition-colors">Pricing</a>
+                    <button class="bg-indigo-500 hover:bg-indigo-600 text-white px-5 py-2.5 rounded-full text-sm font-semibold transition-all shadow-[0px_4px_0px_0px_rgba(67,56,202,1)] hover:shadow-[0px_2px_0px_0px_rgba(67,56,202,1)] hover:translate-y-[2px]">
+                        Book an Adventure
+                    </button>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobileMenuButton" class="text-slate-600 hover:text-orange-500 p-2">
+                        <iconify-icon icon="lucide:menu" width="28" stroke-width="1.5"></iconify-icon>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative overflow-hidden bg-gradient-to-br from-emerald-50 to-cyan-50 rounded-b-[3rem] mb-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-28">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <div class="inline-flex items-center gap-2 bg-white/80 backdrop-blur-sm px-4 py-2 rounded-full mb-6">
+                        <iconify-icon icon="lucide:star" class="text-yellow-500"></iconify-icon>
+                        <span class="text-sm font-semibold text-slate-800">#1 Mountain Biking Camp in Mumbai</span>
+                    </div>
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-800 mb-6 leading-tight">
+                        Mountain Biking <span class="text-orange-500">Adventure Camps</span> for Kids
+                    </h1>
+                    <p class="text-lg text-slate-600 mb-8">
+                        Thrilling off-road biking adventures designed specifically for children aged 7-16. Professional coaching, safe trails, and unforgettable nature experiences in Virar, Vasai & Nallasopara.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <button class="bg-orange-500 hover:bg-orange-600 text-white px-8 py-4 rounded-full text-lg font-semibold transition-all shadow-[0px_6px_0px_0px_rgba(234,88,12,1)] hover:shadow-[0px_3px_0px_0px_rgba(234,88,12,1)] hover:translate-y-[3px] pulse-animation">
+                            Book Your Bike Adventure
+                        </button>
+                        <button class="border-2 border-orange-500 text-orange-500 hover:bg-orange-50 px-8 py-4 rounded-full text-lg font-semibold transition-colors">
+                            <iconify-icon icon="lucide:play-circle" class="mr-2"></iconify-icon>
+                            Watch Our Video
+                        </button>
+                    </div>
+                </div>
+                <div class="relative">
+                    <img src="https://images.unsplash.com/photo-1571068316345-6b31cc6ba8e4?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" 
+                         alt="Kids Mountain Biking Adventure" 
+                         class="rounded-3xl shadow-2xl border-8 border-white">
+                    <div class="absolute -bottom-6 -left-6 bg-white p-6 rounded-2xl shadow-xl">
+                        <div class="flex items-center gap-3">
+                            <div class="h-12 w-12 bg-emerald-100 rounded-xl flex items-center justify-center">
+                                <iconify-icon icon="lucide:shield-check" width="24" class="text-emerald-600"></iconify-icon>
+                            </div>
+                            <div>
+                                <p class="font-bold text-slate-800">100% Safety Record</p>
+                                <p class="text-sm text-slate-600">Certified instructors & equipment</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Key Highlights -->
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-20">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div class="bg-white p-6 rounded-2xl shadow-lg border border-slate-100">
+                <div class="h-14 w-14 bg-orange-100 rounded-xl flex items-center justify-center mb-4">
+                    <iconify-icon icon="lucide:mountain" width="28" class="text-orange-600"></iconify-icon>
+                </div>
+                <h3 class="font-bold text-lg mb-2">5+ Adventure Trails</h3>
+                <p class="text-slate-600">Beginner to advanced mountain trails in natural surroundings</p>
+            </div>
+            <div class="bg-white p-6 rounded-2xl shadow-lg border border-slate-100">
+                <div class="h-14 w-14 bg-emerald-100 rounded-xl flex items-center justify-center mb-4">
+                    <iconify-icon icon="lucide:graduation-cap" width="28" class="text-emerald-600"></iconify-icon>
+                </div>
+                <h3 class="font-bold text-lg mb-2">Expert Coaches</h3>
+                <p class="text-slate-600">MTB certified instructors with 10+ years experience</p>
+            </div>
+            <div class="bg-white p-6 rounded-2xl shadow-lg border border-slate-100">
+                <div class="h-14 w-14 bg-blue-100 rounded-xl flex items-center justify-center mb-4">
+                    <iconify-icon icon="lucide:bike" width="28" class="text-blue-600"></iconify-icon>
+                </div>
+                <h3 class="font-bold text-lg mb-2">Premium Bikes</h3>
+                <p class="text-slate-600">Kids-specific mountain bikes with safety gear included</p>
+            </div>
+            <div class="bg-white p-6 rounded-2xl shadow-lg border border-slate-100">
+                <div class="h-14 w-14 bg-purple-100 rounded-xl flex items-center justify-center mb-4">
+                    <iconify-icon icon="lucide:award" width="28" class="text-purple-600"></iconify-icon>
+                </div>
+                <h3 class="font-bold text-lg mb-2">Skill Certification</h3>
+                <p class="text-slate-600">Official mountain biking skill certificates upon completion</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Activities Section -->
+    <section id="activities" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-20">
+        <div class="text-center mb-12">
+            <h2 class="text-4xl font-bold text-slate-800 mb-4">Mountain Biking <span class="text-orange-500">Activities</span></h2>
+            <p class="text-lg text-slate-600 max-w-3xl mx-auto">Our comprehensive mountain biking program includes everything from basic balance to advanced trail riding</p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            <!-- Skills Training -->
+            <div class="trail-card p-8 rounded-3xl shadow-lg">
+                <div class="flex items-center gap-4 mb-6">
+                    <div class="h-16 w-16 bg-orange-100 rounded-xl flex items-center justify-center">
+                        <iconify-icon icon="lucide:settings" width="32" class="text-orange-600"></iconify-icon>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-bold text-slate-800">Skills Training Program</h3>
+                        <div class="flex gap-2 mt-2">
+                            <span class="skill-level-beginner text-white text-xs px-3 py-1 rounded-full">Beginner</span>
+                            <span class="skill-level-intermediate text-white text-xs px-3 py-1 rounded-full">Intermediate</span>
+                        </div>
+                    </div>
+                </div>
+                <ul class="space-y-4 mb-6">
+                    <li class="flex items-center gap-3">
+                        <iconify-icon icon="lucide:check-circle" class="text-emerald-500"></iconify-icon>
+                        <span>Balance & coordination exercises</span>
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <iconify-icon icon="lucide:check-circle" class="text-emerald-500"></iconify-icon>
+                        <span>Braking techniques & control</span>
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <iconify-icon icon="lucide:check-circle" class="text-emerald-500"></iconify-icon>
+                        <span>Gear shifting mastery</span>
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <iconify-icon icon="lucide:check-circle" class="text-emerald-500"></iconify-icon>
+                        <span>Bike maintenance basics</span>
+                    </li>
+                </ul>
+                <p class="text-slate-700 italic">"Perfect for first-time riders to gain confidence"</p>
+            </div>
+
+            <!-- Trail Adventures -->
+            <div class="trail-card p-8 rounded-3xl shadow-lg">
+                <div class="flex items-center gap-4 mb-6">
+                    <div class="h-16 w-16 bg-emerald-100 rounded-xl flex items-center justify-center">
+                        <iconify-icon icon="lucide:map" width="32" class="text-emerald-600"></iconify-icon>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-bold text-slate-800">Trail Adventures</h3>
+                        <div class="flex gap-2 mt-2">
+                            <span class="skill-level-intermediate text-white text-xs px-3 py-1 rounded-full">Intermediate</span>
+                            <span class="skill-level-advanced text-white text-xs px-3 py-1 rounded-full">Advanced</span>
+                        </div>
+                    </div>
+                </div>
+                <ul class="space-y-4 mb-6">
+                    <li class="flex items-center gap-3">
+                        <iconify-icon icon="lucide:check-circle" class="text-emerald-500"></iconify-icon>
+                        <span>Forest trail exploration</span>
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <iconify-icon icon="lucide:check-circle" class="text-emerald-500"></iconify-icon>
+                        <span>Hill climbing techniques</span>
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <iconify-icon icon="lucide:check-circle" class="text-emerald-500"></iconify-icon>
+                        <span>Downhill riding skills</span>
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <iconify-icon icon="lucide:check-circle" class="text-emerald-500"></iconify-icon>
+                        <span>Obstacle navigation</span>
+                    </li>
+                </ul>
+                <p class="text-slate-700 italic">"Challenge yourself on our carefully designed trails"</p>
+            </div>
+
+            <!-- Adventure Games -->
+            <div class="trail-card p-8 rounded-3xl shadow-lg">
+                <div class="flex items-center gap-4 mb-6">
+                    <div class="h-16 w-16 bg-blue-100 rounded-xl flex items-center justify-center">
+                        <iconify-icon icon="lucide:gamepad-2" width="32" class="text-blue-600"></iconify-icon>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-bold text-slate-800">Bike Games & Challenges</h3>
+                        <div class="flex gap-2 mt-2">
+                            <span class="skill-level-beginner text-white text-xs px-3 py-1 rounded-full">All Levels</span>
+                        </div>
+                    </div>
+                </div>
+                <ul class="space-y-4 mb-6">
+                    <li class="flex items-center gap-3">
+                        <iconify-icon icon="lucide:check-circle" class="text-emerald-500"></iconify-icon>
+                        <span>Slow race competitions</span>
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <iconify-icon icon="lucide:check-circle" class="text-emerald-500"></iconify-icon>
+                        <span>Obstacle course time trials</span>
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <iconify-icon icon="lucide:check-circle" class="text-emerald-500"></iconify-icon>
+                        <span>Treasure hunt on bikes</span>
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <iconify-icon icon="lucide:check-circle" class="text-emerald-500"></iconify-icon>
+                        <span>Team relay races</span>
+                    </li>
+                </ul>
+                <p class="text-slate-700 italic">"Learning through fun games and friendly competition"</p>
+            </div>
+
+            <!-- Nature Integration -->
+            <div class="trail-card p-8 rounded-3xl shadow-lg">
+                <div class="flex items-center gap-4 mb-6">
+                    <div class="h-16 w-16 bg-purple-100 rounded-xl flex items-center justify-center">
+                        <iconify-icon icon="lucide:trees" width="32" class="text-purple-600"></iconify-icon>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-bold text-slate-800">Nature & Science Integration</h3>
+                        <div class="flex gap-2 mt-2">
+                            <span class="skill-level-beginner text-white text-xs px-3 py-1 rounded-full">All Levels</span>
+                        </div>
+                    </div>
+                </div>
+                <ul class="space-y-4 mb-6">
+                    <li class="flex items-center gap-3">
+                        <iconify-icon icon="lucide:check-circle" class="text-emerald-500"></iconify-icon>
+                        <span>Nature observation rides</span>
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <iconify-icon icon="lucide:check-circle" class="text-emerald-500"></iconify-icon>
+                        <span>Physics of biking demonstrations</span>
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <iconify-icon icon="lucide:check-circle" class="text-emerald-500"></iconify-icon>
+                        <span>Ecology trail exploration</span>
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <iconify-icon icon="lucide:check-circle" class="text-emerald-500"></iconify-icon>
+                        <span>Weather & terrain science</span>
+                    </li>
+                </ul>
+                <p class="text-slate-700 italic">"Connect biking with nature and science learning"</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Locations Section -->
+    <section id="locations" class="bg-gradient-to-r from-emerald-50 to-blue-50 py-20 rounded-3xl mb-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold text-slate-800 mb-4">Mountain Biking <span class="text-orange-500">Locations</span></h2>
+                <p class="text-lg text-slate-600 max-w-3xl mx-auto">Professional biking trails across Virar, Vasai, and Nallasopara designed for kids' safety and adventure</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white rounded-2xl shadow-xl overflow-hidden">
+                    <div class="h-48 bg-gradient-to-r from-orange-400 to-orange-300 flex items-center justify-center">
+                        <iconify-icon icon="lucide:mountain" width="64" class="text-white"></iconify-icon>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Virar Mountain Trails</h3>
+                        <p class="text-slate-600 mb-4">Our flagship location with 5 different trail difficulties</p>
+                        <div class="space-y-3">
+                            <div class="flex items-center gap-2">
+                                <iconify-icon icon="lucide:map-pin" class="text-orange-500"></iconify-icon>
+                                <span class="text-sm">Near Virar East Station</span>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <iconify-icon icon="lucide:clock" class="text-orange-500"></iconify-icon>
+                                <span class="text-sm">Weekends: 7 AM - 11 AM</span>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <iconify-icon icon="lucide:users" class="text-orange-500"></iconify-icon>
+                                <span class="text-sm">Ages 8-16 | Group size: 10-15</span>
+                            </div>
+                        </div>
+                        <button class="w-full mt-6 bg-orange-500 hover:bg-orange-600 text-white py-3 rounded-lg font-semibold transition-colors">
+                            Book Virar Camp
+                        </button>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-2xl shadow-xl overflow-hidden">
+                    <div class="h-48 bg-gradient-to-r from-emerald-400 to-emerald-300 flex items-center justify-center">
+                        <iconify-icon icon="lucide:tree-pine" width="64" class="text-white"></iconify-icon>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Vasai Forest Routes</h3>
+                        <p class="text-slate-600 mb-4">Scenic forest trails perfect for intermediate riders</p>
+                        <div class="space-y-3">
+                            <div class="flex items-center gap-2">
+                                <iconify-icon icon="lucide:map-pin" class="text-emerald-500"></iconify-icon>
+                                <span class="text-sm">Vasai West Nature Park</span>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <iconify-icon icon="lucide:clock" class="text-emerald-500"></iconify-icon>
+                                <span class="text-sm">Saturday: 6:30 AM - 10:30 AM</span>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <iconify-icon icon="lucide:users" class="text-emerald-500"></iconify-icon>
+                                <span class="text-sm">Ages 10-16 | Group size: 8-12</span>
+                            </div>
+                        </div>
+                        <button class="w-full mt-6 bg-emerald-500 hover:bg-emerald-600 text-white py-3 rounded-lg font-semibold transition-colors">
+                            Book Vasai Camp
+                        </button>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-2xl shadow-xl overflow-hidden">
+                    <div class="h-48 bg-gradient-to-r from-blue-400 to-blue-300 flex items-center justify-center">
+                        <iconify-icon icon="lucide:hills" width="64" class="text-white"></iconify-icon>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Nallasopara Adventure Zone</h3>
+                        <p class="text-slate-600 mb-4">Beginner-friendly trails with gradual elevation</p>
+                        <div class="space-y-3">
+                            <div class="flex items-center gap-2">
+                                <iconify-icon icon="lucide:map-pin" class="text-blue-500"></iconify-icon>
+                                <span class="text-sm">Near Nallasopara Station</span>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <iconify-icon icon="lucide:clock" class="text-blue-500"></iconify-icon>
+                                <span class="text-sm">Sunday: 7 AM - 11 AM</span>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <iconify-icon icon="lucide:users" class="text-blue-500"></iconify-icon>
+                                <span class="text-sm">Ages 7-14 | Group size: 10-15</span>
+                            </div>
+                        </div>
+                        <button class="w-full mt-6 bg-blue-500 hover:bg-blue-600 text-white py-3 rounded-lg font-semibold transition-colors">
+                            Book Nallasopara Camp
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-20">
+        <div class="text-center mb-12">
+            <h2 class="text-4xl font-bold text-slate-800 mb-4">Camp <span class="text-orange-500">Pricing</span></h2>
+            <p class="text-lg text-slate-600 max-w-3xl mx-auto">Flexible packages for every young adventurer</p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            <div class="bg-white rounded-2xl shadow-xl p-8 border-2 border-slate-100">
+                <div class="text-center mb-8">
+                    <h3 class="text-2xl font-bold mb-4">Beginner Trail</h3>
+                    <div class="flex justify-center items-baseline">
+                        <span class="text-4xl font-bold text-slate-800">₹1,499</span>
+                        <span class="text-slate-600 ml-2">/ session</span>
+                    </div>
+                </div>
+                <ul class="space-y-4 mb-8">
+                    <li class="flex items-center gap-3">
+                        <iconify-icon icon="lucide:check" class="text-emerald-500"></iconify-icon>
+                        <span>2-hour mountain biking session</span>
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <iconify-icon icon="lucide:check" class="text-emerald-500"></iconify-icon>
+                        <span>Beginner trail access</span>
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <iconify-icon icon="lucide:check" class="text-emerald-500"></iconify-icon>
+                        <span>Safety gear & bike included</span>
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <iconify-icon icon="lucide:check" class="text-emerald-500"></iconify-icon>
+                        <span>Certified instructor</span>
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <iconify-icon icon="lucide:x" class="text-red-500"></iconify-icon>
+                        <span class="text-slate-400">Advanced trails</span>
+                    </li>
+                </ul>
+                <button class="w-full bg-slate-100 hover:bg-slate-200 text-slate-800 py-3 rounded-lg font-semibold transition-colors">
+                    Book Single Session
+                </button>
+            </div>
+
+            <div class="bg-white rounded-2xl shadow-xl p-8 border-2 border-orange-500 relative transform scale-105">
+                <div class="absolute -top-3 left-1/2 transform -translate-x-1/2">
+                    <span class="bg-orange-500 text-white px-4 py-1 rounded-full text-sm font-semibold">MOST POPULAR</span>
+                </div>
+                <div class="text-center mb-8">
+                    <h3 class="text-2xl font-bold mb-4">Adventure Package</h3>
+                    <div class="flex justify-center items-baseline">
+                        <span class="text-4xl font-bold text-slate-800">₹5,999</span>
+                        <span class="text-slate-600 ml-2">/ month (4 sessions)</span>
+                    </div>
+                    <p class="text-emerald-600 font-semibold mt-2">Save 20%</p>
+                </div>
+                <ul class="space-y-4 mb-8">
+                    <li class="flex items-center gap-3">
+                        <iconify-icon icon="lucide:check" class="text-emerald-500"></iconify-icon>
+                        <span>4 weekend sessions (2 hours each)</span>
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <iconify-icon icon="lucide:check" class="text-emerald-500"></iconify-icon>
+                        <span>Beginner + Intermediate trails</span>
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <iconify-icon icon="lucide:check" class="text-emerald-500"></iconify-icon>
+                        <span>Premium mountain bike</span>
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <iconify-icon icon="lucide:check" class="text-emerald-500"></iconify-icon>
+                        <span>Skill progression tracking</span>
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <iconify-icon icon="lucide:check" class="text-emerald-500"></iconify-icon>
+                        <span>Certificate of achievement</span>
+                    </li>
+                </ul>
+                <button class="w-full bg-orange-500 hover:bg-orange-600 text-white py-3 rounded-lg font-semibold transition-colors">
+                    Book Monthly Package
+                </button>
+            </div>
+
+            <div class="bg-white rounded-2xl shadow-xl p-8 border-2 border-slate-100">
+                <div class="text-center mb-8">
+                    <h3 class="text-2xl font-bold mb-4">Advanced Explorer</h3>
+                    <div class="flex justify-center items-baseline">
+                        <span class="text-4xl font-bold text-slate-800">₹10,999</span>
+                        <span class="text-slate-600 ml-2">/ 3 months</span>
+                    </div>
+                    <p class="text-emerald-600 font-semibold mt-2">Save 25%</p>
+                </div>
+                <ul class="space-y-4 mb-8">
+                    <li class="flex items-center gap-3">
+                        <iconify-icon icon="lucide:check" class="text-emerald-500"></iconify-icon>
+                        <span>12 sessions (3 months access)</span>
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <iconify-icon icon="lucide:check" class="text-emerald-500"></iconify-icon>
+                        <span>All trail levels including advanced</span>
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <iconify-icon icon="lucide:check" class="text-emerald-500"></iconify-icon>
+                        <span>Personalized coaching</span>
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <iconify-icon icon="lucide:check" class="text-emerald-500"></iconify-icon>
+                        <span>Adventure games & competitions</span>
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <iconify-icon icon="lucide:check" class="text-emerald-500"></iconify-icon>
+                        <span>Maura Wonderlab merchandise</span>
+                    </li>
+                </ul>
+                <button class="w-full bg-slate-800 hover:bg-slate-900 text-white py-3 rounded-lg font-semibold transition-colors">
+                    Book Quarterly
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews Section -->
+    <section id="reviews" class="bg-gradient-to-r from-slate-50 to-slate-100 py-20 rounded-3xl mb-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold text-slate-800 mb-4">Happy <span class="text-orange-500">Mountain Bikers</span></h2>
+                <p class="text-lg text-slate-600 max-w-3xl mx-auto">What parents and kids say about our biking adventures</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white p-6 rounded-2xl shadow-lg">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="h-12 w-12 bg-orange-100 rounded-full flex items-center justify-center">
+                            <iconify-icon icon="lucide:user" class="text-orange-600"></iconify-icon>
+                        </div>
+                        <div>
+                            <p class="font-bold">Rohan's Mom, Virar</p>
+                            <div class="flex text-yellow-400">
+                                <iconify-icon icon="lucide:star"></iconify-icon>
+                                <iconify-icon icon="lucide:star"></iconify-icon>
+                                <iconify-icon icon="lucide:star"></iconify-icon>
+                                <iconify-icon icon="lucide:star"></iconify-icon>
+                                <iconify-icon icon="lucide:star"></iconify-icon>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-slate-600 italic">"My 9-year-old was scared of bikes. After just 2 sessions at Maura Wonderlab, he's riding trails confidently. The instructors are incredibly patient!"</p>
+                </div>
+
+                <div class="bg-white p-6 rounded-2xl shadow-lg">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="h-12 w-12 bg-blue-100 rounded-full flex items-center justify-center">
+                            <iconify-icon icon="lucide:user" class="text-blue-600"></iconify-icon>
+                        </div>
+                        <div>
+                            <p class="font-bold">Aditya, Age 12</p>
+                            <div class="flex text-yellow-400">
+                                <iconify-icon icon="lucide:star"></iconify-icon>
+                                <iconify-icon icon="lucide:star"></iconify-icon>
+                                <iconify-icon icon="lucide:star"></iconify-icon>
+                                <iconify-icon icon="lucide:star"></iconify-icon>
+                                <iconify-icon icon="lucide:star"></iconify-icon>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-slate-600 italic">"The forest trail in Vasai is awesome! I learned how to climb hills and control speed. Can't wait for next weekend's adventure race!"</p>
+                </div>
+
+                <div class="bg-white p-6 rounded-2xl shadow-lg">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="h-12 w-12 bg-emerald-100 rounded-full flex items-center justify-center">
+                            <iconify-icon icon="lucide:user" class="text-emerald-600"></iconify-icon>
+                        </div>
+                        <div>
+                            <p class="font-bold">Mrs. Sharma, Nallasopara</p>
+                            <div class="flex text-yellow-400">
+                                <iconify-icon icon="lucide:star"></iconify-icon>
+                                <iconify-icon icon="lucide:star"></iconify-icon>
+                                <iconify-icon icon="lucide:star"></iconify-icon>
+                                <iconify-icon icon="lucide:star"></iconify-icon>
+                                <iconify-icon icon="lucide:star"></iconify-icon>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-slate-600 italic">"Safety is their top priority. The helmets, knee pads, and constant supervision made me comfortable. My twins love their biking Sundays!"</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mobile Menu Overlay -->
+    <div id="menuOverlay" class="menu-overlay fixed inset-0 bg-black/50 z-40 md:hidden"></div>
+
+    <!-- Mobile Menu -->
+    <div id="mobileMenu" class="mobile-menu fixed top-0 right-0 h-full w-64 bg-white z-50 shadow-2xl md:hidden p-6">
+        <div class="flex justify-between items-center mb-8">
+            <div class="flex items-center gap-2">
+                <div class="h-8 w-8 bg-orange-400 rounded-lg flex items-center justify-center text-white">
+                    <iconify-icon icon="lucide:bike" width="18"></iconify-icon>
+                </div>
+                <span class="brand-font text-xl font-semibold text-slate-800">Maura <span class="text-orange-500">Wonderlab</span></span>
+            </div>
+            <button id="closeMenuButton" class="text-slate-600 hover:text-orange-500 p-2">
+                <iconify-icon icon="lucide:x" width="24" stroke-width="1.5"></iconify-icon>
+            </button>
+        </div>
+        
+        <div class="space-y-6">
+            <a href="#activities" class="block py-3 text-slate-700 font-semibold border-b border-slate-100" onclick="closeMobileMenu()">Activities</a>
+            <a href="#reviews" class="block py-3 text-slate-700 font-semibold border-b border-slate-100" onclick="closeMobileMenu()">Happy Campers</a>
+            <a href="#locations" class="block py-3 text-slate-700 font-semibold border-b border-slate-100" onclick="closeMobileMenu()">Locations</a>
+            <a href="#pricing" class="block py-3 text-slate-700 font-semibold border-b border-slate-100" onclick="closeMobileMenu()">Pricing</a>
+            <div class="pt-4">
+                <button class="w-full bg-indigo-500 hover:bg-indigo-600 text-white px-5 py-3 rounded-full text-sm font-semibold transition-all">
+                    Book an Adventure
+                </button>
+            </div>
+        </div>
+        
+        <div class="absolute bottom-8 left-6 right-6">
+            <p class="text-sm text-slate-500 mb-4">Contact us:</p>
+            <div class="flex items-center gap-2 text-slate-700 mb-2">
+                <iconify-icon icon="lucide:phone" width="16"></iconify-icon>
+                <span class="text-sm">+91 77680 31411</span>
+            </div>
+            <div class="flex items-center gap-2 text-slate-700">
+                <iconify-icon icon="lucide:mail" width="16"></iconify-icon>
+                <span class="text-sm">maurawonderlab@gmail.com</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-white pt-20 pb-10 rounded-t-[3rem] mt-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
+                <div class="col-span-1 md:col-span-2">
+                    <div class="flex items-center gap-2 mb-6">
+                         <div class="h-8 w-8 bg-orange-500 rounded-lg flex items-center justify-center text-white">
+                            <iconify-icon icon="lucide:bike" width="18"></iconify-icon>
+                        </div>
+                        <span class="brand-font text-2xl font-bold">Maura <span class="text-orange-400">Wonderlab</span></span>
+                    </div>
+                    <p class="text-slate-400 max-w-sm mb-6">Creating unforgettable childhood memories through mountain biking adventures. The #1 Choice for Kids Mountain Biking Camps in Mumbai.</p>
+                    <div class="flex gap-4">
+                        <a href="#" class="h-10 w-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-orange-500 transition-colors"><iconify-icon icon="lucide:instagram" width="20"></iconify-icon></a>
+                        <a href="#" class="h-10 w-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-blue-500 transition-colors"><iconify-icon icon="lucide:facebook" width="20"></iconify-icon></a>
+                        <a href="#" class="h-10 w-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-green-500 transition-colors"><iconify-icon icon="lucide:phone" width="20"></iconify-icon></a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="font-bold text-lg mb-6">Mountain Biking</h4>
+                    <ul class="space-y-4 text-slate-400 text-sm">
+                        <li><a href="#" class="hover:text-white transition-colors">Beginner Courses</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Advanced Trails</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Safety Guidelines</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Equipment Rental</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-bold text-lg mb-6">Camp Locations</h4>
+                    <ul class="space-y-4 text-slate-400 text-sm">
+                        <li><a href="#" class="hover:text-white transition-colors">Mountain Biking in Virar</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Mountain Biking in Vasai</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Mountain Biking in Nallasopara</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Adventure Sports Mumbai</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-slate-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="text-slate-500 text-sm">© 2024 Maura Wonderlab. All rights reserved.</p>
+                <div class="flex gap-6 text-sm text-slate-500">
+                    <a href="#" class="hover:text-white">Privacy</a>
+                    <a href="#" class="hover:text-white">Terms</a>
+                    <a href="#" class="hover:text-white">Safety Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Functionality
+        const mobileMenuButton = document.getElementById('mobileMenuButton');
+        const closeMenuButton = document.getElementById('closeMenuButton');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const menuOverlay = document.getElementById('menuOverlay');
+        
+        function openMobileMenu() {
+            mobileMenu.classList.add('open');
+            menuOverlay.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+        
+        function closeMobileMenu() {
+            mobileMenu.classList.remove('open');
+            menuOverlay.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+        
+        mobileMenuButton.addEventListener('click', openMobileMenu);
+        closeMenuButton.addEventListener('click', closeMobileMenu);
+        menuOverlay.addEventListener('click', closeMobileMenu);
+        
+        document.querySelectorAll('#mobileMenu a').forEach(link => {
+            link.addEventListener('click', closeMobileMenu);
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                const href = this.getAttribute('href');
+                
+                if (href === '#' || href.startsWith('#') && href.length > 1) {
+                    e.preventDefault();
+                    
+                    const targetId = href.substring(1);
+                    const targetElement = document.getElementById(targetId);
+                    
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                    }
+                }
+            });
+        });
+        
+        // Close menu on ESC key press
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && mobileMenu.classList.contains('open')) {
+                closeMobileMenu();
+            }
+        });
+        
+        // Booking buttons functionality
+        document.querySelectorAll('button:contains("Book")').forEach(button => {
+            button.addEventListener('click', function() {
+                alert('Thank you for your interest in Maura Wonderlab Mountain Biking Camps! Our team will contact you shortly.');
+            });
+        });
+        
+        // Animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+        
+        // Observe all cards for animation
+        document.querySelectorAll('.trail-card, .bg-white.rounded-2xl').forEach(card => {
+            card.style.opacity = '0.9';
+            card.style.transform = 'translateY(10px)';
+            card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+            observer.observe(card);
+        });
+    </script>
+</body>
+</html>

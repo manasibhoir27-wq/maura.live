@@ -1,0 +1,747 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spring Break Camps | Kids Adventure Camping in Virar, Vasai, Nallasopara</title>
+    <meta name="description" content="Maura Wonderlab offers exciting Spring Break Camps for kids in Virar, Nallasopara, and Vasai. Join our adventure, science, and nature camps this spring!">
+    <meta name="keywords" content="Spring Break Camps Mumbai, Spring Camps for Kids, Kids Adventure Camp Virar, Kids Camp Nallasopara, Children's Spring Activities Vasai, Science Camp Mumbai, Nature Camp Spring Break">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Iconify (Lucide Icons) -->
+    <script src="https://cdn.jsdelivr.net/npm/iconify-icon@1.0.8/dist/iconify-icon.min.js"></script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=Nunito:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        /* Custom Font Settings for Childish/Playful Vibe */
+        body {
+            font-family: 'Nunito', sans-serif;
+        }
+        h1, h2, h3, h4, h5, h6, .brand-font {
+            font-family: 'Fredoka', sans-serif;
+        }
+        
+        /* Playful Blob Pattern */
+        .bg-pattern {
+            background-color: #FFFDF5;
+            background-image: radial-gradient(#FDE68A 1px, transparent 1px), radial-gradient(#BAE6FD 1px, transparent 1px);
+            background-size: 40px 40px;
+            background-position: 0 0, 20px 20px;
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #FFF7ED; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #FDBA74; 
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #EA580C; 
+        }
+
+        /* Mobile Menu Animation */
+        .mobile-menu {
+            transform: translateX(100%);
+            transition: transform 0.3s ease-in-out;
+        }
+        
+        .mobile-menu.open {
+            transform: translateX(0);
+        }
+        
+        .menu-overlay {
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease-in-out, visibility 0.3s;
+        }
+        
+        .menu-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        /* Spring Theme Colors */
+        .spring-gradient {
+            background: linear-gradient(135deg, #c7f0d2 0%, #fde8cd 50%, #c2e6ff 100%);
+        }
+        
+        .activity-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+        
+        .camp-highlight {
+            border-left: 5px solid #10B981;
+            background: rgba(16, 185, 129, 0.05);
+        }
+    </style>
+</head>
+<body class="bg-pattern text-slate-600 antialiased selection:bg-orange-200 selection:text-orange-900">
+
+    <!-- Navbar -->
+    <nav class="fixed w-full z-50 top-0 transition-all duration-300 backdrop-blur-md bg-white/80 border-b-2 border-slate-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center gap-2 cursor-pointer" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+                    <img src="maura wonderlab logo.png" alt="Maura Wonderlab" width="50px">
+                    <span class="brand-font text-2xl font-semibold tracking-tight text-slate-800">
+                        Maura <span class="text-orange-500">Wonderlab</span>
+                    </span>
+                </div>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="#spring-camps" class="text-sm font-semibold text-slate-600 hover:text-orange-500 transition-colors">Spring Camps</a>
+                    <a href="#activities" class="text-sm font-semibold text-slate-600 hover:text-orange-500 transition-colors">Activities</a>
+                    <a href="#schedule" class="text-sm font-semibold text-slate-600 hover:text-orange-500 transition-colors">Schedule</a>
+                    <a href="#pricing" class="text-sm font-semibold text-slate-600 hover:text-orange-500 transition-colors">Pricing</a>
+                    <button class="bg-indigo-500 hover:bg-indigo-600 text-white px-5 py-2.5 rounded-full text-sm font-semibold transition-all shadow-[0px_4px_0px_0px_rgba(67,56,202,1)] hover:shadow-[0px_2px_0px_0px_rgba(67,56,202,1)] hover:translate-y-[2px]">
+                        Book Spring Camp
+                    </button>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobileMenuButton" class="text-slate-600 hover:text-orange-500 p-2">
+                        <iconify-icon icon="lucide:menu" width="28" stroke-width="1.5"></iconify-icon>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu Overlay -->
+    <div id="menuOverlay" class="menu-overlay fixed inset-0 bg-black/50 z-40 md:hidden"></div>
+
+    <!-- Mobile Menu -->
+    <div id="mobileMenu" class="mobile-menu fixed top-0 right-0 h-full w-64 bg-white z-50 shadow-2xl md:hidden p-6">
+        <div class="flex justify-between items-center mb-8">
+            <div class="flex items-center gap-2">
+                <div class="h-8 w-8 bg-orange-400 rounded-lg flex items-center justify-center text-white">
+                    <iconify-icon icon="lucide:tent" width="18"></iconify-icon>
+                </div>
+                <span class="brand-font text-xl font-semibold text-slate-800">Maura <span class="text-orange-500">Wonderlab</span></span>
+            </div>
+            <button id="closeMenuButton" class="text-slate-600 hover:text-orange-500 p-2">
+                <iconify-icon icon="lucide:x" width="24" stroke-width="1.5"></iconify-icon>
+            </button>
+        </div>
+        
+        <div class="space-y-6">
+            <a href="#spring-camps" class="block py-3 text-slate-700 font-semibold border-b border-slate-100" onclick="closeMobileMenu()">Spring Camps</a>
+            <a href="#activities" class="block py-3 text-slate-700 font-semibold border-b border-slate-100" onclick="closeMobileMenu()">Activities</a>
+            <a href="#schedule" class="block py-3 text-slate-700 font-semibold border-b border-slate-100" onclick="closeMobileMenu()">Schedule</a>
+            <a href="#pricing" class="block py-3 text-slate-700 font-semibold border-b border-slate-100" onclick="closeMobileMenu()">Pricing</a>
+            <div class="pt-4">
+                <button class="w-full bg-indigo-500 hover:bg-indigo-600 text-white px-5 py-3 rounded-full text-sm font-semibold transition-all">
+                    Book Spring Camp
+                </button>
+            </div>
+        </div>
+        
+        <div class="absolute bottom-8 left-6 right-6">
+            <p class="text-sm text-slate-500 mb-4">Contact us:</p>
+            <div class="flex items-center gap-2 text-slate-700 mb-2">
+                <iconify-icon icon="lucide:phone" width="16"></iconify-icon>
+                <span class="text-sm">+91 77680 31411</span>
+            </div>
+            <div class="flex items-center gap-2 text-slate-700">
+                <iconify-icon icon="lucide:mail" width="16"></iconify-icon>
+                <span class="text-sm">maurawonderlab@gmail.com</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main class="pt-24">
+        <!-- Hero Section -->
+        <section class="spring-gradient py-12 md:py-20 rounded-b-3xl">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <div class="inline-flex items-center gap-2 bg-white/80 rounded-full px-4 py-2 mb-6">
+                            <iconify-icon icon="lucide:calendar" class="text-green-500"></iconify-icon>
+                            <span class="text-sm font-semibold text-slate-700">Spring Break Camps 2024</span>
+                        </div>
+                        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-800 mb-6">
+                            <span class="text-green-600">Spring Break</span><br>
+                            Adventure Camps<br>
+                            <span class="text-orange-500">for Kids!</span>
+                        </h1>
+                        <p class="text-lg text-slate-600 mb-8">
+                            Give your child an unforgettable spring break experience! Our week-long camps in Virar, Vasai, and Nallasopara combine outdoor adventures, science experiments, creative arts, and team-building activities.
+                        </p>
+                        <div class="flex flex-col sm:flex-row gap-4">
+                            <button class="bg-green-600 hover:bg-green-700 text-white px-8 py-3.5 rounded-full text-lg font-semibold transition-all shadow-[0px_6px_0px_0px_rgba(5,150,105,1)] hover:shadow-[0px_3px_0px_0px_rgba(5,150,105,1)] hover:translate-y-[3px]">
+                                <iconify-icon icon="lucide:calendar-plus" class="mr-2"></iconify-icon>
+                                Enroll Now
+                            </button>
+                            <button class="border-2 border-green-500 text-green-600 hover:bg-green-50 px-8 py-3.5 rounded-full text-lg font-semibold transition-all">
+                                <iconify-icon icon="lucide:play-circle" class="mr-2"></iconify-icon>
+                                Watch Camp Video
+                            </button>
+                        </div>
+                    </div>
+                    <div class="relative">
+                        <div class="bg-white rounded-3xl p-2 shadow-2xl">
+                            <img src="https://images.unsplash.com/photo-1505576399279-565b52d4ac71?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Kids enjoying spring camp activities" class="rounded-2xl w-full h-auto">
+                        </div>
+                        <div class="absolute -bottom-6 -left-6 bg-orange-500 text-white p-6 rounded-2xl shadow-xl">
+                            <div class="text-center">
+                                <div class="text-3xl font-bold">7 Days</div>
+                                <div class="text-sm">Of Non-Stop Fun</div>
+                            </div>
+                        </div>
+                        <div class="absolute -top-6 -right-6 bg-green-500 text-white p-6 rounded-2xl shadow-xl">
+                            <div class="text-center">
+                                <div class="text-3xl font-bold">25+</div>
+                                <div class="text-sm">Activities</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Camp Highlights -->
+        <section id="spring-camps" class="py-16">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-slate-800 mb-4">Spring Camp <span class="text-green-600">Highlights</span></h2>
+                    <p class="text-lg text-slate-600 max-w-3xl mx-auto">Our Spring Break Camps are designed to keep children engaged, learning, and having fun throughout their vacation</p>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="camp-highlight p-6 rounded-2xl bg-white shadow-lg">
+                        <div class="h-12 w-12 bg-green-100 rounded-xl flex items-center justify-center mb-4">
+                            <iconify-icon icon="lucide:trees" width="24" class="text-green-600"></iconify-icon>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-800 mb-3">Nature Exploration</h3>
+                        <p class="text-slate-600">Daily nature walks, plant identification, bug hunting, and environmental awareness activities.</p>
+                    </div>
+                    
+                    <div class="camp-highlight p-6 rounded-2xl bg-white shadow-lg">
+                        <div class="h-12 w-12 bg-blue-100 rounded-xl flex items-center justify-center mb-4">
+                            <iconify-icon icon="lucide:flask-conical" width="24" class="text-blue-600"></iconify-icon>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-800 mb-3">Science Experiments</h3>
+                        <p class="text-slate-600">Hands-on experiments, volcano making, slime creation, and basic physics demonstrations.</p>
+                    </div>
+                    
+                    <div class="camp-highlight p-6 rounded-2xl bg-white shadow-lg">
+                        <div class="h-12 w-12 bg-orange-100 rounded-xl flex items-center justify-center mb-4">
+                            <iconify-icon icon="lucide:shield" width="24" class="text-orange-600"></iconify-icon>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-800 mb-3">Safety First</h3>
+                        <p class="text-slate-600">Certified counselors, first-aid trained staff, small group sizes, and secure locations.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Activities Section -->
+        <section id="activities" class="py-16 bg-slate-50 rounded-3xl my-10">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-slate-800 mb-4">Spring Camp <span class="text-orange-500">Activities</span></h2>
+                    <p class="text-lg text-slate-600 max-w-3xl mx-auto">A comprehensive list of fun and educational activities your child will experience during spring break camp</p>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Activity 1 -->
+                    <div class="activity-card bg-white rounded-2xl p-6 shadow-lg transition-all duration-300">
+                        <div class="flex items-start mb-4">
+                            <div class="h-14 w-14 bg-green-100 rounded-xl flex items-center justify-center mr-4">
+                                <iconify-icon icon="lucide:compass" width="28" class="text-green-600"></iconify-icon>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold text-slate-800">Adventure & Exploration</h3>
+                                <span class="inline-block px-3 py-1 bg-green-100 text-green-700 rounded-full text-xs font-semibold mt-1">Outdoor</span>
+                            </div>
+                        </div>
+                        <ul class="space-y-2 text-slate-600">
+                            <li class="flex items-center"><iconify-icon icon="lucide:check" class="text-green-500 mr-2"></iconify-icon> Treasure Hunts & Scavenger Hunts</li>
+                            <li class="flex items-center"><iconify-icon icon="lucide:check" class="text-green-500 mr-2"></iconify-icon> Nature Trail Walks</li>
+                            <li class="flex items-center"><iconify-icon icon="lucide:check" class="text-green-500 mr-2"></iconify-icon> Map Reading & Orienteering</li>
+                            <li class="flex items-center"><iconify-icon icon="lucide:check" class="text-green-500 mr-2"></iconify-icon> Bird Watching & Identification</li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Activity 2 -->
+                    <div class="activity-card bg-white rounded-2xl p-6 shadow-lg transition-all duration-300">
+                        <div class="flex items-start mb-4">
+                            <div class="h-14 w-14 bg-blue-100 rounded-xl flex items-center justify-center mr-4">
+                                <iconify-icon icon="lucide:flask-conical" width="28" class="text-blue-600"></iconify-icon>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold text-slate-800">Science & Discovery</h3>
+                                <span class="inline-block px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-xs font-semibold mt-1">Educational</span>
+                            </div>
+                        </div>
+                        <ul class="space-y-2 text-slate-600">
+                            <li class="flex items-center"><iconify-icon icon="lucide:check" class="text-green-500 mr-2"></iconify-icon> Volcano Making & Eruption</li>
+                            <li class="flex items-center"><iconify-icon icon="lucide:check" class="text-green-500 mr-2"></iconify-icon> Slime & Polymer Creation</li>
+                            <li class="flex items-center"><iconify-icon icon="lucide:check" class="text-green-500 mr-2"></iconify-icon> Solar System Model Building</li>
+                            <li class="flex items-center"><iconify-icon icon="lucide:check" class="text-green-500 mr-2"></iconify-icon> Simple Circuit Experiments</li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Activity 3 -->
+                    <div class="activity-card bg-white rounded-2xl p-6 shadow-lg transition-all duration-300">
+                        <div class="flex items-start mb-4">
+                            <div class="h-14 w-14 bg-purple-100 rounded-xl flex items-center justify-center mr-4">
+                                <iconify-icon icon="lucide:palette" width="28" class="text-purple-600"></iconify-icon>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold text-slate-800">Arts & Creativity</h3>
+                                <span class="inline-block px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-xs font-semibold mt-1">Creative</span>
+                            </div>
+                        </div>
+                        <ul class="space-y-2 text-slate-600">
+                            <li class="flex items-center"><iconify-icon icon="lucide:check" class="text-green-500 mr-2"></iconify-icon> Nature-inspired Crafts</li>
+                            <li class="flex items-center"><iconify-icon icon="lucide:check" class="text-green-500 mr-2"></iconify-icon> Tie-Dye T-shirt Making</li>
+                            <li class="flex items-center"><iconify-icon icon="lucide:check" class="text-green-500 mr-2"></iconify-icon> Clay Modeling & Pottery</li>
+                            <li class="flex items-center"><iconify-icon icon="lucide:check" class="text-green-500 mr-2"></iconify-icon> Spring-themed Painting</li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Activity 4 -->
+                    <div class="activity-card bg-white rounded-2xl p-6 shadow-lg transition-all duration-300">
+                        <div class="flex items-start mb-4">
+                            <div class="h-14 w-14 bg-orange-100 rounded-xl flex items-center justify-center mr-4">
+                                <iconify-icon icon="lucide:users" width="28" class="text-orange-600"></iconify-icon>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold text-slate-800">Team Building</h3>
+                                <span class="inline-block px-3 py-1 bg-orange-100 text-orange-700 rounded-full text-xs font-semibold mt-1">Social Skills</span>
+                            </div>
+                        </div>
+                        <ul class="space-y-2 text-slate-600">
+                            <li class="flex items-center"><iconify-icon icon="lucide:check" class="text-green-500 mr-2"></iconify-icon> Group Games & Challenges</li>
+                            <li class="flex items-center"><iconify-icon icon="lucide:check" class="text-green-500 mr-2"></iconify-icon> Trust Exercises & Cooperation Games</li>
+                            <li class="flex items-center"><iconify-icon icon="lucide:check" class="text-green-500 mr-2"></iconify-icon> Problem-Solving Activities</li>
+                            <li class="flex items-center"><iconify-icon icon="lucide:check" class="text-green-500 mr-2"></iconify-icon> Leadership Role Plays</li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Activity 5 -->
+                    <div class="activity-card bg-white rounded-2xl p-6 shadow-lg transition-all duration-300">
+                        <div class="flex items-start mb-4">
+                            <div class="h-14 w-14 bg-red-100 rounded-xl flex items-center justify-center mr-4">
+                                <iconify-icon icon="lucide:campfire" width="28" class="text-red-600"></iconify-icon>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold text-slate-800">Camping Skills</h3>
+                                <span class="inline-block px-3 py-1 bg-red-100 text-red-700 rounded-full text-xs font-semibold mt-1">Practical</span>
+                            </div>
+                        </div>
+                        <ul class="space-y-2 text-slate-600">
+                            <li class="flex items-center"><iconify-icon icon="lucide:check" class="text-green-500 mr-2"></iconify-icon> Tent Pitching & Camp Setup</li>
+                            <li class="flex items-center"><iconify-icon icon="lucide:check" class="text-green-500 mr-2"></iconify-icon> Basic Knot Tying Skills</li>
+                            <li class="flex items-center"><iconify-icon icon="lucide:check" class="text-green-500 mr-2"></iconify-icon> Campfire Safety & Cooking</li>
+                            <li class="flex items-center"><iconify-icon icon="lucide:check" class="text-green-500 mr-2"></iconify-icon> Outdoor Survival Basics</li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Activity 6 -->
+                    <div class="activity-card bg-white rounded-2xl p-6 shadow-lg transition-all duration-300">
+                        <div class="flex items-start mb-4">
+                            <div class="h-14 w-14 bg-yellow-100 rounded-xl flex items-center justify-center mr-4">
+                                <iconify-icon icon="lucide:gamepad-2" width="28" class="text-yellow-600"></iconify-icon>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold text-slate-800">Sports & Games</h3>
+                                <span class="inline-block px-3 py-1 bg-yellow-100 text-yellow-700 rounded-full text-xs font-semibold mt-1">Physical</span>
+                            </div>
+                        </div>
+                        <ul class="space-y-2 text-slate-600">
+                            <li class="flex items-center"><iconify-icon icon="lucide:check" class="text-green-500 mr-2"></iconify-icon> Outdoor Sports & Relay Races</li>
+                            <li class="flex items-center"><iconify-icon icon="lucide:check" class="text-green-500 mr-2"></iconify-icon> Obstacle Course Challenges</li>
+                            <li class="flex items-center"><iconify-icon icon="lucide:check" class="text-green-500 mr-2"></iconify-icon> Traditional Indian Games</li>
+                            <li class="flex items-center"><iconify-icon icon="lucide:check" class="text-green-500 mr-2"></iconify-icon> Water Games (Weather Permitting)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Schedule Section -->
+        <section id="schedule" class="py-16">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-slate-800 mb-4">Spring Camp <span class="text-blue-600">Schedule</span></h2>
+                    <p class="text-lg text-slate-600 max-w-3xl mx-auto">A typical day at our Spring Break Camp - packed with fun, learning, and adventure!</p>
+                </div>
+                
+                <div class="bg-white rounded-3xl shadow-xl p-8 max-w-4xl mx-auto">
+                    <div class="grid grid-cols-1 md:grid-cols-5 gap-6">
+                        <!-- Day Column -->
+                        <div class="md:col-span-1">
+                            <div class="sticky top-24">
+                                <h3 class="text-xl font-bold text-slate-800 mb-6">Camp Days</h3>
+                                <div class="space-y-4">
+                                    <button class="day-tab w-full text-left p-3 rounded-xl bg-green-100 text-green-700 font-semibold" data-day="day1">Day 1: Orientation</button>
+                                    <button class="day-tab w-full text-left p-3 rounded-xl bg-blue-50 text-slate-700 font-medium" data-day="day2">Day 2: Nature</button>
+                                    <button class="day-tab w-full text-left p-3 rounded-xl bg-blue-50 text-slate-700 font-medium" data-day="day3">Day 3: Science</button>
+                                    <button class="day-tab w-full text-left p-3 rounded-xl bg-blue-50 text-slate-700 font-medium" data-day="day4">Day 4: Adventure</button>
+                                    <button class="day-tab w-full text-left p-3 rounded-xl bg-blue-50 text-slate-700 font-medium" data-day="day5">Day 5: Creativity</button>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Schedule Content -->
+                        <div class="md:col-span-4">
+                            <div id="day1" class="day-content">
+                                <h4 class="text-2xl font-bold text-slate-800 mb-6">Day 1: Camp Orientation & Ice Breakers</h4>
+                                <div class="space-y-6">
+                                    <div class="flex items-start">
+                                        <div class="bg-green-100 text-green-700 font-bold rounded-lg px-4 py-2 mr-4 min-w-[100px] text-center">8:30 AM</div>
+                                        <div>
+                                            <h5 class="font-bold text-slate-800">Arrival & Registration</h5>
+                                            <p class="text-slate-600">Welcome activities, camp rules, and group assignments</p>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-start">
+                                        <div class="bg-blue-100 text-blue-700 font-bold rounded-lg px-4 py-2 mr-4 min-w-[100px] text-center">9:30 AM</div>
+                                        <div>
+                                            <h5 class="font-bold text-slate-800">Ice Breaker Games</h5>
+                                            <p class="text-slate-600">Fun activities to help campers get to know each other</p>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-start">
+                                        <div class="bg-orange-100 text-orange-700 font-bold rounded-lg px-4 py-2 mr-4 min-w-[100px] text-center">11:00 AM</div>
+                                        <div>
+                                            <h5 class="font-bold text-slate-800">Camp Setup & Tent Training</h5>
+                                            <p class="text-slate-600">Learn how to set up tents and organize camping gear</p>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-start">
+                                        <div class="bg-red-100 text-red-700 font-bold rounded-lg px-4 py-2 mr-4 min-w-[100px] text-center">1:00 PM</div>
+                                        <div>
+                                            <h5 class="font-bold text-slate-800">Lunch & Rest Time</h5>
+                                            <p class="text-slate-600">Healthy lunch followed by quiet activities and rest</p>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-start">
+                                        <div class="bg-purple-100 text-purple-700 font-bold rounded-lg px-4 py-2 mr-4 min-w-[100px] text-center">2:30 PM</div>
+                                        <div>
+                                            <h5 class="font-bold text-slate-800">Team Building Activities</h5>
+                                            <p class="text-slate-600">Cooperative games to build trust and communication</p>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-start">
+                                        <div class="bg-green-100 text-green-700 font-bold rounded-lg px-4 py-2 mr-4 min-w-[100px] text-center">4:30 PM</div>
+                                        <div>
+                                            <h5 class="font-bold text-slate-800">Wrap-up & Departure</h5>
+                                            <p class="text-slate-600">Review of the day, awards, and preparation for next day</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div id="day2" class="day-content hidden">
+                                <h4 class="text-2xl font-bold text-slate-800 mb-6">Day 2: Nature Exploration Day</h4>
+                                <p class="text-slate-600 mb-6">A full day dedicated to exploring the natural world around us with guided nature walks, plant identification, and environmental awareness activities.</p>
+                                <div class="bg-green-50 p-4 rounded-xl">
+                                    <p class="font-semibold text-green-700"><iconify-icon icon="lucide:leaf" class="mr-2"></iconify-icon> Highlights: Nature scavenger hunt, bug collection (and release), leaf printing art, and learning about local ecosystems.</p>
+                                </div>
+                            </div>
+                            
+                            <div id="day3" class="day-content hidden">
+                                <h4 class="text-2xl font-bold text-slate-800 mb-6">Day 3: Science & Discovery Day</h4>
+                                <p class="text-slate-600 mb-6">Hands-on science experiments that make learning fun! From chemistry to physics, campers will be amazed at what they can create and discover.</p>
+                                <div class="bg-blue-50 p-4 rounded-xl">
+                                    <p class="font-semibold text-blue-700"><iconify-icon icon="lucide:flask-conical" class="mr-2"></iconify-icon> Highlights: Volcano eruptions, slime making, solar system models, and basic electricity experiments.</p>
+                                </div>
+                            </div>
+                            
+                            <div id="day4" class="day-content hidden">
+                                <h4 class="text-2xl font-bold text-slate-800 mb-6">Day 4: Adventure & Survival Skills</h4>
+                                <p class="text-slate-600 mb-6">Learning practical camping and outdoor skills that build confidence and self-reliance in natural settings.</p>
+                                <div class="bg-orange-50 p-4 rounded-xl">
+                                    <p class="font-semibold text-orange-700"><iconify-icon icon="lucide:compass" class="mr-2"></iconify-icon> Highlights: Orienteering with maps and compasses, knot tying, basic first aid, and campfire safety.</p>
+                                </div>
+                            </div>
+                            
+                            <div id="day5" class="day-content hidden">
+                                <h4 class="text-2xl font-bold text-slate-800 mb-6">Day 5: Creative Arts & Final Celebration</h4>
+                                <p class="text-slate-600 mb-6">A day of creative expression followed by a celebration of the week's accomplishments with parents invited for the final showcase.</p>
+                                <div class="bg-purple-50 p-4 rounded-xl">
+                                    <p class="font-semibold text-purple-700"><iconify-icon icon="lucide:palette" class="mr-2"></iconify-icon> Highlights: Nature crafts, tie-dye T-shirt making, talent show preparation, and final campfire with awards ceremony.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pricing Section -->
+        <section id="pricing" class="py-16 bg-gradient-to-br from-green-50 to-blue-50 rounded-3xl my-10">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-slate-800 mb-4">Spring Camp <span class="text-indigo-600">Pricing</span></h2>
+                    <p class="text-lg text-slate-600 max-w-3xl mx-auto">Affordable packages for an unforgettable spring break experience</p>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+                    <!-- Basic Package -->
+                    <div class="bg-white rounded-2xl p-8 shadow-xl">
+                        <div class="text-center mb-6">
+                            <h3 class="text-2xl font-bold text-slate-800 mb-2">3-Day Camp</h3>
+                            <div class="flex items-baseline justify-center">
+                                <span class="text-4xl font-bold text-slate-800">₹2,499</span>
+                                <span class="text-slate-500 ml-2">/child</span>
+                            </div>
+                            <p class="text-slate-500 mt-2">Perfect for a short spring break</p>
+                        </div>
+                        <ul class="space-y-3 mb-8">
+                            <li class="flex items-center"><iconify-icon icon="lucide:check" class="text-green-500 mr-2"></iconify-icon> 3 Full Days (9 AM - 5 PM)</li>
+                            <li class="flex items-center"><iconify-icon icon="lucide:check" class="text-green-500 mr-2"></iconify-icon> All Activities Included</li>
+                            <li class="flex items-center"><iconify-icon icon="lucide:check" class="text-green-500 mr-2"></iconify-icon> Daily Lunch & Snacks</li>
+                            <li class="flex items-center"><iconify-icon icon="lucide:check" class="text-green-500 mr-2"></iconify-icon> Camp T-shirt & Certificate</li>
+                            <li class="flex items-center"><iconify-icon icon="lucide:x" class="text-red-400 mr-2"></iconify-icon> Overnight Stay</li>
+                        </ul>
+                        <button class="w-full bg-slate-100 hover:bg-slate-200 text-slate-800 font-semibold py-3 rounded-xl transition-colors">
+                            Select Package
+                        </button>
+                    </div>
+                    
+                    <!-- Popular Package -->
+                    <div class="bg-white rounded-2xl p-8 shadow-2xl border-2 border-green-500 relative transform scale-105">
+                        <div class="absolute -top-3 left-1/2 transform -translate-x-1/2">
+                            <span class="bg-green-500 text-white px-4 py-1 rounded-full text-sm font-bold">MOST POPULAR</span>
+                        </div>
+                        <div class="text-center mb-6">
+                            <h3 class="text-2xl font-bold text-slate-800 mb-2">5-Day Camp</h3>
+                            <div class="flex items-baseline justify-center">
+                                <span class="text-4xl font-bold text-slate-800">₹3,999</span>
+                                <span class="text-slate-500 ml-2">/child</span>
+                            </div>
+                            <p class="text-slate-500 mt-2">Complete spring break experience</p>
+                        </div>
+                        <ul class="space-y-3 mb-8">
+                            <li class="flex items-center"><iconify-icon icon="lucide:check" class="text-green-500 mr-2"></iconify-icon> 5 Full Days (9 AM - 5 PM)</li>
+                            <li class="flex items-center"><iconify-icon icon="lucide:check" class="text-green-500 mr-2"></iconify-icon> All Activities & Materials</li>
+                            <li class="flex items-center"><iconify-icon icon="lucide:check" class="text-green-500 mr-2"></iconify-icon> Daily Lunch & Snacks</li>
+                            <li class="flex items-center"><iconify-icon icon="lucide:check" class="text-green-500 mr-2"></iconify-icon> Camp T-shirt & Certificate</li>
+                            <li class="flex items-center"><iconify-icon icon="lucide:check" class="text-green-500 mr-2"></iconify-icon> Take-home Science Kit</li>
+                        </ul>
+                        <button class="w-full bg-green-600 hover:bg-green-700 text-white font-semibold py-3 rounded-xl transition-colors shadow-md">
+                            Select Package
+                        </button>
+                    </div>
+                    
+                    <!-- Premium Package -->
+                    <div class="bg-white rounded-2xl p-8 shadow-xl">
+                        <div class="text-center mb-6">
+                            <h3 class="text-2xl font-bold text-slate-800 mb-2">7-Day Camp + Overnight</h3>
+                            <div class="flex items-baseline justify-center">
+                                <span class="text-4xl font-bold text-slate-800">₹6,499</span>
+                                <span class="text-slate-500 ml-2">/child</span>
+                            </div>
+                            <p class="text-slate-500 mt-2">Ultimate spring adventure</p>
+                        </div>
+                        <ul class="space-y-3 mb-8">
+                            <li class="flex items-center"><iconify-icon icon="lucide:check" class="text-green-500 mr-2"></iconify-icon> 5 Days + 2 Overnight Stay</li>
+                            <li class="flex items-center"><iconify-icon icon="lucide:check" class="text-green-500 mr-2"></iconify-icon> All Activities & Materials</li>
+                            <li class="flex items-center"><iconify-icon icon="lucide:check" class="text-green-500 mr-2"></iconify-icon> All Meals & Accommodation</li>
+                            <li class="flex items-center"><iconify-icon icon="lucide:check" class="text-green-500 mr-2"></iconify-icon> Camp T-shirt & Certificate</li>
+                            <li class="flex items-center"><iconify-icon icon="lucide:check" class="text-green-500 mr-2"></iconify-icon> Full Science Kit + Camp Photos</li>
+                        </ul>
+                        <button class="w-full bg-slate-100 hover:bg-slate-200 text-slate-800 font-semibold py-3 rounded-xl transition-colors">
+                            Select Package
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="text-center mt-12">
+                    <p class="text-slate-600 mb-4"><iconify-icon icon="lucide:info" class="mr-2"></iconify-icon> Sibling discount of 15% available. Early bird discount until March 15.</p>
+                    <button class="bg-indigo-600 hover:bg-indigo-700 text-white px-8 py-3 rounded-full font-semibold shadow-md transition-colors">
+                        <iconify-icon icon="lucide:phone" class="mr-2"></iconify-icon> Call to Book: +91 77680 31411
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="py-16">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="bg-gradient-to-r from-green-500 to-blue-500 rounded-3xl p-8 md:p-12 text-white text-center">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-4">Limited Spots Available!</h2>
+                    <p class="text-xl mb-8 opacity-90">Spring break camps fill up quickly. Secure your child's spot today for an unforgettable adventure.</p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                        <button class="bg-white text-green-700 hover:bg-gray-100 px-8 py-3.5 rounded-full text-lg font-bold transition-colors">
+                            <iconify-icon icon="lucide:calendar-check" class="mr-2"></iconify-icon>
+                            Book Now
+                        </button>
+                        <button class="bg-transparent border-2 border-white hover:bg-white/20 px-8 py-3.5 rounded-full text-lg font-bold transition-colors">
+                            <iconify-icon icon="lucide:download" class="mr-2"></iconify-icon>
+                            Download Brochure
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-white pt-20 pb-10 rounded-t-[3rem] mt-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
+                <div class="col-span-1 md:col-span-2">
+                    <div class="flex items-center gap-2 mb-6">
+                         <div class="h-8 w-8 bg-orange-500 rounded-lg flex items-center justify-center text-white">
+                            <iconify-icon icon="lucide:tent" width="18"></iconify-icon>
+                        </div>
+                        <span class="brand-font text-2xl font-bold">Maura <span class="text-orange-400">Wonderlab</span></span>
+                    </div>
+                    <p class="text-slate-400 max-w-sm mb-6">Creating unforgettable childhood memories through nature, science, and adventure. The #1 Choice for Kids Camping.</p>
+                    <div class="flex gap-4">
+                        <a href="#" class="h-10 w-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-orange-500 transition-colors"><iconify-icon icon="lucide:instagram" width="20"></iconify-icon></a>
+                        <a href="#" class="h-10 w-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-blue-500 transition-colors"><iconify-icon icon="lucide:facebook" width="20"></iconify-icon></a>
+                        <a href="#" class="h-10 w-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-green-500 transition-colors"><iconify-icon icon="lucide:phone" width="20"></iconify-icon></a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="font-bold text-lg mb-6">Explore</h4>
+                    <ul class="space-y-4 text-slate-400 text-sm">
+                        <li><a href="#" class="hover:text-white transition-colors">Our Story</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Safety Protocols</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Gallery</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Become a Counselor</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-bold text-lg mb-6">Camp Locations</h4>
+                    <ul class="space-y-4 text-slate-400 text-sm">
+                        <li><a href="#" class="hover:text-white transition-colors">Camping in Virar</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Camping in Vasai</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Camping in Nallasopara</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Day Camps Mumbai</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-slate-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="text-slate-500 text-sm">© 2024 Maura Wonderlab. All rights reserved.</p>
+                <div class="flex gap-6 text-sm text-slate-500">
+                    <a href="#" class="hover:text-white">Privacy</a>
+                    <a href="#" class="hover:text-white">Terms</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Functionality
+        const mobileMenuButton = document.getElementById('mobileMenuButton');
+        const closeMenuButton = document.getElementById('closeMenuButton');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const menuOverlay = document.getElementById('menuOverlay');
+        
+        function openMobileMenu() {
+            mobileMenu.classList.add('open');
+            menuOverlay.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+        
+        function closeMobileMenu() {
+            mobileMenu.classList.remove('open');
+            menuOverlay.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+        
+        mobileMenuButton.addEventListener('click', openMobileMenu);
+        closeMenuButton.addEventListener('click', closeMobileMenu);
+        menuOverlay.addEventListener('click', closeMobileMenu);
+        
+        document.querySelectorAll('#mobileMenu a').forEach(link => {
+            link.addEventListener('click', closeMobileMenu);
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                const href = this.getAttribute('href');
+                
+                if (href === '#' || href.startsWith('#') && href.length > 1) {
+                    e.preventDefault();
+                    
+                    const targetId = href.substring(1);
+                    const targetElement = document.getElementById(targetId);
+                    
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                    }
+                }
+            });
+        });
+        
+        // Close menu on ESC key press
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && mobileMenu.classList.contains('open')) {
+                closeMobileMenu();
+            }
+        });
+        
+        // Day schedule tabs functionality
+        document.querySelectorAll('.day-tab').forEach(tab => {
+            tab.addEventListener('click', function() {
+                const day = this.getAttribute('data-day');
+                
+                // Update active tab
+                document.querySelectorAll('.day-tab').forEach(t => {
+                    t.classList.remove('bg-green-100', 'text-green-700', 'font-semibold');
+                    t.classList.add('bg-blue-50', 'text-slate-700', 'font-medium');
+                });
+                this.classList.remove('bg-blue-50', 'text-slate-700', 'font-medium');
+                this.classList.add('bg-green-100', 'text-green-700', 'font-semibold');
+                
+                // Show selected day content
+                document.querySelectorAll('.day-content').forEach(content => {
+                    content.classList.add('hidden');
+                });
+                document.getElementById(day).classList.remove('hidden');
+            });
+        });
+        
+        // Activity card hover animations
+        document.querySelectorAll('.activity-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-8px)';
+                this.style.boxShadow = '0 20px 40px rgba(0, 0, 0, 0.1)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0)';
+                this.style.boxShadow = '';
+            });
+        });
+        
+        // Booking buttons functionality
+        document.querySelectorAll('button:contains("Book Spring Camp"), button:contains("Enroll Now"), button:contains("Select Package")').forEach(button => {
+            button.addEventListener('click', function() {
+                alert("Thank you for your interest in Maura Wonderlab Spring Camps! Our team will contact you shortly to complete the booking process.");
+            });
+        });
+    </script>
+</body>
+</html>

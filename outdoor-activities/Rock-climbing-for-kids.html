@@ -1,0 +1,794 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock Climbing for Kids | Maura Wonderlab Adventure Camps in Virar, Vasai, Nallasopara</title>
+    <meta name="description" content="Safe & exciting rock climbing adventures for kids at Maura Wonderlab. Professional climbing walls, certified instructors in Virar, Vasai, Nallasopara. Build confidence through climbing!">
+    <meta name="keywords" content="rock climbing for kids, kids rock climbing classes, children climbing activities, adventure climbing for kids, safe rock climbing Mumbai, Maura Wonderlab rock climbing, indoor climbing for children, outdoor climbing camps Virar">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Iconify (Lucide Icons) -->
+    <script src="https://cdn.jsdelivr.net/npm/iconify-icon@1.0.8/dist/iconify-icon.min.js"></script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=Nunito:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        /* Custom Font Settings for Childish/Playful Vibe */
+        body {
+            font-family: 'Nunito', sans-serif;
+        }
+        h1, h2, h3, h4, h5, h6, .brand-font {
+            font-family: 'Fredoka', sans-serif;
+        }
+        
+        /* Playful Blob Pattern */
+        .bg-pattern {
+            background-color: #FFFDF5;
+            background-image: radial-gradient(#FDE68A 1px, transparent 1px), radial-gradient(#BAE6FD 1px, transparent 1px);
+            background-size: 40px 40px;
+            background-position: 0 0, 20px 20px;
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #FFF7ED; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #FDBA74; 
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #EA580C; 
+        }
+
+        /* Mobile Menu Animation */
+        .mobile-menu {
+            transform: translateX(100%);
+            transition: transform 0.3s ease-in-out;
+        }
+        
+        .mobile-menu.open {
+            transform: translateX(0);
+        }
+        
+        .menu-overlay {
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease-in-out, visibility 0.3s;
+        }
+        
+        .menu-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        /* Rock Climbing Specific Styles */
+        .climbing-gradient {
+            background: linear-gradient(135deg, #f59e0b 0%, #dc2626 50%, #7c3aed 100%);
+        }
+        
+        .rock-texture {
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%239C92AC' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+        
+        .climbing-wall {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .climbing-wall::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, transparent 30%, rgba(255,255,255,0.1) 50%, transparent 70%);
+            animation: shimmer 3s infinite;
+        }
+        
+        @keyframes shimmer {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+        
+        .pulse-animation {
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+    </style>
+</head>
+<body class="bg-pattern text-slate-600 antialiased selection:bg-orange-200 selection:text-orange-900">
+
+    <!-- Navbar -->
+    <nav class="fixed w-full z-50 top-0 transition-all duration-300 backdrop-blur-md bg-white/80 border-b-2 border-slate-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center gap-2 cursor-pointer" onclick="window.location.href='/'">
+                    <img src="maura wonderlab logo.png" alt="Maura Wonderlab" width="50px">
+                    <span class="brand-font text-2xl font-semibold tracking-tight text-slate-800">
+                        Maura <span class="text-orange-500">Wonderlab</span>
+                    </span>
+                </div>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="/" class="text-sm font-semibold text-slate-600 hover:text-orange-500 transition-colors">Home</a>
+                    <a href="#about-climbing" class="text-sm font-semibold text-slate-600 hover:text-orange-500 transition-colors">About Climbing</a>
+                    <a href="#programs" class="text-sm font-semibold text-slate-600 hover:text-orange-500 transition-colors">Programs</a>
+                    <a href="#safety" class="text-sm font-semibold text-slate-600 hover:text-orange-500 transition-colors">Safety</a>
+                    <a href="#locations" class="text-sm font-semibold text-slate-600 hover:text-orange-500 transition-colors">Locations</a>
+                    <button onclick="scrollToBooking()" class="bg-indigo-500 hover:bg-indigo-600 text-white px-5 py-2.5 rounded-full text-sm font-semibold transition-all shadow-[0px_4px_0px_0px_rgba(67,56,202,1)] hover:shadow-[0px_2px_0px_0px_rgba(67,56,202,1)] hover:translate-y-[2px]">
+                        Book Climbing Session
+                    </button>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobileMenuButton" class="text-slate-600 hover:text-orange-500 p-2">
+                        <iconify-icon icon="lucide:menu" width="28" stroke-width="1.5"></iconify-icon>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu Overlay -->
+    <div id="menuOverlay" class="menu-overlay fixed inset-0 bg-black/50 z-40 md:hidden"></div>
+
+    <!-- Mobile Menu -->
+    <div id="mobileMenu" class="mobile-menu fixed top-0 right-0 h-full w-64 bg-white z-50 shadow-2xl md:hidden p-6">
+        <div class="flex justify-between items-center mb-8">
+            <div class="flex items-center gap-2">
+                <div class="h-8 w-8 bg-orange-400 rounded-lg flex items-center justify-center text-white">
+                    <iconify-icon icon="lucide:tent" width="18"></iconify-icon>
+                </div>
+                <span class="brand-font text-xl font-semibold text-slate-800">Maura <span class="text-orange-500">Wonderlab</span></span>
+            </div>
+            <button id="closeMenuButton" class="text-slate-600 hover:text-orange-500 p-2">
+                <iconify-icon icon="lucide:x" width="24" stroke-width="1.5"></iconify-icon>
+            </button>
+        </div>
+        
+        <div class="space-y-6">
+            <a href="/" class="block py-3 text-slate-700 font-semibold border-b border-slate-100" onclick="closeMobileMenu()">Home</a>
+            <a href="#about-climbing" class="block py-3 text-slate-700 font-semibold border-b border-slate-100" onclick="closeMobileMenu()">About Climbing</a>
+            <a href="#programs" class="block py-3 text-slate-700 font-semibold border-b border-slate-100" onclick="closeMobileMenu()">Programs</a>
+            <a href="#safety" class="block py-3 text-slate-700 font-semibold border-b border-slate-100" onclick="closeMobileMenu()">Safety</a>
+            <a href="#locations" class="block py-3 text-slate-700 font-semibold border-b border-slate-100" onclick="closeMobileMenu()">Locations</a>
+            <div class="pt-4">
+                <button onclick="scrollToBooking()" class="w-full bg-indigo-500 hover:bg-indigo-600 text-white px-5 py-3 rounded-full text-sm font-semibold transition-all">
+                    Book Climbing Session
+                </button>
+            </div>
+        </div>
+        
+        <div class="absolute bottom-8 left-6 right-6">
+            <p class="text-sm text-slate-500 mb-4">Contact us:</p>
+            <div class="flex items-center gap-2 text-slate-700 mb-2">
+                <iconify-icon icon="lucide:phone" width="16"></iconify-icon>
+                <span class="text-sm">+91 77680 31411</span>
+            </div>
+            <div class="flex items-center gap-2 text-slate-700">
+                <iconify-icon icon="lucide:mail" width="16"></iconify-icon>
+                <span class="text-sm">maurawonderlab@gmail.com</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hero Section for Rock Climbing -->
+    <section class="relative pt-32 pb-20 lg:pt-40 lg:pb-28 overflow-hidden climbing-wall">
+        <div class="absolute inset-0 rock-texture"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+            <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-orange-100 text-orange-700 text-xs font-bold mb-8 uppercase tracking-wide border border-orange-200">
+                <iconify-icon icon="lucide:mountain" width="16"></iconify-icon>
+                Expert-Led Kids Climbing Programs
+            </div>
+            
+            <h1 class="text-5xl md:text-7xl lg:text-8xl font-semibold tracking-tight text-white mb-6 leading-[0.9] drop-shadow-lg">
+                Rock Climbing <br>
+                <span class="text-transparent bg-clip-text climbing-gradient">For Kids</span>
+            </h1>
+            
+            <p class="mt-4 max-w-2xl mx-auto text-lg md:text-xl text-white leading-relaxed drop-shadow-md">
+                Safe, exciting climbing adventures that build confidence, strength, and problem-solving skills for children aged 5-16 at Maura Wonderlab in 
+                <span class="font-bold text-orange-300">Virar</span>, 
+                <span class="font-bold text-blue-300">Vasai</span>, and 
+                <span class="font-bold text-lime-300">Nallasopara</span>.
+            </p>
+
+            <div class="mt-10 flex flex-col sm:flex-row gap-4 justify-center items-center">
+                <button onclick="scrollToBooking()" class="w-full sm:w-auto px-8 py-4 bg-orange-500 hover:bg-orange-600 text-white rounded-2xl text-base font-semibold transition-all shadow-[0px_6px_0px_0px_#C2410C] hover:shadow-[0px_3px_0px_0px_#C2410C] hover:translate-y-[3px] flex items-center justify-center gap-2 pulse-animation">
+                    <iconify-icon icon="lucide:calendar" width="20"></iconify-icon>
+                    Book Your Climbing Trial
+                </button>
+                <a href="#safety" class="w-full sm:w-auto px-8 py-4 bg-white/90 hover:bg-white text-slate-700 border-2 border-white/30 rounded-2xl text-base font-semibold transition-all hover:border-white flex items-center justify-center gap-2">
+                    <iconify-icon icon="lucide:shield-check" width="20"></iconify-icon>
+                    View Safety Features
+                </a>
+            </div>
+        </div>
+
+        <!-- Decorative Rock Elements -->
+        <div class="absolute top-1/4 left-0 -translate-x-1/2 w-64 h-64 bg-orange-500/20 rounded-full blur-3xl -z-10"></div>
+        <div class="absolute bottom-0 right-0 translate-x-1/4 w-96 h-96 bg-purple-500/20 rounded-full blur-3xl -z-10"></div>
+    </section>
+
+    <!-- Benefits of Rock Climbing -->
+    <section id="about-climbing" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-semibold text-slate-900 mb-4 tracking-tight">Why Rock Climbing is Perfect for Kids</h2>
+                <p class="text-slate-500 max-w-2xl mx-auto">At Maura Wonderlab, we believe climbing is more than just physical activity—it's a complete developmental experience.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="bg-orange-50 p-8 rounded-3xl border-2 border-orange-100 text-center group hover:shadow-xl transition-shadow">
+                    <div class="h-20 w-20 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-orange-200 transition-colors">
+                        <iconify-icon icon="lucide:brain" width="32" class="text-orange-500"></iconify-icon>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-800 mb-3">Cognitive Development</h3>
+                    <p class="text-slate-600">Climbing requires problem-solving, planning routes, and strategic thinking—boosting mental agility.</p>
+                </div>
+                
+                <div class="bg-blue-50 p-8 rounded-3xl border-2 border-blue-100 text-center group hover:shadow-xl transition-shadow">
+                    <div class="h-20 w-20 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-blue-200 transition-colors">
+                        <iconify-icon icon="lucide:heart" width="32" class="text-blue-500"></iconify-icon>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-800 mb-3">Physical Fitness</h3>
+                    <p class="text-slate-600">Builds strength, coordination, balance, and flexibility in a fun, engaging way.</p>
+                </div>
+                
+                <div class="bg-green-50 p-8 rounded-3xl border-2 border-green-100 text-center group hover:shadow-xl transition-shadow">
+                    <div class="h-20 w-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-green-200 transition-colors">
+                        <iconify-icon icon="lucide:smile" width="32" class="text-green-500"></iconify-icon>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-800 mb-3">Confidence Building</h3>
+                    <p class="text-slate-600">Reaching the top creates incredible feelings of accomplishment and self-belief.</p>
+                </div>
+                
+                <div class="bg-purple-50 p-8 rounded-3xl border-2 border-purple-100 text-center group hover:shadow-xl transition-shadow">
+                    <div class="h-20 w-20 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-purple-200 transition-colors">
+                        <iconify-icon icon="lucide:users" width="32" class="text-purple-500"></iconify-icon>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-800 mb-3">Social Skills</h3>
+                    <p class="text-slate-600">Team challenges and belaying partners teach communication, trust, and cooperation.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Climbing Programs -->
+    <section id="programs" class="py-24 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-semibold text-slate-900 mb-4 tracking-tight">Our Rock Climbing Programs</h2>
+                <p class="text-slate-500">Designed for different age groups and skill levels at our Virar, Vasai, and Nallasopara locations.</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                <!-- Beginners Program -->
+                <div class="bg-white rounded-3xl overflow-hidden border-2 border-orange-100 shadow-lg hover:shadow-xl transition-shadow">
+                    <div class="h-48 bg-gradient-to-r from-orange-400 to-pink-500 flex items-center justify-center relative">
+                        <iconify-icon icon="lucide:sparkles" width="64" class="text-white opacity-70"></iconify-icon>
+                        <div class="absolute top-4 left-4 bg-white/90 text-orange-600 px-3 py-1 rounded-full text-xs font-bold">
+                            Ages 5-8
+                        </div>
+                    </div>
+                    <div class="p-8">
+                        <h3 class="text-2xl font-bold text-slate-800 mb-4">Little Climbers</h3>
+                        <p class="text-slate-600 mb-6">Perfect introduction to climbing for young children. Low walls, lots of colorful holds, and fun climbing games.</p>
+                        <ul class="space-y-3 mb-8">
+                            <li class="flex items-center gap-2 text-sm text-slate-700">
+                                <iconify-icon icon="lucide:check-circle" class="text-green-500"></iconify-icon>
+                                <span>2-4 meter climbing walls</span>
+                            </li>
+                            <li class="flex items-center gap-2 text-sm text-slate-700">
+                                <iconify-icon icon="lucide:check-circle" class="text-green-500"></iconify-icon>
+                                <span>Auto-belay systems for safety</span>
+                            </li>
+                            <li class="flex items-center gap-2 text-sm text-slate-700">
+                                <iconify-icon icon="lucide:check-circle" class="text-green-500"></iconify-icon>
+                                <span>1:4 instructor ratio</span>
+                            </li>
+                            <li class="flex items-center gap-2 text-sm text-slate-700">
+                                <iconify-icon icon="lucide:check-circle" class="text-green-500"></iconify-icon>
+                                <span>45-minute sessions</span>
+                            </li>
+                        </ul>
+                        <button onclick="scrollToBooking()" class="w-full py-3 bg-orange-100 text-orange-700 font-semibold rounded-xl hover:bg-orange-200 transition-colors">
+                            Enroll Now
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Intermediate Program -->
+                <div class="bg-white rounded-3xl overflow-hidden border-2 border-blue-100 shadow-lg hover:shadow-xl transition-shadow transform lg:scale-105 relative">
+                    <div class="absolute top-0 right-0 bg-blue-500 text-white text-xs font-bold px-4 py-2 rounded-bl-xl">MOST POPULAR</div>
+                    <div class="h-48 bg-gradient-to-r from-blue-500 to-purple-600 flex items-center justify-center relative">
+                        <iconify-icon icon="lucide:trending-up" width="64" class="text-white opacity-70"></iconify-icon>
+                        <div class="absolute top-4 left-4 bg-white/90 text-blue-600 px-3 py-1 rounded-full text-xs font-bold">
+                            Ages 9-12
+                        </div>
+                    </div>
+                    <div class="p-8">
+                        <h3 class="text-2xl font-bold text-slate-800 mb-4">Adventure Climbers</h3>
+                        <p class="text-slate-600 mb-6">Develop technique and confidence on higher walls. Learn basic climbing techniques and belaying.</p>
+                        <ul class="space-y-3 mb-8">
+                            <li class="flex items-center gap-2 text-sm text-slate-700">
+                                <iconify-icon icon="lucide:check-circle" class="text-green-500"></iconify-icon>
+                                <span>6-8 meter climbing walls</span>
+                            </li>
+                            <li class="flex items-center gap-2 text-sm text-slate-700">
+                                <iconify-icon icon="lucide:check-circle" class="text-green-500"></iconify-icon>
+                                <span>Learn belaying techniques</span>
+                            </li>
+                            <li class="flex items-center gap-2 text-sm text-slate-700">
+                                <iconify-icon icon="lucide:check-circle" class="text-green-500"></iconify-icon>
+                                <span>1:6 instructor ratio</span>
+                            </li>
+                            <li class="flex items-center gap-2 text-sm text-slate-700">
+                                <iconify-icon icon="lucide:check-circle" class="text-green-500"></iconify-icon>
+                                <span>90-minute sessions</span>
+                            </li>
+                        </ul>
+                        <button onclick="scrollToBooking()" class="w-full py-3 bg-blue-500 text-white font-semibold rounded-xl hover:bg-blue-600 transition-colors shadow-md">
+                            Enroll Now
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Advanced Program -->
+                <div class="bg-white rounded-3xl overflow-hidden border-2 border-purple-100 shadow-lg hover:shadow-xl transition-shadow">
+                    <div class="h-48 bg-gradient-to-r from-purple-600 to-red-500 flex items-center justify-center relative">
+                        <iconify-icon icon="lucide:target" width="64" class="text-white opacity-70"></iconify-icon>
+                        <div class="absolute top-4 left-4 bg-white/90 text-purple-600 px-3 py-1 rounded-full text-xs font-bold">
+                            Ages 13-16
+                        </div>
+                    </div>
+                    <div class="p-8">
+                        <h3 class="text-2xl font-bold text-slate-800 mb-4">Pro Climbers</h3>
+                        <p class="text-slate-600 mb-6">Advanced techniques, bouldering, lead climbing, and competition preparation for serious young climbers.</p>
+                        <ul class="space-y-3 mb-8">
+                            <li class="flex items-center gap-2 text-sm text-slate-700">
+                                <iconify-icon icon="lucide:check-circle" class="text-green-500"></iconify-icon>
+                                <span>10+ meter climbing walls</span>
+                            </li>
+                            <li class="flex items-center gap-2 text-sm text-slate-700">
+                                <iconify-icon icon="lucide:check-circle" class="text-green-500"></iconify-icon>
+                                <span>Advanced techniques & bouldering</span>
+                            </li>
+                            <li class="flex items-center gap-2 text-sm text-slate-700">
+                                <iconify-icon icon="lucide:check-circle" class="text-green-500"></iconify-icon>
+                                <span>Competition training</span>
+                            </li>
+                            <li class="flex items-center gap-2 text-sm text-slate-700">
+                                <iconify-icon icon="lucide:check-circle" class="text-green-500"></iconify-icon>
+                                <span>2-hour intensive sessions</span>
+                            </li>
+                        </ul>
+                        <button onclick="scrollToBooking()" class="w-full py-3 bg-purple-100 text-purple-700 font-semibold rounded-xl hover:bg-purple-200 transition-colors">
+                            Enroll Now
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Safety Features -->
+    <section id="safety" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h2 class="text-4xl md:text-5xl font-semibold text-slate-900 mb-6 tracking-tight">Safety First, Always</h2>
+                    <p class="text-slate-600 text-lg mb-8">At Maura Wonderlab, your child's safety is our top priority. Our climbing facilities in Virar, Vasai, and Nallasopara are designed with multiple safety layers.</p>
+                    
+                    <div class="space-y-6">
+                        <div class="flex items-start gap-4">
+                            <div class="h-12 w-12 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0">
+                                <iconify-icon icon="lucide:shield-check" class="text-green-600" width="24"></iconify-icon>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-slate-800 text-lg mb-1">Certified Instructors</h3>
+                                <p class="text-slate-600">All instructors are certified in rock climbing safety and first aid, with specific training in children's climbing.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start gap-4">
+                            <div class="h-12 w-12 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0">
+                                <iconify-icon icon="lucide:check-circle" class="text-blue-600" width="24"></iconify-icon>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-slate-800 text-lg mb-1">Premium Equipment</h3>
+                                <p class="text-slate-600">We use only UIAA certified harnesses, helmets, and ropes, inspected daily by our safety team.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start gap-4">
+                            <div class="h-12 w-12 bg-orange-100 rounded-full flex items-center justify-center flex-shrink-0">
+                                <iconify-icon icon="lucide:users" class="text-orange-600" width="24"></iconify-icon>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-slate-800 text-lg mb-1">Low Student Ratio</h3>
+                                <p class="text-slate-600">Small class sizes ensure individual attention. Maximum 6 students per instructor for older kids, 4 for younger ones.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-gradient-to-br from-blue-50 to-orange-50 rounded-3xl p-8 border-2 border-blue-100">
+                    <div class="text-center mb-8">
+                        <iconify-icon icon="lucide:shield" width="64" class="text-blue-500 mb-4"></iconify-icon>
+                        <h3 class="text-2xl font-bold text-slate-800 mb-4">Our Safety Protocols</h3>
+                    </div>
+                    
+                    <div class="space-y-4">
+                        <div class="flex items-center gap-3 bg-white p-4 rounded-xl border border-blue-100">
+                            <div class="h-8 w-8 bg-blue-500 text-white rounded-full flex items-center justify-center font-bold">1</div>
+                            <span class="font-medium">Daily equipment inspection</span>
+                        </div>
+                        
+                        <div class="flex items-center gap-3 bg-white p-4 rounded-xl border border-blue-100">
+                            <div class="h-8 w-8 bg-blue-500 text-white rounded-full flex items-center justify-center font-bold">2</div>
+                            <span class="font-medium">Soft landing mats (30cm thick)</span>
+                        </div>
+                        
+                        <div class="flex items-center gap-3 bg-white p-4 rounded-xl border border-blue-100">
+                            <div class="h-8 w-8 bg-blue-500 text-white rounded-full flex items-center justify-center font-bold">3</div>
+                            <span class="font-medium">Auto-belay systems for beginners</span>
+                        </div>
+                        
+                        <div class="flex items-center gap-3 bg-white p-4 rounded-xl border border-blue-100">
+                            <div class="h-8 w-8 bg-blue-500 text-white rounded-full flex items-center justify-center font-bold">4</div>
+                            <span class="font-medium">Emergency action plans at all locations</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Locations with Climbing Walls -->
+    <section id="locations" class="py-24 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-semibold text-slate-900 mb-4 tracking-tight">Climbing Locations Near You</h2>
+                <p class="text-slate-500">State-of-the-art climbing facilities at all Maura Wonderlab locations in the Vasai-Virar region.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white rounded-3xl overflow-hidden border-2 border-slate-100 hover:border-orange-200 transition-colors">
+                    <div class="h-48 bg-gradient-to-r from-orange-400 to-amber-500 relative">
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <iconify-icon icon="lucide:map-pin" width="48" class="text-white opacity-80"></iconify-icon>
+                        </div>
+                        <div class="absolute bottom-4 left-4 bg-white/90 text-orange-600 px-3 py-1 rounded-full text-sm font-bold">
+                            Virar West
+                        </div>
+                    </div>
+                    <div class="p-8">
+                        <h3 class="text-xl font-bold text-slate-800 mb-4">Virar Adventure Center</h3>
+                        <p class="text-slate-600 mb-6">Our flagship location with the tallest climbing walls in the region. Perfect for all skill levels.</p>
+                        <div class="space-y-3">
+                            <div class="flex items-center gap-2 text-sm text-slate-700">
+                                <iconify-icon icon="lucide:ruler" class="text-orange-500"></iconify-icon>
+                                <span><strong>12m</strong> Main Climbing Wall</span>
+                            </div>
+                            <div class="flex items-center gap-2 text-sm text-slate-700">
+                                <iconify-icon icon="lucide:square" class="text-orange-500"></iconify-icon>
+                                <span><strong>6</strong> Auto-belay Routes</span>
+                            </div>
+                            <div class="flex items-center gap-2 text-sm text-slate-700">
+                                <iconify-icon icon="lucide:users" class="text-orange-500"></iconify-icon>
+                                <span><strong>4</strong> Certified Instructors</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-3xl overflow-hidden border-2 border-slate-100 hover:border-blue-200 transition-colors">
+                    <div class="h-48 bg-gradient-to-r from-blue-400 to-cyan-500 relative">
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <iconify-icon icon="lucide:map-pin" width="48" class="text-white opacity-80"></iconify-icon>
+                        </div>
+                        <div class="absolute bottom-4 left-4 bg-white/90 text-blue-600 px-3 py-1 rounded-full text-sm font-bold">
+                            Vasai East
+                        </div>
+                    </div>
+                    <div class="p-8">
+                        <h3 class="text-xl font-bold text-slate-800 mb-4">Vasai Climbing Hub</h3>
+                        <p class="text-slate-600 mb-6">Indoor climbing facility perfect for year-round climbing regardless of weather conditions.</p>
+                        <div class="space-y-3">
+                            <div class="flex items-center gap-2 text-sm text-slate-700">
+                                <iconify-icon icon="lucide:ruler" class="text-blue-500"></iconify-icon>
+                                <span><strong>8m</strong> Indoor Climbing Wall</span>
+                            </div>
+                            <div class="flex items-center gap-2 text-sm text-slate-700">
+                                <iconify-icon icon="lucide:square" class="text-blue-500"></iconify-icon>
+                                <span><strong>Bouldering Zone</strong> Included</span>
+                            </div>
+                            <div class="flex items-center gap-2 text-sm text-slate-700">
+                                <iconify-icon icon="lucide:users" class="text-blue-500"></iconify-icon>
+                                <span>AC Facility for Summer</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-3xl overflow-hidden border-2 border-slate-100 hover:border-green-200 transition-colors">
+                    <div class="h-48 bg-gradient-to-r from-green-400 to-emerald-500 relative">
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <iconify-icon icon="lucide:map-pin" width="48" class="text-white opacity-80"></iconify-icon>
+                        </div>
+                        <div class="absolute bottom-4 left-4 bg-white/90 text-green-600 px-3 py-1 rounded-full text-sm font-bold">
+                            Nallasopara
+                        </div>
+                    </div>
+                    <div class="p-8">
+                        <h3 class="text-xl font-bold text-slate-800 mb-4">Nallasopara Kids Climbing</h3>
+                        <p class="text-slate-600 mb-6">Specialized facility designed specifically for younger children (ages 5-10) with colorful, engaging walls.</p>
+                        <div class="space-y-3">
+                            <div class="flex items-center gap-2 text-sm text-slate-700">
+                                <iconify-icon icon="lucide:ruler" class="text-green-500"></iconify-icon>
+                                <span><strong>4-6m</strong> Child-Sized Walls</span>
+                            </div>
+                            <div class="flex items-center gap-2 text-sm text-slate-700">
+                                <iconify-icon icon="lucide:square" class="text-green-500"></iconify-icon>
+                                <span><strong>Color-Coded</strong> Difficulty Levels</span>
+                            </div>
+                            <div class="flex items-center gap-2 text-sm text-slate-700">
+                                <iconify-icon icon="lucide:users" class="text-green-500"></iconify-icon>
+                                <span><strong>1:4</strong> Instructor Ratio</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Booking Section -->
+    <section id="booking" class="py-24 bg-gradient-to-r from-orange-50 to-blue-50">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-white rounded-3xl p-8 md:p-12 shadow-2xl border-2 border-orange-100">
+                <div class="text-center mb-10">
+                    <h2 class="text-4xl font-semibold text-slate-900 mb-4 tracking-tight">Start Your Climbing Adventure</h2>
+                    <p class="text-slate-600">Book a trial session today and let your child experience the joy of climbing!</p>
+                </div>
+                
+                <form class="space-y-6">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-sm font-medium text-slate-700 mb-2">Child's Name</label>
+                            <input type="text" class="w-full px-4 py-3 border border-slate-300 rounded-xl focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition" placeholder="Enter child's full name" required>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-slate-700 mb-2">Child's Age</label>
+                            <select class="w-full px-4 py-3 border border-slate-300 rounded-xl focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition" required>
+                                <option value="">Select Age Group</option>
+                                <option value="5-8">5-8 Years (Little Climbers)</option>
+                                <option value="9-12">9-12 Years (Adventure Climbers)</option>
+                                <option value="13-16">13-16 Years (Pro Climbers)</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-sm font-medium text-slate-700 mb-2">Parent's Name</label>
+                            <input type="text" class="w-full px-4 py-3 border border-slate-300 rounded-xl focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition" placeholder="Enter parent's name" required>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-slate-700 mb-2">Phone Number</label>
+                            <input type="tel" class="w-full px-4 py-3 border border-slate-300 rounded-xl focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition" placeholder="+91 98765 43210" required>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <label class="block text-sm font-medium text-slate-700 mb-2">Preferred Location</label>
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                            <label class="flex items-center p-4 border-2 border-slate-200 rounded-xl cursor-pointer hover:border-orange-300 transition-colors">
+                                <input type="radio" name="location" value="virar" class="h-5 w-5 text-orange-500">
+                                <span class="ml-3 font-medium">Virar West</span>
+                            </label>
+                            <label class="flex items-center p-4 border-2 border-slate-200 rounded-xl cursor-pointer hover:border-blue-300 transition-colors">
+                                <input type="radio" name="location" value="vasai" class="h-5 w-5 text-blue-500">
+                                <span class="ml-3 font-medium">Vasai East</span>
+                            </label>
+                            <label class="flex items-center p-4 border-2 border-slate-200 rounded-xl cursor-pointer hover:border-green-300 transition-colors">
+                                <input type="radio" name="location" value="nallasopara" class="h-5 w-5 text-green-500">
+                                <span class="ml-3 font-medium">Nallasopara</span>
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <label class="block text-sm font-medium text-slate-700 mb-2">Preferred Session Time</label>
+                        <select class="w-full px-4 py-3 border border-slate-300 rounded-xl focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition" required>
+                            <option value="">Select Time Slot</option>
+                            <option value="weekend">Weekend Morning (9 AM - 12 PM)</option>
+                            <option value="evening">Weekday Evening (4 PM - 7 PM)</option>
+                            <option value="holiday">Holiday Special Sessions</option>
+                        </select>
+                    </div>
+                    
+                    <button type="submit" class="w-full py-4 bg-gradient-to-r from-orange-500 to-red-500 text-white font-bold rounded-xl text-lg hover:from-orange-600 hover:to-red-600 transition-all shadow-lg hover:shadow-xl">
+                        Book Free Trial Session
+                    </button>
+                    
+                    <p class="text-center text-sm text-slate-500 mt-4">
+                        <iconify-icon icon="lucide:shield" class="text-green-500 align-middle"></iconify-icon>
+                        Your trial session includes all equipment and insurance coverage.
+                    </p>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-white pt-20 pb-10 rounded-t-[3rem]">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
+                <div class="col-span-1 md:col-span-2">
+                    <div class="flex items-center gap-2 mb-6">
+                         <div class="h-8 w-8 bg-orange-500 rounded-lg flex items-center justify-center text-white">
+                            <iconify-icon icon="lucide:mountain" width="18"></iconify-icon>
+                        </div>
+                        <span class="brand-font text-2xl font-bold">Maura <span class="text-orange-400">Wonderlab</span></span>
+                    </div>
+                    <p class="text-slate-400 max-w-sm mb-6">Creating confident climbers through safe, exciting rock climbing adventures for kids in Virar, Vasai, and Nallasopara.</p>
+                    <div class="flex gap-4">
+                        <a href="#" class="h-10 w-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-orange-500 transition-colors"><iconify-icon icon="lucide:instagram" width="20"></iconify-icon></a>
+                        <a href="#" class="h-10 w-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-blue-500 transition-colors"><iconify-icon icon="lucide:facebook" width="20"></iconify-icon></a>
+                        <a href="#" class="h-10 w-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-green-500 transition-colors"><iconify-icon icon="lucide:phone" width="20"></iconify-icon></a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="font-bold text-lg mb-6">Climbing Programs</h4>
+                    <ul class="space-y-4 text-slate-400 text-sm">
+                        <li><a href="#programs" class="hover:text-white transition-colors">Little Climbers (5-8 yrs)</a></li>
+                        <li><a href="#programs" class="hover:text-white transition-colors">Adventure Climbers (9-12 yrs)</a></li>
+                        <li><a href="#programs" class="hover:text-white transition-colors">Pro Climbers (13-16 yrs)</a></li>
+                        <li><a href="#booking" class="hover:text-white transition-colors">Free Trial Session</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-bold text-lg mb-6">Climbing Locations</h4>
+                    <ul class="space-y-4 text-slate-400 text-sm">
+                        <li><a href="#locations" class="hover:text-white transition-colors">Rock Climbing in Virar</a></li>
+                        <li><a href="#locations" class="hover:text-white transition-colors">Kids Climbing in Vasai</a></li>
+                        <li><a href="#locations" class="hover:text-white transition-colors">Children Climbing in Nallasopara</a></li>
+                        <li><a href="/" class="hover:text-white transition-colors">All Adventure Activities</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-slate-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="text-slate-500 text-sm">© 2024 Maura Wonderlab - Rock Climbing for Kids. All rights reserved.</p>
+                <div class="flex gap-6 text-sm text-slate-500">
+                    <a href="#" class="hover:text-white">Safety Policy</a>
+                    <a href="#" class="hover:text-white">Terms</a>
+                    <a href="#" class="hover:text-white">Privacy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Functionality
+        const mobileMenuButton = document.getElementById('mobileMenuButton');
+        const closeMenuButton = document.getElementById('closeMenuButton');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const menuOverlay = document.getElementById('menuOverlay');
+        
+        function openMobileMenu() {
+            mobileMenu.classList.add('open');
+            menuOverlay.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+        
+        function closeMobileMenu() {
+            mobileMenu.classList.remove('open');
+            menuOverlay.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+        
+        // Event Listeners
+        mobileMenuButton.addEventListener('click', openMobileMenu);
+        closeMenuButton.addEventListener('click', closeMobileMenu);
+        menuOverlay.addEventListener('click', closeMobileMenu);
+        
+        // Close menu when clicking on any menu link
+        document.querySelectorAll('#mobileMenu a').forEach(link => {
+            link.addEventListener('click', closeMobileMenu);
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                const href = this.getAttribute('href');
+                
+                if (href === '#' || href.startsWith('#') && href.length > 1) {
+                    e.preventDefault();
+                    
+                    const targetId = href.substring(1);
+                    const targetElement = document.getElementById(targetId);
+                    
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                    }
+                }
+            });
+        });
+        
+        // Scroll to booking function
+        function scrollToBooking() {
+            const bookingSection = document.getElementById('booking');
+            if (bookingSection) {
+                window.scrollTo({
+                    top: bookingSection.offsetTop - 80,
+                    behavior: 'smooth'
+                });
+            }
+        }
+        
+        // Close menu on ESC key press
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && mobileMenu.classList.contains('open')) {
+                closeMobileMenu();
+            }
+        });
+        
+        // Form submission
+        document.querySelector('form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for your interest in our rock climbing program! Our team will contact you within 24 hours to schedule your free trial session.');
+            this.reset();
+        });
+        
+        // Add animation to cards on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+        
+        // Observe all cards for animation
+        document.querySelectorAll('.group, [class*="rounded-3xl"]').forEach(card => {
+            card.style.opacity = '0.9';
+            card.style.transform = 'translateY(20px)';
+            card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+            observer.observe(card);
+        });
+    </script>
+</body>
+</html>

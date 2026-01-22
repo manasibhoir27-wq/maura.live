@@ -1,0 +1,1083 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Survival Commando Challenges | Kids Adventure Camping in Virar, Vasai, Nallasopara</title>
+    <meta name="description" content="Survival Commando Challenges at Maura Wonderlab: Ultimate adventure sports & survival training for kids. Military-style obstacle courses, survival skills, and commando training in Virar, Vasai, Nallasopara.">
+    <meta name="keywords" content="commando training for kids, survival challenges for children, adventure sports for kids, obstacle course training, military-style adventure camp, kids survival camp, adventure activities Mumbai, outdoor challenges for children">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Iconify (Lucide Icons) -->
+    <script src="https://cdn.jsdelivr.net/npm/iconify-icon@1.0.8/dist/iconify-icon.min.js"></script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=Nunito:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        /* Custom Font Settings for Childish/Playful Vibe */
+        body {
+            font-family: 'Nunito', sans-serif;
+        }
+        h1, h2, h3, h4, h5, h6, .brand-font {
+            font-family: 'Fredoka', sans-serif;
+        }
+        
+        /* Playful Blob Pattern */
+        .bg-pattern {
+            background-color: #FFFDF5;
+            background-image: radial-gradient(#FDE68A 1px, transparent 1px), radial-gradient(#BAE6FD 1px, transparent 1px);
+            background-size: 40px 40px;
+            background-position: 0 0, 20px 20px;
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #FFF7ED; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #FDBA74; 
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #EA580C; 
+        }
+
+        /* Mobile Menu Animation */
+        .mobile-menu {
+            transform: translateX(100%);
+            transition: transform 0.3s ease-in-out;
+        }
+        
+        .mobile-menu.open {
+            transform: translateX(0);
+        }
+        
+        .menu-overlay {
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease-in-out, visibility 0.3s;
+        }
+        
+        .menu-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        /* Survival Challenge Specific Styles */
+        .commando-gradient {
+            background: linear-gradient(135deg, #1e40af 0%, #0ea5e9 50%, #22c55e 100%);
+        }
+        
+        .activity-card {
+            transition: all 0.3s ease;
+            border: 3px solid transparent;
+        }
+        
+        .activity-card:hover {
+            transform: translateY(-5px);
+            border-color: #f59e0b;
+            box-shadow: 0 10px 25px -5px rgba(245, 158, 11, 0.3);
+        }
+        
+        .difficulty-badge {
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+        
+        .hero-section {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1551632811-561732d1e306?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+        
+        .section-divider {
+            height: 4px;
+            background: linear-gradient(90deg, #1e40af, #f59e0b, #22c55e);
+            border-radius: 2px;
+            margin: 3rem 0;
+        }
+        
+        .age-badge {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.875rem;
+            font-weight: bold;
+            margin-right: 8px;
+            margin-bottom: 8px;
+        }
+    </style>
+</head>
+<body class="bg-pattern text-slate-600 antialiased selection:bg-orange-200 selection:text-orange-900">
+
+    <!-- Navbar -->
+    <nav class="fixed w-full z-50 top-0 transition-all duration-300 backdrop-blur-md bg-white/80 border-b-2 border-slate-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center gap-2 cursor-pointer" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+                    <img src="maura wonderlab logo.png" alt="Maura Wonderlab" width="50px">
+                    <span class="brand-font text-2xl font-semibold tracking-tight text-slate-800">
+                        Maura <span class="text-orange-500">Wonderlab</span>
+                    </span>
+                </div>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="#overview" class="text-sm font-semibold text-slate-600 hover:text-orange-500 transition-colors">Overview</a>
+                    <a href="#activities" class="text-sm font-semibold text-slate-600 hover:text-orange-500 transition-colors">Challenges</a>
+                    <a href="#schedule" class="text-sm font-semibold text-slate-600 hover:text-orange-500 transition-colors">Schedule</a>
+                    <a href="#locations" class="text-sm font-semibold text-slate-600 hover:text-orange-500 transition-colors">Locations</a>
+                    <a href="#pricing" class="text-sm font-semibold text-slate-600 hover:text-orange-500 transition-colors">Pricing</a>
+                    <button class="bg-indigo-500 hover:bg-indigo-600 text-white px-5 py-2.5 rounded-full text-sm font-semibold transition-all shadow-[0px_4px_0px_0px_rgba(67,56,202,1)] hover:shadow-[0px_2px_0px_0px_rgba(67,56,202,1)] hover:translate-y-[2px]">
+                        Book Now
+                    </button>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobileMenuButton" class="text-slate-600 hover:text-orange-500 p-2">
+                        <iconify-icon icon="lucide:menu" width="28" stroke-width="1.5"></iconify-icon>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu Overlay -->
+    <div id="menuOverlay" class="menu-overlay fixed inset-0 bg-black/50 z-40 md:hidden"></div>
+
+    <!-- Mobile Menu -->
+    <div id="mobileMenu" class="mobile-menu fixed top-0 right-0 h-full w-64 bg-white z-50 shadow-2xl md:hidden p-6">
+        <div class="flex justify-between items-center mb-8">
+            <div class="flex items-center gap-2">
+                <div class="h-8 w-8 bg-orange-400 rounded-lg flex items-center justify-center text-white">
+                    <iconify-icon icon="lucide:tent" width="18"></iconify-icon>
+                </div>
+                <span class="brand-font text-xl font-semibold text-slate-800">Maura <span class="text-orange-500">Wonderlab</span></span>
+            </div>
+            <button id="closeMenuButton" class="text-slate-600 hover:text-orange-500 p-2">
+                <iconify-icon icon="lucide:x" width="24" stroke-width="1.5"></iconify-icon>
+            </button>
+        </div>
+        
+        <div class="space-y-6">
+            <a href="#overview" class="block py-3 text-slate-700 font-semibold border-b border-slate-100" onclick="closeMobileMenu()">Overview</a>
+            <a href="#activities" class="block py-3 text-slate-700 font-semibold border-b border-slate-100" onclick="closeMobileMenu()">Challenges</a>
+            <a href="#schedule" class="block py-3 text-slate-700 font-semibold border-b border-slate-100" onclick="closeMobileMenu()">Schedule</a>
+            <a href="#locations" class="block py-3 text-slate-700 font-semibold border-b border-slate-100" onclick="closeMobileMenu()">Locations</a>
+            <a href="#pricing" class="block py-3 text-slate-700 font-semibold border-b border-slate-100" onclick="closeMobileMenu()">Pricing</a>
+            <div class="pt-4">
+                <button class="w-full bg-indigo-500 hover:bg-indigo-600 text-white px-5 py-3 rounded-full text-sm font-semibold transition-all">
+                    Book Now
+                </button>
+            </div>
+        </div>
+        
+        <div class="absolute bottom-8 left-6 right-6">
+            <p class="text-sm text-slate-500 mb-4">Contact us:</p>
+            <div class="flex items-center gap-2 text-slate-700 mb-2">
+                <iconify-icon icon="lucide:phone" width="16"></iconify-icon>
+                <span class="text-sm">+91 77680 31411</span>
+            </div>
+            <div class="flex items-center gap-2 text-slate-700">
+                <iconify-icon icon="lucide:mail" width="16"></iconify-icon>
+                <span class="text-sm">maurawonderlab@gmail.com</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main class="pt-20">
+        <!-- Hero Section -->
+        <section class="hero-section text-white py-16 md:py-24">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex flex-col md:flex-row items-center justify-between gap-10">
+                    <div class="md:w-2/3">
+                        <div class="inline-flex items-center gap-2 bg-blue-900/70 text-blue-100 px-4 py-2 rounded-full mb-6">
+                            <iconify-icon icon="lucide:shield" width="18"></iconify-icon>
+                            <span class="text-sm font-semibold">Sports & Adventure Category</span>
+                        </div>
+                        <h1 class="text-4xl md:text-6xl font-bold mb-6 leading-tight">
+                            Survival <span class="text-orange-400">Commando</span> Challenges
+                        </h1>
+                        <p class="text-xl text-blue-100 mb-8 max-w-3xl">
+                            Ultimate military-style adventure training for young commandos! Build courage, resilience, and survival skills through thrilling obstacle courses, tactical missions, and wilderness challenges.
+                        </p>
+                        
+                        <div class="flex flex-wrap gap-4 mb-8">
+                            <div class="flex items-center gap-2 bg-blue-800/50 px-4 py-2 rounded-lg">
+                                <iconify-icon icon="lucide:calendar" width="18"></iconify-icon>
+                                <span>Weekend & Holiday Batches</span>
+                            </div>
+                            <div class="flex items-center gap-2 bg-blue-800/50 px-4 py-2 rounded-lg">
+                                <iconify-icon icon="lucide:users" width="18"></iconify-icon>
+                                <span>Small Groups (8-12 kids)</span>
+                            </div>
+                            <div class="flex items-center gap-2 bg-blue-800/50 px-4 py-2 rounded-lg">
+                                <iconify-icon icon="lucide:shield-check" width="18"></iconify-icon>
+                                <span>Certified Instructors</span>
+                            </div>
+                        </div>
+                        
+                        <div class="flex flex-wrap gap-4">
+                            <button class="bg-orange-500 hover:bg-orange-600 text-white px-8 py-3 rounded-full text-lg font-semibold transition-all shadow-[0px_6px_0px_0px_rgba(194,65,12,1)] hover:shadow-[0px_3px_0px_0px_rgba(194,65,12,1)] hover:translate-y-[3px]">
+                                Enroll Now
+                            </button>
+                            <button class="bg-white/20 hover:bg-white/30 text-white px-8 py-3 rounded-full text-lg font-semibold transition-all backdrop-blur-sm">
+                                Download Brochure
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="md:w-1/3">
+                        <div class="bg-white/10 backdrop-blur-sm p-6 rounded-2xl border border-white/20">
+                            <h3 class="text-xl font-bold mb-4">Program Highlights</h3>
+                            <ul class="space-y-3">
+                                <li class="flex items-center gap-3">
+                                    <iconify-icon icon="lucide:check-circle" class="text-green-400" width="20"></iconify-icon>
+                                    <span>12+ Adventure Activities</span>
+                                </li>
+                                <li class="flex items-center gap-3">
+                                    <iconify-icon icon="lucide:check-circle" class="text-green-400" width="20"></iconify-icon>
+                                    <span>Age-Appropriate Challenges</span>
+                                </li>
+                                <li class="flex items-center gap-3">
+                                    <iconify-icon icon="lucide:check-circle" class="text-green-400" width="20"></iconify-icon>
+                                    <span>Safety-Certified Equipment</span>
+                                </li>
+                                <li class="flex items-center gap-3">
+                                    <iconify-icon icon="lucide:check-circle" class="text-green-400" width="20"></iconify-icon>
+                                    <span>Commando Completion Certificate</span>
+                                </li>
+                                <li class="flex items-center gap-3">
+                                    <iconify-icon icon="lucide:check-circle" class="text-green-400" width="20"></iconify-icon>
+                                    <span>First Aid & Emergency Training</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Age Groups Section -->
+        <section class="py-12 bg-gradient-to-r from-blue-50 to-orange-50">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-3xl font-bold text-center text-slate-800 mb-10">Designed for Different Age Groups</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div class="bg-white p-6 rounded-2xl shadow-lg text-center">
+                        <div class="inline-flex items-center justify-center w-16 h-16 bg-blue-100 text-blue-600 rounded-full mb-4">
+                            <iconify-icon icon="lucide:baby" width="28"></iconify-icon>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">Junior Commandos</h3>
+                        <div class="age-badge bg-blue-100 text-blue-800">Age 6-8 Years</div>
+                        <p class="text-slate-600 mt-4">Basic obstacle courses, team games, nature exploration with simplified survival concepts.</p>
+                    </div>
+                    
+                    <div class="bg-white p-6 rounded-2xl shadow-lg text-center border-2 border-orange-300 transform scale-105">
+                        <div class="inline-flex items-center justify-center w-16 h-16 bg-orange-100 text-orange-600 rounded-full mb-4">
+                            <iconify-icon icon="lucide:user" width="28"></iconify-icon>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">Adventure Commandos</h3>
+                        <div class="age-badge bg-orange-100 text-orange-800">Age 9-12 Years</div>
+                        <p class="text-slate-600 mt-4">Intermediate challenges, survival skills training, navigation, and tactical missions.</p>
+                    </div>
+                    
+                    <div class="bg-white p-6 rounded-2xl shadow-lg text-center">
+                        <div class="inline-flex items-center justify-center w-16 h-16 bg-green-100 text-green-600 rounded-full mb-4">
+                            <iconify-icon icon="lucide:users" width="28"></iconify-icon>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">Elite Commandos</h3>
+                        <div class="age-badge bg-green-100 text-green-800">Age 13-16 Years</div>
+                        <p class="text-slate-600 mt-4">Advanced survival training, leadership challenges, rescue operations, and endurance tests.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="section-divider"></div>
+
+        <!-- Overview Section -->
+        <section id="overview" class="py-16">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12">
+                    <h2 class="text-4xl font-bold text-slate-800 mb-4">What are Survival Commando Challenges?</h2>
+                    <p class="text-xl text-slate-600 max-w-3xl mx-auto">
+                        Our flagship adventure program combines military-style training with wilderness survival skills, designed to build physical fitness, mental resilience, and teamwork in a safe, controlled environment.
+                    </p>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <div class="bg-white p-8 rounded-3xl shadow-xl border border-slate-200">
+                            <h3 class="text-2xl font-bold text-slate-800 mb-6">Program Philosophy</h3>
+                            <p class="text-slate-600 mb-6">
+                                At Maura Wonderlab, we believe that controlled challenges help children develop confidence, problem-solving skills, and resilience. Our Survival Commando Challenges are carefully designed by child psychologists and adventure experts to provide the perfect balance of thrill and safety.
+                            </p>
+                            <div class="space-y-4">
+                                <div class="flex items-start gap-3">
+                                    <iconify-icon icon="lucide:target" class="text-blue-500 mt-1" width="20"></iconify-icon>
+                                    <div>
+                                        <h4 class="font-bold text-slate-800">Build Resilience</h4>
+                                        <p class="text-slate-600 text-sm">Overcoming obstacles builds mental toughness</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start gap-3">
+                                    <iconify-icon icon="lucide:heart" class="text-red-500 mt-1" width="20"></iconify-icon>
+                                    <div>
+                                        <h4 class="font-bold text-slate-800">Promote Teamwork</h4>
+                                        <p class="text-slate-600 text-sm">Group challenges foster collaboration and leadership</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start gap-3">
+                                    <iconify-icon icon="lucide:brain" class="text-purple-500 mt-1" width="20"></iconify-icon>
+                                    <div>
+                                        <h4 class="font-bold text-slate-800">Enhance Problem-Solving</h4>
+                                        <p class="text-slate-600 text-sm">Real-world scenarios develop critical thinking</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="bg-blue-500 text-white p-6 rounded-2xl">
+                            <iconify-icon icon="lucide:clock" width="32" class="mb-4"></iconify-icon>
+                            <h4 class="text-xl font-bold mb-2">Duration</h4>
+                            <p>2-Day Intensive Camps<br>5-Day Adventure Weeks<br>Weekend Challenges</p>
+                        </div>
+                        <div class="bg-orange-500 text-white p-6 rounded-2xl">
+                            <iconify-icon icon="lucide:users" width="32" class="mb-4"></iconify-icon>
+                            <h4 class="text-xl font-bold mb-2">Group Size</h4>
+                            <p>8-12 Kids per Batch<br>1:4 Instructor Ratio<br>Age-Specific Groups</p>
+                        </div>
+                        <div class="bg-green-500 text-white p-6 rounded-2xl">
+                            <iconify-icon icon="lucide:award" width="32" class="mb-4"></iconify-icon>
+                            <h4 class="text-xl font-bold mb-2">Certification</h4>
+                            <p>Commando Challenge Certificate<br>Skill Achievement Badges<br>Progress Report</p>
+                        </div>
+                        <div class="bg-purple-500 text-white p-6 rounded-2xl">
+                            <iconify-icon icon="lucide:shield" width="32" class="mb-4"></iconify-icon>
+                            <h4 class="text-xl font-bold mb-2">Safety</h4>
+                            <p>Certified Instructors<br>First Aid Trained Staff<br>Safety Equipment Provided</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="section-divider"></div>
+
+        <!-- Activities/Challenges Section -->
+        <section id="activities" class="py-16">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12">
+                    <h2 class="text-4xl font-bold text-slate-800 mb-4">Commando Challenge Activities</h2>
+                    <p class="text-xl text-slate-600 max-w-3xl mx-auto">
+                        12+ thrilling activities designed to test limits, build skills, and create unforgettable adventures.
+                    </p>
+                </div>
+                
+                <!-- Activity Categories -->
+                <div class="mb-10">
+                    <h3 class="text-2xl font-bold text-slate-800 mb-6">Survival Skills Training</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        <!-- Activity Card 1 -->
+                        <div class="activity-card bg-white rounded-2xl shadow-lg overflow-hidden relative group">
+                            <div class="difficulty-badge bg-green-100 text-green-800">Beginner</div>
+                            <div class="p-6">
+                                <div class="flex items-center justify-center w-14 h-14 bg-blue-100 rounded-xl mb-4 group-hover:bg-blue-200 transition-colors">
+                                    <iconify-icon icon="lucide:compass" width="28" class="text-blue-600"></iconify-icon>
+                                </div>
+                                <h4 class="text-xl font-bold text-slate-800 mb-2">Wilderness Navigation</h4>
+                                <p class="text-slate-600 mb-4">Learn to read maps, use a compass, and navigate through natural terrain using landmarks and celestial navigation techniques.</p>
+                                <div class="flex items-center text-sm text-slate-500">
+                                    <iconify-icon icon="lucide:clock" width="16" class="mr-1"></iconify-icon>
+                                    <span class="mr-4">45 mins</span>
+                                    <iconify-icon icon="lucide:users" width="16" class="mr-1"></iconify-icon>
+                                    <span>Group Activity</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Activity Card 2 -->
+                        <div class="activity-card bg-white rounded-2xl shadow-lg overflow-hidden relative group">
+                            <div class="difficulty-badge bg-orange-100 text-orange-800">Intermediate</div>
+                            <div class="p-6">
+                                <div class="flex items-center justify-center w-14 h-14 bg-orange-100 rounded-xl mb-4 group-hover:bg-orange-200 transition-colors">
+                                    <iconify-icon icon="lucide:flame" width="28" class="text-orange-600"></iconify-icon>
+                                </div>
+                                <h4 class="text-xl font-bold text-slate-800 mb-2">Fire Building Techniques</h4>
+                                <p class="text-slate-600 mb-4">Master multiple fire-starting methods including friction fire, flint and steel, and safe fire management for cooking and warmth.</p>
+                                <div class="flex items-center text-sm text-slate-500">
+                                    <iconify-icon icon="lucide:clock" width="16" class="mr-1"></iconify-icon>
+                                    <span class="mr-4">60 mins</span>
+                                    <iconify-icon icon="lucide:users" width="16" class="mr-1"></iconify-icon>
+                                    <span>Pairs & Solo</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Activity Card 3 -->
+                        <div class="activity-card bg-white rounded-2xl shadow-lg overflow-hidden relative group">
+                            <div class="difficulty-badge bg-red-100 text-red-800">Advanced</div>
+                            <div class="p-6">
+                                <div class="flex items-center justify-center w-14 h-14 bg-green-100 rounded-xl mb-4 group-hover:bg-green-200 transition-colors">
+                                    <iconify-icon icon="lucide:droplets" width="28" class="text-green-600"></iconify-icon>
+                                </div>
+                                <h4 class="text-xl font-bold text-slate-800 mb-2">Water Purification</h4>
+                                <p class="text-slate-600 mb-4">Learn to identify water sources and purification methods including boiling, filtration, and solar disinfection for safe drinking water.</p>
+                                <div class="flex items-center text-sm text-slate-500">
+                                    <iconify-icon icon="lucide:clock" width="16" class="mr-1"></iconify-icon>
+                                    <span class="mr-4">50 mins</span>
+                                    <iconify-icon icon="lucide:users" width="16" class="mr-1"></iconify-icon>
+                                    <span>Group Activity</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="mb-10">
+                    <h3 class="text-2xl font-bold text-slate-800 mb-6">Obstacle & Fitness Challenges</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        <!-- Activity Card 4 -->
+                        <div class="activity-card bg-white rounded-2xl shadow-lg overflow-hidden relative group">
+                            <div class="difficulty-badge bg-green-100 text-green-800">Beginner</div>
+                            <div class="p-6">
+                                <div class="flex items-center justify-center w-14 h-14 bg-purple-100 rounded-xl mb-4 group-hover:bg-purple-200 transition-colors">
+                                    <iconify-icon icon="lucide:activity" width="28" class="text-purple-600"></iconify-icon>
+                                </div>
+                                <h4 class="text-xl font-bold text-slate-800 mb-2">Commando Crawl Course</h4>
+                                <p class="text-slate-600 mb-4">Navigate through tunnels, under nets, and over barriers in a timed challenge that builds agility and spatial awareness.</p>
+                                <div class="flex items-center text-sm text-slate-500">
+                                    <iconify-icon icon="lucide:clock" width="16" class="mr-1"></iconify-icon>
+                                    <span class="mr-4">30 mins</span>
+                                    <iconify-icon icon="lucide:users" width="16" class="mr-1"></iconify-icon>
+                                    <span>Individual Timing</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Activity Card 5 -->
+                        <div class="activity-card bg-white rounded-2xl shadow-lg overflow-hidden relative group">
+                            <div class="difficulty-badge bg-orange-100 text-orange-800">Intermediate</div>
+                            <div class="p-6">
+                                <div class="flex items-center justify-center w-14 h-14 bg-red-100 rounded-xl mb-4 group-hover:bg-red-200 transition-colors">
+                                    <iconify-icon icon="lucide:scaling" width="28" class="text-red-600"></iconify-icon>
+                                </div>
+                                <h4 class="text-xl font-bold text-slate-800 mb-2">Wall Climbing & Rappelling</h4>
+                                <p class="text-slate-600 mb-4">Scale vertical walls and learn controlled descent techniques with full safety gear and professional supervision.</p>
+                                <div class="flex items-center text-sm text-slate-500">
+                                    <iconify-icon icon="lucide:clock" width="16" class="mr-1"></iconify-icon>
+                                    <span class="mr-4">75 mins</span>
+                                    <iconify-icon icon="lucide:users" width="16" class="mr-1"></iconify-icon>
+                                    <span>Pairs Activity</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Activity Card 6 -->
+                        <div class="activity-card bg-white rounded-2xl shadow-lg overflow-hidden relative group">
+                            <div class="difficulty-badge bg-red-100 text-red-800">Advanced</div>
+                            <div class="p-6">
+                                <div class="flex items-center justify-center w-14 h-14 bg-indigo-100 rounded-xl mb-4 group-hover:bg-indigo-200 transition-colors">
+                                    <iconify-icon icon="lucide:zap" width="28" class="text-indigo-600"></iconify-icon>
+                                </div>
+                                <h4 class="text-xl font-bold text-slate-800 mb-2">Monkey Bridge Crossing</h4>
+                                <p class="text-slate-600 mb-4">Balance and coordination challenge crossing rope bridges at height, focusing on concentration and body control.</p>
+                                <div class="flex items-center text-sm text-slate-500">
+                                    <iconify-icon icon="lucide:clock" width="16" class="mr-1"></iconify-icon>
+                                    <span class="mr-4">40 mins</span>
+                                    <iconify-icon icon="lucide:users" width="16" class="mr-1"></iconify-icon>
+                                    <span>Individual Challenge</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="mb-10">
+                    <h3 class="text-2xl font-bold text-slate-800 mb-6">Tactical & Team Missions</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        <!-- Activity Card 7 -->
+                        <div class="activity-card bg-white rounded-2xl shadow-lg overflow-hidden relative group">
+                            <div class="difficulty-badge bg-green-100 text-green-800">Beginner</div>
+                            <div class="p-6">
+                                <div class="flex items-center justify-center w-14 h-14 bg-yellow-100 rounded-xl mb-4 group-hover:bg-yellow-200 transition-colors">
+                                    <iconify-icon icon="lucide:map" width="28" class="text-yellow-600"></iconify-icon>
+                                </div>
+                                <h4 class="text-xl font-bold text-slate-800 mb-2">Treasure Hunt Navigation</h4>
+                                <p class="text-slate-600 mb-4">Follow clues, solve puzzles, and use navigation skills to find hidden treasures in our adventure zone.</p>
+                                <div class="flex items-center text-sm text-slate-500">
+                                    <iconify-icon icon="lucide:clock" width="16" class="mr-1"></iconify-icon>
+                                    <span class="mr-4">60 mins</span>
+                                    <iconify-icon icon="lucide:users" width="16" class="mr-1"></iconify-icon>
+                                    <span>Team Challenge</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Activity Card 8 -->
+                        <div class="activity-card bg-white rounded-2xl shadow-lg overflow-hidden relative group">
+                            <div class="difficulty-badge bg-orange-100 text-orange-800">Intermediate</div>
+                            <div class="p-6">
+                                <div class="flex items-center justify-center w-14 h-14 bg-teal-100 rounded-xl mb-4 group-hover:bg-teal-200 transition-colors">
+                                    <iconify-icon icon="lucide:crosshair" width="28" class="text-teal-600"></iconify-icon>
+                                </div>
+                                <h4 class="text-xl font-bold text-slate-800 mb-2">Laser Tag Missions</h4>
+                                <p class="text-slate-600 mb-4">Tactical team-based missions with safe laser tag equipment, promoting strategy, communication, and teamwork.</p>
+                                <div class="flex items-center text-sm text-slate-500">
+                                    <iconify-icon icon="lucide:clock" width="16" class="mr-1"></iconify-icon>
+                                    <span class="mr-4">45 mins</span>
+                                    <iconify-icon icon="lucide:users" width="16" class="mr-1"></iconify-icon>
+                                    <span>Team vs Team</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Activity Card 9 -->
+                        <div class="activity-card bg-white rounded-2xl shadow-lg overflow-hidden relative group">
+                            <div class="difficulty-badge bg-red-100 text-red-800">Advanced</div>
+                            <div class="p-6">
+                                <div class="flex items-center justify-center w-14 h-14 bg-rose-100 rounded-xl mb-4 group-hover:bg-rose-200 transition-colors">
+                                    <iconify-icon icon="lucide:shield" width="28" class="text-rose-600"></iconify-icon>
+                                </div>
+                                <h4 class="text-xl font-bold text-slate-800 mb-2">Rescue Operation Simulation</h4>
+                                <p class="text-slate-600 mb-4">Complex team mission to "rescue" a teammate using first aid, navigation, and problem-solving skills in a simulated scenario.</p>
+                                <div class="flex items-center text-sm text-slate-500">
+                                    <iconify-icon icon="lucide:clock" width="16" class="mr-1"></iconify-icon>
+                                    <span class="mr-4">90 mins</span>
+                                    <iconify-icon icon="lucide:users" width="16" class="mr-1"></iconify-icon>
+                                    <span>Full Team Mission</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="section-divider"></div>
+
+        <!-- Schedule Section -->
+        <section id="schedule" class="py-16 bg-gradient-to-b from-blue-50 to-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12">
+                    <h2 class="text-4xl font-bold text-slate-800 mb-4">Program Schedule</h2>
+                    <p class="text-xl text-slate-600 max-w-3xl mx-auto">
+                        Flexible schedules designed for school holidays, weekends, and special vacation periods.
+                    </p>
+                </div>
+                
+                <div class="overflow-x-auto">
+                    <table class="min-w-full bg-white rounded-2xl shadow-lg overflow-hidden">
+                        <thead>
+                            <tr class="bg-gradient-to-r from-blue-600 to-indigo-600 text-white">
+                                <th class="py-4 px-6 text-left">Program Type</th>
+                                <th class="py-4 px-6 text-left">Duration</th>
+                                <th class="py-4 px-6 text-left">Timings</th>
+                                <th class="py-4 px-6 text-left">Activities Covered</th>
+                                <th class="py-4 px-6 text-left">Best For</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="border-b border-slate-200 hover:bg-blue-50 transition-colors">
+                                <td class="py-4 px-6 font-semibold">Weekend Commando Challenge</td>
+                                <td class="py-4 px-6">2 Days (Sat-Sun)</td>
+                                <td class="py-4 px-6">9:00 AM - 4:00 PM</td>
+                                <td class="py-4 px-6">6 Core Activities</td>
+                                <td class="py-4 px-6">Beginners & First-Timers</td>
+                            </tr>
+                            <tr class="border-b border-slate-200 hover:bg-blue-50 transition-colors">
+                                <td class="py-4 px-6 font-semibold">Summer Adventure Camp</td>
+                                <td class="py-4 px-6">5 Days (Mon-Fri)</td>
+                                <td class="py-4 px-6">8:30 AM - 5:00 PM</td>
+                                <td class="py-4 px-6">All 12+ Activities</td>
+                                <td class="py-4 px-6">Comprehensive Training</td>
+                            </tr>
+                            <tr class="border-b border-slate-200 hover:bg-blue-50 transition-colors">
+                                <td class="py-4 px-6 font-semibold">Holiday Special Camp</td>
+                                <td class="py-4 px-6">3 Days</td>
+                                <td class="py-4 px-6">9:30 AM - 3:30 PM</td>
+                                <td class="py-4 px-6">8 Key Activities</td>
+                                <td class="py-4 px-6">Diwali/Christmas Breaks</td>
+                            </tr>
+                            <tr class="hover:bg-blue-50 transition-colors">
+                                <td class="py-4 px-6 font-semibold">Advanced Commando Training</td>
+                                <td class="py-4 px-6">4 Days (Thu-Sun)</td>
+                                <td class="py-4 px-6">8:00 AM - 6:00 PM</td>
+                                <td class="py-4 px-6">Advanced Challenges Only</td>
+                                <td class="py-4 px-6">Repeat Campers (Age 12+)</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div class="mt-12 bg-white p-8 rounded-2xl shadow-lg border border-slate-200">
+                    <h3 class="text-2xl font-bold text-slate-800 mb-6">Typical Day at Commando Camp</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-5 gap-4">
+                        <div class="text-center p-4 bg-blue-50 rounded-xl">
+                            <div class="text-blue-600 font-bold text-lg">9:00 AM</div>
+                            <div class="text-sm font-semibold">Commando Assembly</div>
+                        </div>
+                        <div class="text-center p-4 bg-orange-50 rounded-xl">
+                            <div class="text-orange-600 font-bold text-lg">9:30 AM</div>
+                            <div class="text-sm font-semibold">Survival Skills Training</div>
+                        </div>
+                        <div class="text-center p-4 bg-green-50 rounded-xl">
+                            <div class="text-green-600 font-bold text-lg">11:30 AM</div>
+                            <div class="text-sm font-semibold">Obstacle Course Challenge</div>
+                        </div>
+                        <div class="text-center p-4 bg-purple-50 rounded-xl">
+                            <div class="text-purple-600 font-bold text-lg">1:30 PM</div>
+                            <div class="text-sm font-semibold">Lunch & Team Strategy</div>
+                        </div>
+                        <div class="text-center p-4 bg-red-50 rounded-xl">
+                            <div class="text-red-600 font-bold text-lg">3:00 PM</div>
+                            <div class="text-sm font-semibold">Tactical Mission & Debrief</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="section-divider"></div>
+
+        <!-- Locations Section -->
+        <section id="locations" class="py-16">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12">
+                    <h2 class="text-4xl font-bold text-slate-800 mb-4">Camp Locations</h2>
+                    <p class="text-xl text-slate-600 max-w-3xl mx-auto">
+                        Our Survival Commando Challenges are available at multiple locations across Virar, Vasai, and Nallasopara.
+                    </p>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="bg-white rounded-2xl shadow-xl overflow-hidden border-2 border-blue-200">
+                        <div class="h-48 bg-gradient-to-r from-blue-500 to-cyan-400 flex items-center justify-center">
+                            <h3 class="text-2xl font-bold text-white">Virar Adventure Zone</h3>
+                        </div>
+                        <div class="p-6">
+                            <div class="flex items-center gap-2 mb-4">
+                                <iconify-icon icon="lucide:map-pin" class="text-red-500" width="20"></iconify-icon>
+                                <span class="font-semibold">Near Virar East Railway Station</span>
+                            </div>
+                            <ul class="space-y-3 mb-6">
+                                <li class="flex items-start gap-2">
+                                    <iconify-icon icon="lucide:check" class="text-green-500 mt-1" width="16"></iconify-icon>
+                                    <span>5-Acre Adventure Campus</span>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <iconify-icon icon="lucide:check" class="text-green-500 mt-1" width="16"></iconify-icon>
+                                    <span>Natural Terrain Obstacles</span>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <iconify-icon icon="lucide:check" class="text-green-500 mt-1" width="16"></iconify-icon>
+                                    <span>Indoor Backup for Rainy Days</span>
+                                </li>
+                            </ul>
+                            <button class="w-full bg-blue-500 hover:bg-blue-600 text-white py-3 rounded-lg font-semibold transition-colors">
+                                View Virar Schedule
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white rounded-2xl shadow-xl overflow-hidden border-2 border-orange-200 transform scale-105">
+                        <div class="h-48 bg-gradient-to-r from-orange-500 to-amber-400 flex items-center justify-center">
+                            <h3 class="text-2xl font-bold text-white">Vasai Wilderness Camp</h3>
+                        </div>
+                        <div class="p-6">
+                            <div class="flex items-center gap-2 mb-4">
+                                <iconify-icon icon="lucide:map-pin" class="text-red-500" width="20"></iconify-icon>
+                                <span class="font-semibold">Vasai West, Near Creek Area</span>
+                            </div>
+                            <ul class="space-y-3 mb-6">
+                                <li class="flex items-start gap-2">
+                                    <iconify-icon icon="lucide:check" class="text-green-500 mt-1" width="16"></iconify-icon>
+                                    <span>Riverfront Location</span>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <iconify-icon icon="lucide:check" class="text-green-500 mt-1" width="16"></iconify-icon>
+                                    <span>Water-Based Challenges</span>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <iconify-icon icon="lucide:check" class="text-green-500 mt-1" width="16"></iconify-icon>
+                                    <span>Camping Overnight Options</span>
+                                </li>
+                            </ul>
+                            <button class="w-full bg-orange-500 hover:bg-orange-600 text-white py-3 rounded-lg font-semibold transition-colors">
+                                View Vasai Schedule
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white rounded-2xl shadow-xl overflow-hidden border-2 border-green-200">
+                        <div class="h-48 bg-gradient-to-r from-green-500 to-emerald-400 flex items-center justify-center">
+                            <h3 class="text-2xl font-bold text-white">Nallasopara Forest Base</h3>
+                        </div>
+                        <div class="p-6">
+                            <div class="flex items-center gap-2 mb-4">
+                                <iconify-icon icon="lucide:map-pin" class="text-red-500" width="20"></iconify-icon>
+                                <span class="font-semibold">Nallasopara East Forest Area</span>
+                            </div>
+                            <ul class="space-y-3 mb-6">
+                                <li class="flex items-start gap-2">
+                                    <iconify-icon icon="lucide:check" class="text-green-500 mt-1" width="16"></iconify-icon>
+                                    <span>Dense Forest Environment</span>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <iconify-icon icon="lucide:check" class="text-green-500 mt-1" width="16"></iconify-icon>
+                                    <span>Advanced Survival Training</span>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <iconify-icon icon="lucide:check" class="text-green-500 mt-1" width="16"></iconify-icon>
+                                    <span>Zipline & High Ropes Course</span>
+                                </li>
+                            </ul>
+                            <button class="w-full bg-green-500 hover:bg-green-600 text-white py-3 rounded-lg font-semibold transition-colors">
+                                View Nallasopara Schedule
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="section-divider"></div>
+
+        <!-- Pricing Section -->
+        <section id="pricing" class="py-16 bg-gradient-to-b from-white to-amber-50">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12">
+                    <h2 class="text-4xl font-bold text-slate-800 mb-4">Pricing & Packages</h2>
+                    <p class="text-xl text-slate-600 max-w-3xl mx-auto">
+                        Choose the perfect commando challenge package for your young adventurer.
+                    </p>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="bg-white rounded-2xl shadow-lg p-8 border border-slate-200">
+                        <div class="text-center mb-8">
+                            <h3 class="text-2xl font-bold text-slate-800 mb-2">Weekend Warrior</h3>
+                            <div class="flex items-center justify-center">
+                                <span class="text-4xl font-bold text-slate-800">₹2,499</span>
+                                <span class="text-slate-500 ml-2">/ 2 days</span>
+                            </div>
+                            <p class="text-sm text-slate-500 mt-2">Perfect for first-time commandos</p>
+                        </div>
+                        
+                        <ul class="space-y-4 mb-8">
+                            <li class="flex items-start gap-3">
+                                <iconify-icon icon="lucide:check" class="text-green-500 mt-1" width="18"></iconify-icon>
+                                <span>6 Core Activities</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <iconify-icon icon="lucide:check" class="text-green-500 mt-1" width="18"></iconify-icon>
+                                <span>Lunch & Snacks Included</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <iconify-icon icon="lucide:check" class="text-green-500 mt-1" width="18"></iconify-icon>
+                                <span>Basic Survival Kit</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <iconify-icon icon="lucide:x" class="text-red-400 mt-1" width="18"></iconify-icon>
+                                <span class="text-slate-400">Advanced Obstacle Course</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <iconify-icon icon="lucide:x" class="text-red-400 mt-1" width="18"></iconify-icon>
+                                <span class="text-slate-400">Overnight Camping</span>
+                            </li>
+                        </ul>
+                        
+                        <button class="w-full bg-slate-100 hover:bg-slate-200 text-slate-800 py-3 rounded-lg font-semibold transition-colors">
+                            Book Weekend Package
+                        </button>
+                    </div>
+                    
+                    <div class="bg-white rounded-2xl shadow-2xl p-8 border-2 border-orange-500 transform scale-105 relative">
+                        <div class="absolute -top-3 left-1/2 transform -translate-x-1/2">
+                            <div class="bg-orange-500 text-white px-4 py-1 rounded-full text-sm font-bold">
+                                MOST POPULAR
+                            </div>
+                        </div>
+                        
+                        <div class="text-center mb-8">
+                            <h3 class="text-2xl font-bold text-slate-800 mb-2">Adventure Commando</h3>
+                            <div class="flex items-center justify-center">
+                                <span class="text-4xl font-bold text-slate-800">₹5,999</span>
+                                <span class="text-slate-500 ml-2">/ 5 days</span>
+                            </div>
+                            <p class="text-sm text-slate-500 mt-2">Best value comprehensive training</p>
+                        </div>
+                        
+                        <ul class="space-y-4 mb-8">
+                            <li class="flex items-start gap-3">
+                                <iconify-icon icon="lucide:check" class="text-green-500 mt-1" width="18"></iconify-icon>
+                                <span>All 12+ Activities</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <iconify-icon icon="lucide:check" class="text-green-500 mt-1" width="18"></iconify-icon>
+                                <span>Daily Lunch & Snacks</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <iconify-icon icon="lucide:check" class="text-green-500 mt-1" width="18"></iconify-icon>
+                                <span>Complete Survival Gear</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <iconify-icon icon="lucide:check" class="text-green-500 mt-1" width="18"></iconify-icon>
+                                <span>Advanced Obstacle Course</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <iconify-icon icon="lucide:check" class="text-green-500 mt-1" width="18"></iconify-icon>
+                                <span>Commando Certificate & Badges</span>
+                            </li>
+                        </ul>
+                        
+                        <button class="w-full bg-orange-500 hover:bg-orange-600 text-white py-3 rounded-lg font-semibold transition-colors">
+                            Book Adventure Package
+                        </button>
+                    </div>
+                    
+                    <div class="bg-white rounded-2xl shadow-lg p-8 border border-slate-200">
+                        <div class="text-center mb-8">
+                            <h3 class="text-2xl font-bold text-slate-800 mb-2">Elite Survivalist</h3>
+                            <div class="flex items-center justify-center">
+                                <span class="text-4xl font-bold text-slate-800">₹8,499</span>
+                                <span class="text-slate-500 ml-2">/ 4 days</span>
+                            </div>
+                            <p class="text-sm text-slate-500 mt-2">For experienced campers (Age 12+)</p>
+                        </div>
+                        
+                        <ul class="space-y-4 mb-8">
+                            <li class="flex items-start gap-3">
+                                <iconify-icon icon="lucide:check" class="text-green-500 mt-1" width="18"></iconify-icon>
+                                <span>Advanced Survival Training</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <iconify-icon icon="lucide:check" class="text-green-500 mt-1" width="18"></iconify-icon>
+                                <span>One Night Camping Included</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <iconify-icon icon="lucide:check" class="text-green-500 mt-1" width="18"></iconify-icon>
+                                <span>Professional Grade Equipment</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <iconify-icon icon="lucide:check" class="text-green-500 mt-1" width="18"></iconify-icon>
+                                <span>Rescue Operation Simulation</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <iconify-icon icon="lucide:check" class="text-green-500 mt-1" width="18"></iconify-icon>
+                                <span>Leadership Training Module</span>
+                            </li>
+                        </ul>
+                        
+                        <button class="w-full bg-slate-100 hover:bg-slate-200 text-slate-800 py-3 rounded-lg font-semibold transition-colors">
+                            Book Elite Package
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="mt-12 text-center">
+                    <p class="text-slate-600 mb-6">All packages include: Safety equipment, trained instructors, first aid support, and insurance coverage.</p>
+                    <div class="inline-flex items-center gap-2 bg-amber-100 text-amber-800 px-6 py-3 rounded-full">
+                        <iconify-icon icon="lucide:badge-percent" width="20"></iconify-icon>
+                        <span class="font-semibold">Early Bird Discount: 15% off if booked 30 days in advance</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="py-16 commando-gradient text-white">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <h2 class="text-4xl font-bold mb-6">Ready for the Ultimate Adventure?</h2>
+                <p class="text-xl mb-10 max-w-2xl mx-auto">
+                    Join hundreds of young commandos who've discovered their inner strength, built lifelong friendships, and created unforgettable memories.
+                </p>
+                
+                <div class="flex flex-col sm:flex-row gap-6 justify-center">
+                    <button class="bg-white text-blue-600 hover:bg-blue-50 px-8 py-4 rounded-full text-lg font-semibold transition-all shadow-lg hover:shadow-xl">
+                        <div class="flex items-center justify-center gap-3">
+                            <iconify-icon icon="lucide:calendar-check" width="22"></iconify-icon>
+                            <span>Book Your Slot Now</span>
+                        </div>
+                    </button>
+                    <button class="bg-white/20 hover:bg-white/30 text-white px-8 py-4 rounded-full text-lg font-semibold transition-all backdrop-blur-sm">
+                        <div class="flex items-center justify-center gap-3">
+                            <iconify-icon icon="lucide:phone" width="22"></iconify-icon>
+                            <span>Call: +91 77680 31411</span>
+                        </div>
+                    </button>
+                </div>
+                
+                <p class="mt-10 text-blue-100">
+                    Limited slots available for each batch. Early registration recommended.
+                </p>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-white pt-20 pb-10 rounded-t-[3rem]">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
+                <div class="col-span-1 md:col-span-2">
+                    <div class="flex items-center gap-2 mb-6">
+                         <div class="h-8 w-8 bg-orange-500 rounded-lg flex items-center justify-center text-white">
+                            <iconify-icon icon="lucide:tent" width="18"></iconify-icon>
+                        </div>
+                        <span class="brand-font text-2xl font-bold">Maura <span class="text-orange-400">Wonderlab</span></span>
+                    </div>
+                    <p class="text-slate-400 max-w-sm mb-6">Creating unforgettable childhood memories through nature, science, and adventure. The #1 Choice for Kids Camping.</p>
+                    <div class="flex gap-4">
+                        <a href="#" class="h-10 w-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-orange-500 transition-colors"><iconify-icon icon="lucide:instagram" width="20"></iconify-icon></a>
+                        <a href="#" class="h-10 w-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-blue-500 transition-colors"><iconify-icon icon="lucide:facebook" width="20"></iconify-icon></a>
+                        <a href="#" class="h-10 w-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-green-500 transition-colors"><iconify-icon icon="lucide:phone" width="20"></iconify-icon></a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="font-bold text-lg mb-6">Explore</h4>
+                    <ul class="space-y-4 text-slate-400 text-sm">
+                        <li><a href="#" class="hover:text-white transition-colors">Our Story</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Safety Protocols</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Gallery</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Become a Counselor</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-bold text-lg mb-6">Camp Locations</h4>
+                    <ul class="space-y-4 text-slate-400 text-sm">
+                        <li><a href="#" class="hover:text-white transition-colors">Camping in Virar</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Camping in Vasai</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Camping in Nallasopara</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Day Camps Mumbai</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-slate-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="text-slate-500 text-sm">© 2024 Maura Wonderlab. All rights reserved.</p>
+                <div class="flex gap-6 text-sm text-slate-500">
+                    <a href="#" class="hover:text-white">Privacy</a>
+                    <a href="#" class="hover:text-white">Terms</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Functionality
+        const mobileMenuButton = document.getElementById('mobileMenuButton');
+        const closeMenuButton = document.getElementById('closeMenuButton');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const menuOverlay = document.getElementById('menuOverlay');
+        
+        function openMobileMenu() {
+            mobileMenu.classList.add('open');
+            menuOverlay.classList.add('active');
+            document.body.style.overflow = 'hidden'; // Prevent scrolling when menu is open
+        }
+        
+        function closeMobileMenu() {
+            mobileMenu.classList.remove('open');
+            menuOverlay.classList.remove('active');
+            document.body.style.overflow = 'auto'; // Re-enable scrolling
+        }
+        
+        // Event Listeners
+        mobileMenuButton.addEventListener('click', openMobileMenu);
+        closeMenuButton.addEventListener('click', closeMobileMenu);
+        menuOverlay.addEventListener('click', closeMobileMenu);
+        
+        // Close menu when clicking on any menu link
+        document.querySelectorAll('#mobileMenu a').forEach(link => {
+            link.addEventListener('click', closeMobileMenu);
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                const href = this.getAttribute('href');
+                
+                // Only handle internal anchor links (not external links)
+                if (href === '#' || href.startsWith('#') && href.length > 1) {
+                    e.preventDefault();
+                    
+                    const targetId = href.substring(1);
+                    const targetElement = document.getElementById(targetId);
+                    
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80, // Adjust for navbar height
+                            behavior: 'smooth'
+                        });
+                    }
+                }
+            });
+        });
+        
+        // Close menu on ESC key press
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && mobileMenu.classList.contains('open')) {
+                closeMobileMenu();
+            }
+        });
+        
+        // Prevent scrolling on the overlay (touch devices)
+        menuOverlay.addEventListener('touchmove', (e) => {
+            e.preventDefault();
+        }, { passive: false });
+        
+        // Add animation to cards on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+        
+        // Observe all activity cards for animation
+        document.querySelectorAll('.activity-card').forEach(card => {
+            card.style.opacity = '0.9';
+            card.style.transform = 'translateY(10px)';
+            card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+            observer.observe(card);
+        });
+        
+        // Book Now buttons functionality
+        document.querySelectorAll('button:contains("Book")').forEach(button => {
+            button.addEventListener('click', function() {
+                // In a real implementation, this would open a booking modal
+                alert('Booking functionality would open here! For now, please call +91 77680 31411 to book your adventure.');
+            });
+        });
+    </script>
+</body>
+</html>

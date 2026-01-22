@@ -1,0 +1,761 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Holiday Adventure Programs | Maura Wonderlab - Kids Adventure Camping</title>
+    <meta name="description" content="Exciting holiday adventure programs for children in Virar, Vasai & Nallasopara. Science, nature, survival skills and fun activities during school holidays.">
+    <meta name="keywords" content="holiday adventure programs, summer camps, winter camps, monsoon adventure, school holiday activities, kids adventure programs, holiday camps Virar, holiday camps Vasai, holiday camps Nallasopara">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Iconify (Lucide Icons) -->
+    <script src="https://cdn.jsdelivr.net/npm/iconify-icon@1.0.8/dist/iconify-icon.min.js"></script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=Nunito:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        /* Custom Font Settings for Childish/Playful Vibe */
+        body {
+            font-family: 'Nunito', sans-serif;
+        }
+        h1, h2, h3, h4, h5, h6, .brand-font {
+            font-family: 'Fredoka', sans-serif;
+        }
+        
+        /* Playful Blob Pattern */
+        .bg-pattern {
+            background-color: #FFFDF5;
+            background-image: radial-gradient(#FDE68A 1px, transparent 1px), radial-gradient(#BAE6FD 1px, transparent 1px);
+            background-size: 40px 40px;
+            background-position: 0 0, 20px 20px;
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #FFF7ED; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #FDBA74; 
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #EA580C; 
+        }
+
+        /* Mobile Menu Animation */
+        .mobile-menu {
+            transform: translateX(100%);
+            transition: transform 0.3s ease-in-out;
+        }
+        
+        .mobile-menu.open {
+            transform: translateX(0);
+        }
+        
+        .menu-overlay {
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease-in-out, visibility 0.3s;
+        }
+        
+        .menu-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        /* Activity Card Hover Effects */
+        .activity-card {
+            transition: all 0.3s ease;
+            border-radius: 20px;
+        }
+        
+        .activity-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+
+        /* Gradient Backgrounds */
+        .gradient-summer {
+            background: linear-gradient(135deg, #FFE259 0%, #FFA751 100%);
+        }
+        
+        .gradient-winter {
+            background: linear-gradient(135deg, #A1C4FD 0%, #C2E9FB 100%);
+        }
+        
+        .gradient-monsoon {
+            background: linear-gradient(135deg, #74EBD5 0%, #9FACE6 100%);
+        }
+
+        /* Animated Badge */
+        @keyframes pulse-glow {
+            0%, 100% { box-shadow: 0 0 0 0 rgba(251, 146, 60, 0.7); }
+            50% { box-shadow: 0 0 0 10px rgba(251, 146, 60, 0); }
+        }
+        
+        .pulse-glow {
+            animation: pulse-glow 2s infinite;
+        }
+    </style>
+</head>
+<body class="bg-pattern text-slate-600 antialiased selection:bg-orange-200 selection:text-orange-900">
+
+    <!-- Navbar -->
+    <nav class="fixed w-full z-50 top-0 transition-all duration-300 backdrop-blur-md bg-white/80 border-b-2 border-slate-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center gap-2 cursor-pointer" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+                    <img src="maura wonderlab logo.png" alt="Maura Wonderlab" width="50px">
+                    <span class="brand-font text-2xl font-semibold tracking-tight text-slate-800">
+                        Maura <span class="text-orange-500">Wonderlab</span>
+                    </span>
+                </div>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="#programs" class="text-sm font-semibold text-slate-600 hover:text-orange-500 transition-colors">Programs</a>
+                    <a href="#activities" class="text-sm font-semibold text-slate-600 hover:text-orange-500 transition-colors">Activities</a>
+                    <a href="#schedule" class="text-sm font-semibold text-slate-600 hover:text-orange-500 transition-colors">Schedule</a>
+                    <a href="#pricing" class="text-sm font-semibold text-slate-600 hover:text-orange-500 transition-colors">Pricing</a>
+                    <button onclick="scrollToBooking()" class="bg-indigo-500 hover:bg-indigo-600 text-white px-5 py-2.5 rounded-full text-sm font-semibold transition-all shadow-[0px_4px_0px_0px_rgba(67,56,202,1)] hover:shadow-[0px_2px_0px_0px_rgba(67,56,202,1)] hover:translate-y-[2px]">
+                        Book Now
+                    </button>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobileMenuButton" class="text-slate-600 hover:text-orange-500 p-2">
+                        <iconify-icon icon="lucide:menu" width="28" stroke-width="1.5"></iconify-icon>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu Overlay -->
+    <div id="menuOverlay" class="menu-overlay fixed inset-0 bg-black/50 z-40 md:hidden"></div>
+
+    <!-- Mobile Menu -->
+    <div id="mobileMenu" class="mobile-menu fixed top-0 right-0 h-full w-64 bg-white z-50 shadow-2xl md:hidden p-6">
+        <div class="flex justify-between items-center mb-8">
+            <div class="flex items-center gap-2">
+                <div class="h-8 w-8 bg-orange-400 rounded-lg flex items-center justify-center text-white">
+                    <iconify-icon icon="lucide:tent" width="18"></iconify-icon>
+                </div>
+                <span class="brand-font text-xl font-semibold text-slate-800">Maura <span class="text-orange-500">Wonderlab</span></span>
+            </div>
+            <button id="closeMenuButton" class="text-slate-600 hover:text-orange-500 p-2">
+                <iconify-icon icon="lucide:x" width="24" stroke-width="1.5"></iconify-icon>
+            </button>
+        </div>
+        
+        <div class="space-y-6">
+            <a href="#programs" class="block py-3 text-slate-700 font-semibold border-b border-slate-100" onclick="closeMobileMenu()">Programs</a>
+            <a href="#activities" class="block py-3 text-slate-700 font-semibold border-b border-slate-100" onclick="closeMobileMenu()">Activities</a>
+            <a href="#schedule" class="block py-3 text-slate-700 font-semibold border-b border-slate-100" onclick="closeMobileMenu()">Schedule</a>
+            <a href="#pricing" class="block py-3 text-slate-700 font-semibold border-b border-slate-100" onclick="closeMobileMenu()">Pricing</a>
+            <div class="pt-4">
+                <button onclick="scrollToBooking()" class="w-full bg-indigo-500 hover:bg-indigo-600 text-white px-5 py-3 rounded-full text-sm font-semibold transition-all">
+                    Book Now
+                </button>
+            </div>
+        </div>
+        
+        <div class="absolute bottom-8 left-6 right-6">
+            <p class="text-sm text-slate-500 mb-4">Contact us:</p>
+            <div class="flex items-center gap-2 text-slate-700 mb-2">
+                <iconify-icon icon="lucide:phone" width="16"></iconify-icon>
+                <span class="text-sm">+91 77680 31411</span>
+            </div>
+            <div class="flex items-center gap-2 text-slate-700">
+                <iconify-icon icon="lucide:mail" width="16"></iconify-icon>
+                <span class="text-sm">maurawonderlab@gmail.com</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="pt-32 pb-20 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-12">
+                <div class="inline-flex items-center gap-2 bg-orange-100 text-orange-700 px-4 py-2 rounded-full text-sm font-semibold mb-6 pulse-glow">
+                    <iconify-icon icon="lucide:calendar" width="16"></iconify-icon>
+                    <span>2024 Holiday Programs Now Open!</span>
+                </div>
+                <h1 class="text-5xl md:text-6xl font-bold text-slate-800 mb-6">
+                    Holiday <span class="text-orange-500">Adventure</span> Programs
+                </h1>
+                <p class="text-xl text-slate-600 max-w-3xl mx-auto mb-8">
+                    Transform school holidays into unforgettable adventures! Our specially designed programs combine science exploration, nature discovery, and outdoor fun for children aged 6-14.
+                </p>
+                <div class="flex flex-wrap gap-4 justify-center">
+                    <button onclick="scrollToBooking()" class="bg-orange-500 hover:bg-orange-600 text-white px-8 py-4 rounded-full text-lg font-semibold transition-all shadow-[0px_6px_0px_0px_rgba(234,88,12,1)] hover:shadow-[0px_3px_0px_0px_rgba(234,88,12,1)] hover:translate-y-[3px]">
+                        Book Holiday Camp
+                    </button>
+                    <a href="#programs" class="bg-white hover:bg-slate-50 text-slate-700 border-2 border-slate-200 px-8 py-4 rounded-full text-lg font-semibold transition-all">
+                        Explore Programs
+                    </a>
+                </div>
+            </div>
+
+            <!-- Stats -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mt-16">
+                <div class="bg-white p-6 rounded-2xl shadow-lg text-center border border-slate-100">
+                    <div class="text-3xl font-bold text-orange-500 mb-2">500+</div>
+                    <div class="text-slate-600">Happy Campers</div>
+                </div>
+                <div class="bg-white p-6 rounded-2xl shadow-lg text-center border border-slate-100">
+                    <div class="text-3xl font-bold text-blue-500 mb-2">25+</div>
+                    <div class="text-slate-600">Activities</div>
+                </div>
+                <div class="bg-white p-6 rounded-2xl shadow-lg text-center border border-slate-100">
+                    <div class="text-3xl font-bold text-green-500 mb-2">3</div>
+                    <div class="text-slate-600">Locations</div>
+                </div>
+                <div class="bg-white p-6 rounded-2xl shadow-lg text-center border border-slate-100">
+                    <div class="text-3xl font-bold text-purple-500 mb-2">100%</div>
+                    <div class="text-slate-600">Safety Record</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Holiday Programs Section -->
+    <section id="programs" class="py-16 px-4 sm:px-6 lg:px-8 bg-white/50">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold text-slate-800 mb-4">Seasonal Holiday Programs</h2>
+                <p class="text-lg text-slate-600 max-w-3xl mx-auto">Choose from our specially curated holiday adventures designed around each season's unique opportunities</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Summer Camp -->
+                <div class="gradient-summer activity-card p-8 rounded-3xl border-2 border-yellow-200">
+                    <div class="h-12 w-12 bg-white rounded-xl flex items-center justify-center mb-6 shadow-lg">
+                        <iconify-icon icon="lucide:sun" width="24" class="text-yellow-500"></iconify-icon>
+                    </div>
+                    <h3 class="text-2xl font-bold text-slate-800 mb-4">Summer Adventure Camp</h3>
+                    <p class="text-slate-700 mb-6">May & June • Ages 6-14 • 2-Week Programs</p>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-center gap-2"><iconify-icon icon="lucide:check" class="text-green-500"></iconify-icon>Water-based activities & pool games</li>
+                        <li class="flex items-center gap-2"><iconify-icon icon="lucide:check" class="text-green-500"></iconify-icon>Night sky observation & astronomy</li>
+                        <li class="flex items-center gap-2"><iconify-icon icon="lucide:check" class="text-green-500"></iconify-icon>Science of heat & energy experiments</li>
+                        <li class="flex items-center gap-2"><iconify-icon icon="lucide:check" class="text-green-500"></iconify-icon>Outdoor survival skills training</li>
+                    </ul>
+                    <button onclick="scrollToBooking()" class="w-full bg-white text-orange-600 hover:bg-orange-50 font-semibold py-3 rounded-xl transition-colors">
+                        Book Summer Camp
+                    </button>
+                </div>
+
+                <!-- Winter Camp -->
+                <div class="gradient-winter activity-card p-8 rounded-3xl border-2 border-blue-200">
+                    <div class="h-12 w-12 bg-white rounded-xl flex items-center justify-center mb-6 shadow-lg">
+                        <iconify-icon icon="lucide:snowflake" width="24" class="text-blue-500"></iconify-icon>
+                    </div>
+                    <h3 class="text-2xl font-bold text-slate-800 mb-4">Winter Wonderland Camp</h3>
+                    <p class="text-slate-700 mb-6">December • Ages 6-12 • 10-Day Programs</p>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-center gap-2"><iconify-icon icon="lucide:check" class="text-green-500"></iconify-icon>Bonfire storytelling & marshmallow roasting</li>
+                        <li class="flex items-center gap-2"><iconify-icon icon="lucide:check" class="text-green-500"></iconify-icon>Nature crafts with winter elements</li>
+                        <li class="flex items-center gap-2"><iconify-icon icon="lucide:check" class="text-green-500"></iconify-icon>Bird watching & animal tracking</li>
+                        <li class="flex items-center gap-2"><iconify-icon icon="lucide:check" class="text-green-500"></iconify-icon>Team building adventure games</li>
+                    </ul>
+                    <button onclick="scrollToBooking()" class="w-full bg-white text-blue-600 hover:bg-blue-50 font-semibold py-3 rounded-xl transition-colors">
+                        Book Winter Camp
+                    </button>
+                </div>
+
+                <!-- Monsoon Camp -->
+                <div class="gradient-monsoon activity-card p-8 rounded-3xl border-2 border-teal-200">
+                    <div class="h-12 w-12 bg-white rounded-xl flex items-center justify-center mb-6 shadow-lg">
+                        <iconify-icon icon="lucide:cloud-rain" width="24" class="text-teal-500"></iconify-icon>
+                    </div>
+                    <h3 class="text-2xl font-bold text-slate-800 mb-4">Monsoon Explorer Camp</h3>
+                    <p class="text-slate-700 mb-6">July & August • Ages 8-14 • Weekend Programs</p>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-center gap-2"><iconify-icon icon="lucide:check" class="text-green-500"></iconify-icon>Rainwater harvesting experiments</li>
+                        <li class="flex items-center gap-2"><iconify-icon icon="lucide:check" class="text-green-500"></iconify-icon>Indoor science workshops</li>
+                        <li class="flex items-center gap-2"><iconify-icon icon="lucide:check" class="text-green-500"></iconify-icon>Frog & insect discovery sessions</li>
+                        <li class="flex items-center gap-2"><iconify-icon icon="lucide:check" class="text-green-500"></iconify-icon>Mud play & puddle investigations</li>
+                    </ul>
+                    <button onclick="scrollToBooking()" class="w-full bg-white text-teal-600 hover:bg-teal-50 font-semibold py-3 rounded-xl transition-colors">
+                        Book Monsoon Camp
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Activities Section -->
+    <section id="activities" class="py-20 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-slate-800 mb-4">Adventure Activities</h2>
+                <p class="text-lg text-slate-600 max-w-3xl mx-auto">Our holiday programs feature over 25 exciting activities designed to engage, educate, and entertain</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Science & Nature Activities -->
+                <div class="bg-white activity-card p-6 rounded-2xl border border-slate-100 shadow-md">
+                    <div class="h-10 w-10 bg-green-100 rounded-lg flex items-center justify-center mb-4">
+                        <iconify-icon icon="lucide:microscope" width="20" class="text-green-600"></iconify-icon>
+                    </div>
+                    <h3 class="font-bold text-lg text-slate-800 mb-3">Science & Nature</h3>
+                    <ul class="space-y-2 text-sm text-slate-600">
+                        <li class="flex items-center gap-2"><iconify-icon icon="lucide:leaf" width="14"></iconify-icon>Nature scavenger hunts</li>
+                        <li class="flex items-center gap-2"><iconify-icon icon="lucide:flask-conical" width="14"></iconify-icon>Chemistry magic experiments</li>
+                        <li class="flex items-center gap-2"><iconify-icon icon="lucide:bug" width="14"></iconify-icon>Insect discovery sessions</li>
+                        <li class="flex items-center gap-2"><iconify-icon icon="lucide:wind" width="14"></iconify-icon>Weather science projects</li>
+                    </ul>
+                </div>
+
+                <!-- Outdoor Adventures -->
+                <div class="bg-white activity-card p-6 rounded-2xl border border-slate-100 shadow-md">
+                    <div class="h-10 w-10 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
+                        <iconify-icon icon="lucide:mountain" width="20" class="text-blue-600"></iconify-icon>
+                    </div>
+                    <h3 class="font-bold text-lg text-slate-800 mb-3">Outdoor Adventures</h3>
+                    <ul class="space-y-2 text-sm text-slate-600">
+                        <li class="flex items-center gap-2"><iconify-icon icon="lucide:tent" width="14"></iconify-icon>Tent pitching & camping</li>
+                        <li class="flex items-center gap-2"><iconify-icon icon="lucide:compass" width="14"></iconify-icon>Treasure hunt with maps</li>
+                        <li class="flex items-center gap-2"><iconify-icon icon="lucide:rope" width="14"></iconify-icon>Basic rock climbing</li>
+                        <li class="flex items-center gap-2"><iconify-icon icon="lucide:footprints" width="14"></iconify-icon>Nature trail walks</li>
+                    </ul>
+                </div>
+
+                <!-- Survival Skills -->
+                <div class="bg-white activity-card p-6 rounded-2xl border border-slate-100 shadow-md">
+                    <div class="h-10 w-10 bg-orange-100 rounded-lg flex items-center justify-center mb-4">
+                        <iconify-icon icon="lucide:shield" width="20" class="text-orange-600"></iconify-icon>
+                    </div>
+                    <h3 class="font-bold text-lg text-slate-800 mb-3">Survival Skills</h3>
+                    <ul class="space-y-2 text-sm text-slate-600">
+                        <li class="flex items-center gap-2"><iconify-icon icon="lucide:sparkles" width="14"></iconify-icon>Fire starting (supervised)</li>
+                        <li class="flex items-center gap-2"><iconify-icon icon="lucide:droplets" width="14"></iconify-icon>Water purification methods</li>
+                        <li class="flex items-center gap-2"><iconify-icon icon="lucide:map" width="14"></iconify-icon>Basic navigation skills</li>
+                        <li class="flex items-center gap-2"><iconify-icon icon="lucide:first-aid" width="14"></iconify-icon>First aid basics</li>
+                    </ul>
+                </div>
+
+                <!-- Creative Workshops -->
+                <div class="bg-white activity-card p-6 rounded-2xl border border-slate-100 shadow-md">
+                    <div class="h-10 w-10 bg-purple-100 rounded-lg flex items-center justify-center mb-4">
+                        <iconify-icon icon="lucide:palette" width="20" class="text-purple-600"></iconify-icon>
+                    </div>
+                    <h3 class="font-bold text-lg text-slate-800 mb-3">Creative Workshops</h3>
+                    <ul class="space-y-2 text-sm text-slate-600">
+                        <li class="flex items-center gap-2"><iconify-icon icon="lucide:leaf" width="14"></iconify-icon>Nature art & crafts</li>
+                        <li class="flex items-center gap-2"><iconify-icon icon="lucide:camera" width="14"></iconify-icon>Outdoor photography</li>
+                        <li class="flex items-center gap-2"><iconify-icon icon="lucide:music" width="14"></iconify-icon>Campfire songs & music</li>
+                        <li class="flex items-center gap-2"><iconify-icon icon="lucide:book" width="14"></iconify-icon>Nature journaling</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Schedule Section -->
+    <section id="schedule" class="py-16 px-4 sm:px-6 lg:px-8 bg-white/50">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold text-slate-800 mb-4">Daily Schedule</h2>
+                <p class="text-lg text-slate-600 max-w-3xl mx-auto">A typical day at our holiday adventure camp</p>
+            </div>
+
+            <div class="max-w-4xl mx-auto">
+                <div class="space-y-4">
+                    <!-- Morning Schedule -->
+                    <div class="bg-white p-6 rounded-2xl border border-slate-100 shadow-sm">
+                        <div class="flex items-center gap-4 mb-4">
+                            <div class="bg-yellow-100 text-yellow-700 px-4 py-2 rounded-full font-semibold">Morning (8:30 AM - 12:30 PM)</div>
+                            <iconify-icon icon="lucide:sunrise" class="text-yellow-500"></iconify-icon>
+                        </div>
+                        <div class="grid md:grid-cols-2 gap-4">
+                            <div class="flex items-start gap-3">
+                                <div class="bg-yellow-50 p-2 rounded-lg">
+                                    <iconify-icon icon="lucide:coffee" class="text-yellow-600"></iconify-icon>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-slate-800">Arrival & Morning Circle</h4>
+                                    <p class="text-sm text-slate-600">Welcome games & daily briefing</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-3">
+                                <div class="bg-green-50 p-2 rounded-lg">
+                                    <iconify-icon icon="lucide:flask-conical" class="text-green-600"></iconify-icon>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-slate-800">Science Discovery</h4>
+                                    <p class="text-sm text-slate-600">Hands-on experiments & learning</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Afternoon Schedule -->
+                    <div class="bg-white p-6 rounded-2xl border border-slate-100 shadow-sm">
+                        <div class="flex items-center gap-4 mb-4">
+                            <div class="bg-orange-100 text-orange-700 px-4 py-2 rounded-full font-semibold">Afternoon (12:30 PM - 4:30 PM)</div>
+                            <iconify-icon icon="lucide:sun" class="text-orange-500"></iconify-icon>
+                        </div>
+                        <div class="grid md:grid-cols-2 gap-4">
+                            <div class="flex items-start gap-3">
+                                <div class="bg-blue-50 p-2 rounded-lg">
+                                    <iconify-icon icon="lucide:tent" class="text-blue-600"></iconify-icon>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-slate-800">Adventure Activities</h4>
+                                    <p class="text-sm text-slate-600">Outdoor challenges & team games</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-3">
+                                <div class="bg-purple-50 p-2 rounded-lg">
+                                    <iconify-icon icon="lucide:palette" class="text-purple-600"></iconify-icon>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-slate-800">Creative Time</h4>
+                                    <p class="text-sm text-slate-600">Arts, crafts & nature projects</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="py-20 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-slate-800 mb-4">Program Pricing</h2>
+                <p class="text-lg text-slate-600 max-w-3xl mx-auto">Flexible options for every family. All inclusive of meals, materials, and expert supervision</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+                <!-- 5-Day Program -->
+                <div class="bg-white p-8 rounded-3xl border-2 border-slate-100 shadow-lg">
+                    <div class="text-center mb-6">
+                        <h3 class="text-2xl font-bold text-slate-800 mb-2">5-Day Adventure</h3>
+                        <div class="text-4xl font-bold text-orange-500 mb-2">₹3,499</div>
+                        <p class="text-slate-600">Perfect for first-time campers</p>
+                    </div>
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-center gap-3"><iconify-icon icon="lucide:check-circle" class="text-green-500"></iconify-icon>All adventure activities included</li>
+                        <li class="flex items-center gap-3"><iconify-icon icon="lucide:check-circle" class="text-green-500"></iconify-icon>Daily healthy meals & snacks</li>
+                        <li class="flex items-center gap-3"><iconify-icon icon="lucide:check-circle" class="text-green-500"></iconify-icon>Certificate of completion</li>
+                        <li class="flex items-center gap-3"><iconify-icon icon="lucide:check-circle" class="text-green-500"></iconify-icon>Take-home science kit</li>
+                    </ul>
+                    <button onclick="scrollToBooking()" class="w-full bg-orange-500 hover:bg-orange-600 text-white font-semibold py-3 rounded-xl transition-colors">
+                        Book 5-Day Program
+                    </button>
+                </div>
+
+                <!-- 10-Day Program -->
+                <div class="bg-white p-8 rounded-3xl border-2 border-orange-300 shadow-xl relative">
+                    <div class="absolute -top-3 left-1/2 transform -translate-x-1/2">
+                        <div class="bg-orange-500 text-white px-4 py-1 rounded-full text-sm font-semibold">
+                            MOST POPULAR
+                        </div>
+                    </div>
+                    <div class="text-center mb-6">
+                        <h3 class="text-2xl font-bold text-slate-800 mb-2">10-Day Explorer</h3>
+                        <div class="text-4xl font-bold text-orange-500 mb-2">₹6,499</div>
+                        <p class="text-slate-600">Best value comprehensive program</p>
+                    </div>
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-center gap-3"><iconify-icon icon="lucide:check-circle" class="text-green-500"></iconify-icon>Everything in 5-Day, plus:</li>
+                        <li class="flex items-center gap-3"><iconify-icon icon="lucide:check-circle" class="text-green-500"></iconify-icon>Advanced science experiments</li>
+                        <li class="flex items-center gap-3"><iconify-icon icon="lucide:check-circle" class="text-green-500"></iconify-icon>Overnight camping experience</li>
+                        <li class="flex items-center gap-3"><iconify-icon icon="lucide:check-circle" class="text-green-500"></iconify-icon>Camp t-shirt & photo album</li>
+                    </ul>
+                    <button onclick="scrollToBooking()" class="w-full bg-orange-500 hover:bg-orange-600 text-white font-semibold py-3 rounded-xl transition-colors">
+                        Book 10-Day Program
+                    </button>
+                </div>
+
+                <!-- 15-Day Program -->
+                <div class="bg-white p-8 rounded-3xl border-2 border-slate-100 shadow-lg">
+                    <div class="text-center mb-6">
+                        <h3 class="text-2xl font-bold text-slate-800 mb-2">15-Day Master</h3>
+                        <div class="text-4xl font-bold text-orange-500 mb-2">₹8,999</div>
+                        <p class="text-slate-600">Complete holiday transformation</p>
+                    </div>
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-center gap-3"><iconify-icon icon="lucide:check-circle" class="text-green-500"></iconify-icon>Everything in 10-Day, plus:</li>
+                        <li class="flex items-center gap-3"><iconify-icon icon="lucide:check-circle" class="text-green-500"></iconify-icon>Specialized skill workshops</li>
+                        <li class="flex items-center gap-3"><iconify-icon icon="lucide:check-circle" class="text-green-500"></iconify-icon>Field trip to local nature reserve</li>
+                        <li class="flex items-center gap-3"><iconify-icon icon="lucide:check-circle" class="text-green-500"></iconify-icon>Graduation ceremony with parents</li>
+                    </ul>
+                    <button onclick="scrollToBooking()" class="w-full bg-orange-500 hover:bg-orange-600 text-white font-semibold py-3 rounded-xl transition-colors">
+                        Book 15-Day Program
+                    </button>
+                </div>
+            </div>
+
+            <div class="text-center mt-12">
+                <p class="text-slate-600 mb-4">Sibling discount available • Flexible payment options</p>
+                <a href="#" class="text-orange-500 hover:text-orange-600 font-semibold inline-flex items-center gap-2">
+                    Download detailed brochure
+                    <iconify-icon icon="lucide:download"></iconify-icon>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Booking Section -->
+    <section id="booking" class="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-blue-50 to-orange-50">
+        <div class="max-w-4xl mx-auto">
+            <div class="bg-white p-8 md:p-12 rounded-3xl shadow-2xl border border-slate-100">
+                <div class="text-center mb-10">
+                    <h2 class="text-4xl font-bold text-slate-800 mb-4">Book Holiday Adventure</h2>
+                    <p class="text-lg text-slate-600">Secure your child's spot for an unforgettable holiday experience</p>
+                </div>
+
+                <form class="space-y-6">
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-sm font-semibold text-slate-700 mb-2">Child's Name</label>
+                            <input type="text" class="w-full p-3 border border-slate-200 rounded-xl focus:border-orange-400 focus:ring-2 focus:ring-orange-100 outline-none transition" placeholder="Enter child's full name">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-semibold text-slate-700 mb-2">Child's Age</label>
+                            <input type="number" class="w-full p-3 border border-slate-200 rounded-xl focus:border-orange-400 focus:ring-2 focus:ring-orange-100 outline-none transition" placeholder="Age between 6-14">
+                        </div>
+                    </div>
+
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-sm font-semibold text-slate-700 mb-2">Parent's Name</label>
+                            <input type="text" class="w-full p-3 border border-slate-200 rounded-xl focus:border-orange-400 focus:ring-2 focus:ring-orange-100 outline-none transition" placeholder="Enter parent's name">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-semibold text-slate-700 mb-2">Phone Number</label>
+                            <input type="tel" class="w-full p-3 border border-slate-200 rounded-xl focus:border-orange-400 focus:ring-2 focus:ring-orange-100 outline-none transition" placeholder="+91 ">
+                        </div>
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-semibold text-slate-700 mb-2">Email Address</label>
+                        <input type="email" class="w-full p-3 border border-slate-200 rounded-xl focus:border-orange-400 focus:ring-2 focus:ring-orange-100 outline-none transition" placeholder="your.email@example.com">
+                    </div>
+
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-sm font-semibold text-slate-700 mb-2">Select Program</label>
+                            <select class="w-full p-3 border border-slate-200 rounded-xl focus:border-orange-400 focus:ring-2 focus:ring-orange-100 outline-none transition">
+                                <option value="">Choose a program</option>
+                                <option value="summer">Summer Adventure Camp (May-Jun)</option>
+                                <option value="winter">Winter Wonderland Camp (Dec)</option>
+                                <option value="monsoon">Monsoon Explorer Camp (Jul-Aug)</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-semibold text-slate-700 mb-2">Select Location</label>
+                            <select class="w-full p-3 border border-slate-200 rounded-xl focus:border-orange-400 focus:ring-2 focus:ring-orange-100 outline-none transition">
+                                <option value="">Choose location</option>
+                                <option value="virar">Virar Adventure Base</option>
+                                <option value="vasai">Vasai Nature Campus</option>
+                                <option value="nallasopara">Nallasopara Explorer Camp</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-semibold text-slate-700 mb-2">Special Requirements</label>
+                        <textarea class="w-full p-3 border border-slate-200 rounded-xl focus:border-orange-400 focus:ring-2 focus:ring-orange-100 outline-none transition" rows="3" placeholder="Any allergies, medical conditions, or special needs..."></textarea>
+                    </div>
+
+                    <div class="flex items-center gap-3 p-4 bg-blue-50 rounded-xl">
+                        <iconify-icon icon="lucide:shield-check" class="text-blue-500 text-xl"></iconify-icon>
+                        <p class="text-sm text-slate-700">Your information is secure. We follow strict privacy policies and safety protocols.</p>
+                    </div>
+
+                    <button type="button" onclick="submitBooking()" class="w-full bg-orange-500 hover:bg-orange-600 text-white font-semibold py-4 rounded-xl text-lg transition-all shadow-[0px_6px_0px_0px_rgba(234,88,12,1)] hover:shadow-[0px_3px_0px_0px_rgba(234,88,12,1)] hover:translate-y-[3px]">
+                        Submit Booking Request
+                    </button>
+                </form>
+
+                <div class="text-center mt-8">
+                    <p class="text-slate-600">Or call us directly: <a href="tel:+917768031411" class="text-orange-500 font-semibold">+91 77680 31411</a></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-white pt-20 pb-10 rounded-t-[3rem] mt-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
+                <div class="col-span-1 md:col-span-2">
+                    <div class="flex items-center gap-2 mb-6">
+                         <div class="h-8 w-8 bg-orange-500 rounded-lg flex items-center justify-center text-white">
+                            <iconify-icon icon="lucide:tent" width="18"></iconify-icon>
+                        </div>
+                        <span class="brand-font text-2xl font-bold">Maura <span class="text-orange-400">Wonderlab</span></span>
+                    </div>
+                    <p class="text-slate-400 max-w-sm mb-6">Creating unforgettable childhood memories through nature, science, and adventure. The #1 Choice for Kids Camping.</p>
+                    <div class="flex gap-4">
+                        <a href="#" class="h-10 w-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-orange-500 transition-colors"><iconify-icon icon="lucide:instagram" width="20"></iconify-icon></a>
+                        <a href="#" class="h-10 w-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-blue-500 transition-colors"><iconify-icon icon="lucide:facebook" width="20"></iconify-icon></a>
+                        <a href="#" class="h-10 w-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-green-500 transition-colors"><iconify-icon icon="lucide:phone" width="20"></iconify-icon></a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="font-bold text-lg mb-6">Explore</h4>
+                    <ul class="space-y-4 text-slate-400 text-sm">
+                        <li><a href="#" class="hover:text-white transition-colors">Our Story</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Safety Protocols</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Gallery</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Become a Counselor</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-bold text-lg mb-6">Camp Locations</h4>
+                    <ul class="space-y-4 text-slate-400 text-sm">
+                        <li><a href="#" class="hover:text-white transition-colors">Camping in Virar</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Camping in Vasai</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Camping in Nallasopara</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Day Camps Mumbai</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-slate-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="text-slate-500 text-sm">© 2024 Maura Wonderlab. All rights reserved.</p>
+                <div class="flex gap-6 text-sm text-slate-500">
+                    <a href="#" class="hover:text-white">Privacy</a>
+                    <a href="#" class="hover:text-white">Terms</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Functionality
+        const mobileMenuButton = document.getElementById('mobileMenuButton');
+        const closeMenuButton = document.getElementById('closeMenuButton');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const menuOverlay = document.getElementById('menuOverlay');
+        
+        function openMobileMenu() {
+            mobileMenu.classList.add('open');
+            menuOverlay.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+        
+        function closeMobileMenu() {
+            mobileMenu.classList.remove('open');
+            menuOverlay.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+        
+        // Event Listeners
+        mobileMenuButton.addEventListener('click', openMobileMenu);
+        closeMenuButton.addEventListener('click', closeMobileMenu);
+        menuOverlay.addEventListener('click', closeMobileMenu);
+        
+        // Close menu when clicking on any menu link
+        document.querySelectorAll('#mobileMenu a').forEach(link => {
+            link.addEventListener('click', closeMobileMenu);
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                const href = this.getAttribute('href');
+                
+                if (href === '#' || href.startsWith('#') && href.length > 1) {
+                    e.preventDefault();
+                    
+                    const targetId = href.substring(1);
+                    const targetElement = document.getElementById(targetId);
+                    
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                    }
+                }
+            });
+        });
+        
+        // Close menu on ESC key press
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && mobileMenu.classList.contains('open')) {
+                closeMobileMenu();
+            }
+        });
+        
+        // Scroll to booking function
+        function scrollToBooking() {
+            const bookingSection = document.getElementById('booking');
+            if (bookingSection) {
+                window.scrollTo({
+                    top: bookingSection.offsetTop - 80,
+                    behavior: 'smooth'
+                });
+            }
+        }
+        
+        // Booking form submission
+        function submitBooking() {
+            const form = document.querySelector('form');
+            const inputs = form.querySelectorAll('input[required], select[required], textarea[required]');
+            let isValid = true;
+            
+            inputs.forEach(input => {
+                if (!input.value.trim()) {
+                    isValid = false;
+                    input.style.borderColor = '#ef4444';
+                } else {
+                    input.style.borderColor = '#cbd5e1';
+                }
+            });
+            
+            if (isValid) {
+                // In a real application, you would send data to server here
+                alert('Thank you! Your booking request has been submitted. We will contact you within 24 hours.');
+                form.reset();
+            } else {
+                alert('Please fill in all required fields.');
+            }
+        }
+        
+        // Animate elements on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+        
+        // Observe all activity cards for animation
+        document.querySelectorAll('.activity-card').forEach(card => {
+            card.style.opacity = '0.9';
+            card.style.transform = 'translateY(10px)';
+            card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+            observer.observe(card);
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,779 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adventure Camps in Vasai | Maura Wonderlab - Kids Adventure Activities in Vasai</title>
+    <meta name="description" content="Maura Wonderlab offers the best adventure camps in Vasai for kids. Rock climbing, hiking, survival skills, laser training, and outdoor adventure activities in Vasai.">
+    <meta name="keywords" content="adventure camps in Vasai, camping for kids in Vasai, outdoor adventure Vasai, kids adventure activities Vasai, summer camps Vasai, rock climbing for kids Vasai, laser training Vasai, survival skills Vasai">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Iconify (Lucide Icons) -->
+    <script src="https://cdn.jsdelivr.net/npm/iconify-icon@1.0.8/dist/iconify-icon.min.js"></script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=Nunito:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        /* Custom Font Settings for Childish/Playful Vibe */
+        body {
+            font-family: 'Nunito', sans-serif;
+        }
+        h1, h2, h3, h4, h5, h6, .brand-font {
+            font-family: 'Fredoka', sans-serif;
+        }
+        
+        /* Playful Blob Pattern */
+        .bg-pattern {
+            background-color: #FFFDF5;
+            background-image: radial-gradient(#FDE68A 1px, transparent 1px), radial-gradient(#BAE6FD 1px, transparent 1px);
+            background-size: 40px 40px;
+            background-position: 0 0, 20px 20px;
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #FFF7ED; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #FDBA74; 
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #EA580C; 
+        }
+
+        /* Mobile Menu Animation */
+        .mobile-menu {
+            transform: translateX(100%);
+            transition: transform 0.3s ease-in-out;
+        }
+        
+        .mobile-menu.open {
+            transform: translateX(0);
+        }
+        
+        .menu-overlay {
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease-in-out, visibility 0.3s;
+        }
+        
+        .menu-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        /* Activity Card Hover Effects */
+        .activity-card {
+            transition: all 0.3s ease;
+            border: 3px solid transparent;
+        }
+        
+        .activity-card:hover {
+            transform: translateY(-10px);
+            border-color: #3B82F6;
+            box-shadow: 0 20px 40px rgba(59, 130, 246, 0.15);
+        }
+        
+        /* SEO Keyword Highlight */
+        .keyword-highlight {
+            background: linear-gradient(120deg, #FDE68A 0%, #FDE68A 100%);
+            background-repeat: no-repeat;
+            background-size: 100% 40%;
+            background-position: 0 85%;
+            padding: 0 2px;
+            font-weight: 700;
+        }
+    </style>
+</head>
+<body class="bg-pattern text-slate-600 antialiased selection:bg-orange-200 selection:text-orange-900">
+
+    <!-- Navbar -->
+    <nav class="fixed w-full z-50 top-0 transition-all duration-300 backdrop-blur-md bg-white/80 border-b-2 border-slate-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center gap-2 cursor-pointer" onclick="window.location.href='/'">
+                    <img src="maura wonderlab logo.png" alt="Maura Wonderlab" width="50px">
+                    <span class="brand-font text-2xl font-semibold tracking-tight text-slate-800">
+                        Maura <span class="text-orange-500">Wonderlab</span>
+                    </span>
+                </div>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="/" class="text-sm font-semibold text-slate-600 hover:text-orange-500 transition-colors">Home</a>
+                    <a href="#activities" class="text-sm font-semibold text-slate-600 hover:text-orange-500 transition-colors">Vasai Activities</a>
+                    <a href="#camps" class="text-sm font-semibold text-slate-600 hover:text-orange-500 transition-colors">Camp Programs</a>
+                    <a href="#pricing" class="text-sm font-semibold text-slate-600 hover:text-orange-500 transition-colors">Pricing</a>
+                    <a href="#contact" class="text-sm font-semibold text-slate-600 hover:text-orange-500 transition-colors">Contact</a>
+                    <button onclick="window.location.href='#booking'" class="bg-indigo-500 hover:bg-indigo-600 text-white px-5 py-2.5 rounded-full text-sm font-semibold transition-all shadow-[0px_4px_0px_0px_rgba(67,56,202,1)] hover:shadow-[0px_2px_0px_0px_rgba(67,56,202,1)] hover:translate-y-[2px]">
+                        Book Vasai Camp
+                    </button>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobileMenuButton" class="text-slate-600 hover:text-orange-500 p-2">
+                        <iconify-icon icon="lucide:menu" width="28" stroke-width="1.5"></iconify-icon>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu Overlay -->
+    <div id="menuOverlay" class="menu-overlay fixed inset-0 bg-black/50 z-40 md:hidden"></div>
+
+    <!-- Mobile Menu -->
+    <div id="mobileMenu" class="mobile-menu fixed top-0 right-0 h-full w-64 bg-white z-50 shadow-2xl md:hidden p-6">
+        <div class="flex justify-between items-center mb-8">
+            <div class="flex items-center gap-2">
+                <div class="h-8 w-8 bg-orange-400 rounded-lg flex items-center justify-center text-white">
+                    <iconify-icon icon="lucide:tent" width="18"></iconify-icon>
+                </div>
+                <span class="brand-font text-xl font-semibold text-slate-800">Maura <span class="text-orange-500">Wonderlab</span></span>
+            </div>
+            <button id="closeMenuButton" class="text-slate-600 hover:text-orange-500 p-2">
+                <iconify-icon icon="lucide:x" width="24" stroke-width="1.5"></iconify-icon>
+            </button>
+        </div>
+        
+        <div class="space-y-6">
+            <a href="/" class="block py-3 text-slate-700 font-semibold border-b border-slate-100" onclick="closeMobileMenu()">Home</a>
+            <a href="#activities" class="block py-3 text-slate-700 font-semibold border-b border-slate-100" onclick="closeMobileMenu()">Vasai Activities</a>
+            <a href="#camps" class="block py-3 text-slate-700 font-semibold border-b border-slate-100" onclick="closeMobileMenu()">Camp Programs</a>
+            <a href="#pricing" class="block py-3 text-slate-700 font-semibold border-b border-slate-100" onclick="closeMobileMenu()">Pricing</a>
+            <a href="#contact" class="block py-3 text-slate-700 font-semibold border-b border-slate-100" onclick="closeMobileMenu()">Contact</a>
+            <div class="pt-4">
+                <button onclick="window.location.href='#booking'" class="w-full bg-indigo-500 hover:bg-indigo-600 text-white px-5 py-3 rounded-full text-sm font-semibold transition-all">
+                    Book Vasai Camp
+                </button>
+            </div>
+        </div>
+        
+        <div class="absolute bottom-8 left-6 right-6">
+            <p class="text-sm text-slate-500 mb-4">Contact us:</p>
+            <div class="flex items-center gap-2 text-slate-700 mb-2">
+                <iconify-icon icon="lucide:phone" width="16"></iconify-icon>
+                <span class="text-sm">+91 77680 31411</span>
+            </div>
+            <div class="flex items-center gap-2 text-slate-700">
+                <iconify-icon icon="lucide:mail" width="16"></iconify-icon>
+                <span class="text-sm">maurawonderlab@gmail.com</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hero Section for Vasai Adventure Camps -->
+    <section class="relative pt-32 pb-20 lg:pt-40 lg:pb-28 overflow-hidden bg-gradient-to-br from-blue-50 via-white to-orange-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+            <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-100 text-blue-700 text-xs font-bold mb-8 uppercase tracking-wide border border-blue-200">
+                <iconify-icon icon="lucide:map-pin" width="16"></iconify-icon>
+                Premium Adventure Camps in Vasai
+            </div>
+            
+            <h1 class="text-4xl md:text-6xl lg:text-7xl font-semibold tracking-tight text-slate-900 mb-6 leading-[0.9]">
+                <span class="keyword-highlight">Adventure Camps in Vasai</span><br>
+                For Brave Young Explorers!
+            </h1>
+            
+            <p class="mt-4 max-w-3xl mx-auto text-lg md:text-xl text-slate-600 leading-relaxed">
+                Maura Wonderlab brings the most exciting <span class="keyword-highlight">outdoor adventure camps in Vasai</span> for kids aged 6-16. 
+                Experience <span class="keyword-highlight">rock climbing</span>, <span class="keyword-highlight">hiking adventures</span>, 
+                <span class="keyword-highlight">survival skills training</span>, and <span class="keyword-highlight">laser training</span> 
+                at our premium Vasai locations.
+            </p>
+
+            <div class="mt-10 flex flex-col sm:flex-row gap-4 justify-center items-center">
+                <button onclick="window.location.href='#booking'" class="w-full sm:w-auto px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white rounded-2xl text-base font-semibold transition-all shadow-[0px_6px_0px_0px_#1D4ED8] hover:shadow-[0px_3px_0px_0px_#1D4ED8] hover:translate-y-[3px] flex items-center justify-center gap-2">
+                    <iconify-icon icon="lucide:calendar-check" width="20"></iconify-icon>
+                    Book Vasai Adventure Camp
+                </button>
+                <button onclick="window.location.href='#activities'" class="w-full sm:w-auto px-8 py-4 bg-white hover:bg-slate-50 text-slate-700 border-2 border-slate-200 rounded-2xl text-base font-semibold transition-all hover:border-blue-300 flex items-center justify-center gap-2">
+                    <iconify-icon icon="lucide:activity" width="20"></iconify-icon>
+                    Explore Activities
+                </button>
+            </div>
+        </div>
+
+        <!-- Decorative Elements -->
+        <div class="absolute top-1/4 left-0 -translate-x-1/2 w-64 h-64 bg-blue-300/30 rounded-full blur-3xl -z-10"></div>
+        <div class="absolute bottom-0 right-0 translate-x-1/4 w-96 h-96 bg-orange-300/20 rounded-full blur-3xl -z-10"></div>
+    </section>
+
+    <!-- Featured Activities Section -->
+    <section id="activities" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-semibold text-slate-900 mb-4 tracking-tight">
+                    Top <span class="keyword-highlight">Adventure Activities in Vasai</span>
+                </h2>
+                <p class="text-slate-500 max-w-2xl mx-auto">Discover our most popular adventure activities designed specifically for kids in our <span class="keyword-highlight">Vasai adventure camps</span>.</p>
+            </div>
+
+            <!-- Activity Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+                <!-- Rock Climbing -->
+                <div class="activity-card bg-white p-6 rounded-3xl shadow-lg hover:shadow-2xl">
+                    <div class="h-48 w-full bg-gradient-to-br from-red-50 to-orange-50 rounded-2xl flex items-center justify-center mb-6">
+                        <iconify-icon icon="lucide:mountain" width="80" class="text-red-500"></iconify-icon>
+                    </div>
+                    <h3 class="text-2xl font-bold text-slate-800 mb-3">Rock Climbing for Kids</h3>
+                    <p class="text-slate-600 mb-4">Safe and supervised <span class="keyword-highlight">rock climbing adventures in Vasai</span> with certified instructors and modern equipment.</p>
+                    <div class="flex items-center justify-between">
+                        <span class="text-blue-600 font-bold">Age: 8-16 Years</span>
+                        <a href="rock-climbing-for-kids-vasai.html" class="text-blue-500 font-semibold hover:text-blue-700 flex items-center gap-1">
+                            Learn More <iconify-icon icon="lucide:arrow-right" width="16"></iconify-icon>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Hiking Adventures -->
+                <div class="activity-card bg-white p-6 rounded-3xl shadow-lg hover:shadow-2xl">
+                    <div class="h-48 w-full bg-gradient-to-br from-green-50 to-lime-50 rounded-2xl flex items-center justify-center mb-6">
+                        <iconify-icon icon="lucide:hiking" width="80" class="text-green-600"></iconify-icon>
+                    </div>
+                    <h3 class="text-2xl font-bold text-slate-800 mb-3">Hiking Adventures</h3>
+                    <p class="text-slate-600 mb-4">Explore the beautiful trails around <span class="keyword-highlight">Vasai Fort and surrounding nature</span> with experienced guides.</p>
+                    <div class="flex items-center justify-between">
+                        <span class="text-blue-600 font-bold">Age: 6-16 Years</span>
+                        <a href="hiking-adventures-vasai.html" class="text-blue-500 font-semibold hover:text-blue-700 flex items-center gap-1">
+                            Learn More <iconify-icon icon="lucide:arrow-right" width="16"></iconify-icon>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Survival Skills -->
+                <div class="activity-card bg-white p-6 rounded-3xl shadow-lg hover:shadow-2xl">
+                    <div class="h-48 w-full bg-gradient-to-br from-amber-50 to-yellow-50 rounded-2xl flex items-center justify-center mb-6">
+                        <iconify-icon icon="lucide:campfire" width="80" class="text-amber-600"></iconify-icon>
+                    </div>
+                    <h3 class="text-2xl font-bold text-slate-800 mb-3">Survival Skills Training</h3>
+                    <p class="text-slate-600 mb-4">Learn essential <span class="keyword-highlight">outdoor survival skills in Vasai</span> including shelter building, fire making, and navigation.</p>
+                    <div class="flex items-center justify-between">
+                        <span class="text-blue-600 font-bold">Age: 10-16 Years</span>
+                        <a href="survival-skills-training-vasai.html" class="text-blue-500 font-semibold hover:text-blue-700 flex items-center gap-1">
+                            Learn More <iconify-icon icon="lucide:arrow-right" width="16"></iconify-icon>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Laser Training -->
+                <div class="activity-card bg-white p-6 rounded-3xl shadow-lg hover:shadow-2xl">
+                    <div class="h-48 w-full bg-gradient-to-br from-purple-50 to-pink-50 rounded-2xl flex items-center justify-center mb-6">
+                        <iconify-icon icon="lucide:target" width="80" class="text-purple-600"></iconify-icon>
+                    </div>
+                    <h3 class="text-2xl font-bold text-slate-800 mb-3">Laser Adventure Training</h3>
+                    <p class="text-slate-600 mb-4">Safe <span class="keyword-highlight">laser rifle training for kids in Vasai</span> with obstacle courses and team missions.</p>
+                    <div class="flex items-center justify-between">
+                        <span class="text-blue-600 font-bold">Age: 8-16 Years</span>
+                        <a href="laser-training-vasai.html" class="text-blue-500 font-semibold hover:text-blue-700 flex items-center gap-1">
+                            Learn More <iconify-icon icon="lucide:arrow-right" width="16"></iconify-icon>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Water Activities -->
+                <div class="activity-card bg-white p-6 rounded-3xl shadow-lg hover:shadow-2xl">
+                    <div class="h-48 w-full bg-gradient-to-br from-cyan-50 to-blue-50 rounded-2xl flex items-center justify-center mb-6">
+                        <iconify-icon icon="lucide:droplets" width="80" class="text-cyan-600"></iconify-icon>
+                    </div>
+                    <h3 class="text-2xl font-bold text-slate-800 mb-3">Water Adventure Activities</h3>
+                    <p class="text-slate-600 mb-4"><span class="keyword-highlight">Swimming camps and water safety programs in Vasai</span> with certified lifeguards.</p>
+                    <div class="flex items-center justify-between">
+                        <span class="text-blue-600 font-bold">Age: 6-16 Years</span>
+                        <a href="water-activities-vasai.html" class="text-blue-500 font-semibold hover:text-blue-700 flex items-center gap-1">
+                            Learn More <iconify-icon icon="lucide:arrow-right" width="16"></iconify-icon>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Commando Training -->
+                <div class="activity-card bg-white p-6 rounded-3xl shadow-lg hover:shadow-2xl">
+                    <div class="h-48 w-full bg-gradient-to-br from-gray-50 to-slate-50 rounded-2xl flex items-center justify-center mb-6">
+                        <iconify-icon icon="lucide:shield" width="80" class="text-slate-700"></iconify-icon>
+                    </div>
+                    <h3 class="text-2xl font-bold text-slate-800 mb-3">Commando Obstacle Courses</h3>
+                    <p class="text-slate-600 mb-4">Exciting <span class="keyword-highlight">military-style adventure training in Vasai</span> with obstacle courses and team challenges.</p>
+                    <div class="flex items-center justify-between">
+                        <span class="text-blue-600 font-bold">Age: 10-16 Years</span>
+                        <a href="commando-training-vasai.html" class="text-blue-500 font-semibold hover:text-blue-700 flex items-center gap-1">
+                            Learn More <iconify-icon icon="lucide:arrow-right" width="16"></iconify-icon>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Additional Activities -->
+            <div class="bg-gradient-to-r from-blue-50 to-cyan-50 rounded-3xl p-8 md:p-12">
+                <h3 class="text-3xl font-bold text-slate-800 mb-6 text-center">More Exciting Activities at Our <span class="keyword-highlight">Vasai Adventure Camps</span></h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div class="bg-white p-4 rounded-2xl text-center">
+                        <iconify-icon icon="lucide:trees" class="text-green-500 text-3xl mb-2"></iconify-icon>
+                        <p class="font-semibold">Nature Exploration</p>
+                    </div>
+                    <div class="bg-white p-4 rounded-2xl text-center">
+                        <iconify-icon icon="lucide:zap" class="text-yellow-500 text-3xl mb-2"></iconify-icon>
+                        <p class="font-semibold">Archery for Kids</p>
+                    </div>
+                    <div class="bg-white p-4 rounded-2xl text-center">
+                        <iconify-icon icon="lucide:users" class="text-purple-500 text-3xl mb-2"></iconify-icon>
+                        <p class="font-semibold">Team Building Games</p>
+                    </div>
+                    <div class="bg-white p-4 rounded-2xl text-center">
+                        <iconify-icon icon="lucide:map" class="text-red-500 text-3xl mb-2"></iconify-icon>
+                        <p class="font-semibold">Treasure Hunts</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Camp Programs Section -->
+    <section id="camps" class="py-24 bg-gradient-to-b from-white to-blue-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-semibold text-slate-900 mb-4 tracking-tight">
+                    <span class="keyword-highlight">Adventure Camp Programs in Vasai</span>
+                </h2>
+                <p class="text-slate-500 max-w-2xl mx-auto">Choose from our specialized camp programs designed for different age groups and interests.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Summer Camp -->
+                <div class="bg-white rounded-3xl p-8 shadow-xl border-2 border-yellow-200">
+                    <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-yellow-100 text-yellow-700 text-sm font-bold mb-6">
+                        <iconify-icon icon="lucide:sun" width="16"></iconify-icon>
+                        Most Popular
+                    </div>
+                    <h3 class="text-2xl font-bold text-slate-800 mb-4">Summer Adventure Camps</h3>
+                    <p class="text-slate-600 mb-6">Join our <span class="keyword-highlight">summer adventure camps in Vasai</span> for 2 weeks of non-stop outdoor fun and learning.</p>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-center gap-2 text-slate-700"><iconify-icon icon="lucide:check" class="text-green-500"></iconify-icon> All adventure activities included</li>
+                        <li class="flex items-center gap-2 text-slate-700"><iconify-icon icon="lucide:check" class="text-green-500"></iconify-icon> Daily swimming sessions</li>
+                        <li class="flex items-center gap-2 text-slate-700"><iconify-icon icon="lucide:check" class="text-green-500"></iconify-icon> Camp t-shirt and certificate</li>
+                        <li class="flex items-center gap-2 text-slate-700"><iconify-icon icon="lucide:check" class="text-green-500"></iconify-icon> Meals and snacks included</li>
+                    </ul>
+                    <button onclick="window.location.href='summer-adventure-camps-vasai.html'" class="w-full py-3 bg-yellow-500 hover:bg-yellow-600 text-white font-bold rounded-xl transition-colors">
+                        Learn More
+                    </button>
+                </div>
+
+                <!-- Weekend Camp -->
+                <div class="bg-white rounded-3xl p-8 shadow-xl border-2 border-blue-200">
+                    <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-100 text-blue-700 text-sm font-bold mb-6">
+                        <iconify-icon icon="lucide:calendar" width="16"></iconify-icon>
+                        Weekend Special
+                    </div>
+                    <h3 class="text-2xl font-bold text-slate-800 mb-4">Weekend Adventure Camps</h3>
+                    <p class="text-slate-600 mb-6">Perfect <span class="keyword-highlight">weekend adventure camps in Vasai</span> for busy schedules. Saturday-Sunday programs.</p>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-center gap-2 text-slate-700"><iconify-icon icon="lucide:check" class="text-green-500"></iconify-icon> 2-day intensive program</li>
+                        <li class="flex items-center gap-2 text-slate-700"><iconify-icon icon="lucide:check" class="text-green-500"></iconify-icon> Focus on 3 main activities</li>
+                        <li class="flex items-center gap-2 text-slate-700"><iconify-icon icon="lucide:check" class="text-green-500"></iconify-icon> Overnight camping option</li>
+                        <li class="flex items-center gap-2 text-slate-700"><iconify-icon icon="lucide:check" class="text-green-500"></iconify-icon> Bonfire and stargazing</li>
+                    </ul>
+                    <button onclick="window.location.href='weekend-adventure-camps-vasai.html'" class="w-full py-3 bg-blue-500 hover:bg-blue-600 text-white font-bold rounded-xl transition-colors">
+                        Learn More
+                    </button>
+                </div>
+
+                <!-- Day Camp -->
+                <div class="bg-white rounded-3xl p-8 shadow-xl border-2 border-green-200">
+                    <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-green-100 text-green-700 text-sm font-bold mb-6">
+                        <iconify-icon icon="lucide:clock" width="16"></iconify-icon>
+                        Flexible Timing
+                    </div>
+                    <h3 class="text-2xl font-bold text-slate-800 mb-4">Day Adventure Camps</h3>
+                    <p class="text-slate-600 mb-6">Our <span class="keyword-highlight">day adventure camps in Vasai</span> offer flexible 4-8 hour programs for younger children.</p>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-center gap-2 text-slate-700"><iconify-icon icon="lucide:check" class="text-green-500"></iconify-icon> 9 AM - 5 PM schedule</li>
+                        <li class="flex items-center gap-2 text-slate-700"><iconify-icon icon="lucide:check" class="text-green-500"></iconify-icon> Lunch and snacks provided</li>
+                        <li class="flex items-center gap-2 text-slate-700"><iconify-icon icon="lucide:check" class="text-green-500"></iconify-icon> Age-appropriate activities</li>
+                        <li class="flex items-center gap-2 text-slate-700"><iconify-icon icon="lucide:check" class="text-green-500"></iconify-icon> Parent pickup/drop service</li>
+                    </ul>
+                    <button onclick="window.location.href='day-adventure-camps-vasai.html'" class="w-full py-3 bg-green-500 hover:bg-green-600 text-white font-bold rounded-xl transition-colors">
+                        Learn More
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-semibold text-slate-900 mb-4 tracking-tight">
+                    <span class="keyword-highlight">Adventure Camp Pricing in Vasai</span>
+                </h2>
+                <p class="text-slate-500 max-w-2xl mx-auto">Affordable packages for unforgettable adventure experiences in Vasai.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Basic Package -->
+                <div class="border-2 border-slate-200 rounded-[2rem] p-8 hover:border-blue-300 transition-colors">
+                    <h3 class="text-xl font-bold text-slate-900">Weekend Explorer</h3>
+                    <div class="my-6">
+                        <span class="text-4xl font-bold text-slate-900">₹1,999</span>
+                        <span class="text-slate-500">/weekend</span>
+                    </div>
+                    <p class="text-sm text-slate-500 mb-8">Perfect introduction to <span class="keyword-highlight">adventure activities in Vasai</span>.</p>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-center gap-2 text-sm text-slate-700"><iconify-icon icon="lucide:check" class="text-green-500"></iconify-icon> 2 Adventure Activities</li>
+                        <li class="flex items-center gap-2 text-sm text-slate-700"><iconify-icon icon="lucide:check" class="text-green-500"></iconify-icon> Basic Safety Gear</li>
+                        <li class="flex items-center gap-2 text-sm text-slate-700"><iconify-icon icon="lucide:check" class="text-green-500"></iconify-icon> Snacks & Water</li>
+                        <li class="flex items-center gap-2 text-sm text-slate-700"><iconify-icon icon="lucide:x" class="text-red-400"></iconify-icon> Overnight Stay</li>
+                    </ul>
+                    <button onclick="window.location.href='#booking'" class="w-full py-3 rounded-xl border-2 border-blue-500 text-blue-500 font-semibold hover:bg-blue-50 transition-colors">Select Plan</button>
+                </div>
+
+                <!-- Popular Package -->
+                <div class="border-2 border-blue-500 rounded-[2rem] p-8 relative bg-gradient-to-b from-blue-50 to-white shadow-xl shadow-blue-100">
+                    <div class="absolute top-0 right-0 bg-blue-500 text-white text-xs font-bold px-4 py-2 rounded-bl-xl rounded-tr-[1.8rem]">MOST POPULAR</div>
+                    <h3 class="text-xl font-bold text-slate-900">Summer Adventure</h3>
+                    <div class="my-6">
+                        <span class="text-4xl font-bold text-slate-900">₹8,499</span>
+                        <span class="text-slate-500">/week</span>
+                    </div>
+                    <p class="text-sm text-slate-500 mb-8">Complete <span class="keyword-highlight">summer adventure camp in Vasai</span> experience.</p>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-center gap-2 text-sm text-slate-700"><iconify-icon icon="lucide:check" class="text-green-500"></iconify-icon> All Activities Included</li>
+                        <li class="flex items-center gap-2 text-sm text-slate-700"><iconify-icon icon="lucide:check" class="text-green-500"></iconify-icon> Professional Gear</li>
+                        <li class="flex items-center gap-2 text-sm text-slate-700"><iconify-icon icon="lucide:check" class="text-green-500"></iconify-icon> Meals & Accommodation</li>
+                        <li class="flex items-center gap-2 text-sm text-slate-700"><iconify-icon icon="lucide:check" class="text-green-500"></iconify-icon> 24/7 Supervision</li>
+                    </ul>
+                    <button onclick="window.location.href='#booking'" class="w-full py-3 rounded-xl bg-blue-500 text-white font-semibold shadow-[0px_4px_0px_0px_#1D4ED8] hover:shadow-[0px_2px_0px_0px_#1D4ED8] hover:translate-y-[2px] transition-all">Select Plan</button>
+                </div>
+
+                <!-- Premium Package -->
+                <div class="border-2 border-purple-300 rounded-[2rem] p-8 hover:border-purple-400 transition-colors">
+                    <h3 class="text-xl font-bold text-slate-900">Adventure Pro</h3>
+                    <div class="my-6">
+                        <span class="text-4xl font-bold text-slate-900">₹14,999</span>
+                        <span class="text-slate-500">/2 weeks</span>
+                    </div>
+                    <p class="text-sm text-slate-500 mb-8">Ultimate <span class="keyword-highlight">adventure training in Vasai</span> with certification.</p>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-center gap-2 text-sm text-slate-700"><iconify-icon icon="lucide:check" class="text-green-500"></iconify-icon> Advanced Activities</li>
+                        <li class="flex items-center gap-2 text-sm text-slate-700"><iconify-icon icon="lucide:check" class="text-green-500"></iconify-icon> Certification Program</li>
+                        <li class="flex items-center gap-2 text-sm text-slate-700"><iconify-icon icon="lucide:check" class="text-green-500"></iconify-icon> Professional Photography</li>
+                        <li class="flex items-center gap-2 text-sm text-slate-700"><iconify-icon icon="lucide:check" class="text-green-500"></iconify-icon> Adventure Kit Bag</li>
+                    </ul>
+                    <button onclick="window.location.href='#booking'" class="w-full py-3 rounded-xl border-2 border-purple-500 text-purple-500 font-semibold hover:bg-purple-50 transition-colors">Select Plan</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Booking Section -->
+    <section id="booking" class="py-24 bg-gradient-to-r from-blue-600 to-indigo-700">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-white rounded-3xl p-8 md:p-12 shadow-2xl">
+                <div class="text-center mb-10">
+                    <h2 class="text-3xl md:text-4xl font-bold text-slate-800 mb-4">Book Your <span class="keyword-highlight">Vasai Adventure Camp</span> Today!</h2>
+                    <p class="text-slate-600">Limited spots available for our premium <span class="keyword-highlight">adventure camps in Vasai</span>.</p>
+                </div>
+                
+                <form class="space-y-6">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-sm font-medium text-slate-700 mb-2">Child's Name *</label>
+                            <input type="text" required class="w-full px-4 py-3 border border-slate-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-slate-700 mb-2">Child's Age *</label>
+                            <select class="w-full px-4 py-3 border border-slate-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition">
+                                <option value="">Select Age Group</option>
+                                <option value="6-8">6-8 Years</option>
+                                <option value="9-12">9-12 Years</option>
+                                <option value="13-16">13-16 Years</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-sm font-medium text-slate-700 mb-2">Parent's Name *</label>
+                            <input type="text" required class="w-full px-4 py-3 border border-slate-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-slate-700 mb-2">Phone Number *</label>
+                            <input type="tel" required class="w-full px-4 py-3 border border-slate-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition">
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <label class="block text-sm font-medium text-slate-700 mb-2">Email Address *</label>
+                        <input type="email" required class="w-full px-4 py-3 border border-slate-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition">
+                    </div>
+                    
+                    <div>
+                        <label class="block text-sm font-medium text-slate-700 mb-2">Select Camp Program *</label>
+                        <select class="w-full px-4 py-3 border border-slate-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition">
+                            <option value="">Choose Adventure Camp</option>
+                            <option value="summer">Summer Adventure Camp (₹8,499/week)</option>
+                            <option value="weekend">Weekend Adventure Camp (₹1,999/weekend)</option>
+                            <option value="day">Day Adventure Camp (₹999/day)</option>
+                            <option value="pro">Adventure Pro Program (₹14,999/2 weeks)</option>
+                        </select>
+                    </div>
+                    
+                    <div>
+                        <label class="block text-sm font-medium text-slate-700 mb-2">Preferred Start Date *</label>
+                        <input type="date" required class="w-full px-4 py-3 border border-slate-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition">
+                    </div>
+                    
+                    <div>
+                        <label class="block text-sm font-medium text-slate-700 mb-2">Any Special Requirements</label>
+                        <textarea rows="3" class="w-full px-4 py-3 border border-slate-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition"></textarea>
+                    </div>
+                    
+                    <button type="submit" class="w-full py-4 bg-blue-600 hover:bg-blue-700 text-white font-bold text-lg rounded-xl transition-colors shadow-lg hover:shadow-xl">
+                        Reserve Spot in Vasai Adventure Camp
+                    </button>
+                    
+                    <p class="text-center text-sm text-slate-500 mt-4">
+                        By booking, you agree to our terms and conditions. Our team will contact you within 24 hours.
+                    </p>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-semibold text-slate-900 mb-4 tracking-tight">
+                    Contact Our <span class="keyword-highlight">Vasai Adventure Camp</span> Team
+                </h2>
+                <p class="text-slate-500 max-w-2xl mx-auto">Have questions about our <span class="keyword-highlight">adventure camps in Vasai</span>? We're here to help!</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <!-- Contact Info -->
+                <div class="space-y-8">
+                    <div class="flex items-start gap-4">
+                        <div class="h-12 w-12 bg-blue-100 rounded-xl flex items-center justify-center">
+                            <iconify-icon icon="lucide:map-pin" class="text-blue-600" width="24"></iconify-icon>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-slate-800 mb-2">Vasai Camp Location</h3>
+                            <p class="text-slate-600">Near Vasai Fort, Vasai (West)<br>Mumbai - 401202</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-start gap-4">
+                        <div class="h-12 w-12 bg-green-100 rounded-xl flex items-center justify-center">
+                            <iconify-icon icon="lucide:phone" class="text-green-600" width="24"></iconify-icon>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-slate-800 mb-2">Phone & WhatsApp</h3>
+                            <p class="text-slate-600">+91 77680 31411<br>Available 9 AM - 8 PM</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-start gap-4">
+                        <div class="h-12 w-12 bg-orange-100 rounded-xl flex items-center justify-center">
+                            <iconify-icon icon="lucide:mail" class="text-orange-600" width="24"></iconify-icon>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-slate-800 mb-2">Email Address</h3>
+                            <p class="text-slate-600">maurawonderlab@gmail.com<br>vasaicamps@maurawonderlab.com</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Quick Contact Form -->
+                <div class="bg-slate-50 rounded-3xl p-8">
+                    <h3 class="text-2xl font-bold text-slate-800 mb-6">Quick Inquiry</h3>
+                    <form class="space-y-4">
+                        <input type="text" placeholder="Your Name" class="w-full px-4 py-3 border border-slate-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition">
+                        <input type="tel" placeholder="Phone Number" class="w-full px-4 py-3 border border-slate-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition">
+                        <textarea placeholder="Your Question about Vasai Adventure Camps" rows="4" class="w-full px-4 py-3 border border-slate-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition"></textarea>
+                        <button type="submit" class="w-full py-3 bg-blue-500 hover:bg-blue-600 text-white font-bold rounded-xl transition-colors">
+                            Send Inquiry
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-white pt-20 pb-10 rounded-t-[3rem]">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
+                <div class="col-span-1 md:col-span-2">
+                    <div class="flex items-center gap-2 mb-6">
+                         <div class="h-8 w-8 bg-orange-500 rounded-lg flex items-center justify-center text-white">
+                            <iconify-icon icon="lucide:tent" width="18"></iconify-icon>
+                        </div>
+                        <span class="brand-font text-2xl font-bold">Maura <span class="text-orange-400">Wonderlab</span></span>
+                    </div>
+                    <p class="text-slate-400 max-w-sm mb-6">Creating unforgettable childhood memories through nature, science, and adventure. The #1 Choice for Kids Camping.</p>
+                    <div class="flex gap-4">
+                        <a href="#" class="h-10 w-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-orange-500 transition-colors"><iconify-icon icon="lucide:instagram" width="20"></iconify-icon></a>
+                        <a href="#" class="h-10 w-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-blue-500 transition-colors"><iconify-icon icon="lucide:facebook" width="20"></iconify-icon></a>
+                        <a href="#" class="h-10 w-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-green-500 transition-colors"><iconify-icon icon="lucide:phone" width="20"></iconify-icon></a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="font-bold text-lg mb-6">Explore</h4>
+                    <ul class="space-y-4 text-slate-400 text-sm">
+                        <li><a href="adventure-camps-in-virar.html" class="hover:text-white transition-colors">Adventure Camps in Virar</a></li>
+                        <li><a href="adventure-camps-in-nallasopara.html" class="hover:text-white transition-colors">Adventure Camps in Nallasopara</a></li>
+                        <li><a href="summer-adventure-camps.html" class="hover:text-white transition-colors">Summer Adventure Camps</a></li>
+                        <li><a href="weekend-adventure-camps.html" class="hover:text-white transition-colors">Weekend Adventure Camps</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-bold text-lg mb-6">Vasai Camp Activities</h4>
+                    <ul class="space-y-4 text-slate-400 text-sm">
+                        <li><a href="rock-climbing-for-kids-vasai.html" class="hover:text-white transition-colors">Rock Climbing in Vasai</a></li>
+                        <li><a href="laser-training-vasai.html" class="hover:text-white transition-colors">Laser Training in Vasai</a></li>
+                        <li><a href="survival-skills-training-vasai.html" class="hover:text-white transition-colors">Survival Skills in Vasai</a></li>
+                        <li><a href="water-activities-vasai.html" class="hover:text-white transition-colors">Water Activities in Vasai</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-slate-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="text-slate-500 text-sm">© 2024 Maura Wonderlab. All rights reserved. | <span class="keyword-highlight text-white">Adventure Camps in Vasai</span></p>
+                <div class="flex gap-6 text-sm text-slate-500">
+                    <a href="#" class="hover:text-white">Privacy</a>
+                    <a href="#" class="hover:text-white">Terms</a>
+                    <a href="#" class="hover:text-white">Sitemap</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Functionality
+        const mobileMenuButton = document.getElementById('mobileMenuButton');
+        const closeMenuButton = document.getElementById('closeMenuButton');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const menuOverlay = document.getElementById('menuOverlay');
+        
+        function openMobileMenu() {
+            mobileMenu.classList.add('open');
+            menuOverlay.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+        
+        function closeMobileMenu() {
+            mobileMenu.classList.remove('open');
+            menuOverlay.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+        
+        // Event Listeners
+        mobileMenuButton.addEventListener('click', openMobileMenu);
+        closeMenuButton.addEventListener('click', closeMobileMenu);
+        menuOverlay.addEventListener('click', closeMobileMenu);
+        
+        // Close menu when clicking on any menu link
+        document.querySelectorAll('#mobileMenu a').forEach(link => {
+            link.addEventListener('click', closeMobileMenu);
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                const href = this.getAttribute('href');
+                
+                if (href === '#' || href.startsWith('#') && href.length > 1) {
+                    e.preventDefault();
+                    
+                    const targetId = href.substring(1);
+                    const targetElement = document.getElementById(targetId);
+                    
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                    }
+                }
+            });
+        });
+        
+        // Close menu on ESC key press
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && mobileMenu.classList.contains('open')) {
+                closeMobileMenu();
+            }
+        });
+        
+        // Activity card animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+        
+        // Observe all activity cards
+        document.querySelectorAll('.activity-card').forEach(card => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(20px)';
+            card.style.transition = 'opacity 0.5s ease, transform 0.5s ease, border-color 0.3s ease, box-shadow 0.3s ease';
+            observer.observe(card);
+        });
+        
+        // Form submission handler
+        document.querySelectorAll('form').forEach(form => {
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                alert('Thank you for your inquiry! Our Vasai adventure camp team will contact you shortly.');
+                form.reset();
+            });
+        });
+        
+        // Auto-highlight keywords in page content for better visual emphasis
+        document.addEventListener('DOMContentLoaded', function() {
+            const keywords = [
+                'adventure camps in Vasai',
+                'Vasai adventure camps',
+                'rock climbing',
+                'hiking adventures',
+                'survival skills',
+                'laser training',
+                'outdoor adventure',
+                'summer camps Vasai'
+            ];
+            
+            // Highlight keywords in main content (excluding forms and navigation)
+            const contentElements = document.querySelectorAll('p, h1, h2, h3, li:not(nav li)');
+            contentElements.forEach(element => {
+                let html = element.innerHTML;
+                keywords.forEach(keyword => {
+                    const regex = new RegExp(`\\b(${keyword})\\b`, 'gi');
+                    html = html.replace(regex, '<span class="keyword-highlight">$1</span>');
+                });
+                element.innerHTML = html;
+            });
+        });
+    </script>
+</body>
+</html>

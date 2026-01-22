@@ -1,0 +1,778 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adventure Camps in Nallasopara | Maura Wonderlab Kids Camping & Activities</title>
+    <meta name="description" content="Best adventure camps for kids in Nallasopara! Maura Wonderlab offers STEM, nature exploration, survival skills, and outdoor adventure activities for children aged 3-16.">
+    <meta name="keywords" content="adventure camps in nallasopara, camping for kids in nallasopara, nallasopara adventure camps, kids adventure activities nallasopara, outdoor camps nallasopara, nature camps for children, summer camps nallasopara">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://maurawonderlab.com/adventure-camps-in-nallasopara.html">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Iconify (Lucide Icons) -->
+    <script src="https://cdn.jsdelivr.net/npm/iconify-icon@1.0.8/dist/iconify-icon.min.js"></script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=Nunito:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        /* Custom Font Settings for Childish/Playful Vibe */
+        body {
+            font-family: 'Nunito', sans-serif;
+        }
+        h1, h2, h3, h4, h5, h6, .brand-font {
+            font-family: 'Fredoka', sans-serif;
+        }
+        
+        /* Playful Blob Pattern */
+        .bg-pattern {
+            background-color: #FFFDF5;
+            background-image: radial-gradient(#FDE68A 1px, transparent 1px), radial-gradient(#BAE6FD 1px, transparent 1px);
+            background-size: 40px 40px;
+            background-position: 0 0, 20px 20px;
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #FFF7ED; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #4ADE80; 
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #22C55E; 
+        }
+
+        /* Mobile Menu Animation */
+        .mobile-menu {
+            transform: translateX(100%);
+            transition: transform 0.3s ease-in-out;
+        }
+        
+        .mobile-menu.open {
+            transform: translateX(0);
+        }
+        
+        .menu-overlay {
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease-in-out, visibility 0.3s;
+        }
+        
+        .menu-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        /* Activity Card Hover Effects */
+        .activity-card {
+            transition: all 0.3s ease;
+        }
+        
+        .activity-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        /* SEO Highlight Box */
+        .seo-highlight {
+            background: linear-gradient(135deg, #DCFCE7 0%, #F0FDF4 100%);
+            border-left: 5px solid #22C55E;
+        }
+
+        /* Nallasopara Location Marker */
+        .location-pin {
+            animation: bounce 2s infinite;
+        }
+        
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+    </style>
+</head>
+<body class="bg-pattern text-slate-600 antialiased selection:bg-green-200 selection:text-green-900">
+
+    <!-- Navbar -->
+    <nav class="fixed w-full z-50 top-0 transition-all duration-300 backdrop-blur-md bg-white/80 border-b-2 border-slate-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center gap-2 cursor-pointer" onclick="window.location.href='/'">
+                    <img src="maura wonderlab logo.png" alt="Maura Wonderlab" width="50px">
+                    <span class="brand-font text-2xl font-semibold tracking-tight text-slate-800">
+                        Maura <span class="text-green-500">Wonderlab</span>
+                    </span>
+                </div>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="/" class="text-sm font-semibold text-slate-600 hover:text-green-500 transition-colors">Home</a>
+                    <a href="#nallasopara-activities" class="text-sm font-semibold text-slate-600 hover:text-green-500 transition-colors">Activities</a>
+                    <a href="#nallasopara-camps" class="text-sm font-semibold text-slate-600 hover:text-green-500 transition-colors">Camp Programs</a>
+                    <a href="#nallasopara-location" class="text-sm font-semibold text-slate-600 hover:text-green-500 transition-colors">Our Location</a>
+                    <a href="#nallasopara-booking" class="text-sm font-semibold text-slate-600 hover:text-green-500 transition-colors">Book Now</a>
+                    <button onclick="window.location.href='#nallasopara-booking'" class="bg-green-500 hover:bg-green-600 text-white px-5 py-2.5 rounded-full text-sm font-semibold transition-all shadow-[0px_4px_0px_0px_rgba(34,197,94,1)] hover:shadow-[0px_2px_0px_0px_rgba(34,197,94,1)] hover:translate-y-[2px]">
+                        Book Nallasopara Camp
+                    </button>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobileMenuButton" class="text-slate-600 hover:text-green-500 p-2">
+                        <iconify-icon icon="lucide:menu" width="28" stroke-width="1.5"></iconify-icon>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu Overlay -->
+    <div id="menuOverlay" class="menu-overlay fixed inset-0 bg-black/50 z-40 md:hidden"></div>
+
+    <!-- Mobile Menu -->
+    <div id="mobileMenu" class="mobile-menu fixed top-0 right-0 h-full w-64 bg-white z-50 shadow-2xl md:hidden p-6">
+        <div class="flex justify-between items-center mb-8">
+            <div class="flex items-center gap-2">
+                <div class="h-8 w-8 bg-green-500 rounded-lg flex items-center justify-center text-white">
+                    <iconify-icon icon="lucide:tent" width="18"></iconify-icon>
+                </div>
+                <span class="brand-font text-xl font-semibold text-slate-800">Maura <span class="text-green-500">Wonderlab</span></span>
+            </div>
+            <button id="closeMenuButton" class="text-slate-600 hover:text-green-500 p-2">
+                <iconify-icon icon="lucide:x" width="24" stroke-width="1.5"></iconify-icon>
+            </button>
+        </div>
+        
+        <div class="space-y-6">
+            <a href="/" class="block py-3 text-slate-700 font-semibold border-b border-slate-100" onclick="closeMobileMenu()">Home</a>
+            <a href="#nallasopara-activities" class="block py-3 text-slate-700 font-semibold border-b border-slate-100" onclick="closeMobileMenu()">Activities</a>
+            <a href="#nallasopara-camps" class="block py-3 text-slate-700 font-semibold border-b border-slate-100" onclick="closeMobileMenu()">Camp Programs</a>
+            <a href="#nallasopara-location" class="block py-3 text-slate-700 font-semibold border-b border-slate-100" onclick="closeMobileMenu()">Our Location</a>
+            <a href="#nallasopara-booking" class="block py-3 text-slate-700 font-semibold border-b border-slate-100" onclick="closeMobileMenu()">Book Now</a>
+            <div class="pt-4">
+                <button onclick="window.location.href='#nallasopara-booking'" class="w-full bg-green-500 hover:bg-green-600 text-white px-5 py-3 rounded-full text-sm font-semibold transition-all">
+                    Book Nallasopara Camp
+                </button>
+            </div>
+        </div>
+        
+        <div class="absolute bottom-8 left-6 right-6">
+            <p class="text-sm text-slate-500 mb-4">Contact us:</p>
+            <div class="flex items-center gap-2 text-slate-700 mb-2">
+                <iconify-icon icon="lucide:phone" width="16"></iconify-icon>
+                <span class="text-sm">+91 77680 31411</span>
+            </div>
+            <div class="flex items-center gap-2 text-slate-700">
+                <iconify-icon icon="lucide:mail" width="16"></iconify-icon>
+                <span class="text-sm">maurawonderlab@gmail.com</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="relative pt-32 pb-20 lg:pt-40 lg:pb-28 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+            <!-- Breadcrumb Navigation -->
+            <div class="flex justify-center items-center gap-2 mb-6">
+                <a href="/" class="text-sm text-slate-500 hover:text-green-600 transition-colors">Home</a>
+                <iconify-icon icon="lucide:chevron-right" class="text-slate-400" width="16"></iconify-icon>
+                <span class="text-sm font-semibold text-green-600">Adventure Camps in Nallasopara</span>
+            </div>
+
+            <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-green-100 text-green-700 text-xs font-bold mb-8 uppercase tracking-wide border border-green-200">
+                <iconify-icon icon="lucide:map-pin" width="16"></iconify-icon>
+                Exclusive Nallasopara Location
+            </div>
+            
+            <h1 class="text-5xl md:text-7xl lg:text-8xl font-semibold tracking-tight text-slate-900 mb-6 leading-[0.9]">
+                Adventure Camps in <br>
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-green-400 via-emerald-500 to-teal-500">Nallasopara</span>
+            </h1>
+            
+            <p class="mt-4 max-w-3xl mx-auto text-lg md:text-xl text-slate-600 leading-relaxed">
+                <span class="font-bold text-slate-800">Maura Wonderlab brings the ultimate adventure experience to Nallasopara!</span> 
+                Our specialized camps combine <span class="text-green-600 font-semibold">STEM education</span>, 
+                <span class="text-green-600 font-semibold">outdoor survival skills</span>, and 
+                <span class="text-green-600 font-semibold">nature exploration</span> for kids aged 3-16.
+            </p>
+
+            <!-- SEO Highlight Box -->
+            <div class="mt-10 seo-highlight rounded-2xl p-6 text-left max-w-4xl mx-auto">
+                <div class="flex items-start gap-4">
+                    <iconify-icon icon="lucide:search" class="text-green-600 mt-1" width="24"></iconify-icon>
+                    <div>
+                        <h3 class="text-lg font-bold text-slate-800 mb-2">#1 Adventure Camp in Nallasopara</h3>
+                        <p class="text-slate-700">
+                            Searching for <strong>"adventure camps in Nallasopara"</strong>, <strong>"camping for kids in Nallasopara"</strong>, 
+                            or <strong>"outdoor activities for children in Nallasopara"</strong>? You've found the best! Maura Wonderlab offers 
+                            comprehensive adventure programs including <strong>rock climbing for kids</strong>, <strong>hiking adventures for children</strong>, 
+                            <strong>survival skills training</strong>, and <strong>nature exploration camps</strong>.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-10 flex flex-col sm:flex-row gap-4 justify-center items-center">
+                <button onclick="window.location.href='#nallasopara-booking'" class="w-full sm:w-auto px-8 py-4 bg-green-500 hover:bg-green-600 text-white rounded-2xl text-base font-semibold transition-all shadow-[0px_6px_0px_0px_#16A34A] hover:shadow-[0px_3px_0px_0px_#16A34A] hover:translate-y-[3px] flex items-center justify-center gap-2">
+                    <iconify-icon icon="lucide:calendar" width="20"></iconify-icon>
+                    Book Nallasopara Adventure Camp
+                </button>
+                <button onclick="window.location.href='tel:+917768031411'" class="w-full sm:w-auto px-8 py-4 bg-white hover:bg-slate-50 text-slate-700 border-2 border-slate-200 rounded-2xl text-base font-semibold transition-all hover:border-green-300 flex items-center justify-center gap-2">
+                    <iconify-icon icon="lucide:phone" width="20"></iconify-icon>
+                    Call: +91 77680 31411
+                </button>
+            </div>
+        </div>
+
+        <!-- Decorative Blobs -->
+        <div class="absolute top-1/4 left-0 -translate-x-1/2 w-64 h-64 bg-green-300/30 rounded-full blur-3xl -z-10"></div>
+        <div class="absolute bottom-0 right-0 translate-x-1/4 w-96 h-96 bg-emerald-300/20 rounded-full blur-3xl -z-10"></div>
+    </section>
+
+    <!-- Activity-Based Keywords Section -->
+    <section id="nallasopara-activities" class="py-24 relative bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-semibold text-slate-900 mb-4 tracking-tight">Nallasopara Adventure Activities</h2>
+                <p class="text-slate-500 max-w-2xl mx-auto">We offer comprehensive outdoor adventure programs for kids in Nallasopara. Each activity is designed to build confidence, teach survival skills, and create unforgettable memories.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Rock Climbing -->
+                <div class="activity-card bg-white p-8 rounded-3xl border-2 border-slate-100 shadow-sm hover:shadow-xl">
+                    <div class="bg-red-50 rounded-2xl h-48 flex items-center justify-center mb-6 overflow-hidden">
+                        <iconify-icon icon="lucide:mountain" width="80" class="text-red-500"></iconify-icon>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-800 mb-3">Rock Climbing for Kids</h3>
+                    <p class="text-sm text-slate-600 leading-relaxed mb-4">Safe indoor rock climbing walls with certified instructors. Perfect for building strength and confidence in young adventurers.</p>
+                    <div class="flex items-center justify-between">
+                        <span class="text-xs font-semibold text-green-600 bg-green-50 px-3 py-1 rounded-full">Ages: 6+</span>
+                        <a href="rock-climbing-for-kids-nallasopara.html" class="text-green-600 font-semibold text-sm flex items-center gap-1">
+                            Learn More <iconify-icon icon="lucide:arrow-right" width="16"></iconify-icon>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Hiking Adventures -->
+                <div class="activity-card bg-white p-8 rounded-3xl border-2 border-slate-100 shadow-sm hover:shadow-xl">
+                    <div class="bg-blue-50 rounded-2xl h-48 flex items-center justify-center mb-6 overflow-hidden">
+                        <iconify-icon icon="lucide:hiking" width="80" class="text-blue-500"></iconify-icon>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-800 mb-3">Hiking Adventures for Children</h3>
+                    <p class="text-sm text-slate-600 leading-relaxed mb-4">Guided nature trails around Nallasopara's green spaces. Learn about local flora, fauna, and basic navigation skills.</p>
+                    <div class="flex items-center justify-between">
+                        <span class="text-xs font-semibold text-green-600 bg-green-50 px-3 py-1 rounded-full">Ages: 5+</span>
+                        <a href="hiking-adventures-for-children-nallasopara.html" class="text-green-600 font-semibold text-sm flex items-center gap-1">
+                            Learn More <iconify-icon icon="lucide:arrow-right" width="16"></iconify-icon>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Survival Skills -->
+                <div class="activity-card bg-white p-8 rounded-3xl border-2 border-slate-100 shadow-sm hover:shadow-xl">
+                    <div class="bg-amber-50 rounded-2xl h-48 flex items-center justify-center mb-6 overflow-hidden">
+                        <iconify-icon icon="lucide:campfire" width="80" class="text-amber-500"></iconify-icon>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-800 mb-3">Survival Skills Training</h3>
+                    <p class="text-sm text-slate-600 leading-relaxed mb-4">Essential wilderness skills: fire building, shelter making, knot tying, and basic first aid for young survivalists.</p>
+                    <div class="flex items-center justify-between">
+                        <span class="text-xs font-semibold text-green-600 bg-green-50 px-3 py-1 rounded-full">Ages: 8+</span>
+                        <a href="survival-skills-training-nallasopara.html" class="text-green-600 font-semibold text-sm flex items-center gap-1">
+                            Learn More <iconify-icon icon="lucide:arrow-right" width="16"></iconify-icon>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Nature Exploration -->
+                <div class="activity-card bg-white p-8 rounded-3xl border-2 border-slate-100 shadow-sm hover:shadow-xl">
+                    <div class="bg-lime-50 rounded-2xl h-48 flex items-center justify-center mb-6 overflow-hidden">
+                        <iconify-icon icon="lucide:tree-pine" width="80" class="text-lime-500"></iconify-icon>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-800 mb-3">Nature Exploration Camps</h3>
+                    <p class="text-sm text-slate-600 leading-relaxed mb-4">Discover Nallasopara's natural environment through bug hunting, bird watching, plant identification and ecosystem studies.</p>
+                    <div class="flex items-center justify-between">
+                        <span class="text-xs font-semibold text-green-600 bg-green-50 px-3 py-1 rounded-full">Ages: 4+</span>
+                        <a href="nature-exploration-camps-nallasopara.html" class="text-green-600 font-semibold text-sm flex items-center gap-1">
+                            Learn More <iconify-icon icon="lucide:arrow-right" width="16"></iconify-icon>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Outdoor Survival -->
+                <div class="activity-card bg-white p-8 rounded-3xl border-2 border-slate-100 shadow-sm hover:shadow-xl">
+                    <div class="bg-emerald-50 rounded-2xl h-48 flex items-center justify-center mb-6 overflow-hidden">
+                        <iconify-icon icon="lucide:compass" width="80" class="text-emerald-500"></iconify-icon>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-800 mb-3">Outdoor Survival Camps</h3>
+                    <p class="text-sm text-slate-600 leading-relaxed mb-4">Weekend adventure camps focusing on wilderness survival techniques, team challenges, and outdoor cooking.</p>
+                    <div class="flex items-center justify-between">
+                        <span class="text-xs font-semibold text-green-600 bg-green-50 px-3 py-1 rounded-full">Ages: 9+</span>
+                        <a href="outdoor-survival-camps-nallasopara.html" class="text-green-600 font-semibold text-sm flex items-center gap-1">
+                            Learn More <iconify-icon icon="lucide:arrow-right" width="16"></iconify-icon>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Water Activities -->
+                <div class="activity-card bg-white p-8 rounded-3xl border-2 border-slate-100 shadow-sm hover:shadow-xl">
+                    <div class="bg-cyan-50 rounded-2xl h-48 flex items-center justify-center mb-6 overflow-hidden">
+                        <iconify-icon icon="lucide:droplets" width="80" class="text-cyan-500"></iconify-icon>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-800 mb-3">Water Adventure Programs</h3>
+                    <p class="text-sm text-slate-600 leading-relaxed mb-4">Safe water activities including basic swimming, water games, and aquatic exploration with certified lifeguards.</p>
+                    <div class="flex items-center justify-between">
+                        <span class="text-xs font-semibold text-green-600 bg-green-50 px-3 py-1 rounded-full">Ages: 5+</span>
+                        <a href="water-adventure-programs-nallasopara.html" class="text-green-600 font-semibold text-sm flex items-center gap-1">
+                            Learn More <iconify-icon icon="lucide:arrow-right" width="16"></iconify-icon>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Additional Activity Keywords -->
+            <div class="mt-16 bg-gradient-to-r from-green-50 to-emerald-50 rounded-3xl p-8">
+                <h3 class="text-2xl font-bold text-slate-800 mb-6 text-center">More Adventure Activities in Nallasopara</h3>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                    <div class="bg-white p-4 rounded-xl text-center">
+                        <iconify-icon icon="lucide:target" class="text-green-500 mb-2" width="24"></iconify-icon>
+                        <p class="font-semibold text-slate-700">Archery for Kids</p>
+                    </div>
+                    <div class="bg-white p-4 rounded-xl text-center">
+                        <iconify-icon icon="lucide:shield" class="text-green-500 mb-2" width="24"></iconify-icon>
+                        <p class="font-semibold text-slate-700">Team Building</p>
+                    </div>
+                    <div class="bg-white p-4 rounded-xl text-center">
+                        <iconify-icon icon="lucide:zap" class="text-green-500 mb-2" width="24"></iconify-icon>
+                        <p class="font-semibold text-slate-700">Obstacle Courses</p>
+                    </div>
+                    <div class="bg-white p-4 rounded-xl text-center">
+                        <iconify-icon icon="lucide:map" class="text-green-500 mb-2" width="24"></iconify-icon>
+                        <p class="font-semibold text-slate-700">Treasure Hunts</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Camp Programs Section -->
+    <section id="nallasopara-camps" class="py-24 bg-gradient-to-b from-white to-green-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-semibold text-slate-900 mb-4 tracking-tight">Nallasopara Camp Programs</h2>
+                <p class="text-slate-500 max-w-2xl mx-auto">Choose from our variety of camp programs designed for different ages and interests in Nallasopara</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Summer Adventure Camps -->
+                <div class="bg-white rounded-3xl p-8 border-2 border-orange-200 shadow-lg">
+                    <div class="flex items-center gap-3 mb-6">
+                        <div class="h-12 w-12 bg-orange-100 rounded-xl flex items-center justify-center">
+                            <iconify-icon icon="lucide:sun" class="text-orange-500" width="24"></iconify-icon>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-slate-800">Summer Adventure Camps</h3>
+                            <p class="text-sm text-slate-500">June - July</p>
+                        </div>
+                    </div>
+                    <p class="text-slate-600 mb-6">Full-day adventure programs combining all outdoor activities with STEM learning.</p>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-center gap-2 text-sm text-slate-700">
+                            <iconify-icon icon="lucide:check" class="text-green-500"></iconify-icon>
+                            5 days per week
+                        </li>
+                        <li class="flex items-center gap-2 text-sm text-slate-700">
+                            <iconify-icon icon="lucide:check" class="text-green-500"></iconify-icon>
+                            All adventure activities included
+                        </li>
+                        <li class="flex items-center gap-2 text-sm text-slate-700">
+                            <iconify-icon icon="lucide:check" class="text-green-500"></iconify-icon>
+                            Lunch & snacks provided
+                        </li>
+                    </ul>
+                    <button onclick="window.location.href='summer-adventure-camps-nallasopara.html'" class="w-full py-3 bg-orange-500 hover:bg-orange-600 text-white rounded-xl font-semibold transition-all">
+                        View Summer Camps
+                    </button>
+                </div>
+
+                <!-- Weekend Adventure Camps -->
+                <div class="bg-white rounded-3xl p-8 border-2 border-green-200 shadow-lg relative">
+                    <div class="absolute top-0 right-0 bg-green-500 text-white text-xs font-bold px-3 py-1 rounded-bl-xl rounded-tr-3xl">POPULAR</div>
+                    <div class="flex items-center gap-3 mb-6">
+                        <div class="h-12 w-12 bg-green-100 rounded-xl flex items-center justify-center">
+                            <iconify-icon icon="lucide:calendar" class="text-green-500" width="24"></iconify-icon>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-slate-800">Weekend Adventure Camps</h3>
+                            <p class="text-sm text-slate-500">Saturday & Sunday</p>
+                        </div>
+                    </div>
+                    <p class="text-slate-600 mb-6">Perfect for busy families. Weekend adventures that fit your schedule.</p>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-center gap-2 text-sm text-slate-700">
+                            <iconify-icon icon="lucide:check" class="text-green-500"></iconify-icon>
+                            9 AM - 4 PM weekends
+                        </li>
+                        <li class="flex items-center gap-2 text-sm text-slate-700">
+                            <iconify-icon icon="lucide:check" class="text-green-500"></iconify-icon>
+                            Flexible booking options
+                        </li>
+                        <li class="flex items-center gap-2 text-sm text-slate-700">
+                            <iconify-icon icon="lucide:check" class="text-green-500"></iconify-icon>
+                            Drop-in sessions available
+                        </li>
+                    </ul>
+                    <button onclick="window.location.href='weekend-adventure-camps-nallasopara.html'" class="w-full py-3 bg-green-500 hover:bg-green-600 text-white rounded-xl font-semibold transition-all">
+                        Book Weekend Camp
+                    </button>
+                </div>
+
+                <!-- After-School Clubs -->
+                <div class="bg-white rounded-3xl p-8 border-2 border-blue-200 shadow-lg">
+                    <div class="flex items-center gap-3 mb-6">
+                        <div class="h-12 w-12 bg-blue-100 rounded-xl flex items-center justify-center">
+                            <iconify-icon icon="lucide:school" class="text-blue-500" width="24"></iconify-icon>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-slate-800">After-School Adventure Clubs</h3>
+                            <p class="text-sm text-slate-500">Monday - Friday</p>
+                        </div>
+                    </div>
+                    <p class="text-slate-600 mb-6">Daily adventure sessions for kids after school hours in Nallasopara.</p>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-center gap-2 text-sm text-slate-700">
+                            <iconify-icon icon="lucide:check" class="text-green-500"></iconify-icon>
+                            3 PM - 6 PM daily
+                        </li>
+                        <li class="flex items-center gap-2 text-sm text-slate-700">
+                            <iconify-icon icon="lucide:check" class="text-green-500"></iconify-icon>
+                            Homework assistance available
+                        </li>
+                        <li class="flex items-center gap-2 text-sm text-slate-700">
+                            <iconify-icon icon="lucide:check" class="text-green-500"></iconify-icon>
+                            Monthly membership options
+                        </li>
+                    </ul>
+                    <button onclick="window.location.href='after-school-adventure-clubs-nallasopara.html'" class="w-full py-3 bg-blue-500 hover:bg-blue-600 text-white rounded-xl font-semibold transition-all">
+                        Join After-School Club
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Location Section -->
+    <section id="nallasopara-location" class="py-24 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-gradient-to-r from-green-900 to-emerald-900 rounded-[2.5rem] p-8 md:p-16 text-white overflow-hidden relative">
+                <div class="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center relative z-10">
+                    <div>
+                        <h2 class="text-3xl md:text-4xl font-semibold mb-6 tracking-tight">Our Nallasopara Adventure Center</h2>
+                        <p class="text-slate-300 text-lg mb-8">Located in the heart of Nallasopara, our adventure center features secure, purpose-built facilities for kids' adventure activities.</p>
+                        
+                        <div class="space-y-4 mb-8">
+                            <div class="flex items-start gap-4 p-4 rounded-2xl bg-white/5 border border-white/10">
+                                <iconify-icon icon="lucide:shield" class="text-green-400 mt-1" width="24"></iconify-icon>
+                                <div>
+                                    <h3 class="font-bold text-lg">Secure Facility</h3>
+                                    <p class="text-sm text-slate-400">24/7 security, CCTV surveillance, and secure premises designed specifically for children's safety.</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-4 p-4 rounded-2xl bg-white/5 border border-white/10">
+                                <iconify-icon icon="lucide:users" class="text-green-400 mt-1" width="24"></iconify-icon>
+                                <div>
+                                    <h3 class="font-bold text-lg">Certified Staff</h3>
+                                    <p class="text-sm text-slate-400">All instructors are trained in first aid, child safety, and adventure activity supervision.</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-4 p-4 rounded-2xl bg-white/5 border border-white/10">
+                                <iconify-icon icon="lucide:map-pin" class="text-green-400 mt-1" width="24"></iconify-icon>
+                                <div>
+                                    <h3 class="font-bold text-lg">Easy Access</h3>
+                                    <p class="text-sm text-slate-400">Conveniently located near Nallasopara East station, with ample parking and drop-off facilities.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center gap-4">
+                            <button onclick="window.open('https://maps.google.com/?q=Nallasopara+Adventure+Center', '_blank')" class="px-6 py-3 bg-green-500 hover:bg-green-600 text-white rounded-full font-semibold transition-all flex items-center gap-2">
+                                <iconify-icon icon="lucide:map" width="18"></iconify-icon>
+                                View on Google Maps
+                            </button>
+                            <button onclick="window.location.href='tel:+917768031411'" class="px-6 py-3 bg-white/10 hover:bg-white/20 text-white rounded-full font-semibold transition-all border border-white/20">
+                                Get Directions
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Map Illustration -->
+                    <div class="bg-green-800 rounded-3xl h-80 lg:h-full w-full flex items-center justify-center relative overflow-hidden">
+                        <div class="absolute inset-0 bg-gradient-to-br from-green-700 to-emerald-900"></div>
+                        <!-- Animated Location Pin -->
+                        <div class="relative z-10 text-center">
+                            <div class="location-pin mb-6">
+                                <iconify-icon icon="lucide:map-pin" width="80" class="text-white"></iconify-icon>
+                            </div>
+                            <p class="font-bold text-white text-2xl mb-2">Nallasopara Adventure Center</p>
+                            <p class="text-green-200">Near Nallasopara East Station</p>
+                            <p class="text-green-300 text-sm mt-2">Secure | Accessible | Adventure-Ready</p>
+                        </div>
+                        
+                        <!-- Area Highlights -->
+                        <div class="absolute top-6 left-6 bg-white/90 text-green-900 px-3 py-1 rounded-lg text-xs font-bold">Rock Climbing Zone</div>
+                        <div class="absolute bottom-10 left-10 bg-white/90 text-green-900 px-3 py-1 rounded-lg text-xs font-bold">Nature Trail</div>
+                        <div class="absolute top-10 right-10 bg-white/90 text-green-900 px-3 py-1 rounded-lg text-xs font-bold">Survival Camp Area</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Booking Section -->
+    <section id="nallasopara-booking" class="py-24 bg-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-semibold text-slate-900 mb-4 tracking-tight">Book Your Nallasopara Adventure</h2>
+                <p class="text-slate-500">Secure your child's spot in our Nallasopara adventure camps today!</p>
+            </div>
+
+            <div class="bg-gradient-to-br from-green-50 to-emerald-50 rounded-3xl p-8 md:p-12">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div>
+                        <h3 class="text-2xl font-bold text-slate-800 mb-6">Quick Booking Form</h3>
+                        <form class="space-y-4">
+                            <div>
+                                <label class="block text-sm font-semibold text-slate-700 mb-2">Child's Name</label>
+                                <input type="text" class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:border-green-500 focus:ring-2 focus:ring-green-200 outline-none transition-all">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-semibold text-slate-700 mb-2">Parent's Phone</label>
+                                <input type="tel" class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:border-green-500 focus:ring-2 focus:ring-green-200 outline-none transition-all" value="+91">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-semibold text-slate-700 mb-2">Preferred Camp</label>
+                                <select class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:border-green-500 focus:ring-2 focus:ring-green-200 outline-none transition-all">
+                                    <option>Summer Adventure Camp</option>
+                                    <option>Weekend Adventure Camp</option>
+                                    <option>After-School Adventure Club</option>
+                                    <option>Single Day Adventure Session</option>
+                                </select>
+                            </div>
+                            <button type="button" class="w-full py-4 bg-green-500 hover:bg-green-600 text-white rounded-xl font-bold text-lg transition-all shadow-lg hover:shadow-xl">
+                                Reserve Spot Now
+                            </button>
+                        </form>
+                    </div>
+                    
+                    <div class="bg-white rounded-2xl p-8">
+                        <h3 class="text-xl font-bold text-slate-800 mb-6">Why Choose Our Nallasopara Camp?</h3>
+                        <ul class="space-y-4">
+                            <li class="flex items-start gap-3">
+                                <iconify-icon icon="lucide:check-circle" class="text-green-500 mt-1" width="20"></iconify-icon>
+                                <div>
+                                    <p class="font-semibold text-slate-700">Local Adventure Experts</p>
+                                    <p class="text-sm text-slate-600">Specialized in Nallasopara's environment and community</p>
+                                </div>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <iconify-icon icon="lucide:check-circle" class="text-green-500 mt-1" width="20"></iconify-icon>
+                                <div>
+                                    <p class="font-semibold text-slate-700">Safety First Approach</p>
+                                    <p class="text-sm text-slate-600">1:8 instructor to child ratio, certified safety protocols</p>
+                                </div>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <iconify-icon icon="lucide:check-circle" class="text-green-500 mt-1" width="20"></iconify-icon>
+                                <div>
+                                    <p class="font-semibold text-slate-700">Flexible Scheduling</p>
+                                    <p class="text-sm text-slate-600">Daily, weekly, and monthly options available</p>
+                                </div>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <iconify-icon icon="lucide:check-circle" class="text-green-500 mt-1" width="20"></iconify-icon>
+                                <div>
+                                    <p class="font-semibold text-slate-700">All-Inclusive Pricing</p>
+                                    <p class="text-sm text-slate-600">No hidden fees, equipment and meals included</p>
+                                </div>
+                            </li>
+                        </ul>
+                        
+                        <div class="mt-8 p-4 bg-green-50 rounded-xl">
+                            <div class="flex items-center gap-3">
+                                <iconify-icon icon="lucide:phone" class="text-green-600" width="24"></iconify-icon>
+                                <div>
+                                    <p class="font-bold text-slate-800">Need Immediate Assistance?</p>
+                                    <a href="tel:+917768031411" class="text-green-600 font-semibold text-lg">+91 77680 31411</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-white pt-20 pb-10 rounded-t-[3rem] mt-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
+                <div class="col-span-1 md:col-span-2">
+                    <div class="flex items-center gap-2 mb-6">
+                         <div class="h-8 w-8 bg-green-500 rounded-lg flex items-center justify-center text-white">
+                            <iconify-icon icon="lucide:tent" width="18"></iconify-icon>
+                        </div>
+                        <span class="brand-font text-2xl font-bold">Maura <span class="text-green-400">Wonderlab</span></span>
+                    </div>
+                    <p class="text-slate-400 max-w-sm mb-6">Creating unforgettable childhood memories through nature, science, and adventure. The #1 Choice for Kids Camping in Nallasopara.</p>
+                    <div class="flex gap-4">
+                        <a href="#" class="h-10 w-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-green-500 transition-colors"><iconify-icon icon="lucide:instagram" width="20"></iconify-icon></a>
+                        <a href="#" class="h-10 w-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-blue-500 transition-colors"><iconify-icon icon="lucide:facebook" width="20"></iconify-icon></a>
+                        <a href="#" class="h-10 w-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-green-500 transition-colors"><iconify-icon icon="lucide:phone" width="20"></iconify-icon></a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="font-bold text-lg mb-6">Nallasopara Camps</h4>
+                    <ul class="space-y-4 text-slate-400 text-sm">
+                        <li><a href="summer-adventure-camps-nallasopara.html" class="hover:text-white transition-colors">Summer Camps Nallasopara</a></li>
+                        <li><a href="weekend-adventure-camps-nallasopara.html" class="hover:text-white transition-colors">Weekend Camps</a></li>
+                        <li><a href="after-school-adventure-clubs-nallasopara.html" class="hover:text-white transition-colors">After-School Clubs</a></li>
+                        <li><a href="nature-exploration-camps-nallasopara.html" class="hover:text-white transition-colors">Nature Exploration</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-bold text-lg mb-6">Other Locations</h4>
+                    <ul class="space-y-4 text-slate-400 text-sm">
+                        <li><a href="adventure-camps-in-virar.html" class="hover:text-white transition-colors">Camping in Virar</a></li>
+                        <li><a href="adventure-camps-in-vasai.html" class="hover:text-white transition-colors">Camping in Vasai</a></li>
+                        <li><a href="camping-for-kids-in-mumbai.html" class="hover:text-white transition-colors">Day Camps Mumbai</a></li>
+                        <li><a href="residential-adventure-camps.html" class="hover:text-white transition-colors">Residential Camps</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-slate-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="text-slate-500 text-sm">© 2024 Maura Wonderlab. Nallasopara Adventure Center. All rights reserved.</p>
+                <div class="flex gap-6 text-sm text-slate-500">
+                    <a href="#" class="hover:text-white">Privacy</a>
+                    <a href="#" class="hover:text-white">Terms</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Functionality
+        const mobileMenuButton = document.getElementById('mobileMenuButton');
+        const closeMenuButton = document.getElementById('closeMenuButton');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const menuOverlay = document.getElementById('menuOverlay');
+        
+        function openMobileMenu() {
+            mobileMenu.classList.add('open');
+            menuOverlay.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+        
+        function closeMobileMenu() {
+            mobileMenu.classList.remove('open');
+            menuOverlay.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+        
+        // Event Listeners
+        mobileMenuButton.addEventListener('click', openMobileMenu);
+        closeMenuButton.addEventListener('click', closeMobileMenu);
+        menuOverlay.addEventListener('click', closeMobileMenu);
+        
+        // Close menu when clicking on any menu link
+        document.querySelectorAll('#mobileMenu a').forEach(link => {
+            link.addEventListener('click', closeMobileMenu);
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                const href = this.getAttribute('href');
+                
+                if (href === '#' || href.startsWith('#') && href.length > 1) {
+                    e.preventDefault();
+                    
+                    const targetId = href.substring(1);
+                    const targetElement = document.getElementById(targetId);
+                    
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                    }
+                }
+            });
+        });
+        
+        // Close menu on ESC key press
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && mobileMenu.classList.contains('open')) {
+                closeMobileMenu();
+            }
+        });
+        
+        // Booking form submission
+        document.querySelector('button[type="button"]').addEventListener('click', function() {
+            alert('Thank you for your interest in Nallasopara Adventure Camps! We will contact you shortly.');
+        });
+        
+        // SEO Keywords Highlight
+        const seoKeywords = [
+            "adventure camps in nallasopara",
+            "camping for kids in nallasopara",
+            "nallasopara adventure camps",
+            "kids adventure activities nallasopara",
+            "outdoor camps nallasopara",
+            "summer camps nallasopara",
+            "rock climbing for kids",
+            "hiking adventures for children",
+            "survival skills training",
+            "nature exploration camps",
+            "outdoor survival camps",
+            "wilderness adventure programs"
+        ];
+        
+        // Animation for activity cards
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+        
+        // Observe all activity cards for animation
+        document.querySelectorAll('.activity-card').forEach(card => {
+            card.style.opacity = '0.9';
+            card.style.transform = 'translateY(20px)';
+            card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+            observer.observe(card);
+        });
+    </script>
+</body>
+</html>

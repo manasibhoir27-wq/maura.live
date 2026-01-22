@@ -1,0 +1,903 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Winter Adventure Camps for Kids | Maura Wonderlab - Virar, Vasai, Nallasopara</title>
+    <meta name="description" content="Winter adventure camps for kids in Virar, Vasai & Nallasopara. Science experiments, nature exploration, survival skills & fun activities at Maura Wonderlab's winter camps.">
+    <meta name="keywords" content="winter camps for kids, winter adventure camps, kids winter activities, science winter camp, nature camps winter, winter camping Mumbai, winter adventure Virar, kids camp Vasai, Nallasopara winter camp">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Iconify (Lucide Icons) -->
+    <script src="https://cdn.jsdelivr.net/npm/iconify-icon@1.0.8/dist/iconify-icon.min.js"></script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=Nunito:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        /* Custom Font Settings for Childish/Playful Vibe */
+        body {
+            font-family: 'Nunito', sans-serif;
+        }
+        h1, h2, h3, h4, h5, h6, .brand-font {
+            font-family: 'Fredoka', sans-serif;
+        }
+        
+        /* Playful Blob Pattern */
+        .bg-pattern {
+            background-color: #FFFDF5;
+            background-image: radial-gradient(#FDE68A 1px, transparent 1px), radial-gradient(#BAE6FD 1px, transparent 1px);
+            background-size: 40px 40px;
+            background-position: 0 0, 20px 20px;
+        }
+
+        /* Winter Theme Gradient */
+        .winter-gradient {
+            background: linear-gradient(135deg, #E0F2FE 0%, #FEF3C7 50%, #FCE7F3 100%);
+        }
+        
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #FFF7ED; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #7DD3FC; 
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #0EA5E9; 
+        }
+
+        /* Mobile Menu Animation */
+        .mobile-menu {
+            transform: translateX(100%);
+            transition: transform 0.3s ease-in-out;
+        }
+        
+        .mobile-menu.open {
+            transform: translateX(0);
+        }
+        
+        .menu-overlay {
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease-in-out, visibility 0.3s;
+        }
+        
+        .menu-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        /* Animation Classes */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+        
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="bg-pattern text-slate-600 antialiased selection:bg-blue-200 selection:text-blue-900">
+
+    <!-- Navbar -->
+    <nav class="fixed w-full z-50 top-0 transition-all duration-300 backdrop-blur-md bg-white/80 border-b-2 border-slate-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center gap-2 cursor-pointer" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+                    <img src="maura wonderlab logo.png" alt="Maura Wonderlab" width="50px">
+                    <span class="brand-font text-2xl font-semibold tracking-tight text-slate-800">
+                        Maura <span class="text-blue-500">Wonderlab</span>
+                    </span>
+                </div>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="#winter-activities" class="text-sm font-semibold text-slate-600 hover:text-blue-500 transition-colors">Winter Activities</a>
+                    <a href="#schedule" class="text-sm font-semibold text-slate-600 hover:text-blue-500 transition-colors">Schedule</a>
+                    <a href="#locations" class="text-sm font-semibold text-slate-600 hover:text-blue-500 transition-colors">Locations</a>
+                    <a href="#pricing" class="text-sm font-semibold text-slate-600 hover:text-blue-500 transition-colors">Pricing</a>
+                    <button class="bg-blue-500 hover:bg-blue-600 text-white px-5 py-2.5 rounded-full text-sm font-semibold transition-all shadow-[0px_4px_0px_0px_rgba(59,130,246,1)] hover:shadow-[0px_2px_0px_0px_rgba(59,130,246,1)] hover:translate-y-[2px]">
+                        Book Winter Camp
+                    </button>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobileMenuButton" class="text-slate-600 hover:text-blue-500 p-2">
+                        <iconify-icon icon="lucide:menu" width="28" stroke-width="1.5"></iconify-icon>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu Overlay -->
+    <div id="menuOverlay" class="menu-overlay fixed inset-0 bg-black/50 z-40 md:hidden"></div>
+
+    <!-- Mobile Menu -->
+    <div id="mobileMenu" class="mobile-menu fixed top-0 right-0 h-full w-64 bg-white z-50 shadow-2xl md:hidden p-6">
+        <div class="flex justify-between items-center mb-8">
+            <div class="flex items-center gap-2">
+                <div class="h-8 w-8 bg-blue-400 rounded-lg flex items-center justify-center text-white">
+                    <iconify-icon icon="lucide:snowflake" width="18"></iconify-icon>
+                </div>
+                <span class="brand-font text-xl font-semibold text-slate-800">Maura <span class="text-blue-500">Wonderlab</span></span>
+            </div>
+            <button id="closeMenuButton" class="text-slate-600 hover:text-blue-500 p-2">
+                <iconify-icon icon="lucide:x" width="24" stroke-width="1.5"></iconify-icon>
+            </button>
+        </div>
+        
+        <div class="space-y-6">
+            <a href="#winter-activities" class="block py-3 text-slate-700 font-semibold border-b border-slate-100" onclick="closeMobileMenu()">Winter Activities</a>
+            <a href="#schedule" class="block py-3 text-slate-700 font-semibold border-b border-slate-100" onclick="closeMobileMenu()">Schedule</a>
+            <a href="#locations" class="block py-3 text-slate-700 font-semibold border-b border-slate-100" onclick="closeMobileMenu()">Locations</a>
+            <a href="#pricing" class="block py-3 text-slate-700 font-semibold border-b border-slate-100" onclick="closeMobileMenu()">Pricing</a>
+            <div class="pt-4">
+                <button class="w-full bg-blue-500 hover:bg-blue-600 text-white px-5 py-3 rounded-full text-sm font-semibold transition-all">
+                    Book Winter Camp
+                </button>
+            </div>
+        </div>
+        
+        <div class="absolute bottom-8 left-6 right-6">
+            <p class="text-sm text-slate-500 mb-4">Contact us:</p>
+            <div class="flex items-center gap-2 text-slate-700 mb-2">
+                <iconify-icon icon="lucide:phone" width="16"></iconify-icon>
+                <span class="text-sm">+91 77680 31411</span>
+            </div>
+            <div class="flex items-center gap-2 text-slate-700">
+                <iconify-icon icon="lucide:mail" width="16"></iconify-icon>
+                <span class="text-sm">maurawonderlab@gmail.com</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main class="pt-24 pb-10">
+        <!-- Hero Section -->
+        <section class="winter-gradient rounded-3xl mx-4 md:mx-8 lg:mx-16 mb-16 overflow-hidden">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-20">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                    <div class="fade-in">
+                        <div class="inline-flex items-center gap-2 bg-white/80 backdrop-blur-sm px-4 py-2 rounded-full mb-6">
+                            <iconify-icon icon="lucide:snowflake" class="text-blue-500"></iconify-icon>
+                            <span class="text-sm font-semibold text-blue-700">Winter 2024 Adventure Camps</span>
+                        </div>
+                        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-800 mb-6 leading-tight">
+                            Winter Wonderland <span class="text-blue-500">Adventure Camps</span> for Kids
+                        </h1>
+                        <p class="text-lg text-slate-700 mb-8">
+                            Join Mumbai's most exciting winter adventure camps in Virar, Vasai & Nallasopara! Science experiments, nature exploration, survival skills & endless fun activities designed for children aged 6-14.
+                        </p>
+                        <div class="flex flex-wrap gap-4">
+                            <button class="bg-blue-500 hover:bg-blue-600 text-white px-8 py-4 rounded-full text-lg font-semibold transition-all shadow-[0px_6px_0px_0px_rgba(59,130,246,1)] hover:shadow-[0px_3px_0px_0px_rgba(59,130,246,1)] hover:translate-y-[3px]">
+                                Book Now for Winter Camp
+                            </button>
+                            <button class="border-2 border-blue-400 text-blue-600 hover:bg-blue-50 px-8 py-4 rounded-full text-lg font-semibold transition-colors">
+                                <iconify-icon icon="lucide:calendar" class="mr-2"></iconify-icon>
+                                View Schedule
+                            </button>
+                        </div>
+                    </div>
+                    <div class="fade-in">
+                        <div class="relative">
+                            <div class="bg-white rounded-2xl p-2 shadow-2xl rotate-3 transform">
+                                <div class="bg-gradient-to-br from-blue-100 to-cyan-100 rounded-xl p-6">
+                                    <div class="grid grid-cols-2 gap-4">
+                                        <div class="bg-white rounded-xl p-4 text-center shadow-md">
+                                            <iconify-icon icon="lucide:calendar" width="32" class="text-blue-500 mb-2"></iconify-icon>
+                                            <p class="font-bold text-slate-800">Dec 15 - Jan 15</p>
+                                            <p class="text-sm text-slate-600">Winter Camp Dates</p>
+                                        </div>
+                                        <div class="bg-white rounded-xl p-4 text-center shadow-md">
+                                            <iconify-icon icon="lucide:users" width="32" class="text-blue-500 mb-2"></iconify-icon>
+                                            <p class="font-bold text-slate-800">Ages 6-14</p>
+                                            <p class="text-sm text-slate-600">Age Groups</p>
+                                        </div>
+                                        <div class="bg-white rounded-xl p-4 text-center shadow-md">
+                                            <iconify-icon icon="lucide:map-pin" width="32" class="text-blue-500 mb-2"></iconify-icon>
+                                            <p class="font-bold text-slate-800">3 Locations</p>
+                                            <p class="text-sm text-slate-600">Virar, Vasai, Nallasopara</p>
+                                        </div>
+                                        <div class="bg-white rounded-xl p-4 text-center shadow-md">
+                                            <iconify-icon icon="lucide:shield-check" width="32" class="text-blue-500 mb-2"></iconify-icon>
+                                            <p class="font-bold text-slate-800">Certified Staff</p>
+                                            <p class="text-sm text-slate-600">Safety First</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="absolute -bottom-6 -left-6 bg-orange-400 text-white p-4 rounded-2xl shadow-xl -rotate-6 transform">
+                                <div class="text-center">
+                                    <p class="text-2xl font-bold">Early Bird</p>
+                                    <p class="text-lg">20% OFF</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Winter Activities Section -->
+        <section id="winter-activities" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-20">
+            <div class="text-center mb-12 fade-in">
+                <h2 class="text-3xl md:text-4xl font-bold text-slate-800 mb-4">Winter Camp Activities for Kids</h2>
+                <p class="text-lg text-slate-600 max-w-3xl mx-auto">Our winter adventure camps feature exciting, educational activities designed to spark curiosity and build lifelong memories.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Activity 1 -->
+                <div class="group bg-white rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 border border-slate-100 hover:border-blue-200 fade-in">
+                    <div class="h-14 w-14 bg-blue-100 rounded-xl flex items-center justify-center text-blue-600 mb-6 group-hover:scale-110 transition-transform">
+                        <iconify-icon icon="lucide:flask-conical" width="28"></iconify-icon>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-800 mb-3">Winter Science Experiments</h3>
+                    <p class="text-slate-600 mb-4">Explore freezing points, crystal formation, and thermal energy with fun winter-themed science experiments.</p>
+                    <ul class="space-y-2 mb-4">
+                        <li class="flex items-center gap-2 text-sm"><iconify-icon icon="lucide:check-circle" class="text-green-500"></iconify-icon> Ice crystal growing lab</li>
+                        <li class="flex items-center gap-2 text-sm"><iconify-icon icon="lucide:check-circle" class="text-green-500"></iconify-icon> Insulation experiments</li>
+                        <li class="flex items-center gap-2 text-sm"><iconify-icon icon="lucide:check-circle" class="text-green-500"></iconify-icon> Winter weather science</li>
+                    </ul>
+                    <div class="inline-flex items-center gap-2 text-blue-600 font-semibold">
+                        <span>Age 7+</span>
+                        <span class="text-slate-400">•</span>
+                        <span>2 hours daily</span>
+                    </div>
+                </div>
+
+                <!-- Activity 2 -->
+                <div class="group bg-white rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 border border-slate-100 hover:border-blue-200 fade-in">
+                    <div class="h-14 w-14 bg-cyan-100 rounded-xl flex items-center justify-center text-cyan-600 mb-6 group-hover:scale-110 transition-transform">
+                        <iconify-icon icon="lucide:compass" width="28"></iconify-icon>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-800 mb-3">Nature Exploration & Survival Skills</h3>
+                    <p class="text-slate-600 mb-4">Learn essential outdoor skills, navigation, and winter plant identification in safe, controlled environments.</p>
+                    <ul class="space-y-2 mb-4">
+                        <li class="flex items-center gap-2 text-sm"><iconify-icon icon="lucide:check-circle" class="text-green-500"></iconify-icon> Basic orienteering & map reading</li>
+                        <li class="flex items-center gap-2 text-sm"><iconify-icon icon="lucide:check-circle" class="text-green-500"></iconify-icon> Shelter building techniques</li>
+                        <li class="flex items-center gap-2 text-sm"><iconify-icon icon="lucide:check-circle" class="text-green-500"></iconify-icon> Winter plant identification</li>
+                    </ul>
+                    <div class="inline-flex items-center gap-2 text-blue-600 font-semibold">
+                        <span>Age 8+</span>
+                        <span class="text-slate-400">•</span>
+                        <span>3 hours daily</span>
+                    </div>
+                </div>
+
+                <!-- Activity 3 -->
+                <div class="group bg-white rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 border border-slate-100 hover:border-blue-200 fade-in">
+                    <div class="h-14 w-14 bg-purple-100 rounded-xl flex items-center justify-center text-purple-600 mb-6 group-hover:scale-110 transition-transform">
+                        <iconify-icon icon="lucide:palette" width="28"></iconify-icon>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-800 mb-3">Winter Arts & Crafts Workshop</h3>
+                    <p class="text-slate-600 mb-4">Create winter-themed art projects, DIY decorations, and science-based crafts to take home.</p>
+                    <ul class="space-y-2 mb-4">
+                        <li class="flex items-center gap-2 text-sm"><iconify-icon icon="lucide:check-circle" class="text-green-500"></iconify-icon> Snowflake crystal art</li>
+                        <li class="flex items-center gap-2 text-sm"><iconify-icon icon="lucide:check-circle" class="text-green-500"></iconify-icon> DIY winter bird feeders</li>
+                        <li class="flex items-center gap-2 text-sm"><iconify-icon icon="lucide:check-circle" class="text-green-500"></iconify-icon> Natural winter decorations</li>
+                    </ul>
+                    <div class="inline-flex items-center gap-2 text-blue-600 font-semibold">
+                        <span>Age 6+</span>
+                        <span class="text-slate-400">•</span>
+                        <span>1.5 hours daily</span>
+                    </div>
+                </div>
+
+                <!-- Activity 4 -->
+                <div class="group bg-white rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 border border-slate-100 hover:border-blue-200 fade-in">
+                    <div class="h-14 w-14 bg-green-100 rounded-xl flex items-center justify-center text-green-600 mb-6 group-hover:scale-110 transition-transform">
+                        <iconify-icon icon="lucide:campfire" width="28"></iconify-icon>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-800 mb-3">Adventure & Team Building Games</h3>
+                    <p class="text-slate-600 mb-4">Engage in exciting winter-themed games that promote teamwork, communication, and problem-solving skills.</p>
+                    <ul class="space-y-2 mb-4">
+                        <li class="flex items-center gap-2 text-sm"><iconify-icon icon="lucide:check-circle" class="text-green-500"></iconify-icon> Winter scavenger hunts</li>
+                        <li class="flex items-center gap-2 text-sm"><iconify-icon icon="lucide:check-circle" class="text-green-500"></iconify-icon> Team obstacle courses</li>
+                        <li class="flex items-center gap-2 text-sm"><iconify-icon icon="lucide:check-circle" class="text-green-500"></iconify-icon> Survival challenge games</li>
+                    </ul>
+                    <div class="inline-flex items-center gap-2 text-blue-600 font-semibold">
+                        <span>Age 7+</span>
+                        <span class="text-slate-400">•</span>
+                        <span>2 hours daily</span>
+                    </div>
+                </div>
+
+                <!-- Activity 5 -->
+                <div class="group bg-white rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 border border-slate-100 hover:border-blue-200 fade-in">
+                    <div class="h-14 w-14 bg-yellow-100 rounded-xl flex items-center justify-center text-yellow-600 mb-6 group-hover:scale-110 transition-transform">
+                        <iconify-icon icon="lucide:star" width="28"></iconify-icon>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-800 mb-3">Astronomy & Night Sky Exploration</h3>
+                    <p class="text-slate-600 mb-4">Discover winter constellations, learn about planets, and explore the night sky with telescopes.</p>
+                    <ul class="space-y-2 mb-4">
+                        <li class="flex items-center gap-2 text-sm"><iconify-icon icon="lucide:check-circle" class="text-green-500"></iconify-icon> Winter constellation identification</li>
+                        <li class="flex items-center gap-2 text-sm"><iconify-icon icon="lucide:check-circle" class="text-green-500"></iconify-icon> Telescope observation sessions</li>
+                        <li class="flex items-center gap-2 text-sm"><iconify-icon icon="lucide:check-circle" class="text-green-500"></iconify-icon> Planet & moon studies</li>
+                    </ul>
+                    <div class="inline-flex items-center gap-2 text-blue-600 font-semibold">
+                        <span>Age 9+</span>
+                        <span class="text-slate-400">•</span>
+                        <span>Evening sessions</span>
+                    </div>
+                </div>
+
+                <!-- Activity 6 -->
+                <div class="group bg-white rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 border border-slate-100 hover:border-blue-200 fade-in">
+                    <div class="h-14 w-14 bg-red-100 rounded-xl flex items-center justify-center text-red-600 mb-6 group-hover:scale-110 transition-transform">
+                        <iconify-icon icon="lucide:cooking-pot" width="28"></iconify-icon>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-800 mb-3">Outdoor Cooking & Campfire Fun</h3>
+                    <p class="text-slate-800 mb-4">Learn safe outdoor cooking techniques, make winter treats, and enjoy campfire stories and songs.</p>
+                    <ul class="space-y-2 mb-4">
+                        <li class="flex items-center gap-2 text-sm"><iconify-icon icon="lucide:check-circle" class="text-green-500"></iconify-icon> Safe campfire cooking</li>
+                        <li class="flex items-center gap-2 text-sm"><iconify-icon icon="lucide:check-circle" class="text-green-500"></iconify-icon> Winter treat preparation</li>
+                        <li class="flex items-center gap-2 text-sm"><iconify-icon icon="lucide:check-circle" class="text-green-500"></iconify-icon> Campfire storytelling</li>
+                    </ul>
+                    <div class="inline-flex items-center gap-2 text-blue-600 font-semibold">
+                        <span>Age 8+</span>
+                        <span class="text-slate-400">•</span>
+                        <span>2 hours daily</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Schedule Section -->
+        <section id="schedule" class="winter-gradient rounded-3xl mx-4 md:mx-8 lg:mx-16 mb-20 py-12">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12 fade-in">
+                    <h2 class="text-3xl md:text-4xl font-bold text-slate-800 mb-4">Winter Camp Schedule & Timings</h2>
+                    <p class="text-lg text-slate-600 max-w-3xl mx-auto">Choose from flexible schedules designed for different age groups and interests</p>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                    <!-- Day Schedule -->
+                    <div class="bg-white rounded-2xl p-8 shadow-xl fade-in">
+                        <div class="flex items-center gap-3 mb-6">
+                            <div class="h-12 w-12 bg-blue-100 rounded-xl flex items-center justify-center text-blue-600">
+                                <iconify-icon icon="lucide:sun" width="24"></iconify-icon>
+                            </div>
+                            <h3 class="text-2xl font-bold text-slate-800">Daily Schedule (9 AM - 4 PM)</h3>
+                        </div>
+                        
+                        <div class="space-y-6">
+                            <div class="flex items-start gap-4 pb-4 border-b border-slate-100">
+                                <div class="bg-blue-50 text-blue-700 font-bold px-3 py-1 rounded-lg">9:00 AM</div>
+                                <div>
+                                    <h4 class="font-bold text-slate-800 mb-1">Morning Assembly & Ice Breakers</h4>
+                                    <p class="text-slate-600 text-sm">Winter-themed games and introductions</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start gap-4 pb-4 border-b border-slate-100">
+                                <div class="bg-blue-50 text-blue-700 font-bold px-3 py-1 rounded-lg">10:00 AM</div>
+                                <div>
+                                    <h4 class="font-bold text-slate-800 mb-1">Science Experiments & Nature Study</h4>
+                                    <p class="text-slate-600 text-sm">Hands-on winter science activities</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start gap-4 pb-4 border-b border-slate-100">
+                                <div class="bg-blue-50 text-blue-700 font-bold px-3 py-1 rounded-lg">12:00 PM</div>
+                                <div>
+                                    <h4 class="font-bold text-slate-800 mb-1">Lunch & Free Play</h4>
+                                    <p class="text-slate-600 text-sm">Nutritious meals provided</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start gap-4 pb-4 border-b border-slate-100">
+                                <div class="bg-blue-50 text-blue-700 font-bold px-3 py-1 rounded-lg">1:30 PM</div>
+                                <div>
+                                    <h4 class="font-bold text-slate-800 mb-1">Adventure Activities & Team Games</h4>
+                                    <p class="text-slate-600 text-sm">Outdoor challenges and teamwork</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start gap-4">
+                                <div class="bg-blue-50 text-blue-700 font-bold px-3 py-1 rounded-lg">3:30 PM</div>
+                                <div>
+                                    <h4 class="font-bold text-slate-800 mb-1">Campfire & Wrap-up</h4>
+                                    <p class="text-slate-600 text-sm">Reflection, stories, and planning for next day</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Camp Duration Options -->
+                    <div class="bg-white rounded-2xl p-8 shadow-xl fade-in">
+                        <div class="flex items-center gap-3 mb-6">
+                            <div class="h-12 w-12 bg-green-100 rounded-xl flex items-center justify-center text-green-600">
+                                <iconify-icon icon="lucide:calendar-days" width="24"></iconify-icon>
+                            </div>
+                            <h3 class="text-2xl font-bold text-slate-800">Camp Duration Options</h3>
+                        </div>
+                        
+                        <div class="space-y-6">
+                            <div class="border-2 border-blue-200 rounded-xl p-5 bg-blue-50/50">
+                                <div class="flex justify-between items-center mb-3">
+                                    <h4 class="font-bold text-lg text-slate-800">5-Day Winter Adventure Camp</h4>
+                                    <span class="bg-blue-500 text-white px-3 py-1 rounded-full text-sm font-bold">MOST POPULAR</span>
+                                </div>
+                                <p class="text-slate-600 mb-4">Complete winter experience with all activities included</p>
+                                <div class="flex items-center gap-4">
+                                    <div class="text-blue-700 font-bold text-lg">₹4,999</div>
+                                    <div class="text-slate-500 line-through text-sm">₹6,249</div>
+                                    <div class="text-green-600 font-bold text-sm">20% OFF</div>
+                                </div>
+                            </div>
+                            
+                            <div class="border border-slate-200 rounded-xl p-5">
+                                <h4 class="font-bold text-lg text-slate-800 mb-3">Weekend Winter Camp (Sat-Sun)</h4>
+                                <p class="text-slate-600 mb-4">Perfect for busy schedules, 2 days of winter fun</p>
+                                <div class="flex items-center gap-4">
+                                    <div class="text-slate-800 font-bold text-lg">₹2,499</div>
+                                </div>
+                            </div>
+                            
+                            <div class="border border-slate-200 rounded-xl p-5">
+                                <h4 class="font-bold text-lg text-slate-800 mb-3">3-Day Winter Science Special</h4>
+                                <p class="text-slate-600 mb-4">Focus on winter science experiments and nature study</p>
+                                <div class="flex items-center gap-4">
+                                    <div class="text-slate-800 font-bold text-lg">₹3,299</div>
+                                </div>
+                            </div>
+                            
+                            <div class="text-center pt-4">
+                                <p class="text-sm text-slate-600 mb-2">*All prices include meals, materials, and certificate</p>
+                                <button class="bg-blue-500 hover:bg-blue-600 text-white px-8 py-3 rounded-full font-semibold transition-all w-full">
+                                    Book Your Winter Camp Spot
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Locations Section -->
+        <section id="locations" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-20">
+            <div class="text-center mb-12 fade-in">
+                <h2 class="text-3xl md:text-4xl font-bold text-slate-800 mb-4">Winter Camp Locations in Mumbai</h2>
+                <p class="text-lg text-slate-600 max-w-3xl mx-auto">Choose a convenient location for your child's winter adventure</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Location 1 -->
+                <div class="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 fade-in">
+                    <div class="h-48 bg-gradient-to-r from-blue-400 to-cyan-400 relative overflow-hidden">
+                        <div class="absolute inset-0 bg-black/20"></div>
+                        <div class="absolute bottom-4 left-4">
+                            <span class="bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-sm font-bold text-blue-800">VIRAR</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-slate-800 mb-3">Virar Winter Adventure Camp</h3>
+                        <p class="text-slate-600 mb-4">Located in the scenic outskirts of Virar with ample space for outdoor winter activities.</p>
+                        
+                        <div class="space-y-3 mb-6">
+                            <div class="flex items-center gap-3">
+                                <iconify-icon icon="lucide:map-pin" class="text-blue-500"></iconify-icon>
+                                <span class="text-sm text-slate-700">Near Virar East Station</span>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <iconify-icon icon="lucide:calendar" class="text-blue-500"></iconify-icon>
+                                <span class="text-sm text-slate-700">Dec 15 - Jan 15</span>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <iconify-icon icon="lucide:users" class="text-blue-500"></iconify-icon>
+                                <span class="text-sm text-slate-700">Max 30 kids per batch</span>
+                            </div>
+                        </div>
+                        
+                        <button class="w-full border-2 border-blue-400 text-blue-600 hover:bg-blue-50 py-3 rounded-full font-semibold transition-colors">
+                            View Virar Camp Details
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Location 2 -->
+                <div class="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 fade-in">
+                    <div class="h-48 bg-gradient-to-r from-cyan-400 to-teal-400 relative overflow-hidden">
+                        <div class="absolute inset-0 bg-black/20"></div>
+                        <div class="absolute bottom-4 left-4">
+                            <span class="bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-sm font-bold text-teal-800">VASAI</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-slate-800 mb-3">Vasai Winter Science Camp</h3>
+                        <p class="text-slate-600 mb-4">Premium facility with dedicated science labs and outdoor exploration areas.</p>
+                        
+                        <div class="space-y-3 mb-6">
+                            <div class="flex items-center gap-3">
+                                <iconify-icon icon="lucide:map-pin" class="text-teal-500"></iconify-icon>
+                                <span class="text-sm text-slate-700">Vasai West Central Location</span>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <iconify-icon icon="lucide:calendar" class="text-teal-500"></iconify-icon>
+                                <span class="text-sm text-slate-700">Dec 18 - Jan 20</span>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <iconify-icon icon="lucide:users" class="text-teal-500"></iconify-icon>
+                                <span class="text-sm text-slate-700">Max 25 kids per batch</span>
+                            </div>
+                        </div>
+                        
+                        <button class="w-full border-2 border-teal-400 text-teal-600 hover:bg-teal-50 py-3 rounded-full font-semibold transition-colors">
+                            View Vasai Camp Details
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Location 3 -->
+                <div class="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 fade-in">
+                    <div class="h-48 bg-gradient-to-r from-purple-400 to-pink-400 relative overflow-hidden">
+                        <div class="absolute inset-0 bg-black/20"></div>
+                        <div class="absolute bottom-4 left-4">
+                            <span class="bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-sm font-bold text-purple-800">NALLASOPARA</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-slate-800 mb-3">Nallasopara Nature Winter Camp</h3>
+                        <p class="text-slate-600 mb-4">Natural surroundings perfect for winter nature studies and outdoor adventures.</p>
+                        
+                        <div class="space-y-3 mb-6">
+                            <div class="flex items-center gap-3">
+                                <iconify-icon icon="lucide:map-pin" class="text-purple-500"></iconify-icon>
+                                <span class="text-sm text-slate-700">Nallasopara East Green Zone</span>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <iconify-icon icon="lucide:calendar" class="text-purple-500"></iconify-icon>
+                                <span class="text-sm text-slate-700">Dec 20 - Jan 18</span>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <iconify-icon icon="lucide:users" class="text-purple-500"></iconify-icon>
+                                <span class="text-sm text-slate-700">Max 20 kids per batch</span>
+                            </div>
+                        </div>
+                        
+                        <button class="w-full border-2 border-purple-400 text-purple-600 hover:bg-purple-50 py-3 rounded-full font-semibold transition-colors">
+                            View Nallasopara Camp Details
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pricing Section -->
+        <section id="pricing" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-20">
+            <div class="text-center mb-12 fade-in">
+                <h2 class="text-3xl md:text-4xl font-bold text-slate-800 mb-4">Winter Camp Pricing & Packages</h2>
+                <p class="text-lg text-slate-600 max-w-3xl mx-auto">Affordable packages with early bird discounts available</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                <!-- Package 1 -->
+                <div class="bg-white rounded-2xl p-8 shadow-lg border-2 border-slate-200 hover:border-blue-300 transition-all duration-300 fade-in">
+                    <div class="text-center mb-6">
+                        <h3 class="text-2xl font-bold text-slate-800 mb-2">Winter Explorer</h3>
+                        <p class="text-slate-600 mb-4">5-Day Adventure Camp</p>
+                        <div class="flex justify-center items-baseline mb-4">
+                            <span class="text-5xl font-bold text-slate-800">₹4,999</span>
+                            <span class="text-slate-500 ml-2">/week</span>
+                        </div>
+                        <div class="text-green-600 font-bold mb-2">Early Bird: ₹3,999 (20% OFF)</div>
+                    </div>
+                    
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-center gap-3">
+                            <iconify-icon icon="lucide:check-circle" class="text-green-500"></iconify-icon>
+                            <span>All winter science experiments</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <iconify-icon icon="lucide:check-circle" class="text-green-500"></iconify-icon>
+                            <span>Daily nature exploration</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <iconify-icon icon="lucide:check-circle" class="text-green-500"></iconify-icon>
+                            <span>Arts & crafts materials included</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <iconify-icon icon="lucide:check-circle" class="text-green-500"></iconify-icon>
+                            <span>Lunch & snacks provided</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <iconify-icon icon="lucide:check-circle" class="text-green-500"></iconify-icon>
+                            <span>Participation certificate</span>
+                        </li>
+                    </ul>
+                    
+                    <button class="w-full bg-blue-500 hover:bg-blue-600 text-white py-3 rounded-full font-semibold transition-colors">
+                        Book Winter Explorer
+                    </button>
+                </div>
+
+                <!-- Package 2 -->
+                <div class="bg-white rounded-2xl p-8 shadow-2xl border-2 border-blue-400 relative fade-in scale-105">
+                    <div class="absolute -top-3 left-1/2 transform -translate-x-1/2">
+                        <span class="bg-blue-500 text-white px-4 py-1 rounded-full text-sm font-bold">MOST POPULAR</span>
+                    </div>
+                    
+                    <div class="text-center mb-6">
+                        <h3 class="text-2xl font-bold text-slate-800 mb-2">Winter Scientist</h3>
+                        <p class="text-slate-600 mb-4">10-Day Premium Camp</p>
+                        <div class="flex justify-center items-baseline mb-4">
+                            <span class="text-5xl font-bold text-slate-800">₹8,999</span>
+                            <span class="text-slate-500 ml-2">/2 weeks</span>
+                        </div>
+                        <div class="text-green-600 font-bold mb-2">Early Bird: ₹7,199 (20% OFF)</div>
+                    </div>
+                    
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-center gap-3">
+                            <iconify-icon icon="lucide:check-circle" class="text-green-500"></iconify-icon>
+                            <span class="font-semibold">Everything in Winter Explorer</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <iconify-icon icon="lucide:check-circle" class="text-green-500"></iconify-icon>
+                            <span>Advanced science experiments kit</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <iconify-icon icon="lucide:check-circle" class="text-green-500"></iconify-icon>
+                            <span>Telescope astronomy sessions</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <iconify-icon icon="lucide:check-circle" class="text-green-500"></iconify-icon>
+                            <span>Take-home science project</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <iconify-icon icon="lucide:check-circle" class="text-green-500"></iconify-icon>
+                            <span>Professional photography</span>
+                        </li>
+                    </ul>
+                    
+                    <button class="w-full bg-blue-500 hover:bg-blue-600 text-white py-3 rounded-full font-semibold transition-colors">
+                        Book Winter Scientist
+                    </button>
+                </div>
+
+                <!-- Package 3 -->
+                <div class="bg-white rounded-2xl p-8 shadow-lg border-2 border-slate-200 hover:border-blue-300 transition-all duration-300 fade-in">
+                    <div class="text-center mb-6">
+                        <h3 class="text-2xl font-bold text-slate-800 mb-2">Weekend Adventurer</h3>
+                        <p class="text-slate-600 mb-4">Sat-Sun Winter Camp</p>
+                        <div class="flex justify-center items-baseline mb-4">
+                            <span class="text-5xl font-bold text-slate-800">₹2,499</span>
+                            <span class="text-slate-500 ml-2">/weekend</span>
+                        </div>
+                        <div class="text-green-600 font-bold mb-2">Early Bird: ₹1,999 (20% OFF)</div>
+                    </div>
+                    
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-center gap-3">
+                            <iconify-icon icon="lucide:check-circle" class="text-green-500"></iconify-icon>
+                            <span>Weekend science experiments</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <iconify-icon icon="lucide:check-circle" class="text-green-500"></iconify-icon>
+                            <span>Nature exploration activities</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <iconify-icon icon="lucide:check-circle" class="text-green-500"></iconify-icon>
+                            <span>Arts & crafts session</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <iconify-icon icon="lucide:check-circle" class="text-green-500"></iconify-icon>
+                            <span>Campfire & storytelling</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <iconify-icon icon="lucide:check-circle" class="text-green-500"></iconify-icon>
+                            <span>Lunch included</span>
+                        </li>
+                    </ul>
+                    
+                    <button class="w-full bg-blue-500 hover:bg-blue-600 text-white py-3 rounded-full font-semibold transition-colors">
+                        Book Weekend Adventurer
+                    </button>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12 fade-in">
+                <p class="text-slate-600 mb-6">*All packages include safety equipment, first aid, and certified instructors</p>
+                <button class="bg-gradient-to-r from-blue-500 to-cyan-500 hover:from-blue-600 hover:to-cyan-600 text-white px-10 py-4 rounded-full text-lg font-semibold transition-all shadow-lg">
+                    <iconify-icon icon="lucide:phone" class="mr-2"></iconify-icon>
+                    Call +91 77680 31411 to Book
+                </button>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="bg-gradient-to-r from-blue-600 to-cyan-600 rounded-3xl mx-4 md:mx-8 lg:mx-16 mb-20 py-16 px-8">
+            <div class="max-w-4xl mx-auto text-center text-white fade-in">
+                <h2 class="text-3xl md:text-4xl font-bold mb-6">Limited Winter Camp Spots Available!</h2>
+                <p class="text-xl mb-8 opacity-90">Book now to secure your child's spot in Mumbai's most exciting winter adventure camp</p>
+                
+                <div class="flex flex-col sm:flex-row gap-6 justify-center">
+                    <button class="bg-white text-blue-600 hover:bg-blue-50 px-10 py-4 rounded-full text-lg font-semibold transition-all shadow-lg">
+                        Book Your Camp Spot
+                    </button>
+                    <button class="border-2 border-white text-white hover:bg-white/10 px-10 py-4 rounded-full text-lg font-semibold transition-colors">
+                        Download Brochure
+                    </button>
+                </div>
+                
+                <div class="mt-12 grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+                    <div>
+                        <div class="text-3xl font-bold mb-2">500+</div>
+                        <div class="text-sm opacity-90">Happy Campers</div>
+                    </div>
+                    <div>
+                        <div class="text-3xl font-bold mb-2">50+</div>
+                        <div class="text-sm opacity-90">Winter Activities</div>
+                    </div>
+                    <div>
+                        <div class="text-3xl font-bold mb-2">15+</div>
+                        <div class="text-sm opacity-90">Certified Guides</div>
+                    </div>
+                    <div>
+                        <div class="text-3xl font-bold mb-2">100%</div>
+                        <div class="text-sm opacity-90">Safety Record</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-white pt-20 pb-10 rounded-t-[3rem] mt-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
+                <div class="col-span-1 md:col-span-2">
+                    <div class="flex items-center gap-2 mb-6">
+                         <div class="h-8 w-8 bg-blue-500 rounded-lg flex items-center justify-center text-white">
+                            <iconify-icon icon="lucide:snowflake" width="18"></iconify-icon>
+                        </div>
+                        <span class="brand-font text-2xl font-bold">Maura <span class="text-blue-400">Wonderlab</span></span>
+                    </div>
+                    <p class="text-slate-400 max-w-sm mb-6">Creating unforgettable winter memories through nature, science, and adventure. The #1 Choice for Kids Winter Camps in Mumbai.</p>
+                    <div class="flex gap-4">
+                        <a href="#" class="h-10 w-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-blue-500 transition-colors"><iconify-icon icon="lucide:instagram" width="20"></iconify-icon></a>
+                        <a href="#" class="h-10 w-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-blue-500 transition-colors"><iconify-icon icon="lucide:facebook" width="20"></iconify-icon></a>
+                        <a href="#" class="h-10 w-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-green-500 transition-colors"><iconify-icon icon="lucide:phone" width="20"></iconify-icon></a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="font-bold text-lg mb-6">Winter Camp Info</h4>
+                    <ul class="space-y-4 text-slate-400 text-sm">
+                        <li><a href="#winter-activities" class="hover:text-white transition-colors">Winter Activities</a></li>
+                        <li><a href="#schedule" class="hover:text-white transition-colors">Camp Schedule</a></li>
+                        <li><a href="#locations" class="hover:text-white transition-colors">Camp Locations</a></li>
+                        <li><a href="#pricing" class="hover:text-white transition-colors">Pricing & Packages</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-bold text-lg mb-6">Winter Camp Locations</h4>
+                    <ul class="space-y-4 text-slate-400 text-sm">
+                        <li><a href="#" class="hover:text-white transition-colors">Winter Camp in Virar</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Winter Camp in Vasai</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Winter Camp in Nallasopara</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Winter Day Camps Mumbai</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-slate-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="text-slate-500 text-sm">© 2024 Maura Wonderlab Winter Adventure Camps. All rights reserved.</p>
+                <div class="flex gap-6 text-sm text-slate-500">
+                    <a href="#" class="hover:text-white">Privacy</a>
+                    <a href="#" class="hover:text-white">Terms</a>
+                    <a href="#" class="hover:text-white">Safety Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Functionality
+        const mobileMenuButton = document.getElementById('mobileMenuButton');
+        const closeMenuButton = document.getElementById('closeMenuButton');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const menuOverlay = document.getElementById('menuOverlay');
+        
+        function openMobileMenu() {
+            mobileMenu.classList.add('open');
+            menuOverlay.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+        
+        function closeMobileMenu() {
+            mobileMenu.classList.remove('open');
+            menuOverlay.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+        
+        mobileMenuButton.addEventListener('click', openMobileMenu);
+        closeMenuButton.addEventListener('click', closeMobileMenu);
+        menuOverlay.addEventListener('click', closeMobileMenu);
+        
+        document.querySelectorAll('#mobileMenu a').forEach(link => {
+            link.addEventListener('click', closeMobileMenu);
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                const href = this.getAttribute('href');
+                
+                if (href === '#' || href.startsWith('#') && href.length > 1) {
+                    e.preventDefault();
+                    
+                    const targetId = href.substring(1);
+                    const targetElement = document.getElementById(targetId);
+                    
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                    }
+                }
+            });
+        });
+        
+        // Close menu on ESC key press
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && mobileMenu.classList.contains('open')) {
+                closeMobileMenu();
+            }
+        });
+        
+        // Scroll animation
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+        
+        // Observe all fade-in elements
+        document.querySelectorAll('.fade-in').forEach(element => {
+            observer.observe(element);
+        });
+        
+        // Booking button functionality
+        document.querySelectorAll('button:contains("Book")').forEach(button => {
+            button.addEventListener('click', function() {
+                const packageName = this.textContent.replace('Book ', '');
+                alert(`Thank you for your interest in our ${packageName}!\nOur team will contact you shortly at +91 77680 31411`);
+            });
+        });
+        
+        // Initialize animations on load
+        window.addEventListener('load', () => {
+            document.querySelectorAll('.fade-in').forEach(el => {
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(20px)';
+                el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            });
+        });
+    </script>
+</body>
+</html>

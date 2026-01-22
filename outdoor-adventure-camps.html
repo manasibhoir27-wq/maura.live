@@ -1,0 +1,804 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Outdoor Adventure Camps | Sports & Adventure Activities for Kids in Virar, Vasai</title>
+    <meta name="description" content="Maura Wonderlab offers thrilling outdoor adventure camps with sports & adventure activities for kids in Virar, Vasai, Nallasopara. Book adventure sports camp today!">
+    <meta name="keywords" content="outdoor adventure camps, sports adventure camp, kids adventure sports, outdoor sports camp, adventure activities for kids, camping with adventure sports, Virar adventure camp, Vasai sports camp, Nallasopara outdoor activities">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Iconify (Lucide Icons) -->
+    <script src="https://cdn.jsdelivr.net/npm/iconify-icon@1.0.8/dist/iconify-icon.min.js"></script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=Nunito:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        /* Custom Font Settings for Childish/Playful Vibe */
+        body {
+            font-family: 'Nunito', sans-serif;
+        }
+        h1, h2, h3, h4, h5, h6, .brand-font {
+            font-family: 'Fredoka', sans-serif;
+        }
+        
+        /* Adventure-themed Pattern */
+        .bg-pattern {
+            background-color: #F0FDF4;
+            background-image: radial-gradient(#86EFAC 1px, transparent 1px), radial-gradient(#FDE68A 1px, transparent 1px);
+            background-size: 40px 40px;
+            background-position: 0 0, 20px 20px;
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #ECFDF5; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #10B981; 
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #059669; 
+        }
+
+        /* Mobile Menu Animation */
+        .mobile-menu {
+            transform: translateX(100%);
+            transition: transform 0.3s ease-in-out;
+        }
+        
+        .mobile-menu.open {
+            transform: translateX(0);
+        }
+        
+        .menu-overlay {
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease-in-out, visibility 0.3s;
+        }
+        
+        .menu-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        /* Adventure Card Hover Effects */
+        .adventure-card {
+            transition: all 0.3s ease;
+            border: 3px solid transparent;
+        }
+        
+        .adventure-card:hover {
+            border-color: #10B981;
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+
+        /* Activity Badge */
+        .activity-badge {
+            background: linear-gradient(135deg, #10B981, #3B82F6);
+            color: white;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: bold;
+            display: inline-block;
+            margin: 2px;
+        }
+    </style>
+</head>
+<body class="bg-pattern text-slate-600 antialiased selection:bg-green-200 selection:text-green-900">
+
+    <!-- Navbar (Using your provided code) -->
+    <nav class="fixed w-full z-50 top-0 transition-all duration-300 backdrop-blur-md bg-white/80 border-b-2 border-slate-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <a href="index.html" class="flex-shrink-0 flex items-center gap-2 cursor-pointer">
+                    <div class="h-10 w-10 bg-green-500 rounded-xl flex items-center justify-center text-white shadow-[4px_4px_0px_0px_rgba(16,185,129,0.4)]">
+                        <iconify-icon icon="lucide:flag" width="24" stroke-width="2"></iconify-icon>
+                    </div>
+                    <span class="brand-font text-2xl font-semibold tracking-tight text-slate-800">
+                        Maura <span class="text-green-600">Adventure</span>
+                    </span>
+                </a>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="index.html" class="text-sm font-semibold text-slate-600 hover:text-green-600 transition-colors">Home</a>
+                    <a href="#activities" class="text-sm font-semibold text-slate-600 hover:text-green-600 transition-colors">Adventure Activities</a>
+                    <a href="#sports" class="text-sm font-semibold text-slate-600 hover:text-green-600 transition-colors">Sports Programs</a>
+                    <a href="#schedule" class="text-sm font-semibold text-slate-600 hover:text-green-600 transition-colors">Camp Schedule</a>
+                    <a href="#benefits" class="text-sm font-semibold text-slate-600 hover:text-green-600 transition-colors">Benefits</a>
+                    <button class="bg-green-600 hover:bg-green-700 text-white px-5 py-2.5 rounded-full text-sm font-semibold transition-all shadow-[0px_4px_0px_0px_rgba(5,150,105,1)] hover:shadow-[0px_2px_0px_0px_rgba(5,150,105,1)] hover:translate-y-[2px]">
+                        Book Adventure Camp
+                    </button>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobileMenuButton" class="text-slate-600 hover:text-green-600 p-2">
+                        <iconify-icon icon="lucide:menu" width="28" stroke-width="1.5"></iconify-icon>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu Overlay -->
+    <div id="menuOverlay" class="menu-overlay fixed inset-0 bg-black/50 z-40 md:hidden"></div>
+
+    <!-- Mobile Menu -->
+    <div id="mobileMenu" class="mobile-menu fixed top-0 right-0 h-full w-64 bg-white z-50 shadow-2xl md:hidden p-6">
+        <div class="flex justify-between items-center mb-8">
+            <div class="flex items-center gap-2">
+                <div class="h-8 w-8 bg-green-500 rounded-lg flex items-center justify-center text-white">
+                    <iconify-icon icon="lucide:flag" width="18"></iconify-icon>
+                </div>
+                <span class="brand-font text-xl font-semibold text-slate-800">Maura <span class="text-green-600">Adventure</span></span>
+            </div>
+            <button id="closeMenuButton" class="text-slate-600 hover:text-green-600 p-2">
+                <iconify-icon icon="lucide:x" width="24" stroke-width="1.5"></iconify-icon>
+            </button>
+        </div>
+        
+        <div class="space-y-6">
+            <a href="index.html" class="block py-3 text-slate-700 font-semibold border-b border-slate-100" onclick="closeMobileMenu()">Home</a>
+            <a href="#activities" class="block py-3 text-slate-700 font-semibold border-b border-slate-100" onclick="closeMobileMenu()">Adventure Activities</a>
+            <a href="#sports" class="block py-3 text-slate-700 font-semibold border-b border-slate-100" onclick="closeMobileMenu()">Sports Programs</a>
+            <a href="#schedule" class="block py-3 text-slate-700 font-semibold border-b border-slate-100" onclick="closeMobileMenu()">Camp Schedule</a>
+            <a href="#benefits" class="block py-3 text-slate-700 font-semibold border-b border-slate-100" onclick="closeMobileMenu()">Benefits</a>
+            <div class="pt-4">
+                <button class="w-full bg-green-600 hover:bg-green-700 text-white px-5 py-3 rounded-full text-sm font-semibold transition-all">
+                    Book Adventure Camp
+                </button>
+            </div>
+        </div>
+        
+        <div class="absolute bottom-8 left-6 right-6">
+            <p class="text-sm text-slate-500 mb-4">Contact us:</p>
+            <div class="flex items-center gap-2 text-slate-700 mb-2">
+                <iconify-icon icon="lucide:phone" width="16"></iconify-icon>
+                <span class="text-sm">+91 77680 31411</span>
+            </div>
+            <div class="flex items-center gap-2 text-slate-700">
+                <iconify-icon icon="lucide:mail" width="16"></iconify-icon>
+                <span class="text-sm">maurawonderlab@gmail.com</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main class="pt-24">
+        <!-- Hero Section -->
+        <section id="hero" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <div class="text-center mb-16">
+                <div class="mb-6">
+                    <a href="index.html" class="inline-flex items-center gap-2 text-sm font-semibold text-slate-600 hover:text-green-600 transition-colors">
+                        <iconify-icon icon="lucide:arrow-left" width="16"></iconify-icon>
+                        Back to Home
+                    </a>
+                </div>
+                <h1 class="text-4xl md:text-6xl font-bold text-slate-800 mb-6">
+                    Outdoor <span class="text-green-600">Adventure Camps</span><br>Sports & Adventure Edition
+                </h1>
+                <p class="text-xl text-slate-600 max-w-3xl mx-auto mb-10">
+                    Where kids discover their inner athlete and adventurer! Our action-packed camps combine thrilling sports with outdoor adventures in the heart of nature.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <button class="bg-green-600 hover:bg-green-700 text-white px-8 py-4 rounded-full text-lg font-semibold transition-all shadow-[0px_6px_0px_0px_rgba(5,150,105,1)] hover:shadow-[0px_3px_0px_0px_rgba(5,150,105,1)] hover:translate-y-[3px]">
+                        Book Your Adventure Spot
+                    </button>
+                    <button class="bg-white hover:bg-slate-50 text-green-700 border-2 border-green-600 px-8 py-4 rounded-full text-lg font-semibold transition-all">
+                        View Camp Schedule
+                    </button>
+                </div>
+            </div>
+
+            <!-- Stats Banner -->
+            <div class="bg-white rounded-2xl p-8 shadow-xl mb-16">
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+                    <div>
+                        <div class="text-4xl font-bold text-green-600 mb-2">25+</div>
+                        <div class="text-slate-600 font-medium">Adventure Activities</div>
+                    </div>
+                    <div>
+                        <div class="text-4xl font-bold text-green-600 mb-2">15+</div>
+                        <div class="text-slate-600 font-medium">Sports Types</div>
+                    </div>
+                    <div>
+                        <div class="text-4xl font-bold text-green-600 mb-2">2000+</div>
+                        <div class="text-slate-600 font-medium">Happy Campers</div>
+                    </div>
+                    <div>
+                        <div class="text-4xl font-bold text-green-600 mb-2">4.9★</div>
+                        <div class="text-slate-600 font-medium">Safety Rating</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Adventure Activities Section -->
+        <section id="activities" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-slate-800 mb-4">
+                    Thrilling <span class="text-green-600">Adventure Activities</span>
+                </h2>
+                <p class="text-lg text-slate-600 max-w-3xl mx-auto">
+                    Designed to challenge, excite, and build confidence in young adventurers
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Activity 1 -->
+                <div class="adventure-card bg-white rounded-2xl p-6 shadow-lg">
+                    <div class="h-12 w-12 bg-green-100 rounded-xl flex items-center justify-center text-green-600 mb-4">
+                        <iconify-icon icon="lucide:mountain" width="28" stroke-width="1.5"></iconify-icon>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-800 mb-3">Rock Climbing & Rappelling</h3>
+                    <p class="text-slate-600 mb-4">Scale safe, kid-friendly climbing walls and learn descent techniques with expert supervision.</p>
+                    <div class="mb-4">
+                        <span class="activity-badge">Ages 8+</span>
+                        <span class="activity-badge">Outdoor</span>
+                        <span class="activity-badge">Team Building</span>
+                    </div>
+                    <div class="flex items-center text-sm text-slate-500">
+                        <iconify-icon icon="lucide:clock" width="16" class="mr-1"></iconify-icon>
+                        <span>2-hour sessions</span>
+                    </div>
+                </div>
+
+                <!-- Activity 2 -->
+                <div class="adventure-card bg-white rounded-2xl p-6 shadow-lg">
+                    <div class="h-12 w-12 bg-blue-100 rounded-xl flex items-center justify-center text-blue-600 mb-4">
+                        <iconify-icon icon="lucide:map" width="28" stroke-width="1.5"></iconify-icon>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-800 mb-3">Orienteering & Treasure Hunts</h3>
+                    <p class="text-slate-600 mb-4">Master map reading, compass skills, and navigation through exciting treasure hunt adventures.</p>
+                    <div class="mb-4">
+                        <span class="activity-badge">Ages 6+</span>
+                        <span class="activity-badge">Navigation</span>
+                        <span class="activity-badge">Problem Solving</span>
+                    </div>
+                    <div class="flex items-center text-sm text-slate-500">
+                        <iconify-icon icon="lucide:clock" width="16" class="mr-1"></iconify-icon>
+                        <span>Daily activity</span>
+                    </div>
+                </div>
+
+                <!-- Activity 3 -->
+                <div class="adventure-card bg-white rounded-2xl p-6 shadow-lg">
+                    <div class="h-12 w-12 bg-yellow-100 rounded-xl flex items-center justify-center text-yellow-600 mb-4">
+                        <iconify-icon icon="lucide:zap" width="28" stroke-width="1.5"></iconify-icon>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-800 mb-3">Obstacle Course Challenges</h3>
+                    <p class="text-slate-600 mb-4">Navigate through fun, safe obstacle courses designed to build agility, balance, and coordination.</p>
+                    <div class="mb-4">
+                        <span class="activity-badge">All Ages</span>
+                        <span class="activity-badge">Fitness</span>
+                        <span class="activity-badge">Coordination</span>
+                    </div>
+                    <div class="flex items-center text-sm text-slate-500">
+                        <iconify-icon icon="lucide:clock" width="16" class="mr-1"></iconify-icon>
+                        <span>Rotating stations</span>
+                    </div>
+                </div>
+
+                <!-- Activity 4 -->
+                <div class="adventure-card bg-white rounded-2xl p-6 shadow-lg">
+                    <div class="h-12 w-12 bg-purple-100 rounded-xl flex items-center justify-center text-purple-600 mb-4">
+                        <iconify-icon icon="lucide:trees" width="28" stroke-width="1.5"></iconify-icon>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-800 mb-3">Nature Survival Skills</h3>
+                    <p class="text-slate-600 mb-4">Learn essential outdoor skills: shelter building, fire safety, basic first aid, and edible plant identification.</p>
+                    <div class="mb-4">
+                        <span class="activity-badge">Ages 9+</span>
+                        <span class="activity-badge">Survival</span>
+                        <span class="activity-badge">Nature Education</span>
+                    </div>
+                    <div class="flex items-center text-sm text-slate-500">
+                        <iconify-icon icon="lucide:clock" width="16" class="mr-1"></iconify-icon>
+                        <span>3-hour workshops</span>
+                    </div>
+                </div>
+
+                <!-- Activity 5 -->
+                <div class="adventure-card bg-white rounded-2xl p-6 shadow-lg">
+                    <div class="h-12 w-12 bg-red-100 rounded-xl flex items-center justify-center text-red-600 mb-4">
+                        <iconify-icon icon="lucide:target" width="28" stroke-width="1.5"></iconify-icon>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-800 mb-3">Archery & Target Sports</h3>
+                    <p class="text-slate-600 mb-4">Safe introduction to archery with child-appropriate equipment, focusing on focus and precision.</p>
+                    <div class="mb-4">
+                        <span class="activity-badge">Ages 7+</span>
+                        <span class="activity-badge">Precision</span>
+                        <span class="activity-badge">Focus Training</span>
+                    </div>
+                    <div class="flex items-center text-sm text-slate-500">
+                        <iconify-icon icon="lucide:clock" width="16" class="mr-1"></iconify-icon>
+                        <span>Guided sessions</span>
+                    </div>
+                </div>
+
+                <!-- Activity 6 -->
+                <div class="adventure-card bg-white rounded-2xl p-6 shadow-lg">
+                    <div class="h-12 w-12 bg-indigo-100 rounded-xl flex items-center justify-center text-indigo-600 mb-4">
+                        <iconify-icon icon="lucide:water" width="28" stroke-width="1.5"></iconify-icon>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-800 mb-3">Water Adventure Activities</h3>
+                    <p class="text-slate-600 mb-4">Safe water-based adventures including stream exploration, water games, and basic water safety skills.</p>
+                    <div class="mb-4">
+                        <span class="activity-badge">Ages 8+</span>
+                        <span class="activity-badge">Water Safety</span>
+                        <span class="activity-badge">Summer Special</span>
+                    </div>
+                    <div class="flex items-center text-sm text-slate-500">
+                        <iconify-icon icon="lucide:clock" width="16" class="mr-1"></iconify-icon>
+                        <span>Seasonal activity</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sports Programs Section -->
+        <section id="sports" class="bg-green-50 py-16">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-slate-800 mb-4">
+                        Exciting <span class="text-green-600">Sports Programs</span>
+                    </h2>
+                    <p class="text-lg text-slate-600 max-w-3xl mx-auto">
+                        From traditional favorites to unique outdoor sports - something for every young athlete
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                    <!-- Sports List -->
+                    <div>
+                        <h3 class="text-2xl font-bold text-slate-800 mb-6">Featured Sports Activities</h3>
+                        <div class="space-y-6">
+                            <div class="flex items-start">
+                                <div class="h-10 w-10 bg-white rounded-full flex items-center justify-center text-green-600 mr-4 flex-shrink-0">
+                                    <iconify-icon icon="lucide:volleyball" width="20"></iconify-icon>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-slate-800 mb-1">Beach Volleyball & Court Games</h4>
+                                    <p class="text-slate-600 text-sm">Team sports that build coordination and teamwork in outdoor settings.</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start">
+                                <div class="h-10 w-10 bg-white rounded-full flex items-center justify-center text-green-600 mr-4 flex-shrink-0">
+                                    <iconify-icon icon="lucide:football" width="20"></iconify-icon>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-slate-800 mb-1">Soccer & Field Sports</h4>
+                                    <p class="text-slate-600 text-sm">Outdoor field games that improve stamina, teamwork, and strategic thinking.</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start">
+                                <div class="h-10 w-10 bg-white rounded-full flex items-center justify-center text-green-600 mr-4 flex-shrink-0">
+                                    <iconify-icon icon="lucide:badge" width="20"></iconify-icon>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-slate-800 mb-1">Adventure Relay Races</h4>
+                                    <p class="text-slate-600 text-sm">Exciting team competitions combining running with fun challenges.</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start">
+                                <div class="h-10 w-10 bg-white rounded-full flex items-center justify-center text-green-600 mr-4 flex-shrink-0">
+                                    <iconify-icon icon="lucide:disc" width="20"></iconify-icon>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-slate-800 mb-1">Frisbee Games & Ultimate</h4>
+                                    <p class="text-slate-600 text-sm">Fun disc sports that develop hand-eye coordination and fair play.</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start">
+                                <div class="h-10 w-10 bg-white rounded-full flex items-center justify-center text-green-600 mr-4 flex-shrink-0">
+                                    <iconify-icon icon="lucide:activity" width="20"></iconify-icon>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-slate-800 mb-1">Outdoor Fitness Circuits</h4>
+                                    <p class="text-slate-600 text-sm">Age-appropriate fitness activities designed as fun games.</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start">
+                                <div class="h-10 w-10 bg-white rounded-full flex items-center justify-center text-green-600 mr-4 flex-shrink-0">
+                                    <iconify-icon icon="lucide:users" width="20"></iconify-icon>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-slate-800 mb-1">Team Building Sports</h4>
+                                    <p class="text-slate-600 text-sm">Cooperative games that emphasize communication and collaboration.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Sports Benefits -->
+                    <div class="bg-white rounded-2xl p-8 shadow-lg">
+                        <h3 class="text-2xl font-bold text-slate-800 mb-6">Sports & Adventure Benefits</h3>
+                        <div class="space-y-4">
+                            <div class="flex items-start">
+                                <iconify-icon icon="lucide:check-circle" width="24" class="text-green-500 mr-3 flex-shrink-0"></iconify-icon>
+                                <div>
+                                    <h4 class="font-bold text-slate-800">Physical Development</h4>
+                                    <p class="text-slate-600 text-sm">Improves strength, coordination, balance, and overall fitness.</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <iconify-icon icon="lucide:check-circle" width="24" class="text-green-500 mr-3 flex-shrink-0"></iconify-icon>
+                                <div>
+                                    <h4 class="font-bold text-slate-800">Confidence Building</h4>
+                                    <p class="text-slate-600 text-sm">Mastering new skills boosts self-esteem and resilience.</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <iconify-icon icon="lucide:check-circle" width="24" class="text-green-500 mr-3 flex-shrink-0"></iconify-icon>
+                                <div>
+                                    <h4 class="font-bold text-slate-800">Social Skills</h4>
+                                    <p class="text-slate-600 text-sm">Team sports teach cooperation, communication, and friendship building.</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <iconify-icon icon="lucide:check-circle" width="24" class="text-green-500 mr-3 flex-shrink-0"></iconify-icon>
+                                <div>
+                                    <h4 class="font-bold text-slate-800">Problem Solving</h4>
+                                    <p class="text-slate-600 text-sm">Adventure activities require quick thinking and creative solutions.</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <iconify-icon icon="lucide:check-circle" width="24" class="text-green-500 mr-3 flex-shrink-0"></iconify-icon>
+                                <div>
+                                    <h4 class="font-bold text-slate-800">Nature Connection</h4>
+                                    <p class="text-slate-600 text-sm">Outdoor activities foster appreciation for the natural world.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Camp Schedule -->
+        <section id="schedule" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-slate-800 mb-4">
+                    Adventure Camp <span class="text-green-600">Schedule</span>
+                </h2>
+                <p class="text-lg text-slate-600 max-w-3xl mx-auto">
+                    Sample daily schedule for our 5-day Outdoor Adventure & Sports Camp
+                </p>
+            </div>
+
+            <div class="bg-white rounded-2xl shadow-xl overflow-hidden">
+                <div class="grid grid-cols-1 md:grid-cols-5">
+                    <!-- Day Column Headers -->
+                    <div class="bg-green-600 text-white p-6 text-center">
+                        <div class="text-2xl font-bold mb-2">Time</div>
+                        <div class="text-sm opacity-90">Daily Adventure Flow</div>
+                    </div>
+                    <div class="bg-green-100 p-6 text-center border-l border-green-200">
+                        <div class="text-xl font-bold text-slate-800 mb-1">Day 1</div>
+                        <div class="text-sm text-slate-600">Orientation & Basics</div>
+                    </div>
+                    <div class="bg-green-50 p-6 text-center border-l border-green-200">
+                        <div class="text-xl font-bold text-slate-800 mb-1">Day 2</div>
+                        <div class="text-sm text-slate-600">Sports & Team Games</div>
+                    </div>
+                    <div class="bg-green-100 p-6 text-center border-l border-green-200">
+                        <div class="text-xl font-bold text-slate-800 mb-1">Day 3</div>
+                        <div class="text-sm text-slate-600">Adventure Challenges</div>
+                    </div>
+                    <div class="bg-green-50 p-6 text-center border-l border-green-200">
+                        <div class="text-xl font-bold text-slate-800 mb-1">Day 4</div>
+                        <div class="text-sm text-slate-600">Survival Skills</div>
+                    </div>
+                </div>
+
+                <!-- Schedule Rows -->
+                <div class="border-t border-slate-200">
+                    <!-- Row 1 -->
+                    <div class="grid grid-cols-1 md:grid-cols-5 border-b border-slate-100">
+                        <div class="bg-slate-50 p-4 font-medium text-slate-700">9:00 AM - 10:30 AM</div>
+                        <div class="p-4 border-l border-slate-100">Warm-up & Team Formation</div>
+                        <div class="p-4 border-l border-slate-100">Soccer Skills & Drills</div>
+                        <div class="p-4 border-l border-slate-100">Rock Climbing Basics</div>
+                        <div class="p-4 border-l border-slate-100">Shelter Building Workshop</div>
+                    </div>
+                    <!-- Row 2 -->
+                    <div class="grid grid-cols-1 md:grid-cols-5 border-b border-slate-100">
+                        <div class="bg-slate-50 p-4 font-medium text-slate-700">10:30 AM - 12:00 PM</div>
+                        <div class="p-4 border-l border-slate-100">Adventure Safety Briefing</div>
+                        <div class="p-4 border-l border-slate-100">Beach Volleyball Tournament</div>
+                        <div class="p-4 border-l border-slate-100">Obstacle Course Challenge</div>
+                        <div class="p-4 border-l border-slate-100">Nature Navigation Skills</div>
+                    </div>
+                    <!-- Row 3 -->
+                    <div class="grid grid-cols-1 md:grid-cols-5 border-b border-slate-100">
+                        <div class="bg-slate-50 p-4 font-medium text-slate-700">12:00 PM - 1:00 PM</div>
+                        <div class="p-4 border-l border-slate-100 text-center font-medium text-green-600" colspan="4">Lunch & Rest Time</div>
+                    </div>
+                    <!-- Row 4 -->
+                    <div class="grid grid-cols-1 md:grid-cols-5 border-b border-slate-100">
+                        <div class="bg-slate-50 p-4 font-medium text-slate-700">1:00 PM - 2:30 PM</div>
+                        <div class="p-4 border-l border-slate-100">Basic First Aid Training</div>
+                        <div class="p-4 border-l border-slate-100">Frisbee Games & Skills</div>
+                        <div class="p-4 border-l border-slate-100">Archery Introduction</div>
+                        <div class="p-4 border-l border-slate-100">Fire Safety & Outdoor Cooking</div>
+                    </div>
+                    <!-- Row 5 -->
+                    <div class="grid grid-cols-1 md:grid-cols-5">
+                        <div class="bg-slate-50 p-4 font-medium text-slate-700">2:30 PM - 4:00 PM</div>
+                        <div class="p-4 border-l border-slate-100">Treasure Hunt Adventure</div>
+                        <div class="p-4 border-l border-slate-100">Relay Races & Team Challenges</div>
+                        <div class="p-4 border-l border-slate-100">Rappelling Practice</div>
+                        <div class="p-4 border-l border-slate-100">Campfire Preparation</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-8">
+                <p class="text-slate-600">*Day 5 includes Adventure Olympics and Awards Ceremony</p>
+            </div>
+        </section>
+
+        <!-- Benefits Section -->
+        <section id="benefits" class="bg-slate-50 py-16">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-slate-800 mb-4">
+                        Why Choose Our <span class="text-green-600">Adventure Camps</span>?
+                    </h2>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Benefit 1 -->
+                    <div class="bg-white rounded-2xl p-8 shadow-lg">
+                        <div class="h-16 w-16 bg-green-100 rounded-2xl flex items-center justify-center text-green-600 mb-6">
+                            <iconify-icon icon="lucide:shield" width="32"></iconify-icon>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-800 mb-4">Safety First Approach</h3>
+                        <p class="text-slate-600">Certified instructors, 1:8 counselor ratio, first-aid trained staff, and child-safe equipment for all activities.</p>
+                        <ul class="mt-4 space-y-2">
+                            <li class="flex items-center text-sm text-slate-600">
+                                <iconify-icon icon="lucide:check" width="16" class="text-green-500 mr-2"></iconify-icon>
+                                <span>Certified adventure instructors</span>
+                            </li>
+                            <li class="flex items-center text-sm text-slate-600">
+                                <iconify-icon icon="lucide:check" width="16" class="text-green-500 mr-2"></iconify-icon>
+                                <span>First aid & emergency protocols</span>
+                            </li>
+                            <li class="flex items-center text-sm text-slate-600">
+                                <iconify-icon icon="lucide:check" width="16" class="text-green-500 mr-2"></iconify-icon>
+                                <span>Age-appropriate challenges</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Benefit 2 -->
+                    <div class="bg-white rounded-2xl p-8 shadow-lg">
+                        <div class="h-16 w-16 bg-blue-100 rounded-2xl flex items-center justify-center text-blue-600 mb-6">
+                            <iconify-icon icon="lucide:users" width="32"></iconify-icon>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-800 mb-4">Skill Development Focus</h3>
+                        <p class="text-slate-600">Our camps build essential life skills: leadership, teamwork, problem-solving, and resilience through adventure.</p>
+                        <ul class="mt-4 space-y-2">
+                            <li class="flex items-center text-sm text-slate-600">
+                                <iconify-icon icon="lucide:check" width="16" class="text-green-500 mr-2"></iconify-icon>
+                                <span>Progressive skill building</span>
+                            </li>
+                            <li class="flex items-center text-sm text-slate-600">
+                                <iconify-icon icon="lucide:check" width="16" class="text-green-500 mr-2"></iconify-icon>
+                                <span>Individual achievement tracking</span>
+                            </li>
+                            <li class="flex items-center text-sm text-slate-600">
+                                <iconify-icon icon="lucide:check" width="16" class="text-green-500 mr-2"></iconify-icon>
+                                <span>Personalized coaching</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Benefit 3 -->
+                    <div class="bg-white rounded-2xl p-8 shadow-lg">
+                        <div class="h-16 w-16 bg-orange-100 rounded-2xl flex items-center justify-center text-orange-600 mb-6">
+                            <iconify-icon icon="lucide:map-pin" width="32"></iconify-icon>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-800 mb-4">Prime Adventure Locations</h3>
+                        <p class="text-slate-600">Beautiful, safe outdoor locations in Virar, Vasai, and Nallasopara specifically chosen for adventure activities.</p>
+                        <ul class="mt-4 space-y-2">
+                            <li class="flex items-center text-sm text-slate-600">
+                                <iconify-icon icon="lucide:check" width="16" class="text-green-500 mr-2"></iconify-icon>
+                                <span>Secure private campgrounds</span>
+                            </li>
+                            <li class="flex items-center text-sm text-slate-600">
+                                <iconify-icon icon="lucide:check" width="16" class="text-green-500 mr-2"></iconify-icon>
+                                <span>Natural terrain features</span>
+                            </li>
+                            <li class="flex items-center text-sm text-slate-600">
+                                <iconify-icon icon="lucide:check" width="16" class="text-green-500 mr-2"></iconify-icon>
+                                <span>Easy access from Mumbai</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- CTA -->
+                <div class="text-center mt-16">
+                    <h3 class="text-2xl font-bold text-slate-800 mb-6">Ready for an Adventure?</h3>
+                    <p class="text-lg text-slate-600 max-w-2xl mx-auto mb-8">
+                        Limited spots available for our next Outdoor Adventure & Sports Camp. Book now to secure your child's place!
+                    </p>
+                    <button class="bg-green-600 hover:bg-green-700 text-white px-10 py-4 rounded-full text-lg font-semibold transition-all shadow-[0px_6px_0px_0px_rgba(5,150,105,1)] hover:shadow-[0px_3px_0px_0px_rgba(5,150,105,1)] hover:translate-y-[3px]">
+                        Reserve Your Adventure Spot Now
+                    </button>
+                    <p class="text-slate-500 text-sm mt-4">Or call us at +91 77680 31411 for more information</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer (Using your provided code) -->
+    <footer class="bg-slate-900 text-white pt-20 pb-10 rounded-t-[3rem] mt-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
+                <div class="col-span-1 md:col-span-2">
+                    <div class="flex items-center gap-2 mb-6">
+                         <div class="h-8 w-8 bg-green-500 rounded-lg flex items-center justify-center text-white">
+                            <iconify-icon icon="lucide:flag" width="18"></iconify-icon>
+                        </div>
+                        <span class="brand-font text-2xl font-bold">Maura <span class="text-green-400">Adventure</span></span>
+                    </div>
+                    <p class="text-slate-400 max-w-sm mb-6">Creating unforgettable childhood adventures through sports, nature, and outdoor challenges. The #1 Choice for Kids Adventure Camping in Virar, Vasai, and Nallasopara.</p>
+                    <div class="flex gap-4">
+                        <a href="#" class="h-10 w-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-green-500 transition-colors"><iconify-icon icon="lucide:instagram" width="20"></iconify-icon></a>
+                        <a href="#" class="h-10 w-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-blue-500 transition-colors"><iconify-icon icon="lucide:facebook" width="20"></iconify-icon></a>
+                        <a href="#" class="h-10 w-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-green-500 transition-colors"><iconify-icon icon="lucide:phone" width="20"></iconify-icon></a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="font-bold text-lg mb-6">Adventure Programs</h4>
+                    <ul class="space-y-4 text-slate-400 text-sm">
+                        <li><a href="#" class="hover:text-white transition-colors">Outdoor Adventure Camps</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Sports & Games Camps</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Weekend Adventure Trips</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">School Adventure Programs</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-bold text-lg mb-6">Camp Locations</h4>
+                    <ul class="space-y-4 text-slate-400 text-sm">
+                        <li><a href="#" class="hover:text-white transition-colors">Adventure Camp in Virar</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Sports Camp in Vasai</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Outdoor Camp in Nallasopara</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Mumbai Adventure Day Trips</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-slate-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="text-slate-500 text-sm">© 2024 Maura Wonderlab Adventure Camps. All rights reserved.</p>
+                <div class="flex gap-6 text-sm text-slate-500">
+                    <a href="#" class="hover:text-white">Privacy Policy</a>
+                    <a href="#" class="hover:text-white">Safety Guidelines</a>
+                    <a href="#" class="hover:text-white">Terms & Conditions</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Functionality
+        const mobileMenuButton = document.getElementById('mobileMenuButton');
+        const closeMenuButton = document.getElementById('closeMenuButton');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const menuOverlay = document.getElementById('menuOverlay');
+        
+        function openMobileMenu() {
+            mobileMenu.classList.add('open');
+            menuOverlay.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+        
+        function closeMobileMenu() {
+            mobileMenu.classList.remove('open');
+            menuOverlay.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+        
+        // Event Listeners
+        mobileMenuButton.addEventListener('click', openMobileMenu);
+        closeMenuButton.addEventListener('click', closeMobileMenu);
+        menuOverlay.addEventListener('click', closeMobileMenu);
+        
+        // Close menu when clicking on any menu link
+        document.querySelectorAll('#mobileMenu a').forEach(link => {
+            link.addEventListener('click', closeMobileMenu);
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                const href = this.getAttribute('href');
+                
+                if (href === '#' || href.startsWith('#') && href.length > 1) {
+                    e.preventDefault();
+                    
+                    const targetId = href.substring(1);
+                    const targetElement = document.getElementById(targetId);
+                    
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                    }
+                }
+            });
+        });
+        
+        // Close menu on ESC key press
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && mobileMenu.classList.contains('open')) {
+                closeMobileMenu();
+            }
+        });
+        
+        // Animation for adventure cards on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+        
+        // Observe all cards for animation
+        document.querySelectorAll('.adventure-card').forEach(card => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(20px)';
+            card.style.transition = 'opacity 0.6s ease, transform 0.6s ease, border-color 0.3s ease';
+            observer.observe(card);
+        });
+        
+        // Animation for schedule rows
+        document.querySelectorAll('#schedule .grid > div').forEach((row, index) => {
+            row.style.opacity = '0';
+            row.style.transform = 'translateX(-10px)';
+            row.style.transition = `opacity 0.5s ease ${index * 0.1}s, transform 0.5s ease ${index * 0.1}s`;
+            
+            const rowObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateX(0)';
+                    }
+                });
+            }, observerOptions);
+            
+            rowObserver.observe(row);
+        });
+    </script>
+</body>
+</html>

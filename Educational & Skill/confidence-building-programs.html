@@ -1,0 +1,830 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confidence Building Programs for Kids | Maura Wonderlab</title>
+    <meta name="description" content="Maura Wonderlab offers expert-designed confidence building programs for children through adventure activities in Virar, Vasai & Nallasopara. Build resilience, leadership & self-esteem.">
+    <meta name="keywords" content="confidence building programs for kids, children confidence activities, self-esteem building camps, leadership programs for children, kids adventure therapy, outdoor confidence activities, resilience building for kids, public speaking for children, team building kids activities">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Iconify (Lucide Icons) -->
+    <script src="https://cdn.jsdelivr.net/npm/iconify-icon@1.0.8/dist/iconify-icon.min.js"></script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=Nunito:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        /* Custom Font Settings for Childish/Playful Vibe */
+        body {
+            font-family: 'Nunito', sans-serif;
+        }
+        h1, h2, h3, h4, h5, h6, .brand-font {
+            font-family: 'Fredoka', sans-serif;
+        }
+        
+        /* Playful Blob Pattern */
+        .bg-pattern {
+            background-color: #FFFDF5;
+            background-image: radial-gradient(#FDE68A 1px, transparent 1px), radial-gradient(#BAE6FD 1px, transparent 1px);
+            background-size: 40px 40px;
+            background-position: 0 0, 20px 20px;
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #FFF7ED; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #FDBA74; 
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #EA580C; 
+        }
+
+        /* Mobile Menu Animation */
+        .mobile-menu {
+            transform: translateX(100%);
+            transition: transform 0.3s ease-in-out;
+        }
+        
+        .mobile-menu.open {
+            transform: translateX(0);
+        }
+        
+        .menu-overlay {
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease-in-out, visibility 0.3s;
+        }
+        
+        .menu-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        /* Custom Styling for Confidence Programs */
+        .confidence-hero {
+            background: linear-gradient(135deg, #FFFBEB 0%, #FEF3C7 30%, #FDE68A 70%, #FCD34D 100%);
+            clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+        }
+        
+        .benefit-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .benefit-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        
+        .activity-card {
+            border-left: 5px solid;
+            transition: all 0.3s ease;
+        }
+        
+        .activity-card:hover {
+            transform: scale(1.02);
+        }
+        
+        .confidence-milestone {
+            position: relative;
+            padding-left: 2rem;
+        }
+        
+        .confidence-milestone::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0.5rem;
+            width: 1rem;
+            height: 1rem;
+            border-radius: 50%;
+            background-color: #F59E0B;
+        }
+        
+        .program-phase {
+            border-radius: 20px;
+            overflow: hidden;
+            border: 3px solid transparent;
+            transition: border-color 0.3s ease;
+        }
+        
+        .program-phase:hover {
+            border-color: #F59E0B;
+        }
+    </style>
+</head>
+<body class="bg-pattern text-slate-600 antialiased selection:bg-orange-200 selection:text-orange-900">
+
+    <!-- Navbar -->
+    <nav class="fixed w-full z-50 top-0 transition-all duration-300 backdrop-blur-md bg-white/80 border-b-2 border-slate-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center gap-2 cursor-pointer" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+                    <img src="maura wonderlab logo.png" alt="Maura Wonderlab" width="50px">
+                    <span class="brand-font text-2xl font-semibold tracking-tight text-slate-800">
+                        Maura <span class="text-orange-500">Wonderlab</span>
+                    </span>
+                </div>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="#program-overview" class="text-sm font-semibold text-slate-600 hover:text-orange-500 transition-colors">Overview</a>
+                    <a href="#key-activities" class="text-sm font-semibold text-slate-600 hover:text-orange-500 transition-colors">Activities</a>
+                    <a href="#program-benefits" class="text-sm font-semibold text-slate-600 hover:text-orange-500 transition-colors">Benefits</a>
+                    <a href="#program-phases" class="text-sm font-semibold text-slate-600 hover:text-orange-500 transition-colors">Program Phases</a>
+                    <a href="#locations" class="text-sm font-semibold text-slate-600 hover:text-orange-500 transition-colors">Locations</a>
+                    <button class="bg-indigo-500 hover:bg-indigo-600 text-white px-5 py-2.5 rounded-full text-sm font-semibold transition-all shadow-[0px_4px_0px_0px_rgba(67,56,202,1)] hover:shadow-[0px_2px_0px_0px_rgba(67,56,202,1)] hover:translate-y-[2px]">
+                        Book Confidence Program
+                    </button>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobileMenuButton" class="text-slate-600 hover:text-orange-500 p-2">
+                        <iconify-icon icon="lucide:menu" width="28" stroke-width="1.5"></iconify-icon>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu Overlay -->
+    <div id="menuOverlay" class="menu-overlay fixed inset-0 bg-black/50 z-40 md:hidden"></div>
+
+    <!-- Mobile Menu -->
+    <div id="mobileMenu" class="mobile-menu fixed top-0 right-0 h-full w-64 bg-white z-50 shadow-2xl md:hidden p-6">
+        <div class="flex justify-between items-center mb-8">
+            <div class="flex items-center gap-2">
+                <div class="h-8 w-8 bg-orange-400 rounded-lg flex items-center justify-center text-white">
+                    <iconify-icon icon="lucide:tent" width="18"></iconify-icon>
+                </div>
+                <span class="brand-font text-xl font-semibold text-slate-800">Maura <span class="text-orange-500">Wonderlab</span></span>
+            </div>
+            <button id="closeMenuButton" class="text-slate-600 hover:text-orange-500 p-2">
+                <iconify-icon icon="lucide:x" width="24" stroke-width="1.5"></iconify-icon>
+            </button>
+        </div>
+        
+        <div class="space-y-6">
+            <a href="#program-overview" class="block py-3 text-slate-700 font-semibold border-b border-slate-100" onclick="closeMobileMenu()">Overview</a>
+            <a href="#key-activities" class="block py-3 text-slate-700 font-semibold border-b border-slate-100" onclick="closeMobileMenu()">Activities</a>
+            <a href="#program-benefits" class="block py-3 text-slate-700 font-semibold border-b border-slate-100" onclick="closeMobileMenu()">Benefits</a>
+            <a href="#program-phases" class="block py-3 text-slate-700 font-semibold border-b border-slate-100" onclick="closeMobileMenu()">Program Phases</a>
+            <a href="#locations" class="block py-3 text-slate-700 font-semibold border-b border-slate-100" onclick="closeMobileMenu()">Locations</a>
+            <div class="pt-4">
+                <button class="w-full bg-indigo-500 hover:bg-indigo-600 text-white px-5 py-3 rounded-full text-sm font-semibold transition-all">
+                    Book Confidence Program
+                </button>
+            </div>
+        </div>
+        
+        <div class="absolute bottom-8 left-6 right-6">
+            <p class="text-sm text-slate-500 mb-4">Contact us:</p>
+            <div class="flex items-center gap-2 text-slate-700 mb-2">
+                <iconify-icon icon="lucide:phone" width="16"></iconify-icon>
+                <span class="text-sm">+91 77680 31411</span>
+            </div>
+            <div class="flex items-center gap-2 text-slate-700">
+                <iconify-icon icon="lucide:mail" width="16"></iconify-icon>
+                <span class="text-sm">maurawonderlab@gmail.com</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="confidence-hero pt-32 pb-20 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <div class="inline-flex items-center gap-2 bg-white/80 rounded-full px-4 py-2 mb-6 shadow-md">
+                        <iconify-icon icon="lucide:sparkles" class="text-orange-500" width="20"></iconify-icon>
+                        <span class="text-sm font-semibold text-slate-700">Building Confident Leaders Since 2019</span>
+                    </div>
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 mb-6 leading-tight">
+                        Confidence Building <span class="text-orange-500">Programs</span> for Children
+                    </h1>
+                    <p class="text-lg md:text-xl text-slate-700 mb-8 max-w-2xl">
+                        Expert-designed adventure programs that transform shy kids into confident leaders through outdoor challenges, teamwork activities, and personal growth experiences.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <button class="bg-orange-500 hover:bg-orange-600 text-white px-8 py-4 rounded-full text-lg font-semibold transition-all shadow-[0px_6px_0px_0px_rgba(234,88,12,1)] hover:shadow-[0px_3px_0px_0px_rgba(234,88,12,1)] hover:translate-y-[3px]">
+                            Start Your Child's Journey
+                        </button>
+                        <button class="border-2 border-orange-500 text-orange-500 hover:bg-orange-50 px-8 py-4 rounded-full text-lg font-semibold transition-all">
+                            Download Program Guide
+                        </button>
+                    </div>
+                </div>
+                <div class="relative">
+                    <div class="bg-white rounded-3xl p-2 shadow-2xl transform rotate-3">
+                        <img src="https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" 
+                             alt="Children participating in confidence building activities at Maura Wonderlab" 
+                             class="rounded-2xl w-full h-64 md:h-80 object-cover">
+                    </div>
+                    <div class="absolute -bottom-6 -left-6 bg-blue-500 text-white p-6 rounded-2xl shadow-xl">
+                        <div class="text-3xl font-bold">94%</div>
+                        <div class="text-sm">Parents report increased<br>confidence in their children</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Program Overview -->
+    <section id="program-overview" class="py-20 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Transformative <span class="text-orange-500">Confidence Building</span> Experience</h2>
+                <p class="text-lg text-slate-600 max-w-3xl mx-auto">
+                    Our programs are carefully crafted to help children overcome shyness, build resilience, develop leadership skills, and gain the self-assurance needed to thrive in social and academic settings.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+                <div class="bg-white rounded-2xl p-8 shadow-lg border-t-4 border-orange-500">
+                    <div class="h-14 w-14 bg-orange-100 rounded-xl flex items-center justify-center text-orange-600 mb-6">
+                        <iconify-icon icon="lucide:users" width="28"></iconify-icon>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-4">For Ages 6-14 Years</h3>
+                    <p class="text-slate-600">Age-appropriate programs designed for different developmental stages, ensuring maximum impact and engagement.</p>
+                </div>
+                
+                <div class="bg-white rounded-2xl p-8 shadow-lg border-t-4 border-blue-500">
+                    <div class="h-14 w-14 bg-blue-100 rounded-xl flex items-center justify-center text-blue-600 mb-6">
+                        <iconify-icon icon="lucide:calendar" width="28"></iconify-icon>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-4">Weekend & Holiday Programs</h3>
+                    <p class="text-slate-600">Flexible scheduling with 2-day intensive camps, 5-day immersive programs, and ongoing weekend workshops.</p>
+                </div>
+                
+                <div class="bg-white rounded-2xl p-8 shadow-lg border-t-4 border-green-500">
+                    <div class="h-14 w-14 bg-green-100 rounded-xl flex items-center justify-center text-green-600 mb-6">
+                        <iconify-icon icon="lucide:shield-check" width="28"></iconify-icon>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-4">Certified Child Psychologists</h3>
+                    <p class="text-slate-600">All programs designed and supervised by certified child psychologists and experienced adventure coaches.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Key Activities Section -->
+    <section id="key-activities" class="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-white to-amber-50">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Confidence Building <span class="text-orange-500">Activities & Programs</span></h2>
+                <p class="text-lg text-slate-600 max-w-3xl mx-auto">
+                    Each activity is specifically designed to target different aspects of confidence, self-esteem, and personal growth in children.
+                </p>
+            </div>
+            
+            <!-- Activity Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Activity 1 -->
+                <div class="activity-card bg-white rounded-2xl p-6 shadow-lg border-l-4 border-orange-500 group">
+                    <div class="flex items-start gap-4 mb-4">
+                        <div class="h-12 w-12 bg-orange-100 rounded-lg flex items-center justify-center text-orange-600 group-hover:bg-orange-500 group-hover:text-white transition-colors">
+                            <iconify-icon icon="lucide:mic" width="24"></iconify-icon>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 mt-2">Public Speaking & Storytelling</h3>
+                    </div>
+                    <p class="text-slate-600 mb-4">Children learn to express themselves clearly and confidently through structured storytelling sessions and public speaking exercises.</p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="bg-orange-100 text-orange-800 text-xs font-semibold px-3 py-1 rounded-full">Verbal Confidence</span>
+                        <span class="bg-blue-100 text-blue-800 text-xs font-semibold px-3 py-1 rounded-full">Expression Skills</span>
+                    </div>
+                    <div class="confidence-milestone text-sm text-slate-700">
+                        <strong>Confidence Milestone:</strong> Delivering a 3-minute speech to peers
+                    </div>
+                </div>
+                
+                <!-- Activity 2 -->
+                <div class="activity-card bg-white rounded-2xl p-6 shadow-lg border-l-4 border-blue-500 group">
+                    <div class="flex items-start gap-4 mb-4">
+                        <div class="h-12 w-12 bg-blue-100 rounded-lg flex items-center justify-center text-blue-600 group-hover:bg-blue-500 group-hover:text-white transition-colors">
+                            <iconify-icon icon="lucide:rocket" width="24"></iconify-icon>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 mt-2">Adventure Challenge Courses</h3>
+                    </div>
+                    <p class="text-slate-600 mb-4">Low-rope courses, climbing walls, and obstacle challenges that build physical confidence and resilience.</p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="bg-orange-100 text-orange-800 text-xs font-semibold px-3 py-1 rounded-full">Risk Assessment</span>
+                        <span class="bg-blue-100 text-blue-800 text-xs font-semibold px-3 py-1 rounded-full">Physical Confidence</span>
+                        <span class="bg-green-100 text-green-800 text-xs font-semibold px-3 py-1 rounded-full">Overcoming Fears</span>
+                    </div>
+                    <div class="confidence-milestone text-sm text-slate-700">
+                        <strong>Confidence Milestone:</strong> Completing a high-ropes course independently
+                    </div>
+                </div>
+                
+                <!-- Activity 3 -->
+                <div class="activity-card bg-white rounded-2xl p-6 shadow-lg border-l-4 border-green-500 group">
+                    <div class="flex items-start gap-4 mb-4">
+                        <div class="h-12 w-12 bg-green-100 rounded-lg flex items-center justify-center text-green-600 group-hover:bg-green-500 group-hover:text-white transition-colors">
+                            <iconify-icon icon="lucide:puzzle" width="24"></iconify-icon>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 mt-2">Team Leadership Exercises</h3>
+                    </div>
+                    <p class="text-slate-600 mb-4">Structured team activities where children take turns leading groups, making decisions, and solving problems collectively.</p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="bg-orange-100 text-orange-800 text-xs font-semibold px-3 py-1 rounded-full">Leadership Skills</span>
+                        <span class="bg-blue-100 text-blue-800 text-xs font-semibold px-3 py-1 rounded-full">Decision Making</span>
+                        <span class="bg-purple-100 text-purple-800 text-xs font-semibold px-3 py-1 rounded-full">Collaboration</span>
+                    </div>
+                    <div class="confidence-milestone text-sm text-slate-700">
+                        <strong>Confidence Milestone:</strong> Successfully leading a team through a challenge
+                    </div>
+                </div>
+                
+                <!-- Activity 4 -->
+                <div class="activity-card bg-white rounded-2xl p-6 shadow-lg border-l-4 border-purple-500 group">
+                    <div class="flex items-start gap-4 mb-4">
+                        <div class="h-12 w-12 bg-purple-100 rounded-lg flex items-center justify-center text-purple-600 group-hover:bg-purple-500 group-hover:text-white transition-colors">
+                            <iconify-icon icon="lucide:heart" width="24"></iconify-icon>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 mt-2">Emotional Intelligence Workshops</h3>
+                    </div>
+                    <p class="text-slate-600 mb-4">Activities focused on identifying emotions, developing empathy, and building healthy emotional expression.</p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="bg-orange-100 text-orange-800 text-xs font-semibold px-3 py-1 rounded-full">Self-Awareness</span>
+                        <span class="bg-blue-100 text-blue-800 text-xs font-semibold px-3 py-1 rounded-full">Emotional Regulation</span>
+                    </div>
+                    <div class="confidence-milestone text-sm text-slate-700">
+                        <strong>Confidence Milestone:</strong> Articulating feelings and needs effectively
+                    </div>
+                </div>
+                
+                <!-- Activity 5 -->
+                <div class="activity-card bg-white rounded-2xl p-6 shadow-lg border-l-4 border-amber-500 group">
+                    <div class="flex items-start gap-4 mb-4">
+                        <div class="h-12 w-12 bg-amber-100 rounded-lg flex items-center justify-center text-amber-600 group-hover:bg-amber-500 group-hover:text-white transition-colors">
+                            <iconify-icon icon="lucide:target" width="24"></iconify-icon>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 mt-2">Goal Setting & Achievement</h3>
+                    </div>
+                    <p class="text-slate-600 mb-4">Children learn to set realistic goals, track progress, and celebrate achievements in a supportive environment.</p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="bg-orange-100 text-orange-800 text-xs font-semibold px-3 py-1 rounded-full">Self-Motivation</span>
+                        <span class="bg-blue-100 text-blue-800 text-xs font-semibold px-3 py-1 rounded-full">Achievement Mindset</span>
+                    </div>
+                    <div class="confidence-milestone text-sm text-slate-700">
+                        <strong>Confidence Milestone:</strong> Setting and completing a personal challenge
+                    </div>
+                </div>
+                
+                <!-- Activity 6 -->
+                <div class="activity-card bg-white rounded-2xl p-6 shadow-lg border-l-4 border-red-500 group">
+                    <div class="flex items-start gap-4 mb-4">
+                        <div class="h-12 w-12 bg-red-100 rounded-lg flex items-center justify-center text-red-600 group-hover:bg-red-500 group-hover:text-white transition-colors">
+                            <iconify-icon icon="lucide:users" width="24"></iconify-icon>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 mt-2">Social Connection Games</h3>
+                    </div>
+                    <p class="text-slate-600 mb-4">Interactive games and activities designed to build social confidence, initiate conversations, and make new friends.</p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="bg-orange-100 text-orange-800 text-xs font-semibold px-3 py-1 rounded-full">Social Skills</span>
+                        <span class="bg-blue-100 text-blue-800 text-xs font-semibold px-3 py-1 rounded-full">Friendship Building</span>
+                    </div>
+                    <div class="confidence-milestone text-sm text-slate-700">
+                        <strong>Confidence Milestone:</strong> Initiating conversations with unfamiliar peers
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Additional Specialized Programs -->
+            <div class="mt-16 bg-gradient-to-r from-orange-500 to-amber-500 rounded-2xl p-8 text-white">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+                    <div>
+                        <h3 class="text-2xl font-bold mb-4">Specialized Programs for Different Needs</h3>
+                        <ul class="space-y-3">
+                            <li class="flex items-center gap-3"><iconify-icon icon="lucide:check-circle" width="20"></iconify-icon><span><strong>Shyness & Social Anxiety Program:</strong> Gradual exposure techniques</span></li>
+                            <li class="flex items-center gap-3"><iconify-icon icon="lucide:check-circle" width="20"></iconify-icon><span><strong>Leadership Development Track:</strong> Advanced decision-making & team management</span></li>
+                            <li class="flex items-center gap-3"><iconify-icon icon="lucide:check-circle" width="20"></iconify-icon><span><strong>Sibling Confidence Building:</strong> Building individual identity within family dynamics</span></li>
+                        </ul>
+                    </div>
+                    <div class="text-center">
+                        <div class="inline-block bg-white/20 backdrop-blur-sm rounded-xl p-6">
+                            <div class="text-4xl font-bold mb-2">8:1</div>
+                            <div class="text-lg">Student to Counselor Ratio</div>
+                            <div class="text-sm mt-2">Ensuring personalized attention for every child</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Program Benefits -->
+    <section id="program-benefits" class="py-20 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Measurable <span class="text-orange-500">Confidence Outcomes</span></h2>
+                <p class="text-lg text-slate-600 max-w-3xl mx-auto">
+                    Our confidence building programs deliver tangible results that parents and children can see and feel.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="benefit-card bg-white rounded-2xl p-6 shadow-lg text-center">
+                    <div class="h-16 w-16 bg-orange-100 rounded-full flex items-center justify-center text-orange-600 mx-auto mb-4">
+                        <iconify-icon icon="lucide:message-circle" width="28"></iconify-icon>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-2">Better Communication</h3>
+                    <p class="text-slate-600 text-sm">Children learn to express thoughts, needs, and feelings clearly and respectfully.</p>
+                </div>
+                
+                <div class="benefit-card bg-white rounded-2xl p-6 shadow-lg text-center">
+                    <div class="h-16 w-16 bg-blue-100 rounded-full flex items-center justify-center text-blue-600 mx-auto mb-4">
+                        <iconify-icon icon="lucide:thumbs-up" width="28"></iconify-icon>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-2">Increased Self-Esteem</h3>
+                    <p class="text-slate-600 text-sm">Positive reinforcement and achievement build a strong sense of self-worth.</p>
+                </div>
+                
+                <div class="benefit-card bg-white rounded-2xl p-6 shadow-lg text-center">
+                    <div class="h-16 w-16 bg-green-100 rounded-full flex items-center justify-center text-green-600 mx-auto mb-4">
+                        <iconify-icon icon="lucide:shield" width="28"></iconify-icon>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-2">Emotional Resilience</h3>
+                    <p class="text-slate-600 text-sm">Learning to cope with setbacks and bounce back from challenges.</p>
+                </div>
+                
+                <div class="benefit-card bg-white rounded-2xl p-6 shadow-lg text-center">
+                    <div class="h-16 w-16 bg-purple-100 rounded-full flex items-center justify-center text-purple-600 mx-auto mb-4">
+                        <iconify-icon icon="lucide:star" width="28"></iconify-icon>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-2">Leadership Initiative</h3>
+                    <p class="text-slate-600 text-sm">Taking initiative in group settings and demonstrating natural leadership qualities.</p>
+                </div>
+            </div>
+            
+            <!-- Parent Testimonial -->
+            <div class="mt-16 bg-gradient-to-r from-slate-50 to-white rounded-2xl p-8 shadow-lg">
+                <div class="flex flex-col md:flex-row gap-8 items-center">
+                    <div class="md:w-1/3">
+                        <div class="h-48 w-48 rounded-full overflow-hidden mx-auto border-4 border-orange-300">
+                            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&q=80" 
+                                 alt="Parent testimonial for confidence building program" 
+                                 class="h-full w-full object-cover">
+                        </div>
+                    </div>
+                    <div class="md:w-2/3">
+                        <div class="text-amber-400 mb-4">
+                            <iconify-icon icon="lucide:star" width="20"></iconify-icon>
+                            <iconify-icon icon="lucide:star" width="20"></iconify-icon>
+                            <iconify-icon icon="lucide:star" width="20"></iconify-icon>
+                            <iconify-icon icon="lucide:star" width="20"></iconify-icon>
+                            <iconify-icon icon="lucide:star" width="20"></iconify-icon>
+                        </div>
+                        <p class="text-xl text-slate-700 italic mb-6">
+                            "My 8-year-old daughter was extremely shy and hesitant to speak up in class. After just one month in Maura Wonderlab's confidence program, she volunteered to present in front of her entire school! The transformation has been incredible."
+                        </p>
+                        <div>
+                            <div class="font-bold text-slate-900">Priya Sharma</div>
+                            <div class="text-slate-600">Parent, Vasai</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Program Phases -->
+    <section id="program-phases" class="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-amber-50 to-white">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">3-Phase <span class="text-orange-500">Confidence Development</span> Model</h2>
+                <p class="text-lg text-slate-600 max-w-3xl mx-auto">
+                    Our structured approach ensures gradual, sustainable confidence growth for every child.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                <div class="program-phase bg-white shadow-xl">
+                    <div class="bg-gradient-to-r from-orange-400 to-amber-400 text-white p-6 text-center">
+                        <div class="text-5xl font-bold mb-2">01</div>
+                        <h3 class="text-2xl font-bold">Foundation Building</h3>
+                        <p class="text-amber-100">Weeks 1-4</p>
+                    </div>
+                    <div class="p-6">
+                        <ul class="space-y-4">
+                            <li class="flex items-start gap-3">
+                                <iconify-icon icon="lucide:check-circle" class="text-green-500 mt-1" width="20"></iconify-icon>
+                                <span>Safe environment creation & trust building</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <iconify-icon icon="lucide:check-circle" class="text-green-500 mt-1" width="20"></iconify-icon>
+                                <span>Ice-breaking activities & social connections</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <iconify-icon icon="lucide:check-circle" class="text-green-500 mt-1" width="20"></iconify-icon>
+                                <span>Initial comfort zone expansion exercises</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <iconify-icon icon="lucide:check-circle" class="text-green-500 mt-1" width="20"></iconify-icon>
+                                <span>Basic emotional vocabulary development</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="program-phase bg-white shadow-xl">
+                    <div class="bg-gradient-to-r from-blue-400 to-cyan-400 text-white p-6 text-center">
+                        <div class="text-5xl font-bold mb-2">02</div>
+                        <h3 class="text-2xl font-bold">Skill Development</h3>
+                        <p class="text-cyan-100">Weeks 5-8</p>
+                    </div>
+                    <div class="p-6">
+                        <ul class="space-y-4">
+                            <li class="flex items-start gap-3">
+                                <iconify-icon icon="lucide:check-circle" class="text-green-500 mt-1" width="20"></iconify-icon>
+                                <span>Targeted confidence-building activities</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <iconify-icon icon="lucide:check-circle" class="text-green-500 mt-1" width="20"></iconify-icon>
+                                <span>Public speaking & leadership exercises</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <iconify-icon icon="lucide:check-circle" class="text-green-500 mt-1" width="20"></iconify-icon>
+                                <span>Problem-solving & decision-making challenges</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <iconify-icon icon="lucide:check-circle" class="text-green-500 mt-1" width="20"></iconify-icon>
+                                <span>Peer feedback & positive reinforcement</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="program-phase bg-white shadow-xl">
+                    <div class="bg-gradient-to-r from-green-400 to-emerald-400 text-white p-6 text-center">
+                        <div class="text-5xl font-bold mb-2">03</div>
+                        <h3 class="text-2xl font-bold">Application & Mastery</h3>
+                        <p class="text-emerald-100">Weeks 9-12</p>
+                    </div>
+                    <div class="p-6">
+                        <ul class="space-y-4">
+                            <li class="flex items-start gap-3">
+                                <iconify-icon icon="lucide:check-circle" class="text-green-500 mt-1" width="20"></iconify-icon>
+                                <span>Real-world application of confidence skills</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <iconify-icon icon="lucide:check-circle" class="text-green-500 mt-1" width="20"></iconify-icon>
+                                <span>Advanced leadership scenarios</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <iconify-icon icon="lucide:check-circle" class="text-green-500 mt-1" width="20"></iconify-icon>
+                                <span>Mentorship opportunities for newer participants</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <iconify-icon icon="lucide:check-circle" class="text-green-500 mt-1" width="20"></iconify-icon>
+                                <span>Confidence sustainability strategies</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <button class="bg-indigo-500 hover:bg-indigo-600 text-white px-8 py-4 rounded-full text-lg font-semibold transition-all shadow-[0px_6px_0px_0px_rgba(67,56,202,1)] hover:shadow-[0px_3px_0px_0px_rgba(67,56,202,1)] hover:translate-y-[3px]">
+                    Download Detailed Program Curriculum
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Locations Section -->
+    <section id="locations" class="py-20 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Confidence Programs Across <span class="text-orange-500">Mumbai Region</span></h2>
+                <p class="text-lg text-slate-600 max-w-3xl mx-auto">
+                    Our confidence building activities are conveniently located across the Mumbai region for easy access.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white rounded-2xl p-6 shadow-lg border border-slate-200">
+                    <div class="h-12 w-12 bg-orange-100 rounded-lg flex items-center justify-center text-orange-600 mb-4">
+                        <iconify-icon icon="lucide:map-pin" width="24"></iconify-icon>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-2">Confidence Camp in Virar</h3>
+                    <p class="text-slate-600 mb-4">Our flagship location with specialized confidence-building obstacle courses and dedicated public speaking arenas.</p>
+                    <ul class="space-y-2 text-sm text-slate-600">
+                        <li class="flex items-center gap-2"><iconify-icon icon="lucide:check" width="16" class="text-green-500"></iconify-icon> Outdoor adventure zone</li>
+                        <li class="flex items-center gap-2"><iconify-icon icon="lucide:check" width="16" class="text-green-500"></iconify-icon> Indoor activity pavilion</li>
+                        <li class="flex items-center gap-2"><iconify-icon icon="lucide:check" width="16" class="text-green-500"></iconify-icon> Age-specific confidence trails</li>
+                    </ul>
+                </div>
+                
+                <div class="bg-white rounded-2xl p-6 shadow-lg border border-slate-200">
+                    <div class="h-12 w-12 bg-blue-100 rounded-lg flex items-center justify-center text-blue-600 mb-4">
+                        <iconify-icon icon="lucide:map-pin" width="24"></iconify-icon>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-2">Confidence Camp in Vasai</h3>
+                    <p class="text-slate-600 mb-4">Forest-based program focusing on resilience building and nature-connected confidence development.</p>
+                    <ul class="space-y-2 text-sm text-slate-600">
+                        <li class="flex items-center gap-2"><iconify-icon icon="lucide:check" width="16" class="text-green-500"></iconify-icon> Nature immersion activities</li>
+                        <li class="flex items-center gap-2"><iconify-icon icon="lucide:check" width="16" class="text-green-500"></iconify-icon> Wilderness survival skills</li>
+                        <li class="flex items-center gap-2"><iconify-icon icon="lucide:check" width="16" class="text-green-500"></iconify-icon> Team resilience challenges</li>
+                    </ul>
+                </div>
+                
+                <div class="bg-white rounded-2xl p-6 shadow-lg border border-slate-200">
+                    <div class="h-12 w-12 bg-green-100 rounded-lg flex items-center justify-center text-green-600 mb-4">
+                        <iconify-icon icon="lucide:map-pin" width="24"></iconify-icon>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-2">Confidence Camp in Nallasopara</h3>
+                    <p class="text-slate-600 mb-4">Urban-adapted program with focus on social confidence and leadership in community settings.</p>
+                    <ul class="space-y-2 text-sm text-slate-600">
+                        <li class="flex items-center gap-2"><iconify-icon icon="lucide:check" width="16" class="text-green-500"></iconify-icon> Community project leadership</li>
+                        <li class="flex items-center gap-2"><iconify-icon icon="lucide:check" width="16" class="text-green-500"></iconify-icon> Social scenario role-playing</li>
+                        <li class="flex items-center gap-2"><iconify-icon icon="lucide:check" width="16" class="text-green-500"></iconify-icon> Public speaking workshops</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="mt-12 bg-gradient-to-r from-slate-900 to-slate-800 rounded-2xl p-8 text-white">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+                    <div>
+                        <h3 class="text-2xl font-bold mb-4">Ready to Build Your Child's Confidence?</h3>
+                        <p class="text-slate-300 mb-6">Book a free trial session or schedule a consultation with our confidence program coordinator.</p>
+                        <div class="flex flex-col sm:flex-row gap-4">
+                            <button class="bg-orange-500 hover:bg-orange-600 text-white px-6 py-3 rounded-full font-semibold transition-all">
+                                Book Free Trial Session
+                            </button>
+                            <button class="bg-transparent border border-white hover:bg-white/10 text-white px-6 py-3 rounded-full font-semibold transition-all">
+                                Speak to Program Coordinator
+                            </button>
+                        </div>
+                    </div>
+                    <div class="text-center">
+                        <div class="inline-block bg-white/10 backdrop-blur-sm rounded-xl p-6">
+                            <div class="text-3xl font-bold mb-2">+91 77680 31411</div>
+                            <div class="text-lg">Call for Program Details</div>
+                            <div class="text-sm mt-2">Available 9 AM - 7 PM, Monday to Sunday</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-white pt-20 pb-10 rounded-t-[3rem] mt-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
+                <div class="col-span-1 md:col-span-2">
+                    <div class="flex items-center gap-2 mb-6">
+                         <div class="h-8 w-8 bg-orange-500 rounded-lg flex items-center justify-center text-white">
+                            <iconify-icon icon="lucide:tent" width="18"></iconify-icon>
+                        </div>
+                        <span class="brand-font text-2xl font-bold">Maura <span class="text-orange-400">Wonderlab</span></span>
+                    </div>
+                    <p class="text-slate-400 max-w-sm mb-6">Building confident, resilient children through adventure, science, and nature. The #1 Choice for Kids Confidence Building Programs in Mumbai Region.</p>
+                    <div class="flex gap-4">
+                        <a href="#" class="h-10 w-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-orange-500 transition-colors"><iconify-icon icon="lucide:instagram" width="20"></iconify-icon></a>
+                        <a href="#" class="h-10 w-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-blue-500 transition-colors"><iconify-icon icon="lucide:facebook" width="20"></iconify-icon></a>
+                        <a href="#" class="h-10 w-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-green-500 transition-colors"><iconify-icon icon="lucide:phone" width="20"></iconify-icon></a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="font-bold text-lg mb-6">Confidence Programs</h4>
+                    <ul class="space-y-4 text-slate-400 text-sm">
+                        <li><a href="#" class="hover:text-white transition-colors">For Shy Children</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Leadership Development</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Public Speaking Workshops</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Emotional Resilience Training</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-bold text-lg mb-6">Camp Locations</h4>
+                    <ul class="space-y-4 text-slate-400 text-sm">
+                        <li><a href="#" class="hover:text-white transition-colors">Confidence Camp in Virar</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Confidence Camp in Vasai</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Confidence Camp in Nallasopara</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">School Confidence Workshops</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-slate-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="text-slate-500 text-sm">© 2024 Maura Wonderlab. All rights reserved. | Confidence Building Programs for Children</p>
+                <div class="flex gap-6 text-sm text-slate-500">
+                    <a href="#" class="hover:text-white">Privacy</a>
+                    <a href="#" class="hover:text-white">Terms</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Functionality
+        const mobileMenuButton = document.getElementById('mobileMenuButton');
+        const closeMenuButton = document.getElementById('closeMenuButton');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const menuOverlay = document.getElementById('menuOverlay');
+        
+        function openMobileMenu() {
+            mobileMenu.classList.add('open');
+            menuOverlay.classList.add('active');
+            document.body.style.overflow = 'hidden'; // Prevent scrolling when menu is open
+        }
+        
+        function closeMobileMenu() {
+            mobileMenu.classList.remove('open');
+            menuOverlay.classList.remove('active');
+            document.body.style.overflow = 'auto'; // Re-enable scrolling
+        }
+        
+        // Event Listeners
+        mobileMenuButton.addEventListener('click', openMobileMenu);
+        closeMenuButton.addEventListener('click', closeMobileMenu);
+        menuOverlay.addEventListener('click', closeMobileMenu);
+        
+        // Close menu when clicking on any menu link
+        document.querySelectorAll('#mobileMenu a').forEach(link => {
+            link.addEventListener('click', closeMobileMenu);
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                const href = this.getAttribute('href');
+                
+                // Only handle internal anchor links (not external links)
+                if (href === '#' || href.startsWith('#') && href.length > 1) {
+                    e.preventDefault();
+                    
+                    const targetId = href.substring(1);
+                    const targetElement = document.getElementById(targetId);
+                    
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80, // Adjust for navbar height
+                            behavior: 'smooth'
+                        });
+                    }
+                }
+            });
+        });
+        
+        // Close menu on ESC key press
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && mobileMenu.classList.contains('open')) {
+                closeMobileMenu();
+            }
+        });
+        
+        // Prevent scrolling on the overlay (touch devices)
+        menuOverlay.addEventListener('touchmove', (e) => {
+            e.preventDefault();
+        }, { passive: false });
+        
+        // Add animation to cards on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+        
+        // Observe all cards for animation
+        document.querySelectorAll('.activity-card, .benefit-card, .program-phase').forEach(card => {
+            card.style.opacity = '0.9';
+            card.style.transform = 'translateY(10px)';
+            card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+            observer.observe(card);
+        });
+        
+        // Booking buttons functionality
+        document.querySelectorAll('button').forEach(button => {
+            if (button.textContent.includes('Book') || button.textContent.includes('Start Your Child')) {
+                button.addEventListener('click', function() {
+                    alert('Thank you for your interest in Maura Wonderlab Confidence Building Programs! Our team will contact you shortly to discuss the best program for your child.');
+                });
+            }
+        });
+    </script>
+</body>
+</html>
